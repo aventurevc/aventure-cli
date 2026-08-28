@@ -1,0 +1,311 @@
+aventure-cli agents help reindex create · Reindex the agent-help corpus · -
+aventure-cli agents instructions get · Get one agent instruction document · --kind --name
+aventure-cli agents instructions list · Get the agent instruction manifest · -
+aventure-cli agents instructions versions get · Get one agent instruction document version · --kind --name --version
+aventure-cli billing checkout-sessions create · Create or recover a hosted Checkout Session · --plan
+aventure-cli billing portal-sessions create · Create a hosted Billing Portal Session · -
+aventure-cli billing subscription get · Read the current billing subscription · -
+aventure-cli classifications catalog get · Fetch the entity classification taxonomy · -
+aventure-cli classifications search get · Search classifications · -
+aventure-cli classifications tags search · Search entity classification tags · -
+aventure-cli content embedding activity list · List recent content embedding owner activity · -
+aventure-cli content embedding backlog delete · Disable content embedding backlog runs · -
+aventure-cli content embedding backlog mode replace · Set content embedding cluster mode · --mode
+aventure-cli content embedding backlog replace · Enable content embedding backlog runs · -
+aventure-cli content embedding backlog status · Get content embedding backlog status · -
+aventure-cli content embedding neighbors list · Find nearest embedding neighbors by source id · --source-type --source-id --target-type
+aventure-cli content embedding refresh create · Force-enqueue a single source id into the embedding refresh lane · --source-type --source-id
+aventure-cli content embedding refresh reconcile create · Force-run one embedding reconcile pass on this instance · -
+aventure-cli content embedding refresh sweep create · Force-run one embedding refresh sweep · --source-type --kind
+aventure-cli content embedding replace · Upsert unified content embedding · --model-version --qwen4b-fp16 --source-hash --source-id --source-json --source-text --source-type
+aventure-cli content embedding stale get · Find stale embedding source ids · --source-type
+aventure-cli content list · List content · -
+aventure-cli content search · Search content · --query
+aventure-cli content similarity batch replace · Replace semantic similarity batches · -
+aventure-cli content similarity stale get · Find stale source ids for semantic similarity refresh · --source-type
+aventure-cli entities acquisitions create · Create acquisition event for an entity · --entity-id --source-type --source-detail
+aventure-cli entities acquisitions delete · Delete acquisition event for an entity · --entity-id --relationship-id --source-type --source-detail
+aventure-cli entities acquisitions get · Get acquisition for an entity · --entity-id --relationship-id
+aventure-cli entities acquisitions list · List acquisitions for an entity · --entity-id
+aventure-cli entities acquisitions replace · Replace acquisition event for an entity · --entity-id --relationship-id --source-type --source-detail
+aventure-cli entities acquisitions update · Patch acquisition event for an entity · --entity-id --relationship-id --source-type --source-detail
+aventure-cli entities addresses create · Create entity address · --entity-id --source-type --source-detail
+aventure-cli entities addresses delete · Delete entity address · --entity-id --address-join-id --source-type --source-detail
+aventure-cli entities addresses get · Get a single entity address join row · --entity-id --address-join-id
+aventure-cli entities addresses list · List entity addresses · --entity-id
+aventure-cli entities addresses replace · Update entity address and join flags · --entity-id --address-join-id --source-type --source-detail
+aventure-cli entities addresses update · Merge-patch entity address and join flags · --entity-id --address-join-id --source-type --source-detail
+aventure-cli entities batch detail lookup · Batch entity detail retrieval (POST) · -
+aventure-cli entities batch lookup · Batch entity list · -
+aventure-cli entities blog-posts create · Create one entity blog post · --entity-id --source-type --source-detail
+aventure-cli entities blog-posts delete · Delete one entity blog post · --entity-id --blog-post-id --source-type --source-detail
+aventure-cli entities blog-posts get · Get entity blog post · --entity-id --blog-post-id
+aventure-cli entities blog-posts list · List entity blog posts · --entity-id
+aventure-cli entities blog-posts replace · Replace one entity blog post · --entity-id --blog-post-id --source-type --source-detail
+aventure-cli entities blog-posts update · Patch one entity blog post · --entity-id --blog-post-id --source-type --source-detail
+aventure-cli entities bootstrap create · Create enrichment bootstrap entity · --source-type --source-detail
+aventure-cli entities classifications audit · Audit standardized entity classifications · -
+aventure-cli entities classifications create · Create entity classification join · --entity-id --source-type --source-detail
+aventure-cli entities classifications delete · Hard-delete entity classification join · --entity-id --classification-id --source-type --source-detail
+aventure-cli entities classifications fleet audit · Audit standardized entity classifications across the fleet · -
+aventure-cli entities classifications list · Get entity classification joins · --entity-id
+aventure-cli entities classifications reconcile · Reconcile standardized entity classifications · --source-type --source-detail
+aventure-cli entities classifications replace · Replace entity classification join · --entity-id --classification-id --source-type --source-detail
+aventure-cli entities classifications suggest · Suggest entity classifications · --entity-id
+aventure-cli entities classifications update · Patch entity classification join · --entity-id --classification-id --source-type --source-detail
+aventure-cli entities content list · List entity content · --entity-id
+aventure-cli entities content search · Search entity content · --entity-id --query
+aventure-cli entities counts get · Count entities by type · -
+aventure-cli entities crawl-runs delete · Delete an entity crawl-run capture · -
+aventure-cli entities crawl-runs get · Get or trigger an entity crawl run · -
+aventure-cli entities crawl-runs status · Get an entity crawl-run job status · --job-id
+aventure-cli entities crawl-runs update · Force an entity crawl run · -
+aventure-cli entities create · Create a full entity in one atomic POST · --source-type --source-detail
+aventure-cli entities delete · Delete entity · --source-type --source-detail
+aventure-cli entities detail coverage get · Get entity completion-floor coverage · --entity-id
+aventure-cli entities duplicate-check candidates list · Score entity duplicate candidates (GET) · -
+aventure-cli entities duplicate-check candidates lookup · Score entity duplicate candidates · -
+aventure-cli entities duplicate-check get · Review entity duplicate gates (GET) · -
+aventure-cli entities duplicate-check lookup · Review entity duplicate gates · -
+aventure-cli entities filters counts lookup · Count entity filter tags · --name
+aventure-cli entities filters list · List entity filter options · -
+aventure-cli entities filters refine lookup · Refine entity filter options · -
+aventure-cli entities filters search get · Search filter options · --filter-key --search
+aventure-cli entities filters search lookup · Search filter options (scoped) · --filter-key --limit --query
+aventure-cli entities fundraise investments list · List investments made by an entity · -
+aventure-cli entities fundraise investor-activity get · Get investor activity · -
+aventure-cli entities fundraise investor-joins create · Join fundraise investor · --source-type --source-detail
+aventure-cli entities fundraise investor-joins delete · Delete fundraise investor join · --source-type --source-detail
+aventure-cli entities fundraise investor-joins get · Get fundraise investor join · --fundraise-investor-join-id
+aventure-cli entities fundraise investor-joins list · List fundraise investor joins · -
+aventure-cli entities fundraise investor-joins replace · Replace fundraise investor join · --source-type --source-detail
+aventure-cli entities fundraise investor-joins update · Patch fundraise investor join · --source-type --source-detail
+aventure-cli entities fundraise investors list · List entity investors · -
+aventure-cli entities fundraise person-investors list · List person investors · -
+aventure-cli entities fundraise rounds create · Create fundraise round · --source-type --source-detail --date-announced
+aventure-cli entities fundraise rounds delete · Delete fundraise round · --transaction-id --source-type --source-detail
+aventure-cli entities fundraise rounds get · Get fundraise round · --transaction-id
+aventure-cli entities fundraise rounds list · List fundraise rounds · -
+aventure-cli entities fundraise rounds replace · Replace fundraise round · --transaction-id --source-type --source-detail --date-announced
+aventure-cli entities fundraise rounds update · Patch fundraise round · --transaction-id --source-type --source-detail
+aventure-cli entities get · Get company or entity detail · -
+aventure-cli entities identifiers lookup · Resolve entity identifiers (POST) · -
+aventure-cli entities list · List or search companies and other entities (GET) · -
+aventure-cli entities merge · Merge two duplicate entities · --source-type --source-detail --create-slug-redirect --delete-mode --loser-id --survivor-id
+aventure-cli entities news create · Create news article for entity · --source-type --source-detail
+aventure-cli entities news delete · Delete news article for entity · --news-id --source-type --source-detail
+aventure-cli entities news list · List news joined to an entity · -
+aventure-cli entities news replace · Replace news article for entity · --news-id --source-type --source-detail
+aventure-cli entities news trending list · Get trending news for an entity · -
+aventure-cli entities news update · Patch news article for entity · --news-id --source-type --source-detail
+aventure-cli entities operating-status create · Create entity operating status · --entity-id --source-type --source-detail
+aventure-cli entities operating-status list · Get entity operating status · --entity-id
+aventure-cli entities operating-status replace · Upsert entity operating status · --entity-id --source-type --source-detail
+aventure-cli entities operating-status signal get · Get entity operating status signal · --entity-id
+aventure-cli entities operating-status update · Patch entity operating status · --entity-id --source-type --source-detail
+aventure-cli entities people corporate-title delete · Clear corporate title on an entity person association · --entity-id --association-id --source-type --source-detail
+aventure-cli entities people create · Create entity person association · --entity-id --source-type --source-detail
+aventure-cli entities people delete · Delete entity person association · --entity-id --association-id --source-type --source-detail
+aventure-cli entities people employee-counts list · Entity employee count time series · -
+aventure-cli entities people filter · List entity people · -
+aventure-cli entities people get · Get entity people association · --entity-id --association-id
+aventure-cli entities people list · List entity people associations · --entity-id
+aventure-cli entities people replace · Replace entity person association · --entity-id --association-id --source-type --source-detail
+aventure-cli entities people update · Patch entity person association · --entity-id --association-id --source-type --source-detail
+aventure-cli entities products suggest · Suggest entity products or services · --entity-id
+aventure-cli entities relationships join · Join two entities · --source-entity-id --target-entity-id --relationship-type --source-type --source-detail
+aventure-cli entities relationships list · List entity relationships · --entity-id
+aventure-cli entities relationships row create · Create relationship row · --entity-id --source-type --source-detail --relationship-type --source-entity-id --target-entity-id
+aventure-cli entities relationships row delete · Delete relationship row by id · --relationship-id --source-type --source-detail
+aventure-cli entities relationships row get · Get relationship row by id · --relationship-id
+aventure-cli entities relationships row update · Update relationship row by id · --relationship-id --source-type --source-detail
+aventure-cli entities relationships suggest · Suggest entity relationships · --entity-id
+aventure-cli entities relationships types list · List relationship types · -
+aventure-cli entities replace · Replace entity detail · --source-type --source-detail
+aventure-cli entities repositories list · List entity repositories · --entity-id
+aventure-cli entities repositories update · Sync entity repositories from GitHub · --entity-id
+aventure-cli entities research completion gates list · List completion gates · -
+aventure-cli entities research details create · Create research detail · --entity-id --source-type --source-detail --type-research-detail
+aventure-cli entities research details delete · Delete research detail · --entity-id --research-detail-id --source-type --source-detail
+aventure-cli entities research details get · Get research detail · --entity-id --research-detail-id
+aventure-cli entities research details list · List research details · --entity-id
+aventure-cli entities research details replace · Replace research detail · --entity-id --research-detail-id --source-type --source-detail --type-research-detail
+aventure-cli entities research details types list · List research detail types · -
+aventure-cli entities research get · Entity research projection · --entity-id
+aventure-cli entities research snippets create · Create research snippet · --entity-id --source-type --source-detail --input-text --text-type
+aventure-cli entities research snippets delete · Delete research snippet · --entity-id --snippet-id --source-type --source-detail
+aventure-cli entities research snippets get · Get research snippet · --entity-id --snippet-id
+aventure-cli entities research snippets list · List research snippets · --entity-id
+aventure-cli entities research snippets replace · Replace research snippet · --entity-id --snippet-id --source-type --source-detail --input-text --text-type
+aventure-cli entities research snippets types list · List research snippet types · -
+aventure-cli entities search · Search companies and other entities (POST) · -
+aventure-cli entities similar list · List entities similar to one entity · -
+aventure-cli entities slug get · Get entity slug · --entity-id
+aventure-cli entities slug redirects delete · Delete entity slug redirect · --entity-id --redirect-id --source-type --source-detail
+aventure-cli entities slug redirects list · List entity slug redirects · --entity-id
+aventure-cli entities slug update · Change entity slug · --entity-id --source-type --source-detail
+aventure-cli entities status get · Get entity status · --entity-id
+aventure-cli entities status update · Set entity status · --entity-id --source-type --source-detail
+aventure-cli entities summary get · List entity summaries · -
+aventure-cli entities texts create · Create one entity text row · --entity-id --source-type --source-detail
+aventure-cli entities texts delete · Delete one entity text row · --entity-id --text-id --source-type --source-detail
+aventure-cli entities texts get · Get one entity text row · --entity-id --text-id
+aventure-cli entities texts list · List entity text rows · --entity-id
+aventure-cli entities texts replace · Replace one entity text row · --entity-id --text-id --source-type --source-detail
+aventure-cli entities texts types list · List entity text types · -
+aventure-cli entities texts update · Patch one entity text row · --entity-id --text-id --source-type --source-detail
+aventure-cli entities type-record get · Get entity typeRecord · --entity-id
+aventure-cli entities type-record types list · List writable entity typeRecords with accepted alias tokens · -
+aventure-cli entities type-record update · Set entity typeRecord · --entity-id --source-type --source-detail
+aventure-cli entities unique-ids create · Attach a unique id to an entity · --entity-id --source-type --source-detail
+aventure-cli entities unique-ids delete · Delete an entity unique id · --entity-id --unique-id-id --source-type --source-detail
+aventure-cli entities unique-ids get · Get an entity unique id · --entity-id --unique-id-id
+aventure-cli entities unique-ids list · List an entity's unique ids · --entity-id
+aventure-cli entities update · Patch entity detail · --source-type --source-detail
+aventure-cli entities urls all list · List all entity URLs · --entity-id
+aventure-cli entities urls create · Create one entity URL · --entity-id --source-type --source-detail
+aventure-cli entities urls delete · Delete one entity URL · --entity-id --url-id --source-type --source-detail
+aventure-cli entities urls get · Get one entity URL · --entity-id --url-id
+aventure-cli entities urls list · List entity URLs · --entity-id
+aventure-cli entities urls replace · Replace one entity URL · --entity-id --url-id --source-type --source-detail
+aventure-cli entities urls surface-misclassifications list · List URL surface misclassification rules · -
+aventure-cli entities urls types list · List entity URL types · -
+aventure-cli entities urls update · Patch one entity URL · --entity-id --url-id --source-type --source-detail
+aventure-cli entities valuations create · Create entity valuation datapoint · --source-type --source-detail
+aventure-cli entities valuations delete · Delete entity valuation datapoint by detail id · --valuation-detail-id --source-type --source-detail
+aventure-cli entities valuations list · Entity valuation time series · -
+aventure-cli entities valuations month delete · Delete entity valuation datapoint by (year, month) · --year --month --source-type --source-detail
+aventure-cli entities valuations month replace · Replace entity valuation datapoint by (year, month) · --year --month --source-type --source-detail
+aventure-cli entities valuations month update · Merge-patch entity valuation datapoint by (year, month) · --year --month --source-type --source-detail
+aventure-cli entities valuations replace · Replace entity valuation datapoint by detail id · --valuation-detail-id --source-type --source-detail
+aventure-cli entities valuations update · Merge-patch entity valuation datapoint by detail id · --valuation-detail-id --source-type --source-detail
+aventure-cli help ask · Answer a natural-language platform help question · --question
+aventure-cli media convert · Convert media asset · --media-type --source-type --source-detail
+aventure-cli media delete · Delete media asset · --media-type --source-type --source-detail
+aventure-cli media entity-logo import · Import entity logo from website · --source-type --source-detail
+aventure-cli media get · Get attached media asset · --media-type
+aventure-cli media logo-accuracy lookup · Assert whether a stored logo or photo depicts the target's own brand · --media-type
+aventure-cli media logo-audit jobs create · Enqueue logo audit job · --source-type --source-detail
+aventure-cli media logo-audit jobs delete · Cancel a running logo audit job · --job-id
+aventure-cli media logo-audit jobs get · Get logo audit job status · --job-id
+aventure-cli media logo-audit jobs list · List logo audit jobs · -
+aventure-cli media news-thumbnail import · Import news thumbnail from article · --source-type --source-detail
+aventure-cli media retrofit jobs create · Enqueue media retrofit batch · --source-type --source-detail
+aventure-cli media retrofit jobs delete · Cancel a running media retrofit batch · --job-id
+aventure-cli media retrofit jobs get · Get media retrofit batch status · --job-id
+aventure-cli media screenshots create · Upload a crawl screenshot · --source-type --source-detail --file
+aventure-cli media screenshots get · Get screenshot by id · --screenshot-id
+aventure-cli media screenshots list · List screenshots for a URL · --url
+aventure-cli media upload · Upload media asset · --media-type --source-type --source-detail --file
+aventure-cli news create · Create news article · --source-type --source-detail
+aventure-cli news delete · Delete news article · --source-type --source-detail
+aventure-cli news duplicate-check candidates list · Score news duplicate candidates (GET) · -
+aventure-cli news duplicate-check candidates lookup · Score news duplicate candidates · -
+aventure-cli news duplicate-check get · Review news duplicate gates (GET) · -
+aventure-cli news duplicate-check lookup · Review news duplicate gates · -
+aventure-cli news feedback create · Submit news feedback · -
+aventure-cli news get · Get news detail · -
+aventure-cli news linker candidates list · List news articles needing entity/person linking · -
+aventure-cli news list · List news articles · -
+aventure-cli news recent list · List recent news · -
+aventure-cli news related-companies get · Get related companies for a news article · --news-id
+aventure-cli news replace · Update news article · --source-type --source-detail
+aventure-cli news similar list · Find similar news · -
+aventure-cli news slug get · Get news slug · --news-id
+aventure-cli news slug redirects delete · Delete news slug redirect · --news-id --redirect-id --source-type --source-detail
+aventure-cli news slug redirects list · List news slug redirects · --news-id
+aventure-cli news slug update · Change news slug · --news-id --source-type --source-detail
+aventure-cli news update · Patch news article (RFC 7396 merge patch) · --source-type --source-detail
+aventure-cli people addresses create · Create person address · --person-id --source-type --source-detail
+aventure-cli people addresses delete · Delete person address · --person-id --address-join-id --source-type --source-detail
+aventure-cli people addresses get · Get person address · --person-id --address-join-id
+aventure-cli people addresses list · List person addresses · --person-id
+aventure-cli people batch detail lookup · Batch person detail enrichment · -
+aventure-cli people batch lookup · Batch person list · -
+aventure-cli people blog-posts create · Create one person blog post · --person-id --source-type --source-detail
+aventure-cli people blog-posts delete · Delete one person blog post · --person-id --blog-post-id --source-type --source-detail
+aventure-cli people blog-posts get · Get person blog post · --person-id --blog-post-id
+aventure-cli people blog-posts list · List person blog posts · --person-id
+aventure-cli people blog-posts replace · Replace one person blog post · --person-id --blog-post-id --source-type --source-detail
+aventure-cli people blog-posts update · Patch one person blog post · --person-id --blog-post-id --source-type --source-detail
+aventure-cli people by-slug blog-posts list · List person blog posts · --person-slug
+aventure-cli people content list · List person content · --person-id
+aventure-cli people content search · Search person content · --person-id --query
+aventure-cli people crawl-runs delete · Delete a person crawl-run capture · -
+aventure-cli people crawl-runs get · Get or trigger a person crawl run · -
+aventure-cli people crawl-runs status · Get a person crawl-run job status · --job-id
+aventure-cli people crawl-runs update · Force a person crawl run · -
+aventure-cli people create · Create person · --source-type --source-detail
+aventure-cli people delete · Delete person · --source-type --source-detail
+aventure-cli people duplicate-check candidates list · Score person duplicate candidates (GET) · -
+aventure-cli people duplicate-check candidates lookup · Score person duplicate candidates · -
+aventure-cli people duplicate-check get · Review person duplicate gates (GET) · -
+aventure-cli people duplicate-check lookup · Review person duplicate gates · -
+aventure-cli people entities corporate-title delete · Clear corporate title on an entity person association · --person-id --association-id --source-type --source-detail
+aventure-cli people entities create · Create entity person association · --person-id --source-type --source-detail
+aventure-cli people entities delete · Delete entity person association · --person-id --association-id --source-type --source-detail
+aventure-cli people entities get · Get person entity association · --person-id --association-id
+aventure-cli people entities list · List person entity associations · --person-id
+aventure-cli people entities replace · Replace entity person association · --person-id --association-id --source-type --source-detail
+aventure-cli people entities update · Patch entity person association · --person-id --association-id --source-type --source-detail
+aventure-cli people filters list · List person filter options · -
+aventure-cli people filters lookup · People filters (POST) · -
+aventure-cli people filters search get · Search people filter options · --filter-key --search
+aventure-cli people get · Get person detail · -
+aventure-cli people graph get · Get person graph · --person-id
+aventure-cli people investments list · Get person investments · -
+aventure-cli people investor-activity get · Get person investor activity · -
+aventure-cli people list · List or search people · -
+aventure-cli people merge · Merge two duplicate people · --source-type --source-detail --create-slug-redirect --delete-mode --loser-id --survivor-id
+aventure-cli people news create · Create news article for person · --source-type --source-detail
+aventure-cli people news delete · Delete news article for person · --news-id --source-type --source-detail
+aventure-cli people news list · List news joined to a person · -
+aventure-cli people news replace · Replace news article for person · --news-id --source-type --source-detail
+aventure-cli people news update · Patch news article for person · --news-id --source-type --source-detail
+aventure-cli people replace · Replace person · --source-type --source-detail
+aventure-cli people repositories list · List person repositories · --person-id
+aventure-cli people repositories update · Sync person repositories from GitHub · --person-id
+aventure-cli people search · List people (POST) · -
+aventure-cli people similar list · List people similar to one person · -
+aventure-cli people slug get · Get person slug · --person-id
+aventure-cli people slug redirects delete · Delete person slug redirect · --person-id --redirect-id --source-type --source-detail
+aventure-cli people slug redirects list · List person slug redirects · --person-id
+aventure-cli people slug update · Change person slug · --person-id --source-type --source-detail
+aventure-cli people texts create · Create one person text row · --person-id --source-type --source-detail
+aventure-cli people texts delete · Delete one person text row · --person-id --text-id --source-type --source-detail
+aventure-cli people texts get · Get one person text row · --person-id --text-id
+aventure-cli people texts list · List person text rows · --person-id
+aventure-cli people texts replace · Replace one person text row · --person-id --text-id --source-type --source-detail
+aventure-cli people texts types list · List person text types · -
+aventure-cli people texts update · Patch one person text row · --person-id --text-id --source-type --source-detail
+aventure-cli people unique-ids create · Attach a unique id to a person · --person-id --source-type --source-detail
+aventure-cli people unique-ids delete · Delete a person unique id · --person-id --unique-id-id --source-type --source-detail
+aventure-cli people unique-ids get · Get a person unique id · --person-id --unique-id-id
+aventure-cli people unique-ids list · List a person's unique ids · --person-id
+aventure-cli people update · Patch person · --source-type --source-detail
+aventure-cli people urls all list · List all person URLs · --person-id
+aventure-cli people urls create · Create one person URL · --person-id --source-type --source-detail
+aventure-cli people urls delete · Delete one person URL · --person-id --url-id --source-type --source-detail
+aventure-cli people urls get · Get one person URL · --person-id --url-id
+aventure-cli people urls list · List person URLs · --person-id
+aventure-cli people urls replace · Replace one person URL · --person-id --url-id --source-type --source-detail
+aventure-cli people urls types list · List person URL types · -
+aventure-cli people urls update · Patch one person URL · --person-id --url-id --source-type --source-detail
+aventure-cli provenance history list · Provenance history for a record · --table-name
+aventure-cli provenance latest get · Latest data source for a record · --table-name
+aventure-cli provenance status update · Update provenance status · --provenance-id --status
+aventure-cli resolve get · Resolve any identifier to its owner · --token
+aventure-cli search all · Search entities, people, and news · --query
+aventure-cli search entities · Find companies, startups, and other entities with natural language · --query
+aventure-cli search news · Search news articles with a JSON filter body · -
+aventure-cli search people · Find people with natural language · --query
+aventure-cli search web · Search the live web · --search
+aventure-cli search web get · Get one stored web search by document id · --document-id
+aventure-cli sec company get · Preview a public company from SEC EDGAR · -
+aventure-cli sec entities address attach · Attach a company's SEC headquarters address to an entity · --entity-id --source-type --source-detail
+aventure-cli sec entities aliases attach · Add a company's SEC legal and former names as entity aliases · --entity-id --source-type --source-detail
+aventure-cli sec entities exchange-urls attach · Attach a company's SEC exchange listing URLs to an entity · --entity-id --source-type --source-detail
+aventure-cli sec entities identifiers attach · Attach a company's SEC identifiers to an entity · --entity-id --source-type --source-detail
+aventure-cli status · Get system uptime · -
+aventure-cli unique-ids lookup get · Resolve an identifier to its owner(s) · --id-type --identifier
+aventure-cli unique-ids types list · List unique-id types · -

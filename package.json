@@ -1,6 +1,6 @@
 {
   "name": "@aventurevc/aventure-cli",
-  "version": "0.7.256",
+  "version": "0.7.255",
   "private": false,
   "description": "Public aVenture CLI.",
   "license": "Apache-2.0",
@@ -9,13 +9,23 @@
     "url": "git+https://github.com/aventurevc/aventure-cli.git"
   },
   "type": "module",
+  "bin": {
+    "aventure": "dist/aventure-cli/index.js",
+    "aventure-cli": "dist/aventure-cli/index.js"
+  },
   "files": [
-    "dist",
+    "dist/aventure-cli/index.js",
+    "dist/aventure-cli/command-catalog.compact.txt",
+    "dist/aventure-cli/unified-operations.json",
+    "dist/chunks/*.js",
     "README.md"
   ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "optionalDependencies": {
+    "@napi-rs/keyring": "1.3.0"
   },
   "scripts": {},
   "engines": {
