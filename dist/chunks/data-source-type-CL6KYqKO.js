@@ -1,4 +1,4 @@
-//#region ../../../../node_modules/zod/v4/core/core.js
+//#region ../node_modules/zod/v4/core/core.js
 var _a$1;
 function $constructor(name, initializer, params) {
 	function init(inst, def) {
@@ -57,7 +57,7 @@ function config(newConfig) {
 	return globalConfig;
 }
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/util.js
+//#region ../node_modules/zod/v4/core/util.js
 function getEnumValues(entries) {
 	const numericValues = Object.values(entries).filter((v) => typeof v === "number");
 	return Object.entries(entries).filter(([k, _]) => numericValues.indexOf(+k) === -1).map(([_, v]) => v);
@@ -371,7 +371,7 @@ function issue(...args) {
 	return { ...iss };
 }
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/errors.js
+//#region ../node_modules/zod/v4/core/errors.js
 var initializer$1 = (inst, def) => {
 	inst.name = "$ZodError";
 	Object.defineProperty(inst, "_zod", {
@@ -431,7 +431,7 @@ function formatError(error, mapper = (issue) => issue.message) {
 	return fieldErrors;
 }
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/parse.js
+//#region ../node_modules/zod/v4/core/parse.js
 var _parse = (_Err) => (schema, value, _ctx, _params) => {
 	const ctx = _ctx ? {
 		..._ctx,
@@ -547,7 +547,7 @@ var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
 	return _safeParseAsync(_Err)(schema, value, _ctx);
 };
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/regexes.js
+//#region ../node_modules/zod/v4/core/regexes.js
 /**
 * @deprecated CUID v1 is deprecated by its authors due to information leakage
 * (timestamps embedded in the id). Use {@link cuid2} instead.
@@ -612,7 +612,7 @@ var _null$2 = /^null$/i;
 var lowercase = /^[^A-Z]*$/;
 var uppercase = /^[^a-z]*$/;
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/checks.js
+//#region ../node_modules/zod/v4/core/checks.js
 var $ZodCheck = /*@__PURE__*/ $constructor("$ZodCheck", (inst, def) => {
 	var _a;
 	inst._zod ?? (inst._zod = {});
@@ -970,7 +970,7 @@ var $ZodCheckOverwrite = /*@__PURE__*/ $constructor("$ZodCheckOverwrite", (inst,
 	};
 });
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/doc.js
+//#region ../node_modules/zod/v4/core/doc.js
 var Doc = class {
 	constructor(args = []) {
 		this.content = [];
@@ -1001,14 +1001,14 @@ var Doc = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/versions.js
+//#region ../node_modules/zod/v4/core/versions.js
 var version = {
 	major: 4,
 	minor: 4,
 	patch: 3
 };
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/schemas.js
+//#region ../node_modules/zod/v4/core/schemas.js
 var $ZodType = /*@__PURE__*/ $constructor("$ZodType", (inst, def) => {
 	var _a;
 	inst ?? (inst = {});
@@ -2328,7 +2328,7 @@ function handleRefineResult(result, payload, input, inst) {
 	}
 }
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/registries.js
+//#region ../node_modules/zod/v4/core/registries.js
 var _a;
 var $ZodRegistry = class {
 	constructor() {
@@ -2375,7 +2375,7 @@ function registry() {
 (_a = globalThis).__zod_globalRegistry ?? (_a.__zod_globalRegistry = registry());
 var globalRegistry = globalThis.__zod_globalRegistry;
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/api.js
+//#region ../node_modules/zod/v4/core/api.js
 // @__NO_SIDE_EFFECTS__
 function _string(Class, params) {
 	return new Class({
@@ -2898,7 +2898,7 @@ function _check(fn, params) {
 	return ch;
 }
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/to-json-schema.js
+//#region ../node_modules/zod/v4/core/to-json-schema.js
 function initializeContext(params) {
 	let target = params?.target ?? "draft-2020-12";
 	if (target === "draft-4") target = "draft-04";
@@ -3191,7 +3191,7 @@ var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) =
 	return finalize(ctx, schema);
 };
 //#endregion
-//#region ../../../../node_modules/zod/v4/core/json-schema-processors.js
+//#region ../node_modules/zod/v4/core/json-schema-processors.js
 var formatMap = {
 	guid: "uuid",
 	url: "uri",
@@ -3643,7 +3643,7 @@ function toJSONSchema(input, params) {
 	return finalize(ctx, input);
 }
 //#endregion
-//#region ../../../../node_modules/zod/v4/classic/iso.js
+//#region ../node_modules/zod/v4/classic/iso.js
 var ZodISODateTime = /*@__PURE__*/ $constructor("ZodISODateTime", (inst, def) => {
 	$ZodISODateTime.init(inst, def);
 	ZodStringFormat.init(inst, def);
@@ -3673,7 +3673,7 @@ function duration(params) {
 	return /* @__PURE__ */ _isoDuration(ZodISODuration, params);
 }
 //#endregion
-//#region ../../../../node_modules/zod/v4/classic/errors.js
+//#region ../node_modules/zod/v4/classic/errors.js
 var initializer = (inst, issues) => {
 	$ZodError.init(inst, issues);
 	inst.name = "ZodError";
@@ -3695,7 +3695,7 @@ var initializer = (inst, issues) => {
 };
 var ZodRealError = /*@__PURE__*/ $constructor("ZodError", initializer, { Parent: Error });
 //#endregion
-//#region ../../../../node_modules/zod/v4/classic/parse.js
+//#region ../node_modules/zod/v4/classic/parse.js
 var parse = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse = /* @__PURE__ */ _safeParse(ZodRealError);
@@ -3709,7 +3709,7 @@ var safeDecode = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 //#endregion
-//#region ../../../../node_modules/zod/v4/classic/schemas.js
+//#region ../node_modules/zod/v4/classic/schemas.js
 var _installedGroups = /* @__PURE__ */ new WeakMap();
 function _installLazyMethods(inst, group, methods) {
 	const proto = Object.getPrototypeOf(inst);
@@ -4567,7 +4567,7 @@ function preprocess(fn, schema) {
 	});
 }
 //#endregion
-//#region ../public-surface/api-schemas/dist/entity/type.js
+//#region ../api-schemas/dist/entity/type.js
 /**
 * Canonical entity classification for the organization, product, and service records stored in the entity domain.
 *
@@ -4580,6 +4580,7 @@ function preprocess(fn, schema) {
 * @usedBySchema EntityFilterSchema
 * @usedBySchema EntityPersonAssociationSchema
 * @usedBySchema EntitySchema
+* @usedBySchema EntitySitemapUrlSchema
 * @usedBySchema EntityTypeCountSchema
 * @usedBySchema EntityTypeGroupMembershipSchema
 * @usedBySchema NewsResolvedEntityLinkSchema
@@ -4601,22 +4602,27 @@ var EntityTypeSchema = _enum([
 	"Service"
 ]);
 //#endregion
-//#region ../public-surface/api-schemas/dist/entity/person-owner.js
+//#region ../api-schemas/dist/entity/person-owner.js
 /**
 * Exactly one of entityId or personId is set; ids only, no name fields. Resolve display names with GET /v1/entities/detail or GET /v1/people/detail.
 *
 * @openapiSchema EntityPersonOwner
 * @standardProblemResponse
+* @usedBySchema AddressLookupContextSchema
 * @usedBySchema BlogPostSchema
+* @usedBySchema CrawlRunSchema
 * @usedBySchema EntityFundraiseInvestorJoinSchema
 * @usedBySchema EntityTextSchema
 * @usedBySchema EntityUrlLinkSchema
+* @usedBySchema ExternalSocialPostMutationSchema
+* @usedBySchema ExternalSocialPostSchema
 * @usedBySchema MediaCrawlScreenshotSchema
 * @usedBySchema NewsFilterSchema
 * @usedBySchema ResolvedHandleSchema
 * @usedBySchema UniqueIdSchema
 * @usedBySchema UrlDuplicateConflictSchema
 * @usedBySchema UrlDuplicateJoinSchema
+* @usedBySchema WebSiteSchema
 * @contractShape entity.person-owner
 * @contractRole canonical
 * @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/identity/EntityPersonOwner.kt
@@ -4628,6 +4634,59 @@ var EntityPersonOwnerSchema = object({
 	personId: uuid().nullish()
 });
 //#endregion
-export { parse$1 as A, unknown as C, toJSONSchema as D, datetime as E, defineLazy as F, normalizeParams as I, $constructor as L, safeParse$1 as M, safeParseAsync$1 as N, $ZodObject as O, clone as P, union as S, date as T, optional as _, _null as a, strictObject as b, custom as c, intersection as d, lazy as f, object as g, number as h, _enum as i, parseAsync$1 as j, $ZodType as k, discriminatedUnion as l, looseObject as m, EntityTypeSchema as n, array as o, literal as p, ZodOptional as r, boolean as s, EntityPersonOwnerSchema as t, int as u, preprocess as v, uuid as w, string as x, record as y };
+//#region ../api-schemas/dist/datasource/data-source-type.js
+/**
+* Full read/storage source type for field-level provenance rows. Write query parameters use DatasourceWritableDataSourceType.
+*
+* @openapiSchema DatasourceDataSourceType
+* @endpoint GET /v1/entities
+* @endpoint GET /v1/entities/detail
+* @endpoint GET /v1/entities/detail/investors
+* @endpoint GET /v1/entities/detail/similar
+* @endpoint GET /v1/provenance/history
+* @endpoint GET /v1/search/link
+* @endpoint GET /v1/entities/{entityId}/products/suggestions
+* @endpoint GET /v1/entities/{entityId}/relationships/suggestions
+* @endpoint GET /v1/entities/{entityId}/research
+* @endpoint GET /v1/entities/{entityId}/research/details
+* @endpoint GET /v1/entities/{entityId}/research/details/{detailId}
+* @endpoint GET /v1/entities/{entityId}/research/snippets
+* @endpoint GET /v1/entities/{entityId}/research/snippets/{snippetId}
+* @endpoint POST /v1/entities
+* @endpoint POST /v1/entities/{entityId}/research/details
+* @endpoint POST /v1/entities/{entityId}/research/snippets
+* @endpoint POST /v1/entities/batch
+* @endpoint POST /v1/entities/detail
+* @endpoint POST /v1/entities/detail/batch
+* @endpoint POST /v1/entities/detail/full
+* @endpoint POST /v1/entities/detail/resolve
+* @endpoint POST /v1/entities/natural-search
+* @endpoint POST /v1/search/all
+* @endpoint PATCH /v1/entities/detail
+* @endpoint PUT /v1/entities/{entityId}/research/details/{detailId}
+* @endpoint PUT /v1/entities/{entityId}/research/snippets/{snippetId}
+* @endpoint PUT /v1/entities/detail
+* @endpoint DELETE /v1/entities/{entityId}/research/details/{detailId}
+* @endpoint DELETE /v1/entities/{entityId}/research/snippets/{snippetId}
+* @usedBySchema DatasourceProvenanceSourceSchema
+* @contractShape datasource.data-source-type
+* @contractRole canonical
+* @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/datasource/Provenance.kt
+*/
+var DatasourceDataSourceTypeSchema = _enum([
+	"requestChangeForm",
+	"newsArticle",
+	"blogArticle",
+	"firstPartyWebsite",
+	"relatedPartyWebsite",
+	"thirdPartyWebsite",
+	"llm",
+	"aventureStaff",
+	"api",
+	"manual",
+	"import"
+]);
+//#endregion
+export { $ZodType as A, union as C, datetime as D, date as E, clone as F, defineLazy as I, normalizeParams as L, parseAsync$1 as M, safeParse$1 as N, toJSONSchema as O, safeParseAsync$1 as P, $constructor as R, string as S, uuid as T, object as _, _enum as a, record as b, boolean as c, int as d, intersection as f, number as g, looseObject as h, ZodOptional as i, parse$1 as j, $ZodObject as k, custom as l, literal as m, EntityPersonOwnerSchema as n, _null as o, lazy as p, EntityTypeSchema as r, array as s, DatasourceDataSourceTypeSchema as t, discriminatedUnion as u, optional as v, unknown as w, strictObject as x, preprocess as y };
 
-//# sourceMappingURL=person-owner-SCRzKmpo.js.map
+//# sourceMappingURL=data-source-type-CL6KYqKO.js.map

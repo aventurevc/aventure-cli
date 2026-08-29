@@ -2,6 +2,21 @@ aventure-cli agents help reindex create · Reindex the agent-help corpus · -
 aventure-cli agents instructions get · Get one agent instruction document · --kind --name
 aventure-cli agents instructions list · Get the agent instruction manifest · -
 aventure-cli agents instructions versions get · Get one agent instruction document version · --kind --name --version
+aventure-cli app saved-lists create · Create saved list · --title
+aventure-cli app saved-lists delete · Delete saved list · --saved-list-id
+aventure-cli app saved-lists entities add · Add saved-list entities · --saved-list-id --entity-id
+aventure-cli app saved-lists entities remove · Remove saved-list entities · --saved-list-id --entity-id
+aventure-cli app saved-lists get · Get saved list · --saved-list-id
+aventure-cli app saved-lists list · List saved lists · -
+aventure-cli app saved-lists people add · Add saved-list people · --saved-list-id --person-id
+aventure-cli app saved-lists people remove · Remove saved-list people · --saved-list-id --person-id
+aventure-cli app saved-lists update · Update saved list (RFC 7396 merge patch) · --saved-list-id
+aventure-cli app saved-views create · Create saved view · -
+aventure-cli app saved-views delete · Delete saved view · --saved-view-id
+aventure-cli app saved-views get · Get saved view · --saved-view-id
+aventure-cli app saved-views list · List saved views · -
+aventure-cli app saved-views update · Update saved view (RFC 7396 merge patch) · --saved-view-id
+aventure-cli auth users create · Create auto-confirmed auth user · --email --metadata-user-type --password
 aventure-cli billing checkout-sessions create · Create or recover a hosted Checkout Session · --plan
 aventure-cli billing portal-sessions create · Create a hosted Billing Portal Session · -
 aventure-cli billing subscription get · Read the current billing subscription · -
@@ -33,8 +48,8 @@ aventure-cli entities addresses create · Create entity address · --entity-id -
 aventure-cli entities addresses delete · Delete entity address · --entity-id --address-join-id --source-type --source-detail
 aventure-cli entities addresses get · Get a single entity address join row · --entity-id --address-join-id
 aventure-cli entities addresses list · List entity addresses · --entity-id
-aventure-cli entities addresses replace · Update entity address and join flags · --entity-id --address-join-id --source-type --source-detail
-aventure-cli entities addresses update · Merge-patch entity address and join flags · --entity-id --address-join-id --source-type --source-detail
+aventure-cli entities addresses replace · Update entity address association · --entity-id --address-join-id --source-type --source-detail
+aventure-cli entities addresses update · Merge-patch entity address association · --entity-id --address-join-id --source-type --source-detail
 aventure-cli entities batch detail lookup · Batch entity detail retrieval (POST) · -
 aventure-cli entities batch lookup · Batch entity list · -
 aventure-cli entities blog-posts create · Create one entity blog post · --entity-id --source-type --source-detail
@@ -220,6 +235,8 @@ aventure-cli people addresses create · Create person address · --person-id --s
 aventure-cli people addresses delete · Delete person address · --person-id --address-join-id --source-type --source-detail
 aventure-cli people addresses get · Get person address · --person-id --address-join-id
 aventure-cli people addresses list · List person addresses · --person-id
+aventure-cli people addresses replace · Update person address association · --person-id --address-join-id --source-type --source-detail
+aventure-cli people addresses update · Merge-patch person address association · --person-id --address-join-id --source-type --source-detail
 aventure-cli people batch detail lookup · Batch person detail enrichment · -
 aventure-cli people batch lookup · Batch person list · -
 aventure-cli people blog-posts create · Create one person blog post · --person-id --source-type --source-detail
@@ -297,6 +314,7 @@ aventure-cli provenance status update · Update provenance status · --provenanc
 aventure-cli resolve get · Resolve any identifier to its owner · --token
 aventure-cli search all · Search entities, people, and news · --query
 aventure-cli search entities · Find companies, startups, and other entities with natural language · --query
+aventure-cli search link get · Search from a shared article or page URL · --url
 aventure-cli search news · Search news articles with a JSON filter body · -
 aventure-cli search people · Find people with natural language · --query
 aventure-cli search web · Search the live web · --search

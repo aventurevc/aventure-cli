@@ -1,4 +1,4 @@
-import { C as unknown, E as datetime, S as union, a as _null, f as lazy, g as object, h as number, i as _enum, n as EntityTypeSchema, o as array, s as boolean, t as EntityPersonOwnerSchema, u as int, w as uuid, x as string, y as record } from "./person-owner-SCRzKmpo.js";
+import { C as union, D as datetime, S as string, T as uuid, _ as object, a as _enum, b as record, c as boolean, d as int, g as number, n as EntityPersonOwnerSchema, o as _null, p as lazy, r as EntityTypeSchema, s as array, w as unknown } from "./data-source-type-CL6KYqKO.js";
 import { createRequire } from "node:module";
 import childProcess, { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -57,7 +57,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 var __toCommonJS = (mod) => __hasOwnProp.call(mod, "module.exports") ? mod["module.exports"] : __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var __require = /* #__PURE__ */ (() => createRequire(import.meta.url))();
 //#endregion
-//#region ../public-surface/api-schemas/dist/http/json-value.js
+//#region ../api-schemas/dist/http/json-value.js
 /**
 * @usedByEndpoint none:external-root
 * @shared primitive:single reusable JSON value helper; not direct because valid OpenAPI unconstrained value positions require a generated recursive value schema
@@ -246,7 +246,7 @@ var logs = class LogsAPI {
 	}
 }.getInstance();
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/OTLPExporterBase.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/OTLPExporterBase.js
 var OTLPExporterBase = class {
 	_delegate;
 	constructor(delegate) {
@@ -271,7 +271,7 @@ var OTLPExporterBase = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/types.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/types.js
 /**
 * Interface for handling error
 */
@@ -286,7 +286,7 @@ var OTLPExporterError = class extends Error {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/shared-configuration.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/shared-configuration.js
 function validateTimeoutMillis(timeoutMillis) {
 	if (Number.isFinite(timeoutMillis) && timeoutMillis > 0) return timeoutMillis;
 	throw new Error(`Configuration: timeoutMillis is invalid, expected number greater than 0 (actual: '${timeoutMillis}')`);
@@ -315,7 +315,7 @@ function getSharedConfigurationDefaults() {
 	};
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/bounded-queue-export-promise-handler.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/bounded-queue-export-promise-handler.js
 var BoundedQueueExportPromiseHandler = class {
 	_concurrencyLimit;
 	_sendingPromises = [];
@@ -349,13 +349,13 @@ function createBoundedQueueExportPromiseHandler(options) {
 	return new BoundedQueueExportPromiseHandler(options.concurrencyLimit);
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/version.js
+//#region ../node_modules/@opentelemetry/api/build/esm/version.js
 var VERSION$4;
 var init_version$1 = __esmMin((() => {
 	VERSION$4 = "1.9.1";
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/internal/semver.js
+//#region ../node_modules/@opentelemetry/api/build/esm/internal/semver.js
 /**
 * Create a function to test an API version to see if it is compatible with the provided ownVersion.
 *
@@ -422,7 +422,7 @@ var init_semver = __esmMin((() => {
 	isCompatible = _makeCompatibilityCheck(VERSION$4);
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/internal/global-utils.js
+//#region ../node_modules/@opentelemetry/api/build/esm/internal/global-utils.js
 function registerGlobal(type, instance, diag, allowOverride = false) {
 	var _a;
 	const api = _global[GLOBAL_OPENTELEMETRY_API_KEY] = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) !== null && _a !== void 0 ? _a : { version: VERSION$4 };
@@ -460,7 +460,7 @@ var init_global_utils = __esmMin((() => {
 	_global = typeof globalThis === "object" ? globalThis : typeof self === "object" ? self : typeof window === "object" ? window : typeof global === "object" ? global : {};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/diag/ComponentLogger.js
+//#region ../node_modules/@opentelemetry/api/build/esm/diag/ComponentLogger.js
 function logProxy(funcName, namespace, args) {
 	const logger = getGlobal("diag");
 	if (!logger) return;
@@ -491,7 +491,7 @@ var init_ComponentLogger = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/diag/types.js
+//#region ../node_modules/@opentelemetry/api/build/esm/diag/types.js
 var DiagLogLevel;
 var init_types = __esmMin((() => {
 	(function(DiagLogLevel) {
@@ -515,7 +515,7 @@ var init_types = __esmMin((() => {
 	})(DiagLogLevel || (DiagLogLevel = {}));
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/diag/internal/logLevelLogger.js
+//#region ../node_modules/@opentelemetry/api/build/esm/diag/internal/logLevelLogger.js
 function createLogLevelDiagLogger(maxLevel, logger) {
 	if (maxLevel < DiagLogLevel.NONE) maxLevel = DiagLogLevel.NONE;
 	else if (maxLevel > DiagLogLevel.ALL) maxLevel = DiagLogLevel.ALL;
@@ -537,7 +537,7 @@ var init_logLevelLogger = __esmMin((() => {
 	init_types();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/api/diag.js
+//#region ../node_modules/@opentelemetry/api/build/esm/api/diag.js
 var API_NAME$4, DiagAPI;
 var init_diag = __esmMin((() => {
 	init_ComponentLogger();
@@ -597,7 +597,7 @@ var init_diag = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/baggage/internal/baggage-impl.js
+//#region ../node_modules/@opentelemetry/api/build/esm/baggage/internal/baggage-impl.js
 var BaggageImpl;
 var init_baggage_impl = __esmMin((() => {
 	BaggageImpl = class BaggageImpl {
@@ -633,13 +633,13 @@ var init_baggage_impl = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/baggage/internal/symbol.js
+//#region ../node_modules/@opentelemetry/api/build/esm/baggage/internal/symbol.js
 var baggageEntryMetadataSymbol;
 var init_symbol = __esmMin((() => {
 	baggageEntryMetadataSymbol = Symbol("BaggageEntryMetadata");
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/baggage/utils.js
+//#region ../node_modules/@opentelemetry/api/build/esm/baggage/utils.js
 /**
 * Create a new Baggage with optional entries
 *
@@ -675,7 +675,7 @@ var init_utils$4 = __esmMin((() => {
 	diag$1 = DiagAPI.instance();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/context/context.js
+//#region ../node_modules/@opentelemetry/api/build/esm/context/context.js
 /**
 * Get a key to uniquely identify a context value
 *
@@ -711,7 +711,7 @@ var init_context$1 = __esmMin((() => {
 	ROOT_CONTEXT = new BaseContext();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/diag/consoleLogger.js
+//#region ../node_modules/@opentelemetry/api/build/esm/diag/consoleLogger.js
 var consoleMap, _originalConsoleMethods, DiagConsoleLogger;
 var init_consoleLogger = __esmMin((() => {
 	consoleMap = [
@@ -765,7 +765,7 @@ var init_consoleLogger = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/metrics/NoopMeter.js
+//#region ../node_modules/@opentelemetry/api/build/esm/metrics/NoopMeter.js
 /**
 * Create a no-op Meter
 *
@@ -859,7 +859,7 @@ var init_NoopMeter = __esmMin((() => {
 	NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC = new NoopObservableUpDownCounterMetric();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/metrics/Metric.js
+//#region ../node_modules/@opentelemetry/api/build/esm/metrics/Metric.js
 var ValueType;
 var init_Metric = __esmMin((() => {
 	(function(ValueType) {
@@ -868,7 +868,7 @@ var init_Metric = __esmMin((() => {
 	})(ValueType || (ValueType = {}));
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/propagation/TextMapPropagator.js
+//#region ../node_modules/@opentelemetry/api/build/esm/propagation/TextMapPropagator.js
 var defaultTextMapGetter, defaultTextMapSetter;
 var init_TextMapPropagator = __esmMin((() => {
 	defaultTextMapGetter = {
@@ -887,7 +887,7 @@ var init_TextMapPropagator = __esmMin((() => {
 	} };
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/context/NoopContextManager.js
+//#region ../node_modules/@opentelemetry/api/build/esm/context/NoopContextManager.js
 var NoopContextManager;
 var init_NoopContextManager = __esmMin((() => {
 	init_context$1();
@@ -910,7 +910,7 @@ var init_NoopContextManager = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/api/context.js
+//#region ../node_modules/@opentelemetry/api/build/esm/api/context.js
 var API_NAME$3, NOOP_CONTEXT_MANAGER, ContextAPI;
 var init_context = __esmMin((() => {
 	init_NoopContextManager();
@@ -971,7 +971,7 @@ var init_context = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/trace_flags.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/trace_flags.js
 var TraceFlags;
 var init_trace_flags = __esmMin((() => {
 	(function(TraceFlags) {
@@ -982,7 +982,7 @@ var init_trace_flags = __esmMin((() => {
 	})(TraceFlags || (TraceFlags = {}));
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/invalid-span-constants.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/invalid-span-constants.js
 var INVALID_SPANID, INVALID_TRACEID, INVALID_SPAN_CONTEXT;
 var init_invalid_span_constants = __esmMin((() => {
 	init_trace_flags();
@@ -995,7 +995,7 @@ var init_invalid_span_constants = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/NonRecordingSpan.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/NonRecordingSpan.js
 var NonRecordingSpan;
 var init_NonRecordingSpan = __esmMin((() => {
 	init_invalid_span_constants();
@@ -1035,7 +1035,7 @@ var init_NonRecordingSpan = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/context-utils.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/context-utils.js
 /**
 * Return the span if one exists
 *
@@ -1094,7 +1094,7 @@ var init_context_utils = __esmMin((() => {
 	SPAN_KEY = createContextKey("OpenTelemetry Context Key SPAN");
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/spancontext-utils.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/spancontext-utils.js
 function isValidHex(id, length) {
 	if (typeof id !== "string" || id.length !== length) return false;
 	let r = 0;
@@ -1242,7 +1242,7 @@ var init_spancontext_utils = __esmMin((() => {
 	]);
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/NoopTracer.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/NoopTracer.js
 function isSpanContext(spanContext) {
 	return spanContext !== null && typeof spanContext === "object" && "spanId" in spanContext && typeof spanContext["spanId"] === "string" && "traceId" in spanContext && typeof spanContext["traceId"] === "string" && "traceFlags" in spanContext && typeof spanContext["traceFlags"] === "number";
 }
@@ -1282,7 +1282,7 @@ var init_NoopTracer = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/ProxyTracer.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/ProxyTracer.js
 var NOOP_TRACER, ProxyTracer;
 var init_ProxyTracer = __esmMin((() => {
 	init_NoopTracer();
@@ -1315,7 +1315,7 @@ var init_ProxyTracer = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/NoopTracerProvider.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/NoopTracerProvider.js
 var NoopTracerProvider;
 var init_NoopTracerProvider = __esmMin((() => {
 	init_NoopTracer();
@@ -1326,7 +1326,7 @@ var init_NoopTracerProvider = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/ProxyTracerProvider.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/ProxyTracerProvider.js
 var NOOP_TRACER_PROVIDER, ProxyTracerProvider;
 var init_ProxyTracerProvider = __esmMin((() => {
 	init_ProxyTracer();
@@ -1357,7 +1357,7 @@ var init_ProxyTracerProvider = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/SamplingResult.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/SamplingResult.js
 var SamplingDecision;
 var init_SamplingResult = __esmMin((() => {
 	(function(SamplingDecision) {
@@ -1379,7 +1379,7 @@ var init_SamplingResult = __esmMin((() => {
 	})(SamplingDecision || (SamplingDecision = {}));
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/span_kind.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/span_kind.js
 var SpanKind;
 var init_span_kind = __esmMin((() => {
 	(function(SpanKind) {
@@ -1410,7 +1410,7 @@ var init_span_kind = __esmMin((() => {
 	})(SpanKind || (SpanKind = {}));
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/status.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/status.js
 var SpanStatusCode;
 var init_status = __esmMin((() => {
 	(function(SpanStatusCode) {
@@ -1430,7 +1430,7 @@ var init_status = __esmMin((() => {
 	})(SpanStatusCode || (SpanStatusCode = {}));
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/internal/tracestate-validators.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/internal/tracestate-validators.js
 /**
 * Key is opaque string up to 256 characters printable. It MUST begin with a
 * lowercase letter, and can only contain lowercase letters a-z, digits 0-9,
@@ -1457,7 +1457,7 @@ var init_tracestate_validators = __esmMin((() => {
 	INVALID_VALUE_COMMA_EQUAL_REGEX$1 = /,|=/;
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/internal/tracestate-impl.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/internal/tracestate-impl.js
 var MAX_TRACE_STATE_ITEMS$1, MAX_TRACE_STATE_LEN$1, LIST_MEMBERS_SEPARATOR$1, LIST_MEMBER_KEY_VALUE_SPLITTER$1, TraceStateImpl;
 var init_tracestate_impl = __esmMin((() => {
 	init_tracestate_validators();
@@ -1515,7 +1515,7 @@ var init_tracestate_impl = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace/internal/utils.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace/internal/utils.js
 /**
 * @since 1.1.0
 */
@@ -1526,21 +1526,21 @@ var init_utils$3 = __esmMin((() => {
 	init_tracestate_impl();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/context-api.js
+//#region ../node_modules/@opentelemetry/api/build/esm/context-api.js
 var context;
 var init_context_api = __esmMin((() => {
 	init_context();
 	context = ContextAPI.getInstance();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/diag-api.js
+//#region ../node_modules/@opentelemetry/api/build/esm/diag-api.js
 var diag;
 var init_diag_api = __esmMin((() => {
 	init_diag();
 	diag = DiagAPI.instance();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/metrics/NoopMeterProvider.js
+//#region ../node_modules/@opentelemetry/api/build/esm/metrics/NoopMeterProvider.js
 var NoopMeterProvider, NOOP_METER_PROVIDER;
 var init_NoopMeterProvider = __esmMin((() => {
 	init_NoopMeter();
@@ -1552,7 +1552,7 @@ var init_NoopMeterProvider = __esmMin((() => {
 	NOOP_METER_PROVIDER = new NoopMeterProvider();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/api/metrics.js
+//#region ../node_modules/@opentelemetry/api/build/esm/api/metrics.js
 var API_NAME$2, MetricsAPI;
 var init_metrics = __esmMin((() => {
 	init_NoopMeterProvider();
@@ -1593,14 +1593,14 @@ var init_metrics = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/metrics-api.js
+//#region ../node_modules/@opentelemetry/api/build/esm/metrics-api.js
 var metrics;
 var init_metrics_api = __esmMin((() => {
 	init_metrics();
 	metrics = MetricsAPI.getInstance();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/propagation/NoopTextMapPropagator.js
+//#region ../node_modules/@opentelemetry/api/build/esm/propagation/NoopTextMapPropagator.js
 var NoopTextMapPropagator;
 var init_NoopTextMapPropagator = __esmMin((() => {
 	NoopTextMapPropagator = class {
@@ -1616,7 +1616,7 @@ var init_NoopTextMapPropagator = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/baggage/context-helpers.js
+//#region ../node_modules/@opentelemetry/api/build/esm/baggage/context-helpers.js
 /**
 * Retrieve the current baggage from the given context
 *
@@ -1658,7 +1658,7 @@ var init_context_helpers = __esmMin((() => {
 	BAGGAGE_KEY = createContextKey("OpenTelemetry Baggage Key");
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/api/propagation.js
+//#region ../node_modules/@opentelemetry/api/build/esm/api/propagation.js
 var API_NAME$1, NOOP_TEXT_MAP_PROPAGATOR, PropagationAPI;
 var init_propagation = __esmMin((() => {
 	init_global_utils();
@@ -1727,14 +1727,14 @@ var init_propagation = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/propagation-api.js
+//#region ../node_modules/@opentelemetry/api/build/esm/propagation-api.js
 var propagation;
 var init_propagation_api = __esmMin((() => {
 	init_propagation();
 	propagation = PropagationAPI.getInstance();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/api/trace.js
+//#region ../node_modules/@opentelemetry/api/build/esm/api/trace.js
 var API_NAME, TraceAPI;
 var init_trace$1 = __esmMin((() => {
 	init_global_utils();
@@ -1791,14 +1791,14 @@ var init_trace$1 = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/trace-api.js
+//#region ../node_modules/@opentelemetry/api/build/esm/trace-api.js
 var trace;
 var init_trace_api = __esmMin((() => {
 	init_trace$1();
 	trace = TraceAPI.getInstance();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/api/build/esm/index.js
+//#region ../node_modules/@opentelemetry/api/build/esm/index.js
 var esm_exports$2 = /* @__PURE__ */ __exportAll({
 	DiagConsoleLogger: () => DiagConsoleLogger,
 	DiagLogLevel: () => DiagLogLevel,
@@ -1861,7 +1861,7 @@ var init_esm$3 = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/trace/suppress-tracing.js
+//#region ../node_modules/@opentelemetry/core/build/esm/trace/suppress-tracing.js
 function suppressTracing(context) {
 	return context.setValue(SUPPRESS_TRACING_KEY, true);
 }
@@ -1881,7 +1881,7 @@ var init_constants = __esmMin((() => {
 	BAGGAGE_MAX_PER_NAME_VALUE_PAIRS = 4096;
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/baggage/utils.js
+//#region ../node_modules/@opentelemetry/core/build/esm/baggage/utils.js
 function serializeKeyPairs(keyPairs) {
 	return keyPairs.reduce((hValue, current) => {
 		const value = `${hValue}${hValue !== "" ? "," : ""}${current}`;
@@ -1966,7 +1966,7 @@ var init_utils$2 = __esmMin((() => {
 	init_constants();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/baggage/propagation/W3CBaggagePropagator.js
+//#region ../node_modules/@opentelemetry/core/build/esm/baggage/propagation/W3CBaggagePropagator.js
 var W3CBaggagePropagator;
 var init_W3CBaggagePropagator = __esmMin((() => {
 	init_esm$3();
@@ -1999,7 +1999,7 @@ var init_W3CBaggagePropagator = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/common/anchored-clock.js
+//#region ../node_modules/@opentelemetry/core/build/esm/common/anchored-clock.js
 var AnchoredClock;
 var init_anchored_clock = __esmMin((() => {
 	AnchoredClock = class {
@@ -2028,7 +2028,7 @@ var init_anchored_clock = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/common/attributes.js
+//#region ../node_modules/@opentelemetry/core/build/esm/common/attributes.js
 function sanitizeAttributes(attributes) {
 	const out = {};
 	if (typeof attributes !== "object" || attributes == null) return out;
@@ -2085,7 +2085,7 @@ var init_attributes = __esmMin((() => {
 	init_esm$3();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/common/logging-error-handler.js
+//#region ../node_modules/@opentelemetry/core/build/esm/common/logging-error-handler.js
 /**
 * Returns a function that logs an error using the provided logger, or a
 * console logger if one was not provided.
@@ -2125,7 +2125,7 @@ var init_logging_error_handler = __esmMin((() => {
 	init_esm$3();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/common/global-error-handler.js
+//#region ../node_modules/@opentelemetry/core/build/esm/common/global-error-handler.js
 /**
 * Set the global error handler
 * @param {ErrorHandler} handler
@@ -2148,7 +2148,7 @@ var init_global_error_handler = __esmMin((() => {
 	delegateHandler = loggingErrorHandler();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/platform/node/environment.js
+//#region ../node_modules/@opentelemetry/core/build/esm/platform/node/environment.js
 /**
 * Retrieves a number from an environment variable.
 * - Returns `undefined` if the environment variable is empty, unset, contains only whitespace, or is not a number.
@@ -2216,19 +2216,19 @@ var init_environment = __esmMin((() => {
 	init_esm$3();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/common/globalThis.js
+//#region ../node_modules/@opentelemetry/core/build/esm/common/globalThis.js
 var _globalThis;
 var init_globalThis = __esmMin((() => {
 	_globalThis = globalThis;
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/version.js
+//#region ../node_modules/@opentelemetry/core/build/esm/version.js
 var VERSION$3;
 var init_version = __esmMin((() => {
 	VERSION$3 = "2.10.0";
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/semantic-conventions/build/esm/internal/utils.js
+//#region ../node_modules/@opentelemetry/semantic-conventions/build/esm/internal/utils.js
 /**
 * Creates a const map from the given values
 * @param values - An array of values to be used as keys and values in the map.
@@ -3012,7 +3012,7 @@ var init_SemanticAttributes = __esmMin((() => {
 	MessageTypeValues = /*#__PURE__*/ createConstMap([TMP_MESSAGETYPEVALUES_SENT, TMP_MESSAGETYPEVALUES_RECEIVED]);
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/semantic-conventions/build/esm/trace/index.js
+//#region ../node_modules/@opentelemetry/semantic-conventions/build/esm/trace/index.js
 var init_trace = __esmMin((() => {
 	init_SemanticAttributes();
 })), TMP_CLOUD_PROVIDER, TMP_CLOUD_ACCOUNT_ID, TMP_CLOUD_REGION, TMP_CLOUD_AVAILABILITY_ZONE, TMP_CLOUD_PLATFORM, TMP_AWS_ECS_CONTAINER_ARN, TMP_AWS_ECS_CLUSTER_ARN, TMP_AWS_ECS_LAUNCHTYPE, TMP_AWS_ECS_TASK_ARN, TMP_AWS_ECS_TASK_FAMILY, TMP_AWS_ECS_TASK_REVISION, TMP_AWS_EKS_CLUSTER_ARN, TMP_AWS_LOG_GROUP_NAMES, TMP_AWS_LOG_GROUP_ARNS, TMP_AWS_LOG_STREAM_NAMES, TMP_AWS_LOG_STREAM_ARNS, TMP_CONTAINER_NAME, TMP_CONTAINER_ID, TMP_CONTAINER_RUNTIME, TMP_CONTAINER_IMAGE_NAME, TMP_CONTAINER_IMAGE_TAG, TMP_DEPLOYMENT_ENVIRONMENT, TMP_DEVICE_ID, TMP_DEVICE_MODEL_IDENTIFIER, TMP_DEVICE_MODEL_NAME, TMP_FAAS_NAME, TMP_FAAS_ID, TMP_FAAS_VERSION, TMP_FAAS_INSTANCE, TMP_FAAS_MAX_MEMORY, TMP_HOST_ID, TMP_HOST_NAME, TMP_HOST_TYPE, TMP_HOST_ARCH, TMP_HOST_IMAGE_NAME, TMP_HOST_IMAGE_ID, TMP_HOST_IMAGE_VERSION, TMP_K8S_CLUSTER_NAME, TMP_K8S_NODE_NAME, TMP_K8S_NODE_UID, TMP_K8S_NAMESPACE_NAME, TMP_K8S_POD_UID, TMP_K8S_POD_NAME, TMP_K8S_CONTAINER_NAME, TMP_K8S_REPLICASET_UID, TMP_K8S_REPLICASET_NAME, TMP_K8S_DEPLOYMENT_UID, TMP_K8S_DEPLOYMENT_NAME, TMP_K8S_STATEFULSET_UID, TMP_K8S_STATEFULSET_NAME, TMP_K8S_DAEMONSET_UID, TMP_K8S_DAEMONSET_NAME, TMP_K8S_JOB_UID, TMP_K8S_JOB_NAME, TMP_K8S_CRONJOB_UID, TMP_K8S_CRONJOB_NAME, TMP_OS_TYPE, TMP_OS_DESCRIPTION, TMP_OS_NAME, TMP_OS_VERSION, TMP_PROCESS_PID, TMP_PROCESS_EXECUTABLE_NAME, TMP_PROCESS_EXECUTABLE_PATH, TMP_PROCESS_COMMAND, TMP_PROCESS_COMMAND_LINE, TMP_PROCESS_COMMAND_ARGS, TMP_PROCESS_OWNER, TMP_PROCESS_RUNTIME_NAME, TMP_PROCESS_RUNTIME_VERSION, TMP_PROCESS_RUNTIME_DESCRIPTION, TMP_SERVICE_NAME, TMP_SERVICE_NAMESPACE, TMP_SERVICE_INSTANCE_ID, TMP_SERVICE_VERSION, TMP_TELEMETRY_SDK_NAME, TMP_TELEMETRY_SDK_LANGUAGE, TMP_TELEMETRY_SDK_VERSION, TMP_TELEMETRY_AUTO_VERSION, TMP_WEBENGINE_NAME, TMP_WEBENGINE_VERSION, TMP_WEBENGINE_DESCRIPTION, SEMRESATTRS_CLOUD_PROVIDER, SEMRESATTRS_CLOUD_ACCOUNT_ID, SEMRESATTRS_CLOUD_REGION, SEMRESATTRS_CLOUD_AVAILABILITY_ZONE, SEMRESATTRS_CLOUD_PLATFORM, SEMRESATTRS_AWS_ECS_CONTAINER_ARN, SEMRESATTRS_AWS_ECS_CLUSTER_ARN, SEMRESATTRS_AWS_ECS_LAUNCHTYPE, SEMRESATTRS_AWS_ECS_TASK_ARN, SEMRESATTRS_AWS_ECS_TASK_FAMILY, SEMRESATTRS_AWS_ECS_TASK_REVISION, SEMRESATTRS_AWS_EKS_CLUSTER_ARN, SEMRESATTRS_AWS_LOG_GROUP_NAMES, SEMRESATTRS_AWS_LOG_GROUP_ARNS, SEMRESATTRS_AWS_LOG_STREAM_NAMES, SEMRESATTRS_AWS_LOG_STREAM_ARNS, SEMRESATTRS_CONTAINER_NAME, SEMRESATTRS_CONTAINER_ID, SEMRESATTRS_CONTAINER_RUNTIME, SEMRESATTRS_CONTAINER_IMAGE_NAME, SEMRESATTRS_CONTAINER_IMAGE_TAG, SEMRESATTRS_DEPLOYMENT_ENVIRONMENT, SEMRESATTRS_DEVICE_ID, SEMRESATTRS_DEVICE_MODEL_IDENTIFIER, SEMRESATTRS_DEVICE_MODEL_NAME, SEMRESATTRS_FAAS_NAME, SEMRESATTRS_FAAS_ID, SEMRESATTRS_FAAS_VERSION, SEMRESATTRS_FAAS_INSTANCE, SEMRESATTRS_FAAS_MAX_MEMORY, SEMRESATTRS_HOST_ID, SEMRESATTRS_HOST_NAME, SEMRESATTRS_HOST_TYPE, SEMRESATTRS_HOST_ARCH, SEMRESATTRS_HOST_IMAGE_NAME, SEMRESATTRS_HOST_IMAGE_ID, SEMRESATTRS_HOST_IMAGE_VERSION, SEMRESATTRS_K8S_CLUSTER_NAME, SEMRESATTRS_K8S_NODE_NAME, SEMRESATTRS_K8S_NODE_UID, SEMRESATTRS_K8S_NAMESPACE_NAME, SEMRESATTRS_K8S_POD_UID, SEMRESATTRS_K8S_POD_NAME, SEMRESATTRS_K8S_CONTAINER_NAME, SEMRESATTRS_K8S_REPLICASET_UID, SEMRESATTRS_K8S_REPLICASET_NAME, SEMRESATTRS_K8S_DEPLOYMENT_UID, SEMRESATTRS_K8S_DEPLOYMENT_NAME, SEMRESATTRS_K8S_STATEFULSET_UID, SEMRESATTRS_K8S_STATEFULSET_NAME, SEMRESATTRS_K8S_DAEMONSET_UID, SEMRESATTRS_K8S_DAEMONSET_NAME, SEMRESATTRS_K8S_JOB_UID, SEMRESATTRS_K8S_JOB_NAME, SEMRESATTRS_K8S_CRONJOB_UID, SEMRESATTRS_K8S_CRONJOB_NAME, SEMRESATTRS_OS_TYPE, SEMRESATTRS_OS_DESCRIPTION, SEMRESATTRS_OS_NAME, SEMRESATTRS_OS_VERSION, SEMRESATTRS_PROCESS_PID, SEMRESATTRS_PROCESS_EXECUTABLE_NAME, SEMRESATTRS_PROCESS_EXECUTABLE_PATH, SEMRESATTRS_PROCESS_COMMAND, SEMRESATTRS_PROCESS_COMMAND_LINE, SEMRESATTRS_PROCESS_COMMAND_ARGS, SEMRESATTRS_PROCESS_OWNER, SEMRESATTRS_PROCESS_RUNTIME_NAME, SEMRESATTRS_PROCESS_RUNTIME_VERSION, SEMRESATTRS_PROCESS_RUNTIME_DESCRIPTION, SEMRESATTRS_SERVICE_NAME, SEMRESATTRS_SERVICE_NAMESPACE, SEMRESATTRS_SERVICE_INSTANCE_ID, SEMRESATTRS_SERVICE_VERSION, SEMRESATTRS_TELEMETRY_SDK_NAME, SEMRESATTRS_TELEMETRY_SDK_LANGUAGE, SEMRESATTRS_TELEMETRY_SDK_VERSION, SEMRESATTRS_TELEMETRY_AUTO_VERSION, SEMRESATTRS_WEBENGINE_NAME, SEMRESATTRS_WEBENGINE_VERSION, SEMRESATTRS_WEBENGINE_DESCRIPTION, SemanticResourceAttributes, TMP_CLOUDPROVIDERVALUES_ALIBABA_CLOUD, TMP_CLOUDPROVIDERVALUES_AWS, TMP_CLOUDPROVIDERVALUES_AZURE, TMP_CLOUDPROVIDERVALUES_GCP, CLOUDPROVIDERVALUES_ALIBABA_CLOUD, CLOUDPROVIDERVALUES_AZURE, CloudProviderValues, TMP_CLOUDPLATFORMVALUES_ALIBABA_CLOUD_ECS, TMP_CLOUDPLATFORMVALUES_ALIBABA_CLOUD_FC, TMP_CLOUDPLATFORMVALUES_AWS_EC2, TMP_CLOUDPLATFORMVALUES_AWS_ECS, TMP_CLOUDPLATFORMVALUES_AWS_EKS, TMP_CLOUDPLATFORMVALUES_AWS_LAMBDA, TMP_CLOUDPLATFORMVALUES_AWS_ELASTIC_BEANSTALK, TMP_CLOUDPLATFORMVALUES_AZURE_VM, TMP_CLOUDPLATFORMVALUES_AZURE_CONTAINER_INSTANCES, TMP_CLOUDPLATFORMVALUES_AZURE_AKS, TMP_CLOUDPLATFORMVALUES_AZURE_FUNCTIONS, TMP_CLOUDPLATFORMVALUES_AZURE_APP_SERVICE, TMP_CLOUDPLATFORMVALUES_GCP_COMPUTE_ENGINE, TMP_CLOUDPLATFORMVALUES_GCP_CLOUD_RUN, TMP_CLOUDPLATFORMVALUES_GCP_KUBERNETES_ENGINE, TMP_CLOUDPLATFORMVALUES_GCP_CLOUD_FUNCTIONS, TMP_CLOUDPLATFORMVALUES_GCP_APP_ENGINE, CLOUDPLATFORMVALUES_ALIBABA_CLOUD_ECS, CLOUDPLATFORMVALUES_ALIBABA_CLOUD_FC, CLOUDPLATFORMVALUES_AWS_EC2, CLOUDPLATFORMVALUES_AWS_ECS, CLOUDPLATFORMVALUES_AWS_EKS, CLOUDPLATFORMVALUES_AWS_LAMBDA, CLOUDPLATFORMVALUES_AWS_ELASTIC_BEANSTALK, CLOUDPLATFORMVALUES_AZURE_VM, CLOUDPLATFORMVALUES_AZURE_CONTAINER_INSTANCES, CLOUDPLATFORMVALUES_AZURE_AKS, CLOUDPLATFORMVALUES_AZURE_FUNCTIONS, CLOUDPLATFORMVALUES_AZURE_APP_SERVICE, CLOUDPLATFORMVALUES_GCP_COMPUTE_ENGINE, CLOUDPLATFORMVALUES_GCP_CLOUD_RUN, CLOUDPLATFORMVALUES_GCP_KUBERNETES_ENGINE, CLOUDPLATFORMVALUES_GCP_CLOUD_FUNCTIONS, CLOUDPLATFORMVALUES_GCP_APP_ENGINE, CloudPlatformValues, TMP_AWSECSLAUNCHTYPEVALUES_EC2, TMP_AWSECSLAUNCHTYPEVALUES_FARGATE, AWSECSLAUNCHTYPEVALUES_FARGATE, AwsEcsLaunchtypeValues, TMP_HOSTARCHVALUES_AMD64, TMP_HOSTARCHVALUES_ARM32, TMP_HOSTARCHVALUES_ARM64, TMP_HOSTARCHVALUES_IA64, TMP_HOSTARCHVALUES_PPC32, TMP_HOSTARCHVALUES_PPC64, TMP_HOSTARCHVALUES_X86, HOSTARCHVALUES_AMD64, HOSTARCHVALUES_ARM32, HOSTARCHVALUES_ARM64, HOSTARCHVALUES_IA64, HOSTARCHVALUES_PPC32, HOSTARCHVALUES_PPC64, HostArchValues, TMP_OSTYPEVALUES_WINDOWS, TMP_OSTYPEVALUES_LINUX, TMP_OSTYPEVALUES_DARWIN, TMP_OSTYPEVALUES_FREEBSD, TMP_OSTYPEVALUES_NETBSD, TMP_OSTYPEVALUES_OPENBSD, TMP_OSTYPEVALUES_DRAGONFLYBSD, TMP_OSTYPEVALUES_HPUX, TMP_OSTYPEVALUES_AIX, TMP_OSTYPEVALUES_SOLARIS, TMP_OSTYPEVALUES_Z_OS, OSTYPEVALUES_WINDOWS, OSTYPEVALUES_LINUX, OSTYPEVALUES_DARWIN, OSTYPEVALUES_FREEBSD, OSTYPEVALUES_NETBSD, OSTYPEVALUES_OPENBSD, OSTYPEVALUES_DRAGONFLYBSD, OSTYPEVALUES_HPUX, OSTYPEVALUES_SOLARIS, OSTYPEVALUES_Z_OS, OsTypeValues, TMP_TELEMETRYSDKLANGUAGEVALUES_CPP, TMP_TELEMETRYSDKLANGUAGEVALUES_DOTNET, TMP_TELEMETRYSDKLANGUAGEVALUES_ERLANG, TMP_TELEMETRYSDKLANGUAGEVALUES_GO, TMP_TELEMETRYSDKLANGUAGEVALUES_JAVA, TMP_TELEMETRYSDKLANGUAGEVALUES_NODEJS, TMP_TELEMETRYSDKLANGUAGEVALUES_PHP, TMP_TELEMETRYSDKLANGUAGEVALUES_PYTHON, TMP_TELEMETRYSDKLANGUAGEVALUES_RUBY, TMP_TELEMETRYSDKLANGUAGEVALUES_WEBJS, TELEMETRYSDKLANGUAGEVALUES_DOTNET, TELEMETRYSDKLANGUAGEVALUES_ERLANG, TELEMETRYSDKLANGUAGEVALUES_JAVA, TELEMETRYSDKLANGUAGEVALUES_NODEJS, TELEMETRYSDKLANGUAGEVALUES_PYTHON, TELEMETRYSDKLANGUAGEVALUES_RUBY, TELEMETRYSDKLANGUAGEVALUES_WEBJS, TelemetrySdkLanguageValues;
@@ -3419,7 +3419,7 @@ var init_SemanticResourceAttributes = __esmMin((() => {
 	]);
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/semantic-conventions/build/esm/resource/index.js
+//#region ../node_modules/@opentelemetry/semantic-conventions/build/esm/resource/index.js
 var init_resource = __esmMin((() => {
 	init_SemanticResourceAttributes();
 })), ATTR_ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_ABORTED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_HANDLED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_SKIPPED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_UNHANDLED, ATTR_ASPNETCORE_DIAGNOSTICS_HANDLER_TYPE, ATTR_ASPNETCORE_RATE_LIMITING_POLICY, ATTR_ASPNETCORE_RATE_LIMITING_RESULT, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_ACQUIRED, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_ENDPOINT_LIMITER, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_GLOBAL_LIMITER, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_REQUEST_CANCELED, ATTR_ASPNETCORE_REQUEST_IS_UNHANDLED, ATTR_ASPNETCORE_ROUTING_IS_FALLBACK, ATTR_ASPNETCORE_ROUTING_MATCH_STATUS, ASPNETCORE_ROUTING_MATCH_STATUS_VALUE_FAILURE, ASPNETCORE_ROUTING_MATCH_STATUS_VALUE_SUCCESS, ATTR_ASPNETCORE_USER_IS_AUTHENTICATED, ATTR_CLIENT_ADDRESS, ATTR_CLIENT_PORT, ATTR_CODE_COLUMN_NUMBER, ATTR_CODE_FILE_PATH, ATTR_CODE_FUNCTION_NAME, ATTR_CODE_LINE_NUMBER, ATTR_CODE_STACKTRACE, ATTR_DB_COLLECTION_NAME, ATTR_DB_NAMESPACE, ATTR_DB_OPERATION_BATCH_SIZE, ATTR_DB_OPERATION_NAME, ATTR_DB_QUERY_SUMMARY, ATTR_DB_QUERY_TEXT, ATTR_DB_RESPONSE_STATUS_CODE, ATTR_DB_STORED_PROCEDURE_NAME, ATTR_DB_SYSTEM_NAME, DB_SYSTEM_NAME_VALUE_MARIADB, DB_SYSTEM_NAME_VALUE_MICROSOFT_SQL_SERVER, DB_SYSTEM_NAME_VALUE_MYSQL, DB_SYSTEM_NAME_VALUE_POSTGRESQL, ATTR_DEPLOYMENT_ENVIRONMENT_NAME, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_DEVELOPMENT, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_PRODUCTION, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_STAGING, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_TEST, ATTR_DOTNET_GC_HEAP_GENERATION, DOTNET_GC_HEAP_GENERATION_VALUE_GEN0, DOTNET_GC_HEAP_GENERATION_VALUE_GEN1, DOTNET_GC_HEAP_GENERATION_VALUE_GEN2, ATTR_ERROR_TYPE$2, ERROR_TYPE_VALUE_OTHER, ATTR_EXCEPTION_ESCAPED, ATTR_EXCEPTION_MESSAGE, ATTR_EXCEPTION_STACKTRACE, ATTR_EXCEPTION_TYPE, ATTR_HTTP_REQUEST_HEADER, ATTR_HTTP_REQUEST_METHOD, HTTP_REQUEST_METHOD_VALUE_OTHER, HTTP_REQUEST_METHOD_VALUE_CONNECT, HTTP_REQUEST_METHOD_VALUE_DELETE, HTTP_REQUEST_METHOD_VALUE_HEAD, HTTP_REQUEST_METHOD_VALUE_OPTIONS, HTTP_REQUEST_METHOD_VALUE_PATCH, HTTP_REQUEST_METHOD_VALUE_POST, HTTP_REQUEST_METHOD_VALUE_TRACE, ATTR_HTTP_REQUEST_METHOD_ORIGINAL, ATTR_HTTP_REQUEST_RESEND_COUNT, ATTR_HTTP_RESPONSE_HEADER, ATTR_HTTP_RESPONSE_STATUS_CODE$1, ATTR_HTTP_ROUTE, ATTR_JVM_GC_ACTION, ATTR_JVM_GC_NAME, ATTR_JVM_MEMORY_POOL_NAME, ATTR_JVM_MEMORY_TYPE, JVM_MEMORY_TYPE_VALUE_HEAP, JVM_MEMORY_TYPE_VALUE_NON_HEAP, ATTR_JVM_THREAD_DAEMON, ATTR_JVM_THREAD_STATE, JVM_THREAD_STATE_VALUE_BLOCKED, JVM_THREAD_STATE_VALUE_RUNNABLE, JVM_THREAD_STATE_VALUE_TERMINATED, JVM_THREAD_STATE_VALUE_TIMED_WAITING, JVM_THREAD_STATE_VALUE_WAITING, ATTR_NETWORK_LOCAL_ADDRESS, ATTR_NETWORK_LOCAL_PORT, ATTR_NETWORK_PEER_ADDRESS, ATTR_NETWORK_PEER_PORT, ATTR_NETWORK_PROTOCOL_NAME, ATTR_NETWORK_PROTOCOL_VERSION, ATTR_NETWORK_TRANSPORT, NETWORK_TRANSPORT_VALUE_PIPE, NETWORK_TRANSPORT_VALUE_QUIC, NETWORK_TRANSPORT_VALUE_UNIX, ATTR_NETWORK_TYPE, NETWORK_TYPE_VALUE_IPV4, NETWORK_TYPE_VALUE_IPV6, ATTR_OTEL_EVENT_NAME, ATTR_OTEL_SCOPE_NAME, ATTR_OTEL_SCOPE_VERSION, ATTR_OTEL_STATUS_CODE, OTEL_STATUS_CODE_VALUE_ERROR, ATTR_OTEL_STATUS_DESCRIPTION, ATTR_SERVER_ADDRESS$1, ATTR_SERVER_PORT$1, ATTR_SERVICE_INSTANCE_ID, ATTR_SERVICE_NAME, ATTR_SERVICE_NAMESPACE, ATTR_SERVICE_VERSION, ATTR_SIGNALR_CONNECTION_STATUS, SIGNALR_CONNECTION_STATUS_VALUE_APP_SHUTDOWN, SIGNALR_CONNECTION_STATUS_VALUE_NORMAL_CLOSURE, SIGNALR_CONNECTION_STATUS_VALUE_TIMEOUT, ATTR_SIGNALR_TRANSPORT, SIGNALR_TRANSPORT_VALUE_LONG_POLLING, SIGNALR_TRANSPORT_VALUE_SERVER_SENT_EVENTS, SIGNALR_TRANSPORT_VALUE_WEB_SOCKETS, ATTR_TELEMETRY_DISTRO_NAME, ATTR_TELEMETRY_DISTRO_VERSION, ATTR_TELEMETRY_SDK_LANGUAGE, TELEMETRY_SDK_LANGUAGE_VALUE_DOTNET, TELEMETRY_SDK_LANGUAGE_VALUE_ERLANG, TELEMETRY_SDK_LANGUAGE_VALUE_JAVA, TELEMETRY_SDK_LANGUAGE_VALUE_NODEJS, TELEMETRY_SDK_LANGUAGE_VALUE_PYTHON, TELEMETRY_SDK_LANGUAGE_VALUE_RUBY, TELEMETRY_SDK_LANGUAGE_VALUE_RUST, TELEMETRY_SDK_LANGUAGE_VALUE_SWIFT, TELEMETRY_SDK_LANGUAGE_VALUE_WEBJS, ATTR_TELEMETRY_SDK_NAME, ATTR_TELEMETRY_SDK_VERSION, ATTR_URL_FRAGMENT, ATTR_URL_FULL, ATTR_URL_PATH, ATTR_URL_QUERY, ATTR_URL_SCHEME, ATTR_USER_AGENT_ORIGINAL;
@@ -3560,7 +3560,7 @@ var init_stable_attributes = __esmMin((() => {
 	ATTR_USER_AGENT_ORIGINAL = "user_agent.original";
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/semantic-conventions/build/esm/stable_metrics.js
+//#region ../node_modules/@opentelemetry/semantic-conventions/build/esm/stable_metrics.js
 var METRIC_ASPNETCORE_DIAGNOSTICS_EXCEPTIONS, METRIC_ASPNETCORE_RATE_LIMITING_ACTIVE_REQUEST_LEASES, METRIC_ASPNETCORE_RATE_LIMITING_QUEUED_REQUESTS, METRIC_ASPNETCORE_RATE_LIMITING_REQUEST_TIME_IN_QUEUE, METRIC_ASPNETCORE_RATE_LIMITING_REQUEST_LEASE_DURATION, METRIC_ASPNETCORE_RATE_LIMITING_REQUESTS, METRIC_ASPNETCORE_ROUTING_MATCH_ATTEMPTS, METRIC_DB_CLIENT_OPERATION_DURATION, METRIC_DOTNET_ASSEMBLY_COUNT, METRIC_DOTNET_EXCEPTIONS, METRIC_DOTNET_GC_COLLECTIONS, METRIC_DOTNET_GC_HEAP_TOTAL_ALLOCATED, METRIC_DOTNET_GC_LAST_COLLECTION_HEAP_FRAGMENTATION_SIZE, METRIC_DOTNET_GC_LAST_COLLECTION_HEAP_SIZE, METRIC_DOTNET_GC_LAST_COLLECTION_MEMORY_COMMITTED_SIZE, METRIC_DOTNET_GC_PAUSE_TIME, METRIC_DOTNET_JIT_COMPILATION_TIME, METRIC_DOTNET_JIT_COMPILED_IL_SIZE, METRIC_DOTNET_JIT_COMPILED_METHODS, METRIC_DOTNET_MONITOR_LOCK_CONTENTIONS, METRIC_DOTNET_PROCESS_CPU_COUNT, METRIC_DOTNET_PROCESS_CPU_TIME, METRIC_DOTNET_PROCESS_MEMORY_WORKING_SET, METRIC_DOTNET_THREAD_POOL_QUEUE_LENGTH, METRIC_DOTNET_THREAD_POOL_THREAD_COUNT, METRIC_DOTNET_THREAD_POOL_WORK_ITEM_COUNT, METRIC_DOTNET_TIMER_COUNT, METRIC_HTTP_CLIENT_REQUEST_DURATION, METRIC_HTTP_SERVER_REQUEST_DURATION, METRIC_JVM_CLASS_COUNT, METRIC_JVM_CLASS_LOADED, METRIC_JVM_CLASS_UNLOADED, METRIC_JVM_CPU_COUNT, METRIC_JVM_CPU_RECENT_UTILIZATION, METRIC_JVM_CPU_TIME, METRIC_JVM_GC_DURATION, METRIC_JVM_MEMORY_COMMITTED, METRIC_JVM_MEMORY_LIMIT, METRIC_JVM_MEMORY_USED, METRIC_JVM_MEMORY_USED_AFTER_LAST_GC, METRIC_JVM_THREAD_COUNT, METRIC_KESTREL_ACTIVE_CONNECTIONS, METRIC_KESTREL_ACTIVE_TLS_HANDSHAKES, METRIC_KESTREL_CONNECTION_DURATION, METRIC_KESTREL_QUEUED_CONNECTIONS, METRIC_KESTREL_QUEUED_REQUESTS, METRIC_KESTREL_REJECTED_CONNECTIONS, METRIC_KESTREL_TLS_HANDSHAKE_DURATION, METRIC_KESTREL_UPGRADED_CONNECTIONS, METRIC_SIGNALR_SERVER_ACTIVE_CONNECTIONS, METRIC_SIGNALR_SERVER_CONNECTION_DURATION;
 var init_stable_metrics = __esmMin((() => {
 	METRIC_ASPNETCORE_DIAGNOSTICS_EXCEPTIONS = "aspnetcore.diagnostics.exceptions";
@@ -3616,13 +3616,13 @@ var init_stable_metrics = __esmMin((() => {
 	METRIC_SIGNALR_SERVER_CONNECTION_DURATION = "signalr.server.connection.duration";
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/semantic-conventions/build/esm/stable_events.js
+//#region ../node_modules/@opentelemetry/semantic-conventions/build/esm/stable_events.js
 var EVENT_EXCEPTION;
 var init_stable_events = __esmMin((() => {
 	EVENT_EXCEPTION = "exception";
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/semantic-conventions/build/esm/index.js
+//#region ../node_modules/@opentelemetry/semantic-conventions/build/esm/index.js
 var esm_exports$1 = /* @__PURE__ */ __exportAll({
 	ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_ABORTED: () => ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_ABORTED,
 	ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_HANDLED: () => ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_HANDLED,
@@ -4242,13 +4242,13 @@ var init_esm$2 = __esmMin((() => {
 	init_stable_events();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/semconv.js
+//#region ../node_modules/@opentelemetry/core/build/esm/semconv.js
 var ATTR_PROCESS_RUNTIME_NAME;
 var init_semconv = __esmMin((() => {
 	ATTR_PROCESS_RUNTIME_NAME = "process.runtime.name";
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/platform/node/sdk-info.js
+//#region ../node_modules/@opentelemetry/core/build/esm/platform/node/sdk-info.js
 var SDK_INFO;
 var init_sdk_info = __esmMin((() => {
 	init_version();
@@ -4262,7 +4262,7 @@ var init_sdk_info = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/platform/node/index.js
+//#region ../node_modules/@opentelemetry/core/build/esm/platform/node/index.js
 var otperformance;
 var init_node = __esmMin((() => {
 	init_environment();
@@ -4271,12 +4271,12 @@ var init_node = __esmMin((() => {
 	otperformance = performance;
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/platform/index.js
+//#region ../node_modules/@opentelemetry/core/build/esm/platform/index.js
 var init_platform = __esmMin((() => {
 	init_node();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/common/time.js
+//#region ../node_modules/@opentelemetry/core/build/esm/common/time.js
 /**
 * Converts a number of milliseconds from epoch to HrTime([seconds, remainder in nanoseconds]).
 * @param epochMillis
@@ -4395,7 +4395,7 @@ var init_time = __esmMin((() => {
 	SECOND_TO_NANOSECONDS = Math.pow(10, NANOSECOND_DIGITS);
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/common/timer-util.js
+//#region ../node_modules/@opentelemetry/core/build/esm/common/timer-util.js
 /**
 * @deprecated please copy this code to your implementation instead, this function will be removed in the next major version of this package.
 * @param timer
@@ -4405,7 +4405,7 @@ function unrefTimer(timer) {
 }
 var init_timer_util = __esmMin((() => {}));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/ExportResult.js
+//#region ../node_modules/@opentelemetry/core/build/esm/ExportResult.js
 var ExportResultCode;
 var init_ExportResult = __esmMin((() => {
 	(function(ExportResultCode) {
@@ -4414,7 +4414,7 @@ var init_ExportResult = __esmMin((() => {
 	})(ExportResultCode || (ExportResultCode = {}));
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/propagation/composite.js
+//#region ../node_modules/@opentelemetry/core/build/esm/propagation/composite.js
 var CompositePropagator;
 var init_composite = __esmMin((() => {
 	init_esm$3();
@@ -4476,7 +4476,7 @@ var init_composite = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/internal/validators.js
+//#region ../node_modules/@opentelemetry/core/build/esm/internal/validators.js
 /**
 * Key is opaque string up to 256 characters printable. It MUST begin with a
 * lowercase letter, and can only contain lowercase letters a-z, digits 0-9,
@@ -4503,7 +4503,7 @@ var init_validators = __esmMin((() => {
 	INVALID_VALUE_COMMA_EQUAL_REGEX = /,|=/;
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/trace/TraceState.js
+//#region ../node_modules/@opentelemetry/core/build/esm/trace/TraceState.js
 var MAX_TRACE_STATE_ITEMS, MAX_TRACE_STATE_LEN, LIST_MEMBERS_SEPARATOR, LIST_MEMBER_KEY_VALUE_SPLITTER, TraceState;
 var init_TraceState = __esmMin((() => {
 	init_validators();
@@ -4586,7 +4586,7 @@ var init_TraceState = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/trace/W3CTraceContextPropagator.js
+//#region ../node_modules/@opentelemetry/core/build/esm/trace/W3CTraceContextPropagator.js
 /**
 * Parses information from the [traceparent] span tag and converts it into {@link SpanContext}
 * @param traceParent - A meta property that comes from server.
@@ -4645,7 +4645,7 @@ var init_W3CTraceContextPropagator = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/trace/rpc-metadata.js
+//#region ../node_modules/@opentelemetry/core/build/esm/trace/rpc-metadata.js
 function setRPCMetadata(context, meta) {
 	return context.setValue(RPC_METADATA_KEY, meta);
 }
@@ -4664,7 +4664,7 @@ var init_rpc_metadata = __esmMin((() => {
 	})(RPCType || (RPCType = {}));
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/utils/lodash.merge.js
+//#region ../node_modules/@opentelemetry/core/build/esm/utils/lodash.merge.js
 /**
 * Checks if `value` is a plain object, that is, an object created by the
 * `Object` constructor or one with a `[[Prototype]]` of `null`.
@@ -4781,7 +4781,7 @@ var init_lodash_merge = __esmMin((() => {
 	nativeObjectToString = objectProto.toString;
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/utils/merge.js
+//#region ../node_modules/@opentelemetry/core/build/esm/utils/merge.js
 /**
 * Merges objects together
 * @param args - objects / values to be merged
@@ -4892,7 +4892,7 @@ var init_merge = __esmMin((() => {
 	MAX_LEVEL = 20;
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/utils/timeout.js
+//#region ../node_modules/@opentelemetry/core/build/esm/utils/timeout.js
 /**
 * Adds a timeout to a promise and rejects if the specified timeout has elapsed. Also rejects if the specified promise
 * rejects, and resolves if the specified promise resolves.
@@ -4927,7 +4927,7 @@ var init_timeout = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/utils/url.js
+//#region ../node_modules/@opentelemetry/core/build/esm/utils/url.js
 function urlMatches(url, urlToMatch) {
 	if (typeof urlToMatch === "string") return url === urlToMatch;
 	else return !!url.match(urlToMatch);
@@ -4944,7 +4944,7 @@ function isUrlIgnored(url, ignoredUrls) {
 }
 var init_url = __esmMin((() => {}));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/utils/promise.js
+//#region ../node_modules/@opentelemetry/core/build/esm/utils/promise.js
 var Deferred;
 var init_promise = __esmMin((() => {
 	Deferred = class {
@@ -4969,7 +4969,7 @@ var init_promise = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/utils/callback.js
+//#region ../node_modules/@opentelemetry/core/build/esm/utils/callback.js
 var BindOnceFuture;
 var init_callback = __esmMin((() => {
 	init_promise();
@@ -5002,7 +5002,7 @@ var init_callback = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/utils/configuration.js
+//#region ../node_modules/@opentelemetry/core/build/esm/utils/configuration.js
 /**
 * Convert a string to a {@link DiagLogLevel}, defaults to {@link DiagLogLevel} if the log level does not exist or undefined if the input is undefined.
 * @param value
@@ -5030,7 +5030,7 @@ var init_configuration = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/internal/exporter.js
+//#region ../node_modules/@opentelemetry/core/build/esm/internal/exporter.js
 /**
 * @internal
 * Shared functionality used by Exporters while exporting data, including suppression of Traces.
@@ -5047,7 +5047,7 @@ var init_exporter = __esmMin((() => {
 	init_suppress_tracing();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/core/build/esm/index.js
+//#region ../node_modules/@opentelemetry/core/build/esm/index.js
 var esm_exports = /* @__PURE__ */ __exportAll({
 	AnchoredClock: () => AnchoredClock,
 	BindOnceFuture: () => BindOnceFuture,
@@ -5127,7 +5127,7 @@ var init_esm$1 = __esmMin((() => {
 	internal = { _export };
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/logging-response-handler.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/logging-response-handler.js
 init_esm$1();
 init_esm$3();
 function isPartialSuccessResponse(response) {
@@ -5143,7 +5143,7 @@ function createLoggingPartialSuccessResponseHandler() {
 	} };
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/otlp-export-delegate.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/otlp-export-delegate.js
 init_esm$3();
 var OTLPExportDelegate = class {
 	_metrics;
@@ -5238,7 +5238,7 @@ function createOtlpExportDelegate(components, settings) {
 	return new OTLPExportDelegate(components.transport, components.serializer, createLoggingPartialSuccessResponseHandler(), components.promiseHandler, components.metrics, settings.timeout);
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/semconv.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/semconv.js
 /**
 * [HTTP response status code](https://tools.ietf.org/html/rfc7231#section-6).
 *
@@ -5330,10 +5330,10 @@ var ATTR_SERVER_PORT = "server.port";
 */
 var ATTR_ERROR_TYPE$1 = "error.type";
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/version.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/version.js
 var VERSION$1 = "0.221.0";
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/ExporterMetrics.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/ExporterMetrics.js
 init_esm$3();
 init_esm$1();
 var componentCounter$1 = /* @__PURE__ */ new Map();
@@ -5408,13 +5408,13 @@ var ExporterMetrics = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-transformer/build/esm/logs/index.js
+//#region ../node_modules/@opentelemetry/otlp-transformer/build/esm/logs/index.js
 var LogsExporterMetricsHelper = {
 	name: "log",
 	countItems: (request) => request.length
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/resources/build/esm/default-service-name.js
+//#region ../node_modules/@opentelemetry/resources/build/esm/default-service-name.js
 /**
 * Returns the default service name for OpenTelemetry resources.
 * In Node.js environments, returns "unknown_service:<process.argv0>".
@@ -5432,7 +5432,7 @@ function defaultServiceName() {
 var serviceName;
 var init_default_service_name = __esmMin((() => {}));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/resources/build/esm/utils.js
+//#region ../node_modules/@opentelemetry/resources/build/esm/utils.js
 var isPromiseLike;
 var init_utils = __esmMin((() => {
 	isPromiseLike = (val) => {
@@ -5440,7 +5440,7 @@ var init_utils = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/resources/build/esm/ResourceImpl.js
+//#region ../node_modules/@opentelemetry/resources/build/esm/ResourceImpl.js
 function resourceFromAttributes(attributes, options) {
 	return ResourceImpl.FromAttributeList(Object.entries(attributes), options);
 }
@@ -5541,7 +5541,7 @@ var init_ResourceImpl = __esmMin((() => {
 	};
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/resources/build/esm/index.js
+//#region ../node_modules/@opentelemetry/resources/build/esm/index.js
 var init_esm = __esmMin((() => {
 	init_esm$3();
 	init_ResourceImpl();
@@ -5550,7 +5550,7 @@ var init_esm = __esmMin((() => {
 	init_default_service_name();
 }));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-transformer/build/esm/common/internal.js
+//#region ../node_modules/@opentelemetry/otlp-transformer/build/esm/common/internal.js
 function createResource(resource, encoder) {
 	const result = {
 		attributes: toAttributes(resource.attributes, encoder),
@@ -5606,7 +5606,7 @@ function toAnyValue(value, encoder) {
 	return {};
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-transformer/build/esm/logs/internal.js
+//#region ../node_modules/@opentelemetry/otlp-transformer/build/esm/logs/internal.js
 function createExportLogsServiceRequest(logRecords, encoder) {
 	return { resourceLogs: logRecordsToResourceLogs(logRecords, encoder) };
 }
@@ -5664,7 +5664,7 @@ function toSeverityNumber(severityNumber) {
 	return severityNumber;
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-transformer/build/esm/common/utils.js
+//#region ../node_modules/@opentelemetry/otlp-transformer/build/esm/common/utils.js
 init_esm$1();
 function hrTimeToNanos(hrTime) {
 	const NANOSECONDS = BigInt(1e9);
@@ -5693,7 +5693,7 @@ var JSON_ENCODER = {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-transformer/build/esm/logs/json/logs.js
+//#region ../node_modules/@opentelemetry/otlp-transformer/build/esm/logs/json/logs.js
 init_esm$3();
 var JsonLogsSerializer = {
 	serializeRequest: (arg) => {
@@ -5712,7 +5712,7 @@ var JsonLogsSerializer = {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/util.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/util.js
 init_esm$3();
 /**
 * Parses headers from config leaving only those that have defined values
@@ -5727,7 +5727,7 @@ function validateAndNormalizeHeaders(partialHeaders) {
 	return headers;
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/otlp-http-configuration.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/otlp-http-configuration.js
 function mergeHeaders(userProvidedHeaders, fallbackHeaders, defaultHeaders) {
 	return async () => {
 		const requiredHeaders = { ...await defaultHeaders() };
@@ -5766,7 +5766,7 @@ function getHttpConfigurationDefaults(requiredHeaders, signalResourcePath) {
 	};
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/otlp-node-http-configuration.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/otlp-node-http-configuration.js
 function httpAgentFactoryFromOptions(options) {
 	return async (protocol) => {
 		const isInsecure = protocol === "http:";
@@ -5797,7 +5797,7 @@ function getNodeHttpConfigurationDefaults(requiredHeaders, signalResourcePath) {
 	};
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/is-export-retryable.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/is-export-retryable.js
 function isExportHTTPErrorRetryable(statusCode) {
 	return statusCode === 429 || statusCode === 502 || statusCode === 503 || statusCode === 504;
 }
@@ -5810,7 +5810,7 @@ function parseRetryAfterToMills(retryAfter) {
 	return 0;
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/transport/http-transport-utils.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/transport/http-transport-utils.js
 var DEFAULT_USER_AGENT = `OTel-OTLP-Exporter-JavaScript/${VERSION$1}`;
 /**
 * Maximum response body size (4 MB) that the HTTP transport will read.
@@ -5934,7 +5934,7 @@ function isHttpTransportNetworkErrorRetryable(error) {
 	return false;
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/transport/http-exporter-transport.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/transport/http-exporter-transport.js
 var HttpExporterTransport = class {
 	_utils = null;
 	_parameters;
@@ -5968,7 +5968,7 @@ function createHttpExporterTransport(parameters) {
 	return new HttpExporterTransport(parameters);
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/retrying-transport.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/retrying-transport.js
 init_esm$3();
 var MAX_ATTEMPTS = 5;
 var INITIAL_BACKOFF = 1e3;
@@ -6027,7 +6027,7 @@ function createRetryingTransport(options) {
 	return new RetryingTransport(options.transport);
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/otlp-http-export-delegate.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/otlp-http-export-delegate.js
 function createOtlpHttpExporterMetrics(metricsComponentType, exporterMetricsHelper, url, meterProvider) {
 	return new ExporterMetrics({
 		componentType: metricsComponentType,
@@ -6050,7 +6050,7 @@ function createOtlpHttpExportDelegate(options, serializer, metricsComponentType,
 	}, { timeout: options.timeoutMillis });
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/shared-env-configuration.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/shared-env-configuration.js
 init_esm$1();
 init_esm$3();
 function parseAndValidateTimeoutFromEnv(timeoutEnvVar) {
@@ -6082,7 +6082,7 @@ function getSharedConfigurationFromEnvironment(signalIdentifier) {
 	};
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/otlp-node-http-env-configuration.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/otlp-node-http-env-configuration.js
 init_esm$1();
 init_esm$3();
 function getStaticHeadersFromEnv(signalIdentifier) {
@@ -6169,13 +6169,13 @@ function getNodeHttpConfigurationFromEnvironment(signalIdentifier, signalResourc
 	};
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/convert-legacy-http-options.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/convert-legacy-http-options.js
 function convertLegacyHeaders(config) {
 	if (typeof config.headers === "function") return config.headers;
 	return wrapStaticHeadersInFunction(config.headers);
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/convert-legacy-node-http-options.js
+//#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/configuration/convert-legacy-node-http-options.js
 init_esm$3();
 function convertLegacyAgentOptions(config) {
 	if (typeof config.httpAgentOptions === "function") return config.httpAgentOptions;
@@ -6207,7 +6207,7 @@ function convertLegacyHttpOptions(config, signalIdentifier, signalResourcePath, 
 	}, getNodeHttpConfigurationFromEnvironment(signalIdentifier, signalResourcePath), getNodeHttpConfigurationDefaults(requiredHeaders, signalResourcePath));
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/exporter-logs-otlp-http/build/esm/semconv.js
+//#region ../node_modules/@opentelemetry/exporter-logs-otlp-http/build/esm/semconv.js
 /**
 * Enum value "otlp_http_log_exporter" for attribute {@link ATTR_OTEL_COMPONENT_TYPE}.
 *
@@ -6217,7 +6217,7 @@ function convertLegacyHttpOptions(config, signalIdentifier, signalResourcePath, 
 */
 var OTEL_COMPONENT_TYPE_VALUE_OTLP_HTTP_LOG_EXPORTER = "otlp_http_log_exporter";
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/exporter-logs-otlp-http/build/esm/platform/node/OTLPLogExporter.js
+//#region ../node_modules/@opentelemetry/exporter-logs-otlp-http/build/esm/platform/node/OTLPLogExporter.js
 /**
 * Collector Logs Exporter for Node
 */
@@ -6227,7 +6227,7 @@ var OTLPLogExporter = class extends OTLPExporterBase {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/node_modules/@opentelemetry/api-logs/build/esm/types/LogRecord.js
+//#region ../node_modules/@opentelemetry/sdk-logs/node_modules/@opentelemetry/api-logs/build/esm/types/LogRecord.js
 var SeverityNumber;
 (function(SeverityNumber) {
 	SeverityNumber[SeverityNumber["UNSPECIFIED"] = 0] = "UNSPECIFIED";
@@ -6257,7 +6257,7 @@ var SeverityNumber;
 	SeverityNumber[SeverityNumber["FATAL4"] = 24] = "FATAL4";
 })(SeverityNumber || (SeverityNumber = {}));
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/node_modules/@opentelemetry/api-logs/build/esm/NoopLogger.js
+//#region ../node_modules/@opentelemetry/sdk-logs/node_modules/@opentelemetry/api-logs/build/esm/NoopLogger.js
 var NoopLogger = class {
 	emit(_logRecord) {}
 	enabled() {
@@ -6272,7 +6272,7 @@ function createNoopLogger() {
 	return NOOP_LOGGER;
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/utils/validation.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/utils/validation.js
 init_esm();
 init_esm$3();
 /**
@@ -6373,7 +6373,7 @@ function normalizeScopeAttributes(limits, attributes) {
 	};
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/LogRecordImpl.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/LogRecordImpl.js
 init_esm$3();
 init_esm$1();
 init_esm$2();
@@ -6531,7 +6531,7 @@ var LogRecordImpl = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/Logger.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/Logger.js
 init_esm$3();
 var Logger = class {
 	_instrumentationScope;
@@ -6590,7 +6590,7 @@ var Logger = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/export/NoopLogRecordProcessor.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/export/NoopLogRecordProcessor.js
 var NoopLogRecordProcessor = class {
 	forceFlush() {
 		return Promise.resolve();
@@ -6604,7 +6604,7 @@ var NoopLogRecordProcessor = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/MultiLogRecordProcessor.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/MultiLogRecordProcessor.js
 init_esm$1();
 /**
 * Implementation of the {@link LogRecordProcessor} that simply forwards all
@@ -6631,7 +6631,7 @@ var MultiLogRecordProcessor = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/internal/utils.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/internal/utils.js
 /**
 * Normalizes an AnyValue to a JSON-serializable [typeTag, payload] tuple.
 *
@@ -6677,7 +6677,7 @@ function getInstrumentationScopeKey(scope) {
 	]);
 }
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/semconv.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/semconv.js
 /**
 * The number of logs submitted to enabled SDK Loggers.
 *
@@ -6783,7 +6783,7 @@ var OTEL_COMPONENT_TYPE_VALUE_BATCHING_LOG_PROCESSOR = "batching_log_processor";
 */
 var ATTR_ERROR_TYPE = "error.type";
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/LoggerMetrics.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/LoggerMetrics.js
 /**
 * Generates `otel.sdk.log.*` metrics.
 * https://opentelemetry.io/docs/specs/semconv/otel/sdk-metrics/#log-metrics
@@ -6801,10 +6801,10 @@ var LoggerMetrics = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/version.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/version.js
 var VERSION = "0.221.0";
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/internal/LoggerProviderSharedState.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/internal/LoggerProviderSharedState.js
 init_esm$3();
 var DEFAULT_LOGGER_CONFIG = {
 	disabled: false,
@@ -6855,7 +6855,7 @@ var LoggerProviderSharedState = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/LoggerProvider.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/LoggerProvider.js
 init_esm$3();
 init_esm$1();
 var LoggerProvider = class {
@@ -6925,7 +6925,7 @@ var LoggerProvider = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/export/LogRecordProcessorMetrics.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/export/LogRecordProcessorMetrics.js
 var componentCounter = /* @__PURE__ */ new Map();
 var LogRecordProcessorMetrics = class {
 	processedLogs;
@@ -6981,7 +6981,7 @@ var LogRecordProcessorMetrics = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/export/BatchLogRecordProcessorBase.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/export/BatchLogRecordProcessorBase.js
 init_esm$3();
 init_esm$1();
 /**
@@ -7188,7 +7188,7 @@ var BatchLogRecordProcessorBase = class {
 	}
 };
 //#endregion
-//#region ../../../../node_modules/@opentelemetry/sdk-logs/build/esm/platform/node/export/BatchLogRecordProcessor.js
+//#region ../node_modules/@opentelemetry/sdk-logs/build/esm/platform/node/export/BatchLogRecordProcessor.js
 var BatchLogRecordProcessor = class extends BatchLogRecordProcessorBase {
 	onShutdown() {}
 };
@@ -7249,6 +7249,8 @@ var SearchDuplicateCandidateScoreSchema = object({
 	externalId: string().nullish(),
 	/** Candidate id to read or update when this candidate is the requested record. */
 	id: uuid(),
+	/** Whether the candidate is hidden from public pages. */
+	isHidden: boolean().nullish(),
 	/** Candidate display name from the existing record. */
 	name: string().nullish(),
 	/** Current operating status for entity candidates. */
@@ -7259,6 +7261,8 @@ var SearchDuplicateCandidateScoreSchema = object({
 	reason: array(string()),
 	/** Ranking score for duplicate review. It is not an absence proof; a low score can still be the intended record when reason/name/slug/typeRecord match. */
 	score: int(),
+	/** Whether the candidate is eligible for sitemap/public listing. */
+	showOnSitemap: boolean().nullish(),
 	/** Candidate slug from the existing record. */
 	slug: string().regex(/^[a-z0-9_-]+$/).max(255).nullish(),
 	/** Candidate entity type from the existing record. */
@@ -7369,7 +7373,7 @@ var UrlDuplicateConflictSchema = object({
 	urlType: string()
 });
 //#endregion
-//#region ../public-surface/api-schemas/dist/domain/conflict-details.js
+//#region ../api-schemas/dist/domain/conflict-details.js
 /**
 * Polymorphic envelope for RFC 9457 ProblemDetail.details on HTTP 409 responses. The concrete variant depends on the conflict kind: URL ownership collisions return UrlDuplicateConflict; ambiguous strict URL lookups return StrictUrlLookupConflict; create-time duplicate review gates return DuplicateCreateReview; classification writes that touch an inactive tag bucket return ClassificationInactiveTagDetails; news publication+URL uniqueness violations return NewsSourceUrlConflict. Inspect ProblemDetail.code/type and the field set present on details to identify the variant.
 *
@@ -7388,7 +7392,7 @@ var DomainConflictDetailsSchema = union([
 	NewsSourceUrlConflictSchema
 ]);
 //#endregion
-//#region ../public-surface/api-schemas/dist/problem/resolution.js
+//#region ../api-schemas/dist/problem/resolution.js
 /**
 * Machine-readable next action for an aVenture ProblemDetail. For reviewCandidates, inspect ProblemDetail.details candidates and decide update, create-with-override, or block from those returned records.
 *
@@ -7421,7 +7425,7 @@ var ProblemResolutionSchema = object({
 	retryable: boolean().nullish()
 });
 //#endregion
-//#region ../public-surface/api-schemas/dist/redirect/current-slug-owner.js
+//#region ../api-schemas/dist/redirect/current-slug-owner.js
 /**
 * Current slug owner
 *
@@ -7449,7 +7453,7 @@ var CurrentSlugOwnerSchema = object({
 	slug: string()
 });
 //#endregion
-//#region ../public-surface/api-schemas/dist/redirect/redirect-slug-path.js
+//#region ../api-schemas/dist/redirect/redirect-slug-path.js
 /**
 * Redirect slug path
 *
@@ -7986,6 +7990,9 @@ function redactText(text) {
 		const [, key, separator] = args;
 		return `${key}${separator}***`;
 	});
+}
+function logDebug(options) {
+	writeLog("debug", options);
 }
 function logInfo(options) {
 	writeLog("info", options);
@@ -11535,19 +11542,6 @@ function useColor() {
 	if (process$1.env.FORCE_COLOR || process$1.env.CLICOLOR_FORCE !== void 0) return true;
 }
 new Command();
-_enum([
-	"requestChangeForm",
-	"newsArticle",
-	"blogArticle",
-	"firstPartyWebsite",
-	"relatedPartyWebsite",
-	"thirdPartyWebsite",
-	"llm",
-	"aventureStaff",
-	"api",
-	"manual",
-	"import"
-]);
 //#endregion
 //#region node_modules/undici/lib/core/symbols.js
 var require_symbols = /* @__PURE__ */ __commonJSMin(((exports, module) => {
@@ -34927,10 +34921,10 @@ var dispatcherByTimeoutMs = /* @__PURE__ */ new Map();
 function timeoutDispatcher(timeoutMs) {
 	const cached = dispatcherByTimeoutMs.get(timeoutMs);
 	if (cached !== void 0) return cached;
-	const created = new import_undici.Agent({
+	const created = new import_undici.Dispatcher1Wrapper(new import_undici.Agent({
 		headersTimeout: timeoutMs,
 		bodyTimeout: timeoutMs
-	});
+	}));
 	dispatcherByTimeoutMs.set(timeoutMs, created);
 	return created;
 }
@@ -35456,6 +35450,6 @@ var CLI_NAMESPACE_SECTION = {
 	agents: "cli"
 };
 //#endregion
-export { init_esm$1 as $, logError as A, __toCommonJS as At, prepareCallEnv as B, authMaterializationFailure as C, createNoopMeter as Ct, resolveAuthStatus as D, __esmMin as Dt, readAuthConfig as E, __commonJSMin as Et, shutdownLogging as F, pageMetadata as G, RESULT_ENVELOPE_BYTE_CAP as H, AUTH_SECRET_NAME as I, init_esm as J, responseCount as K, AUTH_SECRET_NAMES as L, logWarn as M, otelResourceAttributes as N, writeAuthConfig as O, __exportAll as Ot, setStderrLogging as P, esm_exports as Q, environmentNames as R, InvalidArgumentError as S, init_Metric as St, materializeAuth as T, JsonValueSchema as Tt, capEnvelope as U, readEnv as V, failure as W, init_ResourceImpl as X, defaultResource as Y, resourceFromAttributes as Z, redactCredentialText as _, diag as _t, generatedOptionGroupRank as a, hrTimeToMicroseconds as at, Option as b, init_context_api as bt, CLI_SHELL_INPUT_GUIDANCE as c, millisToHrTime as ct, flagName as d, globalErrorHandler as dt, internal as et, mcpToolForIntent as f, init_global_error_handler as ft, problemFailure as g, metrics as gt, aventureRequest as h, init_metrics_api as ht, cliOptionDescription as i, hrTimeDuration as it, logInfo as j, __toESM as jt, describeError as k, __require as kt, cliShellQuote as l, esm_exports$1 as lt, aventureMethod as m, init_esm$3 as mt, CLI_NAMESPACE_SECTION as n, init_ExportResult as nt, generatedOptionHelpGroup as o, hrTimeToSeconds as ot, prepareOpenApiRequestBody as p, esm_exports$2 as pt, success as q, administrationNamespace as r, hrTime as rt, withTerminalPunctuation as s, init_time as st, CLI_COMMAND_SECTION as t, ExportResultCode as tt, cliShellSensitiveSchema as u, init_esm$2 as ut, responseWarningMetadata as v, init_diag_api as vt, configPath as w, init_NoopMeter as wt, CommanderError as x, ValueType as xt, Command as y, context as yt, normalizeEnvironmentName as z };
+export { esm_exports as $, logDebug as A, __require as At, normalizeEnvironmentName as B, authMaterializationFailure as C, init_Metric as Ct, resolveAuthStatus as D, __commonJSMin as Dt, readAuthConfig as E, JsonValueSchema as Et, setStderrLogging as F, failure as G, readEnv as H, shutdownLogging as I, success as J, pageMetadata as K, AUTH_SECRET_NAME as L, logInfo as M, __toESM as Mt, logWarn as N, writeAuthConfig as O, __esmMin as Ot, otelResourceAttributes as P, resourceFromAttributes as Q, AUTH_SECRET_NAMES as R, InvalidArgumentError as S, ValueType as St, materializeAuth as T, init_NoopMeter as Tt, RESULT_ENVELOPE_BYTE_CAP as U, prepareCallEnv as V, capEnvelope as W, defaultResource as X, init_esm as Y, init_ResourceImpl as Z, redactCredentialText as _, metrics as _t, generatedOptionGroupRank as a, hrTimeDuration as at, Option as b, context as bt, CLI_SHELL_INPUT_GUIDANCE as c, init_time as ct, flagName as d, init_esm$2 as dt, init_esm$1 as et, mcpToolForIntent as f, globalErrorHandler as ft, problemFailure as g, init_metrics_api as gt, aventureRequest as h, init_esm$3 as ht, cliOptionDescription as i, hrTime as it, logError as j, __toCommonJS as jt, describeError as k, __exportAll as kt, cliShellQuote as l, millisToHrTime as lt, aventureMethod as m, esm_exports$2 as mt, CLI_NAMESPACE_SECTION as n, ExportResultCode as nt, generatedOptionHelpGroup as o, hrTimeToMicroseconds as ot, prepareOpenApiRequestBody as p, init_global_error_handler as pt, responseCount as q, administrationNamespace as r, init_ExportResult as rt, withTerminalPunctuation as s, hrTimeToSeconds as st, CLI_COMMAND_SECTION as t, internal as tt, cliShellSensitiveSchema as u, esm_exports$1 as ut, responseWarningMetadata as v, diag as vt, configPath as w, createNoopMeter as wt, CommanderError as x, init_context_api as xt, Command as y, init_diag_api as yt, environmentNames as z };
 
-//# sourceMappingURL=cli-help-policy-0283Ys4J.js.map
+//# sourceMappingURL=cli-help-policy-DpIwx3cU.js.map

@@ -1,10 +1,15 @@
 #!/usr/bin/env node
-import { I as AUTH_SECRET_NAME, M as logWarn, P as setStderrLogging, T as materializeAuth, V as readEnv, x as CommanderError } from "../chunks/cli-help-policy-0283Ys4J.js";
-import { c as canonicalPersonalCredentialHost, i as cliMachineOutputSelected, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "../chunks/openapi-commands-CegPV40P.js";
+import { A as logDebug, F as setStderrLogging, H as readEnv, L as AUTH_SECRET_NAME, N as logWarn, T as materializeAuth, x as CommanderError } from "../chunks/cli-help-policy-DpIwx3cU.js";
+import { c as canonicalPersonalCredentialHost, i as cliMachineOutputSelected, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "../chunks/openapi-commands-D-1JdiSU.js";
 //#region aventure-cli/auth/personal-bearer-credential.ts
 /**
 * Materialize an active CLI-owned credential only after normal auth materialization left AUTH_TOKEN unset.
 * A local keyring fault remains diagnostic-only so read/admin environment credentials can still run.
+*
+* An absent OS credential store is the steady state wherever the CLI runs non-interactively — the
+* harness sandbox, CI, any container — so that lookup outcome logs at debug. `auth status`
+* (`keyringFailure`) and `auth doctor` (a failing `auth` check carrying the same reason) own the
+* operator-facing report, and neither depends on this startup path.
 */
 async function materializeCliPersonalBearerCredential() {
 	if (hasAuthToken()) return;
@@ -12,25 +17,25 @@ async function materializeCliPersonalBearerCredential() {
 	try {
 		const lookup = await loadPersonalCredential(host);
 		if (lookup.state === "unavailable") {
-			logUnavailablePersonalCredential("keyring", new Error(lookup.summary));
+			logDebug(unavailablePersonalCredential("keyring", new Error(lookup.summary)));
 			return;
 		}
 		if (lookup.state === "found" && lookup.stored.activation === "active" && !hasAuthToken()) process.env[AUTH_SECRET_NAME.authToken] = lookup.stored.credential.secret;
 	} catch (error) {
-		logUnavailablePersonalCredential("parse", error);
+		logWarn(unavailablePersonalCredential("parse", error));
 	}
 }
 function hasAuthToken() {
 	return (process.env[AUTH_SECRET_NAME.authToken]?.trim().length ?? 0) > 0;
 }
-function logUnavailablePersonalCredential(source, error) {
-	logWarn({
+function unavailablePersonalCredential(source, error) {
+	return {
 		component: "aventure-cli",
 		event: "personal_credential_materialization_unavailable",
 		message: "saved personal CLI credential could not be loaded; continuing with environment auth",
 		fields: { source },
 		error
-	});
+	};
 }
 //#endregion
 //#region aventure-cli/bootstrap.ts
@@ -45,7 +50,7 @@ try {
 		await materializeAuth();
 		await materializeCliPersonalBearerCredential();
 	}
-	await import("../chunks/aventure-cli-BKjs9-fh.js");
+	await import("../chunks/aventure-cli-Ddwz9U3g.js");
 } catch (failure) {
 	if (!(failure instanceof CommanderError)) throw failure;
 	process.stderr.write(`${failure.message}\n`);
