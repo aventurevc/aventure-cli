@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "mcp/mcp-server/generated/mcp-generation-contract.ts",
-  "generatedAt": "2026-08-29T20:08:30.295Z",
+  "generatedAt": "2026-09-02T23:02:35.165Z",
   "totalOperations": 470,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
@@ -9552,7 +9552,7 @@
       "method": "POST",
       "path": "/v1/research/external-social-posts/scrape",
       "resource": "research",
-      "intent": "write",
+      "intent": "lookup",
       "cliCommand": "research external-social-posts scrape create",
       "cliPath": [
         "research",
@@ -9562,12 +9562,12 @@
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_lookup",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -9575,7 +9575,7 @@
       "method": "POST",
       "path": "/v1/research/external-social-posts/scrape/{snapshotId}",
       "resource": "research",
-      "intent": "write",
+      "intent": "lookup",
       "cliCommand": "research external-social-posts scrape status",
       "cliPath": [
         "research",
@@ -9585,12 +9585,12 @@
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_lookup",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -10475,7 +10475,7 @@
       "method": "POST",
       "path": "/v1/web/profile/scrape",
       "resource": "web",
-      "intent": "write",
+      "intent": "lookup",
       "cliCommand": "web profile scrape create",
       "cliPath": [
         "web",
@@ -10485,12 +10485,12 @@
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_lookup",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {

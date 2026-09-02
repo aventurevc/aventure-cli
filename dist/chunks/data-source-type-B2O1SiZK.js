@@ -1,5 +1,7 @@
 //#region ../node_modules/zod/v4/core/core.js
 var _a$1;
+/** A special constant with type `never` */
+var NEVER = /*@__PURE__*/ Object.freeze({ status: "aborted" });
 function $constructor(name, initializer, params) {
 	function init(inst, def) {
 		if (!inst._zod) Object.defineProperty(inst, "_zod", {
@@ -1437,6 +1439,10 @@ var $ZodNull = /*@__PURE__*/ $constructor("$ZodNull", (inst, def) => {
 		return payload;
 	};
 });
+var $ZodAny = /*@__PURE__*/ $constructor("$ZodAny", (inst, def) => {
+	$ZodType.init(inst, def);
+	inst._zod.parse = (payload) => payload;
+});
 var $ZodUnknown = /*@__PURE__*/ $constructor("$ZodUnknown", (inst, def) => {
 	$ZodType.init(inst, def);
 	inst._zod.parse = (payload) => payload;
@@ -2660,6 +2666,15 @@ function _number(Class, params) {
 	});
 }
 // @__NO_SIDE_EFFECTS__
+function _coercedNumber(Class, params) {
+	return new Class({
+		type: "number",
+		coerce: true,
+		checks: [],
+		...normalizeParams(params)
+	});
+}
+// @__NO_SIDE_EFFECTS__
 function _int(Class, params) {
 	return new Class({
 		type: "number",
@@ -2682,6 +2697,10 @@ function _null$1(Class, params) {
 		type: "null",
 		...normalizeParams(params)
 	});
+}
+// @__NO_SIDE_EFFECTS__
+function _any(Class) {
+	return new Class({ type: "any" });
 }
 // @__NO_SIDE_EFFECTS__
 function _unknown(Class) {
@@ -3985,6 +4004,9 @@ var ZodURL = /*@__PURE__*/ $constructor("ZodURL", (inst, def) => {
 	$ZodURL.init(inst, def);
 	ZodStringFormat.init(inst, def);
 });
+function url(params) {
+	return /* @__PURE__ */ _url(ZodURL, params);
+}
 var ZodEmoji = /*@__PURE__*/ $constructor("ZodEmoji", (inst, def) => {
 	$ZodEmoji.init(inst, def);
 	ZodStringFormat.init(inst, def);
@@ -4133,6 +4155,14 @@ var ZodNull = /*@__PURE__*/ $constructor("ZodNull", (inst, def) => {
 });
 function _null(params) {
 	return /* @__PURE__ */ _null$1(ZodNull, params);
+}
+var ZodAny = /*@__PURE__*/ $constructor("ZodAny", (inst, def) => {
+	$ZodAny.init(inst, def);
+	ZodType.init(inst, def);
+	inst._zod.processJSONSchema = (ctx, json, params) => void 0;
+});
+function any() {
+	return /* @__PURE__ */ _any(ZodAny);
 }
 var ZodUnknown = /*@__PURE__*/ $constructor("ZodUnknown", (inst, def) => {
 	$ZodUnknown.init(inst, def);
@@ -4687,6 +4717,6 @@ var DatasourceDataSourceTypeSchema = _enum([
 	"import"
 ]);
 //#endregion
-export { $ZodType as A, union as C, datetime as D, date as E, clone as F, defineLazy as I, normalizeParams as L, parseAsync$1 as M, safeParse$1 as N, toJSONSchema as O, safeParseAsync$1 as P, $constructor as R, string as S, uuid as T, object as _, _enum as a, record as b, boolean as c, int as d, intersection as f, number as g, looseObject as h, ZodOptional as i, parse$1 as j, $ZodObject as k, custom as l, literal as m, EntityPersonOwnerSchema as n, _null as o, lazy as p, EntityTypeSchema as r, array as s, DatasourceDataSourceTypeSchema as t, discriminatedUnion as u, optional as v, unknown as w, strictObject as x, preprocess as y };
+export { datetime as A, defineLazy as B, strictObject as C, url as D, unknown as E, parse$1 as F, $constructor as H, parseAsync$1 as I, safeParse$1 as L, _coercedNumber as M, $ZodObject as N, uuid as O, $ZodType as P, safeParseAsync$1 as R, record as S, union as T, NEVER as U, normalizeParams as V, looseObject as _, ZodOptional as a, optional as b, any as c, custom as d, discriminatedUnion as f, literal as g, lazy as h, ZodNumber as i, toJSONSchema as j, date as k, array as l, intersection as m, EntityPersonOwnerSchema as n, _enum as o, int as p, EntityTypeSchema as r, _null as s, DatasourceDataSourceTypeSchema as t, boolean as u, number as v, string as w, preprocess as x, object as y, clone as z };
 
-//# sourceMappingURL=data-source-type-CL6KYqKO.js.map
+//# sourceMappingURL=data-source-type-B2O1SiZK.js.map

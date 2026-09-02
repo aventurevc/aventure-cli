@@ -1,5 +1,5 @@
-import { U as RESULT_ENVELOPE_BYTE_CAP, _ as redactCredentialText, b as Option, r as administrationNamespace, y as Command, z as environmentNames } from "./cli-help-policy-DpIwx3cU.js";
-import { D as datetime, S as string, _ as object, a as _enum, s as array } from "./data-source-type-CL6KYqKO.js";
+import { U as RESULT_ENVELOPE_BYTE_CAP, _ as redactCredentialText, b as Option, r as administrationNamespace, y as Command, z as environmentNames } from "./cli-help-policy-B_93jELZ.js";
+import { A as datetime, l as array, o as _enum, w as string, y as object } from "./data-source-type-B2O1SiZK.js";
 /**
 * Personal API-key metadata sourced from Clerk; never contains the key secret
 *
@@ -129,7 +129,8 @@ async function loadPersonalCredential(host) {
 	} catch (error) {
 		return {
 			state: "unavailable",
-			summary: `OS credential storage is unavailable (${errorSummary(error)})`
+			summary: `OS credential storage is unavailable (${errorSummary(error)})`,
+			cause: "keyring"
 		};
 	}
 	if (serialized === void 0) return { state: "missing" };
@@ -203,13 +204,14 @@ function errorSummary(error, credentialValue = []) {
 * keeps the API host and host-partitioned personal credential on the same environment while local
 * CLI commands and public API commands remain usable without credential access.
 *
-* Administration-section visibility depends on a materialized ADMIN_API_KEY, so surfaces that
-* enumerate or resolve the command tree — root help, completion, command-catalog, docs, the help
-* builtin — and every administration-namespace invocation materialize saved auth before the
-* visibility filter runs. Argv that resolves to no generated spec also materializes: unknown-command
-* recovery enumerates the visibility-filtered tree for cross-namespace hints, so a saved admin key
-* must be loaded for administration targets to surface. A machine with no saved auth config pays
-* nothing: materialization is a no-op there. Builtin `--help` renders stay credential-free.
+* Administration-section visibility depends on a materialized ADMIN_API_KEY or AUTH_TOKEN, so
+* surfaces that enumerate or resolve the command tree — root help, completion, command-catalog,
+* docs, the help builtin — and every administration-namespace invocation materialize saved auth
+* before the visibility filter runs. Argv that resolves to no generated spec also materializes:
+* unknown-command recovery enumerates the visibility-filtered tree for cross-namespace hints, so
+* a saved credential must be loaded for administration targets to surface. A machine with no saved
+* auth config pays nothing: materialization is a no-op there. Builtin `--help` renders stay
+* credential-free.
 */
 function commandNeedsMaterializedAuth(argv, specs) {
 	const terminator = argv.indexOf("--");
@@ -58170,7 +58172,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		method: "POST",
 		path: "/v1/research/external-social-posts/scrape",
 		resource: "research",
-		intent: "write",
+		intent: "lookup",
 		cliPath: [
 			"research",
 			"external-social-posts",
@@ -58184,9 +58186,9 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		bodyDescription: "",
 		bodyRequiredPath: [],
 		bodyParameters: [],
-		dryRun: true,
-		scope: "write",
-		auth: "write",
+		dryRun: false,
+		scope: "read",
+		auth: "read",
 		errorResponse: [],
 		parameters: [{
 			name: "url",
@@ -58203,7 +58205,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		method: "POST",
 		path: "/v1/research/external-social-posts/scrape/{snapshotId}",
 		resource: "research",
-		intent: "write",
+		intent: "lookup",
 		cliPath: [
 			"research",
 			"external-social-posts",
@@ -58217,9 +58219,9 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		bodyDescription: "",
 		bodyRequiredPath: [],
 		bodyParameters: [],
-		dryRun: true,
-		scope: "write",
-		auth: "write",
+		dryRun: false,
+		scope: "read",
+		auth: "read",
 		errorResponse: [],
 		parameters: [{
 			name: "snapshotId",
@@ -59489,7 +59491,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		method: "POST",
 		path: "/v1/web/profile/scrape",
 		resource: "web",
-		intent: "write",
+		intent: "lookup",
 		cliPath: [
 			"web",
 			"profile",
@@ -59503,9 +59505,9 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		bodyDescription: "",
 		bodyRequiredPath: [],
 		bodyParameters: [],
-		dryRun: true,
-		scope: "write",
-		auth: "write",
+		dryRun: false,
+		scope: "read",
+		auth: "read",
 		errorResponse: [],
 		parameters: [{
 			name: "url",
@@ -60218,6 +60220,16 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"iteration"
 		],
 		bodyParameters: [
+			{
+				name: "chainRunId",
+				optionKey: "chainRunId",
+				flag: "--chain-run-id <uuid>",
+				required: false,
+				description: "Chain root run id the escalation successor inherits; the engine carries the original root here alongside successorSessionResume so the persisted chain_run_id stays rooted at the first run even when the failed run's own row predates the chain-root column. Accepted only with failureClass=escalated.",
+				schemaType: "string",
+				schemaFormat: "uuid",
+				location: "body"
+			},
 			{
 				name: "engineId",
 				optionKey: "engineId",
@@ -61168,7 +61180,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operationId",
 				flag: "--operation-id <uuid>",
 				required: false,
-				description: "Caller-generated UUID stamped as the operationId on every audit event this promotion records, letting the caller attribute its events even when the response is lost. Must not repeat an operationId already present in deploy events. Server-generated when absent.",
+				description: "Caller-generated UUID stamped on every audit event. An exact direct-target deploy retry resumes terminal observation; promotion and revert identities must not repeat. Server-generated when absent.",
 				schemaType: "string",
 				schemaFormat: "uuid",
 				location: "query"
@@ -61238,7 +61250,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operationId",
 				flag: "--operation-id <uuid>",
 				required: false,
-				description: "Caller-generated UUID stamped as the operationId on every audit event this promotion records, letting the caller attribute its events even when the response is lost. Must not repeat an operationId already present in deploy events. Server-generated when absent.",
+				description: "Caller-generated UUID stamped on every audit event. An exact direct-target deploy retry resumes terminal observation; promotion and revert identities must not repeat. Server-generated when absent.",
 				schemaType: "string",
 				schemaFormat: "uuid",
 				location: "query"
@@ -61259,7 +61271,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"create"
 		],
 		summary: "Deploy an image tag to a target",
-		description: "Submits one image-source deploy for a configured target and records a deploy audit event. wait=false returns after provider submission. wait=true waits for terminal provider status, exact active-image confirmation, and any configured runtime acceptance; a post-submission failure also waits for bounded compensation before returning.",
+		description: "Submits one image-source deploy for a configured target and records a deploy audit event. A configured pair destination is rejected before registry or provider work; use a promotion or target revert instead. wait=false returns after provider submission. wait=true waits for terminal provider status, exact active-image confirmation, and any configured runtime acceptance; reusing the same operationId, target, tag, and actor resumes observation after a lost response without submitting again.",
 		hasBody: false,
 		bodyRequired: false,
 		bodyDescription: "",
@@ -61321,6 +61333,16 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				schemaType: "boolean",
 				defaultValue: false,
 				location: "query"
+			},
+			{
+				name: "operationId",
+				optionKey: "operationId",
+				flag: "--operation-id <uuid>",
+				required: false,
+				description: "Caller-generated UUID stamped on every audit event. An exact direct-target deploy retry resumes terminal observation; promotion and revert identities must not repeat. Server-generated when absent.",
+				schemaType: "string",
+				schemaFormat: "uuid",
+				location: "query"
 			}
 		]
 	},
@@ -61338,7 +61360,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"create"
 		],
 		summary: "Promote an immutable release image to a target without rebuilding",
-		description: "Ensures the release image's immutable main-{version}-{sha} registry tag without rebuilding or mutating rolling aliases, deploys that tag, and waits for terminal provider and active-runtime proof. A failed promotion compensates with the captured SHA-qualified prior provider image only when its runtime digest and registry manifest agree. A held pair rejects direct promotion into any member destination; direct target deploys and reverts remain break-glass operations.",
+		description: "Ensures the release image's immutable main-{version}-{sha} registry tag without rebuilding or mutating rolling aliases, deploys that tag, and waits for terminal provider and active-runtime proof. A failed promotion compensates with the captured SHA-qualified prior provider image only when its runtime digest and registry manifest agree. A held pair rejects direct promotion into any member destination. Direct deployment of a configured pair destination is unavailable; use a promotion or target revert instead.",
 		hasBody: false,
 		bodyRequired: false,
 		bodyDescription: "",
@@ -61396,7 +61418,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operationId",
 				flag: "--operation-id <uuid>",
 				required: false,
-				description: "Caller-generated UUID stamped as the operationId on every audit event this promotion records, letting the caller attribute its events even when the response is lost. Must not repeat an operationId already present in deploy events. Server-generated when absent.",
+				description: "Caller-generated UUID stamped on every audit event. An exact direct-target deploy retry resumes terminal observation; promotion and revert identities must not repeat. Server-generated when absent.",
 				schemaType: "string",
 				schemaFormat: "uuid",
 				location: "query"
@@ -61781,7 +61803,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operationId",
 				flag: "--operation-id <uuid>",
 				required: false,
-				description: "Caller-generated UUID stamped as the operationId on every audit event this promotion records, letting the caller attribute its events even when the response is lost. Must not repeat an operationId already present in deploy events. Server-generated when absent.",
+				description: "Caller-generated UUID stamped on every audit event. An exact direct-target deploy retry resumes terminal observation; promotion and revert identities must not repeat. Server-generated when absent.",
 				schemaType: "string",
 				schemaFormat: "uuid",
 				location: "query"
@@ -61792,4 +61814,4 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 //#endregion
 export { PersonalApiKeySchema as _, outputModeJsonAccept as a, canonicalPersonalCredentialHost as c, savePersonalCredential as d, credentialSafeMessage as f, normalizeCliApiEnvironment as g, isLoopbackHostname as h, cliMachineOutputSelected as i, forgetPersonalCredential as l, browserOriginForApiHost as m, GENERATED_OPERATION_FINGERPRINT as n, resolveOutputMode as o, credentialSafeProblemSummary as p, addOutputModeOptions as r, commandNeedsMaterializedAuth as s, GENERATED_OPENAPI_COMMAND_SPECS as t, loadPersonalCredential as u };
 
-//# sourceMappingURL=openapi-commands-D-1JdiSU.js.map
+//# sourceMappingURL=openapi-commands-ZEY7SAEH.js.map

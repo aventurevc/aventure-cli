@@ -1,7 +1,7 @@
-import { B as normalizeEnvironmentName, D as resolveAuthStatus, E as readAuthConfig, Et as JsonValueSchema, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-DpIwx3cU.js";
-import { D as datetime, S as string, T as uuid, _ as object, a as _enum, b as record, g as number } from "./data-source-type-CL6KYqKO.js";
-import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-D-1JdiSU.js";
-import { _ as resolveOpenApiOperationSelector, a as visibleOpenApiCommandSpecsForCurrentAuth, b as buildOpenApiTemplatePath, c as expandedTokens, f as queryTermForms, g as buildRequiredOpenApiHeader, h as buildOpenApiPath, i as visibleOpenApiCommandSpecs, n as asCliResponseText, o as addWithInflections, s as coversEveryQueryTerm, t as MCP_GENERATION_CONTRACT, u as normalize, v as runOpenApiCall, y as OPENAPI_METHODS } from "./mcp-generation-contract-wwWI82VM.js";
+import { B as normalizeEnvironmentName, D as resolveAuthStatus, E as readAuthConfig, Et as JsonValueSchema, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-B_93jELZ.js";
+import { A as datetime, O as uuid, S as record, o as _enum, v as number, w as string, y as object } from "./data-source-type-B2O1SiZK.js";
+import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-ZEY7SAEH.js";
+import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-BB8AXhOg.js";
 import { execFile, spawnSync } from "node:child_process";
 import { createHash, webcrypto } from "node:crypto";
 import { readFile } from "node:fs/promises";
@@ -15,7 +15,7 @@ import { setTimeout } from "node:timers/promises";
 import { createInterface } from "node:readline/promises";
 var package_default = {
 	name: "@aventurevc/mcp-server",
-	version: "0.7.257",
+	version: "0.7.259",
 	"private": true,
 	description: "Source workspace for the @aventurevc/aventure-cli and @aventurevc/mcp-server published packages. NOT an install target — see scripts/release/publish-npm-train.mjs for the staged manifests that get published.",
 	license: "UNLICENSED",
@@ -2014,6 +2014,15 @@ function logoutDiagnostics(stored, revoked, forgotten) {
 var ENCRYPTION_ALGORITHM = "RSA_OAEP_256_A256_GCM_V1";
 var MINIMUM_POLL_INTERVAL_SECONDS = 1;
 var MAXIMUM_POLL_INTERVAL_SECONDS = 30;
+/**
+* Acknowledgement is the only thing that lifts a delivered key from the authorization deadline
+* (`app.clerk-auth.cli-authorization.request-ttl`, 10m) to the granted lifetime
+* (`app.clerk-auth.personal-api-key.acknowledged-key-lifetime`, 365d), and
+* `AppClerkAuthProperties.kt:57` requires the latter to exceed the former. One day sits inside
+* that gap, so the server-issued `expiresAt - createdAt` span separates the two lifetimes without
+* consulting the client clock.
+*/
+var ACKNOWLEDGED_KEY_MINIMUM_LIFETIME_MILLISECONDS = 864e5;
 /** Run one browser-approved login without persisting the poll secret or private key. */
 async function loginPersonalCredential(options) {
 	if (!stdin.isTTY) return failure("aventure-cli auth login requires an interactive TTY on stdin", ["For non-interactive automation, inject CLIENT_SECRET, ADMIN_API_KEY, or AUTH_TOKEN through the environment or configured Doppler source."]);
@@ -2044,7 +2053,7 @@ async function loginPersonalCredential(options) {
 		return failure(`auth login: ephemeral encryption key could not be created — ${credentialSafeMessage(error)}`);
 	}
 	const mutation = CliAuthorizationMutationSchema.safeParse({
-		clientLabel: options.clientLabel?.trim() || defaultClientLabel(),
+		clientLabel: options.clientLabel?.trim() || (hostname().trim() || "aventure-cli").slice(0, 120),
 		clientPlatform: clientPlatform(),
 		encryptionAlgorithm: ENCRYPTION_ALGORITHM,
 		encryptionPublicKey: keyPair.publicKey
@@ -2062,7 +2071,7 @@ async function loginPersonalCredential(options) {
 	} catch (error) {
 		return failure(`auth login: unsafe browser authorization URL rejected — ${credentialSafeMessage(error)}`);
 	}
-	if (!printVerificationInstructions(await openVerificationUrl(started, browserOrigin, { noBrowser: options.noBrowser }), started.verificationUrl, verificationReference, started.comparisonCode)) return failure("auth login: browser authorization requires an interactive terminal for manual handoff", ["Automatic browser opening did not complete, and the approval URL was withheld because stderr is not an interactive terminal. Retry from an interactive terminal."], { references: [verificationReference] });
+	if (!printVerificationInstructions(await openVerificationUrl(started, browserOrigin, { noBrowser: options.noBrowser }), started, verificationReference)) return failure("auth login: browser authorization requires an interactive terminal for manual handoff", ["Automatic browser opening did not complete, and the approval URL was withheld because stderr is not an interactive terminal. Retry from an interactive terminal."], { references: [verificationReference] });
 	let delivery;
 	try {
 		delivery = await waitForCredential(started);
@@ -2077,7 +2086,7 @@ async function loginPersonalCredential(options) {
 		return failure(`auth login: encrypted credential could not be opened — ${credentialSafeMessage(error)}`);
 	}
 	const verification = await verifyPersonalCredentialAccess(oneTimeSecret);
-	if (verification.state !== "verified") return failure(`auth login: decrypted credential was not stored or acknowledged because API verification ${verification.state === "invalid" ? "rejected it" : "is unavailable"} — ${verification.summary}`);
+	if (verification.state !== "verified") return failure(`auth login: decrypted credential was neither stored nor acknowledged — ${verification.summary}`);
 	let stored;
 	try {
 		stored = await savePersonalCredential(host, {
@@ -2091,10 +2100,7 @@ async function loginPersonalCredential(options) {
 	try {
 		acknowledged = await acknowledgeUntilAuthorizationDeadline(started);
 	} catch (error) {
-		return {
-			...failure(`auth login: credential was stored and verified, but broker acknowledgement was not confirmed — ${credentialSafeMessage(error, [started.pollSecret])}`, ["The local record remains pending and cannot authenticate ordinary commands. Re-run `aventure-cli auth login`; it clears the stale pending credential automatically."]),
-			data: diagnostics(stored, true)
-		};
+		return pendingAcknowledgementFailure(stored, `auth login: credential was stored and verified, but broker acknowledgement was not confirmed — ${credentialSafeMessage(error, [started.pollSecret])}`);
 	}
 	if (acknowledged.status !== "CONSUMED") return pendingAcknowledgementFailure(stored, `auth login: broker returned ${acknowledged.status} after acknowledgement`);
 	let active;
@@ -2107,35 +2113,51 @@ async function loginPersonalCredential(options) {
 }
 function pendingAcknowledgementFailure(stored, summary) {
 	return {
-		...failure(summary, ["The local record remains pending and unavailable to ordinary commands. Re-run `aventure-cli auth login`; it revokes and clears the stale pending credential automatically."]),
+		...failure(summary, ["The local record remains pending and unavailable to ordinary commands. Re-run `aventure-cli auth login`; it recovers the credential when the broker acknowledged it, and otherwise clears the stale record."]),
 		data: diagnostics(stored, true)
 	};
 }
 /** Resolves a stored credential to a terminal envelope, or null once a stale pending record is cleared. */
 async function existingCredential(stored) {
-	if (stored.activation === "pending") {
-		const revocation = await revokeStoredCredential(stored);
-		if (revocation.outcome === "unconfirmed") return {
-			...failure("auth login: a prior credential is durably stored but broker acknowledgement was not confirmed", [`Remote revocation of the stale pending key was not confirmed — ${revocation.summary}. Retry when the API is reachable.`]),
+	const verification = await verifyPersonalCredentialAccess(stored.credential.secret);
+	if (stored.activation !== "pending") {
+		if (verification.state !== "verified") return {
+			...failure(`auth login: stored credential ${verification.state} — ${verification.summary}`, ["Run `aventure-cli auth logout` to revoke/remove it before authorizing a replacement."]),
 			data: diagnostics(stored, false)
 		};
-		try {
-			await forgetPersonalCredential(stored.host);
-		} catch (error) {
-			return {
-				...failure(`auth login: stale pending credential could not be removed — ${credentialSafeMessage(error, [stored.credential.secret])}`),
-				data: diagnostics(stored, false)
-			};
-		}
-		stderr.write(revocation.outcome === "revoked" ? "Revoked and cleared a stale pending CLI credential; starting a fresh browser authorization.\n" : "Cleared a stale pending CLI credential whose remote key can no longer authenticate; starting a fresh browser authorization.\n");
-		return null;
+		return success("Personal CLI credential is already stored and its authenticated identity was verified.", diagnostics(stored, true), { ids: [stored.credential.apiKey.id] });
 	}
-	const verification = await verifyPersonalCredentialAccess(stored.credential.secret);
-	if (verification.state !== "verified") return {
-		...failure(`auth login: stored credential ${verification.state} — ${verification.summary}`, ["Run `aventure-cli auth logout` to revoke/remove it before authorizing a replacement."]),
+	if (verification.state === "verified" && isAcknowledgedLifetime(verification.apiKey)) try {
+		const active = await savePersonalCredential(stored.host, {
+			apiKey: verification.apiKey,
+			secret: stored.credential.secret
+		}, "active");
+		return success("Recovered pending CLI credential: broker acknowledgement had succeeded.", diagnostics(active, true), { ids: [active.credential.apiKey.id] });
+	} catch (error) {
+		return {
+			...failure(`auth login: credential is valid but could not be promoted locally — ${credentialSafeMessage(error, [stored.credential.secret])}`, ["The remote key remains valid. Re-run `aventure-cli auth login` to retry local activation; it will recover the pending credential automatically."]),
+			data: diagnostics(stored, true)
+		};
+	}
+	if (verification.state === "unavailable") return {
+		...failure(`auth login: the stored pending credential could not be verified — ${verification.summary}`, ["The stored record and the remote key were both preserved. Re-run `aventure-cli auth login` when the API is reachable; it recovers an acknowledged credential and clears an unacknowledged one."]),
 		data: diagnostics(stored, false)
 	};
-	return success("Personal CLI credential is already stored and its authenticated identity was verified.", diagnostics(stored, true), { ids: [stored.credential.apiKey.id] });
+	const revocation = await revokeStoredCredential(stored);
+	if (revocation.outcome === "unconfirmed") return {
+		...failure("auth login: a prior credential is durably stored but broker acknowledgement was not confirmed", [`Remote revocation of the stale pending key was not confirmed — ${revocation.summary}. Retry when the API is reachable.`]),
+		data: diagnostics(stored, false)
+	};
+	try {
+		await forgetPersonalCredential(stored.host);
+	} catch (error) {
+		return {
+			...failure(`auth login: stale pending credential could not be removed — ${credentialSafeMessage(error, [stored.credential.secret])}`),
+			data: diagnostics(stored, false)
+		};
+	}
+	stderr.write(revocation.outcome === "revoked" ? "Revoked and cleared a stale pending CLI credential; starting a fresh browser authorization.\n" : "Cleared a stale pending CLI credential whose remote key can no longer authenticate; starting a fresh browser authorization.\n");
+	return null;
 }
 /**
 * Retry retryable acknowledgement failures (transport-unknown outcomes, 5xx, 429) at the poll
@@ -2147,9 +2169,11 @@ async function acknowledgeUntilAuthorizationDeadline(started) {
 	for (;;) try {
 		return await acknowledgeCliAuthorization(started.id, started.pollSecret);
 	} catch (error) {
-		if (!(error instanceof CliAuthorizationRequestError && error.retryable) && !(error instanceof CliAuthorizationTransportError)) throw error;
+		if (error instanceof CliAuthorizationRequestError) {
+			if (!error.retryable) throw error;
+			intervalSeconds = boundedPollInterval(error.retryAfterSeconds ?? intervalSeconds);
+		} else if (!(error instanceof CliAuthorizationTransportError)) throw error;
 		if (Date.now() >= expiresAt) throw error;
-		if (error instanceof CliAuthorizationRequestError) intervalSeconds = boundedPollInterval(error.retryAfterSeconds ?? intervalSeconds);
 		stderr.write("Broker acknowledgement was interrupted; retrying.\n");
 		await waitForNextPoll(intervalSeconds, expiresAt);
 	}
@@ -2164,10 +2188,12 @@ async function waitForCredential(started) {
 		try {
 			result = await pollCliAuthorization(started.id, started.pollSecret);
 		} catch (error) {
-			if (error instanceof CliAuthorizationRequestError && !error.retryable) throw error;
+			if (error instanceof CliAuthorizationRequestError) {
+				if (!error.retryable) throw error;
+				intervalSeconds = boundedPollInterval(error.retryAfterSeconds ?? intervalSeconds);
+			}
 			lastRetryableFailure = error;
 			stderr.write("Authorization poll was interrupted; retrying.\n");
-			if (error instanceof CliAuthorizationRequestError) intervalSeconds = boundedPollInterval(error.retryAfterSeconds ?? intervalSeconds);
 			await waitForNextPoll(intervalSeconds, expiresAt);
 			continue;
 		}
@@ -2196,23 +2222,16 @@ async function waitForCredential(started) {
 * Keep successful automatic opening free of the raw URL, exposing it only for an interactive
 * manual handoff when the browser opener cannot carry the possession secret itself.
 */
-function printVerificationInstructions(browser, verificationUrl, verificationReference, comparisonCode) {
-	if (browser.state === "opened") {
-		stderr.write([
-			"Browser approval opened for this request.",
-			`Approval reference: ${verificationReference}`,
-			`Comparison code: ${comparisonCode}`,
-			"Confirm that the browser shows the same code before approving.",
-			""
-		].join("\n"));
-		return true;
-	}
-	if (!stderr.isTTY) return false;
+function printVerificationInstructions(browser, started, verificationReference) {
+	const opened = browser.state === "opened";
+	if (!opened && !stderr.isTTY) return false;
 	stderr.write([
-		`Browser not opened automatically (${browser.reason}).`,
-		"Open this one-time approval URL in your browser:",
-		verificationUrl,
-		`Comparison code: ${comparisonCode}`,
+		...opened ? ["Browser approval opened for this request.", `Approval reference: ${verificationReference}`] : [
+			`Browser not opened automatically (${browser.reason}).`,
+			"Open this one-time approval URL in your browser:",
+			started.verificationUrl
+		],
+		`Comparison code: ${started.comparisonCode}`,
 		"Confirm that the browser shows the same code before approving.",
 		""
 	].join("\n"));
@@ -2225,10 +2244,6 @@ function clientPlatform() {
 		case "win32": return "WINDOWS";
 		default: return "OTHER";
 	}
-}
-function defaultClientLabel() {
-	const machine = hostname().trim();
-	return (machine.length > 0 ? machine : "aventure-cli").slice(0, 120);
 }
 function boundedPollInterval(seconds) {
 	return Math.min(MAXIMUM_POLL_INTERVAL_SECONDS, Math.max(MINIMUM_POLL_INTERVAL_SECONDS, seconds));
@@ -2246,6 +2261,15 @@ function diagnostics(stored, verified) {
 		activation: stored.activation,
 		verified
 	};
+}
+/**
+* True only when the server-issued lifetime span proves the broker acknowledged the key. Both
+* timestamps come from the provider, so no client clock is consulted. A nullish expiry is treated
+* as unacknowledged, never as a permanent key.
+*/
+function isAcknowledgedLifetime(apiKey) {
+	if (apiKey.expiresAt === null || apiKey.expiresAt === void 0) return false;
+	return new Date(apiKey.expiresAt).getTime() - new Date(apiKey.createdAt).getTime() > ACKNOWLEDGED_KEY_MINIMUM_LIFETIME_MILLISECONDS;
 }
 //#endregion
 //#region ../api-schemas/dist/agent/instruction-kind.js
@@ -2822,16 +2846,11 @@ function generatedSpec(operationId) {
 * URL derives from `api/env.ts` instead of restating a second host inventory here.
 */
 function mcpServerUrl() {
-	let host;
 	try {
-		host = readEnv().host;
+		return success("MCP host derived", mcpServerUrlFromApiHost(readEnv().host, "/mcp").href);
 	} catch (error) {
-		return failure(`Set a valid API host with \`--environment <name>\` or API_URL — ${credentialSafeMessage(error)}.`);
+		return failure(`Correct API_ENV or pass \`--environment <name>\` — ${credentialSafeMessage(error)}.`);
 	}
-	const candidate = host.includes("://") ? host : `https://${host}`;
-	const [apiLabel, ...domain] = URL.canParse(candidate) ? new URL(candidate).hostname.split(".") : [];
-	if (apiLabel !== "api" || domain.length === 0) return failure(`Cannot derive the aVenture MCP host from API host ${host}; select a mapped environment with \`--environment <name>\`.`);
-	return success("MCP host derived", `https://${["mcp", ...domain].join(".")}/mcp`);
 }
 //#endregion
 //#region aventure-cli/commands/completion-setup.ts
@@ -3332,7 +3351,7 @@ function cliVersionCheck() {
 */
 async function apiSchemasCheck() {
 	try {
-		const { EntityDetailSchema } = await import("./detail-TlfWxQdO.js");
+		const { EntityDetailSchema } = await import("./detail-CKBtjE1F.js");
 		if (typeof EntityDetailSchema.safeParse !== "function") throw new Error("EntityDetailSchema does not expose a Zod parser");
 		return checkResult("api-schemas", "pass", "Installed @aventurevc/api-schemas contracts resolve beyond the CLI startup path.");
 	} catch (error) {
@@ -3354,7 +3373,7 @@ async function apiHostCheck(statusSpec) {
 		host = readEnv().host;
 	} catch (error) {
 		return {
-			check: checkResult("api-host", "fail", `Set a valid API host with \`--environment <name>\` or API_URL — ${credentialSafeMessage(error)}.`),
+			check: checkResult("api-host", "fail", `Correct API_ENV or pass \`--environment <name>\` — ${credentialSafeMessage(error)}.`),
 			servedFingerprint: null
 		};
 	}
@@ -3401,16 +3420,30 @@ async function authCheck() {
 	}
 	const personal = await inspectPersonalCredential$1();
 	if (AUTH_SECRET_NAMES.some((name) => resolved[name].present) || personal.state === "found") return checkResult("auth", "pass", `Credential scope materialized: ${scopeText(resolved, personal)}.`);
-	if (personal.state === "unavailable") return checkResult("auth", "fail", `Unlock OS credential storage before \`aventure-cli auth login\`, or inject ${AUTH_SECRET_NAMES.join("/")} through the environment — ${personal.summary}.`);
+	if (personal.state === "unavailable") {
+		if (personal.cause === "environment") return checkResult("auth", "fail", `Fix the environment configuration first — ${personal.summary}.`);
+		return checkResult("auth", "fail", `Unlock OS credential storage before \`aventure-cli auth login\`, or inject ${AUTH_SECRET_NAMES.join("/")} through the environment — ${personal.summary}.`);
+	}
 	return AUTH_SECRET_NAMES.some((name) => resolved[name].source === "config") ? checkResult("auth", "fail", `The Doppler source in ${configPath()} resolved no credential: confirm your access to that project and config, or inject ${AUTH_SECRET_NAMES.join("/")} through the environment.`) : checkResult("auth", "fail", "Run `aventure-cli auth login` for a personal credential, or `aventure-cli auth init` to select a Doppler source.");
 }
 async function inspectPersonalCredential$1() {
+	let canonicalHost;
 	try {
-		return await loadPersonalCredential(canonicalPersonalCredentialHost(readEnv().host));
+		canonicalHost = canonicalPersonalCredentialHost(readEnv().host);
 	} catch (error) {
 		return {
 			state: "unavailable",
-			summary: credentialSafeMessage(error)
+			summary: credentialSafeMessage(error),
+			cause: "environment"
+		};
+	}
+	try {
+		return await loadPersonalCredential(canonicalHost);
+	} catch (error) {
+		return {
+			state: "unavailable",
+			summary: credentialSafeMessage(error),
+			cause: "keyring"
 		};
 	}
 }
@@ -5121,7 +5154,7 @@ async function runGeneratedCommand(spec, opts, mode) {
 process.on("uncaughtException", (error) => writeFatalEnvelope(error, "uncaughtException"));
 process.on("unhandledRejection", (reason) => writeFatalEnvelope(reason instanceof Error ? reason : new Error(String(reason)), "unhandledRejection"));
 if (commandNeedsMaterializedAuth(process.argv.slice(2), GENERATED_OPENAPI_COMMAND_SPECS)) await materializeAuth();
-var generatedSpecs = visibleOpenApiCommandSpecs(GENERATED_OPENAPI_COMMAND_SPECS, (readEnv().adminApiKey?.trim().length ?? 0) > 0);
+var generatedSpecs = visibleOpenApiCommandSpecsForCurrentAuth(GENERATED_OPENAPI_COMMAND_SPECS);
 var program = new Command();
 program.name("aventure-cli").version(package_default.version).summary("CLI for the aVenture API: read and maintain venture-research data — entities, people, funding, news, media, and search").description([
 	"CLI for the aVenture API: read and maintain venture-research data —",
@@ -5171,4 +5204,4 @@ try {
 //#endregion
 export {};
 
-//# sourceMappingURL=aventure-cli-Ddwz9U3g.js.map
+//# sourceMappingURL=aventure-cli-BMVnX-y7.js.map

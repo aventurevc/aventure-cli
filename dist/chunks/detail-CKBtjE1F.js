@@ -1,4 +1,4 @@
-import { D as datetime, E as date, S as string, T as uuid, _ as object, a as _enum, c as boolean, d as int, f as intersection, g as number, n as EntityPersonOwnerSchema, r as EntityTypeSchema, s as array, t as DatasourceDataSourceTypeSchema } from "./data-source-type-CL6KYqKO.js";
+import { A as datetime, O as uuid, k as date, l as array, m as intersection, n as EntityPersonOwnerSchema, o as _enum, p as int, r as EntityTypeSchema, t as DatasourceDataSourceTypeSchema, u as boolean, v as number, w as string, y as object } from "./data-source-type-B2O1SiZK.js";
 //#region ../api-schemas/dist/address/association-role.js
 /**
 * Meaning of an entity or person address association. Domicile is a legal or registered seat and is not evidence of operational presence; dominant is the predominant display location; origin is the founding or historical location.
@@ -3988,4 +3988,4 @@ var EntityDetailSchema = object({
 //#endregion
 export { EntityDetailSchema };
 
-//# sourceMappingURL=detail-TlfWxQdO.js.map
+//# sourceMappingURL=detail-CKBtjE1F.js.map

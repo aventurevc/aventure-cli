@@ -1,4 +1,4 @@
-import { C as union, D as datetime, S as string, T as uuid, _ as object, a as _enum, b as record, c as boolean, d as int, g as number, n as EntityPersonOwnerSchema, o as _null, p as lazy, r as EntityTypeSchema, s as array, w as unknown } from "./data-source-type-CL6KYqKO.js";
+import { A as datetime, E as unknown, O as uuid, S as record, T as union, h as lazy, l as array, n as EntityPersonOwnerSchema, o as _enum, p as int, r as EntityTypeSchema, s as _null, u as boolean, v as number, w as string, y as object } from "./data-source-type-B2O1SiZK.js";
 import { createRequire } from "node:module";
 import childProcess, { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -8245,7 +8245,6 @@ function deploymentEnvironmentName() {
 }
 function cloudPlatform() {
 	if (env.FLY_MACHINE_ID || env.FLY_APP_NAME) return "fly";
-	if (env.RAILWAY_DEPLOYMENT_ID || env.RAILWAY_SERVICE_ID) return "railway";
 }
 function otelFieldAttributes(fields) {
 	const attributes = {};
@@ -35397,7 +35396,7 @@ var CLI_COMMAND_SECTION = {
 		rank: 1
 	},
 	administration: {
-		heading: "Administration commands (require ADMIN_API_KEY):",
+		heading: "Administration commands (require ADMIN_API_KEY or AUTH_TOKEN):",
 		rank: 2
 	},
 	cli: {
@@ -35406,10 +35405,10 @@ var CLI_COMMAND_SECTION = {
 	}
 };
 /**
-* Administration-section commands require ADMIN_API_KEY, so without a
-* materialized key the whole section — commands, aliases, help, completions,
-* catalogs — is private. `visibleOpenApiCommandSpecs` filters on this, and
-* startup auth materializes saved credentials before that filter runs.
+* Administration-section commands require an admin API key or a bearer token with the needed
+* backend permission. Without either credential, the section — commands, aliases, help,
+* completions, catalogs — is private. `visibleOpenApiCommandSpecs` filters on this, and startup
+* auth materializes saved credentials before that filter runs.
 */
 function administrationNamespace(segment) {
 	return segment !== void 0 && CLI_NAMESPACE_SECTION[segment] === "administration";
@@ -35452,4 +35451,4 @@ var CLI_NAMESPACE_SECTION = {
 //#endregion
 export { esm_exports as $, logDebug as A, __require as At, normalizeEnvironmentName as B, authMaterializationFailure as C, init_Metric as Ct, resolveAuthStatus as D, __commonJSMin as Dt, readAuthConfig as E, JsonValueSchema as Et, setStderrLogging as F, failure as G, readEnv as H, shutdownLogging as I, success as J, pageMetadata as K, AUTH_SECRET_NAME as L, logInfo as M, __toESM as Mt, logWarn as N, writeAuthConfig as O, __esmMin as Ot, otelResourceAttributes as P, resourceFromAttributes as Q, AUTH_SECRET_NAMES as R, InvalidArgumentError as S, ValueType as St, materializeAuth as T, init_NoopMeter as Tt, RESULT_ENVELOPE_BYTE_CAP as U, prepareCallEnv as V, capEnvelope as W, defaultResource as X, init_esm as Y, init_ResourceImpl as Z, redactCredentialText as _, metrics as _t, generatedOptionGroupRank as a, hrTimeDuration as at, Option as b, context as bt, CLI_SHELL_INPUT_GUIDANCE as c, init_time as ct, flagName as d, init_esm$2 as dt, init_esm$1 as et, mcpToolForIntent as f, globalErrorHandler as ft, problemFailure as g, init_metrics_api as gt, aventureRequest as h, init_esm$3 as ht, cliOptionDescription as i, hrTime as it, logError as j, __toCommonJS as jt, describeError as k, __exportAll as kt, cliShellQuote as l, millisToHrTime as lt, aventureMethod as m, esm_exports$2 as mt, CLI_NAMESPACE_SECTION as n, ExportResultCode as nt, generatedOptionHelpGroup as o, hrTimeToMicroseconds as ot, prepareOpenApiRequestBody as p, init_global_error_handler as pt, responseCount as q, administrationNamespace as r, init_ExportResult as rt, withTerminalPunctuation as s, hrTimeToSeconds as st, CLI_COMMAND_SECTION as t, internal as tt, cliShellSensitiveSchema as u, esm_exports$1 as ut, responseWarningMetadata as v, diag as vt, configPath as w, createNoopMeter as wt, CommanderError as x, init_context_api as xt, Command as y, init_diag_api as yt, environmentNames as z };
 
-//# sourceMappingURL=cli-help-policy-DpIwx3cU.js.map
+//# sourceMappingURL=cli-help-policy-B_93jELZ.js.map
