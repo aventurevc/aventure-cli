@@ -7523,6 +7523,7 @@ var ProblemDetailSchema = object({
 		"r2_delete_failed",
 		"r2_upload_failed",
 		"source_document_body_unavailable",
+		"source_document_capture_limit_exceeded",
 		"news_similarity_embedding_unavailable",
 		"search_provider_not_configured",
 		"search_provider_error",
@@ -7879,6 +7880,7 @@ var API_ENVIRONMENT_CONFIG = {
 	production: { host: "api.aventure.vc" },
 	local: { host: "localhost:8080" }
 };
+`${API_ENVIRONMENT_CONFIG.production.host}`;
 function readEnv() {
 	const environment = environmentFrom(process.env.API_ENV);
 	return {
@@ -35451,4 +35453,4 @@ var CLI_NAMESPACE_SECTION = {
 //#endregion
 export { esm_exports as $, logDebug as A, __require as At, normalizeEnvironmentName as B, authMaterializationFailure as C, init_Metric as Ct, resolveAuthStatus as D, __commonJSMin as Dt, readAuthConfig as E, JsonValueSchema as Et, setStderrLogging as F, failure as G, readEnv as H, shutdownLogging as I, success as J, pageMetadata as K, AUTH_SECRET_NAME as L, logInfo as M, __toESM as Mt, logWarn as N, writeAuthConfig as O, __esmMin as Ot, otelResourceAttributes as P, resourceFromAttributes as Q, AUTH_SECRET_NAMES as R, InvalidArgumentError as S, ValueType as St, materializeAuth as T, init_NoopMeter as Tt, RESULT_ENVELOPE_BYTE_CAP as U, prepareCallEnv as V, capEnvelope as W, defaultResource as X, init_esm as Y, init_ResourceImpl as Z, redactCredentialText as _, metrics as _t, generatedOptionGroupRank as a, hrTimeDuration as at, Option as b, context as bt, CLI_SHELL_INPUT_GUIDANCE as c, init_time as ct, flagName as d, init_esm$2 as dt, init_esm$1 as et, mcpToolForIntent as f, globalErrorHandler as ft, problemFailure as g, init_metrics_api as gt, aventureRequest as h, init_esm$3 as ht, cliOptionDescription as i, hrTime as it, logError as j, __toCommonJS as jt, describeError as k, __exportAll as kt, cliShellQuote as l, millisToHrTime as lt, aventureMethod as m, esm_exports$2 as mt, CLI_NAMESPACE_SECTION as n, ExportResultCode as nt, generatedOptionHelpGroup as o, hrTimeToMicroseconds as ot, prepareOpenApiRequestBody as p, init_global_error_handler as pt, responseCount as q, administrationNamespace as r, init_ExportResult as rt, withTerminalPunctuation as s, hrTimeToSeconds as st, CLI_COMMAND_SECTION as t, internal as tt, cliShellSensitiveSchema as u, esm_exports$1 as ut, responseWarningMetadata as v, diag as vt, configPath as w, createNoopMeter as wt, CommanderError as x, init_context_api as xt, Command as y, init_diag_api as yt, environmentNames as z };
 
-//# sourceMappingURL=cli-help-policy-B_93jELZ.js.map
+//# sourceMappingURL=cli-help-policy-DQ_p5vjo.js.map
