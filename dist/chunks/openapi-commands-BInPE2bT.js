@@ -1,5 +1,5 @@
-import { U as RESULT_ENVELOPE_BYTE_CAP, _ as redactCredentialText, b as Option, r as administrationNamespace, y as Command, z as environmentNames } from "./cli-help-policy-DQ_p5vjo.js";
-import { A as datetime, l as array, o as _enum, w as string, y as object } from "./data-source-type-B2O1SiZK.js";
+import { U as RESULT_ENVELOPE_BYTE_CAP, _ as redactCredentialText, b as Option, r as administrationNamespace, y as Command, z as environmentNames } from "./cli-help-policy-C-YXYlYA.js";
+import { A as datetime, l as array, o as _enum, w as string, y as object } from "./data-source-type-CEoBo_qP.js";
 /**
 * Personal API-key metadata sourced from Clerk; never contains the key secret
 *
@@ -112,9 +112,9 @@ async function savePersonalCredential(host, credential, activation) {
 	try {
 		observed = await entry.getPassword() ?? void 0;
 	} catch (error) {
-		throw new Error(`OS credential storage write outcome is unknown (${errorSummary(writeFailure ?? error, [serialized, credential.secret])}); broker acknowledgement was withheld. Re-run auth status before retrying.`, { cause: error });
+		throw new Error(`OS credential storage write outcome is unknown (${errorSummary(writeFailure ?? error, [serialized, credential.secret])}); broker acknowledgment was withheld. Re-run auth status before retrying.`, { cause: error });
 	}
-	if (observed !== serialized) throw new Error(`OS credential storage did not confirm a durable write (${errorSummary(writeFailure, [serialized, credential.secret])}); broker acknowledgement was withheld.`, writeFailure === void 0 ? void 0 : { cause: writeFailure });
+	if (observed !== serialized) throw new Error(`OS credential storage did not confirm a durable write (${errorSummary(writeFailure, [serialized, credential.secret])}); broker acknowledgment was withheld.`, writeFailure === void 0 ? void 0 : { cause: writeFailure });
 	return {
 		host: canonicalHost,
 		activation,
@@ -320,7 +320,7 @@ function nonBlankString(value) {
 //#endregion
 //#region aventure-cli/generated/openapi-commands.ts
 /** Identity of the operation set this catalog was generated from; GET /v1/status serves the live one. */
-var GENERATED_OPERATION_FINGERPRINT = "bde042e0caaa4cb6";
+var GENERATED_OPERATION_FINGERPRINT = "728e05dc49858349";
 var GENERATED_OPENAPI_COMMAND_SPECS = [
 	{
 		operationId: "getStatus",
@@ -11074,6 +11074,30 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		]
 	},
 	{
+		operationId: "listAgentChassis",
+		method: "GET",
+		path: "/v1/agents/chassis",
+		resource: "agents",
+		intent: "read",
+		cliPath: [
+			"agents",
+			"chassis",
+			"list"
+		],
+		summary: "List accepted agent chassis",
+		description: "Returns the sorted agent runtime chassis tokens accepted by the API.",
+		hasBody: false,
+		bodyRequired: false,
+		bodyDescription: "",
+		bodyRequiredPath: [],
+		bodyParameters: [],
+		dryRun: false,
+		scope: "read",
+		auth: "read",
+		errorResponse: [],
+		parameters: []
+	},
+	{
 		operationId: "getAgentInstruction",
 		method: "GET",
 		path: "/v1/agents/instructions/{kind}/{name}",
@@ -17373,7 +17397,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "cursor",
 				flag: "--cursor <cursor>",
 				required: false,
-				description: "Opaque URL-safe cursor token for sort-aware continuation.",
+				description: "Opaque URL-safe cursor token from X-Next-Cursor. Reuse the same filters and sort.",
 				schemaType: "string",
 				location: "query"
 			},
@@ -18876,7 +18900,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size; default 25, capped at 200.",
+				description: "The size of the page to be returned; default 25, maximum 200.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -20734,7 +20758,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -20744,7 +20768,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -21071,7 +21095,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -21081,7 +21105,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -21894,7 +21918,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "cursor",
 				flag: "--cursor <cursor>",
 				required: false,
-				description: "Cursor token for deep pagination.",
+				description: "Opaque URL-safe cursor token from X-Next-Cursor. Reuse the same filters and sort.",
 				schemaType: "string",
 				location: "query"
 			},
@@ -23629,612 +23653,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		]
 	},
 	{
-		operationId: "createEntityPersonAssociation_1",
-		method: "POST",
-		path: "/v1/entities/{entityId}/people",
-		resource: "entities",
-		intent: "write",
-		cliPath: [
-			"entities",
-			"people",
-			"create"
-		],
-		summary: "Create entity person association",
-		description: "Creates or returns an existing person-entity join.",
-		hasBody: true,
-		bodyKind: "json",
-		bodyRequired: true,
-		bodyDescription: "Mutation body for joining or updating a person-entity association.",
-		bodyRequiredPath: [],
-		bodyParameters: [
-			{
-				name: "corporateTitleId",
-				optionKey: "corporateTitleId",
-				flag: "--corporate-title-id <integer>",
-				required: false,
-				description: "Existing corporate title id.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "body"
-			},
-			{
-				name: "creator",
-				optionKey: "creator",
-				flag: "--creator <creator>",
-				required: false,
-				description: "Association creator label.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "endDate",
-				optionKey: "endDate",
-				flag: "--end-date <date-time>",
-				required: false,
-				description: "Association end timestamp.",
-				schemaType: "string",
-				schemaFormat: "date-time",
-				location: "body"
-			},
-			{
-				name: "isCurrent",
-				optionKey: "bodyIsCurrent",
-				flag: "--body-is-current <true|false>",
-				required: false,
-				description: "Current-state flag. When omitted, create and replace derive it from endDate for compatibility; PATCH preserves the existing value. Set false for a historical association without an end timestamp; true requires no end timestamp.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "jobLevel",
-				optionKey: "jobLevel",
-				flag: "--job-level <job-level>",
-				required: false,
-				description: "Optional title level.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "personFunction",
-				optionKey: "personFunction",
-				flag: "--person-function <person-function>",
-				required: false,
-				description: "Optional title function.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "personId",
-				optionKey: "personId",
-				flag: "--person-id <uuid>",
-				required: false,
-				description: "Person id when the path does not scope the person.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "body"
-			},
-			{
-				name: "personTitle",
-				optionKey: "personTitle",
-				flag: "--person-title <person-title>",
-				required: false,
-				description: "Write-side corporate title text; read association rows expose it as titleName.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "startDate",
-				optionKey: "startDate",
-				flag: "--start-date <date-time>",
-				required: false,
-				description: "Association start timestamp.",
-				schemaType: "string",
-				schemaFormat: "date-time",
-				location: "body"
-			}
-		],
-		dryRun: true,
-		scope: "write",
-		auth: "write",
-		errorResponse: [],
-		parameters: [
-			{
-				name: "entityId",
-				optionKey: "entityId",
-				flag: "--entity-id <uuid>",
-				required: true,
-				description: "Entity id.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "path"
-			},
-			{
-				name: "id",
-				optionKey: "recordId",
-				flag: "--record-id <uuid>",
-				required: false,
-				description: "Entity unique identifier (UUID) — at least one of id or slug required.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "slug",
-				optionKey: "recordSlug",
-				flag: "--record-slug <record-slug>",
-				required: false,
-				description: "Entity URL-friendly identifier — at least one of id or slug required.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "search",
-				optionKey: "search",
-				flag: "--search <search>",
-				required: false,
-				description: "Search term filter.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "role",
-				optionKey: "role",
-				flag: "--role <role>",
-				required: false,
-				description: "Association role filter.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "isCurrent",
-				optionKey: "isCurrent",
-				flag: "--is-current <true|false>",
-				required: false,
-				description: "Current association filter.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includeUrl",
-				optionKey: "includeUrl",
-				flag: "--include-url <true|false>",
-				required: false,
-				description: "Include person URL records.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includeAddress",
-				optionKey: "includeAddress",
-				flag: "--include-address <true|false>",
-				required: false,
-				description: "Include person address records.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "as",
-				optionKey: "as",
-				flag: "--as <as>",
-				required: false,
-				description: "Projection: `core` (default) returns person identity only and omits association fields. `association` returns PersonDetail rows with the matching join under `association[]`; read title and period fields from `association[].titleName`, `association[].startDate`, and `association[].endDate`. Person sitemap visibility is owned by people detail/status reads, not this list projection.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "personSlug",
-				optionKey: "personSlug",
-				flag: "--person-slug <person-slug>",
-				required: false,
-				description: "Person slug fallback for entity-keyed writes.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "countOnly",
-				optionKey: "countOnly",
-				flag: "--count-only <true|false>",
-				required: false,
-				description: "Return count metadata without full content.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "permitMonogram",
-				optionKey: "permitMonogram",
-				flag: "--permit-monogram <true|false>",
-				required: false,
-				description: "Permit generated monogram fallback.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includePrivate",
-				optionKey: "includePrivate",
-				flag: "--include-private <true|false>",
-				required: false,
-				description: "Privileged read scope. Includes associations on hidden entities. Defaults to private visibility for admin API key or ROLE_ADMIN callers; explicit true requires that authority.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "sourceType",
-				optionKey: "sourceType",
-				flag: "--source-type <source-type>",
-				required: true,
-				description: "Write provenance source type. Allowed values: requestChangeForm, newsArticle, blogArticle, firstPartyWebsite, relatedPartyWebsite, thirdPartyWebsite, llm, aventureStaff.",
-				schemaType: "string",
-				choices: [
-					"requestChangeForm",
-					"newsArticle",
-					"blogArticle",
-					"firstPartyWebsite",
-					"relatedPartyWebsite",
-					"thirdPartyWebsite",
-					"llm",
-					"aventureStaff"
-				],
-				location: "query"
-			},
-			{
-				name: "sourceDetail",
-				optionKey: "sourceDetail",
-				flag: "--source-detail <source-detail>",
-				required: true,
-				description: "Source detail or reviewer reference for the write.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProvider",
-				optionKey: "sourceProvider",
-				flag: "--source-provider <source-provider>",
-				required: false,
-				description: "Provider name for provider-native IDs or slugs.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderId",
-				optionKey: "sourceProviderId",
-				flag: "--source-provider-id <source-provider-id>",
-				required: false,
-				description: "Provider-native source ID.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderSlug",
-				optionKey: "sourceProviderSlug",
-				flag: "--source-provider-slug <source-provider-slug>",
-				required: false,
-				description: "Provider-native source slug.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
-				schemaType: "string",
-				choices: ["agent", "employee"],
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			}
-		]
-	},
-	{
-		operationId: "deleteEntityPersonAssociation_1",
-		method: "DELETE",
-		path: "/v1/entities/{entityId}/people/{associationId}",
-		resource: "entities",
-		intent: "delete",
-		cliPath: [
-			"entities",
-			"people",
-			"delete"
-		],
-		summary: "Delete entity person association",
-		description: "Deletes the entity/person join row.",
-		hasBody: false,
-		bodyRequired: false,
-		bodyDescription: "",
-		bodyRequiredPath: [],
-		bodyParameters: [],
-		dryRun: true,
-		scope: "write",
-		auth: "write",
-		errorResponse: [],
-		parameters: [
-			{
-				name: "entityId",
-				optionKey: "entityId",
-				flag: "--entity-id <uuid>",
-				required: true,
-				description: "Entity id.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "path"
-			},
-			{
-				name: "associationId",
-				optionKey: "associationId",
-				flag: "--association-id <integer>",
-				required: true,
-				description: "Association id.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "path"
-			},
-			{
-				name: "sourceType",
-				optionKey: "sourceType",
-				flag: "--source-type <source-type>",
-				required: true,
-				description: "Write provenance source type. Allowed values: requestChangeForm, newsArticle, blogArticle, firstPartyWebsite, relatedPartyWebsite, thirdPartyWebsite, llm, aventureStaff.",
-				schemaType: "string",
-				choices: [
-					"requestChangeForm",
-					"newsArticle",
-					"blogArticle",
-					"firstPartyWebsite",
-					"relatedPartyWebsite",
-					"thirdPartyWebsite",
-					"llm",
-					"aventureStaff"
-				],
-				location: "query"
-			},
-			{
-				name: "sourceDetail",
-				optionKey: "sourceDetail",
-				flag: "--source-detail <source-detail>",
-				required: true,
-				description: "Source detail or reviewer reference for the write.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProvider",
-				optionKey: "sourceProvider",
-				flag: "--source-provider <source-provider>",
-				required: false,
-				description: "Provider name for provider-native IDs or slugs.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderId",
-				optionKey: "sourceProviderId",
-				flag: "--source-provider-id <source-provider-id>",
-				required: false,
-				description: "Provider-native source ID.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderSlug",
-				optionKey: "sourceProviderSlug",
-				flag: "--source-provider-slug <source-provider-slug>",
-				required: false,
-				description: "Provider-native source slug.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
-				schemaType: "string",
-				choices: ["agent", "employee"],
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			}
-		]
-	},
-	{
-		operationId: "listEntityPeople",
-		method: "GET",
-		path: "/v1/entities/detail/people",
-		resource: "entities",
-		intent: "read",
-		cliPath: [
-			"entities",
-			"people",
-			"filter"
-		],
-		summary: "List entity people",
-		description: "Returns people for an entity selected by query. Public and client-secret reads exclude hidden entities; trusted admin credentials include them for write readback.",
-		hasBody: false,
-		bodyRequired: false,
-		bodyDescription: "",
-		bodyRequiredPath: [],
-		bodyParameters: [],
-		dryRun: false,
-		scope: "read",
-		auth: "read",
-		errorResponse: [],
-		parameters: [
-			{
-				name: "id",
-				optionKey: "entityId",
-				flag: "--entity-id <uuid>",
-				required: false,
-				description: "Entity unique identifier (UUID) — at least one of id or slug required.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "slug",
-				optionKey: "entitySlug",
-				flag: "--entity-slug <entity-slug>",
-				required: false,
-				description: "Entity URL-friendly identifier — at least one of id or slug required.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "search",
-				optionKey: "search",
-				flag: "--search <search>",
-				required: false,
-				description: "Search term filter.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "role",
-				optionKey: "role",
-				flag: "--role <role>",
-				required: false,
-				description: "Association role filter.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "isCurrent",
-				optionKey: "isCurrent",
-				flag: "--is-current <true|false>",
-				required: false,
-				description: "Current association filter.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includeUrl",
-				optionKey: "includeUrl",
-				flag: "--include-url <true|false>",
-				required: false,
-				description: "Include person URL records.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includeAddress",
-				optionKey: "includeAddress",
-				flag: "--include-address <true|false>",
-				required: false,
-				description: "Include person address records.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "as",
-				optionKey: "as",
-				flag: "--as <as>",
-				required: false,
-				description: "Projection: `core` (default) returns person identity only and omits association fields. `association` returns PersonDetail rows with the matching join under `association[]`; read title and period fields from `association[].titleName`, `association[].startDate`, and `association[].endDate`. Person sitemap visibility is owned by people detail/status reads, not this list projection.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "personSlug",
-				optionKey: "personSlug",
-				flag: "--person-slug <person-slug>",
-				required: false,
-				description: "Person slug fallback for entity-keyed writes.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "countOnly",
-				optionKey: "countOnly",
-				flag: "--count-only <true|false>",
-				required: false,
-				description: "Return count metadata without full content.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "permitMonogram",
-				optionKey: "permitMonogram",
-				flag: "--permit-monogram <true|false>",
-				required: false,
-				description: "Permit generated monogram fallback.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includePrivate",
-				optionKey: "includePrivate",
-				flag: "--include-private <true|false>",
-				required: false,
-				description: "Privileged read scope. Includes associations on hidden entities. Defaults to private visibility for admin API key or ROLE_ADMIN callers; explicit true requires that authority.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "page",
-				optionKey: "page",
-				flag: "--page <integer>",
-				required: false,
-				description: "Zero-based page index (0..N).",
-				schemaType: "integer",
-				defaultValue: "0",
-				location: "query"
-			},
-			{
-				name: "size",
-				optionKey: "size",
-				flag: "--size <integer>",
-				required: false,
-				description: "The size of the page to be returned.",
-				schemaType: "integer",
-				defaultValue: "40",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			}
-		]
-	},
-	{
 		operationId: "getEntityPeopleAssociation",
 		method: "GET",
 		path: "/v1/entities/{entityId}/people/{associationId}",
@@ -24563,545 +23981,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		]
 	},
 	{
-		operationId: "replaceEntityPersonAssociation_1",
-		method: "PUT",
-		path: "/v1/entities/{entityId}/people/{associationId}",
-		resource: "entities",
-		intent: "write",
-		cliPath: [
-			"entities",
-			"people",
-			"replace"
-		],
-		summary: "Replace entity person association",
-		description: "Replaces title and period fields for one join.",
-		hasBody: true,
-		bodyKind: "json",
-		bodyRequired: true,
-		bodyDescription: "Mutation body for joining or updating a person-entity association.",
-		bodyRequiredPath: [],
-		bodyParameters: [
-			{
-				name: "corporateTitleId",
-				optionKey: "corporateTitleId",
-				flag: "--corporate-title-id <integer>",
-				required: false,
-				description: "Existing corporate title id.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "body"
-			},
-			{
-				name: "creator",
-				optionKey: "creator",
-				flag: "--creator <creator>",
-				required: false,
-				description: "Association creator label.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "endDate",
-				optionKey: "endDate",
-				flag: "--end-date <date-time>",
-				required: false,
-				description: "Association end timestamp.",
-				schemaType: "string",
-				schemaFormat: "date-time",
-				location: "body"
-			},
-			{
-				name: "isCurrent",
-				optionKey: "bodyIsCurrent",
-				flag: "--body-is-current <true|false>",
-				required: false,
-				description: "Current-state flag. When omitted, create and replace derive it from endDate for compatibility; PATCH preserves the existing value. Set false for a historical association without an end timestamp; true requires no end timestamp.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "jobLevel",
-				optionKey: "jobLevel",
-				flag: "--job-level <job-level>",
-				required: false,
-				description: "Optional title level.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "personFunction",
-				optionKey: "personFunction",
-				flag: "--person-function <person-function>",
-				required: false,
-				description: "Optional title function.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "personId",
-				optionKey: "personId",
-				flag: "--person-id <uuid>",
-				required: false,
-				description: "Person id when the path does not scope the person.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "body"
-			},
-			{
-				name: "personTitle",
-				optionKey: "personTitle",
-				flag: "--person-title <person-title>",
-				required: false,
-				description: "Write-side corporate title text; read association rows expose it as titleName.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "startDate",
-				optionKey: "startDate",
-				flag: "--start-date <date-time>",
-				required: false,
-				description: "Association start timestamp.",
-				schemaType: "string",
-				schemaFormat: "date-time",
-				location: "body"
-			}
-		],
-		dryRun: true,
-		scope: "write",
-		auth: "write",
-		errorResponse: [],
-		parameters: [
-			{
-				name: "entityId",
-				optionKey: "entityId",
-				flag: "--entity-id <uuid>",
-				required: true,
-				description: "Entity id.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "path"
-			},
-			{
-				name: "associationId",
-				optionKey: "associationId",
-				flag: "--association-id <integer>",
-				required: true,
-				description: "Association id.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "path"
-			},
-			{
-				name: "id",
-				optionKey: "recordId",
-				flag: "--record-id <uuid>",
-				required: false,
-				description: "Entity unique identifier (UUID) — at least one of id or slug required.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "slug",
-				optionKey: "recordSlug",
-				flag: "--record-slug <record-slug>",
-				required: false,
-				description: "Entity URL-friendly identifier — at least one of id or slug required.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "search",
-				optionKey: "search",
-				flag: "--search <search>",
-				required: false,
-				description: "Search term filter.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "role",
-				optionKey: "role",
-				flag: "--role <role>",
-				required: false,
-				description: "Association role filter.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "isCurrent",
-				optionKey: "isCurrent",
-				flag: "--is-current <true|false>",
-				required: false,
-				description: "Current association filter.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includeUrl",
-				optionKey: "includeUrl",
-				flag: "--include-url <true|false>",
-				required: false,
-				description: "Include person URL records.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includeAddress",
-				optionKey: "includeAddress",
-				flag: "--include-address <true|false>",
-				required: false,
-				description: "Include person address records.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "as",
-				optionKey: "as",
-				flag: "--as <as>",
-				required: false,
-				description: "Projection: `core` (default) returns person identity only and omits association fields. `association` returns PersonDetail rows with the matching join under `association[]`; read title and period fields from `association[].titleName`, `association[].startDate`, and `association[].endDate`. Person sitemap visibility is owned by people detail/status reads, not this list projection.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "personSlug",
-				optionKey: "personSlug",
-				flag: "--person-slug <person-slug>",
-				required: false,
-				description: "Person slug fallback for entity-keyed writes.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "countOnly",
-				optionKey: "countOnly",
-				flag: "--count-only <true|false>",
-				required: false,
-				description: "Return count metadata without full content.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "permitMonogram",
-				optionKey: "permitMonogram",
-				flag: "--permit-monogram <true|false>",
-				required: false,
-				description: "Permit generated monogram fallback.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "includePrivate",
-				optionKey: "includePrivate",
-				flag: "--include-private <true|false>",
-				required: false,
-				description: "Privileged read scope. Includes associations on hidden entities. Defaults to private visibility for admin API key or ROLE_ADMIN callers; explicit true requires that authority.",
-				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "sourceType",
-				optionKey: "sourceType",
-				flag: "--source-type <source-type>",
-				required: true,
-				description: "Write provenance source type. Allowed values: requestChangeForm, newsArticle, blogArticle, firstPartyWebsite, relatedPartyWebsite, thirdPartyWebsite, llm, aventureStaff.",
-				schemaType: "string",
-				choices: [
-					"requestChangeForm",
-					"newsArticle",
-					"blogArticle",
-					"firstPartyWebsite",
-					"relatedPartyWebsite",
-					"thirdPartyWebsite",
-					"llm",
-					"aventureStaff"
-				],
-				location: "query"
-			},
-			{
-				name: "sourceDetail",
-				optionKey: "sourceDetail",
-				flag: "--source-detail <source-detail>",
-				required: true,
-				description: "Source detail or reviewer reference for the write.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProvider",
-				optionKey: "sourceProvider",
-				flag: "--source-provider <source-provider>",
-				required: false,
-				description: "Provider name for provider-native IDs or slugs.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderId",
-				optionKey: "sourceProviderId",
-				flag: "--source-provider-id <source-provider-id>",
-				required: false,
-				description: "Provider-native source ID.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderSlug",
-				optionKey: "sourceProviderSlug",
-				flag: "--source-provider-slug <source-provider-slug>",
-				required: false,
-				description: "Provider-native source slug.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
-				schemaType: "string",
-				choices: ["agent", "employee"],
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			}
-		]
-	},
-	{
-		operationId: "patchEntityPersonAssociation_1",
-		method: "PATCH",
-		path: "/v1/entities/{entityId}/people/{associationId}",
-		resource: "entities",
-		intent: "write",
-		cliPath: [
-			"entities",
-			"people",
-			"update"
-		],
-		summary: "Patch entity person association",
-		description: "Applies an RFC 7396 merge patch to one join.",
-		hasBody: true,
-		bodyKind: "json",
-		bodyRequired: false,
-		bodyDescription: "Mutation body for joining or updating a person-entity association.",
-		bodyRequiredPath: [],
-		bodyParameters: [
-			{
-				name: "corporateTitleId",
-				optionKey: "corporateTitleId",
-				flag: "--corporate-title-id <integer>",
-				required: false,
-				description: "Existing corporate title id.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "body"
-			},
-			{
-				name: "creator",
-				optionKey: "creator",
-				flag: "--creator <creator>",
-				required: false,
-				description: "Association creator label.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "endDate",
-				optionKey: "endDate",
-				flag: "--end-date <date-time>",
-				required: false,
-				description: "Association end timestamp.",
-				schemaType: "string",
-				schemaFormat: "date-time",
-				location: "body"
-			},
-			{
-				name: "isCurrent",
-				optionKey: "isCurrent",
-				flag: "--is-current <true|false>",
-				required: false,
-				description: "Current-state flag. When omitted, create and replace derive it from endDate for compatibility; PATCH preserves the existing value. Set false for a historical association without an end timestamp; true requires no end timestamp.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "jobLevel",
-				optionKey: "jobLevel",
-				flag: "--job-level <job-level>",
-				required: false,
-				description: "Optional title level.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "personFunction",
-				optionKey: "personFunction",
-				flag: "--person-function <person-function>",
-				required: false,
-				description: "Optional title function.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "personId",
-				optionKey: "personId",
-				flag: "--person-id <uuid>",
-				required: false,
-				description: "Person id when the path does not scope the person.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "body"
-			},
-			{
-				name: "personTitle",
-				optionKey: "personTitle",
-				flag: "--person-title <person-title>",
-				required: false,
-				description: "Write-side corporate title text; read association rows expose it as titleName.",
-				schemaType: "string",
-				location: "body"
-			},
-			{
-				name: "startDate",
-				optionKey: "startDate",
-				flag: "--start-date <date-time>",
-				required: false,
-				description: "Association start timestamp.",
-				schemaType: "string",
-				schemaFormat: "date-time",
-				location: "body"
-			}
-		],
-		dryRun: true,
-		scope: "write",
-		auth: "write",
-		errorResponse: [],
-		parameters: [
-			{
-				name: "entityId",
-				optionKey: "entityId",
-				flag: "--entity-id <uuid>",
-				required: true,
-				description: "Entity id.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "path"
-			},
-			{
-				name: "associationId",
-				optionKey: "associationId",
-				flag: "--association-id <integer>",
-				required: true,
-				description: "Association id.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "path"
-			},
-			{
-				name: "sourceType",
-				optionKey: "sourceType",
-				flag: "--source-type <source-type>",
-				required: true,
-				description: "Write provenance source type. Allowed values: requestChangeForm, newsArticle, blogArticle, firstPartyWebsite, relatedPartyWebsite, thirdPartyWebsite, llm, aventureStaff.",
-				schemaType: "string",
-				choices: [
-					"requestChangeForm",
-					"newsArticle",
-					"blogArticle",
-					"firstPartyWebsite",
-					"relatedPartyWebsite",
-					"thirdPartyWebsite",
-					"llm",
-					"aventureStaff"
-				],
-				location: "query"
-			},
-			{
-				name: "sourceDetail",
-				optionKey: "sourceDetail",
-				flag: "--source-detail <source-detail>",
-				required: true,
-				description: "Source detail or reviewer reference for the write.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProvider",
-				optionKey: "sourceProvider",
-				flag: "--source-provider <source-provider>",
-				required: false,
-				description: "Provider name for provider-native IDs or slugs.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderId",
-				optionKey: "sourceProviderId",
-				flag: "--source-provider-id <source-provider-id>",
-				required: false,
-				description: "Provider-native source ID.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderSlug",
-				optionKey: "sourceProviderSlug",
-				flag: "--source-provider-slug <source-provider-slug>",
-				required: false,
-				description: "Provider-native source slug.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
-				schemaType: "string",
-				choices: ["agent", "employee"],
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			}
-		]
-	},
-	{
 		operationId: "suggestProducts",
 		method: "GET",
 		path: "/v1/entities/{entityId}/products/suggestions",
@@ -25394,7 +24273,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "cursor",
 				flag: "--cursor <cursor>",
 				required: false,
-				description: "Opaque URL-safe cursor token from X-Next-Cursor. Reuse the same filters.",
+				description: "Opaque URL-safe cursor token from X-Next-Cursor. Reuse the same filters and sort.",
 				schemaType: "string",
 				location: "query"
 			},
@@ -28147,7 +27026,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
-		bodyDescription: "Create payload for attaching an external identifier to an owner.",
+		bodyDescription: "Create or update payload for attaching an external identifier to an owner. For PATCH, omitted fields preserve their existing values and source may be explicitly cleared with null.",
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
@@ -28509,6 +27388,163 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
 				schemaType: "array",
 				itemSchemaType: "string",
+				location: "query"
+			}
+		]
+	},
+	{
+		operationId: "updateEntityUniqueId",
+		method: "PATCH",
+		path: "/v1/entities/{entityId}/unique-ids/{uniqueIdId}",
+		resource: "entities",
+		intent: "write",
+		cliPath: [
+			"entities",
+			"unique-ids",
+			"update"
+		],
+		summary: "Update an entity unique id",
+		description: "Applies an RFC 7396 merge patch to one external identifier mapping after verifying it belongs to the path owner. Omitted idType, identifier, and source preserve existing values; idType and identifier are normalized and validated against the owner scope. Set source to null to clear the attribution label. Provenance query parameters are required for audit.",
+		hasBody: true,
+		bodyKind: "json",
+		bodyRequired: true,
+		bodyDescription: "Create or update payload for attaching an external identifier to an owner. For PATCH, omitted fields preserve their existing values and source may be explicitly cleared with null.",
+		bodyRequiredPath: [],
+		bodyParameters: [
+			{
+				name: "idType",
+				optionKey: "idType",
+				flag: "--id-type <id-type>",
+				required: false,
+				description: "Identifier type token, for example ein, secCik, or ticker.",
+				schemaType: "string",
+				location: "body"
+			},
+			{
+				name: "identifier",
+				optionKey: "identifier",
+				flag: "--identifier <identifier>",
+				required: false,
+				description: "Identifier value as issued by the registry.",
+				schemaType: "string",
+				location: "body"
+			},
+			{
+				name: "source",
+				optionKey: "source",
+				flag: "--source <source>",
+				required: false,
+				description: "Optional attribution source label for the mapping.",
+				schemaType: "string",
+				location: "body"
+			}
+		],
+		dryRun: true,
+		scope: "write",
+		auth: "write",
+		errorResponse: [],
+		parameters: [
+			{
+				name: "entityId",
+				optionKey: "entityId",
+				flag: "--entity-id <uuid>",
+				required: true,
+				description: "Canonical entity UUID.",
+				schemaType: "string",
+				schemaFormat: "uuid",
+				location: "path"
+			},
+			{
+				name: "uniqueIdId",
+				optionKey: "uniqueIdId",
+				flag: "--unique-id-id <integer>",
+				required: true,
+				description: "Unique-id row id.",
+				schemaType: "integer",
+				schemaFormat: "int32",
+				location: "path"
+			},
+			{
+				name: "sourceType",
+				optionKey: "sourceType",
+				flag: "--source-type <source-type>",
+				required: true,
+				description: "Write provenance source type. Allowed values: requestChangeForm, newsArticle, blogArticle, firstPartyWebsite, relatedPartyWebsite, thirdPartyWebsite, llm, aventureStaff.",
+				schemaType: "string",
+				choices: [
+					"requestChangeForm",
+					"newsArticle",
+					"blogArticle",
+					"firstPartyWebsite",
+					"relatedPartyWebsite",
+					"thirdPartyWebsite",
+					"llm",
+					"aventureStaff"
+				],
+				location: "query"
+			},
+			{
+				name: "sourceDetail",
+				optionKey: "sourceDetail",
+				flag: "--source-detail <source-detail>",
+				required: true,
+				description: "Source detail or reviewer reference for the write.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "sourceProvider",
+				optionKey: "sourceProvider",
+				flag: "--source-provider <source-provider>",
+				required: false,
+				description: "Provider name for provider-native IDs or slugs.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "sourceProviderId",
+				optionKey: "sourceProviderId",
+				flag: "--source-provider-id <source-provider-id>",
+				required: false,
+				description: "Provider-native source ID.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "sourceProviderSlug",
+				optionKey: "sourceProviderSlug",
+				flag: "--source-provider-slug <source-provider-slug>",
+				required: false,
+				description: "Provider-native source slug.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "actorType",
+				optionKey: "actorType",
+				flag: "--actor-type <actor-type>",
+				required: false,
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
+				schemaType: "string",
+				choices: ["agent", "employee"],
+				location: "query"
+			},
+			{
+				name: "agentChassis",
+				optionKey: "agentChassis",
+				flag: "--agent-chassis <agent-chassis>",
+				required: false,
+				description: "Agent chassis token for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "agentModel",
+				optionKey: "agentModel",
+				flag: "--agent-model <agent-model>",
+				required: false,
+				description: "Agent model id for agent-authored writes.",
+				schemaType: "string",
 				location: "query"
 			}
 		]
@@ -29828,7 +28864,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "0",
@@ -29839,7 +28875,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "25",
@@ -30317,7 +29353,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "cursor",
 			flag: "--cursor <cursor>",
 			required: false,
-			description: "Opaque continuation cursor from the previous page.",
+			description: "Opaque continuation cursor from the previous response's nextCursor. Reuse the same filters and sort.",
 			schemaType: "string",
 			location: "query"
 		}, {
@@ -30325,7 +29361,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "size",
 			flag: "--size <integer>",
 			required: false,
-			description: "Page size.",
+			description: "The size of the page to be returned.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			defaultValue: "20",
@@ -30798,7 +29834,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "0",
@@ -30809,7 +29845,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size (max 100).",
+				description: "The size of the page to be returned; maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "20",
@@ -31523,7 +30559,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -31533,7 +30569,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size (default 10, max 100).",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -31673,7 +30709,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -31683,7 +30719,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size (default 10, max 100).",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -35379,7 +34415,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -35389,7 +34425,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -35677,7 +34713,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -35687,7 +34723,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -37673,7 +36709,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "cursor",
 				flag: "--cursor <cursor>",
 				required: false,
-				description: "Cursor token for deep pagination.",
+				description: "Opaque URL-safe cursor token from X-Next-Cursor. Reuse the same filters and sort.",
 				schemaType: "string",
 				location: "query"
 			},
@@ -39701,7 +38737,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
-		bodyDescription: "Create payload for attaching an external identifier to an owner.",
+		bodyDescription: "Create or update payload for attaching an external identifier to an owner. For PATCH, omitted fields preserve their existing values and source may be explicitly cleared with null.",
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
@@ -40063,6 +39099,163 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
 				schemaType: "array",
 				itemSchemaType: "string",
+				location: "query"
+			}
+		]
+	},
+	{
+		operationId: "updatePersonUniqueId",
+		method: "PATCH",
+		path: "/v1/people/{personId}/unique-ids/{uniqueIdId}",
+		resource: "people",
+		intent: "write",
+		cliPath: [
+			"people",
+			"unique-ids",
+			"update"
+		],
+		summary: "Update a person unique id",
+		description: "Applies an RFC 7396 merge patch to one external identifier mapping after verifying it belongs to the path owner. Omitted idType, identifier, and source preserve existing values; idType and identifier are normalized and validated against the owner scope. Set source to null to clear the attribution label. Provenance query parameters are required for audit.",
+		hasBody: true,
+		bodyKind: "json",
+		bodyRequired: true,
+		bodyDescription: "Create or update payload for attaching an external identifier to an owner. For PATCH, omitted fields preserve their existing values and source may be explicitly cleared with null.",
+		bodyRequiredPath: [],
+		bodyParameters: [
+			{
+				name: "idType",
+				optionKey: "idType",
+				flag: "--id-type <id-type>",
+				required: false,
+				description: "Identifier type token, for example ein, secCik, or ticker.",
+				schemaType: "string",
+				location: "body"
+			},
+			{
+				name: "identifier",
+				optionKey: "identifier",
+				flag: "--identifier <identifier>",
+				required: false,
+				description: "Identifier value as issued by the registry.",
+				schemaType: "string",
+				location: "body"
+			},
+			{
+				name: "source",
+				optionKey: "source",
+				flag: "--source <source>",
+				required: false,
+				description: "Optional attribution source label for the mapping.",
+				schemaType: "string",
+				location: "body"
+			}
+		],
+		dryRun: true,
+		scope: "write",
+		auth: "write",
+		errorResponse: [],
+		parameters: [
+			{
+				name: "personId",
+				optionKey: "personId",
+				flag: "--person-id <uuid>",
+				required: true,
+				description: "Canonical person UUID.",
+				schemaType: "string",
+				schemaFormat: "uuid",
+				location: "path"
+			},
+			{
+				name: "uniqueIdId",
+				optionKey: "uniqueIdId",
+				flag: "--unique-id-id <integer>",
+				required: true,
+				description: "Unique-id row id.",
+				schemaType: "integer",
+				schemaFormat: "int32",
+				location: "path"
+			},
+			{
+				name: "sourceType",
+				optionKey: "sourceType",
+				flag: "--source-type <source-type>",
+				required: true,
+				description: "Write provenance source type. Allowed values: requestChangeForm, newsArticle, blogArticle, firstPartyWebsite, relatedPartyWebsite, thirdPartyWebsite, llm, aventureStaff.",
+				schemaType: "string",
+				choices: [
+					"requestChangeForm",
+					"newsArticle",
+					"blogArticle",
+					"firstPartyWebsite",
+					"relatedPartyWebsite",
+					"thirdPartyWebsite",
+					"llm",
+					"aventureStaff"
+				],
+				location: "query"
+			},
+			{
+				name: "sourceDetail",
+				optionKey: "sourceDetail",
+				flag: "--source-detail <source-detail>",
+				required: true,
+				description: "Source detail or reviewer reference for the write.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "sourceProvider",
+				optionKey: "sourceProvider",
+				flag: "--source-provider <source-provider>",
+				required: false,
+				description: "Provider name for provider-native IDs or slugs.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "sourceProviderId",
+				optionKey: "sourceProviderId",
+				flag: "--source-provider-id <source-provider-id>",
+				required: false,
+				description: "Provider-native source ID.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "sourceProviderSlug",
+				optionKey: "sourceProviderSlug",
+				flag: "--source-provider-slug <source-provider-slug>",
+				required: false,
+				description: "Provider-native source slug.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "actorType",
+				optionKey: "actorType",
+				flag: "--actor-type <actor-type>",
+				required: false,
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
+				schemaType: "string",
+				choices: ["agent", "employee"],
+				location: "query"
+			},
+			{
+				name: "agentChassis",
+				optionKey: "agentChassis",
+				flag: "--agent-chassis <agent-chassis>",
+				required: false,
+				description: "Agent chassis token for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "agentModel",
+				optionKey: "agentModel",
+				flag: "--agent-model <agent-model>",
+				required: false,
+				description: "Agent model id for agent-authored writes.",
+				schemaType: "string",
 				location: "query"
 			}
 		]
@@ -41850,7 +41043,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based result page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -41860,7 +41053,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Maximum number of posts to return per page.",
+				description: "The size of the page to be returned.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -42951,7 +42144,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "size",
 			flag: "--size <integer>",
 			required: false,
-			description: "Canonical sitemap page size; only 5000 is supported.",
+			description: "The size of the page to be returned; only 5000 is supported.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			location: "query"
@@ -43109,7 +42302,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "size",
 			flag: "--size <integer>",
 			required: false,
-			description: "Canonical sitemap URL page size; only 5000 is supported.",
+			description: "The size of the page to be returned; only 5000 is supported.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			location: "query"
@@ -43240,7 +42433,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "size",
 			flag: "--size <integer>",
 			required: false,
-			description: "Canonical sitemap page size; only 5000 is supported.",
+			description: "The size of the page to be returned; only 5000 is supported.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			location: "query"
@@ -43297,7 +42490,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "size",
 			flag: "--size <integer>",
 			required: false,
-			description: "Canonical sitemap page size; only 5000 is supported.",
+			description: "The size of the page to be returned; only 5000 is supported.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			location: "query"
@@ -44129,12 +43322,24 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "sourceType",
-				optionKey: "sourceType",
-				flag: "--source-type <source-type>",
-				required: true,
-				description: "Provenance source type of the query row.",
+				name: "contentSourceType",
+				optionKey: "contentSourceType",
+				flag: "--content-source-type <content-source-type>",
+				required: false,
+				description: "Required unified content partition to act on, for example entity, person, or newsArticle. Allowed values: entity, person, newsArticle, blogPost, text, classificationTag, classificationCode, product, service, agentHelpDoc.",
 				schemaType: "string",
+				choices: [
+					"entity",
+					"person",
+					"newsArticle",
+					"blogPost",
+					"text",
+					"classificationTag",
+					"classificationCode",
+					"product",
+					"service",
+					"agentHelpDoc"
+				],
 				location: "query"
 			},
 			{
@@ -44151,8 +43356,20 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "targetType",
 				flag: "--target-type <target-type>",
 				required: true,
-				description: "Source type to search against for nearest-neighbor matches.",
+				description: "Content partition to search against for nearest-neighbor matches. Allowed values: entity, person, newsArticle, blogPost, text, classificationTag, classificationCode, product, service, agentHelpDoc.",
 				schemaType: "string",
+				choices: [
+					"entity",
+					"person",
+					"newsArticle",
+					"blogPost",
+					"text",
+					"classificationTag",
+					"classificationCode",
+					"product",
+					"service",
+					"agentHelpDoc"
+				],
 				location: "query"
 			},
 			{
@@ -44193,12 +43410,24 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "sourceType",
-				optionKey: "sourceType",
-				flag: "--source-type <source-type>",
-				required: true,
-				description: "Provenance source type.",
+				name: "contentSourceType",
+				optionKey: "contentSourceType",
+				flag: "--content-source-type <content-source-type>",
+				required: false,
+				description: "Required unified content partition to act on, for example entity, person, or newsArticle. Allowed values: entity, person, newsArticle, blogPost, text, classificationTag, classificationCode, product, service, agentHelpDoc.",
 				schemaType: "string",
+				choices: [
+					"entity",
+					"person",
+					"newsArticle",
+					"blogPost",
+					"text",
+					"classificationTag",
+					"classificationCode",
+					"product",
+					"service",
+					"agentHelpDoc"
+				],
 				location: "query"
 			},
 			{
@@ -44246,12 +43475,24 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		auth: "read",
 		errorResponse: [],
 		parameters: [{
-			name: "sourceType",
-			optionKey: "sourceType",
-			flag: "--source-type <source-type>",
-			required: true,
-			description: "Provenance source type.",
+			name: "contentSourceType",
+			optionKey: "contentSourceType",
+			flag: "--content-source-type <content-source-type>",
+			required: false,
+			description: "Required unified content partition to act on, for example entity, person, or newsArticle. Allowed values: entity, person, newsArticle, blogPost, text, classificationTag, classificationCode, product, service, agentHelpDoc.",
 			schemaType: "string",
+			choices: [
+				"entity",
+				"person",
+				"newsArticle",
+				"blogPost",
+				"text",
+				"classificationTag",
+				"classificationCode",
+				"product",
+				"service",
+				"agentHelpDoc"
+			],
 			location: "query"
 		}, {
 			name: "limit",
@@ -44316,12 +43557,24 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		auth: "read",
 		errorResponse: [],
 		parameters: [{
-			name: "sourceType",
-			optionKey: "sourceType",
-			flag: "--source-type <source-type>",
-			required: true,
-			description: "Content source type whose stale similarity rows should be enumerated (e.g. `entity`, `news`).",
+			name: "contentSourceType",
+			optionKey: "contentSourceType",
+			flag: "--content-source-type <content-source-type>",
+			required: false,
+			description: "Required unified content partition to act on, for example entity, person, or newsArticle. Allowed values: entity, person, newsArticle, blogPost, text, classificationTag, classificationCode, product, service, agentHelpDoc.",
 			schemaType: "string",
+			choices: [
+				"entity",
+				"person",
+				"newsArticle",
+				"blogPost",
+				"text",
+				"classificationTag",
+				"classificationCode",
+				"product",
+				"service",
+				"agentHelpDoc"
+			],
 			location: "query"
 		}, {
 			name: "limit",
@@ -44415,7 +43668,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index; omit page and size for the full batch.",
+				description: "Zero-based page index (0..N); omit page and size for the full batch.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -44425,7 +43678,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size; omit page and size for the full batch.",
+				description: "The size of the page to be returned; omit page and size for the full batch.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -44528,7 +43781,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "cursor",
 			flag: "--cursor <cursor>",
 			required: false,
-			description: "Opaque continuation cursor from a previous page's nextCursor.",
+			description: "Opaque continuation cursor from the previous response's nextCursor. Reuse the same filters and sort.",
 			schemaType: "string",
 			location: "query"
 		}, {
@@ -44536,7 +43789,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "size",
 			flag: "--size <integer>",
 			required: false,
-			description: "Page size; default 25, capped at 200.",
+			description: "The size of the page to be returned; default 25, maximum 200.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			location: "query"
@@ -44874,7 +44127,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -44884,7 +44137,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -45212,7 +44465,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -45222,7 +44475,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -46174,7 +45427,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Maximum results to return (default 20, max 100).",
+				description: "The size of the page to be returned; filter-search default 20, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -46184,7 +45437,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "sort",
 				flag: "--sort <sort...>",
 				required: false,
-				description: "Sorting is not supported for filter search.",
+				description: "Sorting is not supported.",
 				schemaType: "array",
 				itemSchemaType: "string",
 				location: "query"
@@ -47859,7 +47112,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "0",
@@ -47870,7 +47123,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "25",
@@ -50043,135 +49296,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		}]
 	},
 	{
-		operationId: "clearEntityPersonCorporateTitle_1",
-		method: "DELETE",
-		path: "/v1/entities/{entityId}/people/{associationId}/corporate-title",
-		resource: "entities",
-		intent: "delete",
-		cliPath: [
-			"entities",
-			"people",
-			"corporate-title",
-			"delete"
-		],
-		summary: "Clear corporate title on an entity person association",
-		description: "Clears the corporate title on the entity/person join row and keeps the join row itself.",
-		hasBody: false,
-		bodyRequired: false,
-		bodyDescription: "",
-		bodyRequiredPath: [],
-		bodyParameters: [],
-		dryRun: true,
-		scope: "write",
-		auth: "write",
-		errorResponse: [],
-		parameters: [
-			{
-				name: "entityId",
-				optionKey: "entityId",
-				flag: "--entity-id <uuid>",
-				required: true,
-				description: "Entity id.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "path"
-			},
-			{
-				name: "associationId",
-				optionKey: "associationId",
-				flag: "--association-id <integer>",
-				required: true,
-				description: "Association id.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "path"
-			},
-			{
-				name: "sourceType",
-				optionKey: "sourceType",
-				flag: "--source-type <source-type>",
-				required: true,
-				description: "Write provenance source type. Allowed values: requestChangeForm, newsArticle, blogArticle, firstPartyWebsite, relatedPartyWebsite, thirdPartyWebsite, llm, aventureStaff.",
-				schemaType: "string",
-				choices: [
-					"requestChangeForm",
-					"newsArticle",
-					"blogArticle",
-					"firstPartyWebsite",
-					"relatedPartyWebsite",
-					"thirdPartyWebsite",
-					"llm",
-					"aventureStaff"
-				],
-				location: "query"
-			},
-			{
-				name: "sourceDetail",
-				optionKey: "sourceDetail",
-				flag: "--source-detail <source-detail>",
-				required: true,
-				description: "Source detail or reviewer reference for the write.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProvider",
-				optionKey: "sourceProvider",
-				flag: "--source-provider <source-provider>",
-				required: false,
-				description: "Provider name for provider-native IDs or slugs.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderId",
-				optionKey: "sourceProviderId",
-				flag: "--source-provider-id <source-provider-id>",
-				required: false,
-				description: "Provider-native source ID.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "sourceProviderSlug",
-				optionKey: "sourceProviderSlug",
-				flag: "--source-provider-slug <source-provider-slug>",
-				required: false,
-				description: "Provider-native source slug.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
-				schemaType: "string",
-				choices: ["agent", "employee"],
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				schemaType: "string",
-				location: "query"
-			}
-		]
-	},
-	{
 		operationId: "getEmployeeCountTimeSeries",
 		method: "GET",
 		path: "/v1/entities/detail/people/time-series",
@@ -50219,7 +49343,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "0",
@@ -50230,7 +49354,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size (max 500).",
+				description: "The size of the page to be returned; maximum 500.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "25",
@@ -51233,7 +50357,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "0",
@@ -51244,7 +50368,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "25",
@@ -51887,7 +51011,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "0",
@@ -51898,7 +51022,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "25",
@@ -53263,7 +52387,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "0",
@@ -53274,7 +52398,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size (max 200).",
+				description: "The size of the page to be returned; maximum 200.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "50",
@@ -53693,12 +52817,12 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"entries",
 			"create"
 		],
-		summary: "Append Claude session entries",
-		description: "Idempotently appends opaque Claude SDK session entries for the run; entries with a non-null uuid that already exist are skipped so a replayed flush is a no-op.",
+		summary: "Append harness session entries",
+		description: "Idempotently appends opaque harness session entries for the run; entries with a non-null UUID that already exist are skipped so a replayed flush is a no-op.",
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
-		bodyDescription: "Append entries to a run's Claude session",
+		bodyDescription: "Append entries to a run's harness session",
 		bodyRequiredPath: [
 			"entry",
 			"entry[].entry",
@@ -53710,7 +52834,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "entryEntry",
 				flag: "--entry-entry <entry-entry>",
 				required: false,
-				description: "Opaque SDK session entry as a JSON string.",
+				description: "Opaque harness session entry as a JSON string.",
 				schemaType: "string",
 				location: "body"
 			},
@@ -53719,7 +52843,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "entryEntryUuid",
 				flag: "--entry-entry-uuid <uuid>",
 				required: false,
-				description: "SDK entry uuid for de-duplication; null entries are never deduped.",
+				description: "Entry UUID for de-duplication; entries without one are never deduped.",
 				schemaType: "string",
 				schemaFormat: "uuid",
 				location: "body"
@@ -53743,7 +52867,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "sessionId",
 			flag: "--session-id <session-id>",
 			required: true,
-			description: "Claude session id (the harness run id).",
+			description: "Harness session id (the harness run id).",
 			schemaType: "string",
 			location: "path"
 		}]
@@ -53761,7 +52885,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"list"
 		],
 		summary: "Load a session's ordered entries",
-		description: "Returns the session's stored entries for the given subpath in insertion order so a reclaimed run can resume its exact Claude session.",
+		description: "Returns the session's stored entries for the given subpath in insertion order so a reclaimed run can resume its exact harness session.",
 		hasBody: false,
 		bodyRequired: false,
 		bodyDescription: "",
@@ -53776,7 +52900,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "sessionId",
 			flag: "--session-id <session-id>",
 			required: true,
-			description: "Claude session id (the harness run id).",
+			description: "Harness session id (the harness run id).",
 			schemaType: "string",
 			location: "path"
 		}, {
@@ -53802,7 +52926,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"prune",
 			"create"
 		],
-		summary: "Drop transcripts for runs terminal past retention",
+		summary: "Drop session entries for runs terminal past retention",
 		description: "Deletes session entries for runs that finished (completed/failed/stopped) longer than the retention window ago; a finished run never resumes. Deletes one bounded batch and returns the rows removed so callers can continue until zero.",
 		hasBody: false,
 		bodyRequired: false,
@@ -53852,7 +52976,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "sessionId",
 			flag: "--session-id <session-id>",
 			required: true,
-			description: "Claude session id (the harness run id).",
+			description: "Harness session id (the harness run id).",
 			schemaType: "string",
 			location: "path"
 		}]
@@ -54684,7 +53808,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "decisionDecision",
 				flag: "--decision-decision <decision-decision>",
 				required: false,
-				description: "Allowed values: MERGE, KEEP_SEPARATE.",
+				description: "Explicit operator action for one immutable planned candidate group. Allowed values: MERGE, KEEP_SEPARATE.",
 				schemaType: "string",
 				choices: ["MERGE", "KEEP_SEPARATE"],
 				location: "body"
@@ -54775,7 +53899,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "decisionSupersededDecision",
 				flag: "--decision-superseded-decision <decision-superseded-decision>",
 				required: false,
-				description: "Allowed values: MERGE, KEEP_SEPARATE.",
+				description: "Explicit operator action for one immutable planned candidate group. Allowed values: MERGE, KEEP_SEPARATE.",
 				schemaType: "string",
 				choices: ["MERGE", "KEEP_SEPARATE"],
 				location: "body"
@@ -55802,7 +54926,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "0",
@@ -55813,7 +54937,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size (max 100).",
+				description: "The size of the page to be returned; maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "50",
@@ -56164,7 +55288,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -56174,7 +55298,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size (default 10, max 100).",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -56315,7 +55439,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -56325,7 +55449,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size (default 10, max 100).",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -56984,7 +56108,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index; omit page and size for the full batch.",
+				description: "Zero-based page index (0..N); omit page and size for the full batch.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -56994,7 +56118,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size; omit page and size for the full batch.",
+				description: "The size of the page to be returned; omit page and size for the full batch.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -57318,7 +56442,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -57328,7 +56452,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -57617,7 +56741,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "page",
 				flag: "--page <integer>",
 				required: false,
-				description: "Zero-based page index.",
+				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -57627,7 +56751,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Page size.",
+				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -57839,7 +56963,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Maximum results to return (default 20, max 100).",
+				description: "The size of the page to be returned; filter-search default 20, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -57849,7 +56973,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "sort",
 				flag: "--sort <sort...>",
 				required: false,
-				description: "Sorting is not supported for filter search.",
+				description: "Sorting is not supported.",
 				schemaType: "array",
 				itemSchemaType: "string",
 				location: "query"
@@ -58349,7 +57473,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "captureCaptureMethod",
 				flag: "--capture-capture-method <capture-capture-method>",
 				required: true,
-				description: "Allowed values: browserExtension, tabsCaptureVisibleTab, shareSheet, manualUpload.",
+				description: "Client mechanism that produced one source capture. Allowed values: browserExtension, tabsCaptureVisibleTab, shareSheet, manualUpload.",
 				schemaType: "string",
 				choices: [
 					"browserExtension",
@@ -58364,7 +57488,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "captureCaptureScope",
 				flag: "--capture-capture-scope <capture-capture-scope>",
 				required: true,
-				description: "Allowed values: page, selection, viewport, supplied.",
+				description: "Portion of client-visible material represented by a capture. Allowed values: page, selection, viewport, supplied.",
 				schemaType: "string",
 				choices: [
 					"page",
@@ -58580,7 +57704,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "capturePartCaptureMethod",
 				flag: "--capture-part-capture-method <capture-part-capture-method>",
 				required: false,
-				description: "Allowed values: browserExtension, tabsCaptureVisibleTab, shareSheet, manualUpload.",
+				description: "Client mechanism that produced one source capture. Allowed values: browserExtension, tabsCaptureVisibleTab, shareSheet, manualUpload.",
 				schemaType: "string",
 				choices: [
 					"browserExtension",
@@ -58595,7 +57719,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "capturePartCaptureScope",
 				flag: "--capture-part-capture-scope <capture-part-capture-scope>",
 				required: false,
-				description: "Allowed values: page, selection, viewport, supplied.",
+				description: "Portion of client-visible material represented by a capture. Allowed values: page, selection, viewport, supplied.",
 				schemaType: "string",
 				choices: [
 					"page",
@@ -59644,11 +58768,11 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "sourceType",
-				optionKey: "sourceType",
-				flag: "--source-type <source-type>",
-				required: true,
-				description: "Refresh-capable content source type. Allowed values: entity, person, newsArticle, blogPost, text, classificationTag, classificationCode, product, service, agentHelpDoc.",
+				name: "contentSourceType",
+				optionKey: "contentSourceType",
+				flag: "--content-source-type <content-source-type>",
+				required: false,
+				description: "Required unified content partition to act on, for example entity, person, or newsArticle. Allowed values: entity, person, newsArticle, blogPost, text, classificationTag, classificationCode, product, service, agentHelpDoc.",
 				schemaType: "string",
 				choices: [
 					"entity",
@@ -60914,7 +60038,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "cursor",
 				flag: "--cursor <cursor>",
 				required: false,
-				description: "Opaque continuation cursor from the previous slice.",
+				description: "Opaque continuation cursor from the previous response's nextCursor. Reuse the same filters and sort.",
 				schemaType: "string",
 				location: "query"
 			},
@@ -60923,7 +60047,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "size",
 				flag: "--size <integer>",
 				required: false,
-				description: "Slice size (max 200).",
+				description: "The size of the page to be returned; maximum 200.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "200",
@@ -61136,7 +60260,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "actorType",
 				flag: "--actor-type <actor-type>",
 				required: false,
-				description: "Optional actor type; inferred as agent from agent identity or as employee from an authenticated user JWT session.",
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
 				location: "query"
 			},
 			{
@@ -61144,7 +60268,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentChassis",
 				flag: "--agent-chassis <agent-chassis>",
 				required: false,
-				description: "Generated release-lane agent chassis.",
+				description: "Agent chassis token for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61152,7 +60276,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentModel",
 				flag: "--agent-model <agent-model>",
 				required: false,
-				description: "Generated release-lane model id.",
+				description: "Agent model id for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61217,7 +60341,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "actorType",
 				flag: "--actor-type <actor-type>",
 				required: false,
-				description: "Optional actor type; inferred as agent from agent identity or as employee from an authenticated user JWT session.",
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
 				location: "query"
 			},
 			{
@@ -61225,7 +60349,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentChassis",
 				flag: "--agent-chassis <agent-chassis>",
 				required: false,
-				description: "Generated release-lane agent chassis.",
+				description: "Agent chassis token for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61233,7 +60357,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentModel",
 				flag: "--agent-model <agent-model>",
 				required: false,
-				description: "Generated release-lane model id.",
+				description: "Agent model id for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61287,7 +60411,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "actorType",
 				flag: "--actor-type <actor-type>",
 				required: false,
-				description: "Optional actor type; inferred as agent from agent identity or as employee from an authenticated user JWT session.",
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
 				location: "query"
 			},
 			{
@@ -61295,7 +60419,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentChassis",
 				flag: "--agent-chassis <agent-chassis>",
 				required: false,
-				description: "Generated release-lane agent chassis.",
+				description: "Agent chassis token for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61303,7 +60427,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentModel",
 				flag: "--agent-model <agent-model>",
 				required: false,
-				description: "Generated release-lane model id.",
+				description: "Agent model id for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61376,7 +60500,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "actorType",
 				flag: "--actor-type <actor-type>",
 				required: false,
-				description: "Optional actor type; inferred as agent from agent identity or as employee from an authenticated user JWT session.",
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
 				location: "query"
 			},
 			{
@@ -61384,7 +60508,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentChassis",
 				flag: "--agent-chassis <agent-chassis>",
 				required: false,
-				description: "Generated release-lane agent chassis.",
+				description: "Agent chassis token for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61392,7 +60516,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentModel",
 				flag: "--agent-model <agent-model>",
 				required: false,
-				description: "Generated release-lane model id.",
+				description: "Agent model id for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61455,7 +60579,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "actorType",
 				flag: "--actor-type <actor-type>",
 				required: false,
-				description: "Optional actor type; inferred as agent from agent identity or as employee from an authenticated user JWT session.",
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
 				location: "query"
 			},
 			{
@@ -61463,7 +60587,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentChassis",
 				flag: "--agent-chassis <agent-chassis>",
 				required: false,
-				description: "Generated release-lane agent chassis.",
+				description: "Agent chassis token for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61471,7 +60595,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentModel",
 				flag: "--agent-model <agent-model>",
 				required: false,
-				description: "Generated release-lane model id.",
+				description: "Agent model id for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61770,7 +60894,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "actorType",
 				flag: "--actor-type <actor-type>",
 				required: false,
-				description: "Optional actor type; inferred as agent from agent identity or as employee from an authenticated user JWT session.",
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
 				location: "query"
 			},
 			{
@@ -61778,7 +60902,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentChassis",
 				flag: "--agent-chassis <agent-chassis>",
 				required: false,
-				description: "Generated release-lane agent chassis.",
+				description: "Agent chassis token for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61786,7 +60910,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "agentModel",
 				flag: "--agent-model <agent-model>",
 				required: false,
-				description: "Generated release-lane model id.",
+				description: "Agent model id for agent-authored writes.",
 				location: "query"
 			},
 			{
@@ -61814,4 +60938,4 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 //#endregion
 export { PersonalApiKeySchema as _, outputModeJsonAccept as a, canonicalPersonalCredentialHost as c, savePersonalCredential as d, credentialSafeMessage as f, normalizeCliApiEnvironment as g, isLoopbackHostname as h, cliMachineOutputSelected as i, forgetPersonalCredential as l, browserOriginForApiHost as m, GENERATED_OPERATION_FINGERPRINT as n, resolveOutputMode as o, credentialSafeProblemSummary as p, addOutputModeOptions as r, commandNeedsMaterializedAuth as s, GENERATED_OPENAPI_COMMAND_SPECS as t, loadPersonalCredential as u };
 
-//# sourceMappingURL=openapi-commands-CABCk7cn.js.map
+//# sourceMappingURL=openapi-commands-BInPE2bT.js.map

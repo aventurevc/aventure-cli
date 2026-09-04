@@ -1,4 +1,4 @@
-import { A as datetime, O as uuid, k as date, l as array, m as intersection, n as EntityPersonOwnerSchema, o as _enum, p as int, r as EntityTypeSchema, t as DatasourceDataSourceTypeSchema, u as boolean, v as number, w as string, y as object } from "./data-source-type-B2O1SiZK.js";
+import { A as datetime, O as uuid, k as date, l as array, m as intersection, n as EntityPersonOwnerSchema, o as _enum, p as int, r as EntityTypeSchema, t as DatasourceDataSourceTypeSchema, u as boolean, v as number, w as string, y as object } from "./data-source-type-CEoBo_qP.js";
 //#region ../api-schemas/dist/address/association-role.js
 /**
 * Meaning of an entity or person address association. Domicile is a legal or registered seat and is not evidence of operational presence; dominant is the predominant display location; origin is the founding or historical location.
@@ -7,7 +7,6 @@ import { A as datetime, O as uuid, k as date, l as array, m as intersection, n a
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -27,7 +26,6 @@ import { A as datetime, O as uuid, k as date, l as array, m as intersection, n a
 * @endpoint POST /v1/address/validation
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/{entityId}/addresses
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
 * @endpoint POST /v1/entities/detail/batch
@@ -42,20 +40,16 @@ import { A as datetime, O as uuid, k as date, l as array, m as intersection, n a
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/address
 * @endpoint PATCH /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
 * @endpoint PUT /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
 * @endpoint DELETE /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -78,7 +72,6 @@ var AddressAssociationRoleSchema = _enum([
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -98,7 +91,6 @@ var AddressAssociationRoleSchema = _enum([
 * @endpoint POST /v1/address/validation
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/{entityId}/addresses
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
 * @endpoint POST /v1/entities/detail/batch
@@ -113,20 +105,16 @@ var AddressAssociationRoleSchema = _enum([
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/address
 * @endpoint PATCH /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
 * @endpoint PUT /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
 * @endpoint DELETE /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -156,7 +144,6 @@ var AddressAssociationSchema = object({
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -176,7 +163,6 @@ var AddressAssociationSchema = object({
 * @endpoint POST /v1/address/validation
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/{entityId}/addresses
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
 * @endpoint POST /v1/entities/detail/batch
@@ -191,20 +177,16 @@ var AddressAssociationSchema = object({
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/address
 * @endpoint PATCH /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
 * @endpoint PUT /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
 * @endpoint DELETE /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -227,7 +209,6 @@ var AddressCitySchema = object({
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -247,7 +228,6 @@ var AddressCitySchema = object({
 * @endpoint POST /v1/address/validation
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/{entityId}/addresses
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
 * @endpoint POST /v1/entities/detail/batch
@@ -262,20 +242,16 @@ var AddressCitySchema = object({
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/address
 * @endpoint PATCH /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
 * @endpoint PUT /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
 * @endpoint DELETE /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -304,7 +280,6 @@ var AddressCountrySchema = object({
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -324,7 +299,6 @@ var AddressCountrySchema = object({
 * @endpoint POST /v1/address/validation
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/{entityId}/addresses
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
 * @endpoint POST /v1/entities/detail/batch
@@ -339,20 +313,16 @@ var AddressCountrySchema = object({
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/address
 * @endpoint PATCH /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
 * @endpoint PUT /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
 * @endpoint DELETE /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -377,7 +347,6 @@ var AddressStateSchema = object({
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -397,7 +366,6 @@ var AddressStateSchema = object({
 * @endpoint POST /v1/address/validation
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/{entityId}/addresses
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
 * @endpoint POST /v1/entities/detail/batch
@@ -412,20 +380,16 @@ var AddressStateSchema = object({
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/address
 * @endpoint PATCH /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
 * @endpoint PUT /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
 * @endpoint DELETE /v1/entities/{entityId}/addresses/{addressJoinId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/people/{personId}/addresses/{addressJoinId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -830,7 +794,6 @@ var EntityFundingDetailSchema = object({
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people
@@ -886,7 +849,6 @@ var EntityTextBundleSchema = object({
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
 * @endpoint GET /v1/entities/detail/news
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/detail/trending-news
@@ -931,7 +893,6 @@ var EntityTextBundleSchema = object({
 * @endpoint GET /v1/people/{personId}/urls/all
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/{entityId}/acquisitions
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/{entityId}/relationships
 * @endpoint POST /v1/entities/{entityId}/urls
 * @endpoint POST /v1/entities/batch
@@ -964,7 +925,6 @@ var EntityTextBundleSchema = object({
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/exchange-urls
 * @endpoint PATCH /v1/entities/{entityId}/acquisitions/{relationshipId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/entities/detail/fundraise-rounds/{transactionId}
@@ -976,7 +936,6 @@ var EntityTextBundleSchema = object({
 * @endpoint PATCH /v1/people/detail
 * @endpoint PATCH /v1/people/detail/news/{newsId}
 * @endpoint PUT /v1/entities/{entityId}/acquisitions/{relationshipId}
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/entities/detail/fundraise-rounds/{transactionId}
@@ -987,8 +946,6 @@ var EntityTextBundleSchema = object({
 * @endpoint PUT /v1/people/detail
 * @endpoint PUT /v1/people/detail/news/{newsId}
 * @endpoint DELETE /v1/entities/{entityId}/acquisitions/{relationshipId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/entities/{entityId}/urls/{urlId}
 * @endpoint DELETE /v1/entities/detail/fundraise-rounds/{transactionId}
 * @endpoint DELETE /v1/entities/detail/news/{newsId}
@@ -1027,7 +984,6 @@ var DatasourceSourceMetadataSchema = object({
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -1047,7 +1003,6 @@ var DatasourceSourceMetadataSchema = object({
 * @endpoint GET /v1/people/{personId}/urls/{urlId}
 * @endpoint GET /v1/people/{personId}/urls/all
 * @endpoint POST /v1/entities
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/{entityId}/urls
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
@@ -1062,20 +1017,16 @@ var DatasourceSourceMetadataSchema = object({
 * @endpoint POST /v1/people/detail/batch
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/exchange-urls
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/{personId}/urls/{urlId}
 * @endpoint PATCH /v1/people/detail
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/{personId}/urls/{urlId}
 * @endpoint PUT /v1/people/detail
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/entities/{entityId}/urls/{urlId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -1118,7 +1069,6 @@ var EntityUrlCrawlCdnProviderSchema = _enum([
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -1137,7 +1087,6 @@ var EntityUrlCrawlCdnProviderSchema = _enum([
 * @endpoint GET /v1/people/{personId}/urls/{urlId}
 * @endpoint GET /v1/people/{personId}/urls/all
 * @endpoint POST /v1/entities
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/{entityId}/urls
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
@@ -1152,20 +1101,16 @@ var EntityUrlCrawlCdnProviderSchema = _enum([
 * @endpoint POST /v1/people/detail/batch
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/exchange-urls
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/{personId}/urls/{urlId}
 * @endpoint PATCH /v1/people/detail
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/{personId}/urls/{urlId}
 * @endpoint PUT /v1/people/detail
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/entities/{entityId}/urls/{urlId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -1191,7 +1136,6 @@ var EntityUrlCrawlRenderModeSchema = _enum([
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/duplicate-check
@@ -1221,7 +1165,6 @@ var EntityUrlCrawlRenderModeSchema = _enum([
 * @endpoint GET /v1/people/{personId}/urls/all
 * @endpoint POST /v1/app/saved-views
 * @endpoint POST /v1/entities
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/{entityId}/urls
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
@@ -1245,21 +1188,17 @@ var EntityUrlCrawlRenderModeSchema = _enum([
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/exchange-urls
 * @endpoint PATCH /v1/app/saved-views/{savedViewId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/{personId}/urls/{urlId}
 * @endpoint PATCH /v1/people/detail
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/{personId}/urls/{urlId}
 * @endpoint PUT /v1/people/detail
 * @endpoint DELETE /v1/app/saved-views/{savedViewId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/entities/{entityId}/urls/{urlId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -1333,7 +1272,6 @@ var EntityUrlTypeSchema = _enum([
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people/detail
@@ -1352,7 +1290,6 @@ var EntityUrlTypeSchema = _enum([
 * @endpoint GET /v1/people/{personId}/urls/{urlId}
 * @endpoint GET /v1/people/{personId}/urls/all
 * @endpoint POST /v1/entities
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/{entityId}/urls
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
@@ -1367,20 +1304,16 @@ var EntityUrlTypeSchema = _enum([
 * @endpoint POST /v1/people/detail/batch
 * @endpoint POST /v1/search/all
 * @endpoint POST /v1/sec/entities/{entityId}/exchange-urls
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/{personId}/urls/{urlId}
 * @endpoint PATCH /v1/people/detail
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/{personId}/urls/{urlId}
 * @endpoint PUT /v1/people/detail
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/entities/{entityId}/urls/{urlId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
@@ -1459,7 +1392,6 @@ var EntityEnrichmentSchema = object({
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/duplicate-check
@@ -1487,7 +1419,6 @@ var EntityEnrichmentSchema = object({
 * @endpoint GET /v1/people/{personId}/graph
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/{entityId}/acquisitions
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/{entityId}/relationships
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
@@ -1504,21 +1435,17 @@ var EntityEnrichmentSchema = object({
 * @endpoint POST /v1/people/detail/batch
 * @endpoint POST /v1/search/all
 * @endpoint PATCH /v1/entities/{entityId}/acquisitions/{relationshipId}
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/entities/detail/fundraise-rounds/{transactionId}
 * @endpoint PATCH /v1/entities/relationships/{relationshipId}
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
 * @endpoint PUT /v1/entities/{entityId}/acquisitions/{relationshipId}
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/entities/detail/fundraise-rounds/{transactionId}
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
 * @endpoint DELETE /v1/entities/{entityId}/acquisitions/{relationshipId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/entities/detail/fundraise-rounds/{transactionId}
 * @endpoint DELETE /v1/entities/relationships/{relationshipId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
@@ -1547,7 +1474,6 @@ var EntityImageSchema = object({
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/duplicate-check
@@ -1620,7 +1546,6 @@ var EntityAliasTypeSchema = _enum(["alternativeDba", "relatedLegal"]);
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/duplicate-check
@@ -1703,7 +1628,6 @@ var EntityNameAliasEntityAliasTypeSchema = object({
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/duplicate-check
@@ -1785,7 +1709,6 @@ var EntitySitemapSchema = object({
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/duplicate-check
@@ -1864,7 +1787,6 @@ var EntityStatusSchema = object({
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/duplicate-check
@@ -2073,7 +1995,6 @@ var FundraiseDataConfidenceSchema = _enum([
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/summary
@@ -2120,7 +2041,6 @@ var FundraiseInvestmentAttributionTypeSchema = _enum(["direct", "managedFund"]);
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/summary
@@ -2169,7 +2089,6 @@ var RoundLabelSchema = object({ round: string() });
 * @endpoint GET /v1/entities/detail/fundraise-rounds
 * @endpoint GET /v1/entities/detail/investments
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/entities/summary
@@ -2454,7 +2373,6 @@ var EntityAcceleratorParticipationSchema = object({
 * @endpoint POST /v1/entities/{entityId}/blog-posts
 * @endpoint POST /v1/entities/{entityId}/classifications
 * @endpoint POST /v1/entities/{entityId}/operating-status
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/{entityId}/relationships
 * @endpoint POST /v1/entities/{entityId}/research/details
 * @endpoint POST /v1/entities/{entityId}/research/snippets
@@ -2504,11 +2422,11 @@ var EntityAcceleratorParticipationSchema = object({
 * @endpoint PATCH /v1/entities/{entityId}/blog-posts/{blogPostId}
 * @endpoint PATCH /v1/entities/{entityId}/classifications/{classificationId}
 * @endpoint PATCH /v1/entities/{entityId}/operating-status
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/{entityId}/slug
 * @endpoint PATCH /v1/entities/{entityId}/status
 * @endpoint PATCH /v1/entities/{entityId}/texts/{textId}
 * @endpoint PATCH /v1/entities/{entityId}/type-record
+* @endpoint PATCH /v1/entities/{entityId}/unique-ids/{uniqueIdId}
 * @endpoint PATCH /v1/entities/{entityId}/urls/{urlId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/entities/detail/financial/valuation/{detailId}
@@ -2524,6 +2442,7 @@ var EntityAcceleratorParticipationSchema = object({
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/{personId}/slug
 * @endpoint PATCH /v1/people/{personId}/texts/{textId}
+* @endpoint PATCH /v1/people/{personId}/unique-ids/{uniqueIdId}
 * @endpoint PATCH /v1/people/{personId}/urls/{urlId}
 * @endpoint PATCH /v1/people/detail
 * @endpoint PATCH /v1/people/detail/news/{newsId}
@@ -2537,7 +2456,6 @@ var EntityAcceleratorParticipationSchema = object({
 * @endpoint PUT /v1/entities/{entityId}/blog-posts/{blogPostId}
 * @endpoint PUT /v1/entities/{entityId}/classifications/{classificationId}
 * @endpoint PUT /v1/entities/{entityId}/operating-status
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/{entityId}/research/details/{detailId}
 * @endpoint PUT /v1/entities/{entityId}/research/snippets/{snippetId}
 * @endpoint PUT /v1/entities/{entityId}/texts/{textId}
@@ -2563,8 +2481,6 @@ var EntityAcceleratorParticipationSchema = object({
 * @endpoint DELETE /v1/entities/{entityId}/addresses/{addressJoinId}
 * @endpoint DELETE /v1/entities/{entityId}/blog-posts/{blogPostId}
 * @endpoint DELETE /v1/entities/{entityId}/classifications/{classificationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/entities/{entityId}/research/details/{detailId}
 * @endpoint DELETE /v1/entities/{entityId}/research/snippets/{snippetId}
 * @endpoint DELETE /v1/entities/{entityId}/slug/redirects/{redirectId}
@@ -3183,7 +3099,6 @@ var NewsSchema = object({
 * @openapiSchema PersonAliasType
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people
 * @endpoint GET /v1/people/detail
@@ -3225,7 +3140,6 @@ var PersonAliasTypeSchema = _enum([
 * @openapiSchema EntityNameAliasPersonAliasType
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people
 * @endpoint GET /v1/people/detail
@@ -3270,7 +3184,6 @@ var EntityNameAliasPersonAliasTypeSchema = object({
 * @openapiSchema PersonImage
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people
 * @endpoint GET /v1/people/detail
@@ -3282,7 +3195,6 @@ var EntityNameAliasPersonAliasTypeSchema = object({
 * @endpoint GET /v1/people/{personId}/entities
 * @endpoint GET /v1/people/{personId}/entities/{associationId}
 * @endpoint GET /v1/people/{personId}/graph
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
 * @endpoint POST /v1/entities/detail/batch
@@ -3296,16 +3208,12 @@ var EntityNameAliasPersonAliasTypeSchema = object({
 * @endpoint POST /v1/people/duplicate-check
 * @endpoint POST /v1/people/natural-search
 * @endpoint POST /v1/search/all
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
 * @usedBySchema EntityPersonAssociationSchema
@@ -3328,7 +3236,6 @@ var PersonImageSchema = object({
 * @openapiSchema EntityPersonAssociation
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people/detail
 * @endpoint GET /v1/people/detail/similar
@@ -3336,7 +3243,6 @@ var PersonImageSchema = object({
 * @endpoint GET /v1/entities/{entityId}/people/{associationId}
 * @endpoint GET /v1/people/{personId}/entities
 * @endpoint GET /v1/people/{personId}/entities/{associationId}
-* @endpoint POST /v1/entities/{entityId}/people
 * @endpoint POST /v1/entities/batch
 * @endpoint POST /v1/entities/detail
 * @endpoint POST /v1/entities/detail/batch
@@ -3346,16 +3252,12 @@ var PersonImageSchema = object({
 * @endpoint POST /v1/people/batch
 * @endpoint POST /v1/people/detail
 * @endpoint POST /v1/people/detail/batch
-* @endpoint PATCH /v1/entities/{entityId}/people/{associationId}
 * @endpoint PATCH /v1/entities/detail
 * @endpoint PATCH /v1/people/{personId}/entities/{associationId}
 * @endpoint PATCH /v1/people/detail
-* @endpoint PUT /v1/entities/{entityId}/people/{associationId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint PUT /v1/people/{personId}/entities/{associationId}
 * @endpoint PUT /v1/people/detail
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}
-* @endpoint DELETE /v1/entities/{entityId}/people/{associationId}/corporate-title
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}
 * @endpoint DELETE /v1/people/{personId}/entities/{associationId}/corporate-title
 * @usedBySchema PageEntityPersonAssociationSchema
@@ -3420,7 +3322,6 @@ var EntityPersonAssociationSchema = object({
 * @openapiSchema PersonEnrichment
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people/detail
 * @endpoint GET /v1/entities/{entityId}/people
@@ -3456,7 +3357,6 @@ var PersonEnrichmentSchema = object({
 * @openapiSchema EntityFundraise
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people/detail
 * @endpoint GET /v1/entities/{entityId}/people
@@ -3496,7 +3396,6 @@ var EntityFundraiseSchema = object({
 * @openapiSchema PersonInvestedCompany
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people/detail
 * @endpoint GET /v1/entities/{entityId}/people
@@ -3525,7 +3424,6 @@ var PersonInvestedCompanySchema = object({ entity: EntitySchema });
 * @openapiSchema PersonInvestment
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people/detail
 * @endpoint GET /v1/entities/{entityId}/people
@@ -3568,10 +3466,12 @@ var PersonInvestmentSchema = object({
 * @openapiSchema ContentSourceType
 * @endpoint GET /v1/content/embedding/activity
 * @endpoint GET /v1/content/embedding/backlog
+* @endpoint GET /v1/content/embedding/neighbors
+* @endpoint GET /v1/content/embedding/stale
+* @endpoint GET /v1/content/similarity/stale
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people
@@ -3583,6 +3483,7 @@ var PersonInvestmentSchema = object({
 * @endpoint GET /v1/entities/{entityId}/people/{associationId}
 * @endpoint GET /v1/entities/{entityId}/products/suggestions
 * @endpoint GET /v1/entities/{entityId}/relationships/suggestions
+* @endpoint POST /v1/content/embedding/refresh
 * @endpoint POST /v1/content/embedding/refresh/sweep
 * @endpoint POST /v1/entities
 * @endpoint POST /v1/entities/batch
@@ -3637,7 +3538,6 @@ var ContentSourceTypeSchema = _enum([
 * @endpoint GET /v1/entities
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/entities/detail/similar
 * @endpoint GET /v1/people
@@ -3703,7 +3603,6 @@ var ContentEmbeddingMatchSchema = object({
 * @openapiSchema PersonVisibilityStatus
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people
 * @endpoint GET /v1/people/detail
@@ -3745,7 +3644,6 @@ var PersonVisibilityStatusSchema = object({
 * @openapiSchema Person
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people
 * @endpoint GET /v1/people/detail
@@ -3816,7 +3714,6 @@ var PersonSchema = object({
 * @openapiSchema PersonDetail
 * @endpoint GET /v1/entities/detail
 * @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/people
 * @endpoint GET /v1/entities/detail/person-investors
 * @endpoint GET /v1/people/detail
 * @endpoint GET /v1/entities/{entityId}/people
@@ -3874,7 +3771,9 @@ var PersonDetailSchema = object({
 * @endpoint POST /v1/entities/detail/resolve
 * @endpoint POST /v1/people/{personId}/unique-ids
 * @endpoint POST /v1/sec/entities/{entityId}/identifiers
+* @endpoint PATCH /v1/entities/{entityId}/unique-ids/{uniqueIdId}
 * @endpoint PATCH /v1/entities/detail
+* @endpoint PATCH /v1/people/{personId}/unique-ids/{uniqueIdId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint DELETE /v1/entities/{entityId}/unique-ids/{uniqueIdId}
 * @endpoint DELETE /v1/people/{personId}/unique-ids/{uniqueIdId}
@@ -3913,7 +3812,9 @@ var UniqueIdTypeSchema = _enum([
 * @endpoint POST /v1/entities/detail/resolve
 * @endpoint POST /v1/people/{personId}/unique-ids
 * @endpoint POST /v1/sec/entities/{entityId}/identifiers
+* @endpoint PATCH /v1/entities/{entityId}/unique-ids/{uniqueIdId}
 * @endpoint PATCH /v1/entities/detail
+* @endpoint PATCH /v1/people/{personId}/unique-ids/{uniqueIdId}
 * @endpoint PUT /v1/entities/detail
 * @endpoint DELETE /v1/entities/{entityId}/unique-ids/{uniqueIdId}
 * @endpoint DELETE /v1/people/{personId}/unique-ids/{uniqueIdId}
@@ -3988,4 +3889,4 @@ var EntityDetailSchema = object({
 //#endregion
 export { EntityDetailSchema };
 
-//# sourceMappingURL=detail-CKBtjE1F.js.map
+//# sourceMappingURL=detail-C2J4j3KA.js.map

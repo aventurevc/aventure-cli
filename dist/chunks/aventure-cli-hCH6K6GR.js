@@ -1,7 +1,7 @@
-import { B as normalizeEnvironmentName, D as resolveAuthStatus, E as readAuthConfig, Et as JsonValueSchema, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-DQ_p5vjo.js";
-import { A as datetime, O as uuid, S as record, o as _enum, v as number, w as string, y as object } from "./data-source-type-B2O1SiZK.js";
-import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-CABCk7cn.js";
-import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-chnE2tzl.js";
+import { B as normalizeEnvironmentName, D as resolveAuthStatus, Dt as JsonValueSchema, E as readAuthConfig, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-C-YXYlYA.js";
+import { A as datetime, O as uuid, S as record, o as _enum, v as number, w as string, y as object } from "./data-source-type-CEoBo_qP.js";
+import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-BInPE2bT.js";
+import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-CZ4CX0Dg.js";
 import { execFile, spawnSync } from "node:child_process";
 import { createHash, webcrypto } from "node:crypto";
 import { readFile } from "node:fs/promises";
@@ -15,7 +15,7 @@ import { setTimeout } from "node:timers/promises";
 import { createInterface } from "node:readline/promises";
 var package_default = {
 	name: "@aventurevc/mcp-server",
-	version: "0.7.259",
+	version: "0.7.261",
 	"private": true,
 	description: "Source workspace for the @aventurevc/aventure-cli and @aventurevc/mcp-server published packages. NOT an install target — see scripts/release/publish-npm-train.mjs for the staged manifests that get published.",
 	license: "UNLICENSED",
@@ -43,12 +43,12 @@ var package_default = {
 		"test": "node ../scripts/node/vitest-typecheck.mjs run --config config/vite.config.ts",
 		"test:smoke": "../scripts/dev/aventure-doppler-run.sh node ../scripts/node/vitest-typecheck.mjs run --config config/vite.config.ts __tests__/client",
 		"typecheck": "tsgo --noEmit -p config/tsconfig.json",
-		"lint": "npm run lint:ox && npm run lint:ast",
+		"lint": "pnpm run lint:ox && pnpm run lint:ast",
 		"lint:ast": "cd .. && python3 scripts/lint/ast-grep-report.py --mode core --severity-mode strict --artifact-prefix ast-grep-mcp --title 'mcp ast-grep' mcp",
 		"lint:ox": "oxlint -c config/oxlintrc.json --tsconfig config/tsconfig.json --threads=1 --ignore-pattern 'aventure-cli/generated/**' --ignore-pattern 'mcp-server/generated/**' .",
-		"validate": "npm run lint && npm run typecheck && npm run build",
+		"validate": "pnpm run lint && pnpm run typecheck && pnpm run build",
 		"postinstall": "node scripts/install-zsh-completion-loader.mjs",
-		"prepack": "npm run build && node ../scripts/release/materialize-dist.mjs ."
+		"prepack": "pnpm run build && node ../scripts/release/materialize-dist.mjs ."
 	},
 	dependencies: {
 		"@aventurevc/api-schemas": "*",
@@ -1024,6 +1024,7 @@ var GENERATED_CLI_NAMESPACES = {
 	addresses: { summary: "Validate and geocode postal addresses for entity and person records" },
 	"addresses validation": { summary: "Address validation and geocoding API" },
 	agents: { summary: "Install the aVenture agent skill bundle, read versioned agent instructions, and ask grounded platform questions" },
+	"agents chassis": { summary: "Accepted automated-agent runtime chassis tokens" },
 	"agents help": { summary: "Grounded natural-language platform help with citations" },
 	"agents help reindex": { summary: "Grounded natural-language platform help with citations" },
 	"agents instructions": { summary: "Versioned agent prompt and skill documents" },
@@ -1092,7 +1093,6 @@ var GENERATED_CLI_NAMESPACES = {
 	"entities operating-status": { summary: "Read and write an entity's operating-status record and signal" },
 	"entities operating-status signal": { summary: "Administrative tools for entity data maintenance" },
 	"entities people": { summary: "Person associations and employee-count records for one entity" },
-	"entities people corporate-title": { summary: "Person-entity association routes" },
 	"entities people employee-counts": { summary: "Entity employee-count sub-resource: time series for an entity" },
 	"entities products": { summary: "Suggest products and services for an entity" },
 	"entities relationships": { summary: "Entity-to-entity relationships and suggested relationship candidates" },
@@ -1150,10 +1150,10 @@ var GENERATED_CLI_NAMESPACES = {
 	"harness runs stop": { summary: "Harness enrichment run control plane" },
 	"harness runs submissions": { summary: "Harness enrichment run control plane" },
 	"harness runs usage": { summary: "Harness enrichment run control plane" },
-	"harness sessions": { summary: "Harness Claude session transcript mirror" },
-	"harness sessions entries": { summary: "Harness Claude session transcript mirror" },
-	"harness sessions prune": { summary: "Harness Claude session transcript mirror" },
-	"harness sessions subpaths": { summary: "Harness Claude session transcript mirror" },
+	"harness sessions": { summary: "Durable harness session mirror" },
+	"harness sessions entries": { summary: "Durable harness session mirror" },
+	"harness sessions prune": { summary: "Durable harness session mirror" },
+	"harness sessions subpaths": { summary: "Durable harness session mirror" },
 	help: { summary: "Grounded natural-language platform help with citations" },
 	inference: { summary: "OpenAI-compatible embeddings and chat/completions" },
 	"inference chat": { summary: "Chat completions on a configured OpenAI-compatible profile" },
@@ -1364,6 +1364,46 @@ function openApiCompositeSpec(composite, role) {
 	if (match === void 0 || duplicate !== void 0) throw new Error(`Generated composite CLI role '${role}' is incomplete`);
 	return match;
 }
+//#endregion
+//#region ../api-schemas/dist/cli/authorization-client-platform.js
+/**
+* Coarse operating-system family reported by the CLI
+*
+* @openapiSchema CliAuthorizationClientPlatform
+* @endpoint GET /v1/app/cli-authorizations
+* @endpoint GET /v1/app/cli-authorizations/{cliAuthorizationId}
+* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/approve
+* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/deny
+* @endpoint POST /v1/auth/cli-authorizations
+* @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/acknowledge
+* @endpoint DELETE /v1/app/cli-authorizations/{cliAuthorizationId}
+* @usedBySchema CliAuthorizationMutationSchema
+* @usedBySchema CliAuthorizationSchema
+* @contractShape cli.authorization-client-platform
+* @contractRole canonical
+* @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/cliauthorization/CliAuthorization.kt
+*/
+var CliAuthorizationClientPlatformSchema = _enum([
+	"MACOS",
+	"LINUX",
+	"WINDOWS",
+	"OTHER"
+]);
+//#endregion
+//#region ../api-schemas/dist/cli/authorization-encryption-algorithm.js
+/**
+* Versioned hybrid encryption suite for one-time CLI credential delivery
+*
+* @openapiSchema CliAuthorizationEncryptionAlgorithm
+* @endpoint POST /v1/auth/cli-authorizations
+* @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/poll
+* @usedBySchema CliAuthorizationDeliverySchema
+* @usedBySchema CliAuthorizationMutationSchema
+* @contractShape cli.authorization-encryption-algorithm
+* @contractRole canonical
+* @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/cliauthorization/CliAuthorization.kt
+*/
+var CliAuthorizationEncryptionAlgorithmSchema = _enum(["RSA_OAEP_256_A256_GCM_V1"]);
 /**
 * Creates a short-lived CLI authorization request bound to an ephemeral key
 *
@@ -1377,14 +1417,9 @@ var CliAuthorizationMutationSchema = object({
 	/** Label for this CLI installation */
 	clientLabel: string().regex(/.*\S.*/).min(1).max(120).nullish(),
 	/** Coarse operating-system family */
-	clientPlatform: _enum([
-		"MACOS",
-		"LINUX",
-		"WINDOWS",
-		"OTHER"
-	]).nullish(),
+	clientPlatform: CliAuthorizationClientPlatformSchema.nullish(),
 	/** Requested hybrid encryption suite */
-	encryptionAlgorithm: _enum(["RSA_OAEP_256_A256_GCM_V1"]).nullish(),
+	encryptionAlgorithm: CliAuthorizationEncryptionAlgorithmSchema.nullish(),
 	/** Base64-encoded DER SubjectPublicKeyInfo for an ephemeral RSA public key */
 	encryptionPublicKey: string().min(344).max(12e3).nullish()
 });
@@ -1559,6 +1594,36 @@ function runOpener(command, openerArguments) {
 	});
 }
 //#endregion
+//#region ../api-schemas/dist/cli/authorization-status.js
+/**
+* CLI authorization broker lifecycle state
+*
+* @openapiSchema CliAuthorizationStatus
+* @endpoint GET /v1/app/cli-authorizations
+* @endpoint GET /v1/app/cli-authorizations/{cliAuthorizationId}
+* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/approve
+* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/deny
+* @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/acknowledge
+* @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/poll
+* @endpoint DELETE /v1/app/cli-authorizations/{cliAuthorizationId}
+* @usedBySchema CliAuthorizationPollSchema
+* @usedBySchema CliAuthorizationSchema
+* @contractShape cli.authorization-status
+* @contractRole canonical
+* @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/cliauthorization/CliAuthorization.kt
+*/
+var CliAuthorizationStatusSchema = _enum([
+	"PENDING",
+	"ISSUING",
+	"KEY_READY",
+	"REVOKING",
+	"CONSUMED",
+	"REVOKED",
+	"DENIED",
+	"EXPIRED",
+	"FAILED"
+]);
+//#endregion
 //#region ../api-schemas/dist/cli/authorization-terminal-reason.js
 /**
 * CLI authorization terminal explanation
@@ -1612,12 +1677,7 @@ var CliAuthorizationSchema = object({
 	/** User-supplied label for the requesting CLI installation */
 	clientLabel: string(),
 	/** Coarse client operating-system family */
-	clientPlatform: _enum([
-		"MACOS",
-		"LINUX",
-		"WINDOWS",
-		"OTHER"
-	]),
+	clientPlatform: CliAuthorizationClientPlatformSchema,
 	/** Human comparison code shown by both the CLI and browser */
 	comparisonCode: string(),
 	/** Time the CLI acknowledged durable local storage */
@@ -1633,17 +1693,7 @@ var CliAuthorizationSchema = object({
 	/** Time encrypted key delivery became available */
 	keyReadyAt: datetime({ offset: true }).nullish(),
 	/** Current broker lifecycle state */
-	status: _enum([
-		"PENDING",
-		"ISSUING",
-		"KEY_READY",
-		"REVOKING",
-		"CONSUMED",
-		"REVOKED",
-		"DENIED",
-		"EXPIRED",
-		"FAILED"
-	]),
+	status: CliAuthorizationStatusSchema,
 	/** Time this request entered its terminal state */
 	terminalAt: datetime({ offset: true }).nullish(),
 	/** Non-secret terminal-state explanation */
@@ -1665,7 +1715,7 @@ var CliAuthorizationSchema = object({
 */
 var CliAuthorizationDeliverySchema = object({
 	/** Hybrid encryption suite used for this delivery */
-	algorithm: _enum(["RSA_OAEP_256_A256_GCM_V1"]),
+	algorithm: CliAuthorizationEncryptionAlgorithmSchema,
 	/** Base64-encoded 16-byte AES-GCM authentication tag */
 	authenticationTag: string(),
 	/** Base64-encoded encrypted UTF-8 personal API-key secret bytes */
@@ -1690,17 +1740,7 @@ var CliAuthorizationPollSchema = object({
 	/** Authorization request expiry timestamp */
 	expiresAt: datetime({ offset: true }),
 	/** Current broker lifecycle state */
-	status: _enum([
-		"PENDING",
-		"ISSUING",
-		"KEY_READY",
-		"REVOKING",
-		"CONSUMED",
-		"REVOKED",
-		"DENIED",
-		"EXPIRED",
-		"FAILED"
-	]),
+	status: CliAuthorizationStatusSchema,
 	/** Non-secret terminal-state explanation */
 	terminalReason: CliAuthorizationTerminalReasonSchema.nullish()
 });
@@ -1807,7 +1847,7 @@ var CliAuthorizationRequestError = class extends Error {
 		this.retryable = problem.status >= 500 || problem.status === 429;
 	}
 };
-/** Marks an acknowledgement whose server-side result is unknown because transport never returned. */
+/** Marks an acknowledgment whose server-side result is unknown because transport never returned. */
 var CliAuthorizationTransportError = class extends Error {
 	constructor(operation, error, credentialValue = []) {
 		super(`CLI authorization ${operation} transport failed: ${credentialSafeMessage(error, credentialValue)}`, { cause: error });
@@ -2015,7 +2055,7 @@ var ENCRYPTION_ALGORITHM = "RSA_OAEP_256_A256_GCM_V1";
 var MINIMUM_POLL_INTERVAL_SECONDS = 1;
 var MAXIMUM_POLL_INTERVAL_SECONDS = 30;
 /**
-* Acknowledgement is the only thing that lifts a delivered key from the authorization deadline
+* Acknowledgment is the only thing that lifts a delivered key from the authorization deadline
 * (`app.clerk-auth.cli-authorization.request-ttl`, 10m) to the granted lifetime
 * (`app.clerk-auth.personal-api-key.acknowledged-key-lifetime`, 365d), and
 * `AppClerkAuthProperties.kt:57` requires the latter to exceed the former. One day sits inside
@@ -2100,16 +2140,16 @@ async function loginPersonalCredential(options) {
 	try {
 		acknowledged = await acknowledgeUntilAuthorizationDeadline(started);
 	} catch (error) {
-		return pendingAcknowledgementFailure(stored, `auth login: credential was stored and verified, but broker acknowledgement was not confirmed — ${credentialSafeMessage(error, [started.pollSecret])}`);
+		return pendingAcknowledgementFailure(stored, `auth login: credential was stored and verified, but broker acknowledgment was not confirmed — ${credentialSafeMessage(error, [started.pollSecret])}`);
 	}
-	if (acknowledged.status !== "CONSUMED") return pendingAcknowledgementFailure(stored, `auth login: broker returned ${acknowledged.status} after acknowledgement`);
+	if (acknowledged.status !== "CONSUMED") return pendingAcknowledgementFailure(stored, `auth login: broker returned ${acknowledged.status} after acknowledgment`);
 	let active;
 	try {
 		active = await savePersonalCredential(host, stored.credential, "active");
 	} catch (error) {
-		return pendingAcknowledgementFailure(stored, `auth login: remote acknowledgement succeeded, but local activation could not be confirmed — ${credentialSafeMessage(error)}`);
+		return pendingAcknowledgementFailure(stored, `auth login: remote acknowledgment succeeded, but local activation could not be confirmed — ${credentialSafeMessage(error)}`);
 	}
-	return success("Personal CLI credential stored; authenticated identity and broker acknowledgement verified.", diagnostics(active, true), { ids: [active.credential.apiKey.id] });
+	return success("Personal CLI credential stored; authenticated identity and broker acknowledgment verified.", diagnostics(active, true), { ids: [active.credential.apiKey.id] });
 }
 function pendingAcknowledgementFailure(stored, summary) {
 	return {
@@ -2132,7 +2172,7 @@ async function existingCredential(stored) {
 			apiKey: verification.apiKey,
 			secret: stored.credential.secret
 		}, "active");
-		return success("Recovered pending CLI credential: broker acknowledgement had succeeded.", diagnostics(active, true), { ids: [active.credential.apiKey.id] });
+		return success("Recovered pending CLI credential: broker acknowledgment had succeeded.", diagnostics(active, true), { ids: [active.credential.apiKey.id] });
 	} catch (error) {
 		return {
 			...failure(`auth login: credential is valid but could not be promoted locally — ${credentialSafeMessage(error, [stored.credential.secret])}`, ["The remote key remains valid. Re-run `aventure-cli auth login` to retry local activation; it will recover the pending credential automatically."]),
@@ -2145,7 +2185,7 @@ async function existingCredential(stored) {
 	};
 	const revocation = await revokeStoredCredential(stored);
 	if (revocation.outcome === "unconfirmed") return {
-		...failure("auth login: a prior credential is durably stored but broker acknowledgement was not confirmed", [`Remote revocation of the stale pending key was not confirmed — ${revocation.summary}. Retry when the API is reachable.`]),
+		...failure("auth login: a prior credential is durably stored but broker acknowledgment was not confirmed", [`Remote revocation of the stale pending key was not confirmed — ${revocation.summary}. Retry when the API is reachable.`]),
 		data: diagnostics(stored, false)
 	};
 	try {
@@ -2160,7 +2200,7 @@ async function existingCredential(stored) {
 	return null;
 }
 /**
-* Retry retryable acknowledgement failures (transport-unknown outcomes, 5xx, 429) at the poll
+* Retry retryable acknowledgment failures (transport-unknown outcomes, 5xx, 429) at the poll
 * cadence until the authorization deadline; the broker's replay proof keeps replays idempotent.
 */
 async function acknowledgeUntilAuthorizationDeadline(started) {
@@ -2174,7 +2214,7 @@ async function acknowledgeUntilAuthorizationDeadline(started) {
 			intervalSeconds = boundedPollInterval(error.retryAfterSeconds ?? intervalSeconds);
 		} else if (!(error instanceof CliAuthorizationTransportError)) throw error;
 		if (Date.now() >= expiresAt) throw error;
-		stderr.write("Broker acknowledgement was interrupted; retrying.\n");
+		stderr.write("Broker acknowledgment was interrupted; retrying.\n");
 		await waitForNextPoll(intervalSeconds, expiresAt);
 	}
 }
@@ -3351,7 +3391,7 @@ function cliVersionCheck() {
 */
 async function apiSchemasCheck() {
 	try {
-		const { EntityDetailSchema } = await import("./detail-CKBtjE1F.js");
+		const { EntityDetailSchema } = await import("./detail-C2J4j3KA.js");
 		if (typeof EntityDetailSchema.safeParse !== "function") throw new Error("EntityDetailSchema does not expose a Zod parser");
 		return checkResult("api-schemas", "pass", "Installed @aventurevc/api-schemas contracts resolve beyond the CLI startup path.");
 	} catch (error) {
@@ -3476,7 +3516,7 @@ function catalogCheck(statusSpec, servedFingerprint, upgradeAvailable) {
 	const total = GENERATED_OPENAPI_COMMAND_SPECS.length;
 	if (statusSpec === void 0) return checkResult("catalog", "fail", `Regenerate the command catalog with \`make mcp-generate-contracts\` and reinstall: none of its ${total} operations is the status operation.`);
 	if (servedFingerprint === null) return checkResult("catalog", "skip", `Could not read the served operation fingerprint, so drift is unproven; this catalog holds ${total} operations at ${GENERATED_OPERATION_FINGERPRINT}.`);
-	if (servedFingerprint === "bde042e0caaa4cb6") return checkResult("catalog", "pass", `${total} generated operations match the set the API serves (${GENERATED_OPERATION_FINGERPRINT}).`);
+	if (servedFingerprint === "728e05dc49858349") return checkResult("catalog", "pass", `${total} generated operations match the set the API serves (${GENERATED_OPERATION_FINGERPRINT}).`);
 	const drift = `This catalog describes a different operation set than the API serves (${GENERATED_OPERATION_FINGERPRINT} vs ${servedFingerprint})`;
 	if (upgradeAvailable === true) return checkResult("catalog", "fail", `${drift}: run \`aventure-cli update --execute\`.`);
 	return checkResult("catalog", "skip", upgradeAvailable === false ? `${drift}, and no published release describes it yet: the CLI needs publishing (\`make npm-publish-train\`) before any caller can match this deployment.` : `${drift}, and the registry did not answer, so it is unknown whether a newer release describes it: rerun \`aventure-cli update\` with registry access.`);
@@ -5204,4 +5244,4 @@ try {
 //#endregion
 export {};
 
-//# sourceMappingURL=aventure-cli-0L-F266-.js.map
+//# sourceMappingURL=aventure-cli-hCH6K6GR.js.map

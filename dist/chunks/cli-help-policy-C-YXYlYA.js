@@ -1,4 +1,4 @@
-import { A as datetime, E as unknown, O as uuid, S as record, T as union, h as lazy, l as array, n as EntityPersonOwnerSchema, o as _enum, p as int, r as EntityTypeSchema, s as _null, u as boolean, v as number, w as string, y as object } from "./data-source-type-B2O1SiZK.js";
+import { A as datetime, E as unknown, O as uuid, S as record, T as union, h as lazy, l as array, n as EntityPersonOwnerSchema, o as _enum, p as int, r as EntityTypeSchema, s as _null, u as boolean, v as number, w as string, y as object } from "./data-source-type-CEoBo_qP.js";
 import { createRequire } from "node:module";
 import childProcess, { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -350,9 +350,9 @@ function createBoundedQueueExportPromiseHandler(options) {
 }
 //#endregion
 //#region ../node_modules/@opentelemetry/api/build/esm/version.js
-var VERSION$4;
+var VERSION$5;
 var init_version$1 = __esmMin((() => {
-	VERSION$4 = "1.9.1";
+	VERSION$5 = "1.9.1";
 }));
 //#endregion
 //#region ../node_modules/@opentelemetry/api/build/esm/internal/semver.js
@@ -419,25 +419,25 @@ var re, isCompatible;
 var init_semver = __esmMin((() => {
 	init_version$1();
 	re = /^(\d+)\.(\d+)\.(\d+)(-(.+))?$/;
-	isCompatible = _makeCompatibilityCheck(VERSION$4);
+	isCompatible = _makeCompatibilityCheck(VERSION$5);
 }));
 //#endregion
 //#region ../node_modules/@opentelemetry/api/build/esm/internal/global-utils.js
 function registerGlobal(type, instance, diag, allowOverride = false) {
 	var _a;
-	const api = _global[GLOBAL_OPENTELEMETRY_API_KEY] = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) !== null && _a !== void 0 ? _a : { version: VERSION$4 };
+	const api = _global[GLOBAL_OPENTELEMETRY_API_KEY] = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) !== null && _a !== void 0 ? _a : { version: VERSION$5 };
 	if (!allowOverride && api[type]) {
 		const err = /* @__PURE__ */ new Error(`@opentelemetry/api: Attempted duplicate registration of API: ${type}`);
 		diag.error(err.stack || err.message);
 		return false;
 	}
 	if (api.version !== "1.9.1") {
-		const err = /* @__PURE__ */ new Error(`@opentelemetry/api: Registration of version v${api.version} for ${type} does not match previously registered API v${VERSION$4}`);
+		const err = /* @__PURE__ */ new Error(`@opentelemetry/api: Registration of version v${api.version} for ${type} does not match previously registered API v${VERSION$5}`);
 		diag.error(err.stack || err.message);
 		return false;
 	}
 	api[type] = instance;
-	diag.debug(`@opentelemetry/api: Registered a global for ${type} v${VERSION$4}.`);
+	diag.debug(`@opentelemetry/api: Registered a global for ${type} v${VERSION$5}.`);
 	return true;
 }
 function getGlobal(type) {
@@ -447,7 +447,7 @@ function getGlobal(type) {
 	return (_b = _global[GLOBAL_OPENTELEMETRY_API_KEY]) === null || _b === void 0 ? void 0 : _b[type];
 }
 function unregisterGlobal(type, diag) {
-	diag.debug(`@opentelemetry/api: Unregistering a global for ${type} v${VERSION$4}.`);
+	diag.debug(`@opentelemetry/api: Unregistering a global for ${type} v${VERSION$5}.`);
 	const api = _global[GLOBAL_OPENTELEMETRY_API_KEY];
 	if (api) delete api[type];
 }
@@ -455,7 +455,7 @@ var major, GLOBAL_OPENTELEMETRY_API_KEY, _global;
 var init_global_utils = __esmMin((() => {
 	init_version$1();
 	init_semver();
-	major = VERSION$4.split(".")[0];
+	major = VERSION$5.split(".")[0];
 	GLOBAL_OPENTELEMETRY_API_KEY = Symbol.for(`opentelemetry.js.api.${major}`);
 	_global = typeof globalThis === "object" ? globalThis : typeof self === "object" ? self : typeof window === "object" ? window : typeof global === "object" ? global : {};
 }));
@@ -2223,9 +2223,9 @@ var init_globalThis = __esmMin((() => {
 }));
 //#endregion
 //#region ../node_modules/@opentelemetry/core/build/esm/version.js
-var VERSION$3;
+var VERSION$4;
 var init_version = __esmMin((() => {
-	VERSION$3 = "2.10.0";
+	VERSION$4 = "2.10.0";
 }));
 //#endregion
 //#region ../node_modules/@opentelemetry/semantic-conventions/build/esm/internal/utils.js
@@ -3422,7 +3422,7 @@ var init_SemanticResourceAttributes = __esmMin((() => {
 //#region ../node_modules/@opentelemetry/semantic-conventions/build/esm/resource/index.js
 var init_resource = __esmMin((() => {
 	init_SemanticResourceAttributes();
-})), ATTR_ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_ABORTED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_HANDLED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_SKIPPED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_UNHANDLED, ATTR_ASPNETCORE_DIAGNOSTICS_HANDLER_TYPE, ATTR_ASPNETCORE_RATE_LIMITING_POLICY, ATTR_ASPNETCORE_RATE_LIMITING_RESULT, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_ACQUIRED, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_ENDPOINT_LIMITER, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_GLOBAL_LIMITER, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_REQUEST_CANCELED, ATTR_ASPNETCORE_REQUEST_IS_UNHANDLED, ATTR_ASPNETCORE_ROUTING_IS_FALLBACK, ATTR_ASPNETCORE_ROUTING_MATCH_STATUS, ASPNETCORE_ROUTING_MATCH_STATUS_VALUE_FAILURE, ASPNETCORE_ROUTING_MATCH_STATUS_VALUE_SUCCESS, ATTR_ASPNETCORE_USER_IS_AUTHENTICATED, ATTR_CLIENT_ADDRESS, ATTR_CLIENT_PORT, ATTR_CODE_COLUMN_NUMBER, ATTR_CODE_FILE_PATH, ATTR_CODE_FUNCTION_NAME, ATTR_CODE_LINE_NUMBER, ATTR_CODE_STACKTRACE, ATTR_DB_COLLECTION_NAME, ATTR_DB_NAMESPACE, ATTR_DB_OPERATION_BATCH_SIZE, ATTR_DB_OPERATION_NAME, ATTR_DB_QUERY_SUMMARY, ATTR_DB_QUERY_TEXT, ATTR_DB_RESPONSE_STATUS_CODE, ATTR_DB_STORED_PROCEDURE_NAME, ATTR_DB_SYSTEM_NAME, DB_SYSTEM_NAME_VALUE_MARIADB, DB_SYSTEM_NAME_VALUE_MICROSOFT_SQL_SERVER, DB_SYSTEM_NAME_VALUE_MYSQL, DB_SYSTEM_NAME_VALUE_POSTGRESQL, ATTR_DEPLOYMENT_ENVIRONMENT_NAME, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_DEVELOPMENT, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_PRODUCTION, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_STAGING, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_TEST, ATTR_DOTNET_GC_HEAP_GENERATION, DOTNET_GC_HEAP_GENERATION_VALUE_GEN0, DOTNET_GC_HEAP_GENERATION_VALUE_GEN1, DOTNET_GC_HEAP_GENERATION_VALUE_GEN2, ATTR_ERROR_TYPE$2, ERROR_TYPE_VALUE_OTHER, ATTR_EXCEPTION_ESCAPED, ATTR_EXCEPTION_MESSAGE, ATTR_EXCEPTION_STACKTRACE, ATTR_EXCEPTION_TYPE, ATTR_HTTP_REQUEST_HEADER, ATTR_HTTP_REQUEST_METHOD, HTTP_REQUEST_METHOD_VALUE_OTHER, HTTP_REQUEST_METHOD_VALUE_CONNECT, HTTP_REQUEST_METHOD_VALUE_DELETE, HTTP_REQUEST_METHOD_VALUE_HEAD, HTTP_REQUEST_METHOD_VALUE_OPTIONS, HTTP_REQUEST_METHOD_VALUE_PATCH, HTTP_REQUEST_METHOD_VALUE_POST, HTTP_REQUEST_METHOD_VALUE_TRACE, ATTR_HTTP_REQUEST_METHOD_ORIGINAL, ATTR_HTTP_REQUEST_RESEND_COUNT, ATTR_HTTP_RESPONSE_HEADER, ATTR_HTTP_RESPONSE_STATUS_CODE$1, ATTR_HTTP_ROUTE, ATTR_JVM_GC_ACTION, ATTR_JVM_GC_NAME, ATTR_JVM_MEMORY_POOL_NAME, ATTR_JVM_MEMORY_TYPE, JVM_MEMORY_TYPE_VALUE_HEAP, JVM_MEMORY_TYPE_VALUE_NON_HEAP, ATTR_JVM_THREAD_DAEMON, ATTR_JVM_THREAD_STATE, JVM_THREAD_STATE_VALUE_BLOCKED, JVM_THREAD_STATE_VALUE_RUNNABLE, JVM_THREAD_STATE_VALUE_TERMINATED, JVM_THREAD_STATE_VALUE_TIMED_WAITING, JVM_THREAD_STATE_VALUE_WAITING, ATTR_NETWORK_LOCAL_ADDRESS, ATTR_NETWORK_LOCAL_PORT, ATTR_NETWORK_PEER_ADDRESS, ATTR_NETWORK_PEER_PORT, ATTR_NETWORK_PROTOCOL_NAME, ATTR_NETWORK_PROTOCOL_VERSION, ATTR_NETWORK_TRANSPORT, NETWORK_TRANSPORT_VALUE_PIPE, NETWORK_TRANSPORT_VALUE_QUIC, NETWORK_TRANSPORT_VALUE_UNIX, ATTR_NETWORK_TYPE, NETWORK_TYPE_VALUE_IPV4, NETWORK_TYPE_VALUE_IPV6, ATTR_OTEL_EVENT_NAME, ATTR_OTEL_SCOPE_NAME, ATTR_OTEL_SCOPE_VERSION, ATTR_OTEL_STATUS_CODE, OTEL_STATUS_CODE_VALUE_ERROR, ATTR_OTEL_STATUS_DESCRIPTION, ATTR_SERVER_ADDRESS$1, ATTR_SERVER_PORT$1, ATTR_SERVICE_INSTANCE_ID, ATTR_SERVICE_NAME, ATTR_SERVICE_NAMESPACE, ATTR_SERVICE_VERSION, ATTR_SIGNALR_CONNECTION_STATUS, SIGNALR_CONNECTION_STATUS_VALUE_APP_SHUTDOWN, SIGNALR_CONNECTION_STATUS_VALUE_NORMAL_CLOSURE, SIGNALR_CONNECTION_STATUS_VALUE_TIMEOUT, ATTR_SIGNALR_TRANSPORT, SIGNALR_TRANSPORT_VALUE_LONG_POLLING, SIGNALR_TRANSPORT_VALUE_SERVER_SENT_EVENTS, SIGNALR_TRANSPORT_VALUE_WEB_SOCKETS, ATTR_TELEMETRY_DISTRO_NAME, ATTR_TELEMETRY_DISTRO_VERSION, ATTR_TELEMETRY_SDK_LANGUAGE, TELEMETRY_SDK_LANGUAGE_VALUE_DOTNET, TELEMETRY_SDK_LANGUAGE_VALUE_ERLANG, TELEMETRY_SDK_LANGUAGE_VALUE_JAVA, TELEMETRY_SDK_LANGUAGE_VALUE_NODEJS, TELEMETRY_SDK_LANGUAGE_VALUE_PYTHON, TELEMETRY_SDK_LANGUAGE_VALUE_RUBY, TELEMETRY_SDK_LANGUAGE_VALUE_RUST, TELEMETRY_SDK_LANGUAGE_VALUE_SWIFT, TELEMETRY_SDK_LANGUAGE_VALUE_WEBJS, ATTR_TELEMETRY_SDK_NAME, ATTR_TELEMETRY_SDK_VERSION, ATTR_URL_FRAGMENT, ATTR_URL_FULL, ATTR_URL_PATH, ATTR_URL_QUERY, ATTR_URL_SCHEME, ATTR_USER_AGENT_ORIGINAL;
+})), ATTR_ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_ABORTED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_HANDLED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_SKIPPED, ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_UNHANDLED, ATTR_ASPNETCORE_DIAGNOSTICS_HANDLER_TYPE, ATTR_ASPNETCORE_RATE_LIMITING_POLICY, ATTR_ASPNETCORE_RATE_LIMITING_RESULT, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_ACQUIRED, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_ENDPOINT_LIMITER, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_GLOBAL_LIMITER, ASPNETCORE_RATE_LIMITING_RESULT_VALUE_REQUEST_CANCELED, ATTR_ASPNETCORE_REQUEST_IS_UNHANDLED, ATTR_ASPNETCORE_ROUTING_IS_FALLBACK, ATTR_ASPNETCORE_ROUTING_MATCH_STATUS, ASPNETCORE_ROUTING_MATCH_STATUS_VALUE_FAILURE, ASPNETCORE_ROUTING_MATCH_STATUS_VALUE_SUCCESS, ATTR_ASPNETCORE_USER_IS_AUTHENTICATED, ATTR_CLIENT_ADDRESS, ATTR_CLIENT_PORT, ATTR_CODE_COLUMN_NUMBER, ATTR_CODE_FILE_PATH, ATTR_CODE_FUNCTION_NAME, ATTR_CODE_LINE_NUMBER, ATTR_CODE_STACKTRACE, ATTR_CONTAINER_ID, ATTR_CONTAINER_IMAGE_NAME, ATTR_CONTAINER_IMAGE_REPO_DIGESTS, ATTR_CONTAINER_IMAGE_TAGS, ATTR_DB_COLLECTION_NAME, ATTR_DB_NAMESPACE, ATTR_DB_OPERATION_BATCH_SIZE, ATTR_DB_OPERATION_NAME, ATTR_DB_QUERY_SUMMARY, ATTR_DB_QUERY_TEXT, ATTR_DB_RESPONSE_STATUS_CODE, ATTR_DB_STORED_PROCEDURE_NAME, ATTR_DB_SYSTEM_NAME, DB_SYSTEM_NAME_VALUE_MARIADB, DB_SYSTEM_NAME_VALUE_MICROSOFT_SQL_SERVER, DB_SYSTEM_NAME_VALUE_MYSQL, DB_SYSTEM_NAME_VALUE_POSTGRESQL, ATTR_DEPLOYMENT_ENVIRONMENT_NAME, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_DEVELOPMENT, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_PRODUCTION, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_STAGING, DEPLOYMENT_ENVIRONMENT_NAME_VALUE_TEST, ATTR_DOTNET_GC_HEAP_GENERATION, DOTNET_GC_HEAP_GENERATION_VALUE_GEN0, DOTNET_GC_HEAP_GENERATION_VALUE_GEN1, DOTNET_GC_HEAP_GENERATION_VALUE_GEN2, ATTR_ERROR_TYPE$2, ERROR_TYPE_VALUE_OTHER, ATTR_EXCEPTION_ESCAPED, ATTR_EXCEPTION_MESSAGE, ATTR_EXCEPTION_STACKTRACE, ATTR_EXCEPTION_TYPE, ATTR_HTTP_REQUEST_HEADER, ATTR_HTTP_REQUEST_METHOD, HTTP_REQUEST_METHOD_VALUE_OTHER, HTTP_REQUEST_METHOD_VALUE_CONNECT, HTTP_REQUEST_METHOD_VALUE_DELETE, HTTP_REQUEST_METHOD_VALUE_HEAD, HTTP_REQUEST_METHOD_VALUE_OPTIONS, HTTP_REQUEST_METHOD_VALUE_PATCH, HTTP_REQUEST_METHOD_VALUE_POST, HTTP_REQUEST_METHOD_VALUE_TRACE, ATTR_HTTP_REQUEST_METHOD_ORIGINAL, ATTR_HTTP_REQUEST_RESEND_COUNT, ATTR_HTTP_RESPONSE_HEADER, ATTR_HTTP_RESPONSE_STATUS_CODE$1, ATTR_HTTP_ROUTE, ATTR_JVM_GC_ACTION, ATTR_JVM_GC_NAME, ATTR_JVM_MEMORY_POOL_NAME, ATTR_JVM_MEMORY_TYPE, JVM_MEMORY_TYPE_VALUE_HEAP, JVM_MEMORY_TYPE_VALUE_NON_HEAP, ATTR_JVM_THREAD_DAEMON, ATTR_JVM_THREAD_STATE, JVM_THREAD_STATE_VALUE_BLOCKED, JVM_THREAD_STATE_VALUE_RUNNABLE, JVM_THREAD_STATE_VALUE_TERMINATED, JVM_THREAD_STATE_VALUE_TIMED_WAITING, JVM_THREAD_STATE_VALUE_WAITING, ATTR_K8S_CLUSTER_NAME, ATTR_K8S_CLUSTER_UID, ATTR_K8S_CONTAINER_NAME, ATTR_K8S_CONTAINER_RESTART_COUNT, ATTR_K8S_CRONJOB_ANNOTATION, ATTR_K8S_CRONJOB_LABEL, ATTR_K8S_CRONJOB_NAME, ATTR_K8S_CRONJOB_UID, ATTR_K8S_DAEMONSET_ANNOTATION, ATTR_K8S_DAEMONSET_LABEL, ATTR_K8S_DAEMONSET_NAME, ATTR_K8S_DAEMONSET_UID, ATTR_K8S_DEPLOYMENT_ANNOTATION, ATTR_K8S_DEPLOYMENT_LABEL, ATTR_K8S_DEPLOYMENT_NAME, ATTR_K8S_DEPLOYMENT_UID, ATTR_K8S_JOB_ANNOTATION, ATTR_K8S_JOB_LABEL, ATTR_K8S_JOB_NAME, ATTR_K8S_JOB_UID, ATTR_K8S_NAMESPACE_ANNOTATION, ATTR_K8S_NAMESPACE_LABEL, ATTR_K8S_NAMESPACE_NAME, ATTR_K8S_NODE_ANNOTATION, ATTR_K8S_NODE_LABEL, ATTR_K8S_NODE_NAME, ATTR_K8S_NODE_UID, ATTR_K8S_POD_ANNOTATION, ATTR_K8S_POD_HOSTNAME, ATTR_K8S_POD_IP, ATTR_K8S_POD_LABEL, ATTR_K8S_POD_NAME, ATTR_K8S_POD_START_TIME, ATTR_K8S_POD_UID, ATTR_K8S_REPLICASET_ANNOTATION, ATTR_K8S_REPLICASET_LABEL, ATTR_K8S_REPLICASET_NAME, ATTR_K8S_REPLICASET_UID, ATTR_K8S_STATEFULSET_ANNOTATION, ATTR_K8S_STATEFULSET_LABEL, ATTR_K8S_STATEFULSET_NAME, ATTR_K8S_STATEFULSET_UID, ATTR_NETWORK_LOCAL_ADDRESS, ATTR_NETWORK_LOCAL_PORT, ATTR_NETWORK_PEER_ADDRESS, ATTR_NETWORK_PEER_PORT, ATTR_NETWORK_PROTOCOL_NAME, ATTR_NETWORK_PROTOCOL_VERSION, ATTR_NETWORK_TRANSPORT, NETWORK_TRANSPORT_VALUE_PIPE, NETWORK_TRANSPORT_VALUE_QUIC, NETWORK_TRANSPORT_VALUE_UNIX, ATTR_NETWORK_TYPE, NETWORK_TYPE_VALUE_IPV4, NETWORK_TYPE_VALUE_IPV6, ATTR_OTEL_EVENT_NAME, ATTR_OTEL_SCOPE_NAME, ATTR_OTEL_SCOPE_VERSION, ATTR_OTEL_STATUS_CODE, OTEL_STATUS_CODE_VALUE_ERROR, ATTR_OTEL_STATUS_DESCRIPTION, ATTR_SERVER_ADDRESS$1, ATTR_SERVER_PORT$1, ATTR_SERVICE_INSTANCE_ID, ATTR_SERVICE_NAME, ATTR_SERVICE_NAMESPACE, ATTR_SERVICE_VERSION, ATTR_SIGNALR_CONNECTION_STATUS, SIGNALR_CONNECTION_STATUS_VALUE_APP_SHUTDOWN, SIGNALR_CONNECTION_STATUS_VALUE_NORMAL_CLOSURE, SIGNALR_CONNECTION_STATUS_VALUE_TIMEOUT, ATTR_SIGNALR_TRANSPORT, SIGNALR_TRANSPORT_VALUE_LONG_POLLING, SIGNALR_TRANSPORT_VALUE_SERVER_SENT_EVENTS, SIGNALR_TRANSPORT_VALUE_WEB_SOCKETS, ATTR_TELEMETRY_DISTRO_NAME, ATTR_TELEMETRY_DISTRO_VERSION, ATTR_TELEMETRY_SDK_LANGUAGE, TELEMETRY_SDK_LANGUAGE_VALUE_DOTNET, TELEMETRY_SDK_LANGUAGE_VALUE_ERLANG, TELEMETRY_SDK_LANGUAGE_VALUE_JAVA, TELEMETRY_SDK_LANGUAGE_VALUE_KOTLIN, TELEMETRY_SDK_LANGUAGE_VALUE_NODEJS, TELEMETRY_SDK_LANGUAGE_VALUE_PYTHON, TELEMETRY_SDK_LANGUAGE_VALUE_RUBY, TELEMETRY_SDK_LANGUAGE_VALUE_RUST, TELEMETRY_SDK_LANGUAGE_VALUE_SWIFT, TELEMETRY_SDK_LANGUAGE_VALUE_WEBJS, ATTR_TELEMETRY_SDK_NAME, ATTR_TELEMETRY_SDK_VERSION, ATTR_URL_FRAGMENT, ATTR_URL_FULL, ATTR_URL_PATH, ATTR_URL_QUERY, ATTR_URL_SCHEME, ATTR_USER_AGENT_ORIGINAL;
 var init_stable_attributes = __esmMin((() => {
 	ATTR_ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT = "aspnetcore.diagnostics.exception.result";
 	ASPNETCORE_DIAGNOSTICS_EXCEPTION_RESULT_VALUE_ABORTED = "aborted";
@@ -3449,6 +3449,10 @@ var init_stable_attributes = __esmMin((() => {
 	ATTR_CODE_FUNCTION_NAME = "code.function.name";
 	ATTR_CODE_LINE_NUMBER = "code.line.number";
 	ATTR_CODE_STACKTRACE = "code.stacktrace";
+	ATTR_CONTAINER_ID = "container.id";
+	ATTR_CONTAINER_IMAGE_NAME = "container.image.name";
+	ATTR_CONTAINER_IMAGE_REPO_DIGESTS = "container.image.repo_digests";
+	ATTR_CONTAINER_IMAGE_TAGS = "container.image.tags";
 	ATTR_DB_COLLECTION_NAME = "db.collection.name";
 	ATTR_DB_NAMESPACE = "db.namespace";
 	ATTR_DB_OPERATION_BATCH_SIZE = "db.operation.batch.size";
@@ -3505,6 +3509,48 @@ var init_stable_attributes = __esmMin((() => {
 	JVM_THREAD_STATE_VALUE_TERMINATED = "terminated";
 	JVM_THREAD_STATE_VALUE_TIMED_WAITING = "timed_waiting";
 	JVM_THREAD_STATE_VALUE_WAITING = "waiting";
+	ATTR_K8S_CLUSTER_NAME = "k8s.cluster.name";
+	ATTR_K8S_CLUSTER_UID = "k8s.cluster.uid";
+	ATTR_K8S_CONTAINER_NAME = "k8s.container.name";
+	ATTR_K8S_CONTAINER_RESTART_COUNT = "k8s.container.restart_count";
+	ATTR_K8S_CRONJOB_ANNOTATION = (key) => `k8s.cronjob.annotation.${key}`;
+	ATTR_K8S_CRONJOB_LABEL = (key) => `k8s.cronjob.label.${key}`;
+	ATTR_K8S_CRONJOB_NAME = "k8s.cronjob.name";
+	ATTR_K8S_CRONJOB_UID = "k8s.cronjob.uid";
+	ATTR_K8S_DAEMONSET_ANNOTATION = (key) => `k8s.daemonset.annotation.${key}`;
+	ATTR_K8S_DAEMONSET_LABEL = (key) => `k8s.daemonset.label.${key}`;
+	ATTR_K8S_DAEMONSET_NAME = "k8s.daemonset.name";
+	ATTR_K8S_DAEMONSET_UID = "k8s.daemonset.uid";
+	ATTR_K8S_DEPLOYMENT_ANNOTATION = (key) => `k8s.deployment.annotation.${key}`;
+	ATTR_K8S_DEPLOYMENT_LABEL = (key) => `k8s.deployment.label.${key}`;
+	ATTR_K8S_DEPLOYMENT_NAME = "k8s.deployment.name";
+	ATTR_K8S_DEPLOYMENT_UID = "k8s.deployment.uid";
+	ATTR_K8S_JOB_ANNOTATION = (key) => `k8s.job.annotation.${key}`;
+	ATTR_K8S_JOB_LABEL = (key) => `k8s.job.label.${key}`;
+	ATTR_K8S_JOB_NAME = "k8s.job.name";
+	ATTR_K8S_JOB_UID = "k8s.job.uid";
+	ATTR_K8S_NAMESPACE_ANNOTATION = (key) => `k8s.namespace.annotation.${key}`;
+	ATTR_K8S_NAMESPACE_LABEL = (key) => `k8s.namespace.label.${key}`;
+	ATTR_K8S_NAMESPACE_NAME = "k8s.namespace.name";
+	ATTR_K8S_NODE_ANNOTATION = (key) => `k8s.node.annotation.${key}`;
+	ATTR_K8S_NODE_LABEL = (key) => `k8s.node.label.${key}`;
+	ATTR_K8S_NODE_NAME = "k8s.node.name";
+	ATTR_K8S_NODE_UID = "k8s.node.uid";
+	ATTR_K8S_POD_ANNOTATION = (key) => `k8s.pod.annotation.${key}`;
+	ATTR_K8S_POD_HOSTNAME = "k8s.pod.hostname";
+	ATTR_K8S_POD_IP = "k8s.pod.ip";
+	ATTR_K8S_POD_LABEL = (key) => `k8s.pod.label.${key}`;
+	ATTR_K8S_POD_NAME = "k8s.pod.name";
+	ATTR_K8S_POD_START_TIME = "k8s.pod.start_time";
+	ATTR_K8S_POD_UID = "k8s.pod.uid";
+	ATTR_K8S_REPLICASET_ANNOTATION = (key) => `k8s.replicaset.annotation.${key}`;
+	ATTR_K8S_REPLICASET_LABEL = (key) => `k8s.replicaset.label.${key}`;
+	ATTR_K8S_REPLICASET_NAME = "k8s.replicaset.name";
+	ATTR_K8S_REPLICASET_UID = "k8s.replicaset.uid";
+	ATTR_K8S_STATEFULSET_ANNOTATION = (key) => `k8s.statefulset.annotation.${key}`;
+	ATTR_K8S_STATEFULSET_LABEL = (key) => `k8s.statefulset.label.${key}`;
+	ATTR_K8S_STATEFULSET_NAME = "k8s.statefulset.name";
+	ATTR_K8S_STATEFULSET_UID = "k8s.statefulset.uid";
 	ATTR_NETWORK_LOCAL_ADDRESS = "network.local.address";
 	ATTR_NETWORK_LOCAL_PORT = "network.local.port";
 	ATTR_NETWORK_PEER_ADDRESS = "network.peer.address";
@@ -3544,6 +3590,7 @@ var init_stable_attributes = __esmMin((() => {
 	TELEMETRY_SDK_LANGUAGE_VALUE_DOTNET = "dotnet";
 	TELEMETRY_SDK_LANGUAGE_VALUE_ERLANG = "erlang";
 	TELEMETRY_SDK_LANGUAGE_VALUE_JAVA = "java";
+	TELEMETRY_SDK_LANGUAGE_VALUE_KOTLIN = "kotlin";
 	TELEMETRY_SDK_LANGUAGE_VALUE_NODEJS = "nodejs";
 	TELEMETRY_SDK_LANGUAGE_VALUE_PYTHON = "python";
 	TELEMETRY_SDK_LANGUAGE_VALUE_RUBY = "ruby";
@@ -3649,6 +3696,10 @@ var esm_exports$1 = /* @__PURE__ */ __exportAll({
 	ATTR_CODE_FUNCTION_NAME: () => ATTR_CODE_FUNCTION_NAME,
 	ATTR_CODE_LINE_NUMBER: () => ATTR_CODE_LINE_NUMBER,
 	ATTR_CODE_STACKTRACE: () => ATTR_CODE_STACKTRACE,
+	ATTR_CONTAINER_ID: () => ATTR_CONTAINER_ID,
+	ATTR_CONTAINER_IMAGE_NAME: () => ATTR_CONTAINER_IMAGE_NAME,
+	ATTR_CONTAINER_IMAGE_REPO_DIGESTS: () => ATTR_CONTAINER_IMAGE_REPO_DIGESTS,
+	ATTR_CONTAINER_IMAGE_TAGS: () => ATTR_CONTAINER_IMAGE_TAGS,
 	ATTR_DB_COLLECTION_NAME: () => ATTR_DB_COLLECTION_NAME,
 	ATTR_DB_NAMESPACE: () => ATTR_DB_NAMESPACE,
 	ATTR_DB_OPERATION_BATCH_SIZE: () => ATTR_DB_OPERATION_BATCH_SIZE,
@@ -3678,6 +3729,48 @@ var esm_exports$1 = /* @__PURE__ */ __exportAll({
 	ATTR_JVM_MEMORY_TYPE: () => ATTR_JVM_MEMORY_TYPE,
 	ATTR_JVM_THREAD_DAEMON: () => ATTR_JVM_THREAD_DAEMON,
 	ATTR_JVM_THREAD_STATE: () => ATTR_JVM_THREAD_STATE,
+	ATTR_K8S_CLUSTER_NAME: () => ATTR_K8S_CLUSTER_NAME,
+	ATTR_K8S_CLUSTER_UID: () => ATTR_K8S_CLUSTER_UID,
+	ATTR_K8S_CONTAINER_NAME: () => ATTR_K8S_CONTAINER_NAME,
+	ATTR_K8S_CONTAINER_RESTART_COUNT: () => ATTR_K8S_CONTAINER_RESTART_COUNT,
+	ATTR_K8S_CRONJOB_ANNOTATION: () => ATTR_K8S_CRONJOB_ANNOTATION,
+	ATTR_K8S_CRONJOB_LABEL: () => ATTR_K8S_CRONJOB_LABEL,
+	ATTR_K8S_CRONJOB_NAME: () => ATTR_K8S_CRONJOB_NAME,
+	ATTR_K8S_CRONJOB_UID: () => ATTR_K8S_CRONJOB_UID,
+	ATTR_K8S_DAEMONSET_ANNOTATION: () => ATTR_K8S_DAEMONSET_ANNOTATION,
+	ATTR_K8S_DAEMONSET_LABEL: () => ATTR_K8S_DAEMONSET_LABEL,
+	ATTR_K8S_DAEMONSET_NAME: () => ATTR_K8S_DAEMONSET_NAME,
+	ATTR_K8S_DAEMONSET_UID: () => ATTR_K8S_DAEMONSET_UID,
+	ATTR_K8S_DEPLOYMENT_ANNOTATION: () => ATTR_K8S_DEPLOYMENT_ANNOTATION,
+	ATTR_K8S_DEPLOYMENT_LABEL: () => ATTR_K8S_DEPLOYMENT_LABEL,
+	ATTR_K8S_DEPLOYMENT_NAME: () => ATTR_K8S_DEPLOYMENT_NAME,
+	ATTR_K8S_DEPLOYMENT_UID: () => ATTR_K8S_DEPLOYMENT_UID,
+	ATTR_K8S_JOB_ANNOTATION: () => ATTR_K8S_JOB_ANNOTATION,
+	ATTR_K8S_JOB_LABEL: () => ATTR_K8S_JOB_LABEL,
+	ATTR_K8S_JOB_NAME: () => ATTR_K8S_JOB_NAME,
+	ATTR_K8S_JOB_UID: () => ATTR_K8S_JOB_UID,
+	ATTR_K8S_NAMESPACE_ANNOTATION: () => ATTR_K8S_NAMESPACE_ANNOTATION,
+	ATTR_K8S_NAMESPACE_LABEL: () => ATTR_K8S_NAMESPACE_LABEL,
+	ATTR_K8S_NAMESPACE_NAME: () => ATTR_K8S_NAMESPACE_NAME,
+	ATTR_K8S_NODE_ANNOTATION: () => ATTR_K8S_NODE_ANNOTATION,
+	ATTR_K8S_NODE_LABEL: () => ATTR_K8S_NODE_LABEL,
+	ATTR_K8S_NODE_NAME: () => ATTR_K8S_NODE_NAME,
+	ATTR_K8S_NODE_UID: () => ATTR_K8S_NODE_UID,
+	ATTR_K8S_POD_ANNOTATION: () => ATTR_K8S_POD_ANNOTATION,
+	ATTR_K8S_POD_HOSTNAME: () => ATTR_K8S_POD_HOSTNAME,
+	ATTR_K8S_POD_IP: () => ATTR_K8S_POD_IP,
+	ATTR_K8S_POD_LABEL: () => ATTR_K8S_POD_LABEL,
+	ATTR_K8S_POD_NAME: () => ATTR_K8S_POD_NAME,
+	ATTR_K8S_POD_START_TIME: () => ATTR_K8S_POD_START_TIME,
+	ATTR_K8S_POD_UID: () => ATTR_K8S_POD_UID,
+	ATTR_K8S_REPLICASET_ANNOTATION: () => ATTR_K8S_REPLICASET_ANNOTATION,
+	ATTR_K8S_REPLICASET_LABEL: () => ATTR_K8S_REPLICASET_LABEL,
+	ATTR_K8S_REPLICASET_NAME: () => ATTR_K8S_REPLICASET_NAME,
+	ATTR_K8S_REPLICASET_UID: () => ATTR_K8S_REPLICASET_UID,
+	ATTR_K8S_STATEFULSET_ANNOTATION: () => ATTR_K8S_STATEFULSET_ANNOTATION,
+	ATTR_K8S_STATEFULSET_LABEL: () => ATTR_K8S_STATEFULSET_LABEL,
+	ATTR_K8S_STATEFULSET_NAME: () => ATTR_K8S_STATEFULSET_NAME,
+	ATTR_K8S_STATEFULSET_UID: () => ATTR_K8S_STATEFULSET_UID,
 	ATTR_NETWORK_LOCAL_ADDRESS: () => ATTR_NETWORK_LOCAL_ADDRESS,
 	ATTR_NETWORK_LOCAL_PORT: () => ATTR_NETWORK_LOCAL_PORT,
 	ATTR_NETWORK_PEER_ADDRESS: () => ATTR_NETWORK_PEER_ADDRESS,
@@ -4225,6 +4318,7 @@ var esm_exports$1 = /* @__PURE__ */ __exportAll({
 	TELEMETRY_SDK_LANGUAGE_VALUE_ERLANG: () => TELEMETRY_SDK_LANGUAGE_VALUE_ERLANG,
 	TELEMETRY_SDK_LANGUAGE_VALUE_GO: () => "go",
 	TELEMETRY_SDK_LANGUAGE_VALUE_JAVA: () => TELEMETRY_SDK_LANGUAGE_VALUE_JAVA,
+	TELEMETRY_SDK_LANGUAGE_VALUE_KOTLIN: () => TELEMETRY_SDK_LANGUAGE_VALUE_KOTLIN,
 	TELEMETRY_SDK_LANGUAGE_VALUE_NODEJS: () => TELEMETRY_SDK_LANGUAGE_VALUE_NODEJS,
 	TELEMETRY_SDK_LANGUAGE_VALUE_PHP: () => "php",
 	TELEMETRY_SDK_LANGUAGE_VALUE_PYTHON: () => TELEMETRY_SDK_LANGUAGE_VALUE_PYTHON,
@@ -4243,22 +4337,22 @@ var init_esm$2 = __esmMin((() => {
 }));
 //#endregion
 //#region ../node_modules/@opentelemetry/core/build/esm/semconv.js
-var ATTR_PROCESS_RUNTIME_NAME;
+var ATTR_PROCESS_RUNTIME_NAME$1;
 var init_semconv = __esmMin((() => {
-	ATTR_PROCESS_RUNTIME_NAME = "process.runtime.name";
+	ATTR_PROCESS_RUNTIME_NAME$1 = "process.runtime.name";
 }));
 //#endregion
 //#region ../node_modules/@opentelemetry/core/build/esm/platform/node/sdk-info.js
-var SDK_INFO;
+var SDK_INFO$1;
 var init_sdk_info = __esmMin((() => {
 	init_version();
 	init_esm$2();
 	init_semconv();
-	SDK_INFO = {
+	SDK_INFO$1 = {
 		[ATTR_TELEMETRY_SDK_NAME]: "opentelemetry",
-		[ATTR_PROCESS_RUNTIME_NAME]: "node",
+		[ATTR_PROCESS_RUNTIME_NAME$1]: "node",
 		[ATTR_TELEMETRY_SDK_LANGUAGE]: TELEMETRY_SDK_LANGUAGE_VALUE_NODEJS,
-		[ATTR_TELEMETRY_SDK_VERSION]: VERSION$3
+		[ATTR_TELEMETRY_SDK_VERSION]: VERSION$4
 	};
 }));
 //#endregion
@@ -4305,9 +4399,10 @@ function hrTime(performanceNow) {
 */
 function timeInputToHrTime(time) {
 	if (isTimeInputHrTime(time)) return time;
-	else if (typeof time === "number") if (time < otperformance.timeOrigin / 2) return hrTime(time);
-	else return millisToHrTime(time);
-	else if (time instanceof Date) return millisToHrTime(time.getTime());
+	else if (typeof time === "number") {
+		if (time < otperformance.timeOrigin / 2) return hrTime(time);
+		else return millisToHrTime(time);
+	} else if (time instanceof Date) return millisToHrTime(time.getTime());
 	else throw TypeError("Invalid input type");
 }
 /**
@@ -4607,20 +4702,20 @@ function parseTraceParent(traceParent) {
 		traceFlags: parseInt(match[4], 16)
 	};
 }
-var TRACE_PARENT_HEADER, TRACE_STATE_HEADER, VERSION$2, TRACE_PARENT_REGEX, W3CTraceContextPropagator;
+var TRACE_PARENT_HEADER, TRACE_STATE_HEADER, VERSION$3, TRACE_PARENT_REGEX, W3CTraceContextPropagator;
 var init_W3CTraceContextPropagator = __esmMin((() => {
 	init_esm$3();
 	init_suppress_tracing();
 	init_TraceState();
 	TRACE_PARENT_HEADER = "traceparent";
 	TRACE_STATE_HEADER = "tracestate";
-	VERSION$2 = "00";
+	VERSION$3 = "00";
 	TRACE_PARENT_REGEX = new RegExp(`^\\s?((?!ff)[\\da-f]{2})-((?![0]{32})[\\da-f]{32})-((?![0]{16})[\\da-f]{16})-([\\da-f]{2})(-.*)?\\s?$`);
 	W3CTraceContextPropagator = class {
 		inject(context, carrier, setter) {
 			const spanContext = trace.getSpanContext(context);
 			if (!spanContext || isTracingSuppressed(context) || !isSpanContextValid(spanContext)) return;
-			const traceParent = `${VERSION$2}-${spanContext.traceId}-${spanContext.spanId}-0${Number(spanContext.traceFlags || TraceFlags.NONE).toString(16)}`;
+			const traceParent = `${VERSION$3}-${spanContext.traceId}-${spanContext.spanId}-0${Number(spanContext.traceFlags || TraceFlags.NONE).toString(16)}`;
 			setter.set(carrier, TRACE_PARENT_HEADER, traceParent);
 			if (spanContext.traceState) setter.set(carrier, TRACE_STATE_HEADER, spanContext.traceState.serialize());
 		}
@@ -4753,8 +4848,10 @@ function getRawTag(value) {
 		unmasked = true;
 	} catch {}
 	const result = nativeObjectToString.call(value);
-	if (unmasked) if (isOwn) value[symToStringTag] = tag;
-	else delete value[symToStringTag];
+	if (unmasked) {
+		if (isOwn) value[symToStringTag] = tag;
+		else delete value[symToStringTag];
+	}
 	return result;
 }
 /**
@@ -4820,40 +4917,43 @@ function mergeTwoObjects(one, two, level = 0, objects) {
 				result[key] = takeValue(two[key]);
 			}
 		}
-	} else if (isObject(one)) if (isObject(two)) {
-		if (!shouldMerge(one, two)) return two;
-		result = Object.assign({}, one);
-		const keys = Object.keys(two);
-		for (let i = 0, j = keys.length; i < j; i++) {
-			const key = keys[i];
-			if (key === "__proto__" || key === "constructor" || key === "prototype") continue;
-			const twoValue = two[key];
-			if (isPrimitive(twoValue)) if (typeof twoValue === "undefined") delete result[key];
-			else result[key] = twoValue;
-			else {
-				const obj1 = result[key];
-				const obj2 = twoValue;
-				if (wasObjectReferenced(one, key, objects) || wasObjectReferenced(two, key, objects)) delete result[key];
-				else {
-					if (isObject(obj1) && isObject(obj2)) {
-						const arr1 = objects.get(obj1) || [];
-						const arr2 = objects.get(obj2) || [];
-						arr1.push({
-							obj: one,
-							key
-						});
-						arr2.push({
-							obj: two,
-							key
-						});
-						objects.set(obj1, arr1);
-						objects.set(obj2, arr2);
+	} else if (isObject(one)) {
+		if (isObject(two)) {
+			if (!shouldMerge(one, two)) return two;
+			result = Object.assign({}, one);
+			const keys = Object.keys(two);
+			for (let i = 0, j = keys.length; i < j; i++) {
+				const key = keys[i];
+				if (key === "__proto__" || key === "constructor" || key === "prototype") continue;
+				const twoValue = two[key];
+				if (isPrimitive(twoValue)) {
+					if (typeof twoValue === "undefined") delete result[key];
+					else result[key] = twoValue;
+				} else {
+					const obj1 = result[key];
+					const obj2 = twoValue;
+					if (wasObjectReferenced(one, key, objects) || wasObjectReferenced(two, key, objects)) delete result[key];
+					else {
+						if (isObject(obj1) && isObject(obj2)) {
+							const arr1 = objects.get(obj1) || [];
+							const arr2 = objects.get(obj2) || [];
+							arr1.push({
+								obj: one,
+								key
+							});
+							arr2.push({
+								obj: two,
+								key
+							});
+							objects.set(obj1, arr1);
+							objects.set(obj2, arr2);
+						}
+						result[key] = mergeTwoObjects(result[key], twoValue, level, objects);
 					}
-					result[key] = mergeTwoObjects(result[key], twoValue, level, objects);
 				}
 			}
-		}
-	} else result = two;
+		} else result = two;
+	}
 	return result;
 }
 /**
@@ -5054,7 +5154,7 @@ var esm_exports = /* @__PURE__ */ __exportAll({
 	CompositePropagator: () => CompositePropagator,
 	ExportResultCode: () => ExportResultCode,
 	RPCType: () => RPCType,
-	SDK_INFO: () => SDK_INFO,
+	SDK_INFO: () => SDK_INFO$1,
 	TRACE_PARENT_HEADER: () => TRACE_PARENT_HEADER,
 	TRACE_STATE_HEADER: () => TRACE_STATE_HEADER,
 	TimeoutError: () => TimeoutError,
@@ -5331,7 +5431,7 @@ var ATTR_SERVER_PORT = "server.port";
 var ATTR_ERROR_TYPE$1 = "error.type";
 //#endregion
 //#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/version.js
-var VERSION$1 = "0.221.0";
+var VERSION$2 = "0.221.0";
 //#endregion
 //#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/ExporterMetrics.js
 init_esm$3();
@@ -5351,7 +5451,7 @@ var ExporterMetrics = class {
 	constructor(options) {
 		const { componentType, metricsHelper, meterProvider, url, responseAttributesFromError } = options;
 		this.responseAttributesFromError = responseAttributesFromError;
-		const meter = meterProvider ? meterProvider.getMeter("@opentelemetry/otlp-exporter", VERSION$1) : createNoopMeter();
+		const meter = meterProvider ? meterProvider.getMeter("@opentelemetry/otlp-exporter", VERSION$2) : createNoopMeter();
 		const counter = componentCounter$1.get(componentType) ?? 0;
 		componentCounter$1.set(componentType, counter + 1);
 		this.standardAttrs = {
@@ -5420,51 +5520,51 @@ var LogsExporterMetricsHelper = {
 * In Node.js environments, returns "unknown_service:<process.argv0>".
 * In browser/edge environments, returns "unknown_service".
 */
-function defaultServiceName() {
-	if (serviceName === void 0) try {
+function defaultServiceName$1() {
+	if (serviceName$1 === void 0) try {
 		const argv0 = globalThis.process.argv0;
-		serviceName = argv0 ? `unknown_service:${argv0}` : "unknown_service";
+		serviceName$1 = argv0 ? `unknown_service:${argv0}` : "unknown_service";
 	} catch {
-		serviceName = "unknown_service";
+		serviceName$1 = "unknown_service";
 	}
-	return serviceName;
+	return serviceName$1;
 }
-var serviceName;
+var serviceName$1;
 var init_default_service_name = __esmMin((() => {}));
 //#endregion
 //#region ../node_modules/@opentelemetry/resources/build/esm/utils.js
-var isPromiseLike;
+var isPromiseLike$1;
 var init_utils = __esmMin((() => {
-	isPromiseLike = (val) => {
+	isPromiseLike$1 = (val) => {
 		return val !== null && typeof val === "object" && typeof val.then === "function";
 	};
 }));
 //#endregion
 //#region ../node_modules/@opentelemetry/resources/build/esm/ResourceImpl.js
-function resourceFromAttributes(attributes, options) {
-	return ResourceImpl.FromAttributeList(Object.entries(attributes), options);
+function resourceFromAttributes$1(attributes, options) {
+	return ResourceImpl$1.FromAttributeList(Object.entries(attributes), options);
 }
-function defaultResource() {
-	return resourceFromAttributes({
-		[ATTR_SERVICE_NAME]: defaultServiceName(),
-		[ATTR_TELEMETRY_SDK_LANGUAGE]: SDK_INFO[ATTR_TELEMETRY_SDK_LANGUAGE],
-		[ATTR_TELEMETRY_SDK_NAME]: SDK_INFO[ATTR_TELEMETRY_SDK_NAME],
-		[ATTR_TELEMETRY_SDK_VERSION]: SDK_INFO[ATTR_TELEMETRY_SDK_VERSION]
+function defaultResource$1() {
+	return resourceFromAttributes$1({
+		[ATTR_SERVICE_NAME]: defaultServiceName$1(),
+		[ATTR_TELEMETRY_SDK_LANGUAGE]: SDK_INFO$1[ATTR_TELEMETRY_SDK_LANGUAGE],
+		[ATTR_TELEMETRY_SDK_NAME]: SDK_INFO$1[ATTR_TELEMETRY_SDK_NAME],
+		[ATTR_TELEMETRY_SDK_VERSION]: SDK_INFO$1[ATTR_TELEMETRY_SDK_VERSION]
 	});
 }
-function guardedRawAttributes(attributes) {
+function guardedRawAttributes$1(attributes) {
 	return attributes.map(([k, v]) => {
-		if (isPromiseLike(v)) return [k, v.catch((err) => {
+		if (isPromiseLike$1(v)) return [k, v.catch((err) => {
 			diag.debug("promise rejection for resource attribute: %s - %s", k, err);
 		})];
 		return [k, v];
 	});
 }
-function validateSchemaUrl(schemaUrl) {
+function validateSchemaUrl$1(schemaUrl) {
 	if (typeof schemaUrl === "string" || schemaUrl === void 0) return schemaUrl;
 	diag.warn("Schema URL must be string or undefined, got %s. Schema URL will be ignored.", schemaUrl);
 }
-function mergeSchemaUrl(old, updating) {
+function mergeSchemaUrl$1(old, updating) {
 	const oldSchemaUrl = old?.schemaUrl;
 	const updatingSchemaUrl = updating?.schemaUrl;
 	const isOldEmpty = oldSchemaUrl === void 0 || oldSchemaUrl === "";
@@ -5474,32 +5574,32 @@ function mergeSchemaUrl(old, updating) {
 	if (oldSchemaUrl === updatingSchemaUrl) return oldSchemaUrl;
 	diag.warn("Schema URL merge conflict: old resource has \"%s\", updating resource has \"%s\". Resulting resource will have undefined Schema URL.", oldSchemaUrl, updatingSchemaUrl);
 }
-var ResourceImpl;
+var ResourceImpl$1;
 var init_ResourceImpl = __esmMin((() => {
 	init_esm$3();
 	init_esm$1();
 	init_esm$2();
 	init_default_service_name();
 	init_utils();
-	ResourceImpl = class ResourceImpl {
+	ResourceImpl$1 = class ResourceImpl$1 {
 		_rawAttributes;
 		_asyncAttributesPending = false;
 		_schemaUrl;
 		_memoizedAttributes;
 		static FromAttributeList(attributes, options) {
-			const res = new ResourceImpl({}, options);
-			res._rawAttributes = guardedRawAttributes(attributes);
-			res._asyncAttributesPending = attributes.filter(([_, val]) => isPromiseLike(val)).length > 0;
+			const res = new ResourceImpl$1({}, options);
+			res._rawAttributes = guardedRawAttributes$1(attributes);
+			res._asyncAttributesPending = attributes.filter(([_, val]) => isPromiseLike$1(val)).length > 0;
 			return res;
 		}
 		constructor(resource, options) {
 			const attributes = resource.attributes ?? {};
 			this._rawAttributes = Object.entries(attributes).map(([k, v]) => {
-				if (isPromiseLike(v)) this._asyncAttributesPending = true;
+				if (isPromiseLike$1(v)) this._asyncAttributesPending = true;
 				return [k, v];
 			});
-			this._rawAttributes = guardedRawAttributes(this._rawAttributes);
-			this._schemaUrl = validateSchemaUrl(options?.schemaUrl);
+			this._rawAttributes = guardedRawAttributes$1(this._rawAttributes);
+			this._schemaUrl = validateSchemaUrl$1(options?.schemaUrl);
 		}
 		get asyncAttributesPending() {
 			return this._asyncAttributesPending;
@@ -5508,7 +5608,7 @@ var init_ResourceImpl = __esmMin((() => {
 			if (!this.asyncAttributesPending) return;
 			for (let i = 0; i < this._rawAttributes.length; i++) {
 				const [k, v] = this._rawAttributes[i];
-				this._rawAttributes[i] = [k, isPromiseLike(v) ? await v : v];
+				this._rawAttributes[i] = [k, isPromiseLike$1(v) ? await v : v];
 			}
 			this._asyncAttributesPending = false;
 		}
@@ -5517,7 +5617,7 @@ var init_ResourceImpl = __esmMin((() => {
 			if (this._memoizedAttributes) return this._memoizedAttributes;
 			const attrs = {};
 			for (const [k, v] of this._rawAttributes) {
-				if (isPromiseLike(v)) {
+				if (isPromiseLike$1(v)) {
 					diag.debug(`Unsettled resource attribute ${k} skipped`);
 					continue;
 				}
@@ -5534,9 +5634,9 @@ var init_ResourceImpl = __esmMin((() => {
 		}
 		merge(resource) {
 			if (resource == null) return this;
-			const mergedSchemaUrl = mergeSchemaUrl(this, resource);
+			const mergedSchemaUrl = mergeSchemaUrl$1(this, resource);
 			const mergedOptions = mergedSchemaUrl ? { schemaUrl: mergedSchemaUrl } : void 0;
-			return ResourceImpl.FromAttributeList([...resource.getRawAttributes(), ...this.getRawAttributes()], mergedOptions);
+			return ResourceImpl$1.FromAttributeList([...resource.getRawAttributes(), ...this.getRawAttributes()], mergedOptions);
 		}
 	};
 }));
@@ -5811,7 +5911,7 @@ function parseRetryAfterToMills(retryAfter) {
 }
 //#endregion
 //#region ../node_modules/@opentelemetry/otlp-exporter-base/build/esm/transport/http-transport-utils.js
-var DEFAULT_USER_AGENT = `OTel-OTLP-Exporter-JavaScript/${VERSION$1}`;
+var DEFAULT_USER_AGENT = `OTel-OTLP-Exporter-JavaScript/${VERSION$2}`;
 /**
 * Maximum response body size (4 MB) that the HTTP transport will read.
 * If the server sends more data the connection is destroyed and the export
@@ -6226,6 +6326,146 @@ var OTLPLogExporter = class extends OTLPExporterBase {
 		super(createOtlpHttpExportDelegate(convertLegacyHttpOptions(config, "LOGS", "v1/logs", { "Content-Type": "application/json" }), JsonLogsSerializer, OTEL_COMPONENT_TYPE_VALUE_OTLP_HTTP_LOG_EXPORTER, LogsExporterMetricsHelper, config.selfObsMeterProvider));
 	}
 };
+//#endregion
+//#region node_modules/@opentelemetry/core/build/esm/version.js
+var VERSION$1 = "2.11.0";
+//#endregion
+//#region node_modules/@opentelemetry/core/build/esm/semconv.js
+/**
+* The name of the runtime of this process.
+*
+* @example OpenJDK Runtime Environment
+*
+* @experimental This attribute is experimental and is subject to breaking changes in minor releases of `@opentelemetry/semantic-conventions`.
+*/
+var ATTR_PROCESS_RUNTIME_NAME = "process.runtime.name";
+//#endregion
+//#region node_modules/@opentelemetry/core/build/esm/platform/node/sdk-info.js
+init_esm$2();
+/** Constants describing the SDK in use */
+var SDK_INFO = {
+	[ATTR_TELEMETRY_SDK_NAME]: "opentelemetry",
+	[ATTR_PROCESS_RUNTIME_NAME]: "node",
+	[ATTR_TELEMETRY_SDK_LANGUAGE]: TELEMETRY_SDK_LANGUAGE_VALUE_NODEJS,
+	[ATTR_TELEMETRY_SDK_VERSION]: VERSION$1
+};
+//#endregion
+//#region node_modules/@opentelemetry/resources/build/esm/default-service-name.js
+var serviceName;
+/**
+* Returns the default service name for OpenTelemetry resources.
+* In Node.js environments, returns "unknown_service:<process.argv0>".
+* In browser/edge environments, returns "unknown_service".
+*/
+function defaultServiceName() {
+	if (serviceName === void 0) try {
+		const argv0 = globalThis.process.argv0;
+		serviceName = argv0 ? `unknown_service:${argv0}` : "unknown_service";
+	} catch {
+		serviceName = "unknown_service";
+	}
+	return serviceName;
+}
+//#endregion
+//#region node_modules/@opentelemetry/resources/build/esm/utils.js
+var isPromiseLike = (val) => {
+	return val !== null && typeof val === "object" && typeof val.then === "function";
+};
+//#endregion
+//#region node_modules/@opentelemetry/resources/build/esm/ResourceImpl.js
+init_esm$3();
+init_esm$2();
+var ResourceImpl = class ResourceImpl {
+	_rawAttributes;
+	_asyncAttributesPending = false;
+	_schemaUrl;
+	_memoizedAttributes;
+	static FromAttributeList(attributes, options) {
+		const res = new ResourceImpl({}, options);
+		res._rawAttributes = guardedRawAttributes(attributes);
+		res._asyncAttributesPending = attributes.filter(([_, val]) => isPromiseLike(val)).length > 0;
+		return res;
+	}
+	constructor(resource, options) {
+		const attributes = resource.attributes ?? {};
+		this._rawAttributes = Object.entries(attributes).map(([k, v]) => {
+			if (isPromiseLike(v)) this._asyncAttributesPending = true;
+			return [k, v];
+		});
+		this._rawAttributes = guardedRawAttributes(this._rawAttributes);
+		this._schemaUrl = validateSchemaUrl(options?.schemaUrl);
+	}
+	get asyncAttributesPending() {
+		return this._asyncAttributesPending;
+	}
+	async waitForAsyncAttributes() {
+		if (!this.asyncAttributesPending) return;
+		for (let i = 0; i < this._rawAttributes.length; i++) {
+			const [k, v] = this._rawAttributes[i];
+			this._rawAttributes[i] = [k, isPromiseLike(v) ? await v : v];
+		}
+		this._asyncAttributesPending = false;
+	}
+	get attributes() {
+		if (this.asyncAttributesPending) diag.error("Accessing resource attributes before async attributes settled");
+		if (this._memoizedAttributes) return this._memoizedAttributes;
+		const attrs = {};
+		for (const [k, v] of this._rawAttributes) {
+			if (isPromiseLike(v)) {
+				diag.debug(`Unsettled resource attribute ${k} skipped`);
+				continue;
+			}
+			if (v != null) attrs[k] ??= v;
+		}
+		if (!this._asyncAttributesPending) this._memoizedAttributes = attrs;
+		return attrs;
+	}
+	getRawAttributes() {
+		return this._rawAttributes;
+	}
+	get schemaUrl() {
+		return this._schemaUrl;
+	}
+	merge(resource) {
+		if (resource == null) return this;
+		const mergedSchemaUrl = mergeSchemaUrl(this, resource);
+		const mergedOptions = mergedSchemaUrl ? { schemaUrl: mergedSchemaUrl } : void 0;
+		return ResourceImpl.FromAttributeList([...resource.getRawAttributes(), ...this.getRawAttributes()], mergedOptions);
+	}
+};
+function resourceFromAttributes(attributes, options) {
+	return ResourceImpl.FromAttributeList(Object.entries(attributes), options);
+}
+function defaultResource() {
+	return resourceFromAttributes({
+		[ATTR_SERVICE_NAME]: defaultServiceName(),
+		[ATTR_TELEMETRY_SDK_LANGUAGE]: SDK_INFO[ATTR_TELEMETRY_SDK_LANGUAGE],
+		[ATTR_TELEMETRY_SDK_NAME]: SDK_INFO[ATTR_TELEMETRY_SDK_NAME],
+		[ATTR_TELEMETRY_SDK_VERSION]: SDK_INFO[ATTR_TELEMETRY_SDK_VERSION]
+	});
+}
+function guardedRawAttributes(attributes) {
+	return attributes.map(([k, v]) => {
+		if (isPromiseLike(v)) return [k, v.catch((err) => {
+			diag.debug("promise rejection for resource attribute: %s - %s", k, err);
+		})];
+		return [k, v];
+	});
+}
+function validateSchemaUrl(schemaUrl) {
+	if (typeof schemaUrl === "string" || schemaUrl === void 0) return schemaUrl;
+	diag.warn("Schema URL must be string or undefined, got %s. Schema URL will be ignored.", schemaUrl);
+}
+function mergeSchemaUrl(old, updating) {
+	const oldSchemaUrl = old?.schemaUrl;
+	const updatingSchemaUrl = updating?.schemaUrl;
+	const isOldEmpty = oldSchemaUrl === void 0 || oldSchemaUrl === "";
+	const isUpdatingEmpty = updatingSchemaUrl === void 0 || updatingSchemaUrl === "";
+	if (isOldEmpty) return updatingSchemaUrl;
+	if (isUpdatingEmpty) return oldSchemaUrl;
+	if (oldSchemaUrl === updatingSchemaUrl) return oldSchemaUrl;
+	diag.warn("Schema URL merge conflict: old resource has \"%s\", updating resource has \"%s\". Resulting resource will have undefined Schema URL.", oldSchemaUrl, updatingSchemaUrl);
+}
 //#endregion
 //#region ../node_modules/@opentelemetry/sdk-logs/node_modules/@opentelemetry/api-logs/build/esm/types/LogRecord.js
 var SeverityNumber;
@@ -6863,7 +7103,7 @@ var LoggerProvider = class {
 	_sharedState;
 	constructor(config = {}) {
 		const mergedConfig = {
-			resource: config.resource ?? defaultResource(),
+			resource: config.resource ?? defaultResource$1(),
 			logRecordLimits: {
 				attributeCountLimit: config.logRecordLimits?.attributeCountLimit ?? 128,
 				attributeValueLengthLimit: config.logRecordLimits?.attributeValueLengthLimit ?? Infinity
@@ -7192,6 +7432,20 @@ var BatchLogRecordProcessorBase = class {
 var BatchLogRecordProcessor = class extends BatchLogRecordProcessorBase {
 	onShutdown() {}
 };
+//#endregion
+//#region ../api-schemas/dist/entity/classification-inactive-tag-override.js
+/**
+* Caller-chosen handling when the canonical classification value exists but is dormant.
+*
+* @openapiSchema EntityClassificationInactiveTagOverride
+* @standardProblemResponse
+* @usedBySchema ClassificationInactiveTagDetailsSchema
+* @usedBySchema EntityClassificationMutationSchema
+* @contractShape entity.classification-inactive-tag-override
+* @contractRole canonical
+* @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/classification/EntityClassification.kt
+*/
+var EntityClassificationInactiveTagOverrideSchema = _enum(["REACTIVATE", "ATTACH_INACTIVE"]);
 /**
 * ProblemDetail.details for HTTP 409 when a classification value exists but is inactive.
 *
@@ -7204,7 +7458,7 @@ var BatchLogRecordProcessor = class extends BatchLogRecordProcessorBase {
 */
 var ClassificationInactiveTagDetailsSchema = object({
 	/** Allowed inactiveTagOverride values for this conflict */
-	availableOverrides: array(_enum(["REACTIVATE", "ATTACH_INACTIVE"])),
+	availableOverrides: array(EntityClassificationInactiveTagOverrideSchema),
 	/** Existing dormant value slug or lookup key */
 	slug: string(),
 	/** Existing tag id in res_type_ref */
@@ -7425,6 +7679,28 @@ var ProblemResolutionSchema = object({
 	retryable: boolean().nullish()
 });
 //#endregion
+//#region ../api-schemas/dist/redirect/slug-resource.js
+/**
+* Resource type whose slug is being changed
+*
+* @openapiSchema SlugResource
+* @standardProblemResponse
+* @usedBySchema CurrentSlugOwnerSchema
+* @usedBySchema RedirectSlugPathSchema
+* @usedBySchema SlugChangeResultSchema
+* @usedBySchema SlugLocationSchema
+* @contractShape redirect.slug-resource
+* @contractRole canonical
+* @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/redirect/SlugResource.kt
+*/
+var SlugResourceSchema = _enum([
+	"entity",
+	"person",
+	"news",
+	"blog",
+	"content"
+]);
+//#endregion
 //#region ../api-schemas/dist/redirect/current-slug-owner.js
 /**
 * Current slug owner
@@ -7441,14 +7717,7 @@ var CurrentSlugOwnerSchema = object({
 	id: string(),
 	isHidden: boolean(),
 	nameBrand: string().nullish(),
-	/** Resource type whose slug is being changed */
-	resourceType: _enum([
-		"entity",
-		"person",
-		"news",
-		"blog",
-		"content"
-	]),
+	resourceType: SlugResourceSchema,
 	showOnSitemap: boolean(),
 	slug: string()
 });
@@ -7469,14 +7738,7 @@ var RedirectSlugPathSchema = object({
 	oldUrl: string(),
 	targetCurrentSlug: string().nullish(),
 	targetId: string().nullish(),
-	/** Resource type whose slug is being changed */
-	targetResourceType: _enum([
-		"entity",
-		"person",
-		"news",
-		"blog",
-		"content"
-	]).nullish()
+	targetResourceType: SlugResourceSchema.nullish()
 });
 /**
 * RFC 9457 problem response with aVenture extensions.
@@ -7954,7 +8216,6 @@ function firstNonBlank(...values) {
 }
 //#endregion
 //#region logging.ts
-init_esm();
 var stderrLoggingEnabled = !(argv.includes("--json") || argv.includes("--data") || argv.includes("--data-full"));
 function setStderrLogging(enabled) {
 	stderrLoggingEnabled = enabled;
@@ -8088,18 +8349,20 @@ function writeLog(level, options) {
 	const fields = options.fields ? redactFields(options.fields) : void 0;
 	const error = Object.hasOwn(options, "error") ? errorDetails(options.error) : void 0;
 	const forceStderr = level === "warn" || level === "error";
-	if ((stderrLoggingEnabled || forceStderr) && shouldWriteStderr(level)) if (forceStderr && !verboseDiagnostics()) stderr.write(`${readableStderrLine(level, options, message, fields, error)}\n`);
-	else {
-		const entry = {
-			timestamp: (/* @__PURE__ */ new Date()).toISOString(),
-			level,
-			component: options.component,
-			event: options.event,
-			...message ? { message } : {},
-			...fields,
-			...error ? { error } : {}
-		};
-		stderr.write(`${JSON.stringify(entry)}\n`);
+	if ((stderrLoggingEnabled || forceStderr) && shouldWriteStderr(level)) {
+		if (forceStderr && !verboseDiagnostics()) stderr.write(`${readableStderrLine(level, options, message, fields, error)}\n`);
+		else {
+			const entry = {
+				timestamp: (/* @__PURE__ */ new Date()).toISOString(),
+				level,
+				component: options.component,
+				event: options.event,
+				...message ? { message } : {},
+				...fields,
+				...error ? { error } : {}
+			};
+			stderr.write(`${JSON.stringify(entry)}\n`);
+		}
 	}
 	if (shouldEmitOtel(level)) emitOtelLog(level, options.component, options.event, message, fields, error);
 }
@@ -8230,7 +8493,7 @@ function otelResourceAttributes() {
 * not an environment reaches no exporter. A shell that declares nothing — an agent or developer
 * running `aventure-cli` — is the same undeclared state the Kotlin owner resolves through
 * `spring.profiles.default` in `src/main/resources/config/application.yml`, and reports that same
-* tier rather than an unlabelled line no rule can select.
+* tier rather than an unlabeled line no rule can select.
 */
 function deploymentEnvironmentName() {
 	const declared = [
@@ -10112,9 +10375,11 @@ Expecting one of '${allowedValues.join("', '")}'`);
 			const oldValue = this.getOptionValue(name);
 			if (val !== null && option.parseArg) val = this._callParseArg(option, val, oldValue, invalidValueMessage);
 			else if (val !== null && option.variadic) val = option._collectValue(val, oldValue);
-			if (val == null) if (option.negate) val = false;
-			else if (option.isBoolean() || option.optional) val = true;
-			else val = "";
+			if (val == null) {
+				if (option.negate) val = false;
+				else if (option.isBoolean() || option.optional) val = true;
+				else val = "";
+			}
 			this.setOptionValueWithSource(name, val, valueSource);
 		};
 		this.on("option:" + oname, (val) => {
@@ -10518,12 +10783,13 @@ Expecting one of '${allowedValues.join("', '")}'`);
 		}
 		const launchWithNode = sourceExt.includes(path.extname(executableFile));
 		let proc;
-		if (process$1.platform !== "win32") if (launchWithNode) {
-			args.unshift(executableFile);
-			args = incrementNodeInspectorPort(process$1.execArgv).concat(args);
-			proc = childProcess.spawn(process$1.argv[0], args, { stdio: "inherit" });
-		} else proc = childProcess.spawn(executableFile, args, { stdio: "inherit" });
-		else {
+		if (process$1.platform !== "win32") {
+			if (launchWithNode) {
+				args.unshift(executableFile);
+				args = incrementNodeInspectorPort(process$1.execArgv).concat(args);
+				proc = childProcess.spawn(process$1.argv[0], args, { stdio: "inherit" });
+			} else proc = childProcess.spawn(executableFile, args, { stdio: "inherit" });
+		} else {
 			this._checkForMissingExecutable(executableFile, executableDir, subcommand._name);
 			args.unshift(executableFile);
 			args = incrementNodeInspectorPort(process$1.execArgv).concat(args);
@@ -10967,8 +11233,10 @@ Expecting one of '${allowedValues.join("', '")}'`);
 					"default",
 					"config",
 					"env"
-				].includes(this.getOptionValueSource(optionKey))) if (option.required || option.optional) this.emit(`optionEnv:${option.name()}`, process$1.env[option.envVar]);
-				else this.emit(`optionEnv:${option.name()}`);
+				].includes(this.getOptionValueSource(optionKey))) {
+					if (option.required || option.optional) this.emit(`optionEnv:${option.name()}`, process$1.env[option.envVar]);
+					else this.emit(`optionEnv:${option.name()}`);
+				}
 			}
 		});
 	}
@@ -12547,20 +12815,22 @@ var require_tree = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			while (true) {
 				const code = key.charCodeAt(index);
 				if (code > 127) throw new TypeError("key must be ascii string");
-				if (node.code === code) if (length === ++index) {
-					node.value = value;
-					break;
-				} else if (node.middle !== null) node = node.middle;
-				else {
-					node.middle = new TstNode(key, value, index);
-					break;
-				}
-				else if (node.code < code) if (node.left !== null) node = node.left;
-				else {
-					node.left = new TstNode(key, value, index);
-					break;
-				}
-				else if (node.right !== null) node = node.right;
+				if (node.code === code) {
+					if (length === ++index) {
+						node.value = value;
+						break;
+					} else if (node.middle !== null) node = node.middle;
+					else {
+						node.middle = new TstNode(key, value, index);
+						break;
+					}
+				} else if (node.code < code) {
+					if (node.left !== null) node = node.left;
+					else {
+						node.left = new TstNode(key, value, index);
+						break;
+					}
+				} else if (node.right !== null) node = node.right;
 				else {
 					node.right = new TstNode(key, value, index);
 					break;
@@ -12893,23 +13163,24 @@ var require_util$5 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		for (let i = 0; i < headers.length; i += 2) {
 			const key = headerNameToString(headers[i]);
 			let val = obj[key];
-			if (val !== void 0) if (!Object.hasOwn(obj, key)) {
-				const headersValue = typeof headers[i + 1] === "string" ? headers[i + 1] : Array.isArray(headers[i + 1]) ? headers[i + 1].map((x) => x.toString("latin1")) : headers[i + 1].toString("latin1");
-				if (key === "__proto__") Object.defineProperty(obj, key, {
-					value: headersValue,
-					enumerable: true,
-					configurable: true,
-					writable: true
-				});
-				else obj[key] = headersValue;
-			} else {
-				if (typeof val === "string") {
-					val = [val];
-					obj[key] = val;
+			if (val !== void 0) {
+				if (!Object.hasOwn(obj, key)) {
+					const headersValue = typeof headers[i + 1] === "string" ? headers[i + 1] : Array.isArray(headers[i + 1]) ? headers[i + 1].map((x) => x.toString("latin1")) : headers[i + 1].toString("latin1");
+					if (key === "__proto__") Object.defineProperty(obj, key, {
+						value: headersValue,
+						enumerable: true,
+						configurable: true,
+						writable: true
+					});
+					else obj[key] = headersValue;
+				} else {
+					if (typeof val === "string") {
+						val = [val];
+						obj[key] = val;
+					}
+					val.push(headers[i + 1].toString("latin1"));
 				}
-				val.push(headers[i + 1].toString("latin1"));
-			}
-			else {
+			} else {
 				const headersValue = typeof headers[i + 1] === "string" ? headers[i + 1] : Array.isArray(headers[i + 1]) ? headers[i + 1].map((x) => x.toString("latin1")) : headers[i + 1].toString("latin1");
 				obj[key] = headersValue;
 			}
@@ -13837,15 +14108,16 @@ var require_request$1 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			if (Array.isArray(headers)) {
 				if (headers.length % 2 !== 0) throw new InvalidArgumentError("headers array must be even");
 				for (let i = 0; i < headers.length; i += 2) processHeader(this, headers[i], headers[i + 1]);
-			} else if (headers && typeof headers === "object") if (hasSafeIterator(headers)) for (const header of headers) {
-				if (!Array.isArray(header) || header.length !== 2) throw new InvalidArgumentError("headers must be in key-value pair format");
-				processHeader(this, header[0], header[1]);
-			}
-			else {
-				const keys = Object.keys(headers);
-				for (let i = 0; i < keys.length; ++i) processHeader(this, keys[i], headers[keys[i]]);
-			}
-			else if (headers != null) throw new InvalidArgumentError("headers must be an object or an array");
+			} else if (headers && typeof headers === "object") {
+				if (hasSafeIterator(headers)) for (const header of headers) {
+					if (!Array.isArray(header) || header.length !== 2) throw new InvalidArgumentError("headers must be in key-value pair format");
+					processHeader(this, header[0], header[1]);
+				}
+				else {
+					const keys = Object.keys(headers);
+					for (let i = 0; i < keys.length; ++i) processHeader(this, keys[i], headers[keys[i]]);
+				}
+			} else if (headers != null) throw new InvalidArgumentError("headers must be an object or an array");
 			assertRequestHandler(handler, method, upgrade);
 			this.servername = servername || getServerName(this.host) || null;
 			this[kHandler] = handler;
@@ -16771,12 +17043,14 @@ var require_util$4 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		let temporaryValue = "";
 		while (position.position < input.length) {
 			temporaryValue += collectASequenceOfCodePoints((char) => char !== "\"" && char !== ",", input, position);
-			if (position.position < input.length) if (input.charCodeAt(position.position) === 34) {
-				temporaryValue += collectAnHTTPQuotedString(input, position);
-				if (position.position < input.length) continue;
-			} else {
-				assert$26(input.charCodeAt(position.position) === 44);
-				position.position++;
+			if (position.position < input.length) {
+				if (input.charCodeAt(position.position) === 34) {
+					temporaryValue += collectAnHTTPQuotedString(input, position);
+					if (position.position < input.length) continue;
+				} else {
+					assert$26(input.charCodeAt(position.position) === 44);
+					position.position++;
+				}
 			}
 			temporaryValue = removeChars(temporaryValue, true, true, (char) => char === 9 || char === 32);
 			values.push(temporaryValue);
@@ -17027,9 +17301,10 @@ var require_formdata = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		}
 		[nodeUtil$2.inspect.custom](depth, options) {
 			const state = this.#state.reduce((a, b) => {
-				if (a[b.name]) if (Array.isArray(a[b.name])) a[b.name].push(b.value);
-				else a[b.name] = [a[b.name], b.value];
-				else a[b.name] = b.value;
+				if (a[b.name]) {
+					if (Array.isArray(a[b.name])) a[b.name].push(b.value);
+					else a[b.name] = [a[b.name], b.value];
+				} else a[b.name] = b.value;
 				return a;
 			}, { __proto__: null });
 			options.depth ??= depth;
@@ -17799,10 +18074,12 @@ var require_client_h1 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 					timers.clearTimeout(this.timeout);
 					this.timeout = null;
 				}
-				if (delay) if (type & USE_FAST_TIMER) this.timeout = timers.setFastTimeout(onParserTimeout, delay, this.timeoutWeakRef);
-				else {
-					this.timeout = setTimeout(onParserTimeout, delay, this.timeoutWeakRef);
-					this.timeout?.unref();
+				if (delay) {
+					if (type & USE_FAST_TIMER) this.timeout = timers.setFastTimeout(onParserTimeout, delay, this.timeoutWeakRef);
+					else {
+						this.timeout = setTimeout(onParserTimeout, delay, this.timeoutWeakRef);
+						this.timeout?.unref();
+					}
 				}
 				this.timeoutValue = delay;
 			} else if (this.timeout) {
@@ -18439,9 +18716,10 @@ var require_client_h1 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		});
 		if (!body || bodyLength === 0) writeBuffer(abort, null, client, request, socket, contentLength, header, expectsPayload);
 		else if (util.isBuffer(body)) writeBuffer(abort, body, client, request, socket, contentLength, header, expectsPayload);
-		else if (util.isBlobLike(body)) if (typeof body.stream === "function") writeIterable(abort, body.stream(), client, request, socket, contentLength, header, expectsPayload);
-		else writeBlob(abort, body, client, request, socket, contentLength, header, expectsPayload);
-		else if (util.isStream(body)) writeStream(abort, body, client, request, socket, contentLength, header, expectsPayload);
+		else if (util.isBlobLike(body)) {
+			if (typeof body.stream === "function") writeIterable(abort, body.stream(), client, request, socket, contentLength, header, expectsPayload);
+			else writeBlob(abort, body, client, request, socket, contentLength, header, expectsPayload);
+		} else if (util.isStream(body)) writeStream(abort, body, client, request, socket, contentLength, header, expectsPayload);
 		else if (util.isIterable(body)) writeIterable(abort, body, client, request, socket, contentLength, header, expectsPayload);
 		else assert$23(false);
 		return true;
@@ -18544,12 +18822,13 @@ var require_client_h1 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 	*/
 	function writeBuffer(abort, body, client, request, socket, contentLength, header, expectsPayload) {
 		try {
-			if (!body) if (contentLength === 0) socket.write(`${header}content-length: 0\r\n\r\n`, "latin1");
-			else {
-				assert$23(contentLength === null, "no body must not have content length");
-				socket.write(`${header}\r\n`, "latin1");
-			}
-			else if (util.isBuffer(body)) {
+			if (!body) {
+				if (contentLength === 0) socket.write(`${header}content-length: 0\r\n\r\n`, "latin1");
+				else {
+					assert$23(contentLength === null, "no body must not have content length");
+					socket.write(`${header}\r\n`, "latin1");
+				}
+			} else if (util.isBuffer(body)) {
 				assert$23(contentLength === body.byteLength, "buffer body must have content length");
 				socket.cork();
 				socket.write(`${header}content-length: ${contentLength}\r\n\r\n`, "latin1");
@@ -18703,11 +18982,14 @@ var require_client_h1 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			socket[kWriting] = false;
 			if (socket[kError]) throw socket[kError];
 			if (socket.destroyed) return;
-			if (bytesWritten === 0) if (expectsPayload) socket.write(`${header}content-length: 0\r\n\r\n`, "latin1");
-			else socket.write(`${header}\r\n`, "latin1");
-			else if (contentLength === null) socket.write("\r\n0\r\n\r\n", "latin1");
-			if (contentLength !== null && bytesWritten !== contentLength) if (client[kStrictContentLength]) throw new RequestContentLengthMismatchError();
-			else process.emitWarning(new RequestContentLengthMismatchError());
+			if (bytesWritten === 0) {
+				if (expectsPayload) socket.write(`${header}content-length: 0\r\n\r\n`, "latin1");
+				else socket.write(`${header}\r\n`, "latin1");
+			} else if (contentLength === null) socket.write("\r\n0\r\n\r\n", "latin1");
+			if (contentLength !== null && bytesWritten !== contentLength) {
+				if (client[kStrictContentLength]) throw new RequestContentLengthMismatchError();
+				else process.emitWarning(new RequestContentLengthMismatchError());
+			}
 			if (socket[kParser].timeout && socket[kParser].timeoutType === TIMEOUT_HEADERS) {
 				if (socket[kParser].timeout.refresh) socket[kParser].timeout.refresh();
 			}
@@ -18922,9 +19204,11 @@ var require_client_h2 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			busy(request) {
 				if (session[kRemoteSettings] === false && client[kRunning] > 0) return true;
 				if (client[kRunning] >= client[kMaxConcurrentStreams]) return true;
-				if (request != null) if (client[kRunning] > 0) {
-					if ((request.upgrade === "websocket" || request.method === "CONNECT") && session[kRemoteSettings] === false) return true;
-				} else return (request.upgrade === "websocket" || request.method === "CONNECT") && session[kRemoteSettings] === false;
+				if (request != null) {
+					if (client[kRunning] > 0) {
+						if ((request.upgrade === "websocket" || request.method === "CONNECT") && session[kRemoteSettings] === false) return true;
+					} else return (request.upgrade === "websocket" || request.method === "CONNECT") && session[kRemoteSettings] === false;
+				}
 				return false;
 			}
 		};
@@ -19571,9 +19855,10 @@ var require_client_h2 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		const { abort, body, client, contentLength, expectsPayload, request } = state;
 		if (!body || contentLength === 0) writeBuffer(abort, stream, null, client, request, client[kSocket], contentLength, expectsPayload);
 		else if (util.isBuffer(body)) writeBuffer(abort, stream, body, client, request, client[kSocket], contentLength, expectsPayload);
-		else if (util.isBlobLike(body)) if (typeof body.stream === "function") writeIterable(abort, stream, body.stream(), client, request, client[kSocket], contentLength, expectsPayload);
-		else writeBlob(abort, stream, body, client, request, client[kSocket], contentLength, expectsPayload);
-		else if (util.isStream(body)) writeStream(abort, client[kSocket], expectsPayload, stream, body, client, request, contentLength);
+		else if (util.isBlobLike(body)) {
+			if (typeof body.stream === "function") writeIterable(abort, stream, body.stream(), client, request, client[kSocket], contentLength, expectsPayload);
+			else writeBlob(abort, stream, body, client, request, client[kSocket], contentLength, expectsPayload);
+		} else if (util.isStream(body)) writeStream(abort, client[kSocket], expectsPayload, stream, body, client, request, contentLength);
 		else if (util.isIterable(body)) writeIterable(abort, stream, body, client, request, client[kSocket], contentLength, expectsPayload);
 		else assert$22(false);
 	}
@@ -19728,32 +20013,34 @@ var require_client = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			if (maxResponseSize != null && (!Number.isInteger(maxResponseSize) || maxResponseSize < -1)) throw new InvalidArgumentError("maxResponseSize must be a positive number");
 			if (autoSelectFamilyAttemptTimeout != null && (!Number.isInteger(autoSelectFamilyAttemptTimeout) || autoSelectFamilyAttemptTimeout < -1)) throw new InvalidArgumentError("autoSelectFamilyAttemptTimeout must be a positive number");
 			if (allowH2 != null && typeof allowH2 !== "boolean") throw new InvalidArgumentError("allowH2 must be a valid boolean value");
-			if (allowH2 !== false) if (h2Options != null) {
-				if (h2Options.useH2c != null && typeof h2Options.useH2c !== "boolean") throw new InvalidArgumentError("h2Options.useH2c must be a valid boolean value");
-				if (h2Options.settings?.initialWindowSize != null && (!Number.isInteger(h2Options.settings.initialWindowSize) || h2Options.settings.initialWindowSize < 1)) throw new InvalidArgumentError("h2Options.settings.initialWindowSize must be a positive integer, greater than 0");
-				if (h2Options.maxConcurrentStreams != null && (!Number.isInteger(h2Options.connectionWindowSize) || h2Options.maxConcurrentStreams < 1)) throw new InvalidArgumentError("h2Options.maxConcurrentStreams must be a positive integer, greater than 0");
-				if (h2Options.connectionWindowSize != null && (!Number.isInteger(h2Options.connectionWindowSize) || h2Options.connectionWindowSize < 1)) throw new InvalidArgumentError("h2Options.connectionWindowSize must be a positive integer, greater than 0");
-				if (h2Options.pingInterval != null && (typeof h2Options.pingInterval !== "number" || !Number.isInteger(h2Options.pingInterval) || h2Options.pingInterval < 0)) throw new InvalidArgumentError("h2Options.pingInterval must be a positive integer, greater or equal to 0");
-			} else {
-				if (useH2c != null && typeof useH2c !== "boolean") {
-					emitH2OptionsNamespaceWarning("useH2c");
-					throw new InvalidArgumentError("useH2c must be a valid boolean value");
-				}
-				if (maxConcurrentStreams != null && (typeof maxConcurrentStreams !== "number" || maxConcurrentStreams < 1)) {
-					emitH2OptionsNamespaceWarning("maxConcurrentStreams");
-					throw new InvalidArgumentError("maxConcurrentStreams must be a positive integer, greater than 0");
-				}
-				if (initialWindowSize != null && (!Number.isInteger(initialWindowSize) || initialWindowSize < 1)) {
-					emitH2OptionsNamespaceWarning("initialWindowSize");
-					throw new InvalidArgumentError("initialWindowSize must be a positive integer, greater than 0");
-				}
-				if (connectionWindowSize != null && (!Number.isInteger(connectionWindowSize) || connectionWindowSize < 1)) {
-					emitH2OptionsNamespaceWarning("connectionWindowSize");
-					throw new InvalidArgumentError("connectionWindowSize must be a positive integer, greater than 0");
-				}
-				if (pingInterval != null && (typeof pingInterval !== "number" || !Number.isInteger(pingInterval) || pingInterval < 0)) {
-					emitH2OptionsNamespaceWarning("pingInterval");
-					throw new InvalidArgumentError("pingInterval must be a positive integer, greater or equal to 0");
+			if (allowH2 !== false) {
+				if (h2Options != null) {
+					if (h2Options.useH2c != null && typeof h2Options.useH2c !== "boolean") throw new InvalidArgumentError("h2Options.useH2c must be a valid boolean value");
+					if (h2Options.settings?.initialWindowSize != null && (!Number.isInteger(h2Options.settings.initialWindowSize) || h2Options.settings.initialWindowSize < 1)) throw new InvalidArgumentError("h2Options.settings.initialWindowSize must be a positive integer, greater than 0");
+					if (h2Options.maxConcurrentStreams != null && (!Number.isInteger(h2Options.connectionWindowSize) || h2Options.maxConcurrentStreams < 1)) throw new InvalidArgumentError("h2Options.maxConcurrentStreams must be a positive integer, greater than 0");
+					if (h2Options.connectionWindowSize != null && (!Number.isInteger(h2Options.connectionWindowSize) || h2Options.connectionWindowSize < 1)) throw new InvalidArgumentError("h2Options.connectionWindowSize must be a positive integer, greater than 0");
+					if (h2Options.pingInterval != null && (typeof h2Options.pingInterval !== "number" || !Number.isInteger(h2Options.pingInterval) || h2Options.pingInterval < 0)) throw new InvalidArgumentError("h2Options.pingInterval must be a positive integer, greater or equal to 0");
+				} else {
+					if (useH2c != null && typeof useH2c !== "boolean") {
+						emitH2OptionsNamespaceWarning("useH2c");
+						throw new InvalidArgumentError("useH2c must be a valid boolean value");
+					}
+					if (maxConcurrentStreams != null && (typeof maxConcurrentStreams !== "number" || maxConcurrentStreams < 1)) {
+						emitH2OptionsNamespaceWarning("maxConcurrentStreams");
+						throw new InvalidArgumentError("maxConcurrentStreams must be a positive integer, greater than 0");
+					}
+					if (initialWindowSize != null && (!Number.isInteger(initialWindowSize) || initialWindowSize < 1)) {
+						emitH2OptionsNamespaceWarning("initialWindowSize");
+						throw new InvalidArgumentError("initialWindowSize must be a positive integer, greater than 0");
+					}
+					if (connectionWindowSize != null && (!Number.isInteger(connectionWindowSize) || connectionWindowSize < 1)) {
+						emitH2OptionsNamespaceWarning("connectionWindowSize");
+						throw new InvalidArgumentError("connectionWindowSize must be a positive integer, greater than 0");
+					}
+					if (pingInterval != null && (typeof pingInterval !== "number" || !Number.isInteger(pingInterval) || pingInterval < 0)) {
+						emitH2OptionsNamespaceWarning("pingInterval");
+						throw new InvalidArgumentError("pingInterval must be a positive integer, greater or equal to 0");
+					}
 				}
 			}
 			super({ webSocket });
@@ -23848,10 +24135,12 @@ var require_mock_interceptor = /* @__PURE__ */ __commonJSMin(((exports, module) 
 			if (typeof opts !== "object") throw new InvalidArgumentError("opts must be an object");
 			if (typeof opts.path === "undefined") throw new InvalidArgumentError("opts.path must be defined");
 			if (typeof opts.method === "undefined") opts.method = "GET";
-			if (typeof opts.path === "string") if (opts.query) opts.path = serializePathWithQuery(opts.path, opts.query);
-			else {
-				const parsedURL = new URL(opts.path, "data://");
-				opts.path = parsedURL.pathname + parsedURL.search;
+			if (typeof opts.path === "string") {
+				if (opts.query) opts.path = serializePathWithQuery(opts.path, opts.query);
+				else {
+					const parsedURL = new URL(opts.path, "data://");
+					opts.path = parsedURL.pathname + parsedURL.search;
+				}
 			}
 			if (typeof opts.method === "string") opts.method = opts.method.toUpperCase();
 			this[kDispatchKey] = buildKey(opts);
@@ -24299,9 +24588,10 @@ var require_mock_agent = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			this[kIsMockActive] = true;
 		}
 		enableNetConnect(matcher) {
-			if (typeof matcher === "string" || typeof matcher === "function" || matcher instanceof RegExp) if (Array.isArray(this[kNetConnect])) this[kNetConnect].push(matcher);
-			else this[kNetConnect] = [matcher];
-			else if (typeof matcher === "undefined") this[kNetConnect] = true;
+			if (typeof matcher === "string" || typeof matcher === "function" || matcher instanceof RegExp) {
+				if (Array.isArray(this[kNetConnect])) this[kNetConnect].push(matcher);
+				else this[kNetConnect] = [matcher];
+			} else if (typeof matcher === "undefined") this[kNetConnect] = true;
 			else throw new InvalidArgumentError("Unsupported matcher. Must be one of String|Function|RegExp.");
 		}
 		disableNetConnect() {
@@ -25765,12 +26055,14 @@ var require_dns = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			const { records, offset } = hostnameRecords;
 			let family;
 			if (this.dualStack) {
-				if (affinity == null) if (offset == null || offset === maxInt) {
-					hostnameRecords.offset = 0;
-					affinity = 4;
-				} else {
-					hostnameRecords.offset++;
-					affinity = (hostnameRecords.offset & 1) === 1 ? 6 : 4;
+				if (affinity == null) {
+					if (offset == null || offset === maxInt) {
+						hostnameRecords.offset = 0;
+						affinity = 4;
+					} else {
+						hostnameRecords.offset++;
+						affinity = (hostnameRecords.offset & 1) === 1 ? 6 : 4;
+					}
 				}
 				if (records[affinity] != null && records[affinity].ips.length > 0) family = records[affinity];
 				else family = records[affinity === 4 ? 6 : 4];
@@ -26053,39 +26345,40 @@ var require_cache$2 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		if (opts.headers == null) headers = {};
 		else if (typeof opts.headers === "object") {
 			headers = {};
-			if (hasSafeIterator(opts.headers)) if (Array.isArray(opts.headers)) {
-				const first = opts.headers[0];
-				if (Array.isArray(first)) for (const x of opts.headers) {
+			if (hasSafeIterator(opts.headers)) {
+				if (Array.isArray(opts.headers)) {
+					const first = opts.headers[0];
+					if (Array.isArray(first)) for (const x of opts.headers) {
+						if (!Array.isArray(x)) throw new Error("opts.headers is not a valid header map");
+						const [key, val] = x;
+						if (typeof key !== "string" || typeof val !== "string") throw new Error("opts.headers is not a valid header map");
+						appendHeader(headers, key, val);
+					}
+					else {
+						const len = opts.headers.length;
+						if (len % 2 !== 0) throw new Error("opts.headers is not a valid header map");
+						for (let i = 0; i < len; i += 2) {
+							const key = opts.headers[i];
+							const val = opts.headers[i + 1];
+							if (typeof key !== "string" || typeof val !== "string" && !Array.isArray(val)) throw new Error("opts.headers is not a valid header map");
+							if (typeof val === "string") appendHeader(headers, key, val);
+							else {
+								const mapped = [];
+								for (let j = 0; j < val.length; j++) {
+									const v = val[j];
+									mapped.push(typeof v === "string" ? v : v.toString("latin1"));
+								}
+								appendHeader(headers, key, mapped);
+							}
+						}
+					}
+				} else for (const x of opts.headers) {
 					if (!Array.isArray(x)) throw new Error("opts.headers is not a valid header map");
 					const [key, val] = x;
 					if (typeof key !== "string" || typeof val !== "string") throw new Error("opts.headers is not a valid header map");
 					appendHeader(headers, key, val);
 				}
-				else {
-					const len = opts.headers.length;
-					if (len % 2 !== 0) throw new Error("opts.headers is not a valid header map");
-					for (let i = 0; i < len; i += 2) {
-						const key = opts.headers[i];
-						const val = opts.headers[i + 1];
-						if (typeof key !== "string" || typeof val !== "string" && !Array.isArray(val)) throw new Error("opts.headers is not a valid header map");
-						if (typeof val === "string") appendHeader(headers, key, val);
-						else {
-							const mapped = [];
-							for (let j = 0; j < val.length; j++) {
-								const v = val[j];
-								mapped.push(typeof v === "string" ? v : v.toString("latin1"));
-							}
-							appendHeader(headers, key, mapped);
-						}
-					}
-				}
-			} else for (const x of opts.headers) {
-				if (!Array.isArray(x)) throw new Error("opts.headers is not a valid header map");
-				const [key, val] = x;
-				if (typeof key !== "string" || typeof val !== "string") throw new Error("opts.headers is not a valid header map");
-				appendHeader(headers, key, val);
-			}
-			else for (const key of Object.keys(opts.headers)) appendHeader(headers, key, opts.headers[key]);
+			} else for (const key of Object.keys(opts.headers)) appendHeader(headers, key, opts.headers[key]);
 		} else throw new Error("opts.headers is not an object");
 		return headers;
 	}
@@ -26228,13 +26521,17 @@ var require_cache$2 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 								if (!isValidHTTPToken(headers[j])) validFieldNames = false;
 							}
 							if (!validFieldNames) output[key] = true;
-							else if (output[key] !== true) if (key in output) output[key] = output[key].concat(headers);
-							else output[key] = headers;
+							else if (output[key] !== true) {
+								if (key in output) output[key] = output[key].concat(headers);
+								else output[key] = headers;
+							}
 						} else {
 							const fieldName = trimOWS(value);
 							if (!isValidHTTPToken(fieldName)) output[key] = true;
-							else if (output[key] !== true) if (key in output) output[key] = output[key].concat(fieldName);
-							else output[key] = [fieldName];
+							else if (output[key] !== true) {
+								if (key in output) output[key] = output[key].concat(fieldName);
+								else output[key] = [fieldName];
+							}
 						}
 						break;
 					}
@@ -26436,18 +26733,22 @@ var require_date = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		let monthIdx = -1;
 		if (date[8] === "J" && date[9] === "a" && date[10] === "n") monthIdx = 0;
 		else if (date[8] === "F" && date[9] === "e" && date[10] === "b") monthIdx = 1;
-		else if (date[8] === "M" && date[9] === "a") if (date[10] === "r") monthIdx = 2;
-		else if (date[10] === "y") monthIdx = 4;
-		else return;
-		else if (date[8] === "J") if (date[9] === "a" && date[10] === "n") monthIdx = 0;
-		else if (date[9] === "u") if (date[10] === "n") monthIdx = 5;
-		else if (date[10] === "l") monthIdx = 6;
-		else return;
-		else return;
-		else if (date[8] === "A") if (date[9] === "p" && date[10] === "r") monthIdx = 3;
-		else if (date[9] === "u" && date[10] === "g") monthIdx = 7;
-		else return;
-		else if (date[8] === "S" && date[9] === "e" && date[10] === "p") monthIdx = 8;
+		else if (date[8] === "M" && date[9] === "a") {
+			if (date[10] === "r") monthIdx = 2;
+			else if (date[10] === "y") monthIdx = 4;
+			else return;
+		} else if (date[8] === "J") {
+			if (date[9] === "a" && date[10] === "n") monthIdx = 0;
+			else if (date[9] === "u") {
+				if (date[10] === "n") monthIdx = 5;
+				else if (date[10] === "l") monthIdx = 6;
+				else return;
+			} else return;
+		} else if (date[8] === "A") {
+			if (date[9] === "p" && date[10] === "r") monthIdx = 3;
+			else if (date[9] === "u" && date[10] === "g") monthIdx = 7;
+			else return;
+		} else if (date[8] === "S" && date[9] === "e" && date[10] === "p") monthIdx = 8;
 		else if (date[8] === "O" && date[9] === "c" && date[10] === "t") monthIdx = 9;
 		else if (date[8] === "N" && date[9] === "o" && date[10] === "v") monthIdx = 10;
 		else if (date[8] === "D" && date[9] === "e" && date[10] === "c") monthIdx = 11;
@@ -26520,18 +26821,22 @@ var require_date = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		let monthIdx = -1;
 		if (date[4] === "J" && date[5] === "a" && date[6] === "n") monthIdx = 0;
 		else if (date[4] === "F" && date[5] === "e" && date[6] === "b") monthIdx = 1;
-		else if (date[4] === "M" && date[5] === "a") if (date[6] === "r") monthIdx = 2;
-		else if (date[6] === "y") monthIdx = 4;
-		else return;
-		else if (date[4] === "J") if (date[5] === "a" && date[6] === "n") monthIdx = 0;
-		else if (date[5] === "u") if (date[6] === "n") monthIdx = 5;
-		else if (date[6] === "l") monthIdx = 6;
-		else return;
-		else return;
-		else if (date[4] === "A") if (date[5] === "p" && date[6] === "r") monthIdx = 3;
-		else if (date[5] === "u" && date[6] === "g") monthIdx = 7;
-		else return;
-		else if (date[4] === "S" && date[5] === "e" && date[6] === "p") monthIdx = 8;
+		else if (date[4] === "M" && date[5] === "a") {
+			if (date[6] === "r") monthIdx = 2;
+			else if (date[6] === "y") monthIdx = 4;
+			else return;
+		} else if (date[4] === "J") {
+			if (date[5] === "a" && date[6] === "n") monthIdx = 0;
+			else if (date[5] === "u") {
+				if (date[6] === "n") monthIdx = 5;
+				else if (date[6] === "l") monthIdx = 6;
+				else return;
+			} else return;
+		} else if (date[4] === "A") {
+			if (date[5] === "p" && date[6] === "r") monthIdx = 3;
+			else if (date[5] === "u" && date[6] === "g") monthIdx = 7;
+			else return;
+		} else if (date[4] === "S" && date[5] === "e" && date[6] === "p") monthIdx = 8;
 		else if (date[4] === "O" && date[5] === "c" && date[6] === "t") monthIdx = 9;
 		else if (date[4] === "N" && date[5] === "o" && date[6] === "v") monthIdx = 10;
 		else if (date[4] === "D" && date[5] === "e" && date[6] === "c") monthIdx = 11;
@@ -27635,8 +27940,10 @@ var require_cache$1 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			}
 		};
 		stream.on("error", function(err) {
-			if (!this.readableEnded) if (typeof handler.onResponseError === "function") handler.onResponseError(controller, err);
-			else throw err;
+			if (!this.readableEnded) {
+				if (typeof handler.onResponseError === "function") handler.onResponseError(controller, err);
+				else throw err;
+			}
 		}).on("close", function() {
 			if (!this.errored) handler.onResponseEnd?.(controller, {});
 		});
@@ -29632,21 +29939,23 @@ var require_request = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			this.#state = request;
 			const ac = new AbortController();
 			this.#signal = ac.signal;
-			if (signal != null) if (signal.aborted) ac.abort(signal.reason);
-			else {
-				this[kAbortController] = ac;
-				const abort = buildAbort(new WeakRef(ac));
-				if (abortSignalHasEventHandlerLeakWarning && getMaxListeners(signal) === defaultMaxListeners) setMaxListeners(1500, signal);
-				const removeAbortListener = util.addAbortListener(signal, abort);
-				requestFinalizer.register(ac, {
-					signal,
-					abort
-				}, abort);
-				this.#abortCleanup = () => {
-					requestFinalizer.unregister(abort);
-					removeAbortListener();
-					this.#abortCleanup = null;
-				};
+			if (signal != null) {
+				if (signal.aborted) ac.abort(signal.reason);
+				else {
+					this[kAbortController] = ac;
+					const abort = buildAbort(new WeakRef(ac));
+					if (abortSignalHasEventHandlerLeakWarning && getMaxListeners(signal) === defaultMaxListeners) setMaxListeners(1500, signal);
+					const removeAbortListener = util.addAbortListener(signal, abort);
+					requestFinalizer.register(ac, {
+						signal,
+						abort
+					}, abort);
+					this.#abortCleanup = () => {
+						requestFinalizer.unregister(abort);
+						removeAbortListener();
+						this.#abortCleanup = null;
+					};
+				}
 			}
 			this.#headers = new Headers(kConstruct);
 			setHeadersList(this.#headers, request.headersList);
@@ -30406,8 +30715,10 @@ var require_fetch = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		assert$5(!request.body || request.body.stream);
 		if (request.window === "client") request.window = request.client?.globalObject?.constructor?.name === "Window" ? request.client : "no-window";
 		if (request.origin === "client") request.origin = request.client.origin;
-		if (request.policyContainer === "client") if (request.client != null) request.policyContainer = clonePolicyContainer(request.client.policyContainer);
-		else request.policyContainer = makePolicyContainer();
+		if (request.policyContainer === "client") {
+			if (request.client != null) request.policyContainer = clonePolicyContainer(request.client.policyContainer);
+			else request.policyContainer = makePolicyContainer();
+		}
 		if (!request.headersList.contains("accept", true)) request.headersList.append("accept", "*/*", true);
 		if (!request.headersList.contains("accept-language", true)) request.headersList.append("accept-language", "*", true);
 		if (request.priority === null) {}
@@ -30430,12 +30741,13 @@ var require_fetch = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 					request.responseTainting = "basic";
 					response = await schemeFetch(fetchParams);
 				} else if (request.mode === "same-origin") response = makeNetworkError("request mode cannot be \"same-origin\"");
-				else if (request.mode === "no-cors") if (request.redirect !== "follow") response = makeNetworkError("redirect mode cannot be \"follow\" for \"no-cors\" request");
-				else {
-					request.responseTainting = "opaque";
-					response = await schemeFetch(fetchParams);
-				}
-				else if (!urlIsHttpHttpsScheme(requestCurrentURL(request))) response = makeNetworkError("URL scheme must be a HTTP(S) scheme");
+				else if (request.mode === "no-cors") {
+					if (request.redirect !== "follow") response = makeNetworkError("redirect mode cannot be \"follow\" for \"no-cors\" request");
+					else {
+						request.responseTainting = "opaque";
+						response = await schemeFetch(fetchParams);
+					}
+				} else if (!urlIsHttpHttpsScheme(requestCurrentURL(request))) response = makeNetworkError("URL scheme must be a HTTP(S) scheme");
 				else {
 					request.responseTainting = "cors";
 					response = await httpFetch(fetchParams);
@@ -30684,8 +30996,10 @@ var require_fetch = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			if (!httpRequest.headersList.contains("cache-control", true)) httpRequest.headersList.append("cache-control", "no-cache", true);
 		}
 		if (httpRequest.headersList.contains("range", true)) httpRequest.headersList.append("accept-encoding", "identity", true);
-		if (!httpRequest.headersList.contains("accept-encoding", true)) if (urlHasHttpsScheme(requestCurrentURL(httpRequest))) httpRequest.headersList.append("accept-encoding", "br, gzip, deflate, zstd", true);
-		else httpRequest.headersList.append("accept-encoding", "gzip, deflate", true);
+		if (!httpRequest.headersList.contains("accept-encoding", true)) {
+			if (urlHasHttpsScheme(requestCurrentURL(httpRequest))) httpRequest.headersList.append("accept-encoding", "br, gzip, deflate, zstd", true);
+			else httpRequest.headersList.append("accept-encoding", "gzip, deflate", true);
+		}
 		httpRequest.headersList.delete("host", true);
 		if (includeCredentials) {
 			if (!httpRequest.headersList.contains("authorization", true)) {
@@ -33255,14 +33569,15 @@ var require_sender = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		}
 		add(item, cb, hint) {
 			if (hint !== sendHints.blob) {
-				if (!this.#running) if (hint === sendHints.text) {
-					const { 0: head, 1: body } = WebsocketFrameSend.createFastTextFrame(item);
-					this.#socket.cork();
-					this.#socket.write(head);
-					this.#socket.write(body, cb);
-					this.#socket.uncork();
-				} else this.#socket.write(createFrame(item, hint), cb);
-				else {
+				if (!this.#running) {
+					if (hint === sendHints.text) {
+						const { 0: head, 1: body } = WebsocketFrameSend.createFastTextFrame(item);
+						this.#socket.cork();
+						this.#socket.write(head);
+						this.#socket.write(body, cb);
+						this.#socket.uncork();
+					} else this.#socket.write(createFrame(item, hint), cb);
+				} else {
 					/** @type {SendQueueNode} */
 					const node = {
 						promise: null,
@@ -33610,8 +33925,10 @@ var require_websocket = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 				failWebsocketConnection(this.#handler, 1007, "Received invalid UTF-8 in text frame.");
 				return;
 			}
-			else if (type === opcodes.BINARY) if (this.#binaryType === "blob") dataForEvent = new Blob([data]);
-			else dataForEvent = toArrayBuffer(data);
+			else if (type === opcodes.BINARY) {
+				if (this.#binaryType === "blob") dataForEvent = new Blob([data]);
+				else dataForEvent = toArrayBuffer(data);
+			}
 			fireEvent("message", this, createFastMessageEvent, {
 				origin: this.#url.origin,
 				data: dataForEvent
@@ -34581,13 +34898,15 @@ var require_eventsource = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 			};
 			fetchParams.processResponseEndOfBody = processEventSourceEndOfBody;
 			fetchParams.processResponse = (response) => {
-				if (isNetworkError(response)) if (response.aborted) {
-					this.close();
-					this.dispatchEvent(new Event("error"));
-					return;
-				} else {
-					this.#reconnect();
-					return;
+				if (isNetworkError(response)) {
+					if (response.aborted) {
+						this.close();
+						this.dispatchEvent(new Event("error"));
+						return;
+					} else {
+						this.#reconnect();
+						return;
+					}
 				}
 				const contentType = response.headersList.get("content-type", true);
 				const mimeType = contentType !== null ? parseMIMEType(contentType) : "failure";
@@ -35451,6 +35770,6 @@ var CLI_NAMESPACE_SECTION = {
 	agents: "cli"
 };
 //#endregion
-export { esm_exports as $, logDebug as A, __require as At, normalizeEnvironmentName as B, authMaterializationFailure as C, init_Metric as Ct, resolveAuthStatus as D, __commonJSMin as Dt, readAuthConfig as E, JsonValueSchema as Et, setStderrLogging as F, failure as G, readEnv as H, shutdownLogging as I, success as J, pageMetadata as K, AUTH_SECRET_NAME as L, logInfo as M, __toESM as Mt, logWarn as N, writeAuthConfig as O, __esmMin as Ot, otelResourceAttributes as P, resourceFromAttributes as Q, AUTH_SECRET_NAMES as R, InvalidArgumentError as S, ValueType as St, materializeAuth as T, init_NoopMeter as Tt, RESULT_ENVELOPE_BYTE_CAP as U, prepareCallEnv as V, capEnvelope as W, defaultResource as X, init_esm as Y, init_ResourceImpl as Z, redactCredentialText as _, metrics as _t, generatedOptionGroupRank as a, hrTimeDuration as at, Option as b, context as bt, CLI_SHELL_INPUT_GUIDANCE as c, init_time as ct, flagName as d, init_esm$2 as dt, init_esm$1 as et, mcpToolForIntent as f, globalErrorHandler as ft, problemFailure as g, init_metrics_api as gt, aventureRequest as h, init_esm$3 as ht, cliOptionDescription as i, hrTime as it, logError as j, __toCommonJS as jt, describeError as k, __exportAll as kt, cliShellQuote as l, millisToHrTime as lt, aventureMethod as m, esm_exports$2 as mt, CLI_NAMESPACE_SECTION as n, ExportResultCode as nt, generatedOptionHelpGroup as o, hrTimeToMicroseconds as ot, prepareOpenApiRequestBody as p, init_global_error_handler as pt, responseCount as q, administrationNamespace as r, init_ExportResult as rt, withTerminalPunctuation as s, hrTimeToSeconds as st, CLI_COMMAND_SECTION as t, internal as tt, cliShellSensitiveSchema as u, esm_exports$1 as ut, responseWarningMetadata as v, diag as vt, configPath as w, createNoopMeter as wt, CommanderError as x, init_context_api as xt, Command as y, init_diag_api as yt, environmentNames as z };
+export { init_ResourceImpl as $, logDebug as A, __exportAll as At, normalizeEnvironmentName as B, authMaterializationFailure as C, ValueType as Ct, resolveAuthStatus as D, JsonValueSchema as Dt, readAuthConfig as E, init_NoopMeter as Et, setStderrLogging as F, failure as G, readEnv as H, shutdownLogging as I, success as J, pageMetadata as K, AUTH_SECRET_NAME as L, logInfo as M, __toCommonJS as Mt, logWarn as N, __toESM as Nt, writeAuthConfig as O, __commonJSMin as Ot, otelResourceAttributes as P, defaultResource$1 as Q, AUTH_SECRET_NAMES as R, InvalidArgumentError as S, init_context_api as St, materializeAuth as T, createNoopMeter as Tt, RESULT_ENVELOPE_BYTE_CAP as U, prepareCallEnv as V, capEnvelope as W, resourceFromAttributes as X, defaultResource as Y, init_esm as Z, redactCredentialText as _, init_metrics_api as _t, generatedOptionGroupRank as a, hrTime as at, Option as b, init_diag_api as bt, CLI_SHELL_INPUT_GUIDANCE as c, hrTimeToSeconds as ct, flagName as d, esm_exports$1 as dt, esm_exports as et, mcpToolForIntent as f, init_esm$2 as ft, problemFailure as g, init_esm$3 as gt, aventureRequest as h, esm_exports$2 as ht, cliOptionDescription as i, init_ExportResult as it, logError as j, __require as jt, describeError as k, __esmMin as kt, cliShellQuote as l, init_time as lt, aventureMethod as m, init_global_error_handler as mt, CLI_NAMESPACE_SECTION as n, internal as nt, generatedOptionHelpGroup as o, hrTimeDuration as ot, prepareOpenApiRequestBody as p, globalErrorHandler as pt, responseCount as q, administrationNamespace as r, ExportResultCode as rt, withTerminalPunctuation as s, hrTimeToMicroseconds as st, CLI_COMMAND_SECTION as t, init_esm$1 as tt, cliShellSensitiveSchema as u, millisToHrTime as ut, responseWarningMetadata as v, metrics as vt, configPath as w, init_Metric as wt, CommanderError as x, context as xt, Command as y, diag as yt, environmentNames as z };
 
-//# sourceMappingURL=cli-help-policy-DQ_p5vjo.js.map
+//# sourceMappingURL=cli-help-policy-C-YXYlYA.js.map

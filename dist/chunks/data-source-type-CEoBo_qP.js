@@ -632,8 +632,10 @@ var $ZodCheckLessThan = /*@__PURE__*/ $constructor("$ZodCheckLessThan", (inst, d
 	inst._zod.onattach.push((inst) => {
 		const bag = inst._zod.bag;
 		const curr = (def.inclusive ? bag.maximum : bag.exclusiveMaximum) ?? Number.POSITIVE_INFINITY;
-		if (def.value < curr) if (def.inclusive) bag.maximum = def.value;
-		else bag.exclusiveMaximum = def.value;
+		if (def.value < curr) {
+			if (def.inclusive) bag.maximum = def.value;
+			else bag.exclusiveMaximum = def.value;
+		}
 	});
 	inst._zod.check = (payload) => {
 		if (def.inclusive ? payload.value <= def.value : payload.value < def.value) return;
@@ -654,8 +656,10 @@ var $ZodCheckGreaterThan = /*@__PURE__*/ $constructor("$ZodCheckGreaterThan", (i
 	inst._zod.onattach.push((inst) => {
 		const bag = inst._zod.bag;
 		const curr = (def.inclusive ? bag.minimum : bag.exclusiveMinimum) ?? Number.NEGATIVE_INFINITY;
-		if (def.value > curr) if (def.inclusive) bag.minimum = def.value;
-		else bag.exclusiveMinimum = def.value;
+		if (def.value > curr) {
+			if (def.inclusive) bag.minimum = def.value;
+			else bag.exclusiveMinimum = def.value;
+		}
 	});
 	inst._zod.check = (payload) => {
 		if (def.inclusive ? payload.value >= def.value : payload.value > def.value) return;
@@ -1577,13 +1581,13 @@ var $ZodObject = /*@__PURE__*/ $constructor("$ZodObject", (inst, def) => {
 		}
 		return propValues;
 	});
-	const isObject$2 = isObject;
+	const isObject$1 = isObject;
 	const catchall = def.catchall;
 	let value;
 	inst._zod.parse = (payload, ctx) => {
 		value ?? (value = _normalized.value);
 		const input = payload.value;
-		if (!isObject$2(input)) {
+		if (!isObject$1(input)) {
 			payload.issues.push({
 				expected: "object",
 				code: "invalid_type",
@@ -1706,7 +1710,7 @@ var $ZodObjectJIT = /*@__PURE__*/ $constructor("$ZodObjectJIT", (inst, def) => {
 		return (payload, ctx) => fn(shape, payload, ctx);
 	};
 	let fastpass;
-	const isObject$1 = isObject;
+	const isObject$2 = isObject;
 	const jit = !globalConfig.jitless;
 	const fastEnabled = jit && allowsEval.value;
 	const catchall = def.catchall;
@@ -1714,7 +1718,7 @@ var $ZodObjectJIT = /*@__PURE__*/ $constructor("$ZodObjectJIT", (inst, def) => {
 	inst._zod.parse = (payload, ctx) => {
 		value ?? (value = _normalized.value);
 		const input = payload.value;
-		if (!isObject$1(input)) {
+		if (!isObject$2(input)) {
 			payload.issues.push({
 				expected: "object",
 				code: "invalid_type",
@@ -3133,8 +3137,10 @@ function finalize(ctx, schema) {
 			defs[seen.defId] = seen.def;
 		}
 	}
-	if (ctx.external) {} else if (Object.keys(defs).length > 0) if (ctx.target === "draft-2020-12") result.$defs = defs;
-	else result.definitions = defs;
+	if (ctx.external) {} else if (Object.keys(defs).length > 0) {
+		if (ctx.target === "draft-2020-12") result.$defs = defs;
+		else result.definitions = defs;
+	}
 	try {
 		const finalized = JSON.parse(JSON.stringify(result));
 		Object.defineProperty(finalized, "~standard", {
@@ -3247,16 +3253,18 @@ var numberProcessor = (schema, ctx, _json, _params) => {
 	const exMin = typeof exclusiveMinimum === "number" && exclusiveMinimum >= (minimum ?? Number.NEGATIVE_INFINITY);
 	const exMax = typeof exclusiveMaximum === "number" && exclusiveMaximum <= (maximum ?? Number.POSITIVE_INFINITY);
 	const legacy = ctx.target === "draft-04" || ctx.target === "openapi-3.0";
-	if (exMin) if (legacy) {
-		json.minimum = exclusiveMinimum;
-		json.exclusiveMinimum = true;
-	} else json.exclusiveMinimum = exclusiveMinimum;
-	else if (typeof minimum === "number") json.minimum = minimum;
-	if (exMax) if (legacy) {
-		json.maximum = exclusiveMaximum;
-		json.exclusiveMaximum = true;
-	} else json.exclusiveMaximum = exclusiveMaximum;
-	else if (typeof maximum === "number") json.maximum = maximum;
+	if (exMin) {
+		if (legacy) {
+			json.minimum = exclusiveMinimum;
+			json.exclusiveMinimum = true;
+		} else json.exclusiveMinimum = exclusiveMinimum;
+	} else if (typeof minimum === "number") json.minimum = minimum;
+	if (exMax) {
+		if (legacy) {
+			json.maximum = exclusiveMaximum;
+			json.exclusiveMaximum = true;
+		} else json.exclusiveMaximum = exclusiveMaximum;
+	} else if (typeof maximum === "number") json.maximum = maximum;
 	if (typeof multipleOf === "number") json.multipleOf = multipleOf;
 };
 var booleanProcessor = (_schema, _ctx, json, _params) => {
@@ -3301,9 +3309,10 @@ var literalProcessor = (schema, ctx, json, _params) => {
 	const vals = [];
 	for (const val of def.values) if (val === void 0) {
 		if (ctx.unrepresentable === "throw") throw new Error("Literal `undefined` cannot be represented in JSON Schema");
-	} else if (typeof val === "bigint") if (ctx.unrepresentable === "throw") throw new Error("BigInt literals cannot be represented in JSON Schema");
-	else vals.push(Number(val));
-	else vals.push(val);
+	} else if (typeof val === "bigint") {
+		if (ctx.unrepresentable === "throw") throw new Error("BigInt literals cannot be represented in JSON Schema");
+		else vals.push(Number(val));
+	} else vals.push(val);
 	if (vals.length === 0) {} else if (vals.length === 1) {
 		const val = vals[0];
 		json.type = val === null ? "null" : typeof val;
@@ -3337,14 +3346,15 @@ var fileProcessor = (schema, _ctx, json, _params) => {
 	const { minimum, maximum, mime } = schema._zod.bag;
 	if (minimum !== void 0) file.minLength = minimum;
 	if (maximum !== void 0) file.maxLength = maximum;
-	if (mime) if (mime.length === 1) {
-		file.contentMediaType = mime[0];
-		Object.assign(_json, file);
-	} else {
-		Object.assign(_json, file);
-		_json.anyOf = mime.map((m) => ({ contentMediaType: m }));
-	}
-	else Object.assign(_json, file);
+	if (mime) {
+		if (mime.length === 1) {
+			file.contentMediaType = mime[0];
+			Object.assign(_json, file);
+		} else {
+			Object.assign(_json, file);
+			_json.anyOf = mime.map((m) => ({ contentMediaType: m }));
+		}
+	} else Object.assign(_json, file);
 };
 var successProcessor = (_schema, _ctx, json, _params) => {
 	json.type = "boolean";
@@ -4719,4 +4729,4 @@ var DatasourceDataSourceTypeSchema = _enum([
 //#endregion
 export { datetime as A, defineLazy as B, strictObject as C, url as D, unknown as E, parse$1 as F, $constructor as H, parseAsync$1 as I, safeParse$1 as L, _coercedNumber as M, $ZodObject as N, uuid as O, $ZodType as P, safeParseAsync$1 as R, record as S, union as T, NEVER as U, normalizeParams as V, looseObject as _, ZodOptional as a, optional as b, any as c, custom as d, discriminatedUnion as f, literal as g, lazy as h, ZodNumber as i, toJSONSchema as j, date as k, array as l, intersection as m, EntityPersonOwnerSchema as n, _enum as o, int as p, EntityTypeSchema as r, _null as s, DatasourceDataSourceTypeSchema as t, boolean as u, number as v, string as w, preprocess as x, object as y, clone as z };
 
-//# sourceMappingURL=data-source-type-B2O1SiZK.js.map
+//# sourceMappingURL=data-source-type-CEoBo_qP.js.map

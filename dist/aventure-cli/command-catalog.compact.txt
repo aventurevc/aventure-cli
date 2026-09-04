@@ -1,3 +1,4 @@
+aventure-cli agents chassis list · List accepted agent chassis · -
 aventure-cli agents help reindex create · Reindex the agent-help corpus · -
 aventure-cli agents instructions get · Get one agent instruction document · --kind --name
 aventure-cli agents instructions list · Get the agent instruction manifest · -
@@ -28,16 +29,16 @@ aventure-cli content embedding backlog delete · Disable content embedding backl
 aventure-cli content embedding backlog mode replace · Set content embedding cluster mode · --mode
 aventure-cli content embedding backlog replace · Enable content embedding backlog runs · -
 aventure-cli content embedding backlog status · Get content embedding backlog status · -
-aventure-cli content embedding neighbors list · Find nearest embedding neighbors by source id · --source-type --source-id --target-type
-aventure-cli content embedding refresh create · Force-enqueue a single source id into the embedding refresh lane · --source-type --source-id
+aventure-cli content embedding neighbors list · Find nearest embedding neighbors by source id · --source-id --target-type
+aventure-cli content embedding refresh create · Force-enqueue a single source id into the embedding refresh lane · --source-id
 aventure-cli content embedding refresh reconcile create · Force-run one embedding reconcile pass on this instance · -
-aventure-cli content embedding refresh sweep create · Force-run one embedding refresh sweep · --source-type --kind
+aventure-cli content embedding refresh sweep create · Force-run one embedding refresh sweep · --kind
 aventure-cli content embedding replace · Upsert unified content embedding · --model-version --qwen4b-fp16 --source-hash --source-id --source-json --source-text --source-type
-aventure-cli content embedding stale get · Find stale embedding source ids · --source-type
+aventure-cli content embedding stale get · Find stale embedding source ids · -
 aventure-cli content list · List content · -
 aventure-cli content search · Search content · --query
 aventure-cli content similarity batch replace · Replace semantic similarity batches · -
-aventure-cli content similarity stale get · Find stale source ids for semantic similarity refresh · --source-type
+aventure-cli content similarity stale get · Find stale source ids for semantic similarity refresh · -
 aventure-cli entities acquisitions create · Create acquisition event for an entity · --entity-id --source-type --source-detail
 aventure-cli entities acquisitions delete · Delete acquisition event for an entity · --entity-id --relationship-id --source-type --source-detail
 aventure-cli entities acquisitions get · Get acquisition for an entity · --entity-id --relationship-id
@@ -118,15 +119,9 @@ aventure-cli entities operating-status list · Get entity operating status · --
 aventure-cli entities operating-status replace · Upsert entity operating status · --entity-id --source-type --source-detail
 aventure-cli entities operating-status signal get · Get entity operating status signal · --entity-id
 aventure-cli entities operating-status update · Patch entity operating status · --entity-id --source-type --source-detail
-aventure-cli entities people corporate-title delete · Clear corporate title on an entity person association · --entity-id --association-id --source-type --source-detail
-aventure-cli entities people create · Create entity person association · --entity-id --source-type --source-detail
-aventure-cli entities people delete · Delete entity person association · --entity-id --association-id --source-type --source-detail
 aventure-cli entities people employee-counts list · Entity employee count time series · -
-aventure-cli entities people filter · List entity people · -
 aventure-cli entities people get · Get entity people association · --entity-id --association-id
 aventure-cli entities people list · List entity people associations · --entity-id
-aventure-cli entities people replace · Replace entity person association · --entity-id --association-id --source-type --source-detail
-aventure-cli entities people update · Patch entity person association · --entity-id --association-id --source-type --source-detail
 aventure-cli entities products suggest · Suggest entity products or services · --entity-id
 aventure-cli entities relationships join · Join two entities · --source-entity-id --target-entity-id --relationship-type --source-type --source-detail
 aventure-cli entities relationships list · List entity relationships · --entity-id
@@ -176,6 +171,7 @@ aventure-cli entities unique-ids create · Attach a unique id to an entity · --
 aventure-cli entities unique-ids delete · Delete an entity unique id · --entity-id --unique-id-id --source-type --source-detail
 aventure-cli entities unique-ids get · Get an entity unique id · --entity-id --unique-id-id
 aventure-cli entities unique-ids list · List an entity's unique ids · --entity-id
+aventure-cli entities unique-ids update · Update an entity unique id · --entity-id --unique-id-id --source-type --source-detail
 aventure-cli entities update · Patch entity detail · --source-type --source-detail
 aventure-cli entities urls all list · List all entity URLs · --entity-id
 aventure-cli entities urls create · Create one entity URL · --entity-id --source-type --source-detail
@@ -299,6 +295,7 @@ aventure-cli people unique-ids create · Attach a unique id to a person · --per
 aventure-cli people unique-ids delete · Delete a person unique id · --person-id --unique-id-id --source-type --source-detail
 aventure-cli people unique-ids get · Get a person unique id · --person-id --unique-id-id
 aventure-cli people unique-ids list · List a person's unique ids · --person-id
+aventure-cli people unique-ids update · Update a person unique id · --person-id --unique-id-id --source-type --source-detail
 aventure-cli people update · Patch person · --source-type --source-detail
 aventure-cli people urls all list · List all person URLs · --person-id
 aventure-cli people urls create · Create one person URL · --person-id --source-type --source-detail

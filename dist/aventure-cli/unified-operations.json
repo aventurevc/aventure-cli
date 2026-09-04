@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "mcp/mcp-server/generated/mcp-generation-contract.ts",
-  "generatedAt": "2026-09-03T06:00:04.195Z",
-  "totalOperations": 470,
+  "generatedAt": "2026-09-04T17:37:12.967Z",
+  "totalOperations": 467,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -48,6 +48,28 @@
       "auth": "write",
       "scope": "write",
       "dryRunSupported": true,
+      "destructive": false
+    },
+    {
+      "operationId": "listAgentChassis",
+      "method": "GET",
+      "path": "/v1/agents/chassis",
+      "resource": "agents",
+      "intent": "read",
+      "cliCommand": "agents chassis list",
+      "cliPath": [
+        "agents",
+        "chassis",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -2155,50 +2177,6 @@
       "destructive": false
     },
     {
-      "operationId": "createEntityPersonAssociation_1",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/people",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities people create",
-      "cliPath": [
-        "entities",
-        "people",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonEntityAssociationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/entity-association-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityPersonAssociation_1",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/people/{associationId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities people delete",
-      "cliPath": [
-        "entities",
-        "people",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getEntityPeopleAssociation",
       "method": "GET",
       "path": "/v1/entities/{entityId}/people/{associationId}",
@@ -2219,73 +2197,6 @@
       "scope": "read",
       "dryRunSupported": false,
       "destructive": false
-    },
-    {
-      "operationId": "patchEntityPersonAssociation_1",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/people/{associationId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities people update",
-      "cliPath": [
-        "entities",
-        "people",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonEntityAssociationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/entity-association-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "replaceEntityPersonAssociation_1",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/people/{associationId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities people replace",
-      "cliPath": [
-        "entities",
-        "people",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonEntityAssociationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/entity-association-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "clearEntityPersonCorporateTitle_1",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/people/{associationId}/corporate-title",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities people corporate-title delete",
-      "cliPath": [
-        "entities",
-        "people",
-        "corporate-title",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
     },
     {
       "operationId": "suggestProducts",
@@ -3068,6 +2979,28 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "updateEntityUniqueId",
+      "method": "PATCH",
+      "path": "/v1/entities/{entityId}/unique-ids/{uniqueIdId}",
+      "resource": "entities",
+      "intent": "write",
+      "cliCommand": "entities unique-ids update",
+      "cliPath": [
+        "entities",
+        "unique-ids",
+        "update"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "UniqueIdMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/unique/id-mutation",
+      "auth": "write",
+      "scope": "write",
+      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -4206,28 +4139,6 @@
       "auth": "write",
       "scope": "write",
       "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "listEntityPeople",
-      "method": "GET",
-      "path": "/v1/entities/detail/people",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities people filter",
-      "cliPath": [
-        "entities",
-        "people",
-        "filter"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -8444,6 +8355,28 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "updatePersonUniqueId",
+      "method": "PATCH",
+      "path": "/v1/people/{personId}/unique-ids/{uniqueIdId}",
+      "resource": "people",
+      "intent": "write",
+      "cliCommand": "people unique-ids update",
+      "cliPath": [
+        "people",
+        "unique-ids",
+        "update"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "UniqueIdMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/unique/id-mutation",
+      "auth": "write",
+      "scope": "write",
+      "dryRunSupported": true,
       "destructive": false
     },
     {
