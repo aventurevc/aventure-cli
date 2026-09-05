@@ -91,11 +91,11 @@ aventure-cli entities filters search lookup · Search filter options (scoped) ·
 aventure-cli entities fundraise investments list · List investments made by an entity · -
 aventure-cli entities fundraise investor-activity get · Get investor activity · -
 aventure-cli entities fundraise investor-joins create · Join fundraise investor · --source-type --source-detail
-aventure-cli entities fundraise investor-joins delete · Delete fundraise investor join · --source-type --source-detail
+aventure-cli entities fundraise investor-joins delete · Delete fundraise investor join · --entity-id --fundraise-investor-join-id --source-type --source-detail
 aventure-cli entities fundraise investor-joins get · Get fundraise investor join · --fundraise-investor-join-id
 aventure-cli entities fundraise investor-joins list · List fundraise investor joins · -
 aventure-cli entities fundraise investor-joins replace · Replace fundraise investor join · --source-type --source-detail
-aventure-cli entities fundraise investor-joins update · Patch fundraise investor join · --source-type --source-detail
+aventure-cli entities fundraise investor-joins update · Patch fundraise investor join · --entity-id --fundraise-investor-join-id --source-type --source-detail
 aventure-cli entities fundraise investors list · List entity investors · -
 aventure-cli entities fundraise person-investors list · List person investors · -
 aventure-cli entities fundraise rounds create · Create fundraise round · --source-type --source-detail --date-announced

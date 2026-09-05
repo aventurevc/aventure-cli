@@ -1,7 +1,7 @@
-import { B as normalizeEnvironmentName, D as resolveAuthStatus, Dt as JsonValueSchema, E as readAuthConfig, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-C-YXYlYA.js";
-import { A as datetime, O as uuid, S as record, o as _enum, v as number, w as string, y as object } from "./data-source-type-CEoBo_qP.js";
-import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-BInPE2bT.js";
-import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-CZ4CX0Dg.js";
+import { B as normalizeEnvironmentName, D as resolveAuthStatus, Dt as JsonValueSchema, E as readAuthConfig, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-DjLY08wr.js";
+import { A as datetime, O as uuid, S as record, o as _enum, v as number, w as string, y as object } from "./data-source-type-DD0mQARk.js";
+import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-BgjBSy9x.js";
+import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-BZuETs4O.js";
 import { execFile, spawnSync } from "node:child_process";
 import { createHash, webcrypto } from "node:crypto";
 import { readFile } from "node:fs/promises";
@@ -15,7 +15,7 @@ import { setTimeout } from "node:timers/promises";
 import { createInterface } from "node:readline/promises";
 var package_default = {
 	name: "@aventurevc/mcp-server",
-	version: "0.7.261",
+	version: "0.7.263",
 	"private": true,
 	description: "Source workspace for the @aventurevc/aventure-cli and @aventurevc/mcp-server published packages. NOT an install target — see scripts/release/publish-npm-train.mjs for the staged manifests that get published.",
 	license: "UNLICENSED",
@@ -1143,6 +1143,7 @@ var GENERATED_CLI_NAMESPACES = {
 	"harness control-plane runs stop": { summary: "Harness enrichment run control plane" },
 	"harness control-plane runs usage": { summary: "Harness enrichment run control plane" },
 	"harness control-plane runs usage-recovery-candidates": { summary: "Harness enrichment run control plane" },
+	"harness models": { summary: "Configured harness model eligibility" },
 	"harness runs": { summary: "Principal-owned runs: list, inspect, stop, resume, and restart" },
 	"harness runs queue-position": { summary: "Harness enrichment run control plane" },
 	"harness runs restart": { summary: "Harness enrichment run control plane" },
@@ -3391,7 +3392,7 @@ function cliVersionCheck() {
 */
 async function apiSchemasCheck() {
 	try {
-		const { EntityDetailSchema } = await import("./detail-C2J4j3KA.js");
+		const { EntityDetailSchema } = await import("./detail-B4s7YC6h.js");
 		if (typeof EntityDetailSchema.safeParse !== "function") throw new Error("EntityDetailSchema does not expose a Zod parser");
 		return checkResult("api-schemas", "pass", "Installed @aventurevc/api-schemas contracts resolve beyond the CLI startup path.");
 	} catch (error) {
@@ -3516,7 +3517,7 @@ function catalogCheck(statusSpec, servedFingerprint, upgradeAvailable) {
 	const total = GENERATED_OPENAPI_COMMAND_SPECS.length;
 	if (statusSpec === void 0) return checkResult("catalog", "fail", `Regenerate the command catalog with \`make mcp-generate-contracts\` and reinstall: none of its ${total} operations is the status operation.`);
 	if (servedFingerprint === null) return checkResult("catalog", "skip", `Could not read the served operation fingerprint, so drift is unproven; this catalog holds ${total} operations at ${GENERATED_OPERATION_FINGERPRINT}.`);
-	if (servedFingerprint === "728e05dc49858349") return checkResult("catalog", "pass", `${total} generated operations match the set the API serves (${GENERATED_OPERATION_FINGERPRINT}).`);
+	if (servedFingerprint === "4fce659a0b6cb459") return checkResult("catalog", "pass", `${total} generated operations match the set the API serves (${GENERATED_OPERATION_FINGERPRINT}).`);
 	const drift = `This catalog describes a different operation set than the API serves (${GENERATED_OPERATION_FINGERPRINT} vs ${servedFingerprint})`;
 	if (upgradeAvailable === true) return checkResult("catalog", "fail", `${drift}: run \`aventure-cli update --execute\`.`);
 	return checkResult("catalog", "skip", upgradeAvailable === false ? `${drift}, and no published release describes it yet: the CLI needs publishing (\`make npm-publish-train\`) before any caller can match this deployment.` : `${drift}, and the registry did not answer, so it is unknown whether a newer release describes it: rerun \`aventure-cli update\` with registry access.`);
@@ -5092,8 +5093,7 @@ function registerLeaf(parent, spec, cliPath) {
 		spec.description,
 		spec.bodyKind === "json" || [...spec.parameters, ...spec.bodyParameters].some((parameter) => cliShellSensitiveSchema(parameter.schemaType, parameter.itemSchemaType)) ? CLI_SHELL_INPUT_GUIDANCE : ""
 	].filter(Boolean).join("\n"));
-	const relaxProvenanceActor = spec.parameters.some(generatedProvenanceParameter);
-	for (const parameter of spec.parameters) addParameterOption(leaf, parameter, relaxProvenanceActor);
+	for (const parameter of spec.parameters) addParameterOption(leaf, parameter);
 	addBodyOptions(leaf, spec);
 	if (spec.dryRun) leaf.option("--execute", "send the request; default is dry-run", false);
 	addOutputModeOptions(leaf);
@@ -5145,21 +5145,18 @@ function childCommand(parent, segment, namespacePath) {
 	if (entry !== void 0) cmd.summary(entry.summary).description(entry.summary);
 	return cmd;
 }
-function addParameterOption(command, parameter, relaxProvenanceActor) {
+function addParameterOption(command, parameter) {
 	const description = parameter.description || `${parameter.name} ${parameter.location} parameter`;
 	if (parameter.defaultValue !== void 0) {
 		const defaultValue = typeof parameter.defaultValue === "string" || typeof parameter.defaultValue === "boolean" ? parameter.defaultValue : [...parameter.defaultValue];
 		command.option(parameter.flag, description, defaultValue);
 		return;
 	}
-	if (parameter.required && !(relaxProvenanceActor && generatedProvenanceParameter(parameter))) {
+	if (parameter.required) {
 		command.requiredOption(parameter.flag, description);
 		return;
 	}
 	command.option(parameter.flag, description);
-}
-function generatedProvenanceParameter(parameter) {
-	return parameter.location === "query" && (parameter.name === "actorType" || parameter.name === "agentChassis" || parameter.name === "agentModel");
 }
 async function runGeneratedCommand(spec, opts, mode) {
 	if (opts.environment !== void 0) {
@@ -5244,4 +5241,4 @@ try {
 //#endregion
 export {};
 
-//# sourceMappingURL=aventure-cli-hCH6K6GR.js.map
+//# sourceMappingURL=aventure-cli-BoL_vBc0.js.map

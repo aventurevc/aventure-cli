@@ -1,5 +1,5 @@
-import { U as RESULT_ENVELOPE_BYTE_CAP, _ as redactCredentialText, b as Option, r as administrationNamespace, y as Command, z as environmentNames } from "./cli-help-policy-C-YXYlYA.js";
-import { A as datetime, l as array, o as _enum, w as string, y as object } from "./data-source-type-CEoBo_qP.js";
+import { U as RESULT_ENVELOPE_BYTE_CAP, _ as redactCredentialText, b as Option, r as administrationNamespace, y as Command, z as environmentNames } from "./cli-help-policy-DjLY08wr.js";
+import { A as datetime, l as array, o as _enum, w as string, y as object } from "./data-source-type-DD0mQARk.js";
 /**
 * Personal API-key metadata sourced from Clerk; never contains the key secret
 *
@@ -320,7 +320,7 @@ function nonBlankString(value) {
 //#endregion
 //#region aventure-cli/generated/openapi-commands.ts
 /** Identity of the operation set this catalog was generated from; GET /v1/status serves the live one. */
-var GENERATED_OPERATION_FINGERPRINT = "728e05dc49858349";
+var GENERATED_OPERATION_FINGERPRINT = "4fce659a0b6cb459";
 var GENERATED_OPENAPI_COMMAND_SPECS = [
 	{
 		operationId: "getStatus",
@@ -967,24 +967,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "body"
 			},
 			{
-				name: "body.address[].isHq",
-				optionKey: "addressIsHq",
-				flag: "--address-is-hq <true|false>",
-				required: false,
-				description: "Deprecated compatibility flag for a legal or registered seat.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "body.address[].isPrimary",
-				optionKey: "addressIsPrimary",
-				flag: "--address-is-primary <true|false>",
-				required: false,
-				description: "Deprecated compatibility flag for the predominant display location.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
 				name: "body.address[].latitude",
 				optionKey: "addressLatitude",
 				flag: "--address-latitude <number>",
@@ -1218,13 +1200,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "entityOperatingStatus",
 				flag: "--entity-operating-status <entity-operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -2973,13 +2956,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "survivorOperatingStatus",
 				flag: "--survivor-operating-status <survivor-operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -3242,13 +3226,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operatingStatus",
 				flag: "--operating-status <operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -4424,13 +4409,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operatingStatus",
 				flag: "--operating-status <operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -9297,38 +9283,25 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		scope: "read",
 		auth: "read",
 		errorResponse: [],
-		parameters: [
-			{
-				name: "page",
-				optionKey: "page",
-				flag: "--page <integer>",
-				required: false,
-				description: "Zero-based page index (0..N).",
-				schemaType: "integer",
-				defaultValue: "0",
-				location: "query"
-			},
-			{
-				name: "size",
-				optionKey: "size",
-				flag: "--size <integer>",
-				required: false,
-				description: "The size of the page to be returned.",
-				schemaType: "integer",
-				defaultValue: "20",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			}
-		]
+		parameters: [{
+			name: "page",
+			optionKey: "page",
+			flag: "--page <integer>",
+			required: false,
+			description: "Zero-based page index (0..N).",
+			schemaType: "integer",
+			schemaFormat: "int32",
+			location: "query"
+		}, {
+			name: "size",
+			optionKey: "size",
+			flag: "--size <integer>",
+			required: false,
+			description: "The size of the page to be returned.",
+			schemaType: "integer",
+			schemaFormat: "int32",
+			location: "query"
+		}]
 	},
 	{
 		operationId: "naturalSearchEntities",
@@ -11085,15 +11058,15 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"list"
 		],
 		summary: "List accepted agent chassis",
-		description: "Returns the sorted agent runtime chassis tokens accepted by the API.",
+		description: "Returns the sorted agent runtime chassis tokens accepted by the API to administrators.",
 		hasBody: false,
 		bodyRequired: false,
 		bodyDescription: "",
 		bodyRequiredPath: [],
 		bodyParameters: [],
 		dryRun: false,
-		scope: "read",
-		auth: "read",
+		scope: "write",
+		auth: "write",
 		errorResponse: [],
 		parameters: []
 	},
@@ -11301,7 +11274,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "limit",
 				flag: "--limit <integer>",
 				required: false,
-				description: "Maximum number of saved lists to return per page (default 25).",
+				description: "Maximum number of saved lists to return per page; default 25, maximum 200.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "25",
@@ -14257,6 +14230,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -14267,17 +14241,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "25",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -14330,6 +14295,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -14340,17 +14306,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "25",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -15518,7 +15475,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
-		bodyDescription: "Create or update entity addresses such as headquarters and offices. Structured fields are canonical; fullAddress is server-synthesized and cannot be written. City-level rows require researchExhausted=true after address research is exhausted. Placeholder values and URLs in address text are rejected. Text fields are normalized: surrounding whitespace and separators are trimmed and caseless values (all-lowercase or ALL-CAPS) are title-cased. Latitude and longitude are written as a pair: an explicit pair also updates coordinates on the resolved address row, while omitted coordinates derive from the resolved location and never carry over from a previously stored address.",
+		bodyDescription: "Create or update an entity or person address association. Structured fields are canonical; fullAddress is server-synthesized and cannot be written. City-level rows require researchExhausted=true after address research is exhausted. Placeholder values and URLs in address text are rejected. Text fields are normalized: surrounding whitespace and separators are trimmed and caseless values (all-lowercase or ALL-CAPS) are title-cased. Latitude and longitude are written as a pair: an explicit pair also updates coordinates on the resolved address row, while omitted coordinates derive from the resolved location and never carry over from a previously stored address.",
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
@@ -15582,24 +15539,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				flag: "--is-current <true|false>",
 				required: false,
 				description: "Deprecated legacy flag marking whether the address is currently in use.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "isHq",
-				optionKey: "isHq",
-				flag: "--is-hq <true|false>",
-				required: false,
-				description: "Deprecated compatibility flag for a legal or registered seat.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "isPrimary",
-				optionKey: "isPrimary",
-				flag: "--is-primary <true|false>",
-				required: false,
-				description: "Deprecated compatibility flag for the predominant display location.",
 				schemaType: "boolean",
 				location: "body"
 			},
@@ -16023,7 +15962,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
-		bodyDescription: "Create or update entity addresses such as headquarters and offices. Structured fields are canonical; fullAddress is server-synthesized and cannot be written. City-level rows require researchExhausted=true after address research is exhausted. Placeholder values and URLs in address text are rejected. Text fields are normalized: surrounding whitespace and separators are trimmed and caseless values (all-lowercase or ALL-CAPS) are title-cased. Latitude and longitude are written as a pair: an explicit pair also updates coordinates on the resolved address row, while omitted coordinates derive from the resolved location and never carry over from a previously stored address.",
+		bodyDescription: "Create or update an entity or person address association. Structured fields are canonical; fullAddress is server-synthesized and cannot be written. City-level rows require researchExhausted=true after address research is exhausted. Placeholder values and URLs in address text are rejected. Text fields are normalized: surrounding whitespace and separators are trimmed and caseless values (all-lowercase or ALL-CAPS) are title-cased. Latitude and longitude are written as a pair: an explicit pair also updates coordinates on the resolved address row, while omitted coordinates derive from the resolved location and never carry over from a previously stored address.",
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
@@ -16087,24 +16026,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				flag: "--is-current <true|false>",
 				required: false,
 				description: "Deprecated legacy flag marking whether the address is currently in use.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "isHq",
-				optionKey: "isHq",
-				flag: "--is-hq <true|false>",
-				required: false,
-				description: "Deprecated compatibility flag for a legal or registered seat.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "isPrimary",
-				optionKey: "isPrimary",
-				flag: "--is-primary <true|false>",
-				required: false,
-				description: "Deprecated compatibility flag for the predominant display location.",
 				schemaType: "boolean",
 				location: "body"
 			},
@@ -16379,24 +16300,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				flag: "--is-current <true|false>",
 				required: false,
 				description: "Deprecated legacy flag marking whether the address is currently in use.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "isHq",
-				optionKey: "isHq",
-				flag: "--is-hq <true|false>",
-				required: false,
-				description: "Deprecated compatibility flag for a legal or registered seat.",
-				schemaType: "boolean",
-				location: "body"
-			},
-			{
-				name: "isPrimary",
-				optionKey: "isPrimary",
-				flag: "--is-primary <true|false>",
-				required: false,
-				description: "Deprecated compatibility flag for the predominant display location.",
 				schemaType: "boolean",
 				location: "body"
 			},
@@ -18600,13 +18503,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operatingStatus",
 				flag: "--operating-status <operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -19761,7 +19665,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "limit",
 			flag: "--limit <integer>",
 			required: false,
-			description: "Maximum suggestions to return; capped by the service.",
+			description: "Maximum suggestions to return; default 12, maximum 50.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			location: "query"
@@ -20774,16 +20678,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			},
-			{
 				name: "includePrivate",
 				optionKey: "includePrivate",
 				flag: "--include-private <true|false>",
@@ -21111,16 +21005,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			},
-			{
 				name: "includePrivate",
 				optionKey: "includePrivate",
 				flag: "--include-private <true|false>",
@@ -21225,9 +21109,9 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
-				name: "id",
-				optionKey: "id",
-				flag: "--id <id...>",
+				name: "entityId",
+				optionKey: "entityId",
+				flag: "--entity-id <entity-id...>",
 				required: false,
 				description: "Entity UUID values.",
 				schemaType: "array",
@@ -21929,6 +21813,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -21939,17 +21824,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "25",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -22782,7 +22658,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"create"
 		],
 		summary: "Create entity operating status",
-		description: "Requires EntityMutation.operatingStatus plus ProvenanceSource query parameters. LLM-authored writes should send sourceType=llm, sourceDetail such as web-search:https://example.com/source, agentChassis, and agentModel. actorType is optional only at the HTTP/OpenAPI layer because the web boundary infers actorType=agent from that complete pair or actorType=employee from authenticated employee metadata before the domain factory and persistence write lane enforce actor context. Terminal statuses create numberOfEmployees=0 at asOfDate/default yesterday and deactivate website URLs. Closed and terminal Acquired do not deactivate attached person joins; those joins remain current because isCurrent describes the title association. The response emits PERSON_ASSOCIATION_END_DATE_RECOMMENDED and callers should update each attached person association endDate with a closing-date estimate.",
+		description: "Requires EntityMutation.operatingStatus plus ProvenanceSource query parameters. LLM-authored writes should send sourceType=llm, sourceDetail such as web-search:https://example.com/source, agentChassis, and agentModel. actorType is optional only at the HTTP/OpenAPI layer because the web boundary infers actorType=agent from that complete pair or actorType=employee from authenticated employee metadata before the domain factory and persistence write lane enforce actor context. Terminal statuses create numberOfEmployees=0 at asOfDate/default yesterday and deactivate website URLs. Closed, Closed (Acquihire), and terminal Acquired do not deactivate attached person joins; those joins remain current because isCurrent describes the title association. The response emits PERSON_ASSOCIATION_END_DATE_RECOMMENDED and callers should update each attached person association endDate with a closing-date estimate.",
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
@@ -22877,13 +22753,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operatingStatus",
 				flag: "--operating-status <operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -23065,7 +22942,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"list"
 		],
 		summary: "Get entity operating status",
-		description: "Returns current operatingStatus as EntityMutation. Write auth required.",
+		description: "Returns the current entity operating status. Write auth required.",
 		hasBody: false,
 		bodyRequired: false,
 		bodyDescription: "",
@@ -23098,7 +22975,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"replace"
 		],
 		summary: "Upsert entity operating status",
-		description: "Requires EntityMutation.operatingStatus plus ProvenanceSource query parameters. LLM-authored writes should send sourceType=llm, sourceDetail such as web-search:https://example.com/source, agentChassis, and agentModel. actorType is optional only at the HTTP/OpenAPI layer because the web boundary infers actorType=agent from that complete pair or actorType=employee from authenticated employee metadata before the domain factory and persistence write lane enforce actor context. Terminal statuses create numberOfEmployees=0 at asOfDate/default yesterday and deactivate website URLs. Closed and terminal Acquired do not deactivate attached person joins; those joins remain current because isCurrent describes the title association. The response emits PERSON_ASSOCIATION_END_DATE_RECOMMENDED and callers should update each attached person association endDate with a closing-date estimate.",
+		description: "Requires EntityMutation.operatingStatus plus ProvenanceSource query parameters. LLM-authored writes should send sourceType=llm, sourceDetail such as web-search:https://example.com/source, agentChassis, and agentModel. actorType is optional only at the HTTP/OpenAPI layer because the web boundary infers actorType=agent from that complete pair or actorType=employee from authenticated employee metadata before the domain factory and persistence write lane enforce actor context. Terminal statuses create numberOfEmployees=0 at asOfDate/default yesterday and deactivate website URLs. Closed, Closed (Acquihire), and terminal Acquired do not deactivate attached person joins; those joins remain current because isCurrent describes the title association. The response emits PERSON_ASSOCIATION_END_DATE_RECOMMENDED and callers should update each attached person association endDate with a closing-date estimate.",
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
@@ -23193,13 +23070,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operatingStatus",
 				flag: "--operating-status <operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -23381,7 +23259,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			"update"
 		],
 		summary: "Patch entity operating status",
-		description: "Requires EntityMutation.operatingStatus plus ProvenanceSource query parameters. LLM-authored writes should send sourceType=llm, sourceDetail such as web-search:https://example.com/source, agentChassis, and agentModel. actorType is optional only at the HTTP/OpenAPI layer because the web boundary infers actorType=agent from that complete pair or actorType=employee from authenticated employee metadata before the domain factory and persistence write lane enforce actor context. Terminal statuses create numberOfEmployees=0 at asOfDate/default yesterday and deactivate website URLs. Closed and terminal Acquired do not deactivate attached person joins; those joins remain current because isCurrent describes the title association. The response emits PERSON_ASSOCIATION_END_DATE_RECOMMENDED and callers should update each attached person association endDate with a closing-date estimate.",
+		description: "Requires EntityMutation.operatingStatus plus ProvenanceSource query parameters. LLM-authored writes should send sourceType=llm, sourceDetail such as web-search:https://example.com/source, agentChassis, and agentModel. actorType is optional only at the HTTP/OpenAPI layer because the web boundary infers actorType=agent from that complete pair or actorType=employee from authenticated employee metadata before the domain factory and persistence write lane enforce actor context. Terminal statuses create numberOfEmployees=0 at asOfDate/default yesterday and deactivate website URLs. Closed, Closed (Acquihire), and terminal Acquired do not deactivate attached person joins; those joins remain current because isCurrent describes the title association. The response emits PERSON_ASSOCIATION_END_DATE_RECOMMENDED and callers should update each attached person association endDate with a closing-date estimate.",
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
@@ -23476,13 +23354,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operatingStatus",
 				flag: "--operating-status <operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -23760,15 +23639,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "as",
-				optionKey: "as",
-				flag: "--as <as>",
-				required: false,
-				description: "Projection: `core` (default) returns person identity only and omits association fields. `association` returns PersonDetail rows with the matching join under `association[]`; read title and period fields from `association[].titleName`, `association[].startDate`, and `association[].endDate`. Person sitemap visibility is owned by people detail/status reads, not this list projection.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
 				name: "personSlug",
 				optionKey: "personSlug",
 				flag: "--person-slug <person-slug>",
@@ -23904,15 +23774,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "as",
-				optionKey: "as",
-				flag: "--as <as>",
-				required: false,
-				description: "Projection: `core` (default) returns person identity only and omits association fields. `association` returns PersonDetail rows with the matching join under `association[]`; read title and period fields from `association[].titleName`, `association[].startDate`, and `association[].endDate`. Person sitemap visibility is owned by people detail/status reads, not this list projection.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
 				name: "personSlug",
 				optionKey: "personSlug",
 				flag: "--person-slug <person-slug>",
@@ -24018,7 +23879,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "limit",
 				flag: "--limit <integer>",
 				required: false,
-				description: "Maximum suggestions to return; capped by the service.",
+				description: "Maximum suggestions to return; default 12, maximum 50.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -24294,7 +24155,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
-				defaultValue: "0",
+				schemaFormat: "int32",
 				location: "query"
 			},
 			{
@@ -24304,17 +24165,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
-				defaultValue: "20",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
+				schemaFormat: "int32",
 				location: "query"
 			}
 		]
@@ -24357,7 +24208,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "limit",
 				flag: "--limit <integer>",
 				required: false,
-				description: "Maximum suggestions to return; capped by the service.",
+				description: "Maximum suggestions to return; default 12, maximum 50.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
@@ -24589,6 +24440,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -24599,17 +24451,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "10",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -26829,13 +26672,14 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "operatingStatus",
 				flag: "--operating-status <operating-status>",
 				required: false,
-				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Inactive.",
+				description: "Operating status. Required on create; omitted update values preserve existing status. Use Acquired Subsidiary when an acquired entity still operates; use Closed (Acquihire) when an acquired entity was shut down for its team, rendering like Closed everywhere; use Acquired only when it is terminal, folded, or closed. Closed and terminal Acquired keep attached person joins current; update association endDate separately with a closing-date estimate. Allowed values: Operating, Acquired, Acquired Subsidiary, Closed, Closed (Acquihire), Inactive.",
 				schemaType: "string",
 				choices: [
 					"Operating",
 					"Acquired",
 					"Acquired Subsidiary",
 					"Closed",
+					"Closed (Acquihire)",
 					"Inactive"
 				],
 				location: "body"
@@ -29294,6 +29138,30 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		]
 	},
 	{
+		operationId: "listHarnessModels",
+		method: "GET",
+		path: "/v1/harness/models",
+		resource: "harness",
+		intent: "read",
+		cliPath: [
+			"harness",
+			"models",
+			"list"
+		],
+		summary: "List harness model eligibility",
+		description: "Returns the configured orchestrator, sub-agent, micro-task, vision, and web-search eligibility for each harness model.",
+		hasBody: false,
+		bodyRequired: false,
+		bodyDescription: "",
+		bodyRequiredPath: [],
+		bodyParameters: [],
+		dryRun: false,
+		scope: "write",
+		auth: "write",
+		errorResponse: [],
+		parameters: []
+	},
+	{
 		operationId: "getPrincipalHarnessRun",
 		method: "GET",
 		path: "/v1/harness/runs/{runId}",
@@ -29849,16 +29717,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "20",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -30423,6 +30281,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -30433,17 +30292,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "20",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -30573,16 +30423,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
 			}
 		]
 	},
@@ -30703,38 +30543,25 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		scope: "read",
 		auth: "read",
 		errorResponse: [],
-		parameters: [
-			{
-				name: "page",
-				optionKey: "page",
-				flag: "--page <integer>",
-				required: false,
-				description: "Zero-based page index (0..N).",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "query"
-			},
-			{
-				name: "size",
-				optionKey: "size",
-				flag: "--size <integer>",
-				required: false,
-				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			}
-		]
+		parameters: [{
+			name: "page",
+			optionKey: "page",
+			flag: "--page <integer>",
+			required: false,
+			description: "Zero-based page index (0..N).",
+			schemaType: "integer",
+			schemaFormat: "int32",
+			location: "query"
+		}, {
+			name: "size",
+			optionKey: "size",
+			flag: "--size <integer>",
+			required: false,
+			description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
+			schemaType: "integer",
+			schemaFormat: "int32",
+			location: "query"
+		}]
 	},
 	{
 		operationId: "submitFeedback",
@@ -30848,6 +30675,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -30858,17 +30686,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "12",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -30913,6 +30732,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -30923,17 +30743,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "10",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -30997,6 +30808,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -31007,17 +30819,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "4",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -31256,7 +31059,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
-		bodyDescription: "Create a person address association. Structured fields are canonical; fullAddress is server-synthesized and cannot be written. City-level rows require researchExhausted=true after address research is exhausted. Text fields are normalized: surrounding whitespace and separators are trimmed and all-lowercase values are title-cased. Latitude and longitude are written as a pair: an explicit pair also updates coordinates on the resolved address row, while omitted coordinates derive from the resolved location.",
+		bodyDescription: "Create or update an entity or person address association. Structured fields are canonical; fullAddress is server-synthesized and cannot be written. City-level rows require researchExhausted=true after address research is exhausted. Placeholder values and URLs in address text are rejected. Text fields are normalized: surrounding whitespace and separators are trimmed and caseless values (all-lowercase or ALL-CAPS) are title-cased. Latitude and longitude are written as a pair: an explicit pair also updates coordinates on the resolved address row, while omitted coordinates derive from the resolved location and never carry over from a previously stored address.",
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
@@ -31319,7 +31122,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "isCurrent",
 				flag: "--is-current <true|false>",
 				required: false,
-				description: "Whether this address association is currently relevant.",
+				description: "Deprecated legacy flag marking whether the address is currently in use.",
 				schemaType: "boolean",
 				location: "body"
 			},
@@ -31734,7 +31537,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
-		bodyDescription: "Create a person address association. Structured fields are canonical; fullAddress is server-synthesized and cannot be written. City-level rows require researchExhausted=true after address research is exhausted. Text fields are normalized: surrounding whitespace and separators are trimmed and all-lowercase values are title-cased. Latitude and longitude are written as a pair: an explicit pair also updates coordinates on the resolved address row, while omitted coordinates derive from the resolved location.",
+		bodyDescription: "Create or update an entity or person address association. Structured fields are canonical; fullAddress is server-synthesized and cannot be written. City-level rows require researchExhausted=true after address research is exhausted. Placeholder values and URLs in address text are rejected. Text fields are normalized: surrounding whitespace and separators are trimmed and caseless values (all-lowercase or ALL-CAPS) are title-cased. Latitude and longitude are written as a pair: an explicit pair also updates coordinates on the resolved address row, while omitted coordinates derive from the resolved location and never carry over from a previously stored address.",
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
@@ -31797,7 +31600,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "isCurrent",
 				flag: "--is-current <true|false>",
 				required: false,
-				description: "Whether this address association is currently relevant.",
+				description: "Deprecated legacy flag marking whether the address is currently in use.",
 				schemaType: "boolean",
 				location: "body"
 			},
@@ -32008,7 +31811,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: true,
-		bodyDescription: "Sparse PersonAddressMutation fields to merge into the selected person association and its physical address.",
+		bodyDescription: "Sparse AddressMutation fields to merge into the selected person association and its physical address.",
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
@@ -32071,7 +31874,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "isCurrent",
 				flag: "--is-current <true|false>",
 				required: false,
-				description: "Whether this address association is currently relevant.",
+				description: "Deprecated legacy flag marking whether the address is currently in use.",
 				schemaType: "boolean",
 				location: "body"
 			},
@@ -34431,16 +34234,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			},
-			{
 				name: "includePrivate",
 				optionKey: "includePrivate",
 				flag: "--include-private <true|false>",
@@ -34729,16 +34522,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			},
-			{
 				name: "includePrivate",
 				optionKey: "includePrivate",
 				flag: "--include-private <true|false>",
@@ -34931,15 +34714,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Include person address records.",
 				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "as",
-				optionKey: "as",
-				flag: "--as <as>",
-				required: false,
-				description: "Projection: `core` (default) returns person identity only and omits association fields. `association` returns PersonDetail rows with the matching join under `association[]`; read title and period fields from `association[].titleName`, `association[].startDate`, and `association[].endDate`. Person sitemap visibility is owned by people detail/status reads, not this list projection.",
-				schemaType: "string",
 				location: "query"
 			},
 			{
@@ -35565,15 +35339,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Include person address records.",
 				schemaType: "boolean",
-				location: "query"
-			},
-			{
-				name: "as",
-				optionKey: "as",
-				flag: "--as <as>",
-				required: false,
-				description: "Projection: `core` (default) returns person identity only and omits association fields. `association` returns PersonDetail rows with the matching join under `association[]`; read title and period fields from `association[].titleName`, `association[].startDate`, and `association[].endDate`. Person sitemap visibility is owned by people detail/status reads, not this list projection.",
-				schemaType: "string",
 				location: "query"
 			},
 			{
@@ -36720,6 +36485,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -36730,17 +36496,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "25",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -37679,6 +37436,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -37689,17 +37447,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "10",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -40264,6 +40013,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -40274,18 +40024,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "25",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				defaultValue: ["effectiveAt,DESC"],
 				location: "query"
 			}
 		]
@@ -42010,7 +41750,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
-				defaultValue: "0",
+				schemaFormat: "int32",
 				location: "query"
 			},
 			{
@@ -42020,17 +41760,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
-				defaultValue: "20",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
+				schemaFormat: "int32",
 				location: "query"
 			}
 		]
@@ -42241,6 +41971,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -42251,17 +41982,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "5000",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -42357,6 +42079,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -42367,17 +42090,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "5000",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -42600,6 +42314,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -42610,17 +42325,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "5000",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -43215,7 +42921,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "limit",
 			flag: "--limit <integer>",
 			required: false,
-			description: "Maximum owner rows to return; capped server-side at 500.",
+			description: "Maximum owner rows to return; default 200, maximum 500.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			defaultValue: "200",
@@ -43377,7 +43083,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "limit",
 				flag: "--limit <integer>",
 				required: false,
-				description: "Maximum nearest neighbors to return; values above 100 are clamped.",
+				description: "Maximum nearest neighbors to return; default 10, configured maximum 50; larger values are clamped.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "10",
@@ -43499,7 +43205,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "limit",
 			flag: "--limit <integer>",
 			required: false,
-			description: "Maximum stale source ids to return (1-500).",
+			description: "Maximum stale source ids to return; default 100, valid range 1..500.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			defaultValue: "100",
@@ -43581,7 +43287,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "limit",
 			flag: "--limit <integer>",
 			required: false,
-			description: "Max source ids to return (1-500; default 100).",
+			description: "Maximum source ids to return; default 100, valid range 1..500.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			defaultValue: "100",
@@ -43609,9 +43315,9 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
-				name: "id",
-				optionKey: "id",
-				flag: "--id <id...>",
+				name: "entityId",
+				optionKey: "entityId",
+				flag: "--entity-id <entity-id...>",
 				required: false,
 				description: "Entity UUID values.",
 				schemaType: "array",
@@ -44143,16 +43849,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			},
-			{
 				name: "includePrivate",
 				optionKey: "includePrivate",
 				flag: "--include-private <true|false>",
@@ -44478,16 +44174,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			},
 			{
@@ -45430,16 +45116,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "The size of the page to be returned; filter-search default 20, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			},
 			{
@@ -46730,7 +46406,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 	{
 		operationId: "deleteFundraiseInvestorJoin",
 		method: "DELETE",
-		path: "/v1/entities/detail/fundraise-investor-joins",
+		path: "/v1/entities/{entityId}/fundraise-investor-joins/{joinId}",
 		resource: "entities",
 		intent: "delete",
 		cliPath: [
@@ -46752,100 +46428,24 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "id",
+				name: "entityId",
 				optionKey: "entityId",
 				flag: "--entity-id <uuid>",
-				required: false,
-				description: "Owner-scoped resource UUID selector.",
+				required: true,
+				description: "Entity UUID.",
 				schemaType: "string",
 				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "slug",
-				optionKey: "entitySlug",
-				flag: "--entity-slug <entity-slug>",
-				required: false,
-				description: "Owner-scoped resource slug selector.",
-				schemaType: "string",
-				location: "query"
+				location: "path"
 			},
 			{
 				name: "joinId",
 				optionKey: "fundraiseInvestorJoinId",
 				flag: "--fundraise-investor-join-id <uuid>",
-				required: false,
-				description: "Join identifier. When present, lookup ignores transaction and investor query parameters.",
+				required: true,
+				description: "Fundraise investor join identifier.",
 				schemaType: "string",
 				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "transactionId",
-				optionKey: "transactionId",
-				flag: "--transaction-id <uuid>",
-				required: false,
-				description: "Fundraise round transaction id. The target entity id/slug is the entity that raised the round; for an Investment Firm investment, use the portfolio/fundraising company as target and identify the firm with investorEntityId or investorEntitySlug. When omitted, lookup uses the target entity plus round/dateAnnounced.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "round",
-				optionKey: "round",
-				flag: "--round <round>",
-				required: false,
-				description: "Raw fundraise round label used when transactionId is omitted.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "dateAnnounced",
-				optionKey: "dateAnnounced",
-				flag: "--date-announced <date-time>",
-				required: false,
-				description: "Exact announced timestamp used to disambiguate same-label rounds.",
-				schemaType: "string",
-				schemaFormat: "date-time",
-				location: "query"
-			},
-			{
-				name: "investorEntityId",
-				optionKey: "investorEntityId",
-				flag: "--investor-entity-id <uuid>",
-				required: false,
-				description: "Existing investor entity identifier. The entity must already exist; create a referenced investor entity first with POST /v1/entities/detail.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "investorEntitySlug",
-				optionKey: "investorEntitySlug",
-				flag: "--investor-entity-slug <investor-entity-slug>",
-				required: false,
-				description: "Existing investor entity slug when investorEntityId is omitted. The entity must already exist; create it first with POST /v1/entities/detail.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "investorPersonId",
-				optionKey: "investorPersonId",
-				flag: "--investor-person-id <uuid>",
-				required: false,
-				description: "Existing investor person identifier. The person must already exist; create a referenced investor person first with POST /v1/people/detail.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "investorPersonSlug",
-				optionKey: "investorPersonSlug",
-				flag: "--investor-person-slug <investor-person-slug>",
-				required: false,
-				description: "Existing investor person slug when investorPersonId is omitted. The person must already exist; create it first with POST /v1/people/detail.",
-				schemaType: "string",
-				location: "query"
+				location: "path"
 			},
 			{
 				name: "sourceType",
@@ -47447,7 +47047,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 	{
 		operationId: "patchFundraiseInvestorJoin",
 		method: "PATCH",
-		path: "/v1/entities/detail/fundraise-investor-joins",
+		path: "/v1/entities/{entityId}/fundraise-investor-joins/{joinId}",
 		resource: "entities",
 		intent: "write",
 		cliPath: [
@@ -47475,8 +47075,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			},
 			{
 				name: "dateAnnounced",
-				optionKey: "bodyDateAnnounced",
-				flag: "--body-date-announced <date-time>",
+				optionKey: "dateAnnounced",
+				flag: "--date-announced <date-time>",
 				required: false,
 				description: "Exact announced timestamp used to disambiguate same-label rounds.",
 				schemaType: "string",
@@ -47506,8 +47106,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			},
 			{
 				name: "investorEntityId",
-				optionKey: "bodyInvestorEntityId",
-				flag: "--body-investor-entity-id <uuid>",
+				optionKey: "investorEntityId",
+				flag: "--investor-entity-id <uuid>",
 				required: false,
 				description: "Existing investor entity identifier. The entity must already exist; create a referenced investor entity first with POST /v1/entities/detail.",
 				schemaType: "string",
@@ -47516,8 +47116,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			},
 			{
 				name: "investorEntitySlug",
-				optionKey: "bodyInvestorEntitySlug",
-				flag: "--body-investor-entity-slug <body-investor-entity-slug>",
+				optionKey: "investorEntitySlug",
+				flag: "--investor-entity-slug <investor-entity-slug>",
 				required: false,
 				description: "Existing investor entity slug when investorEntityId is omitted. The entity must already exist; create it first with POST /v1/entities/detail.",
 				schemaType: "string",
@@ -47525,8 +47125,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			},
 			{
 				name: "investorPersonId",
-				optionKey: "bodyInvestorPersonId",
-				flag: "--body-investor-person-id <uuid>",
+				optionKey: "investorPersonId",
+				flag: "--investor-person-id <uuid>",
 				required: false,
 				description: "Existing investor person identifier. The person must already exist; create a referenced investor person first with POST /v1/people/detail.",
 				schemaType: "string",
@@ -47535,8 +47135,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			},
 			{
 				name: "investorPersonSlug",
-				optionKey: "bodyInvestorPersonSlug",
-				flag: "--body-investor-person-slug <body-investor-person-slug>",
+				optionKey: "investorPersonSlug",
+				flag: "--investor-person-slug <investor-person-slug>",
 				required: false,
 				description: "Existing investor person slug when investorPersonId is omitted. The person must already exist; create it first with POST /v1/people/detail.",
 				schemaType: "string",
@@ -47553,8 +47153,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			},
 			{
 				name: "round",
-				optionKey: "bodyRound",
-				flag: "--body-round <body-round>",
+				optionKey: "round",
+				flag: "--round <round>",
 				required: false,
 				description: "Raw fundraise round label used when transactionId is omitted.",
 				schemaType: "string",
@@ -47562,8 +47162,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			},
 			{
 				name: "transactionId",
-				optionKey: "bodyTransactionId",
-				flag: "--body-transaction-id <uuid>",
+				optionKey: "transactionId",
+				flag: "--transaction-id <uuid>",
 				required: false,
 				description: "Fundraise round transaction id. The target entity id/slug is the entity that raised the round; for an Investment Firm investment, use the portfolio/fundraising company as target and identify the firm with investorEntityId or investorEntitySlug. When omitted, round lookup uses the target entity plus round/dateAnnounced.",
 				schemaType: "string",
@@ -47577,100 +47177,24 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "id",
+				name: "entityId",
 				optionKey: "entityId",
 				flag: "--entity-id <uuid>",
-				required: false,
-				description: "Owner-scoped resource UUID selector.",
+				required: true,
+				description: "Entity UUID.",
 				schemaType: "string",
 				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "slug",
-				optionKey: "entitySlug",
-				flag: "--entity-slug <entity-slug>",
-				required: false,
-				description: "Owner-scoped resource slug selector.",
-				schemaType: "string",
-				location: "query"
+				location: "path"
 			},
 			{
 				name: "joinId",
 				optionKey: "fundraiseInvestorJoinId",
 				flag: "--fundraise-investor-join-id <uuid>",
-				required: false,
-				description: "Join identifier. When present, lookup ignores transaction and investor query parameters.",
+				required: true,
+				description: "Fundraise investor join identifier.",
 				schemaType: "string",
 				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "transactionId",
-				optionKey: "transactionId",
-				flag: "--transaction-id <uuid>",
-				required: false,
-				description: "Fundraise round transaction id. The target entity id/slug is the entity that raised the round; for an Investment Firm investment, use the portfolio/fundraising company as target and identify the firm with investorEntityId or investorEntitySlug. When omitted, lookup uses the target entity plus round/dateAnnounced.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "round",
-				optionKey: "round",
-				flag: "--round <round>",
-				required: false,
-				description: "Raw fundraise round label used when transactionId is omitted.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "dateAnnounced",
-				optionKey: "dateAnnounced",
-				flag: "--date-announced <date-time>",
-				required: false,
-				description: "Exact announced timestamp used to disambiguate same-label rounds.",
-				schemaType: "string",
-				schemaFormat: "date-time",
-				location: "query"
-			},
-			{
-				name: "investorEntityId",
-				optionKey: "investorEntityId",
-				flag: "--investor-entity-id <uuid>",
-				required: false,
-				description: "Existing investor entity identifier. The entity must already exist; create a referenced investor entity first with POST /v1/entities/detail.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "investorEntitySlug",
-				optionKey: "investorEntitySlug",
-				flag: "--investor-entity-slug <investor-entity-slug>",
-				required: false,
-				description: "Existing investor entity slug when investorEntityId is omitted. The entity must already exist; create it first with POST /v1/entities/detail.",
-				schemaType: "string",
-				location: "query"
-			},
-			{
-				name: "investorPersonId",
-				optionKey: "investorPersonId",
-				flag: "--investor-person-id <uuid>",
-				required: false,
-				description: "Existing investor person identifier. The person must already exist; create a referenced investor person first with POST /v1/people/detail.",
-				schemaType: "string",
-				schemaFormat: "uuid",
-				location: "query"
-			},
-			{
-				name: "investorPersonSlug",
-				optionKey: "investorPersonSlug",
-				flag: "--investor-person-slug <investor-person-slug>",
-				required: false,
-				description: "Existing investor person slug when investorPersonId is omitted. The person must already exist; create it first with POST /v1/people/detail.",
-				schemaType: "string",
-				location: "query"
+				location: "path"
 			},
 			{
 				name: "sourceType",
@@ -49236,6 +48760,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "Zero-based page index (0..N).",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "0",
 				location: "query"
 			},
@@ -49246,17 +48771,8 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				required: false,
 				description: "The size of the page to be returned.",
 				schemaType: "integer",
+				schemaFormat: "int32",
 				defaultValue: "10",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -49358,16 +48874,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "25",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -50372,16 +49878,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "25",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			},
 			{
@@ -52862,15 +52358,37 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		scope: "write",
 		auth: "write",
 		errorResponse: [],
-		parameters: [{
-			name: "sessionId",
-			optionKey: "sessionId",
-			flag: "--session-id <session-id>",
-			required: true,
-			description: "Harness session id (the harness run id).",
-			schemaType: "string",
-			location: "path"
-		}]
+		parameters: [
+			{
+				name: "sessionId",
+				optionKey: "sessionId",
+				flag: "--session-id <uuid>",
+				required: true,
+				description: "Harness session id (the harness run id).",
+				schemaType: "string",
+				schemaFormat: "uuid",
+				location: "path"
+			},
+			{
+				name: "engineId",
+				optionKey: "engineId",
+				flag: "--engine-id <engine-id>",
+				required: false,
+				description: "Engine instance id holding the lease.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "expectedLockedAt",
+				optionKey: "expectedLockedAt",
+				flag: "--expected-locked-at <date-time>",
+				required: false,
+				description: "Exact current lease generation returned by the latest successful claim or heartbeat.",
+				schemaType: "string",
+				schemaFormat: "date-time",
+				location: "query"
+			}
+		]
 	},
 	{
 		operationId: "loadHarnessSessionEntries",
@@ -54920,40 +54438,27 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		scope: "write",
 		auth: "write",
 		errorResponse: [],
-		parameters: [
-			{
-				name: "page",
-				optionKey: "page",
-				flag: "--page <integer>",
-				required: false,
-				description: "Zero-based page index (0..N).",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				defaultValue: "0",
-				location: "query"
-			},
-			{
-				name: "size",
-				optionKey: "size",
-				flag: "--size <integer>",
-				required: false,
-				description: "The size of the page to be returned; maximum 100.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				defaultValue: "50",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			}
-		]
+		parameters: [{
+			name: "page",
+			optionKey: "page",
+			flag: "--page <integer>",
+			required: false,
+			description: "Zero-based page index (0..N).",
+			schemaType: "integer",
+			schemaFormat: "int32",
+			defaultValue: "0",
+			location: "query"
+		}, {
+			name: "size",
+			optionKey: "size",
+			flag: "--size <integer>",
+			required: false,
+			description: "The size of the page to be returned; maximum 100.",
+			schemaType: "integer",
+			schemaFormat: "int32",
+			defaultValue: "50",
+			location: "query"
+		}]
 	},
 	{
 		operationId: "enqueueJob",
@@ -55302,16 +54807,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				schemaType: "integer",
 				schemaFormat: "int32",
 				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
 			}
 		]
 	},
@@ -55433,38 +54928,25 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		scope: "read",
 		auth: "read",
 		errorResponse: [],
-		parameters: [
-			{
-				name: "page",
-				optionKey: "page",
-				flag: "--page <integer>",
-				required: false,
-				description: "Zero-based page index (0..N).",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "query"
-			},
-			{
-				name: "size",
-				optionKey: "size",
-				flag: "--size <integer>",
-				required: false,
-				description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
-				schemaType: "integer",
-				schemaFormat: "int32",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			}
-		]
+		parameters: [{
+			name: "page",
+			optionKey: "page",
+			flag: "--page <integer>",
+			required: false,
+			description: "Zero-based page index (0..N).",
+			schemaType: "integer",
+			schemaFormat: "int32",
+			location: "query"
+		}, {
+			name: "size",
+			optionKey: "size",
+			flag: "--size <integer>",
+			required: false,
+			description: "The size of the page to be returned; duplicate-check default 10, maximum 100.",
+			schemaType: "integer",
+			schemaFormat: "int32",
+			location: "query"
+		}]
 	},
 	{
 		operationId: "listCandidates",
@@ -55945,7 +55427,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 			optionKey: "limit",
 			flag: "--limit <integer>",
 			required: false,
-			description: "Maximum number of unresolved issues to return (1-100).",
+			description: "Maximum unresolved issues to return; default 10, maximum 25.",
 			schemaType: "integer",
 			schemaFormat: "int32",
 			defaultValue: "10",
@@ -55994,7 +55476,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		hasBody: true,
 		bodyKind: "json",
 		bodyRequired: false,
-		bodyDescription: "Batch request for person detail enrichment. Each selector array accepts at most 200 values, and at most 200 selectors may be submitted across id, slug, and url.",
+		bodyDescription: "Batch request for person detail enrichment. Each selector array accepts at most 200 values, and at most 200 selectors may be submitted across personId, slug, and url.",
 		bodyRequiredPath: [],
 		bodyParameters: [
 			{
@@ -56005,16 +55487,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "Sort results by image presence.",
 				schemaType: "boolean",
 				defaultValue: false,
-				location: "body"
-			},
-			{
-				name: "id",
-				optionKey: "id",
-				flag: "--id <id...>",
-				required: false,
-				description: "Person UUID values.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "body"
 			},
 			{
@@ -56066,6 +55538,16 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "Permit monogram fallbacks.",
 				schemaType: "boolean",
 				defaultValue: true,
+				location: "body"
+			},
+			{
+				name: "personId",
+				optionKey: "personId",
+				flag: "--person-id <person-id...>",
+				required: false,
+				description: "Person UUID values.",
+				schemaType: "array",
+				itemSchemaType: "string",
 				location: "body"
 			},
 			{
@@ -56458,16 +55940,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			},
-			{
 				name: "includePrivate",
 				optionKey: "includePrivate",
 				flag: "--include-private <true|false>",
@@ -56757,16 +56229,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				location: "query"
 			},
 			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
-				location: "query"
-			},
-			{
 				name: "includePrivate",
 				optionKey: "includePrivate",
 				flag: "--include-private <true|false>",
@@ -56966,16 +56428,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "The size of the page to be returned; filter-search default 20, maximum 100.",
 				schemaType: "integer",
 				schemaFormat: "int32",
-				location: "query"
-			},
-			{
-				name: "sort",
-				optionKey: "sort",
-				flag: "--sort <sort...>",
-				required: false,
-				description: "Sorting is not supported.",
-				schemaType: "array",
-				itemSchemaType: "string",
 				location: "query"
 			}
 		]
@@ -58807,7 +58259,7 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				optionKey: "limit",
 				flag: "--limit <integer>",
 				required: false,
-				description: "Maximum items to enqueue for this sweep (1-500, clamped).",
+				description: "Maximum items to enqueue for this sweep; default 10, clamped to 1..500.",
 				schemaType: "integer",
 				schemaFormat: "int32",
 				defaultValue: "10",
@@ -60256,30 +59708,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				location: "query"
-			},
-			{
 				name: "pairName",
 				optionKey: "pairName",
 				flag: "--pair-name <pair-name>",
@@ -60307,6 +59735,34 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "Caller-generated UUID stamped on every audit event. An exact direct-target deploy retry resumes terminal observation; promotion and revert identities must not repeat. Server-generated when absent.",
 				schemaType: "string",
 				schemaFormat: "uuid",
+				location: "query"
+			},
+			{
+				name: "agentChassis",
+				optionKey: "agentChassis",
+				flag: "--agent-chassis <agent-chassis>",
+				required: false,
+				description: "Agent chassis token for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "agentModel",
+				optionKey: "agentModel",
+				flag: "--agent-model <agent-model>",
+				required: false,
+				description: "Agent model id for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "actorType",
+				optionKey: "actorType",
+				flag: "--actor-type <actor-type>",
+				required: false,
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
+				schemaType: "string",
+				choices: ["agent", "employee"],
 				location: "query"
 			}
 		]
@@ -60337,30 +59793,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				location: "query"
-			},
-			{
 				name: "pairName",
 				optionKey: "pairName",
 				flag: "--pair-name <pair-name>",
@@ -60377,6 +59809,34 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "Caller-generated UUID stamped on every audit event. An exact direct-target deploy retry resumes terminal observation; promotion and revert identities must not repeat. Server-generated when absent.",
 				schemaType: "string",
 				schemaFormat: "uuid",
+				location: "query"
+			},
+			{
+				name: "agentChassis",
+				optionKey: "agentChassis",
+				flag: "--agent-chassis <agent-chassis>",
+				required: false,
+				description: "Agent chassis token for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "agentModel",
+				optionKey: "agentModel",
+				flag: "--agent-model <agent-model>",
+				required: false,
+				description: "Agent model id for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "actorType",
+				optionKey: "actorType",
+				flag: "--actor-type <actor-type>",
+				required: false,
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
+				schemaType: "string",
+				choices: ["agent", "employee"],
 				location: "query"
 			}
 		]
@@ -60406,30 +59866,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		auth: "write",
 		errorResponse: [],
 		parameters: [
-			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				location: "query"
-			},
 			{
 				name: "targetName",
 				optionKey: "targetName",
@@ -60467,6 +59903,34 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				schemaType: "string",
 				schemaFormat: "uuid",
 				location: "query"
+			},
+			{
+				name: "agentChassis",
+				optionKey: "agentChassis",
+				flag: "--agent-chassis <agent-chassis>",
+				required: false,
+				description: "Agent chassis token for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "agentModel",
+				optionKey: "agentModel",
+				flag: "--agent-model <agent-model>",
+				required: false,
+				description: "Agent model id for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "actorType",
+				optionKey: "actorType",
+				flag: "--actor-type <actor-type>",
+				required: false,
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
+				schemaType: "string",
+				choices: ["agent", "employee"],
+				location: "query"
 			}
 		]
 	},
@@ -60496,30 +59960,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				location: "query"
-			},
-			{
 				name: "targetName",
 				optionKey: "targetName",
 				flag: "--target-name <target-name>",
@@ -60545,6 +59985,34 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "Caller-generated UUID stamped on every audit event. An exact direct-target deploy retry resumes terminal observation; promotion and revert identities must not repeat. Server-generated when absent.",
 				schemaType: "string",
 				schemaFormat: "uuid",
+				location: "query"
+			},
+			{
+				name: "agentChassis",
+				optionKey: "agentChassis",
+				flag: "--agent-chassis <agent-chassis>",
+				required: false,
+				description: "Agent chassis token for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "agentModel",
+				optionKey: "agentModel",
+				flag: "--agent-model <agent-model>",
+				required: false,
+				description: "Agent model id for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "actorType",
+				optionKey: "actorType",
+				flag: "--actor-type <actor-type>",
+				required: false,
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
+				schemaType: "string",
+				choices: ["agent", "employee"],
 				location: "query"
 			}
 		]
@@ -60575,30 +60043,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				location: "query"
-			},
-			{
 				name: "targetName",
 				optionKey: "targetName",
 				flag: "--target-name <target-name>",
@@ -60615,6 +60059,34 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				description: "Whether to wait for terminal provider status, exact active-image confirmation, and configured runtime acceptance.",
 				schemaType: "boolean",
 				defaultValue: true,
+				location: "query"
+			},
+			{
+				name: "agentChassis",
+				optionKey: "agentChassis",
+				flag: "--agent-chassis <agent-chassis>",
+				required: false,
+				description: "Agent chassis token for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "agentModel",
+				optionKey: "agentModel",
+				flag: "--agent-model <agent-model>",
+				required: false,
+				description: "Agent model id for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "actorType",
+				optionKey: "actorType",
+				flag: "--actor-type <actor-type>",
+				required: false,
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
+				schemaType: "string",
+				choices: ["agent", "employee"],
 				location: "query"
 			}
 		]
@@ -60890,30 +60362,6 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 		errorResponse: [],
 		parameters: [
 			{
-				name: "actorType",
-				optionKey: "actorType",
-				flag: "--actor-type <actor-type>",
-				required: false,
-				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session.",
-				location: "query"
-			},
-			{
-				name: "agentChassis",
-				optionKey: "agentChassis",
-				flag: "--agent-chassis <agent-chassis>",
-				required: false,
-				description: "Agent chassis token for agent-authored writes.",
-				location: "query"
-			},
-			{
-				name: "agentModel",
-				optionKey: "agentModel",
-				flag: "--agent-model <agent-model>",
-				required: false,
-				description: "Agent model id for agent-authored writes.",
-				location: "query"
-			},
-			{
 				name: "pairName",
 				optionKey: "pairName",
 				flag: "--pair-name <pair-name>",
@@ -60931,6 +60379,34 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 				schemaType: "string",
 				schemaFormat: "uuid",
 				location: "query"
+			},
+			{
+				name: "agentChassis",
+				optionKey: "agentChassis",
+				flag: "--agent-chassis <agent-chassis>",
+				required: false,
+				description: "Agent chassis token for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "agentModel",
+				optionKey: "agentModel",
+				flag: "--agent-model <agent-model>",
+				required: false,
+				description: "Agent model id for agent-authored writes.",
+				schemaType: "string",
+				location: "query"
+			},
+			{
+				name: "actorType",
+				optionKey: "actorType",
+				flag: "--actor-type <actor-type>",
+				required: false,
+				description: "Actor type; inferred as agent when agentChassis and agentModel are supplied, or as employee from an authenticated user JWT session. Allowed values: agent, employee.",
+				schemaType: "string",
+				choices: ["agent", "employee"],
+				location: "query"
 			}
 		]
 	}
@@ -60938,4 +60414,4 @@ var GENERATED_OPENAPI_COMMAND_SPECS = [
 //#endregion
 export { PersonalApiKeySchema as _, outputModeJsonAccept as a, canonicalPersonalCredentialHost as c, savePersonalCredential as d, credentialSafeMessage as f, normalizeCliApiEnvironment as g, isLoopbackHostname as h, cliMachineOutputSelected as i, forgetPersonalCredential as l, browserOriginForApiHost as m, GENERATED_OPERATION_FINGERPRINT as n, resolveOutputMode as o, credentialSafeProblemSummary as p, addOutputModeOptions as r, commandNeedsMaterializedAuth as s, GENERATED_OPENAPI_COMMAND_SPECS as t, loadPersonalCredential as u };
 
-//# sourceMappingURL=openapi-commands-BInPE2bT.js.map
+//# sourceMappingURL=openapi-commands-BgjBSy9x.js.map

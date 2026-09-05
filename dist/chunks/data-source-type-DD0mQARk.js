@@ -4656,7 +4656,7 @@ var EntityTypeSchema = _enum([
 * @usedBySchema EntityUrlLinkSchema
 * @usedBySchema ExternalSocialPostMutationSchema
 * @usedBySchema ExternalSocialPostSchema
-* @usedBySchema MediaCrawlScreenshotSchema
+* @usedBySchema MediaScreenshotSchema
 * @usedBySchema NewsFilterSchema
 * @usedBySchema ResolvedHandleSchema
 * @usedBySchema UniqueIdSchema
@@ -4729,4 +4729,4 @@ var DatasourceDataSourceTypeSchema = _enum([
 //#endregion
 export { datetime as A, defineLazy as B, strictObject as C, url as D, unknown as E, parse$1 as F, $constructor as H, parseAsync$1 as I, safeParse$1 as L, _coercedNumber as M, $ZodObject as N, uuid as O, $ZodType as P, safeParseAsync$1 as R, record as S, union as T, NEVER as U, normalizeParams as V, looseObject as _, ZodOptional as a, optional as b, any as c, custom as d, discriminatedUnion as f, literal as g, lazy as h, ZodNumber as i, toJSONSchema as j, date as k, array as l, intersection as m, EntityPersonOwnerSchema as n, _enum as o, int as p, EntityTypeSchema as r, _null as s, DatasourceDataSourceTypeSchema as t, boolean as u, number as v, string as w, preprocess as x, object as y, clone as z };
 
-//# sourceMappingURL=data-source-type-CEoBo_qP.js.map
+//# sourceMappingURL=data-source-type-DD0mQARk.js.map
