@@ -1,4 +1,4 @@
-import { A as datetime, E as unknown, O as uuid, S as record, T as union, h as lazy, l as array, n as EntityPersonOwnerSchema, o as _enum, p as int, r as EntityTypeSchema, s as _null, u as boolean, v as number, w as string, y as object } from "./data-source-type-DD0mQARk.js";
+import { C as string, D as uuid, T as unknown, _ as number, a as _enum, c as array, f as int, k as datetime, l as boolean, m as lazy, n as EntityTypeSchema, o as _null, t as EntityPersonOwnerSchema, v as object, w as union, x as record } from "./person-owner-Bq01D7NM.js";
 import { createRequire } from "node:module";
 import childProcess, { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -57,7 +57,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 var __toCommonJS = (mod) => __hasOwnProp.call(mod, "module.exports") ? mod["module.exports"] : __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var __require = /* #__PURE__ */ (() => createRequire(import.meta.url))();
 //#endregion
-//#region ../api-schemas/dist/http/json-value.js
+//#region ../api-schemas/public/dist/http/json-value.js
 /**
 * @usedByEndpoint none:external-root
 * @shared primitive:single reusable JSON value helper; not direct because valid OpenAPI unconstrained value positions require a generated recursive value schema
@@ -7394,7 +7394,7 @@ var BatchLogRecordProcessor = class extends BatchLogRecordProcessorBase {
 	onShutdown() {}
 };
 //#endregion
-//#region ../api-schemas/dist/entity/classification-inactive-tag-override.js
+//#region ../api-schemas/public/dist/entity/classification-inactive-tag-override.js
 /**
 * Caller-chosen handling when the canonical classification value exists but is dormant.
 *
@@ -7426,7 +7426,7 @@ var ClassificationInactiveTagDetailsSchema = object({
 	tagId: int()
 });
 //#endregion
-//#region ../api-schemas/dist/news/candidate-score.js
+//#region ../api-schemas/public/dist/news/candidate-score.js
 /**
 * Duplicate candidate scoring result for news articles. Use id/slug/externalId/reason to decide whether the candidate is the requested article. score ranks review priority; it does not prove absence.
 *
@@ -7466,8 +7466,6 @@ var SearchDuplicateCandidateScoreSchema = object({
 	externalId: string().nullish(),
 	/** Candidate id to read or update when this candidate is the requested record. */
 	id: uuid(),
-	/** Whether the candidate is hidden from public pages. */
-	isHidden: boolean().nullish(),
 	/** Candidate display name from the existing record. */
 	name: string().nullish(),
 	/** Current operating status for entity candidates. */
@@ -7478,8 +7476,6 @@ var SearchDuplicateCandidateScoreSchema = object({
 	reason: array(string()),
 	/** Ranking score for duplicate review. It is not an absence proof; a low score can still be the intended record when reason/name/slug/typeRecord match. */
 	score: int(),
-	/** Whether the candidate is eligible for sitemap/public listing. */
-	showOnSitemap: boolean().nullish(),
 	/** Candidate slug from the existing record. */
 	slug: string().regex(/^[a-z0-9_-]+$/).max(255).nullish(),
 	/** Candidate entity type from the existing record. */
@@ -7590,7 +7586,7 @@ var UrlDuplicateConflictSchema = object({
 	urlType: string()
 });
 //#endregion
-//#region ../api-schemas/dist/domain/conflict-details.js
+//#region ../api-schemas/public/dist/domain/conflict-details.js
 /**
 * Polymorphic envelope for RFC 9457 ProblemDetail.details on HTTP 409 responses. The concrete variant depends on the conflict kind: URL ownership collisions return UrlDuplicateConflict; ambiguous strict URL lookups return StrictUrlLookupConflict; create-time duplicate review gates return DuplicateCreateReview; classification writes that touch an inactive tag bucket return ClassificationInactiveTagDetails; news publication+URL uniqueness violations return NewsSourceUrlConflict. Inspect ProblemDetail.code/type and the field set present on details to identify the variant.
 *
@@ -7609,7 +7605,7 @@ var DomainConflictDetailsSchema = union([
 	NewsSourceUrlConflictSchema
 ]);
 //#endregion
-//#region ../api-schemas/dist/problem/resolution.js
+//#region ../api-schemas/public/dist/problem/resolution.js
 /**
 * Machine-readable next action for an aVenture ProblemDetail. For reviewCandidates, inspect ProblemDetail.details candidates and decide update, create-with-override, or block from those returned records.
 *
@@ -7642,7 +7638,7 @@ var ProblemResolutionSchema = object({
 	retryable: boolean().nullish()
 });
 //#endregion
-//#region ../api-schemas/dist/redirect/slug-resource.js
+//#region ../api-schemas/public/dist/redirect/slug-resource.js
 /**
 * Resource type whose slug is being changed
 *
@@ -7664,7 +7660,7 @@ var SlugResourceSchema = _enum([
 	"content"
 ]);
 //#endregion
-//#region ../api-schemas/dist/redirect/current-slug-owner.js
+//#region ../api-schemas/public/dist/redirect/current-slug-owner.js
 /**
 * Current slug owner
 *
@@ -7685,7 +7681,7 @@ var CurrentSlugOwnerSchema = object({
 	slug: string()
 });
 //#endregion
-//#region ../api-schemas/dist/redirect/redirect-slug-path.js
+//#region ../api-schemas/public/dist/redirect/redirect-slug-path.js
 /**
 * Redirect slug path
 *
@@ -7949,18 +7945,11 @@ function capEnvelope(envelope) {
 		byteLength,
 		maxBytes: RESULT_ENVELOPE_BYTE_CAP
 	};
-	const markerOnly = {
+	return capMarkerOnly({
 		...truncated,
-		warnings: truncated.warnings.slice(-1),
+		truncation: truncation(byteLength, ["data"]),
 		data: marker
-	};
-	return Buffer$1.byteLength(JSON.stringify(markerOnly), "utf8") <= 5e4 ? markerOnly : {
-		...markerOnly,
-		omitted: [],
-		ids: [],
-		counts: {},
-		references: []
-	};
+	}, byteLength);
 }
 function cappedEnvelope(envelope, byteLength, compacted) {
 	return {
@@ -7970,6 +7959,110 @@ function cappedEnvelope(envelope, byteLength, compacted) {
 		warnings: [...envelope.warnings, "response truncated (>50KB); ids/references preserved; refetch via the owning sub-resource list/get command for the section you need, or --data with server-side filters"],
 		data: compacted.value
 	};
+}
+/** Final fallback after data compaction: bound retained metadata, then remeasure. */
+function capMarkerOnly(markerOnly, byteLength) {
+	if (fitsByteCap(markerOnly)) return markerOnly;
+	const originalWarnings = markerOnly.warnings.slice(0, -1);
+	const omissionWarning = "response truncated (>50KB); metadata named in truncation.omitted was removed; refetch via the owning sub-resource list/get command for the section you need, or --data with narrower server-side filters";
+	const truncatedField = ["data"];
+	let candidate = markerOnly;
+	if (candidate.problem !== void 0) {
+		const exactProblem = problemCore(candidate.problem);
+		if (JSON.stringify(exactProblem).length < JSON.stringify(candidate.problem).length) {
+			truncatedField.push("problem");
+			candidate = {
+				...candidate,
+				problem: exactProblem,
+				truncation: truncation(byteLength, truncatedField)
+			};
+			if (fitsByteCap(candidate)) return candidate;
+		}
+	}
+	truncatedField.push(...markerOnly.filters === void 0 ? [] : ["filters"], ...markerOnly.omitted.length === 0 ? [] : ["omitted"], ...markerOnly.ids.length === 0 ? [] : ["ids"], ...Object.keys(markerOnly.counts).length === 0 ? [] : ["counts"], ...markerOnly.references.length === 0 ? [] : ["references"]);
+	candidate = {
+		...candidate,
+		filters: void 0,
+		truncation: truncation(byteLength, truncatedField),
+		omitted: [],
+		ids: [],
+		counts: {},
+		references: [],
+		warnings: truncatedField.length === 1 ? markerOnly.warnings : [...originalWarnings, omissionWarning]
+	};
+	if (fitsByteCap(candidate)) return candidate;
+	const boundedSummary = boundedTerminalString(candidate.summary, byteLength);
+	const boundedOperationId = candidate.operationId === void 0 ? void 0 : boundedTerminalString(candidate.operationId, byteLength);
+	const boundedMethod = candidate.method === void 0 ? void 0 : boundedTerminalString(candidate.method, byteLength);
+	const boundedEndpoint = candidate.endpoint === void 0 ? void 0 : boundedTerminalString(candidate.endpoint, byteLength);
+	const boundedWarning = candidate.warnings.map((warning) => boundedTerminalString(warning, byteLength));
+	const boundedProblem = candidate.problem === void 0 ? void 0 : problemCore(candidate.problem, byteLength);
+	if (boundedSummary !== candidate.summary) truncatedField.push("summary");
+	if (boundedOperationId !== candidate.operationId) truncatedField.push("operationId");
+	if (boundedMethod !== candidate.method) truncatedField.push("method");
+	if (boundedEndpoint !== candidate.endpoint) truncatedField.push("endpoint");
+	if (boundedWarning.some((warning, index) => warning !== candidate.warnings[index])) truncatedField.push("warnings");
+	if (candidate.problem !== void 0 && boundedProblem !== void 0 && JSON.stringify(boundedProblem) !== JSON.stringify(candidate.problem)) truncatedField.push("problem");
+	candidate = {
+		...candidate,
+		summary: boundedSummary,
+		...boundedOperationId === void 0 ? {} : { operationId: boundedOperationId },
+		...boundedMethod === void 0 ? {} : { method: boundedMethod },
+		...boundedEndpoint === void 0 ? {} : { endpoint: boundedEndpoint },
+		truncation: truncation(byteLength, truncatedField),
+		warnings: boundedWarning,
+		...boundedProblem === void 0 ? {} : { problem: boundedProblem }
+	};
+	if (fitsByteCap(candidate)) return candidate;
+	truncatedField.push("warnings");
+	if (candidate.page !== void 0) truncatedField.push("page");
+	const finalSummary = boundedTerminalString(candidate.summary, byteLength, COMPACT_STRING_LIMIT);
+	if (finalSummary !== candidate.summary) truncatedField.push("summary");
+	return {
+		ok: candidate.ok,
+		summary: finalSummary,
+		...candidate.httpStatus === void 0 ? {} : { httpStatus: candidate.httpStatus },
+		...candidate.operationId === void 0 ? {} : { operationId: candidate.operationId },
+		...candidate.method === void 0 ? {} : { method: candidate.method },
+		...candidate.endpoint === void 0 ? {} : { endpoint: candidate.endpoint },
+		...candidate.format === void 0 ? {} : { format: candidate.format },
+		...candidate.count === void 0 ? {} : { count: candidate.count },
+		truncated: true,
+		truncation: truncation(byteLength, truncatedField),
+		omitted: [],
+		ids: [],
+		counts: {},
+		references: [],
+		warnings: [omissionWarning],
+		...candidate.problem === void 0 ? {} : { problem: candidate.problem },
+		data: candidate.data
+	};
+}
+function problemCore(problem, byteLength) {
+	const bounded = (text) => byteLength === void 0 ? text : boundedTerminalString(text, byteLength);
+	return {
+		status: problem.status,
+		title: bounded(problem.title),
+		type: bounded(problem.type),
+		...problem.detail === void 0 ? {} : { detail: bounded(problem.detail) },
+		...problem.instance === void 0 ? {} : { instance: bounded(problem.instance) }
+	};
+}
+function fitsByteCap(envelope) {
+	return Buffer$1.byteLength(JSON.stringify(envelope), "utf8") <= RESULT_ENVELOPE_BYTE_CAP;
+}
+function boundedTerminalString(value, byteLength, maximumBytes = LONG_STRING_LIMIT) {
+	if (Buffer$1.byteLength(JSON.stringify(value), "utf8") <= maximumBytes) return value;
+	const suffix = truncationSuffix(byteLength);
+	let prefix = "";
+	let usedBytes = Buffer$1.byteLength(JSON.stringify(suffix), "utf8");
+	for (const character of value) {
+		const characterBytes = Buffer$1.byteLength(JSON.stringify(character), "utf8") - 2;
+		if (usedBytes + characterBytes > maximumBytes) break;
+		prefix += character;
+		usedBytes += characterBytes;
+	}
+	return `${prefix.trimEnd()}${suffix}`;
 }
 function truncateData(data, byteLength, arrayLimit) {
 	const parsed = JsonValueSchema.safeParse(JSON.parse(JSON.stringify(data)));
@@ -11775,6 +11868,19 @@ function useColor() {
 	if (process$1.env.FORCE_COLOR || process$1.env.CLICOLOR_FORCE !== void 0) return true;
 }
 new Command();
+_enum([
+	"requestChangeForm",
+	"newsArticle",
+	"blogArticle",
+	"firstPartyWebsite",
+	"relatedPartyWebsite",
+	"thirdPartyWebsite",
+	"llm",
+	"aventureStaff",
+	"api",
+	"manual",
+	"import"
+]);
 //#endregion
 //#region ../node_modules/undici/lib/core/symbols.js
 var require_symbols = /* @__PURE__ */ __commonJSMin(((exports, module) => {
@@ -35853,4 +35959,4 @@ var CLI_NAMESPACE_SECTION = {
 //#endregion
 export { init_ResourceImpl as $, logDebug as A, __exportAll as At, normalizeEnvironmentName as B, authMaterializationFailure as C, ValueType as Ct, resolveAuthStatus as D, JsonValueSchema as Dt, readAuthConfig as E, init_NoopMeter as Et, setStderrLogging as F, failure as G, readEnv as H, shutdownLogging as I, success as J, pageMetadata as K, AUTH_SECRET_NAME as L, logInfo as M, __toCommonJS as Mt, logWarn as N, __toESM as Nt, writeAuthConfig as O, __commonJSMin as Ot, otelResourceAttributes as P, defaultResource$1 as Q, AUTH_SECRET_NAMES as R, InvalidArgumentError as S, init_context_api as St, materializeAuth as T, createNoopMeter as Tt, RESULT_ENVELOPE_BYTE_CAP as U, prepareCallEnv as V, capEnvelope as W, resourceFromAttributes as X, defaultResource as Y, init_esm as Z, redactCredentialText as _, init_metrics_api as _t, generatedOptionGroupRank as a, hrTime as at, Option as b, init_diag_api as bt, CLI_SHELL_INPUT_GUIDANCE as c, hrTimeToSeconds as ct, flagName as d, esm_exports$1 as dt, esm_exports as et, mcpToolForIntent as f, init_esm$2 as ft, problemFailure as g, init_esm$3 as gt, aventureRequest as h, esm_exports$2 as ht, cliOptionDescription as i, init_ExportResult as it, logError as j, __require as jt, describeError as k, __esmMin as kt, cliShellQuote as l, init_time as lt, aventureMethod as m, init_global_error_handler as mt, CLI_NAMESPACE_SECTION as n, internal as nt, generatedOptionHelpGroup as o, hrTimeDuration as ot, prepareOpenApiRequestBody as p, globalErrorHandler as pt, responseCount as q, administrationNamespace as r, ExportResultCode as rt, withTerminalPunctuation as s, hrTimeToMicroseconds as st, CLI_COMMAND_SECTION as t, init_esm$1 as tt, cliShellSensitiveSchema as u, millisToHrTime as ut, responseWarningMetadata as v, metrics as vt, configPath as w, init_Metric as wt, CommanderError as x, context as xt, Command as y, diag as yt, environmentNames as z };
 
-//# sourceMappingURL=cli-help-policy-DjLY08wr.js.map
+//# sourceMappingURL=cli-help-policy-BzAgnmWN.js.map

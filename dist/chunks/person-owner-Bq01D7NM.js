@@ -4607,7 +4607,7 @@ function preprocess(fn, schema) {
 	});
 }
 //#endregion
-//#region ../api-schemas/dist/entity/type.js
+//#region ../api-schemas/public/dist/entity/type.js
 /**
 * Canonical entity classification for the organization, product, and service records stored in the entity domain.
 *
@@ -4618,9 +4618,9 @@ function preprocess(fn, schema) {
 * @usedBySchema ContentEmbeddingBacklogTypeCountSchema
 * @usedBySchema EntityDuplicateCriteriaSchema
 * @usedBySchema EntityFilterSchema
+* @usedBySchema EntityListFilterSchema
 * @usedBySchema EntityPersonAssociationSchema
 * @usedBySchema EntitySchema
-* @usedBySchema EntitySitemapUrlSchema
 * @usedBySchema EntityTypeCountSchema
 * @usedBySchema EntityTypeGroupMembershipSchema
 * @usedBySchema NewsResolvedEntityLinkSchema
@@ -4642,27 +4642,22 @@ var EntityTypeSchema = _enum([
 	"Service"
 ]);
 //#endregion
-//#region ../api-schemas/dist/entity/person-owner.js
+//#region ../api-schemas/public/dist/entity/person-owner.js
 /**
 * Exactly one of entityId or personId is set; ids only, no name fields. Resolve display names with GET /v1/entities/detail or GET /v1/people/detail.
 *
 * @openapiSchema EntityPersonOwner
 * @standardProblemResponse
-* @usedBySchema AddressLookupContextSchema
 * @usedBySchema BlogPostSchema
-* @usedBySchema CrawlRunSchema
 * @usedBySchema EntityFundraiseInvestorJoinSchema
 * @usedBySchema EntityTextSchema
 * @usedBySchema EntityUrlLinkSchema
-* @usedBySchema ExternalSocialPostMutationSchema
-* @usedBySchema ExternalSocialPostSchema
 * @usedBySchema MediaScreenshotSchema
 * @usedBySchema NewsFilterSchema
 * @usedBySchema ResolvedHandleSchema
 * @usedBySchema UniqueIdSchema
 * @usedBySchema UrlDuplicateConflictSchema
 * @usedBySchema UrlDuplicateJoinSchema
-* @usedBySchema WebSiteSchema
 * @contractShape entity.person-owner
 * @contractRole canonical
 * @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/identity/EntityPersonOwner.kt
@@ -4674,59 +4669,6 @@ var EntityPersonOwnerSchema = object({
 	personId: uuid().nullish()
 });
 //#endregion
-//#region ../api-schemas/dist/datasource/data-source-type.js
-/**
-* Full read/storage source type for field-level provenance rows. Write query parameters use DatasourceWritableDataSourceType.
-*
-* @openapiSchema DatasourceDataSourceType
-* @endpoint GET /v1/entities
-* @endpoint GET /v1/entities/detail
-* @endpoint GET /v1/entities/detail/investors
-* @endpoint GET /v1/entities/detail/similar
-* @endpoint GET /v1/provenance/history
-* @endpoint GET /v1/search/link
-* @endpoint GET /v1/entities/{entityId}/products/suggestions
-* @endpoint GET /v1/entities/{entityId}/relationships/suggestions
-* @endpoint GET /v1/entities/{entityId}/research
-* @endpoint GET /v1/entities/{entityId}/research/details
-* @endpoint GET /v1/entities/{entityId}/research/details/{detailId}
-* @endpoint GET /v1/entities/{entityId}/research/snippets
-* @endpoint GET /v1/entities/{entityId}/research/snippets/{snippetId}
-* @endpoint POST /v1/entities
-* @endpoint POST /v1/entities/{entityId}/research/details
-* @endpoint POST /v1/entities/{entityId}/research/snippets
-* @endpoint POST /v1/entities/batch
-* @endpoint POST /v1/entities/detail
-* @endpoint POST /v1/entities/detail/batch
-* @endpoint POST /v1/entities/detail/full
-* @endpoint POST /v1/entities/detail/resolve
-* @endpoint POST /v1/entities/natural-search
-* @endpoint POST /v1/search/all
-* @endpoint PATCH /v1/entities/detail
-* @endpoint PUT /v1/entities/{entityId}/research/details/{detailId}
-* @endpoint PUT /v1/entities/{entityId}/research/snippets/{snippetId}
-* @endpoint PUT /v1/entities/detail
-* @endpoint DELETE /v1/entities/{entityId}/research/details/{detailId}
-* @endpoint DELETE /v1/entities/{entityId}/research/snippets/{snippetId}
-* @usedBySchema DatasourceProvenanceSourceSchema
-* @contractShape datasource.data-source-type
-* @contractRole canonical
-* @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/datasource/Provenance.kt
-*/
-var DatasourceDataSourceTypeSchema = _enum([
-	"requestChangeForm",
-	"newsArticle",
-	"blogArticle",
-	"firstPartyWebsite",
-	"relatedPartyWebsite",
-	"thirdPartyWebsite",
-	"llm",
-	"aventureStaff",
-	"api",
-	"manual",
-	"import"
-]);
-//#endregion
-export { datetime as A, defineLazy as B, strictObject as C, url as D, unknown as E, parse$1 as F, $constructor as H, parseAsync$1 as I, safeParse$1 as L, _coercedNumber as M, $ZodObject as N, uuid as O, $ZodType as P, safeParseAsync$1 as R, record as S, union as T, NEVER as U, normalizeParams as V, looseObject as _, ZodOptional as a, optional as b, any as c, custom as d, discriminatedUnion as f, literal as g, lazy as h, ZodNumber as i, toJSONSchema as j, date as k, array as l, intersection as m, EntityPersonOwnerSchema as n, _enum as o, int as p, EntityTypeSchema as r, _null as s, DatasourceDataSourceTypeSchema as t, boolean as u, number as v, string as w, preprocess as x, object as y, clone as z };
+export { toJSONSchema as A, normalizeParams as B, string as C, uuid as D, url as E, parseAsync$1 as F, NEVER as H, safeParse$1 as I, safeParseAsync$1 as L, $ZodObject as M, $ZodType as N, date as O, parse$1 as P, clone as R, strictObject as S, unknown as T, $constructor as V, number as _, _enum as a, preprocess as b, array as c, discriminatedUnion as d, int as f, looseObject as g, literal as h, ZodOptional as i, _coercedNumber as j, datetime as k, boolean as l, lazy as m, EntityTypeSchema as n, _null as o, intersection as p, ZodNumber as r, any as s, EntityPersonOwnerSchema as t, custom as u, object as v, union as w, record as x, optional as y, defineLazy as z };
 
-//# sourceMappingURL=data-source-type-DD0mQARk.js.map
+//# sourceMappingURL=person-owner-Bq01D7NM.js.map

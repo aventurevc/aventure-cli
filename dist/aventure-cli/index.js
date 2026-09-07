@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { A as logDebug, F as setStderrLogging, H as readEnv, L as AUTH_SECRET_NAME, N as logWarn, T as materializeAuth, x as CommanderError } from "../chunks/cli-help-policy-DjLY08wr.js";
-import { c as canonicalPersonalCredentialHost, i as cliMachineOutputSelected, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "../chunks/openapi-commands-BgjBSy9x.js";
+import { A as logDebug, F as setStderrLogging, H as readEnv, L as AUTH_SECRET_NAME, N as logWarn, T as materializeAuth, x as CommanderError } from "../chunks/cli-help-policy-BzAgnmWN.js";
+import { c as canonicalPersonalCredentialHost, i as cliMachineOutputSelected, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "../chunks/openapi-commands-CLr4nA7Y.js";
 //#region aventure-cli/auth/personal-bearer-credential.ts
 /**
 * Materialize an active CLI-owned credential only after normal auth materialization left AUTH_TOKEN unset.
@@ -50,7 +50,7 @@ try {
 		await materializeAuth();
 		await materializeCliPersonalBearerCredential();
 	}
-	await import("../chunks/aventure-cli-BoL_vBc0.js");
+	await import("../chunks/aventure-cli-k-MK3Zrm.js");
 } catch (failure) {
 	if (!(failure instanceof CommanderError)) throw failure;
 	process.stderr.write(`${failure.message}\n`);
