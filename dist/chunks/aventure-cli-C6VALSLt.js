@@ -1,7 +1,7 @@
-import { B as normalizeEnvironmentName, D as resolveAuthStatus, Dt as JsonValueSchema, E as readAuthConfig, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-DjLY08wr.js";
-import { A as datetime, O as uuid, S as record, o as _enum, v as number, w as string, y as object } from "./data-source-type-DD0mQARk.js";
-import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-BgjBSy9x.js";
-import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-BZuETs4O.js";
+import { B as normalizeEnvironmentName, D as resolveAuthStatus, Dt as JsonValueSchema, E as readAuthConfig, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-BDwZR8mj.js";
+import { C as string, D as uuid, _ as number, a as _enum, k as datetime, v as object, x as record } from "./person-owner-D_Job72E.js";
+import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-B5dtm8jc.js";
+import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-CGlRhwNY.js";
 import { execFile, spawnSync } from "node:child_process";
 import { createHash, webcrypto } from "node:crypto";
 import { readFile } from "node:fs/promises";
@@ -15,7 +15,7 @@ import { setTimeout } from "node:timers/promises";
 import { createInterface } from "node:readline/promises";
 var package_default = {
 	name: "@aventurevc/mcp-server",
-	version: "0.7.263",
+	version: "0.7.264",
 	"private": true,
 	description: "Source workspace for the @aventurevc/aventure-cli and @aventurevc/mcp-server published packages. NOT an install target — see scripts/release/publish-npm-train.mjs for the staged manifests that get published.",
 	license: "UNLICENSED",
@@ -35,6 +35,7 @@ var package_default = {
 	type: "module",
 	scripts: {
 		"build": "vite build --config config/vite.config.ts",
+		"build:public": "vite build --mode public --config config/vite.config.ts",
 		"cli": "../scripts/dev/aventure-doppler-run.sh tsx aventure-cli/bootstrap.ts",
 		"dev:cli": "../scripts/dev/aventure-doppler-run.sh tsx aventure-cli/bootstrap.ts",
 		"dev:server": "../scripts/dev/aventure-doppler-run.sh tsx mcp-server/index.ts",
@@ -1019,23 +1020,14 @@ function registerSearchParentModeOption(program, specs) {
 	});
 }
 //#endregion
-//#region aventure-cli/generated/cli-namespaces.ts
+//#region public/aventure-cli/generated/cli-namespaces.ts
 var GENERATED_CLI_NAMESPACES = {
-	addresses: { summary: "Validate and geocode postal addresses for entity and person records" },
-	"addresses validation": { summary: "Address validation and geocoding API" },
 	agents: { summary: "Install the aVenture agent skill bundle, read versioned agent instructions, and ask grounded platform questions" },
 	"agents chassis": { summary: "Accepted automated-agent runtime chassis tokens" },
 	"agents help": { summary: "Grounded natural-language platform help with citations" },
 	"agents help reindex": { summary: "Grounded natural-language platform help with citations" },
 	"agents instructions": { summary: "Versioned agent prompt and skill documents" },
 	"agents instructions versions": { summary: "Versioned agent prompt and skill documents" },
-	app: { summary: "Manage the signed-in account's saved lists and saved views" },
-	"app saved-lists": { summary: "User-owned saved collections of entities and people" },
-	"app saved-lists entities": { summary: "User-owned saved collections of entities and people" },
-	"app saved-lists people": { summary: "User-owned saved collections of entities and people" },
-	"app saved-views": { summary: "User-owned saved filters and presentation state" },
-	auth: { summary: "Account lifecycle management endpoints" },
-	"auth users": { summary: "Create auto-confirmed platform user accounts" },
 	billing: { summary: "Authenticated hosted billing operations" },
 	"billing checkout-sessions": { summary: "Start or recover a hosted checkout session" },
 	"billing portal-sessions": { summary: "Open a hosted billing-portal session" },
@@ -1044,9 +1036,6 @@ var GENERATED_CLI_NAMESPACES = {
 	"classifications catalog": { summary: "Fetch the full entity classification taxonomy" },
 	"classifications search": { summary: "Search the classification taxonomy by keyword" },
 	"classifications tags": { summary: "Search assignable entity classification tags" },
-	contacts: { summary: "Contact records, contact-form submissions, and waitlist status" },
-	"contacts forms": { summary: "Read and manage submitted contact-form messages" },
-	"contacts waitlist-status": { summary: "Read a contact's waitlist status" },
 	content: { summary: "Public content cards: news, blog posts, social posts, repositories, websites, and papers" },
 	"content embedding": { summary: "Unified embedding write/read endpoints" },
 	"content embedding activity": { summary: "Unified embedding write/read endpoints" },
@@ -1122,82 +1111,7 @@ var GENERATED_CLI_NAMESPACES = {
 	"entities urls types": { summary: "Entity and person URL link endpoints" },
 	"entities valuations": { summary: "Entity valuation time-series reads and writes" },
 	"entities valuations month": { summary: "Entity valuation time-series reads and writes" },
-	harness: { summary: "Enrichment agent runs and their session transcripts" },
-	"harness control-plane": { summary: "Engine-facing run lifecycle: create, claim, checkpoint, and complete runs" },
-	"harness control-plane runs": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs checkpoint": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs claim": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs complete": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs events": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs events batch": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs fail": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs heartbeat": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs overview": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs queue-position": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs release": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs requeue": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs resolve-subagent-model": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs restart": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs resume": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs resume-accept": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs stop": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs usage": { summary: "Harness enrichment run control plane" },
-	"harness control-plane runs usage-recovery-candidates": { summary: "Harness enrichment run control plane" },
-	"harness models": { summary: "Configured harness model eligibility" },
-	"harness runs": { summary: "Principal-owned runs: list, inspect, stop, resume, and restart" },
-	"harness runs queue-position": { summary: "Harness enrichment run control plane" },
-	"harness runs restart": { summary: "Harness enrichment run control plane" },
-	"harness runs resume": { summary: "Harness enrichment run control plane" },
-	"harness runs stop": { summary: "Harness enrichment run control plane" },
-	"harness runs submissions": { summary: "Harness enrichment run control plane" },
-	"harness runs usage": { summary: "Harness enrichment run control plane" },
-	"harness sessions": { summary: "Durable harness session mirror" },
-	"harness sessions entries": { summary: "Durable harness session mirror" },
-	"harness sessions prune": { summary: "Durable harness session mirror" },
-	"harness sessions subpaths": { summary: "Durable harness session mirror" },
 	help: { summary: "Grounded natural-language platform help with citations" },
-	inference: { summary: "OpenAI-compatible embeddings and chat/completions" },
-	"inference chat": { summary: "Chat completions on a configured OpenAI-compatible profile" },
-	"inference chat completions": { summary: "OpenAI-compatible embeddings and chat/completions" },
-	"inference dispatch": { summary: "Dispatch one raw OpenAI-compatible inference request" },
-	"inference embeddings": { summary: "Create embeddings on a configured OpenAI-compatible profile" },
-	"inference jobs": { summary: "Async OpenAI-compatible chat/completions jobs" },
-	"inference models": { summary: "List chat models available per inference profile" },
-	jobs: { summary: "Background job control: list, run, requeue, and inspect app jobs and their runs" },
-	"jobs agent-tasks": { summary: "Manual agent-task loop runs" },
-	"jobs agent-tasks task-presets": { summary: "Manual agent-task loop runs" },
-	"jobs blog-post-ingest": { summary: "Manual blog-post-ingest app-job runs" },
-	"jobs blog-post-ingest runs": { summary: "Manual blog-post-ingest app-job runs" },
-	"jobs blog-post-mention-sweep": { summary: "Manual blog-post-mention-sweep app-job runs" },
-	"jobs blog-post-mention-sweep runs": { summary: "Manual blog-post-mention-sweep app-job runs" },
-	"jobs crawl-runs": { summary: "Website crawl runs for companies and people, including manual job kicks" },
-	"jobs entities": { summary: "Async entity duplicate-check jobs for batch workflows" },
-	"jobs entities duplicate-check": { summary: "Async entity duplicate-check jobs for batch workflows" },
-	"jobs entities duplicate-check by-job-id": { summary: "Async entity duplicate-check jobs for batch workflows" },
-	"jobs entity-stage-reconciliation": { summary: "Funding rounds and their participating investors for an entity" },
-	"jobs entity-stage-reconciliation runs": { summary: "Funding rounds and their participating investors for an entity" },
-	"jobs entity-text-refresh-sweep": { summary: "Manual entity-text-refresh-sweep app-job runs" },
-	"jobs entity-text-refresh-sweep runs": { summary: "Manual entity-text-refresh-sweep app-job runs" },
-	"jobs fundraise-reconciliation": { summary: "Admin-authorized durable fundraise duplicate plans and explicit reconciliation runs" },
-	"jobs fundraise-reconciliation entities": { summary: "Admin-authorized durable fundraise duplicate plans and explicit reconciliation runs" },
-	"jobs fundraise-reconciliation entities runs": { summary: "Admin-authorized durable fundraise duplicate plans and explicit reconciliation runs" },
-	"jobs fundraise-reconciliation runs": { summary: "Admin-authorized durable fundraise duplicate plans and explicit reconciliation runs" },
-	"jobs fundraise-reconciliation runs status": { summary: "Admin-authorized durable fundraise duplicate plans and explicit reconciliation runs" },
-	"jobs instances": { summary: "List live app-job instances" },
-	"jobs news": { summary: "Rate-limited news duplicate detection for batch workflows" },
-	"jobs news duplicate-check": { summary: "Rate-limited news duplicate detection for batch workflows" },
-	"jobs news duplicate-check by-job-id": { summary: "Rate-limited news duplicate detection for batch workflows" },
-	"jobs overview": { summary: "Job system overview and processing-state switch" },
-	"jobs people": { summary: "Async person duplicate-check jobs for batch workflows" },
-	"jobs people duplicate-check": { summary: "Async person duplicate-check jobs for batch workflows" },
-	"jobs people duplicate-check by-job-id": { summary: "Async person duplicate-check jobs for batch workflows" },
-	"jobs rss-news-ingest": { summary: "Manual RSS news-ingest app-job runs" },
-	"jobs rss-news-ingest runs": { summary: "Manual RSS news-ingest app-job runs" },
-	"jobs run": { summary: "Run one app job immediately" },
-	"jobs runs": { summary: "Run records across background job families" },
-	"jobs runs by-job-key": { summary: "App-owned background jobs" },
-	"jobs runs requeue": { summary: "Background job system statistics and health" },
-	"jobs runs transcript": { summary: "Background job system statistics and health" },
 	media: { summary: "Logos, photos, and thumbnails for companies, people, and news" },
 	"media entity-logo": { summary: "Import an entity's logo from its website" },
 	"media logo-accuracy": { summary: "Audit whether stored logos and photos depict the right brand" },
@@ -1218,30 +1132,6 @@ var GENERATED_CLI_NAMESPACES = {
 	"news similar": { summary: "Find news articles similar to one article" },
 	"news slug": { summary: "Per-domain slug changes and redirect rows" },
 	"news slug redirects": { summary: "Per-domain slug changes and redirect rows" },
-	operations: { summary: "Deploy targets, global metrics, and system health for platform operators" },
-	"operations database": { summary: "Postgres diagnostics for platform operators" },
-	"operations database diagnostics": { summary: "System health and status endpoints" },
-	"operations deploy": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy events": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy guard": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy pairs": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy pairs promotions": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy pairs promotions exact": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy pairs reverts": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy targets": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy targets deployments": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy targets promotions": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy targets reverts": { summary: "Internal deploy target and image tag controls" },
-	"operations deploy targets tags": { summary: "Internal deploy target and image tag controls" },
-	"operations metrics": { summary: "Global metrics (cached, refreshed frequently) for homepage/overview use" },
-	"operations sentry": { summary: "Sentry issue lists, counts, and latest events" },
-	"operations sentry issues": { summary: "System health and status endpoints" },
-	"operations sentry issues counts": { summary: "System health and status endpoints" },
-	"operations sentry issues event": { summary: "System health and status endpoints" },
-	"operations status": { summary: "System uptime, served under /v1/operations" },
-	"operations supabase": { summary: "Supabase database metrics per instance" },
-	"operations supabase metrics": { summary: "System health and status endpoints" },
-	"operations supabase metrics instances": { summary: "System health and status endpoints" },
 	people: { summary: "Founders, executives, and investors in the venture ecosystem" },
 	"people addresses": { summary: "Canonical nested physical-address groups for people" },
 	"people batch": { summary: "Batch person list and detail endpoints" },
@@ -1275,14 +1165,6 @@ var GENERATED_CLI_NAMESPACES = {
 	"provenance history": { summary: "Full provenance history for one stored record" },
 	"provenance latest": { summary: "Latest data source recorded for one stored record" },
 	"provenance status": { summary: "Update a provenance record's review status" },
-	research: { summary: "Internal research sources: blog posts, external social posts, and captured source documents" },
-	"research blog-posts": { summary: "External blog and article links for entities and people" },
-	"research external-social-posts": { summary: "Incoming posts published by external authors on social platforms" },
-	"research external-social-posts scrape": { summary: "Incoming posts published by external authors on social platforms" },
-	"research source-documents": { summary: "Versioned source capture and retrieval" },
-	"research source-documents client-captured-source": { summary: "Versioned source capture and retrieval" },
-	"research source-documents client-captured-source dispatch": { summary: "Versioned source capture and retrieval" },
-	"research source-documents latest": { summary: "Versioned source capture and retrieval" },
 	resolve: { summary: "Universal identifier resolver: map any handle — stable public id, UUID, external registry id (ticker, LEI, EIN, ...), or slug — to its canonical entity or person" },
 	search: { summary: "Search companies, people, and news together, or search the live web" },
 	"search link": { summary: "Search a public page URL for related entities, people, and news" },
@@ -1294,32 +1176,9 @@ var GENERATED_CLI_NAMESPACES = {
 	"sec entities aliases": { summary: "SEC EDGAR filings, tickers, and CIKs for public companies" },
 	"sec entities exchange-urls": { summary: "SEC EDGAR filings, tickers, and CIKs for public companies" },
 	"sec entities identifiers": { summary: "SEC EDGAR filings, tickers, and CIKs for public companies" },
-	sitemap: { summary: "Sitemap boundary metadata for index generation" },
-	"sitemap entity-boundaries": { summary: "Entity sitemap page boundaries" },
-	"sitemap entity-letter-counts": { summary: "Entity filter discovery: tag counts, type counts, refinement metadata, and option set search used to drive entity-listing UIs" },
-	"sitemap entity-routes": { summary: "Paginated sitemap routes for one entity type" },
-	"sitemap entity-url-boundaries": { summary: "Entity URL sitemap page boundaries" },
-	"sitemap entity-urls": { summary: "Paginated sitemap URL slots for entity types" },
-	"sitemap index-manifest": { summary: "Manifest of every sitemap index file" },
-	"sitemap news-boundaries": { summary: "News sitemap page boundaries" },
-	"sitemap news-letter-counts": { summary: "Venture news articles linked to companies and people" },
-	"sitemap person-boundaries": { summary: "Person sitemap page boundaries" },
-	"sitemap person-letter-counts": { summary: "Person filter, letter-count, and search metadata endpoints used to drive people-listing UI affordances" },
-	"sitemap url-slot-boundaries": { summary: "Sitemap URL-slot page boundaries" },
-	"sitemap url-slots": { summary: "Paginated sitemap URL slots across types" },
-	slug: { summary: "Per-domain slug changes and redirect rows" },
-	"slug redirects": { summary: "Resolve one slug redirect to its current path" },
 	"unique-ids": { summary: "External identifier mappings (EIN, SEC CIK, ticker, LEI, DUNS, ...) for entities and people, plus reverse lookup from an identifier to its owner" },
 	"unique-ids lookup": { summary: "Resolve one external identifier to its owning entity or person" },
-	"unique-ids types": { summary: "List supported external identifier types" },
-	web: { summary: "Fetch or crawl public web pages, keeping the raw responses" },
-	"web crawl": { summary: "Start, fetch, and track ephemeral crawls of public URLs" },
-	"web page": { summary: "Fetch one public web page as markdown" },
-	"web pages": { summary: "Fetch several public web pages as markdown in one request" },
-	"web profile": { summary: "Fetch structured company or person profiles from LinkedIn URLs" },
-	"web profile company": { summary: "Fetch or crawl public web pages, keeping the raw responses" },
-	"web profile person": { summary: "Fetch or crawl public web pages, keeping the raw responses" },
-	"web profile scrape": { summary: "Fetch or crawl public web pages, keeping the raw responses" }
+	"unique-ids types": { summary: "List supported external identifier types" }
 };
 /**
 * Application build metadata
@@ -1366,18 +1225,13 @@ function openApiCompositeSpec(composite, role) {
 	return match;
 }
 //#endregion
-//#region ../api-schemas/dist/cli/authorization-client-platform.js
+//#region ../api-schemas/public/dist/cli/authorization-client-platform.js
 /**
 * Coarse operating-system family reported by the CLI
 *
 * @openapiSchema CliAuthorizationClientPlatform
-* @endpoint GET /v1/app/cli-authorizations
-* @endpoint GET /v1/app/cli-authorizations/{cliAuthorizationId}
-* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/approve
-* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/deny
 * @endpoint POST /v1/auth/cli-authorizations
 * @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/acknowledge
-* @endpoint DELETE /v1/app/cli-authorizations/{cliAuthorizationId}
 * @usedBySchema CliAuthorizationMutationSchema
 * @usedBySchema CliAuthorizationSchema
 * @contractShape cli.authorization-client-platform
@@ -1391,7 +1245,7 @@ var CliAuthorizationClientPlatformSchema = _enum([
 	"OTHER"
 ]);
 //#endregion
-//#region ../api-schemas/dist/cli/authorization-encryption-algorithm.js
+//#region ../api-schemas/public/dist/cli/authorization-encryption-algorithm.js
 /**
 * Versioned hybrid encryption suite for one-time CLI credential delivery
 *
@@ -1595,18 +1449,13 @@ function runOpener(command, openerArguments) {
 	});
 }
 //#endregion
-//#region ../api-schemas/dist/cli/authorization-status.js
+//#region ../api-schemas/public/dist/cli/authorization-status.js
 /**
 * CLI authorization broker lifecycle state
 *
 * @openapiSchema CliAuthorizationStatus
-* @endpoint GET /v1/app/cli-authorizations
-* @endpoint GET /v1/app/cli-authorizations/{cliAuthorizationId}
-* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/approve
-* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/deny
 * @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/acknowledge
 * @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/poll
-* @endpoint DELETE /v1/app/cli-authorizations/{cliAuthorizationId}
 * @usedBySchema CliAuthorizationPollSchema
 * @usedBySchema CliAuthorizationSchema
 * @contractShape cli.authorization-status
@@ -1625,18 +1474,13 @@ var CliAuthorizationStatusSchema = _enum([
 	"FAILED"
 ]);
 //#endregion
-//#region ../api-schemas/dist/cli/authorization-terminal-reason.js
+//#region ../api-schemas/public/dist/cli/authorization-terminal-reason.js
 /**
 * CLI authorization terminal explanation
 *
 * @openapiSchema CliAuthorizationTerminalReason
-* @endpoint GET /v1/app/cli-authorizations
-* @endpoint GET /v1/app/cli-authorizations/{cliAuthorizationId}
-* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/approve
-* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/deny
 * @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/acknowledge
 * @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/poll
-* @endpoint DELETE /v1/app/cli-authorizations/{cliAuthorizationId}
 * @usedBySchema CliAuthorizationPollSchema
 * @usedBySchema CliAuthorizationSchema
 * @contractShape cli.authorization-terminal-reason
@@ -1661,13 +1505,7 @@ var CliAuthorizationTerminalReasonSchema = _enum([
 * Browser-approved CLI authorization metadata. Secret poll and encrypted-delivery material are exposed only by their dedicated one-time response contracts.
 *
 * @openapiSchema CliAuthorization
-* @endpoint GET /v1/app/cli-authorizations
-* @endpoint GET /v1/app/cli-authorizations/{cliAuthorizationId}
-* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/approve
-* @endpoint POST /v1/app/cli-authorizations/{cliAuthorizationId}/deny
 * @endpoint POST /v1/auth/cli-authorizations/{cliAuthorizationId}/acknowledge
-* @endpoint DELETE /v1/app/cli-authorizations/{cliAuthorizationId}
-* @usedBySchema PageCliAuthorizationSchema
 * @contractShape cli.authorization
 * @contractRole canonical
 * @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/cliauthorization/CliAuthorization.kt
@@ -1703,7 +1541,7 @@ var CliAuthorizationSchema = object({
 	updatedAt: datetime({ offset: true })
 });
 //#endregion
-//#region ../api-schemas/dist/cli/authorization-delivery.js
+//#region ../api-schemas/public/dist/cli/authorization-delivery.js
 /**
 * RSA-wrapped AES-256-GCM delivery of one personal API-key secret
 *
@@ -1769,7 +1607,7 @@ var CliAuthorizationStartSchema = object({
 	verificationUrl: string()
 });
 //#endregion
-//#region aventure-cli/generated/openapi-composites.ts
+//#region public/aventure-cli/generated/openapi-composites.ts
 var GENERATED_OPENAPI_COMPOSITE_SPECS = [
 	{
 		command: "auth login",
@@ -2313,15 +2151,13 @@ function isAcknowledgedLifetime(apiKey) {
 	return new Date(apiKey.expiresAt).getTime() - new Date(apiKey.createdAt).getTime() > ACKNOWLEDGED_KEY_MINIMUM_LIFETIME_MILLISECONDS;
 }
 //#endregion
-//#region ../api-schemas/dist/agent/instruction-kind.js
+//#region ../api-schemas/public/dist/agent/instruction-kind.js
 /**
 * Kinds of agent instruction documents stored under the agents/ prefix.
 *
 * @openapiSchema AgentInstructionKind
 * @endpoint GET /v1/agents/instructions/{kind}/{name}
 * @endpoint GET /v1/agents/instructions/{kind}/{name}/versions/{version}
-* @endpoint GET /v1/harness/control-plane/runs/{runId}/usage
-* @endpoint GET /v1/harness/runs/{runId}/usage
 * @usedBySchema AgentInstructionSchema
 * @contractShape agent.instruction-kind
 * @contractRole canonical
@@ -2338,10 +2174,7 @@ var AgentInstructionKindSchema = _enum([
 * @openapiSchema AgentInstruction
 * @endpoint GET /v1/agents/instructions/{kind}/{name}
 * @endpoint GET /v1/agents/instructions/{kind}/{name}/versions/{version}
-* @endpoint GET /v1/harness/control-plane/runs/{runId}/usage
-* @endpoint GET /v1/harness/runs/{runId}/usage
 * @usedBySchema AgentInstructionDetailSchema
-* @usedBySchema HarnessRunUsageSchema
 * @contractShape agent.instruction
 * @contractRole canonical
 * @ownerSourceFile src/main/kotlin/vc/aventure/domain/model/agent/AgentInstruction.kt
@@ -3392,7 +3225,7 @@ function cliVersionCheck() {
 */
 async function apiSchemasCheck() {
 	try {
-		const { EntityDetailSchema } = await import("./detail-B4s7YC6h.js");
+		const { EntityDetailSchema } = await import("./detail-FGU5DiSc.js");
 		if (typeof EntityDetailSchema.safeParse !== "function") throw new Error("EntityDetailSchema does not expose a Zod parser");
 		return checkResult("api-schemas", "pass", "Installed @aventurevc/api-schemas contracts resolve beyond the CLI startup path.");
 	} catch (error) {
@@ -3517,7 +3350,7 @@ function catalogCheck(statusSpec, servedFingerprint, upgradeAvailable) {
 	const total = GENERATED_OPENAPI_COMMAND_SPECS.length;
 	if (statusSpec === void 0) return checkResult("catalog", "fail", `Regenerate the command catalog with \`make mcp-generate-contracts\` and reinstall: none of its ${total} operations is the status operation.`);
 	if (servedFingerprint === null) return checkResult("catalog", "skip", `Could not read the served operation fingerprint, so drift is unproven; this catalog holds ${total} operations at ${GENERATED_OPERATION_FINGERPRINT}.`);
-	if (servedFingerprint === "4fce659a0b6cb459") return checkResult("catalog", "pass", `${total} generated operations match the set the API serves (${GENERATED_OPERATION_FINGERPRINT}).`);
+	if (servedFingerprint === "0fef684eb6c68a4b") return checkResult("catalog", "pass", `${total} generated operations match the set the API serves (${GENERATED_OPERATION_FINGERPRINT}).`);
 	const drift = `This catalog describes a different operation set than the API serves (${GENERATED_OPERATION_FINGERPRINT} vs ${servedFingerprint})`;
 	if (upgradeAvailable === true) return checkResult("catalog", "fail", `${drift}: run \`aventure-cli update --execute\`.`);
 	return checkResult("catalog", "skip", upgradeAvailable === false ? `${drift}, and no published release describes it yet: the CLI needs publishing (\`make npm-publish-train\`) before any caller can match this deployment.` : `${drift}, and the registry did not answer, so it is unknown whether a newer release describes it: rerun \`aventure-cli update\` with registry access.`);
@@ -4792,11 +4625,11 @@ function resultCounts(data) {
 }
 //#endregion
 //#region aventure-cli/commands/unified-operations.ts
-function buildUnifiedOperations(generatedAt = /* @__PURE__ */ new Date(), contracts = MCP_GENERATION_CONTRACT) {
+function buildUnifiedOperations(contracts, generatedAt = /* @__PURE__ */ new Date()) {
 	const operations = projectUnifiedOperations(contracts);
 	return {
 		schemaVersion: 1,
-		generatedFrom: "mcp/mcp-server/generated/mcp-generation-contract.ts",
+		generatedFrom: "MCP_GENERATION_CONTRACT",
 		generatedAt: generatedAt.toISOString(),
 		totalOperations: operations.length,
 		note: "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
@@ -4806,7 +4639,7 @@ function buildUnifiedOperations(generatedAt = /* @__PURE__ */ new Date(), contra
 function unifiedOperationsJson(payload) {
 	return `${JSON.stringify(payload, null, 2)}\n`;
 }
-function writeUnifiedOperationsJson(out, payload = buildUnifiedOperations()) {
+function writeUnifiedOperationsJson(out, payload) {
 	const target = resolve(out);
 	const body = unifiedOperationsJson(payload);
 	mkdirSync(dirname(target), { recursive: true });
@@ -5002,7 +4835,7 @@ function addUnifiedCommand(parent) {
 	command.action(function() {
 		const opts = this.optsWithGlobals();
 		const mode = resolveOutputMode(opts, "text");
-		const payload = buildUnifiedOperations();
+		const payload = buildUnifiedOperations(MCP_GENERATION_CONTRACT);
 		if (opts.output !== void 0) {
 			const result = writeUnifiedOperationsJson(opts.output, payload);
 			emit({ mode }, success("Unified operations JSON written", {
@@ -5241,4 +5074,4 @@ try {
 //#endregion
 export {};
 
-//# sourceMappingURL=aventure-cli-BoL_vBc0.js.map
+//# sourceMappingURL=aventure-cli-C6VALSLt.js.map

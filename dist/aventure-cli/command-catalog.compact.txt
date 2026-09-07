@@ -3,21 +3,6 @@ aventure-cli agents help reindex create · Reindex the agent-help corpus · -
 aventure-cli agents instructions get · Get one agent instruction document · --kind --name
 aventure-cli agents instructions list · Get the agent instruction manifest · -
 aventure-cli agents instructions versions get · Get one agent instruction document version · --kind --name --version
-aventure-cli app saved-lists create · Create saved list · --title
-aventure-cli app saved-lists delete · Delete saved list · --saved-list-id
-aventure-cli app saved-lists entities add · Add saved-list entities · --saved-list-id --entity-id
-aventure-cli app saved-lists entities remove · Remove saved-list entities · --saved-list-id --entity-id
-aventure-cli app saved-lists get · Get saved list · --saved-list-id
-aventure-cli app saved-lists list · List saved lists · -
-aventure-cli app saved-lists people add · Add saved-list people · --saved-list-id --person-id
-aventure-cli app saved-lists people remove · Remove saved-list people · --saved-list-id --person-id
-aventure-cli app saved-lists update · Update saved list (RFC 7396 merge patch) · --saved-list-id
-aventure-cli app saved-views create · Create saved view · -
-aventure-cli app saved-views delete · Delete saved view · --saved-view-id
-aventure-cli app saved-views get · Get saved view · --saved-view-id
-aventure-cli app saved-views list · List saved views · -
-aventure-cli app saved-views update · Update saved view (RFC 7396 merge patch) · --saved-view-id
-aventure-cli auth users create · Create auto-confirmed auth user · --email --metadata-user-type --password
 aventure-cli billing checkout-sessions create · Create or recover a hosted Checkout Session · --plan
 aventure-cli billing portal-sessions create · Create a hosted Billing Portal Session · -
 aventure-cli billing subscription get · Read the current billing subscription · -
@@ -94,7 +79,7 @@ aventure-cli entities fundraise investor-joins create · Join fundraise investor
 aventure-cli entities fundraise investor-joins delete · Delete fundraise investor join · --entity-id --fundraise-investor-join-id --source-type --source-detail
 aventure-cli entities fundraise investor-joins get · Get fundraise investor join · --fundraise-investor-join-id
 aventure-cli entities fundraise investor-joins list · List fundraise investor joins · -
-aventure-cli entities fundraise investor-joins replace · Replace fundraise investor join · --source-type --source-detail
+aventure-cli entities fundraise investor-joins replace · Replace fundraise investor join · --entity-id --fundraise-investor-join-id --source-type --source-detail
 aventure-cli entities fundraise investor-joins update · Patch fundraise investor join · --entity-id --fundraise-investor-join-id --source-type --source-detail
 aventure-cli entities fundraise investors list · List entity investors · -
 aventure-cli entities fundraise person-investors list · List person investors · -
@@ -204,7 +189,6 @@ aventure-cli media news-thumbnail import · Import news thumbnail from article �
 aventure-cli media retrofit jobs create · Enqueue media retrofit batch · --source-type --source-detail
 aventure-cli media retrofit jobs delete · Cancel a running media retrofit batch · --job-id
 aventure-cli media retrofit jobs get · Get media retrofit batch status · --job-id
-aventure-cli media screenshots create · Upload a crawl screenshot · --source-type --source-detail --file
 aventure-cli media screenshots get · Get screenshot by id · --screenshot-id
 aventure-cli media screenshots list · List screenshots for a URL · --url
 aventure-cli media upload · Upload media asset · --media-type --source-type --source-detail --file
@@ -280,7 +264,6 @@ aventure-cli people repositories list · List person repositories · --person-id
 aventure-cli people repositories update · Sync person repositories from GitHub · --person-id
 aventure-cli people search · List people (POST) · -
 aventure-cli people similar list · List people similar to one person · -
-aventure-cli people slug get · Get person slug · --person-id
 aventure-cli people slug redirects delete · Delete person slug redirect · --person-id --redirect-id --source-type --source-detail
 aventure-cli people slug redirects list · List person slug redirects · --person-id
 aventure-cli people slug update · Change person slug · --person-id --source-type --source-detail
