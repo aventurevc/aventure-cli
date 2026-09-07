@@ -1,5 +1,5 @@
-import { C as authMaterializationFailure, Dt as JsonValueSchema, G as failure, H as readEnv, J as success, K as pageMetadata, T as materializeAuth, V as prepareCallEnv, b as Option, g as problemFailure, h as aventureRequest, p as prepareOpenApiRequestBody, q as responseCount, r as administrationNamespace, v as responseWarningMetadata } from "./cli-help-policy-BDwZR8mj.js";
-import { C as string, S as strictObject, _ as number, a as _enum, c as array, h as literal, l as boolean, m as lazy, v as object, w as union, x as record } from "./person-owner-D_Job72E.js";
+import { C as authMaterializationFailure, Dt as JsonValueSchema, G as failure, H as readEnv, J as success, K as pageMetadata, T as materializeAuth, V as prepareCallEnv, b as Option, g as problemFailure, h as aventureRequest, p as prepareOpenApiRequestBody, q as responseCount, r as administrationNamespace, v as responseWarningMetadata } from "./cli-help-policy-BzAgnmWN.js";
+import { C as string, S as strictObject, _ as number, a as _enum, c as array, h as literal, l as boolean, m as lazy, v as object, w as union, x as record } from "./person-owner-Bq01D7NM.js";
 import { AsyncLocalStorage } from "node:async_hooks";
 //#region api/mcp-server-url.ts
 function mcpServerUrlFromApiHost(apiHost, path, localPort) {
@@ -62472,4 +62472,4 @@ var MCP_GENERATION_CONTRACT = [
 //#endregion
 export { mcpServerUrlFromApiHost as S, runOpenApiCall as _, addWithInflections as a, OPENAPI_METHODS as b, meaningfulTokens as c, queryTermForms as d, cliBodyParameterInputName as f, resolveOpenApiOperationSelector as g, buildRequiredOpenApiHeader as h, visibleOpenApiCommandSpecsForCurrentAuth as i, normalize as l, buildOpenApiPath as m, asCliResponseText as n, coversEveryQueryTerm as o, cliParameterInputName as p, visibleMcpGenerationContracts as r, expandedTokens as s, MCP_GENERATION_CONTRACT as t, queryMutationIntent as u, verifyUserBearerToken as v, buildOpenApiTemplatePath as x, withUserBearerToken as y };
 
-//# sourceMappingURL=mcp-generation-contract-CGlRhwNY.js.map
+//# sourceMappingURL=mcp-generation-contract-Bu-wOHfA.js.map

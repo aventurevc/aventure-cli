@@ -1,7 +1,7 @@
-import { B as normalizeEnvironmentName, D as resolveAuthStatus, Dt as JsonValueSchema, E as readAuthConfig, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-BDwZR8mj.js";
-import { C as string, D as uuid, _ as number, a as _enum, k as datetime, v as object, x as record } from "./person-owner-D_Job72E.js";
-import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-B5dtm8jc.js";
-import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-CGlRhwNY.js";
+import { B as normalizeEnvironmentName, D as resolveAuthStatus, Dt as JsonValueSchema, E as readAuthConfig, G as failure, H as readEnv, J as success, N as logWarn, O as writeAuthConfig, R as AUTH_SECRET_NAMES, S as InvalidArgumentError, T as materializeAuth, V as prepareCallEnv, W as capEnvelope, _ as redactCredentialText, a as generatedOptionGroupRank, b as Option, c as CLI_SHELL_INPUT_GUIDANCE, f as mcpToolForIntent, h as aventureRequest, i as cliOptionDescription, j as logError, m as aventureMethod, n as CLI_NAMESPACE_SECTION, o as generatedOptionHelpGroup, s as withTerminalPunctuation, t as CLI_COMMAND_SECTION, u as cliShellSensitiveSchema, w as configPath, y as Command, z as environmentNames } from "./cli-help-policy-BzAgnmWN.js";
+import { C as string, D as uuid, _ as number, a as _enum, k as datetime, v as object, x as record } from "./person-owner-Bq01D7NM.js";
+import { _ as PersonalApiKeySchema, a as outputModeJsonAccept, c as canonicalPersonalCredentialHost, d as savePersonalCredential, f as credentialSafeMessage, g as normalizeCliApiEnvironment, h as isLoopbackHostname, l as forgetPersonalCredential, m as browserOriginForApiHost, n as GENERATED_OPERATION_FINGERPRINT, o as resolveOutputMode, p as credentialSafeProblemSummary, r as addOutputModeOptions, s as commandNeedsMaterializedAuth, t as GENERATED_OPENAPI_COMMAND_SPECS, u as loadPersonalCredential } from "./openapi-commands-CLr4nA7Y.js";
+import { S as mcpServerUrlFromApiHost, _ as runOpenApiCall, a as addWithInflections, b as OPENAPI_METHODS, d as queryTermForms, g as resolveOpenApiOperationSelector, h as buildRequiredOpenApiHeader, i as visibleOpenApiCommandSpecsForCurrentAuth, l as normalize, m as buildOpenApiPath, n as asCliResponseText, o as coversEveryQueryTerm, s as expandedTokens, t as MCP_GENERATION_CONTRACT, x as buildOpenApiTemplatePath } from "./mcp-generation-contract-Bu-wOHfA.js";
 import { execFile, spawnSync } from "node:child_process";
 import { createHash, webcrypto } from "node:crypto";
 import { readFile } from "node:fs/promises";
@@ -3225,7 +3225,7 @@ function cliVersionCheck() {
 */
 async function apiSchemasCheck() {
 	try {
-		const { EntityDetailSchema } = await import("./detail-FGU5DiSc.js");
+		const { EntityDetailSchema } = await import("./detail-DCDpDOiz.js");
 		if (typeof EntityDetailSchema.safeParse !== "function") throw new Error("EntityDetailSchema does not expose a Zod parser");
 		return checkResult("api-schemas", "pass", "Installed @aventurevc/api-schemas contracts resolve beyond the CLI startup path.");
 	} catch (error) {
@@ -5074,4 +5074,4 @@ try {
 //#endregion
 export {};
 
-//# sourceMappingURL=aventure-cli-C6VALSLt.js.map
+//# sourceMappingURL=aventure-cli-k-MK3Zrm.js.map
