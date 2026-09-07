@@ -1,0 +1,78 @@
+name: received-package
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    outputs:
+      package: ${{ steps.changed.outputs.package }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: changed
+        run: |
+          base='${{ github.event.pull_request.base.sha || github.event.before }}'
+          if [ -z "$base" ] || ! git cat-file -e "$base" 2>/dev/null; then
+            echo "package=true" >>"$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if git diff --name-only "$base" HEAD | grep -qE '^(package\.json|dist/|scripts/|\.github/workflows/)'; then
+            echo "package=true" >>"$GITHUB_OUTPUT"
+          else
+            git diff --name-only "$base" HEAD | grep -vE '^(README\.md|LICENSE|skills/)' && exit 1
+            echo "package=false" >>"$GITHUB_OUTPUT"
+          fi
+
+  package:
+    needs: select
+    if: needs.select.outputs.package == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Pack and install the exact package
+        run: |
+          npm pack --ignore-scripts --pack-destination "$RUNNER_TEMP"
+          prefix="$RUNNER_TEMP/prefix"
+          mkdir -p "$prefix"
+          npm install -g --prefix "$prefix" --ignore-scripts "$RUNNER_TEMP"/aventurevc-aventure-cli-*.tgz
+          echo "CLI_BIN=$prefix/bin/aventure-cli" >>"$GITHUB_ENV"
+          echo "INSTALLED=$prefix/lib/node_modules/@aventurevc/aventure-cli" >>"$GITHUB_ENV"
+      - name: Smoke the installed CLI
+        run: |
+          [ "$("$CLI_BIN" --version)" = "$(node -p 'require("./package.json").version')" ]
+          "$CLI_BIN" --help >/dev/null
+          test -s "$INSTALLED/dist/aventure-cli/command-catalog.compact.txt"
+          jq -e '.totalOperations > 0 and .totalOperations == (.operations | length)' "$INSTALLED/dist/aventure-cli/unified-operations.json"
+      - name: Verify the immutable public API reference
+        run: |
+          reference="$(node -p 'JSON.stringify(require("./package.json").aventurePublicApi)')"
+          repository="$(jq -r .repository <<<"$reference")"
+          commit="$(jq -r .commit <<<"$reference")"
+          path="$(jq -r .openapiPath <<<"$reference")"
+          sha256="$(jq -r .openapiSha256 <<<"$reference")"
+          curl -fsSL "https://raw.githubusercontent.com/$repository/$commit/$path" -o "$RUNNER_TEMP/openapi.json"
+          echo "$sha256  $RUNNER_TEMP/openapi.json" | sha256sum -c -
+          [ "$(jq -r .info.version "$RUNNER_TEMP/openapi.json")" = "$(node -p 'require("./package.json").version')" ]
+          spec_operations="$(jq -r '.paths | to_entries[] | .key as $p | .value | to_entries[] | select(.key | IN("get","post","put","patch","delete","head","options","trace")) | (.key | ascii_upcase) + " " + $p + " " + .value.operationId' "$RUNNER_TEMP/openapi.json" | sort)"
+          catalog_operations="$(jq -r '.operations[] | (.method | ascii_upcase) + " " + .path + " " + .operationId' "$INSTALLED/dist/aventure-cli/unified-operations.json" | sort)"
+          unexpected="$(comm -13 <(echo "$spec_operations") <(echo "$catalog_operations"))"
+          [ -z "$unexpected" ] || { echo "catalog operations outside the immutable spec:"; echo "$unexpected"; exit 1; }
+
+  required:
+    needs: [select, package]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          selected='${{ needs.select.outputs.package }}'
+          result='${{ needs.package.result }}'
+          [ '${{ needs.select.result }}' = success ] || exit 1
+          if [ "$selected" = true ]; then [ "$result" = success ]; else [ "$result" = skipped ]; fi
