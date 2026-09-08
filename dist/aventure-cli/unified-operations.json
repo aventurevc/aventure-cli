@@ -1,32 +1,10 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-07T19:51:25.144Z",
-  "totalOperations": 309,
+  "generatedAt": "2026-09-08T06:22:11.055Z",
+  "totalOperations": 148,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
-    {
-      "operationId": "listAgentChassis",
-      "method": "GET",
-      "path": "/v1/agents/chassis",
-      "resource": "agents",
-      "intent": "read",
-      "cliCommand": "agents chassis list",
-      "cliPath": [
-        "agents",
-        "chassis",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": false,
-      "destructive": false
-    },
     {
       "operationId": "answerAgentHelpQuestion",
       "method": "POST",
@@ -43,51 +21,6 @@
       "mcpTool": "aventure_search",
       "bodySchemaName": "AgentHelpQuestionSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/agent/help-question",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "reindexAgentHelp",
-      "method": "POST",
-      "path": "/v1/agents/help/reindex",
-      "resource": "agents",
-      "intent": "write",
-      "cliCommand": "agents help reindex create",
-      "cliPath": [
-        "agents",
-        "help",
-        "reindex",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "getAgentInstructionManifest",
-      "method": "GET",
-      "path": "/v1/agents/instructions",
-      "resource": "agents",
-      "intent": "read",
-      "cliCommand": "agents instructions list",
-      "cliPath": [
-        "agents",
-        "instructions",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -139,82 +72,16 @@
       "destructive": false
     },
     {
-      "operationId": "createCheckout",
-      "method": "POST",
-      "path": "/v1/billing/checkout-sessions",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing checkout-sessions create",
-      "cliPath": [
-        "billing",
-        "checkout-sessions",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BillingCheckoutMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/billing/checkout-mutation",
-      "auth": "bearer",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "createPortal",
-      "method": "POST",
-      "path": "/v1/billing/portal-sessions",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing portal-sessions create",
-      "cliPath": [
-        "billing",
-        "portal-sessions",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "getSubscription",
+      "operationId": "getAgentInstructionManifest",
       "method": "GET",
-      "path": "/v1/billing/subscription",
-      "resource": "billing",
+      "path": "/v1/agents/instructions/manifest",
+      "resource": "agents",
       "intent": "read",
-      "cliCommand": "billing subscription get",
+      "cliCommand": "agents instructions list",
       "cliPath": [
-        "billing",
-        "subscription",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "write",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "getCatalog",
-      "method": "GET",
-      "path": "/v1/classifications/catalog",
-      "resource": "classifications",
-      "intent": "read",
-      "cliCommand": "classifications catalog get",
-      "cliPath": [
-        "classifications",
-        "catalog",
-        "get"
+        "agents",
+        "instructions",
+        "list"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
@@ -229,13 +96,35 @@
     {
       "operationId": "searchClassifications",
       "method": "GET",
-      "path": "/v1/classifications/search",
+      "path": "/v1/classifications",
       "resource": "classifications",
       "intent": "read",
       "cliCommand": "classifications search get",
       "cliPath": [
         "classifications",
         "search",
+        "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "getCatalog",
+      "method": "GET",
+      "path": "/v1/classifications/catalog",
+      "resource": "classifications",
+      "intent": "read",
+      "cliCommand": "classifications catalog get",
+      "cliPath": [
+        "classifications",
+        "catalog",
         "get"
       ],
       "cliAliasCommand": null,
@@ -292,261 +181,6 @@
       "destructive": false
     },
     {
-      "operationId": "upsertEmbedding",
-      "method": "PUT",
-      "path": "/v1/content/embedding",
-      "resource": "content",
-      "intent": "write",
-      "cliCommand": "content embedding replace",
-      "cliPath": [
-        "content",
-        "embedding",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "ContentEmbeddingMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/content/embedding-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "getOwnerActivity",
-      "method": "GET",
-      "path": "/v1/content/embedding/activity",
-      "resource": "content",
-      "intent": "read",
-      "cliCommand": "content embedding activity list",
-      "cliPath": [
-        "content",
-        "embedding",
-        "activity",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "disableBacklog",
-      "method": "DELETE",
-      "path": "/v1/content/embedding/backlog",
-      "resource": "content",
-      "intent": "delete",
-      "cliCommand": "content embedding backlog delete",
-      "cliPath": [
-        "content",
-        "embedding",
-        "backlog",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "getBacklogStatus",
-      "method": "GET",
-      "path": "/v1/content/embedding/backlog",
-      "resource": "content",
-      "intent": "read",
-      "cliCommand": "content embedding backlog status",
-      "cliPath": [
-        "content",
-        "embedding",
-        "backlog",
-        "status"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "enableBacklog",
-      "method": "PUT",
-      "path": "/v1/content/embedding/backlog",
-      "resource": "content",
-      "intent": "write",
-      "cliCommand": "content embedding backlog replace",
-      "cliPath": [
-        "content",
-        "embedding",
-        "backlog",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "setBacklogMode",
-      "method": "PUT",
-      "path": "/v1/content/embedding/backlog/mode",
-      "resource": "content",
-      "intent": "write",
-      "cliCommand": "content embedding backlog mode replace",
-      "cliPath": [
-        "content",
-        "embedding",
-        "backlog",
-        "mode",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "neighbors",
-      "method": "GET",
-      "path": "/v1/content/embedding/neighbors",
-      "resource": "content",
-      "intent": "read",
-      "cliCommand": "content embedding neighbors list",
-      "cliPath": [
-        "content",
-        "embedding",
-        "neighbors",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "refreshOne",
-      "method": "POST",
-      "path": "/v1/content/embedding/refresh",
-      "resource": "content",
-      "intent": "write",
-      "cliCommand": "content embedding refresh create",
-      "cliPath": [
-        "content",
-        "embedding",
-        "refresh",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "refreshReconcile",
-      "method": "POST",
-      "path": "/v1/content/embedding/refresh/reconcile",
-      "resource": "content",
-      "intent": "write",
-      "cliCommand": "content embedding refresh reconcile create",
-      "cliPath": [
-        "content",
-        "embedding",
-        "refresh",
-        "reconcile",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "refreshSweep",
-      "method": "POST",
-      "path": "/v1/content/embedding/refresh/sweep",
-      "resource": "content",
-      "intent": "write",
-      "cliCommand": "content embedding refresh sweep create",
-      "cliPath": [
-        "content",
-        "embedding",
-        "refresh",
-        "sweep",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "staleIds_1",
-      "method": "GET",
-      "path": "/v1/content/embedding/stale",
-      "resource": "content",
-      "intent": "read",
-      "cliCommand": "content embedding stale get",
-      "cliPath": [
-        "content",
-        "embedding",
-        "stale",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
       "operationId": "searchContent",
       "method": "POST",
       "path": "/v1/content/search",
@@ -562,52 +196,6 @@
       "mcpTool": "aventure_search",
       "bodySchemaName": "NaturalSearchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "replaceBatch",
-      "method": "PUT",
-      "path": "/v1/content/similarity/batch",
-      "resource": "content",
-      "intent": "write",
-      "cliCommand": "content similarity batch replace",
-      "cliPath": [
-        "content",
-        "similarity",
-        "batch",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "ContentBatchReplaceEntrySchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/content/batch-replace-entry",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "staleIds",
-      "method": "GET",
-      "path": "/v1/content/similarity/stale",
-      "resource": "content",
-      "intent": "read",
-      "cliCommand": "content similarity stale get",
-      "cliPath": [
-        "content",
-        "similarity",
-        "stale",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -657,50 +245,6 @@
       "destructive": false
     },
     {
-      "operationId": "createAcquisition",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/acquisitions",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities acquisitions create",
-      "cliPath": [
-        "entities",
-        "acquisitions",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityAcquisitionMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/acquisition-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteAcquisition",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/acquisitions/{relationshipId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities acquisitions delete",
-      "cliPath": [
-        "entities",
-        "acquisitions",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getAcquisition",
       "method": "GET",
       "path": "/v1/entities/{entityId}/acquisitions/{relationshipId}",
@@ -720,50 +264,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchAcquisition",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/acquisitions/{relationshipId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities acquisitions update",
-      "cliPath": [
-        "entities",
-        "acquisitions",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityAcquisitionMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/acquisition-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putAcquisition",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/acquisitions/{relationshipId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities acquisitions replace",
-      "cliPath": [
-        "entities",
-        "acquisitions",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityAcquisitionMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/acquisition-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -789,50 +289,6 @@
       "destructive": false
     },
     {
-      "operationId": "createAddress_1",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/addresses",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities addresses create",
-      "cliPath": [
-        "entities",
-        "addresses",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "AddressMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/address/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteAddress_1",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/addresses/{addressJoinId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities addresses delete",
-      "cliPath": [
-        "entities",
-        "addresses",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getAddress_1",
       "method": "GET",
       "path": "/v1/entities/{entityId}/addresses/{addressJoinId}",
@@ -852,50 +308,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchAddress_1",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/addresses/{addressJoinId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities addresses update",
-      "cliPath": [
-        "entities",
-        "addresses",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "AddressMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/address/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putAddress_1",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/addresses/{addressJoinId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities addresses replace",
-      "cliPath": [
-        "entities",
-        "addresses",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "AddressMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/address/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -921,50 +333,6 @@
       "destructive": false
     },
     {
-      "operationId": "createEntityBlogPost",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/blog-posts",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities blog-posts create",
-      "cliPath": [
-        "entities",
-        "blog-posts",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BlogPostMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/blog/post-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityBlogPost",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/blog-posts/{blogPostId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities blog-posts delete",
-      "cliPath": [
-        "entities",
-        "blog-posts",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getEntityBlogPost",
       "method": "GET",
       "path": "/v1/entities/{entityId}/blog-posts/{blogPostId}",
@@ -987,50 +355,6 @@
       "destructive": false
     },
     {
-      "operationId": "patchEntityBlogPost",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/blog-posts/{blogPostId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities blog-posts update",
-      "cliPath": [
-        "entities",
-        "blog-posts",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BlogPostMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/blog/post-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putEntityBlogPost",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/blog-posts/{blogPostId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities blog-posts replace",
-      "cliPath": [
-        "entities",
-        "blog-posts",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BlogPostMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/blog/post-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "getEntityClassifications",
       "method": "GET",
       "path": "/v1/entities/{entityId}/classifications",
@@ -1050,94 +374,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "createEntityClassification",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/classifications",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities classifications create",
-      "cliPath": [
-        "entities",
-        "classifications",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityClassificationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/classification-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityClassification",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/classifications/{classificationId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities classifications delete",
-      "cliPath": [
-        "entities",
-        "classifications",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "patchEntityClassification",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/classifications/{classificationId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities classifications update",
-      "cliPath": [
-        "entities",
-        "classifications",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityClassificationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/classification-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putEntityClassification",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/classifications/{classificationId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities classifications replace",
-      "cliPath": [
-        "entities",
-        "classifications",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityClassificationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/classification-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -1203,209 +439,6 @@
       "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
       "auth": "read",
       "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "entityDetailCoverage",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/detail/coverage",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities detail coverage get",
-      "cliPath": [
-        "entities",
-        "detail",
-        "coverage",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteFundraiseInvestorJoin",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/fundraise-investor-joins/{joinId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities fundraise investor-joins delete",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "investor-joins",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "patchFundraiseInvestorJoin",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/fundraise-investor-joins/{joinId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities fundraise investor-joins update",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "investor-joins",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityFundraiseInvestorJoinMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/fundraise-investor-join-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putFundraiseInvestorJoin",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/fundraise-investor-joins/{joinId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities fundraise investor-joins replace",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "investor-joins",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityFundraiseInvestorJoinMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/fundraise-investor-join-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "getOperatingStatus",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/operating-status",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities operating-status list",
-      "cliPath": [
-        "entities",
-        "operating-status",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchOperatingStatus",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/operating-status",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities operating-status update",
-      "cliPath": [
-        "entities",
-        "operating-status",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "createOperatingStatus",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/operating-status",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities operating-status create",
-      "cliPath": [
-        "entities",
-        "operating-status",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "upsertOperatingStatus",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/operating-status",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities operating-status replace",
-      "cliPath": [
-        "entities",
-        "operating-status",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "getOperatingStatusSignal",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/operating-status/signal",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities operating-status signal get",
-      "cliPath": [
-        "entities",
-        "operating-status",
-        "signal",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
       "dryRunSupported": false,
       "destructive": false
     },
@@ -1498,29 +531,6 @@
       "destructive": false
     },
     {
-      "operationId": "createEntityRelationship",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/relationships",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities relationships row create",
-      "cliPath": [
-        "entities",
-        "relationships",
-        "row",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityRelationshipMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/relationship-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "suggestRelationships",
       "method": "GET",
       "path": "/v1/entities/{entityId}/relationships/suggestions",
@@ -1562,28 +572,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "syncEntityRepositories",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/repositories/sync",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities repositories update",
-      "cliPath": [
-        "entities",
-        "repositories",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -1632,52 +620,6 @@
       "destructive": false
     },
     {
-      "operationId": "createResearchDetail",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/research/details",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities research details create",
-      "cliPath": [
-        "entities",
-        "research",
-        "details",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityResearchDetailMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/research-detail-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteResearchDetail",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/research/details/{detailId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities research details delete",
-      "cliPath": [
-        "entities",
-        "research",
-        "details",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getResearchDetail",
       "method": "GET",
       "path": "/v1/entities/{entityId}/research/details/{detailId}",
@@ -1698,29 +640,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "replaceResearchDetail",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/research/details/{detailId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities research details replace",
-      "cliPath": [
-        "entities",
-        "research",
-        "details",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityResearchDetailMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/research-detail-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -1747,52 +666,6 @@
       "destructive": false
     },
     {
-      "operationId": "createResearchSnippet",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/research/snippets",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities research snippets create",
-      "cliPath": [
-        "entities",
-        "research",
-        "snippets",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityResearchSnippetMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/research-snippet-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteResearchSnippet",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/research/snippets/{snippetId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities research snippets delete",
-      "cliPath": [
-        "entities",
-        "research",
-        "snippets",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getResearchSnippet",
       "method": "GET",
       "path": "/v1/entities/{entityId}/research/snippets/{snippetId}",
@@ -1816,29 +689,6 @@
       "destructive": false
     },
     {
-      "operationId": "replaceResearchSnippet",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/research/snippets/{snippetId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities research snippets replace",
-      "cliPath": [
-        "entities",
-        "research",
-        "snippets",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityResearchSnippetMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/research-snippet-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "getEntitySlug",
       "method": "GET",
       "path": "/v1/entities/{entityId}/slug",
@@ -1858,28 +708,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "changeEntitySlug",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/slug",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities slug update",
-      "cliPath": [
-        "entities",
-        "slug",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "SlugChangeSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/slug/change",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -1906,73 +734,6 @@
       "destructive": false
     },
     {
-      "operationId": "deleteEntityRedirect",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/slug/redirects/{redirectId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities slug redirects delete",
-      "cliPath": [
-        "entities",
-        "slug",
-        "redirects",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "getEntityStatus",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/status",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities status get",
-      "cliPath": [
-        "entities",
-        "status",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "setEntityStatus",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/status",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities status update",
-      "cliPath": [
-        "entities",
-        "status",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityStatusMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/status-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "listEntityTexts",
       "method": "GET",
       "path": "/v1/entities/{entityId}/texts",
@@ -1995,50 +756,6 @@
       "destructive": false
     },
     {
-      "operationId": "createEntityText",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/texts",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities texts create",
-      "cliPath": [
-        "entities",
-        "texts",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityTextMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/text-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityText",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/texts/{textId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities texts delete",
-      "cliPath": [
-        "entities",
-        "texts",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getEntityText",
       "method": "GET",
       "path": "/v1/entities/{entityId}/texts/{textId}",
@@ -2058,50 +775,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchEntityText",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/texts/{textId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities texts update",
-      "cliPath": [
-        "entities",
-        "texts",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityTextMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/text-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putEntityText",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/texts/{textId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities texts replace",
-      "cliPath": [
-        "entities",
-        "texts",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityTextMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/text-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -2127,28 +800,6 @@
       "destructive": false
     },
     {
-      "operationId": "setTypeRecord",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/type-record",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities type-record update",
-      "cliPath": [
-        "entities",
-        "type-record",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "listEntityUniqueIds",
       "method": "GET",
       "path": "/v1/entities/{entityId}/unique-ids",
@@ -2171,50 +822,6 @@
       "destructive": false
     },
     {
-      "operationId": "createEntityUniqueId",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/unique-ids",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities unique-ids create",
-      "cliPath": [
-        "entities",
-        "unique-ids",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "UniqueIdMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/unique/id-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityUniqueId",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/unique-ids/{uniqueIdId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities unique-ids delete",
-      "cliPath": [
-        "entities",
-        "unique-ids",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getEntityUniqueId",
       "method": "GET",
       "path": "/v1/entities/{entityId}/unique-ids/{uniqueIdId}",
@@ -2234,28 +841,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "updateEntityUniqueId",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/unique-ids/{uniqueIdId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities unique-ids update",
-      "cliPath": [
-        "entities",
-        "unique-ids",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "UniqueIdMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/unique/id-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -2281,50 +866,6 @@
       "destructive": false
     },
     {
-      "operationId": "createEntityUrl",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/urls",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities urls create",
-      "cliPath": [
-        "entities",
-        "urls",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityUrlLinkMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/url-link-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityUrl",
-      "method": "DELETE",
-      "path": "/v1/entities/{entityId}/urls/{urlId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities urls delete",
-      "cliPath": [
-        "entities",
-        "urls",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getEntityUrl",
       "method": "GET",
       "path": "/v1/entities/{entityId}/urls/{urlId}",
@@ -2344,50 +885,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchEntityUrl",
-      "method": "PATCH",
-      "path": "/v1/entities/{entityId}/urls/{urlId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities urls update",
-      "cliPath": [
-        "entities",
-        "urls",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityUrlLinkMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/url-link-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putEntityUrl",
-      "method": "PUT",
-      "path": "/v1/entities/{entityId}/urls/{urlId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities urls replace",
-      "cliPath": [
-        "entities",
-        "urls",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityUrlLinkMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/url-link-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -2436,73 +933,6 @@
       "destructive": false
     },
     {
-      "operationId": "auditEntityClassifications",
-      "method": "POST",
-      "path": "/v1/entities/classifications/audit",
-      "resource": "entities",
-      "intent": "lookup",
-      "cliCommand": "entities classifications audit",
-      "cliPath": [
-        "entities",
-        "classifications",
-        "audit"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "ClassificationAuditFilterSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/classification/audit-filter",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "auditFleetEntityClassifications",
-      "method": "POST",
-      "path": "/v1/entities/classifications/audit/fleet",
-      "resource": "entities",
-      "intent": "lookup",
-      "cliCommand": "entities classifications fleet audit",
-      "cliPath": [
-        "entities",
-        "classifications",
-        "fleet",
-        "audit"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "ClassificationAuditFilterSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/classification/audit-filter",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "reconcileEntityClassifications",
-      "method": "POST",
-      "path": "/v1/entities/classifications/reconcile",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities classifications reconcile",
-      "cliPath": [
-        "entities",
-        "classifications",
-        "reconcile"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "ClassificationReconcileMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/classification/reconcile-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "entityCountsByType",
       "method": "GET",
       "path": "/v1/entities/counts",
@@ -2523,27 +953,6 @@
       "scope": "read",
       "dryRunSupported": false,
       "destructive": false
-    },
-    {
-      "operationId": "deleteEntityDetail",
-      "method": "DELETE",
-      "path": "/v1/entities/detail",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities delete",
-      "cliPath": [
-        "entities",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
     },
     {
       "operationId": "getEntityDetail",
@@ -2567,70 +976,6 @@
       "destructive": false
     },
     {
-      "operationId": "patchEntityDetail",
-      "method": "PATCH",
-      "path": "/v1/entities/detail",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities update",
-      "cliPath": [
-        "entities",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "createEntity",
-      "method": "POST",
-      "path": "/v1/entities/detail",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities bootstrap create",
-      "cliPath": [
-        "entities",
-        "bootstrap",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "updateEntityDetail",
-      "method": "PUT",
-      "path": "/v1/entities/detail",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities replace",
-      "cliPath": [
-        "entities",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "postEntityDetailBatch",
       "method": "POST",
       "path": "/v1/entities/detail/batch",
@@ -2648,94 +993,6 @@
       "mcpTool": "aventure_lookup",
       "bodySchemaName": "EntityDetailBatchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/detail-batch",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityCrawlRun",
-      "method": "DELETE",
-      "path": "/v1/entities/detail/crawl-runs",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities crawl-runs delete",
-      "cliPath": [
-        "entities",
-        "crawl-runs",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "getEntityCrawlRun",
-      "method": "GET",
-      "path": "/v1/entities/detail/crawl-runs",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities crawl-runs get",
-      "cliPath": [
-        "entities",
-        "crawl-runs",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "updateEntityCrawlRun",
-      "method": "PATCH",
-      "path": "/v1/entities/detail/crawl-runs",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities crawl-runs update",
-      "cliPath": [
-        "entities",
-        "crawl-runs",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "getEntityCrawlRunJob",
-      "method": "GET",
-      "path": "/v1/entities/detail/crawl-runs/jobs/{jobId}",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities crawl-runs status",
-      "cliPath": [
-        "entities",
-        "crawl-runs",
-        "status"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -2764,184 +1021,6 @@
       "destructive": false
     },
     {
-      "operationId": "createValuation",
-      "method": "POST",
-      "path": "/v1/entities/detail/financial/valuation",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities valuations create",
-      "cliPath": [
-        "entities",
-        "valuations",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityValuationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/valuation-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteValuationById",
-      "method": "DELETE",
-      "path": "/v1/entities/detail/financial/valuation/{detailId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities valuations delete",
-      "cliPath": [
-        "entities",
-        "valuations",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "patchValuationById",
-      "method": "PATCH",
-      "path": "/v1/entities/detail/financial/valuation/{detailId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities valuations update",
-      "cliPath": [
-        "entities",
-        "valuations",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityValuationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/valuation-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "replaceValuationById",
-      "method": "PUT",
-      "path": "/v1/entities/detail/financial/valuation/{detailId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities valuations replace",
-      "cliPath": [
-        "entities",
-        "valuations",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityValuationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/valuation-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteValuationByMonth",
-      "method": "DELETE",
-      "path": "/v1/entities/detail/financial/valuation/{year}/{month}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities valuations month delete",
-      "cliPath": [
-        "entities",
-        "valuations",
-        "month",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "patchValuationByMonth",
-      "method": "PATCH",
-      "path": "/v1/entities/detail/financial/valuation/{year}/{month}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities valuations month update",
-      "cliPath": [
-        "entities",
-        "valuations",
-        "month",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityValuationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/valuation-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "replaceValuationByMonth",
-      "method": "PUT",
-      "path": "/v1/entities/detail/financial/valuation/{year}/{month}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities valuations month replace",
-      "cliPath": [
-        "entities",
-        "valuations",
-        "month",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityValuationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/valuation-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "createFullEntity",
-      "method": "POST",
-      "path": "/v1/entities/detail/full",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities create",
-      "cliPath": [
-        "entities",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "listFundraiseInvestorJoins",
       "method": "GET",
       "path": "/v1/entities/detail/fundraise-investor-joins",
@@ -2962,29 +1041,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "createFundraiseInvestorJoin",
-      "method": "POST",
-      "path": "/v1/entities/detail/fundraise-investor-joins",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities fundraise investor-joins create",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "investor-joins",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityFundraiseInvestorJoinMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/fundraise-investor-join-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -3034,52 +1090,6 @@
       "destructive": false
     },
     {
-      "operationId": "createFundraiseTransaction",
-      "method": "POST",
-      "path": "/v1/entities/detail/fundraise-rounds",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities fundraise rounds create",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "rounds",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityFundraiseTransactionMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/fundraise-transaction-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteFundraiseTransaction",
-      "method": "DELETE",
-      "path": "/v1/entities/detail/fundraise-rounds/{transactionId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities fundraise rounds delete",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "rounds",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getFundraiseTransaction",
       "method": "GET",
       "path": "/v1/entities/detail/fundraise-rounds/{transactionId}",
@@ -3100,52 +1110,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchFundraiseTransaction",
-      "method": "PATCH",
-      "path": "/v1/entities/detail/fundraise-rounds/{transactionId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities fundraise rounds update",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "rounds",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityFundraiseTransactionMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/fundraise-transaction-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putFundraiseTransaction",
-      "method": "PUT",
-      "path": "/v1/entities/detail/fundraise-rounds/{transactionId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities fundraise rounds replace",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "rounds",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityFundraiseTransactionMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/fundraise-transaction-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -3237,94 +1201,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "createEntityNews",
-      "method": "POST",
-      "path": "/v1/entities/detail/news",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities news create",
-      "cliPath": [
-        "entities",
-        "news",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityNews",
-      "method": "DELETE",
-      "path": "/v1/entities/detail/news/{newsId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities news delete",
-      "cliPath": [
-        "entities",
-        "news",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "patchEntityNews",
-      "method": "PATCH",
-      "path": "/v1/entities/detail/news/{newsId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities news update",
-      "cliPath": [
-        "entities",
-        "news",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putEntityNews",
-      "method": "PUT",
-      "path": "/v1/entities/detail/news/{newsId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities news replace",
-      "cliPath": [
-        "entities",
-        "news",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -3435,96 +1311,6 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckEntitiesGet",
-      "method": "GET",
-      "path": "/v1/entities/duplicate-check",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities duplicate-check get",
-      "cliPath": [
-        "entities",
-        "duplicate-check",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckEntitiesPost",
-      "method": "POST",
-      "path": "/v1/entities/duplicate-check",
-      "resource": "entities",
-      "intent": "lookup",
-      "cliCommand": "entities duplicate-check lookup",
-      "cliPath": [
-        "entities",
-        "duplicate-check",
-        "lookup"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "EntityDuplicateCriteriaSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/duplicate-criteria",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckEntityCandidatesGet",
-      "method": "GET",
-      "path": "/v1/entities/duplicate-check/candidates",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities duplicate-check candidates list",
-      "cliPath": [
-        "entities",
-        "duplicate-check",
-        "candidates",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckEntityCandidatesPost",
-      "method": "POST",
-      "path": "/v1/entities/duplicate-check/candidates",
-      "resource": "entities",
-      "intent": "lookup",
-      "cliCommand": "entities duplicate-check candidates lookup",
-      "cliPath": [
-        "entities",
-        "duplicate-check",
-        "candidates",
-        "lookup"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "EntityDuplicateCriteriaSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/duplicate-criteria",
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -3645,24 +1431,46 @@
       "destructive": false
     },
     {
-      "operationId": "mergeEntities",
-      "method": "POST",
-      "path": "/v1/entities/merge",
+      "operationId": "entityLetterCounts",
+      "method": "GET",
+      "path": "/v1/entities/letter-counts",
       "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities merge",
+      "intent": "read",
+      "cliCommand": "sitemap entity-letter-counts list",
       "cliPath": [
-        "entities",
-        "merge"
+        "sitemap",
+        "entity-letter-counts",
+        "list"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityMergeSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/merge",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "lookupEntity",
+      "method": "GET",
+      "path": "/v1/entities/lookup",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities lookup",
+      "cliPath": [
+        "entities",
+        "lookup"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -3685,29 +1493,6 @@
       "scope": "read",
       "dryRunSupported": false,
       "destructive": false
-    },
-    {
-      "operationId": "deleteRelationship",
-      "method": "DELETE",
-      "path": "/v1/entities/relationships/{relationshipId}",
-      "resource": "entities",
-      "intent": "delete",
-      "cliCommand": "entities relationships row delete",
-      "cliPath": [
-        "entities",
-        "relationships",
-        "row",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
     },
     {
       "operationId": "getRelationship",
@@ -3733,51 +1518,6 @@
       "destructive": false
     },
     {
-      "operationId": "updateRelationship",
-      "method": "PATCH",
-      "path": "/v1/entities/relationships/{relationshipId}",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities relationships row update",
-      "cliPath": [
-        "entities",
-        "relationships",
-        "row",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityRelationshipMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/relationship-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "joinRelationship",
-      "method": "POST",
-      "path": "/v1/entities/relationships/join",
-      "resource": "entities",
-      "intent": "write",
-      "cliCommand": "entities relationships join",
-      "cliPath": [
-        "entities",
-        "relationships",
-        "join"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "listRelationshipTypes",
       "method": "GET",
       "path": "/v1/entities/relationships/types",
@@ -3788,30 +1528,6 @@
         "entities",
         "relationships",
         "types",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "completionGates",
-      "method": "GET",
-      "path": "/v1/entities/research/completion/gates",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities research completion gates list",
-      "cliPath": [
-        "entities",
-        "research",
-        "completion",
-        "gates",
         "list"
       ],
       "cliAliasCommand": null,
@@ -3888,6 +1604,94 @@
       "mcpTool": "aventure_search",
       "bodySchemaName": "EntityListFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/list-filter",
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "entityBoundaries",
+      "method": "GET",
+      "path": "/v1/entities/sitemap-boundaries",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "sitemap entity-boundaries get",
+      "cliPath": [
+        "sitemap",
+        "entity-boundaries",
+        "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "getSitemapRoutes",
+      "method": "GET",
+      "path": "/v1/entities/sitemap-routes",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "sitemap entity-routes list",
+      "cliPath": [
+        "sitemap",
+        "entity-routes",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "entityUrlBoundaries",
+      "method": "GET",
+      "path": "/v1/entities/sitemap-url-boundaries",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "sitemap entity-url-boundaries get",
+      "cliPath": [
+        "sitemap",
+        "entity-url-boundaries",
+        "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "getSitemapUrls",
+      "method": "GET",
+      "path": "/v1/entities/sitemap-urls",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "sitemap entity-urls list",
+      "cliPath": [
+        "sitemap",
+        "entity-urls",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -4002,7 +1806,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "none",
       "scope": "read",
       "dryRunSupported": false,
       "destructive": false
@@ -4025,275 +1829,6 @@
       "bodySchemaImport": null,
       "auth": "read",
       "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "convertMedia",
-      "method": "POST",
-      "path": "/v1/media/convert",
-      "resource": "media",
-      "intent": "write",
-      "cliCommand": "media convert",
-      "cliPath": [
-        "media",
-        "convert"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteMedia",
-      "method": "DELETE",
-      "path": "/v1/media/delete",
-      "resource": "media",
-      "intent": "delete",
-      "cliCommand": "media delete",
-      "cliPath": [
-        "media",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "importEntityLogo",
-      "method": "POST",
-      "path": "/v1/media/entity-logo/import",
-      "resource": "media",
-      "intent": "write",
-      "cliCommand": "media entity-logo import",
-      "cliPath": [
-        "media",
-        "entity-logo",
-        "import"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "assertLogoAccuracy",
-      "method": "POST",
-      "path": "/v1/media/logo-accuracy",
-      "resource": "media",
-      "intent": "lookup",
-      "cliCommand": "media logo-accuracy lookup",
-      "cliPath": [
-        "media",
-        "logo-accuracy",
-        "lookup"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "listJobs",
-      "method": "GET",
-      "path": "/v1/media/logo-audit/jobs",
-      "resource": "media",
-      "intent": "read",
-      "cliCommand": "media logo-audit jobs list",
-      "cliPath": [
-        "media",
-        "logo-audit",
-        "jobs",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "enqueueJob_1",
-      "method": "POST",
-      "path": "/v1/media/logo-audit/jobs",
-      "resource": "media",
-      "intent": "write",
-      "cliCommand": "media logo-audit jobs create",
-      "cliPath": [
-        "media",
-        "logo-audit",
-        "jobs",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "cancelJob_1",
-      "method": "DELETE",
-      "path": "/v1/media/logo-audit/jobs/{jobId}",
-      "resource": "media",
-      "intent": "delete",
-      "cliCommand": "media logo-audit jobs delete",
-      "cliPath": [
-        "media",
-        "logo-audit",
-        "jobs",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "getJob_1",
-      "method": "GET",
-      "path": "/v1/media/logo-audit/jobs/{jobId}",
-      "resource": "media",
-      "intent": "read",
-      "cliCommand": "media logo-audit jobs get",
-      "cliPath": [
-        "media",
-        "logo-audit",
-        "jobs",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "importNewsThumbnail",
-      "method": "POST",
-      "path": "/v1/media/news-thumbnail/import",
-      "resource": "media",
-      "intent": "write",
-      "cliCommand": "media news-thumbnail import",
-      "cliPath": [
-        "media",
-        "news-thumbnail",
-        "import"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "enqueueJob",
-      "method": "POST",
-      "path": "/v1/media/retrofit/jobs",
-      "resource": "media",
-      "intent": "write",
-      "cliCommand": "media retrofit jobs create",
-      "cliPath": [
-        "media",
-        "retrofit",
-        "jobs",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "cancelJob",
-      "method": "DELETE",
-      "path": "/v1/media/retrofit/jobs/{jobId}",
-      "resource": "media",
-      "intent": "delete",
-      "cliCommand": "media retrofit jobs delete",
-      "cliPath": [
-        "media",
-        "retrofit",
-        "jobs",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "getJob",
-      "method": "GET",
-      "path": "/v1/media/retrofit/jobs/{jobId}",
-      "resource": "media",
-      "intent": "read",
-      "cliCommand": "media retrofit jobs get",
-      "cliPath": [
-        "media",
-        "retrofit",
-        "jobs",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
       "dryRunSupported": false,
       "destructive": false
     },
@@ -4342,24 +1877,25 @@
       "destructive": false
     },
     {
-      "operationId": "uploadMedia",
-      "method": "POST",
-      "path": "/v1/media/upload",
-      "resource": "media",
-      "intent": "write",
-      "cliCommand": "media upload",
+      "operationId": "getMetrics",
+      "method": "GET",
+      "path": "/v1/metrics",
+      "resource": "metrics",
+      "intent": "read",
+      "cliCommand": "operations metrics get",
       "cliPath": [
-        "media",
-        "upload"
+        "operations",
+        "metrics",
+        "get"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "none",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -4449,28 +1985,6 @@
       "destructive": false
     },
     {
-      "operationId": "changeNewsSlug",
-      "method": "PATCH",
-      "path": "/v1/news/{newsId}/slug",
-      "resource": "news",
-      "intent": "write",
-      "cliCommand": "news slug update",
-      "cliPath": [
-        "news",
-        "slug",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "SlugChangeSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/slug/change",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "listNewsRedirects",
       "method": "GET",
       "path": "/v1/news/{newsId}/slug/redirects",
@@ -4494,50 +2008,6 @@
       "destructive": false
     },
     {
-      "operationId": "deleteNewsRedirect",
-      "method": "DELETE",
-      "path": "/v1/news/{newsId}/slug/redirects/{redirectId}",
-      "resource": "news",
-      "intent": "delete",
-      "cliCommand": "news slug redirects delete",
-      "cliPath": [
-        "news",
-        "slug",
-        "redirects",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "deleteNewsDetail",
-      "method": "DELETE",
-      "path": "/v1/news/detail",
-      "resource": "news",
-      "intent": "delete",
-      "cliCommand": "news delete",
-      "cliPath": [
-        "news",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getNewsDetail",
       "method": "GET",
       "path": "/v1/news/detail",
@@ -4553,159 +2023,6 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchNewsDetail",
-      "method": "PATCH",
-      "path": "/v1/news/detail",
-      "resource": "news",
-      "intent": "write",
-      "cliCommand": "news update",
-      "cliPath": [
-        "news",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "createNewsDetail",
-      "method": "POST",
-      "path": "/v1/news/detail",
-      "resource": "news",
-      "intent": "write",
-      "cliCommand": "news create",
-      "cliPath": [
-        "news",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putNewsDetail",
-      "method": "PUT",
-      "path": "/v1/news/detail",
-      "resource": "news",
-      "intent": "write",
-      "cliCommand": "news replace",
-      "cliPath": [
-        "news",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckNewsGet",
-      "method": "GET",
-      "path": "/v1/news/duplicate-check",
-      "resource": "news",
-      "intent": "read",
-      "cliCommand": "news duplicate-check get",
-      "cliPath": [
-        "news",
-        "duplicate-check",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckNewsPost",
-      "method": "POST",
-      "path": "/v1/news/duplicate-check",
-      "resource": "news",
-      "intent": "lookup",
-      "cliCommand": "news duplicate-check lookup",
-      "cliPath": [
-        "news",
-        "duplicate-check",
-        "lookup"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "NewsDuplicateCheckSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/duplicate-check",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckNewsCandidatesGet",
-      "method": "GET",
-      "path": "/v1/news/duplicate-check/candidates",
-      "resource": "news",
-      "intent": "read",
-      "cliCommand": "news duplicate-check candidates list",
-      "cliPath": [
-        "news",
-        "duplicate-check",
-        "candidates",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckNewsCandidatesPost",
-      "method": "POST",
-      "path": "/v1/news/duplicate-check/candidates",
-      "resource": "news",
-      "intent": "lookup",
-      "cliCommand": "news duplicate-check candidates lookup",
-      "cliPath": [
-        "news",
-        "duplicate-check",
-        "candidates",
-        "lookup"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "NewsDuplicateCheckSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/duplicate-check",
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -4734,16 +2051,15 @@
       "destructive": false
     },
     {
-      "operationId": "listCandidates",
+      "operationId": "newsLetterCounts",
       "method": "GET",
-      "path": "/v1/news/linker/candidates",
+      "path": "/v1/news/letter-counts",
       "resource": "news",
       "intent": "read",
-      "cliCommand": "news linker candidates list",
+      "cliCommand": "sitemap news-letter-counts list",
       "cliPath": [
-        "news",
-        "linker",
-        "candidates",
+        "sitemap",
+        "news-letter-counts",
         "list"
       ],
       "cliAliasCommand": null,
@@ -4801,6 +2117,28 @@
       "destructive": false
     },
     {
+      "operationId": "newsBoundaries",
+      "method": "GET",
+      "path": "/v1/news/sitemap-boundaries",
+      "resource": "news",
+      "intent": "read",
+      "cliCommand": "sitemap news-boundaries get",
+      "cliPath": [
+        "sitemap",
+        "news-boundaries",
+        "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
       "operationId": "listPeople",
       "method": "GET",
       "path": "/v1/people",
@@ -4844,50 +2182,6 @@
       "destructive": false
     },
     {
-      "operationId": "createAddress",
-      "method": "POST",
-      "path": "/v1/people/{personId}/addresses",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people addresses create",
-      "cliPath": [
-        "people",
-        "addresses",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "AddressMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/address/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteAddress",
-      "method": "DELETE",
-      "path": "/v1/people/{personId}/addresses/{addressJoinId}",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people addresses delete",
-      "cliPath": [
-        "people",
-        "addresses",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getAddress",
       "method": "GET",
       "path": "/v1/people/{personId}/addresses/{addressJoinId}",
@@ -4907,50 +2201,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchAddress",
-      "method": "PATCH",
-      "path": "/v1/people/{personId}/addresses/{addressJoinId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people addresses update",
-      "cliPath": [
-        "people",
-        "addresses",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "AddressMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/address/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putAddress",
-      "method": "PUT",
-      "path": "/v1/people/{personId}/addresses/{addressJoinId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people addresses replace",
-      "cliPath": [
-        "people",
-        "addresses",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "AddressMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/address/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -4976,50 +2226,6 @@
       "destructive": false
     },
     {
-      "operationId": "createPersonBlogPost",
-      "method": "POST",
-      "path": "/v1/people/{personId}/blog-posts",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people blog-posts create",
-      "cliPath": [
-        "people",
-        "blog-posts",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BlogPostMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/blog/post-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deletePersonBlogPost",
-      "method": "DELETE",
-      "path": "/v1/people/{personId}/blog-posts/{blogPostId}",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people blog-posts delete",
-      "cliPath": [
-        "people",
-        "blog-posts",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getPersonBlogPost",
       "method": "GET",
       "path": "/v1/people/{personId}/blog-posts/{blogPostId}",
@@ -5039,50 +2245,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchPersonBlogPost",
-      "method": "PATCH",
-      "path": "/v1/people/{personId}/blog-posts/{blogPostId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people blog-posts update",
-      "cliPath": [
-        "people",
-        "blog-posts",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BlogPostMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/blog/post-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putPersonBlogPost",
-      "method": "PUT",
-      "path": "/v1/people/{personId}/blog-posts/{blogPostId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people blog-posts replace",
-      "cliPath": [
-        "people",
-        "blog-posts",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BlogPostMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/blog/post-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -5152,50 +2314,6 @@
       "destructive": false
     },
     {
-      "operationId": "createEntityPersonAssociation",
-      "method": "POST",
-      "path": "/v1/people/{personId}/entities",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people entities create",
-      "cliPath": [
-        "people",
-        "entities",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonEntityAssociationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/entity-association-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deleteEntityPersonAssociation",
-      "method": "DELETE",
-      "path": "/v1/people/{personId}/entities/{associationId}",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people entities delete",
-      "cliPath": [
-        "people",
-        "entities",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getPersonEntityAssociation",
       "method": "GET",
       "path": "/v1/people/{personId}/entities/{associationId}",
@@ -5216,73 +2334,6 @@
       "scope": "read",
       "dryRunSupported": false,
       "destructive": false
-    },
-    {
-      "operationId": "patchEntityPersonAssociation",
-      "method": "PATCH",
-      "path": "/v1/people/{personId}/entities/{associationId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people entities update",
-      "cliPath": [
-        "people",
-        "entities",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonEntityAssociationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/entity-association-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "replaceEntityPersonAssociation",
-      "method": "PUT",
-      "path": "/v1/people/{personId}/entities/{associationId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people entities replace",
-      "cliPath": [
-        "people",
-        "entities",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonEntityAssociationMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/entity-association-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "clearEntityPersonCorporateTitle",
-      "method": "DELETE",
-      "path": "/v1/people/{personId}/entities/{associationId}/corporate-title",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people entities corporate-title delete",
-      "cliPath": [
-        "people",
-        "entities",
-        "corporate-title",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
     },
     {
       "operationId": "getPersonGraph",
@@ -5329,50 +2380,6 @@
       "destructive": false
     },
     {
-      "operationId": "syncPersonRepositories",
-      "method": "POST",
-      "path": "/v1/people/{personId}/repositories/sync",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people repositories update",
-      "cliPath": [
-        "people",
-        "repositories",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "changePersonSlug",
-      "method": "PATCH",
-      "path": "/v1/people/{personId}/slug",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people slug update",
-      "cliPath": [
-        "people",
-        "slug",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "SlugChangeSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/slug/change",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "listPersonRedirects",
       "method": "GET",
       "path": "/v1/people/{personId}/slug/redirects",
@@ -5394,29 +2401,6 @@
       "scope": "read",
       "dryRunSupported": false,
       "destructive": false
-    },
-    {
-      "operationId": "deletePersonRedirect",
-      "method": "DELETE",
-      "path": "/v1/people/{personId}/slug/redirects/{redirectId}",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people slug redirects delete",
-      "cliPath": [
-        "people",
-        "slug",
-        "redirects",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
     },
     {
       "operationId": "listPersonTexts",
@@ -5441,50 +2425,6 @@
       "destructive": false
     },
     {
-      "operationId": "createPersonText",
-      "method": "POST",
-      "path": "/v1/people/{personId}/texts",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people texts create",
-      "cliPath": [
-        "people",
-        "texts",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityTextMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/text-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deletePersonText",
-      "method": "DELETE",
-      "path": "/v1/people/{personId}/texts/{textId}",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people texts delete",
-      "cliPath": [
-        "people",
-        "texts",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getPersonText",
       "method": "GET",
       "path": "/v1/people/{personId}/texts/{textId}",
@@ -5504,50 +2444,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchPersonText",
-      "method": "PATCH",
-      "path": "/v1/people/{personId}/texts/{textId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people texts update",
-      "cliPath": [
-        "people",
-        "texts",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityTextMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/text-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putPersonText",
-      "method": "PUT",
-      "path": "/v1/people/{personId}/texts/{textId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people texts replace",
-      "cliPath": [
-        "people",
-        "texts",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityTextMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/text-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -5573,50 +2469,6 @@
       "destructive": false
     },
     {
-      "operationId": "createPersonUniqueId",
-      "method": "POST",
-      "path": "/v1/people/{personId}/unique-ids",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people unique-ids create",
-      "cliPath": [
-        "people",
-        "unique-ids",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "UniqueIdMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/unique/id-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deletePersonUniqueId",
-      "method": "DELETE",
-      "path": "/v1/people/{personId}/unique-ids/{uniqueIdId}",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people unique-ids delete",
-      "cliPath": [
-        "people",
-        "unique-ids",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getPersonUniqueId",
       "method": "GET",
       "path": "/v1/people/{personId}/unique-ids/{uniqueIdId}",
@@ -5636,28 +2488,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "updatePersonUniqueId",
-      "method": "PATCH",
-      "path": "/v1/people/{personId}/unique-ids/{uniqueIdId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people unique-ids update",
-      "cliPath": [
-        "people",
-        "unique-ids",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "UniqueIdMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/unique/id-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -5683,50 +2513,6 @@
       "destructive": false
     },
     {
-      "operationId": "createPersonUrl",
-      "method": "POST",
-      "path": "/v1/people/{personId}/urls",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people urls create",
-      "cliPath": [
-        "people",
-        "urls",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityUrlLinkMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/url-link-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deletePersonUrl",
-      "method": "DELETE",
-      "path": "/v1/people/{personId}/urls/{urlId}",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people urls delete",
-      "cliPath": [
-        "people",
-        "urls",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getPersonUrl",
       "method": "GET",
       "path": "/v1/people/{personId}/urls/{urlId}",
@@ -5746,50 +2532,6 @@
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "patchPersonUrl",
-      "method": "PATCH",
-      "path": "/v1/people/{personId}/urls/{urlId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people urls update",
-      "cliPath": [
-        "people",
-        "urls",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityUrlLinkMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/url-link-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putPersonUrl",
-      "method": "PUT",
-      "path": "/v1/people/{personId}/urls/{urlId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people urls replace",
-      "cliPath": [
-        "people",
-        "urls",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "EntityUrlLinkMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/url-link-mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
       "destructive": false
     },
     {
@@ -5861,27 +2603,6 @@
       "destructive": false
     },
     {
-      "operationId": "deletePersonDetail",
-      "method": "DELETE",
-      "path": "/v1/people/detail",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people delete",
-      "cliPath": [
-        "people",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
       "operationId": "getPersonDetail",
       "method": "GET",
       "path": "/v1/people/detail",
@@ -5903,69 +2624,6 @@
       "destructive": false
     },
     {
-      "operationId": "patchPersonDetail",
-      "method": "PATCH",
-      "path": "/v1/people/detail",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people update",
-      "cliPath": [
-        "people",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "createPersonDetail",
-      "method": "POST",
-      "path": "/v1/people/detail",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people create",
-      "cliPath": [
-        "people",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonCreateSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/create",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "updatePersonDetail",
-      "method": "PUT",
-      "path": "/v1/people/detail",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people replace",
-      "cliPath": [
-        "people",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "getPersonDetailBatch",
       "method": "POST",
       "path": "/v1/people/detail/batch",
@@ -5983,94 +2641,6 @@
       "mcpTool": "aventure_lookup",
       "bodySchemaName": "PersonDetailBatchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/detail-batch",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "deletePersonCrawlRun",
-      "method": "DELETE",
-      "path": "/v1/people/detail/crawl-runs",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people crawl-runs delete",
-      "cliPath": [
-        "people",
-        "crawl-runs",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "getPersonCrawlRun",
-      "method": "GET",
-      "path": "/v1/people/detail/crawl-runs",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people crawl-runs get",
-      "cliPath": [
-        "people",
-        "crawl-runs",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "updatePersonCrawlRun",
-      "method": "PATCH",
-      "path": "/v1/people/detail/crawl-runs",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people crawl-runs update",
-      "cliPath": [
-        "people",
-        "crawl-runs",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "getPersonCrawlRunJob",
-      "method": "GET",
-      "path": "/v1/people/detail/crawl-runs/jobs/{jobId}",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people crawl-runs status",
-      "cliPath": [
-        "people",
-        "crawl-runs",
-        "status"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -6143,94 +2713,6 @@
       "destructive": false
     },
     {
-      "operationId": "createPersonNews",
-      "method": "POST",
-      "path": "/v1/people/detail/news",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people news create",
-      "cliPath": [
-        "people",
-        "news",
-        "create"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "deletePersonNews",
-      "method": "DELETE",
-      "path": "/v1/people/detail/news/{newsId}",
-      "resource": "people",
-      "intent": "delete",
-      "cliCommand": "people news delete",
-      "cliPath": [
-        "people",
-        "news",
-        "delete"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": true
-    },
-    {
-      "operationId": "patchPersonNews",
-      "method": "PATCH",
-      "path": "/v1/people/detail/news/{newsId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people news update",
-      "cliPath": [
-        "people",
-        "news",
-        "update"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
-      "operationId": "putPersonNews",
-      "method": "PUT",
-      "path": "/v1/people/detail/news/{newsId}",
-      "resource": "people",
-      "intent": "write",
-      "cliCommand": "people news replace",
-      "cliPath": [
-        "people",
-        "news",
-        "replace"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/mutation",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
-      "destructive": false
-    },
-    {
       "operationId": "listSimilarPeople",
       "method": "GET",
       "path": "/v1/people/detail/similar",
@@ -6247,96 +2729,6 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckPeopleGet",
-      "method": "GET",
-      "path": "/v1/people/duplicate-check",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people duplicate-check get",
-      "cliPath": [
-        "people",
-        "duplicate-check",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckPeoplePost",
-      "method": "POST",
-      "path": "/v1/people/duplicate-check",
-      "resource": "people",
-      "intent": "lookup",
-      "cliCommand": "people duplicate-check lookup",
-      "cliPath": [
-        "people",
-        "duplicate-check",
-        "lookup"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "PersonDuplicateCriteriaSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/duplicate-criteria",
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckPeopleCandidatesGet",
-      "method": "GET",
-      "path": "/v1/people/duplicate-check/candidates",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people duplicate-check candidates list",
-      "cliPath": [
-        "people",
-        "duplicate-check",
-        "candidates",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "duplicateCheckPeopleCandidatesPost",
-      "method": "POST",
-      "path": "/v1/people/duplicate-check/candidates",
-      "resource": "people",
-      "intent": "lookup",
-      "cliCommand": "people duplicate-check candidates lookup",
-      "cliPath": [
-        "people",
-        "duplicate-check",
-        "candidates",
-        "lookup"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "PersonDuplicateCriteriaSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/duplicate-criteria",
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -6410,24 +2802,25 @@
       "destructive": false
     },
     {
-      "operationId": "mergePeople",
-      "method": "POST",
-      "path": "/v1/people/merge",
+      "operationId": "letterCounts",
+      "method": "GET",
+      "path": "/v1/people/letter-counts",
       "resource": "people",
-      "intent": "write",
-      "cliCommand": "people merge",
+      "intent": "read",
+      "cliCommand": "sitemap person-letter-counts list",
       "cliPath": [
-        "people",
-        "merge"
+        "sitemap",
+        "person-letter-counts",
+        "list"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "PersonMergeSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/merge",
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -6467,6 +2860,28 @@
       "mcpTool": "aventure_search",
       "bodySchemaName": "PersonFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/filter",
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "personBoundaries",
+      "method": "GET",
+      "path": "/v1/people/sitemap-boundaries",
+      "resource": "people",
+      "intent": "read",
+      "cliCommand": "sitemap person-boundaries get",
+      "cliPath": [
+        "sitemap",
+        "person-boundaries",
+        "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
       "auth": "read",
       "scope": "read",
       "dryRunSupported": false,
@@ -6513,31 +2928,30 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "none",
       "scope": "read",
       "dryRunSupported": false,
       "destructive": false
     },
     {
-      "operationId": "updateStatus",
-      "method": "PATCH",
-      "path": "/v1/provenance/{id}/status",
+      "operationId": "getProvenance",
+      "method": "GET",
+      "path": "/v1/provenance/{provenanceId}",
       "resource": "provenance",
-      "intent": "write",
-      "cliCommand": "provenance status update",
+      "intent": "read",
+      "cliCommand": "provenance get",
       "cliPath": [
         "provenance",
-        "status",
-        "update"
+        "get"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -6670,28 +3084,6 @@
       "destructive": false
     },
     {
-      "operationId": "getWebSearch",
-      "method": "GET",
-      "path": "/v1/search/web/{documentId}",
-      "resource": "search",
-      "intent": "read",
-      "cliCommand": "search web get",
-      "cliPath": [
-        "search",
-        "web",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
       "operationId": "previewCompany",
       "method": "GET",
       "path": "/v1/sec/company",
@@ -6714,95 +3106,91 @@
       "destructive": false
     },
     {
-      "operationId": "mapHeadquarters",
-      "method": "POST",
-      "path": "/v1/sec/entities/{entityId}/address",
-      "resource": "sec",
-      "intent": "write",
-      "cliCommand": "sec entities address attach",
+      "operationId": "indexManifest",
+      "method": "GET",
+      "path": "/v1/sitemap/index-manifest",
+      "resource": "sitemap",
+      "intent": "read",
+      "cliCommand": "sitemap index-manifest get",
       "cliPath": [
-        "sec",
-        "entities",
-        "address",
-        "attach"
+        "sitemap",
+        "index-manifest",
+        "get"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
-      "operationId": "mapAliases",
-      "method": "POST",
-      "path": "/v1/sec/entities/{entityId}/aliases",
-      "resource": "sec",
-      "intent": "write",
-      "cliCommand": "sec entities aliases attach",
+      "operationId": "urlSlotBoundaries",
+      "method": "GET",
+      "path": "/v1/sitemap/url-slot-boundaries",
+      "resource": "sitemap",
+      "intent": "read",
+      "cliCommand": "sitemap url-slot-boundaries list",
       "cliPath": [
-        "sec",
-        "entities",
-        "aliases",
-        "attach"
+        "sitemap",
+        "url-slot-boundaries",
+        "list"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
-      "operationId": "mapExchangeUrls",
-      "method": "POST",
-      "path": "/v1/sec/entities/{entityId}/exchange-urls",
-      "resource": "sec",
-      "intent": "write",
-      "cliCommand": "sec entities exchange-urls attach",
+      "operationId": "urlSlots",
+      "method": "GET",
+      "path": "/v1/sitemap/url-slots",
+      "resource": "sitemap",
+      "intent": "read",
+      "cliCommand": "sitemap url-slots list",
       "cliPath": [
-        "sec",
-        "entities",
-        "exchange-urls",
-        "attach"
+        "sitemap",
+        "url-slots",
+        "list"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
-      "operationId": "mapIdentifiers",
-      "method": "POST",
-      "path": "/v1/sec/entities/{entityId}/identifiers",
-      "resource": "sec",
-      "intent": "write",
-      "cliCommand": "sec entities identifiers attach",
+      "operationId": "resolvePathRedirect",
+      "method": "GET",
+      "path": "/v1/slug-redirects/lookup",
+      "resource": "slug-redirects",
+      "intent": "read",
+      "cliCommand": "slug redirects lookup",
       "cliPath": [
-        "sec",
-        "entities",
-        "identifiers",
-        "attach"
+        "slug",
+        "redirects",
+        "lookup"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "write",
-      "scope": "write",
-      "dryRunSupported": true,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
       "destructive": false
     },
     {
@@ -6869,6 +3257,27 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "listUrlTypes",
+      "method": "GET",
+      "path": "/v1/url-types",
+      "resource": "url-types",
+      "intent": "read",
+      "cliCommand": "url-types list",
+      "cliPath": [
+        "url-types",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
       "scope": "read",
       "dryRunSupported": false,
       "destructive": false
