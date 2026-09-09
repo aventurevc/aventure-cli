@@ -19,6 +19,7 @@ aventure-cli entities classifications suggest · Suggest entity classifications 
 aventure-cli entities content list · List entity content · --entity-id
 aventure-cli entities content search · Search entity content · --entity-id --query
 aventure-cli entities counts get · Count entities by type · -
+aventure-cli entities filters counts list · List entity filter tag counts · -
 aventure-cli entities filters counts lookup · Count entity filter tags · --name
 aventure-cli entities filters list · List entity filter options · -
 aventure-cli entities filters refine lookup · Refine entity filter options · -

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-09T00:10:06.928Z",
-  "totalOperations": 149,
+  "generatedAt": "2026-09-09T03:40:26.281Z",
+  "totalOperations": 150,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1339,6 +1339,29 @@
       "destructive": false
     },
     {
+      "operationId": "listEntityFilterCounts",
+      "method": "GET",
+      "path": "/v1/entities/filters/counts",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities filters counts list",
+      "cliPath": [
+        "entities",
+        "filters",
+        "counts",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
       "operationId": "entityFilterCounts",
       "method": "POST",
       "path": "/v1/entities/filters/counts",
@@ -1664,28 +1687,6 @@
         "sitemap",
         "entity-url-boundaries",
         "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "getSitemapUrls",
-      "method": "GET",
-      "path": "/v1/entities/sitemap-urls",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "sitemap entity-urls list",
-      "cliPath": [
-        "sitemap",
-        "entity-urls",
-        "list"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
@@ -3114,6 +3115,28 @@
         "sec",
         "company",
         "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "getSitemapUrls",
+      "method": "GET",
+      "path": "/v1/sitemap/entities/urls",
+      "resource": "sitemap",
+      "intent": "read",
+      "cliCommand": "sitemap entity-urls list",
+      "cliPath": [
+        "sitemap",
+        "entity-urls",
+        "list"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
