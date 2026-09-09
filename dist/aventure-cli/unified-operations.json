@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-08T06:22:11.055Z",
-  "totalOperations": 148,
+  "generatedAt": "2026-09-09T00:10:06.928Z",
+  "totalOperations": 149,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -2073,6 +2073,27 @@
       "destructive": false
     },
     {
+      "operationId": "lookupNews",
+      "method": "GET",
+      "path": "/v1/news/lookup",
+      "resource": "news",
+      "intent": "read",
+      "cliCommand": "news lookup",
+      "cliPath": [
+        "news",
+        "lookup"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
       "operationId": "listRecentNews",
       "method": "GET",
       "path": "/v1/news/recent",
@@ -2757,28 +2778,6 @@
       "destructive": false
     },
     {
-      "operationId": "filtersPost",
-      "method": "POST",
-      "path": "/v1/people/filters",
-      "resource": "people",
-      "intent": "lookup",
-      "cliCommand": "people filters lookup",
-      "cliPath": [
-        "people",
-        "filters",
-        "lookup"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
       "operationId": "filterSearch",
       "method": "GET",
       "path": "/v1/people/filters/search",
@@ -2812,6 +2811,27 @@
         "sitemap",
         "person-letter-counts",
         "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "lookupPerson",
+      "method": "GET",
+      "path": "/v1/people/lookup",
+      "resource": "people",
+      "intent": "read",
+      "cliCommand": "people lookup",
+      "cliPath": [
+        "people",
+        "lookup"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,

@@ -79,6 +79,7 @@ aventure-cli media screenshots list · List screenshots for a URL · --url
 aventure-cli news feedback create · Submit news feedback · -
 aventure-cli news get · Get news detail · -
 aventure-cli news list · List news articles · -
+aventure-cli news lookup · Look up one news article · -
 aventure-cli news recent list · List recent news · -
 aventure-cli news related-companies get · Get related companies for a news article · --news-id
 aventure-cli news similar list · Find similar news · -
@@ -96,13 +97,13 @@ aventure-cli people content search · Search person content · --person-id --que
 aventure-cli people entities get · Get person entity association · --person-id --association-id
 aventure-cli people entities list · List person entity associations · --person-id
 aventure-cli people filters list · List person filter options · -
-aventure-cli people filters lookup · People filters (POST) · -
 aventure-cli people filters search get · Search people filter options · --filter-key --search
 aventure-cli people get · Get person detail · -
 aventure-cli people graph get · Get person graph · --person-id
 aventure-cli people investments list · Get person investments · -
 aventure-cli people investor-activity get · Get person investor activity · -
 aventure-cli people list · List or search people · -
+aventure-cli people lookup · Look up one person · -
 aventure-cli people news list · List news joined to a person · -
 aventure-cli people repositories list · List person repositories · --person-id
 aventure-cli people search · List people (POST) · -
