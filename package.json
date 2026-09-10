@@ -10,8 +10,7 @@
   },
   "type": "module",
   "bin": {
-    "aventure": "dist/aventure-cli/index.js",
-    "aventure-cli": "dist/aventure-cli/index.js"
+    "aventure": "dist/aventure-cli/index.js"
   },
   "files": [
     "dist/aventure-cli/index.js",

@@ -44,7 +44,7 @@ jobs:
           prefix="$RUNNER_TEMP/prefix"
           mkdir -p "$prefix"
           npm install -g --prefix "$prefix" --ignore-scripts "$RUNNER_TEMP"/aventurevc-aventure-cli-*.tgz
-          echo "CLI_BIN=$prefix/bin/aventure-cli" >>"$GITHUB_ENV"
+          echo "CLI_BIN=$prefix/bin/aventure" >>"$GITHUB_ENV"
           echo "INSTALLED=$prefix/lib/node_modules/@aventurevc/aventure-cli" >>"$GITHUB_ENV"
       - name: Smoke the installed CLI
         run: |
