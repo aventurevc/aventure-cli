@@ -14,6 +14,7 @@ aventure-cli entities batch detail lookup · Batch entity detail retrieval (POST
 aventure-cli entities batch lookup · Batch entity list · -
 aventure-cli entities blog-posts get · Get entity blog post · --entity-id --blog-post-id
 aventure-cli entities blog-posts list · List entity blog posts · --entity-id
+aventure-cli entities by-id get · Get entity by ID · --entity-id
 aventure-cli entities classifications list · Get entity classification joins · --entity-id
 aventure-cli entities classifications suggest · Suggest entity classifications · --entity-id
 aventure-cli entities content list · List entity content · --entity-id
@@ -37,6 +38,8 @@ aventure-cli entities get · Get company or entity detail · -
 aventure-cli entities identifiers lookup · Resolve entity identifiers (POST) · -
 aventure-cli entities list · List or search companies and other entities (GET) · -
 aventure-cli entities lookup · Look up one entity · -
+aventure-cli entities lookup batch · Batch entity detail retrieval (POST) · -
+aventure-cli entities media logo get · Get entity logo · --entity-id
 aventure-cli entities news list · List news joined to an entity · -
 aventure-cli entities news trending list · Get trending news for an entity · -
 aventure-cli entities people employee-counts list · Entity employee count time series · -
@@ -77,10 +80,12 @@ aventure-cli help ask · Answer a natural-language platform help question · --q
 aventure-cli media get · Get attached media asset · --media-type
 aventure-cli media screenshots get · Get screenshot by id · --screenshot-id
 aventure-cli media screenshots list · List screenshots for a URL · --url
+aventure-cli news by-id get · Get news article by ID · --news-id
 aventure-cli news feedback create · Submit news feedback · -
 aventure-cli news get · Get news detail · -
 aventure-cli news list · List news articles · -
 aventure-cli news lookup · Look up one news article · -
+aventure-cli news media thumbnail get · Get news thumbnail · --news-id
 aventure-cli news recent list · List recent news · -
 aventure-cli news related-companies get · Get related companies for a news article · --news-id
 aventure-cli news similar list · Find similar news · -
@@ -92,6 +97,7 @@ aventure-cli people batch detail lookup · Batch person detail enrichment · -
 aventure-cli people batch lookup · Batch person list · -
 aventure-cli people blog-posts get · Get person blog post · --person-id --blog-post-id
 aventure-cli people blog-posts list · List person blog posts · --person-id
+aventure-cli people by-id get · Get person by ID · --person-id
 aventure-cli people by-slug blog-posts list · List person blog posts · --person-slug
 aventure-cli people content list · List person content · --person-id
 aventure-cli people content search · Search person content · --person-id --query
@@ -105,6 +111,8 @@ aventure-cli people investments list · Get person investments · -
 aventure-cli people investor-activity get · Get person investor activity · -
 aventure-cli people list · List or search people · -
 aventure-cli people lookup · Look up one person · -
+aventure-cli people lookup batch · Batch person detail enrichment · -
+aventure-cli people media photo get · Get person photo · --person-id
 aventure-cli people news list · List news joined to a person · -
 aventure-cli people repositories list · List person repositories · --person-id
 aventure-cli people search · List people (POST) · -
