@@ -25,7 +25,7 @@ jobs:
           if grep -qE '^(package\.json|package-lock\.json|pnpm-lock\.yaml|yarn\.lock|bun\.lockb?|\.npmrc|dist/|scripts/|\.github/workflows/)' <<<"$changed"; then
             echo "package=true" >>"$GITHUB_OUTPUT"
           else
-            grep -vE '^(README\.md|LICENSE|skills/)' <<<"$changed" && exit 1
+            grep -vE '^(\.gitignore$|README\.md|LICENSE|skills/)' <<<"$changed" && exit 1
             echo "package=false" >>"$GITHUB_OUTPUT"
           fi
 
