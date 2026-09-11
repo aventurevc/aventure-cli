@@ -26,14 +26,14 @@ aventure-cli entities filters list · List entity filter options · -
 aventure-cli entities filters refine lookup · Refine entity filter options · -
 aventure-cli entities filters search get · Search filter options · --filter-key --search
 aventure-cli entities filters search lookup · Search filter options (scoped) · --filter-key --limit --query
-aventure-cli entities fundraise investments list · List investments made by an entity · -
-aventure-cli entities fundraise investor-activity get · Get investor activity · -
+aventure-cli entities fundraise investments list · List investments made by an entity · --entity-id
+aventure-cli entities fundraise investor-activity get · Get investor activity · --entity-id
 aventure-cli entities fundraise investor-joins get · Get fundraise investor join · --fundraise-investor-join-id
 aventure-cli entities fundraise investor-joins list · List fundraise investor joins · -
-aventure-cli entities fundraise investors list · List entity investors · -
-aventure-cli entities fundraise person-investors list · List person investors · -
-aventure-cli entities fundraise rounds get · Get fundraise round · --transaction-id
-aventure-cli entities fundraise rounds list · List fundraise rounds · -
+aventure-cli entities fundraise investors list · List entity investors · --entity-id
+aventure-cli entities fundraise person-investors list · List person investors · --entity-id
+aventure-cli entities fundraise rounds get · Get fundraise round · --entity-id --fundraise-round-id
+aventure-cli entities fundraise rounds list · List fundraise rounds · --entity-id
 aventure-cli entities get · Get company or entity detail · -
 aventure-cli entities identifiers lookup · Resolve entity identifiers (POST) · -
 aventure-cli entities list · List or search companies and other entities (GET) · -
@@ -42,7 +42,7 @@ aventure-cli entities lookup batch · Batch entity detail retrieval (POST) · -
 aventure-cli entities media logo get · Get entity logo · --entity-id
 aventure-cli entities news list · List news joined to an entity · -
 aventure-cli entities news trending list · Get trending news for an entity · -
-aventure-cli entities people employee-counts list · Entity employee count time series · -
+aventure-cli entities people employee-counts list · Entity employee count time series · --entity-id
 aventure-cli entities people get · Get entity people association · --entity-id --association-id
 aventure-cli entities people list · List entity people associations · --entity-id
 aventure-cli entities products suggest · Suggest entity products or services · --entity-id
@@ -75,7 +75,7 @@ aventure-cli entities urls get · Get one entity URL · --entity-id --url-id
 aventure-cli entities urls list · List entity URLs · --entity-id
 aventure-cli entities urls surface-misclassifications list · List URL surface misclassification rules · -
 aventure-cli entities urls types list · List entity URL types · -
-aventure-cli entities valuations list · Entity valuation time series · -
+aventure-cli entities valuations list · Entity valuation time series · --entity-id
 aventure-cli help ask · Answer a natural-language platform help question · --question
 aventure-cli media get · Get attached media asset · --media-type
 aventure-cli media screenshots get · Get screenshot by id · --screenshot-id
@@ -89,7 +89,6 @@ aventure-cli news media thumbnail get · Get news thumbnail · --news-id
 aventure-cli news recent list · List recent news · -
 aventure-cli news related-companies get · Get related companies for a news article · --news-id
 aventure-cli news similar list · Find similar news · -
-aventure-cli news slug get · Get news slug · --news-id
 aventure-cli news slug redirects list · List news slug redirects · --news-id
 aventure-cli people addresses get · Get person address · --person-id --address-join-id
 aventure-cli people addresses list · List person addresses · --person-id
@@ -116,7 +115,7 @@ aventure-cli people media photo get · Get person photo · --person-id
 aventure-cli people news list · List news joined to a person · -
 aventure-cli people repositories list · List person repositories · --person-id
 aventure-cli people search · List people (POST) · -
-aventure-cli people similar list · List people similar to one person · -
+aventure-cli people similar list · List people similar to one person · --person-id
 aventure-cli people slug redirects list · List person slug redirects · --person-id
 aventure-cli people texts get · Get one person text row · --person-id --text-id
 aventure-cli people texts list · List person text rows · --person-id

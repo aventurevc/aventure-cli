@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-10T04:16:33.923Z",
-  "totalOperations": 158,
+  "generatedAt": "2026-09-11T01:07:01.723Z",
+  "totalOperations": 157,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -289,7 +289,7 @@
       "destructive": false
     },
     {
-      "operationId": "listAddresses_1",
+      "operationId": "listEntityAddresses",
       "method": "GET",
       "path": "/v1/entities/{entityId}/addresses",
       "resource": "entities",
@@ -311,7 +311,7 @@
       "destructive": false
     },
     {
-      "operationId": "getAddress_1",
+      "operationId": "getEntityAddress",
       "method": "GET",
       "path": "/v1/entities/{entityId}/addresses/{addressJoinId}",
       "resource": "entities",
@@ -465,6 +465,121 @@
       "destructive": false
     },
     {
+      "operationId": "entityFundraises",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/fundraise-rounds",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities fundraise rounds list",
+      "cliPath": [
+        "entities",
+        "fundraise",
+        "rounds",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "getFundraiseTransaction",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/fundraise-rounds/{fundraiseRoundId}",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities fundraise rounds get",
+      "cliPath": [
+        "entities",
+        "fundraise",
+        "rounds",
+        "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "entityInvestments",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/investments",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities fundraise investments list",
+      "cliPath": [
+        "entities",
+        "fundraise",
+        "investments",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "investorActivity",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/investor-activity",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities fundraise investor-activity get",
+      "cliPath": [
+        "entities",
+        "fundraise",
+        "investor-activity",
+        "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "entityInvestors",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/investors",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities fundraise investors list",
+      "cliPath": [
+        "entities",
+        "fundraise",
+        "investors",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
       "operationId": "getEntityMedia",
       "method": "GET",
       "path": "/v1/entities/{entityId}/media/logo",
@@ -520,6 +635,52 @@
         "entities",
         "people",
         "get"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "getEmployeeCountTimeSeries",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/people/time-series",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities people employee-counts list",
+      "cliPath": [
+        "entities",
+        "people",
+        "employee-counts",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
+      "operationId": "entityPersonInvestors",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/person-investors",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities fundraise person-investors list",
+      "cliPath": [
+        "entities",
+        "fundraise",
+        "person-investors",
+        "list"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
@@ -956,6 +1117,28 @@
       "destructive": false
     },
     {
+      "operationId": "getValuationTimeSeries",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/valuations",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities valuations list",
+      "cliPath": [
+        "entities",
+        "valuations",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
       "operationId": "listEntitiesBatch",
       "method": "POST",
       "path": "/v1/entities/batch",
@@ -1044,28 +1227,6 @@
       "destructive": false
     },
     {
-      "operationId": "getValuationTimeSeries",
-      "method": "GET",
-      "path": "/v1/entities/detail/financial/valuation",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities valuations list",
-      "cliPath": [
-        "entities",
-        "valuations",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
       "operationId": "listFundraiseInvestorJoins",
       "method": "GET",
       "path": "/v1/entities/detail/fundraise-investor-joins",
@@ -1112,121 +1273,6 @@
       "destructive": false
     },
     {
-      "operationId": "entityFundraises",
-      "method": "GET",
-      "path": "/v1/entities/detail/fundraise-rounds",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities fundraise rounds list",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "rounds",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "getFundraiseTransaction",
-      "method": "GET",
-      "path": "/v1/entities/detail/fundraise-rounds/{transactionId}",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities fundraise rounds get",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "rounds",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "entityInvestments",
-      "method": "GET",
-      "path": "/v1/entities/detail/investments",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities fundraise investments list",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "investments",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "investorActivity",
-      "method": "GET",
-      "path": "/v1/entities/detail/investor-activity",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities fundraise investor-activity get",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "investor-activity",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "entityInvestors",
-      "method": "GET",
-      "path": "/v1/entities/detail/investors",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities fundraise investors list",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "investors",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
       "operationId": "listEntityNews",
       "method": "GET",
       "path": "/v1/entities/detail/news",
@@ -1236,52 +1282,6 @@
       "cliPath": [
         "entities",
         "news",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "getEmployeeCountTimeSeries",
-      "method": "GET",
-      "path": "/v1/entities/detail/people/time-series",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities people employee-counts list",
-      "cliPath": [
-        "entities",
-        "people",
-        "employee-counts",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "entityPersonInvestors",
-      "method": "GET",
-      "path": "/v1/entities/detail/person-investors",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities fundraise person-investors list",
-      "cliPath": [
-        "entities",
-        "fundraise",
-        "person-investors",
         "list"
       ],
       "cliAliasCommand": null,
@@ -1988,28 +1988,6 @@
       "destructive": false
     },
     {
-      "operationId": "getNewsSlug",
-      "method": "GET",
-      "path": "/v1/news/{newsId}/slug",
-      "resource": "news",
-      "intent": "read",
-      "cliCommand": "news slug get",
-      "cliPath": [
-        "news",
-        "slug",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
       "operationId": "listNewsRedirects",
       "method": "GET",
       "path": "/v1/news/{newsId}/slug/redirects",
@@ -2427,6 +2405,28 @@
       "destructive": false
     },
     {
+      "operationId": "listSimilarPeople",
+      "method": "GET",
+      "path": "/v1/people/{personId}/similar",
+      "resource": "people",
+      "intent": "read",
+      "cliCommand": "people similar list",
+      "cliPath": [
+        "people",
+        "similar",
+        "list"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "read",
+      "scope": "read",
+      "dryRunSupported": false,
+      "destructive": false
+    },
+    {
       "operationId": "listPersonRedirects",
       "method": "GET",
       "path": "/v1/people/{personId}/slug/redirects",
@@ -2747,28 +2747,6 @@
       "cliPath": [
         "people",
         "news",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "dryRunSupported": false,
-      "destructive": false
-    },
-    {
-      "operationId": "listSimilarPeople",
-      "method": "GET",
-      "path": "/v1/people/detail/similar",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people similar list",
-      "cliPath": [
-        "people",
-        "similar",
         "list"
       ],
       "cliAliasCommand": null,
