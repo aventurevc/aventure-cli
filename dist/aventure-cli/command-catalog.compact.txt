@@ -36,14 +36,14 @@ aventure entities fundraise person-investors list · List person investors · --
 aventure entities fundraise rounds get · Get fundraise round · --entity-id --fundraise-round-id
 aventure entities fundraise rounds list · List fundraise rounds · --entity-id
 aventure entities get · Get company or entity detail · -
-aventure entities identifiers lookup · Resolve entity identifiers (POST) · -
+aventure entities identifiers lookup · Resolve entity identifiers (deprecated detail path) · -
 aventure entities list · List or search companies and other entities (GET) · -
 aventure entities lookup · Look up one entity · -
-aventure entities lookup batch · Batch entity detail retrieval (POST) · -
+aventure entities lookup batch · Batch entity lookup · -
 aventure entities lookup matches lookup · Resolve entity identifiers (POST) · -
 aventure entities media logo get · Get entity logo · --entity-id
 aventure entities news list · List news joined to an entity · -
-aventure entities news trending list · Get trending news for an entity · -
+aventure entities news trending list · Get trending news for an entity (deprecated detail path) · -
 aventure entities people employee-counts list · Entity employee count time series · --entity-id
 aventure entities people get · Get entity people association · --entity-id --association-id
 aventure entities people list · List entity people associations · --entity-id
@@ -101,7 +101,7 @@ aventure people batch lookup · Batch person list · -
 aventure people blog-posts get · Get person blog post · --person-id --blog-post-id
 aventure people blog-posts list · List person blog posts · --person-id
 aventure people by-id get · Get person by ID · --person-id
-aventure people by-slug blog-posts list · List person blog posts · --person-slug
+aventure people by-slug blog-posts list · List person blog posts by slug · --person-slug
 aventure people content list · List person content · --person-id
 aventure people content search · Search person content · --person-id --query
 aventure people entities get · Get person entity association · --person-id --association-id
@@ -114,7 +114,7 @@ aventure people investments list · Get person investments · -
 aventure people investor-activity get · Get person investor activity · -
 aventure people list · List or search people · -
 aventure people lookup · Look up one person · -
-aventure people lookup batch · Batch person detail enrichment · -
+aventure people lookup batch · Batch person lookup · -
 aventure people media photo get · Get person photo · --person-id
 aventure people news list · List news joined to a person · -
 aventure people repositories list · List person repositories · --person-id

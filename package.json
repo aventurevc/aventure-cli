@@ -1,6 +1,6 @@
 {
   "name": "@aventurevc/aventure-cli",
-  "version": "0.7.280",
+  "version": "0.7.281",
   "private": false,
   "description": "Public aVenture CLI.",
   "license": "Apache-2.0",
@@ -31,9 +31,9 @@
   },
   "aventurePublicApi": {
     "repository": "aventurevc/aventure-docs",
-    "commit": "d90d7349fff98e6e26d509e98e77f2a3a9ff5538",
+    "commit": "7b691c33d3c9f510cbd39f63f828f414d3c6d04f",
     "openapiPath": "openapi/openapi.json",
-    "openapiSha256": "5c40f898acb5489e098c6df19699fa515103143a79c4bd1ffa759432f2194a4d"
+    "openapiSha256": "4698d22750c6a1464706eb058c69488a468c7105323fa83d9bf8d7bb4f7a7fce"
   },
   "scripts": {}
 }
