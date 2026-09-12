@@ -36,7 +36,11 @@ aventure entities fundraise person-investors list · List person investors · --
 aventure entities fundraise rounds get · Get fundraise round · --entity-id --fundraise-round-id
 aventure entities fundraise rounds list · List fundraise rounds · --entity-id
 aventure entities get · Get company or entity detail · -
-aventure entities identifiers lookup · Resolve entity identifiers (deprecated detail path) · -
+aventure entities identifiers get · Get an entity identifier · --entity-id --unique-id-id
+aventure entities identifiers list · List entity identifiers · --entity-id
+aventure entities identifiers lookup · Look up an identifier owner · --id-type --identifier
+aventure entities identifiers resolve · Resolve entity identifiers (deprecated detail path) · -
+aventure entities identifiers types get · List identifier types · -
 aventure entities list · List or search companies and other entities (GET) · -
 aventure entities lookup · Look up one entity · -
 aventure entities lookup batch · Batch entity lookup · -
@@ -72,8 +76,6 @@ aventure entities texts types list · List entity text types · -
 aventure entities trending-news list · Get trending news for an entity · --entity-id
 aventure entities type-record get · Get entity typeRecord · --entity-id
 aventure entities type-record types list · List writable entity typeRecords with accepted alias tokens · -
-aventure entities unique-ids get · Get an entity unique id · --entity-id --unique-id-id
-aventure entities unique-ids list · List an entity's unique ids · --entity-id
 aventure entities urls all list · List all entity URLs · --entity-id
 aventure entities urls get · Get one entity URL · --entity-id --url-id
 aventure entities urls list · List entity URLs · --entity-id
@@ -110,6 +112,8 @@ aventure people filters list · List person filter options · -
 aventure people filters search get · Search people filter options · --filter-key --search
 aventure people get · Get person detail · -
 aventure people graph get · Get person graph · --person-id
+aventure people identifiers get · Get a person identifier · --person-id --unique-id-id
+aventure people identifiers list · List person identifiers · --person-id
 aventure people investments list · Get person investments · -
 aventure people investor-activity get · Get person investor activity · -
 aventure people list · List or search people · -
@@ -124,8 +128,6 @@ aventure people slug redirects list · List person slug redirects · --person-id
 aventure people texts get · Get one person text row · --person-id --text-id
 aventure people texts list · List person text rows · --person-id
 aventure people texts types list · List person text types · -
-aventure people unique-ids get · Get a person unique id · --person-id --unique-id-id
-aventure people unique-ids list · List a person's unique ids · --person-id
 aventure people urls all list · List all person URLs · --person-id
 aventure people urls get · Get one person URL · --person-id --url-id
 aventure people urls list · List person URLs · --person-id
@@ -142,6 +144,4 @@ aventure search people · Find people with natural language · --query
 aventure search web · Search the live web · --search
 aventure sec company get · Preview a public company from SEC EDGAR · -
 aventure status · Get system uptime · -
-aventure unique-ids lookup get · Resolve an identifier to its owner(s) · --id-type --identifier
-aventure unique-ids types list · List unique-id types · -
 aventure url-types list · List URL types · -

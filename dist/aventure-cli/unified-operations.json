@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-11T20:58:30.139Z",
+  "generatedAt": "2026-09-12T04:08:27.280Z",
   "totalOperations": 161,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
@@ -1029,10 +1029,10 @@
       "path": "/v1/entities/{entityId}/unique-ids",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities unique-ids list",
+      "cliCommand": "entities identifiers list",
       "cliPath": [
         "entities",
-        "unique-ids",
+        "identifiers",
         "list"
       ],
       "cliAliasCommand": null,
@@ -1050,10 +1050,10 @@
       "path": "/v1/entities/{entityId}/unique-ids/{uniqueIdId}",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities unique-ids get",
+      "cliCommand": "entities identifiers get",
       "cliPath": [
         "entities",
-        "unique-ids",
+        "identifiers",
         "get"
       ],
       "cliAliasCommand": null,
@@ -1305,11 +1305,11 @@
       "path": "/v1/entities/detail/resolve",
       "resource": "entities",
       "intent": "lookup",
-      "cliCommand": "entities identifiers lookup",
+      "cliCommand": "entities identifiers resolve",
       "cliPath": [
         "entities",
         "identifiers",
-        "lookup"
+        "resolve"
       ],
       "cliAliasCommand": null,
       "cliAliasPath": null,
@@ -2472,10 +2472,10 @@
       "path": "/v1/people/{personId}/unique-ids",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people unique-ids list",
+      "cliCommand": "people identifiers list",
       "cliPath": [
         "people",
-        "unique-ids",
+        "identifiers",
         "list"
       ],
       "cliAliasCommand": null,
@@ -2493,10 +2493,10 @@
       "path": "/v1/people/{personId}/unique-ids/{uniqueIdId}",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people unique-ids get",
+      "cliCommand": "people identifiers get",
       "cliPath": [
         "people",
-        "unique-ids",
+        "identifiers",
         "get"
       ],
       "cliAliasCommand": null,
@@ -3354,14 +3354,18 @@
       "path": "/v1/unique-ids/lookup",
       "resource": "unique-ids",
       "intent": "read",
-      "cliCommand": "unique-ids lookup get",
+      "cliCommand": "entities identifiers lookup",
       "cliPath": [
-        "unique-ids",
-        "lookup",
-        "get"
+        "entities",
+        "identifiers",
+        "lookup"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
+      "cliAliasCommand": "people identifiers lookup",
+      "cliAliasPath": [
+        "people",
+        "identifiers",
+        "lookup"
+      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3375,14 +3379,20 @@
       "path": "/v1/unique-ids/types",
       "resource": "unique-ids",
       "intent": "read",
-      "cliCommand": "unique-ids types list",
+      "cliCommand": "entities identifiers types get",
       "cliPath": [
-        "unique-ids",
+        "entities",
+        "identifiers",
         "types",
-        "list"
+        "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
+      "cliAliasCommand": "people identifiers types get",
+      "cliAliasPath": [
+        "people",
+        "identifiers",
+        "types",
+        "get"
+      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
