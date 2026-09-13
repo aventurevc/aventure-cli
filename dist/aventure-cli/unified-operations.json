@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-13T10:05:42.111Z",
-  "totalOperations": 161,
+  "generatedAt": "2026-09-13T20:42:04.734Z",
+  "totalOperations": 163,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -462,6 +462,26 @@
       "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
       "auth": "read",
       "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "enrichEntity",
+      "method": "POST",
+      "path": "/v1/entities/{entityId}/enrichments",
+      "resource": "entities",
+      "intent": "write",
+      "cliCommand": "entities enrich",
+      "cliPath": [
+        "entities",
+        "enrich"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_write",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "write",
       "destructive": false
     },
     {
@@ -2273,6 +2293,26 @@
       "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
       "auth": "read",
       "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "enrichPerson",
+      "method": "POST",
+      "path": "/v1/people/{personId}/enrichments",
+      "resource": "people",
+      "intent": "write",
+      "cliCommand": "people enrich",
+      "cliPath": [
+        "people",
+        "enrich"
+      ],
+      "cliAliasCommand": null,
+      "cliAliasPath": null,
+      "mcpTool": "aventure_write",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "write",
       "destructive": false
     },
     {

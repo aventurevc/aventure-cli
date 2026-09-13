@@ -21,6 +21,7 @@ aventure entities classifications suggest · Suggest entity classifications · -
 aventure entities content list · List entity content · --entity-id
 aventure entities content search · Search entity content · --entity-id --query
 aventure entities counts get · Count entities by type · -
+aventure entities enrich · Enrich one entity · --entity-id
 aventure entities filters counts list · List entity filter tag counts · -
 aventure entities filters counts lookup · Count entity filter tags · --name
 aventure entities filters list · List entity filter options · -
@@ -106,6 +107,7 @@ aventure people by-id get · Get person by ID · --person-id
 aventure people by-slug blog-posts list · List person blog posts by slug · --person-slug
 aventure people content list · List person content · --person-id
 aventure people content search · Search person content · --person-id --query
+aventure people enrich · Enrich one person · --person-id
 aventure people entities get · Get person entity association · --person-id --association-id
 aventure people entities list · List person entity associations · --person-id
 aventure people filters list · List person filter options · -
