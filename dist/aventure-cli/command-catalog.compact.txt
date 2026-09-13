@@ -137,7 +137,7 @@ aventure provenance history list · Provenance history for a record · --table-n
 aventure provenance latest get · Latest data source for a record · --table-name
 aventure resolve get · Resolve any identifier to its owner · --token
 aventure search all · Search entities, people, and news · --query
-aventure search entities · Find companies, startups, and other entities with natural language · --query
+aventure search entities · Find companies, startups, and investors with natural language · --query
 aventure search link get · Search from a shared article or page URL · --url
 aventure search news · Search news articles with a JSON filter body · -
 aventure search people · Find people with natural language · --query
