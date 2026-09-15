@@ -1,7 +1,6 @@
 aventure agents instructions get · Get one agent instruction document · --kind --name
 aventure agents instructions list · Get the agent instruction manifest · -
 aventure agents instructions versions get · Get one agent instruction document version · --kind --name --version
-aventure auth providers get · Get the public authentication provider catalog · -
 aventure classifications catalog get · Fetch the entity classification taxonomy · -
 aventure classifications search get · Search classifications · -
 aventure classifications tags search · Search entity classification tags · -

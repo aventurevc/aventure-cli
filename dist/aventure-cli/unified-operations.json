@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-13T20:42:04.734Z",
-  "totalOperations": 163,
+  "generatedAt": "2026-09-15T22:57:34.452Z",
+  "totalOperations": 162,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -86,27 +86,6 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getAuthProviderCatalog",
-      "method": "GET",
-      "path": "/v1/auth/providers",
-      "resource": "auth",
-      "intent": "read",
-      "cliCommand": "auth providers get",
-      "cliPath": [
-        "auth",
-        "providers",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
       "scope": "read",
       "destructive": false
     },
