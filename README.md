@@ -23,25 +23,31 @@ aventure auth login
 aventure entities list --entity-name Stripe
 ```
 
-Complete browser sign-in when prompted. The CLI stores the native OAuth access
-token in the operating-system credential store. `aventure auth status` reports
-credential metadata without displaying the token.
+Complete browser sign-in when prompted. The CLI stores the OAuth credential in
+the operating-system credential store, or in `~/.config/aventure/credentials.json`
+(mode `0600`) where the keyring cannot be used without a GUI session. An expired
+access token is renewed with its refresh token automatically. `aventure auth
+status` reports credential metadata, the store in use, and the sign-in providers
+without displaying any secret. `aventure auth logout` revokes the personal key,
+revokes the OAuth refresh token, and removes both local records.
 
 ### Personal API key
 
 Create a key at [aventure.vc](https://aventure.vc) under **Settings → API keys →
 Add new key**, then provide it through `AUTH_TOKEN` using your environment or
 secret manager. To create and store a personal key through browser approval, run
-`aventure auth personal-login` in an interactive terminal. `aventure auth status`
+`aventure auth login --key` in an interactive terminal. `aventure auth status`
 reports metadata without displaying the key. Help and the command catalog work
 without signing in.
 
 ## Headless authentication
 
-CI, containers, and SSH sessions without writable OS credential storage must
-provide an existing personal API key through `AUTH_TOKEN`. Native OAuth
-(`aventure auth login`) and personal-key approval (`aventure auth personal-login`)
-require an interactive terminal and usable OS credential storage.
+On a host without a browser (CI, containers, SSH sessions), run
+`aventure auth login --key --no-browser`: it prints an approval URL to open on
+any device and polls until you approve, so no loopback callback is needed. OAuth
+`aventure auth login` needs its `127.0.0.1` callback reachable from the browser,
+which an SSH session lacks. Alternatively provide an existing personal API key
+through `AUTH_TOKEN`.
 
 The command catalog is generated from the public aVenture OpenAPI spec and must not be hand-edited.
 
