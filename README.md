@@ -42,12 +42,14 @@ without signing in.
 
 ## Headless authentication
 
-On a host without a browser (CI, containers, SSH sessions), run
-`aventure auth login --key --no-browser`: it prints an approval URL to open on
-any device and polls until you approve, so no loopback callback is needed. OAuth
-`aventure auth login` needs its `127.0.0.1` callback reachable from the browser,
-which an SSH session lacks. Alternatively provide an existing personal API key
-through `AUTH_TOKEN`.
+`aventure auth login` uses the OAuth device authorization grant: it prints a one-time
+code and a sign-in URL, opens the browser when one is available (`--no-browser` only
+skips that), you approve on any device, and the CLI polls until the sign-in completes.
+The same command works on a laptop, over SSH, and in a container. The verification
+page uses the account already signed in at `accounts.aventure.vc`; to choose another
+account, open the URL in a private window or sign out there first. `aventure auth
+login --key --no-browser` is the equivalent path for a personal API key, and an
+existing key can always be provided through `AUTH_TOKEN`.
 
 The command catalog is generated from the public aVenture OpenAPI spec and must not be hand-edited.
 
