@@ -134,7 +134,7 @@ aventure people urls get · Get one person URL · --person-id --url-id
 aventure people urls list · List person URLs · --person-id
 aventure people urls list --all · List all person URLs · --person-id
 aventure people urls list --types · List the accepted values for a person's --url-type · -
-aventure search · Search companies, people, and news in plain English · --query
+aventure search · Search companies, people, and news together · --query
 aventure search --link · Search from a page URL · --url
 aventure search --publications · Search content · --query
 aventure search --web · Search the live web · --search
