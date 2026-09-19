@@ -1,6 +1,8 @@
 # aventure-cli
 
-The public aVenture CLI. Its public binary is `aventure`.
+The public aVenture CLI. Its public binary is `aventure`. Start with the
+[CLI quickstart](https://docs.aventure.vc/cli); every command and credential is
+documented at [docs.aventure.vc](https://docs.aventure.vc).
 
 Requires Node.js 24.18 or later in the 24.x series.
 
