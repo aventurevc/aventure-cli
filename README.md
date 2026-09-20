@@ -7,7 +7,7 @@ documented at [docs.aventure.vc](https://docs.aventure.vc).
 Requires Node.js 24.18 or later in the 24.x series.
 
 ```bash
-npm install --global @aventurevc/aventure-cli --registry=https://registry.npmjs.org/
+npm install --global @aventurevc/aventure-cli --@aventurevc:registry=https://registry.npmjs.org/
 aventure status
 aventure help
 ```
