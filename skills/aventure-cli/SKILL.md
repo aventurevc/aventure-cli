@@ -2,10 +2,10 @@
 
 Use the public aVenture CLI.
 
-- Install: `npm install --global @aventurevc/aventure-cli --registry=https://registry.npmjs.org/`
+- Install: `npm install --global @aventurevc/aventure-cli --@aventurevc:registry=https://registry.npmjs.org/`
 - Sign in: `aventure auth login`, then complete browser authorization.
-- Personal key: obtain it from aventure.vc Settings → API keys → Add new key and
-  supply it through `AUTH_TOKEN`. Never print the key. Public reads do not require `CLIENT_SECRET`.
+- Personal key: create one at https://aventure.vc/settings/api-keys and supply it
+  through `AUTH_TOKEN`. Never print the key. Public reads need no credential.
 - Discover commands: `aventure help` or `aventure command-catalog`
-- Read the docs at https://github.com/aventurevc/aventure-cli
+- Read the docs at https://docs.aventure.vc/cli
 - Do not invent CLI flags; use `aventure help <command>` for the current options.

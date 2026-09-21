@@ -35,8 +35,8 @@ revokes the OAuth refresh token, and removes both local records.
 
 ### Personal API key
 
-Create a key at [aventure.vc](https://aventure.vc) under **Settings → API keys →
-Add new key**, then provide it through `AUTH_TOKEN` using your environment or
+Create a key at [aventure.vc/settings/api-keys](https://aventure.vc/settings/api-keys)
+with **Add new key**, then provide it through `AUTH_TOKEN` using your environment or
 secret manager. To create and store a personal key through browser approval, run
 `aventure auth login --key` in an interactive terminal. `aventure auth status`
 reports metadata without displaying the key. Help and the command catalog work
