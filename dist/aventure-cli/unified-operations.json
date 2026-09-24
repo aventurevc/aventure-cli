@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-17T20:41:31.971Z",
-  "totalOperations": 154,
+  "generatedAt": "2026-09-24T05:16:38.008Z",
+  "totalOperations": 157,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -11,13 +11,12 @@
       "path": "/v1/agents/help",
       "resource": "agents",
       "intent": "search",
-      "cliCommand": "help ask",
+      "cliCommand": "agents help answer",
       "cliPath": [
+        "agents",
         "help",
-        "ask"
+        "answer"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_search",
       "bodySchemaName": "AgentHelpQuestionSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/agent/help-question",
@@ -26,7 +25,7 @@
       "destructive": false
     },
     {
-      "operationId": "getAgentInstruction",
+      "operationId": "getAgentInstructionAtRetiredAddress",
       "method": "GET",
       "path": "/v1/agents/instructions/{kind}/{name}",
       "resource": "agents",
@@ -37,29 +36,21 @@
         "instructions",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "getAgentInstructionVersion",
+      "operationId": "getAgentInstructionVersionAtRetiredAddress",
       "method": "GET",
       "path": "/v1/agents/instructions/{kind}/{name}/versions/{version}",
       "resource": "agents",
       "intent": "read",
-      "cliCommand": "agents instructions get",
+      "cliCommand": "agents instructions versions get",
       "cliPath": [
-        "agents",
-        "instructions",
-        "get"
-      ],
-      "cliAliasCommand": "agents instructions versions get",
-      "cliAliasPath": [
         "agents",
         "instructions",
         "versions",
@@ -68,70 +59,248 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "getAgentInstructionManifest",
+      "operationId": "getAgentInstructionManifestAtRetiredAddress",
       "method": "GET",
       "path": "/v1/agents/instructions/manifest",
       "resource": "agents",
       "intent": "read",
-      "cliCommand": "agents instructions list",
+      "cliCommand": "agents instructions manifest get",
       "cliPath": [
         "agents",
         "instructions",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "searchClassifications",
-      "method": "GET",
-      "path": "/v1/classifications",
-      "resource": "classifications",
-      "intent": "read",
-      "cliCommand": "entities classifications list",
-      "cliPath": [
-        "entities",
-        "classifications",
-        "list"
-      ],
-      "cliAliasCommand": "classifications search get",
-      "cliAliasPath": [
-        "classifications",
-        "search",
+        "manifest",
         "get"
       ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "getCatalog",
+      "operationId": "revokeCurrentApiKey",
+      "method": "DELETE",
+      "path": "/v1/auth/api-key",
+      "resource": "auth",
+      "intent": "delete",
+      "cliCommand": "auth api-key revoke",
+      "cliPath": [
+        "auth",
+        "api-key",
+        "revoke"
+      ],
+      "mcpTool": "aventure_delete",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": true
+    },
+    {
+      "operationId": "getCurrentApiKey",
+      "method": "GET",
+      "path": "/v1/auth/api-key",
+      "resource": "auth",
+      "intent": "read",
+      "cliCommand": "auth api-key get",
+      "cliPath": [
+        "auth",
+        "api-key",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getCurrentAuthPermissions",
+      "method": "GET",
+      "path": "/v1/auth/me/permissions",
+      "resource": "auth",
+      "intent": "read",
+      "cliCommand": "auth me permissions get",
+      "cliPath": [
+        "auth",
+        "me",
+        "permissions",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "authorizeOperations",
+      "method": "POST",
+      "path": "/v1/auth/me/permissions",
+      "resource": "auth",
+      "intent": "write",
+      "cliCommand": "auth me permissions authorize",
+      "cliPath": [
+        "auth",
+        "me",
+        "permissions",
+        "authorize"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "AuthOperationFilterSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/auth/operation-filter",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "getAuthProviderCatalog",
+      "method": "GET",
+      "path": "/v1/auth/providers",
+      "resource": "auth",
+      "intent": "read",
+      "cliCommand": "auth providers get",
+      "cliPath": [
+        "auth",
+        "providers",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getAiCredits",
+      "method": "GET",
+      "path": "/v1/billing/ai-credits",
+      "resource": "billing",
+      "intent": "read",
+      "cliCommand": "billing ai-credits get",
+      "cliPath": [
+        "billing",
+        "ai-credits",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createBillingCheckoutSession",
+      "method": "POST",
+      "path": "/v1/billing/checkout-sessions",
+      "resource": "billing",
+      "intent": "write",
+      "cliCommand": "billing checkout-sessions create",
+      "cliPath": [
+        "billing",
+        "checkout-sessions",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "BillingCheckoutMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/billing/checkout-mutation",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "listPlans",
+      "method": "GET",
+      "path": "/v1/billing/plans",
+      "resource": "billing",
+      "intent": "read",
+      "cliCommand": "billing plans list",
+      "cliPath": [
+        "billing",
+        "plans",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createBillingPortalSession",
+      "method": "POST",
+      "path": "/v1/billing/portal-sessions",
+      "resource": "billing",
+      "intent": "write",
+      "cliCommand": "billing portal-sessions create",
+      "cliPath": [
+        "billing",
+        "portal-sessions",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "getBillingSubscription",
+      "method": "GET",
+      "path": "/v1/billing/subscription",
+      "resource": "billing",
+      "intent": "read",
+      "cliCommand": "billing subscription get",
+      "cliPath": [
+        "billing",
+        "subscription",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listClassifications",
+      "method": "GET",
+      "path": "/v1/classifications",
+      "resource": "classifications",
+      "intent": "read",
+      "cliCommand": "classifications list",
+      "cliPath": [
+        "classifications",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getClassificationCatalog",
       "method": "GET",
       "path": "/v1/classifications/catalog",
       "resource": "classifications",
       "intent": "read",
-      "cliCommand": "entities classifications list",
+      "cliCommand": "classifications catalog get",
       "cliPath": [
-        "entities",
-        "classifications",
-        "list"
-      ],
-      "cliAliasCommand": "classifications catalog get",
-      "cliAliasPath": [
         "classifications",
         "catalog",
         "get"
@@ -139,32 +308,25 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "searchTags",
+      "operationId": "listContent",
       "method": "GET",
-      "path": "/v1/classifications/tags",
-      "resource": "classifications",
+      "path": "/v1/content",
+      "resource": "content",
       "intent": "read",
-      "cliCommand": "entities classifications list",
+      "cliCommand": "content list",
       "cliPath": [
-        "entities",
-        "classifications",
+        "content",
         "list"
-      ],
-      "cliAliasCommand": "classifications tags search",
-      "cliAliasPath": [
-        "classifications",
-        "tags",
-        "search"
       ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -174,12 +336,8 @@
       "path": "/v1/content/search",
       "resource": "content",
       "intent": "search",
-      "cliCommand": "search",
+      "cliCommand": "content search",
       "cliPath": [
-        "search"
-      ],
-      "cliAliasCommand": "content search",
-      "cliAliasPath": [
         "content",
         "search"
       ],
@@ -191,27 +349,7 @@
       "destructive": false
     },
     {
-      "operationId": "listEntities",
-      "method": "GET",
-      "path": "/v1/entities",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities list",
-      "cliPath": [
-        "entities",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getEntityById",
+      "operationId": "getEntity",
       "method": "GET",
       "path": "/v1/entities/{entityId}",
       "resource": "entities",
@@ -221,12 +359,6 @@
         "entities",
         "get"
       ],
-      "cliAliasCommand": "entities by-id get",
-      "cliAliasPath": [
-        "entities",
-        "by-id",
-        "get"
-      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -235,7 +367,7 @@
       "destructive": false
     },
     {
-      "operationId": "listAcquisitions",
+      "operationId": "listEntityAcquisitions",
       "method": "GET",
       "path": "/v1/entities/{entityId}/acquisitions",
       "resource": "entities",
@@ -246,8 +378,6 @@
         "acquisitions",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -256,7 +386,7 @@
       "destructive": false
     },
     {
-      "operationId": "getAcquisition",
+      "operationId": "getEntityAcquisition",
       "method": "GET",
       "path": "/v1/entities/{entityId}/acquisitions/{relationshipId}",
       "resource": "entities",
@@ -267,8 +397,6 @@
         "acquisitions",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -288,8 +416,6 @@
         "addresses",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -309,12 +435,10 @@
         "addresses",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -324,14 +448,8 @@
       "path": "/v1/entities/{entityId}/blog-posts",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities posts list",
+      "cliCommand": "entities blog-posts list",
       "cliPath": [
-        "entities",
-        "posts",
-        "list"
-      ],
-      "cliAliasCommand": "entities blog-posts list",
-      "cliAliasPath": [
         "entities",
         "blog-posts",
         "list"
@@ -349,14 +467,8 @@
       "path": "/v1/entities/{entityId}/blog-posts/{blogPostId}",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities posts get",
+      "cliCommand": "entities blog-posts get",
       "cliPath": [
-        "entities",
-        "posts",
-        "get"
-      ],
-      "cliAliasCommand": "entities blog-posts get",
-      "cliAliasPath": [
         "entities",
         "blog-posts",
         "get"
@@ -364,12 +476,12 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "getEntityClassifications",
+      "operationId": "listEntityClassifications",
       "method": "GET",
       "path": "/v1/entities/{entityId}/classifications",
       "resource": "entities",
@@ -380,33 +492,30 @@
         "classifications",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "suggestEntityClassifications",
+      "operationId": "listEntityClassificationSuggestions",
       "method": "GET",
       "path": "/v1/entities/{entityId}/classifications/suggestions",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities classifications suggest",
+      "cliCommand": "entities classifications suggestions list",
       "cliPath": [
         "entities",
         "classifications",
-        "suggest"
+        "suggestions",
+        "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -416,14 +525,8 @@
       "path": "/v1/entities/{entityId}/content",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities publications list",
+      "cliCommand": "entities content list",
       "cliPath": [
-        "entities",
-        "publications",
-        "list"
-      ],
-      "cliAliasCommand": "entities content list",
-      "cliAliasPath": [
         "entities",
         "content",
         "list"
@@ -431,7 +534,27 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listEntityContentFacets",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/content/facets",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities content facets list",
+      "cliPath": [
+        "entities",
+        "content",
+        "facets",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -441,14 +564,8 @@
       "path": "/v1/entities/{entityId}/content/search",
       "resource": "entities",
       "intent": "search",
-      "cliCommand": "entities publications search",
+      "cliCommand": "entities content search",
       "cliPath": [
-        "entities",
-        "publications",
-        "search"
-      ],
-      "cliAliasCommand": "entities content search",
-      "cliAliasPath": [
         "entities",
         "content",
         "search"
@@ -461,18 +578,36 @@
       "destructive": false
     },
     {
+      "operationId": "listEntityEmployeeCounts",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/employee-counts",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities employee-counts list",
+      "cliPath": [
+        "entities",
+        "employee-counts",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
       "operationId": "enrichEntity",
       "method": "POST",
       "path": "/v1/entities/{entityId}/enrichments",
       "resource": "entities",
       "intent": "write",
-      "cliCommand": "entities enrich",
+      "cliCommand": "entities enrichments enrich",
       "cliPath": [
         "entities",
+        "enrichments",
         "enrich"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_write",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -481,22 +616,53 @@
       "destructive": false
     },
     {
-      "operationId": "entityFundraises",
+      "operationId": "listEntityFundraiseInvestorJoins",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/fundraise-investor-joins",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities fundraise-investor-joins list",
+      "cliPath": [
+        "entities",
+        "fundraise-investor-joins",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getEntityFundraiseInvestorJoin",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/fundraise-investor-joins/{joinId}",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities fundraise-investor-joins get",
+      "cliPath": [
+        "entities",
+        "fundraise-investor-joins",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listEntityFundraiseRounds",
       "method": "GET",
       "path": "/v1/entities/{entityId}/fundraise-rounds",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities rounds list",
+      "cliCommand": "entities fundraise-rounds list",
       "cliPath": [
         "entities",
-        "rounds",
-        "list"
-      ],
-      "cliAliasCommand": "entities fundraise rounds list",
-      "cliAliasPath": [
-        "entities",
-        "fundraise",
-        "rounds",
+        "fundraise-rounds",
         "list"
       ],
       "mcpTool": "aventure_read",
@@ -507,22 +673,15 @@
       "destructive": false
     },
     {
-      "operationId": "getFundraiseTransaction",
+      "operationId": "getEntityFundraiseRound",
       "method": "GET",
       "path": "/v1/entities/{entityId}/fundraise-rounds/{fundraiseRoundId}",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities rounds get",
+      "cliCommand": "entities fundraise-rounds get",
       "cliPath": [
         "entities",
-        "rounds",
-        "get"
-      ],
-      "cliAliasCommand": "entities fundraise rounds get",
-      "cliAliasPath": [
-        "entities",
-        "fundraise",
-        "rounds",
+        "fundraise-rounds",
         "get"
       ],
       "mcpTool": "aventure_read",
@@ -533,7 +692,7 @@
       "destructive": false
     },
     {
-      "operationId": "entityInvestments",
+      "operationId": "listEntityInvestments",
       "method": "GET",
       "path": "/v1/entities/{entityId}/investments",
       "resource": "entities",
@@ -544,13 +703,6 @@
         "investments",
         "list"
       ],
-      "cliAliasCommand": "entities fundraise investments list",
-      "cliAliasPath": [
-        "entities",
-        "fundraise",
-        "investments",
-        "list"
-      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -559,7 +711,7 @@
       "destructive": false
     },
     {
-      "operationId": "investorActivity",
+      "operationId": "getEntityInvestorActivity",
       "method": "GET",
       "path": "/v1/entities/{entityId}/investor-activity",
       "resource": "entities",
@@ -570,13 +722,6 @@
         "investor-activity",
         "get"
       ],
-      "cliAliasCommand": "entities fundraise investor-activity get",
-      "cliAliasPath": [
-        "entities",
-        "fundraise",
-        "investor-activity",
-        "get"
-      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -585,7 +730,7 @@
       "destructive": false
     },
     {
-      "operationId": "entityInvestors",
+      "operationId": "listEntityInvestors",
       "method": "GET",
       "path": "/v1/entities/{entityId}/investors",
       "resource": "entities",
@@ -593,13 +738,6 @@
       "cliCommand": "entities investors list",
       "cliPath": [
         "entities",
-        "investors",
-        "list"
-      ],
-      "cliAliasCommand": "entities fundraise investors list",
-      "cliAliasPath": [
-        "entities",
-        "fundraise",
         "investors",
         "list"
       ],
@@ -613,20 +751,13 @@
     {
       "operationId": "getEntityMedia",
       "method": "GET",
-      "path": "/v1/entities/{entityId}/media/logo",
+      "path": "/v1/entities/{entityId}/media/{mediaType}",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities logo get",
+      "cliCommand": "entities media get",
       "cliPath": [
         "entities",
-        "logo",
-        "get"
-      ],
-      "cliAliasCommand": "entities media logo get",
-      "cliAliasPath": [
-        "entities",
         "media",
-        "logo",
         "get"
       ],
       "mcpTool": "aventure_read",
@@ -637,7 +768,7 @@
       "destructive": false
     },
     {
-      "operationId": "listEntityPeopleAssociations",
+      "operationId": "listEntityPersonAssociations",
       "method": "GET",
       "path": "/v1/entities/{entityId}/people",
       "resource": "entities",
@@ -648,8 +779,6 @@
         "people",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -658,7 +787,7 @@
       "destructive": false
     },
     {
-      "operationId": "getEntityPeopleAssociation",
+      "operationId": "getEntityPersonAssociation",
       "method": "GET",
       "path": "/v1/entities/{entityId}/people/{associationId}",
       "resource": "entities",
@@ -669,8 +798,6 @@
         "people",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -679,47 +806,14 @@
       "destructive": false
     },
     {
-      "operationId": "getEmployeeCountTimeSeries",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/people/time-series",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities employee-counts list",
-      "cliPath": [
-        "entities",
-        "employee-counts",
-        "list"
-      ],
-      "cliAliasCommand": "entities people employee-counts list",
-      "cliAliasPath": [
-        "entities",
-        "people",
-        "employee-counts",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "entityPersonInvestors",
+      "operationId": "listEntityPersonInvestors",
       "method": "GET",
       "path": "/v1/entities/{entityId}/person-investors",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities investors list",
+      "cliCommand": "entities person-investors list",
       "cliPath": [
         "entities",
-        "investors",
-        "list"
-      ],
-      "cliAliasCommand": "entities fundraise person-investors list",
-      "cliAliasPath": [
-        "entities",
-        "fundraise",
         "person-investors",
         "list"
       ],
@@ -731,23 +825,22 @@
       "destructive": false
     },
     {
-      "operationId": "suggestProducts",
+      "operationId": "listEntityProductSuggestions",
       "method": "GET",
       "path": "/v1/entities/{entityId}/products/suggestions",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities products suggest",
+      "cliCommand": "entities products suggestions list",
       "cliPath": [
         "entities",
         "products",
-        "suggest"
+        "suggestions",
+        "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -763,8 +856,6 @@
         "relationships",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -773,23 +864,22 @@
       "destructive": false
     },
     {
-      "operationId": "suggestRelationships",
+      "operationId": "listEntityRelationshipSuggestions",
       "method": "GET",
       "path": "/v1/entities/{entityId}/relationships/suggestions",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities relationships suggest",
+      "cliCommand": "entities relationships suggestions list",
       "cliPath": [
         "entities",
         "relationships",
-        "suggest"
+        "suggestions",
+        "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -805,12 +895,10 @@
         "repositories",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -826,105 +914,91 @@
         "research",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "listResearchDetails",
+      "operationId": "listEntityResearchDetails",
       "method": "GET",
-      "path": "/v1/entities/{entityId}/research/details",
+      "path": "/v1/entities/{entityId}/research-details",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities research details list",
+      "cliCommand": "entities research-details list",
       "cliPath": [
         "entities",
-        "research",
-        "details",
+        "research-details",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "getResearchDetail",
+      "operationId": "getEntityResearchDetail",
       "method": "GET",
-      "path": "/v1/entities/{entityId}/research/details/{detailId}",
+      "path": "/v1/entities/{entityId}/research-details/{detailId}",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities research details get",
+      "cliCommand": "entities research-details get",
       "cliPath": [
         "entities",
-        "research",
-        "details",
+        "research-details",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "listResearchSnippets",
+      "operationId": "listEntityResearchSnippets",
       "method": "GET",
-      "path": "/v1/entities/{entityId}/research/snippets",
+      "path": "/v1/entities/{entityId}/research-snippets",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities research snippets list",
+      "cliCommand": "entities research-snippets list",
       "cliPath": [
         "entities",
-        "research",
-        "snippets",
+        "research-snippets",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "getResearchSnippet",
+      "operationId": "getEntityResearchSnippet",
       "method": "GET",
-      "path": "/v1/entities/{entityId}/research/snippets/{snippetId}",
+      "path": "/v1/entities/{entityId}/research-snippets/{snippetId}",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities research snippets get",
+      "cliCommand": "entities research-snippets get",
       "cliPath": [
         "entities",
-        "research",
-        "snippets",
+        "research-snippets",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "listSimilarEntitiesByEntityId",
+      "operationId": "listEntitySimilarEntities",
       "method": "GET",
       "path": "/v1/entities/{entityId}/similar",
       "resource": "entities",
@@ -935,16 +1009,10 @@
         "similar",
         "list"
       ],
-      "cliAliasCommand": "entities similar get",
-      "cliAliasPath": [
-        "entities",
-        "similar",
-        "get"
-      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -960,38 +1028,10 @@
         "slug",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listEntityRedirects",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/slug/redirects",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities redirects list",
-      "cliPath": [
-        "entities",
-        "redirects",
-        "list"
-      ],
-      "cliAliasCommand": "entities slug redirects list",
-      "cliAliasPath": [
-        "entities",
-        "slug",
-        "redirects",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1007,8 +1047,6 @@
         "texts",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1028,12 +1066,10 @@
         "texts",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1043,14 +1079,8 @@
       "path": "/v1/entities/{entityId}/trending-news",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities news list",
+      "cliCommand": "entities trending-news list",
       "cliPath": [
-        "entities",
-        "news",
-        "list"
-      ],
-      "cliAliasCommand": "entities trending-news list",
-      "cliAliasPath": [
         "entities",
         "trending-news",
         "list"
@@ -1063,19 +1093,13 @@
       "destructive": false
     },
     {
-      "operationId": "getTypeRecord",
+      "operationId": "getEntityTypeRecord",
       "method": "GET",
       "path": "/v1/entities/{entityId}/type-record",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities type get",
+      "cliCommand": "entities type-record get",
       "cliPath": [
-        "entities",
-        "type",
-        "get"
-      ],
-      "cliAliasCommand": "entities type-record get",
-      "cliAliasPath": [
         "entities",
         "type-record",
         "get"
@@ -1093,18 +1117,16 @@
       "path": "/v1/entities/{entityId}/unique-ids",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities identifiers list",
+      "cliCommand": "entities unique-ids list",
       "cliPath": [
         "entities",
-        "identifiers",
+        "unique-ids",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1114,18 +1136,16 @@
       "path": "/v1/entities/{entityId}/unique-ids/{uniqueIdId}",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities identifiers get",
+      "cliCommand": "entities unique-ids get",
       "cliPath": [
         "entities",
-        "identifiers",
+        "unique-ids",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1141,8 +1161,6 @@
         "urls",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1162,43 +1180,15 @@
         "urls",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "listAllEntityUrls",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/urls/all",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities urls list",
-      "cliPath": [
-        "entities",
-        "urls",
-        "list"
-      ],
-      "cliAliasCommand": "entities urls all list",
-      "cliAliasPath": [
-        "entities",
-        "urls",
-        "all",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getValuationTimeSeries",
+      "operationId": "listEntityValuations",
       "method": "GET",
       "path": "/v1/entities/{entityId}/valuations",
       "resource": "entities",
@@ -1209,8 +1199,6 @@
         "valuations",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1219,116 +1207,15 @@
       "destructive": false
     },
     {
-      "operationId": "listEntitiesBatch",
-      "method": "POST",
-      "path": "/v1/entities/batch",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities list",
-      "cliPath": [
-        "entities",
-        "list"
-      ],
-      "cliAliasCommand": "entities batch lookup",
-      "cliAliasPath": [
-        "entities",
-        "batch",
-        "lookup"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": "EntityFilterSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/filter",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "entityCountsByType",
+      "operationId": "listEntityTypeCounts",
       "method": "GET",
       "path": "/v1/entities/counts",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities list",
+      "cliCommand": "entities counts list",
       "cliPath": [
-        "entities",
-        "list"
-      ],
-      "cliAliasCommand": "entities counts get",
-      "cliAliasPath": [
         "entities",
         "counts",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getEntityDetail",
-      "method": "GET",
-      "path": "/v1/entities/detail",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities get",
-      "cliPath": [
-        "entities",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "postEntityDetailBatch",
-      "method": "POST",
-      "path": "/v1/entities/detail/batch",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities get",
-      "cliPath": [
-        "entities",
-        "get"
-      ],
-      "cliAliasCommand": "entities batch detail lookup",
-      "cliAliasPath": [
-        "entities",
-        "batch",
-        "detail",
-        "lookup"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": "EntityDetailBatchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/detail-batch",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listFundraiseInvestorJoins",
-      "method": "GET",
-      "path": "/v1/entities/detail/fundraise-investor-joins",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities rounds investors list",
-      "cliPath": [
-        "entities",
-        "rounds",
-        "investors",
-        "list"
-      ],
-      "cliAliasCommand": "entities fundraise investor-joins list",
-      "cliAliasPath": [
-        "entities",
-        "fundraise",
-        "investor-joins",
         "list"
       ],
       "mcpTool": "aventure_read",
@@ -1339,76 +1226,7 @@
       "destructive": false
     },
     {
-      "operationId": "getFundraiseInvestorJoin",
-      "method": "GET",
-      "path": "/v1/entities/detail/fundraise-investor-joins/{joinId}",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities rounds investors get",
-      "cliPath": [
-        "entities",
-        "rounds",
-        "investors",
-        "get"
-      ],
-      "cliAliasCommand": "entities fundraise investor-joins get",
-      "cliAliasPath": [
-        "entities",
-        "fundraise",
-        "investor-joins",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listEntityNews",
-      "method": "GET",
-      "path": "/v1/entities/detail/news",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities news list",
-      "cliPath": [
-        "entities",
-        "news",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listSimilarEntities",
-      "method": "GET",
-      "path": "/v1/entities/detail/similar",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities similar list",
-      "cliPath": [
-        "entities",
-        "similar",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "entityFilters",
+      "operationId": "listEntityFilters",
       "method": "GET",
       "path": "/v1/entities/filters",
       "resource": "entities",
@@ -1419,8 +1237,6 @@
         "filters",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1441,62 +1257,26 @@
         "counts",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "entityFilterCounts",
-      "method": "POST",
-      "path": "/v1/entities/filters/counts",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities filters counts list",
-      "cliPath": [
-        "entities",
-        "filters",
-        "counts",
-        "list"
-      ],
-      "cliAliasCommand": "entities filters counts lookup",
-      "cliAliasPath": [
-        "entities",
-        "filters",
-        "counts",
-        "lookup"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": "EntityFilterCountSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/filter-count",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "entityFiltersRefined",
+      "operationId": "refineEntityFilters",
       "method": "POST",
       "path": "/v1/entities/filters/refine",
       "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities filters suggest",
+      "intent": "lookup",
+      "cliCommand": "entities filters refine",
       "cliPath": [
         "entities",
         "filters",
-        "suggest"
+        "refine"
       ],
-      "cliAliasCommand": "entities filters refine lookup",
-      "cliAliasPath": [
-        "entities",
-        "filters",
-        "refine",
-        "lookup"
-      ],
-      "mcpTool": "aventure_read",
+      "mcpTool": "aventure_lookup",
       "bodySchemaName": "EntityFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/filter",
       "auth": "read",
@@ -1504,33 +1284,7 @@
       "destructive": false
     },
     {
-      "operationId": "entityFilterSearch",
-      "method": "GET",
-      "path": "/v1/entities/filters/search",
-      "resource": "entities",
-      "intent": "search",
-      "cliCommand": "entities filters search",
-      "cliPath": [
-        "entities",
-        "filters",
-        "search"
-      ],
-      "cliAliasCommand": "entities filters search get",
-      "cliAliasPath": [
-        "entities",
-        "filters",
-        "search",
-        "get"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "entityFilterSearchScoped",
+      "operationId": "searchEntityFilters",
       "method": "POST",
       "path": "/v1/entities/filters/search",
       "resource": "entities",
@@ -1540,13 +1294,6 @@
         "entities",
         "filters",
         "search"
-      ],
-      "cliAliasCommand": "entities filters search lookup",
-      "cliAliasPath": [
-        "entities",
-        "filters",
-        "search",
-        "lookup"
       ],
       "mcpTool": "aventure_search",
       "bodySchemaName": "EntityFilterSearchSchema",
@@ -1556,8 +1303,27 @@
       "destructive": false
     },
     {
-      "operationId": "lookupEntity",
+      "operationId": "getEntityLookup",
       "method": "GET",
+      "path": "/v1/entities/lookup",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities lookup get",
+      "cliPath": [
+        "entities",
+        "lookup",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupEntity",
+      "method": "POST",
       "path": "/v1/entities/lookup",
       "resource": "entities",
       "intent": "lookup",
@@ -1566,12 +1332,10 @@
         "entities",
         "lookup"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_lookup",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
+      "bodySchemaName": "IdentificationSubjectSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/identification/subject",
+      "auth": "read",
       "scope": "read",
       "destructive": false
     },
@@ -1581,13 +1345,8 @@
       "path": "/v1/entities/lookup/batch",
       "resource": "entities",
       "intent": "lookup",
-      "cliCommand": "entities lookup",
+      "cliCommand": "entities lookup batch",
       "cliPath": [
-        "entities",
-        "lookup"
-      ],
-      "cliAliasCommand": "entities lookup batch",
-      "cliAliasPath": [
         "entities",
         "lookup",
         "batch"
@@ -1605,17 +1364,11 @@
       "path": "/v1/entities/lookup/matches",
       "resource": "entities",
       "intent": "lookup",
-      "cliCommand": "entities lookup",
+      "cliCommand": "entities lookup matches",
       "cliPath": [
         "entities",
-        "lookup"
-      ],
-      "cliAliasCommand": "entities lookup matches lookup",
-      "cliAliasPath": [
-        "entities",
         "lookup",
-        "matches",
-        "lookup"
+        "matches"
       ],
       "mcpTool": "aventure_lookup",
       "bodySchemaName": "EntityDetailBatchSchema",
@@ -1625,20 +1378,15 @@
       "destructive": false
     },
     {
-      "operationId": "naturalSearchEntities",
+      "operationId": "searchEntitiesByNaturalLanguage",
       "method": "POST",
       "path": "/v1/entities/natural-search",
       "resource": "entities",
       "intent": "search",
-      "cliCommand": "entities search",
+      "cliCommand": "entities natural-search",
       "cliPath": [
         "entities",
-        "search"
-      ],
-      "cliAliasCommand": "search entities",
-      "cliAliasPath": [
-        "search",
-        "entities"
+        "natural-search"
       ],
       "mcpTool": "aventure_search",
       "bodySchemaName": "EntityNaturalSearchSchema",
@@ -1648,7 +1396,7 @@
       "destructive": false
     },
     {
-      "operationId": "getRelationship",
+      "operationId": "getEntityRelationship",
       "method": "GET",
       "path": "/v1/entities/relationships/{relationshipId}",
       "resource": "entities",
@@ -1659,13 +1407,6 @@
         "relationships",
         "get"
       ],
-      "cliAliasCommand": "entities relationships row get",
-      "cliAliasPath": [
-        "entities",
-        "relationships",
-        "row",
-        "get"
-      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1674,19 +1415,18 @@
       "destructive": false
     },
     {
-      "operationId": "listRelationshipTypes",
+      "operationId": "listEntityRelationshipTypes",
       "method": "GET",
       "path": "/v1/entities/relationships/types",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities relationships list",
+      "cliCommand": "entities relationships types list",
       "cliPath": [
         "entities",
         "relationships",
+        "types",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1695,42 +1435,40 @@
       "destructive": false
     },
     {
-      "operationId": "researchDetailTypes",
+      "operationId": "listEntityResearchDetailTypes",
       "method": "GET",
       "path": "/v1/entities/research/details/types",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities research details list",
+      "cliCommand": "entities research details types list",
       "cliPath": [
         "entities",
         "research",
         "details",
+        "types",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "researchSnippetTypes",
+      "operationId": "listEntityResearchSnippetTypes",
       "method": "GET",
       "path": "/v1/entities/research/snippets/types",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities research snippets list",
+      "cliCommand": "entities research snippets types list",
       "cliPath": [
         "entities",
         "research",
         "snippets",
+        "types",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1739,7 +1477,7 @@
       "destructive": false
     },
     {
-      "operationId": "listEntitiesPost",
+      "operationId": "searchEntities",
       "method": "POST",
       "path": "/v1/entities/search",
       "resource": "entities",
@@ -1749,8 +1487,6 @@
         "entities",
         "search"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_search",
       "bodySchemaName": "EntityListFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/list-filter",
@@ -1764,13 +1500,8 @@
       "path": "/v1/entities/summary",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities list",
+      "cliCommand": "entities summary list",
       "cliPath": [
-        "entities",
-        "list"
-      ],
-      "cliAliasCommand": "entities summary list",
-      "cliAliasPath": [
         "entities",
         "summary",
         "list"
@@ -1783,19 +1514,18 @@
       "destructive": false
     },
     {
-      "operationId": "entityTextTypes",
+      "operationId": "listEntityTextTypes",
       "method": "GET",
       "path": "/v1/entities/texts/types",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities texts list",
+      "cliCommand": "entities texts types list",
       "cliPath": [
         "entities",
         "texts",
+        "types",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1804,18 +1534,17 @@
       "destructive": false
     },
     {
-      "operationId": "entityTypes",
+      "operationId": "listEntityTypeRecords",
       "method": "GET",
       "path": "/v1/entities/types",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities list",
+      "cliCommand": "entities types list",
       "cliPath": [
         "entities",
+        "types",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1824,19 +1553,148 @@
       "destructive": false
     },
     {
-      "operationId": "entityUrlTypes",
+      "operationId": "askHelpQuestion",
+      "method": "POST",
+      "path": "/v1/help",
+      "resource": "help",
+      "intent": "search",
+      "cliCommand": "help ask",
+      "cliPath": [
+        "help",
+        "ask"
+      ],
+      "mcpTool": "aventure_search",
+      "bodySchemaName": "AgentHelpQuestionSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/agent/help-question",
+      "auth": "read",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getAgentInstruction",
       "method": "GET",
-      "path": "/v1/entities/urls/types",
-      "resource": "entities",
+      "path": "/v1/help/instructions/{kind}/{name}",
+      "resource": "help",
       "intent": "read",
-      "cliCommand": "entities urls list",
+      "cliCommand": "help instructions get",
       "cliPath": [
-        "entities",
-        "urls",
+        "help",
+        "instructions",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getAgentInstructionVersion",
+      "method": "GET",
+      "path": "/v1/help/instructions/{kind}/{name}/versions/{version}",
+      "resource": "help",
+      "intent": "read",
+      "cliCommand": "help instructions versions get",
+      "cliPath": [
+        "help",
+        "instructions",
+        "versions",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getAgentInstructionManifest",
+      "method": "GET",
+      "path": "/v1/help/instructions/manifest",
+      "resource": "help",
+      "intent": "read",
+      "cliCommand": "help instructions manifest get",
+      "cliPath": [
+        "help",
+        "instructions",
+        "manifest",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupHandle",
+      "method": "GET",
+      "path": "/v1/lookup",
+      "resource": "lookup",
+      "intent": "lookup",
+      "cliCommand": "lookup",
+      "cliPath": [
+        "lookup"
+      ],
+      "mcpTool": "aventure_lookup",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupSlugRedirect",
+      "method": "GET",
+      "path": "/v1/lookup/slug-redirects",
+      "resource": "lookup",
+      "intent": "lookup",
+      "cliCommand": "lookup slug-redirects",
+      "cliPath": [
+        "lookup",
+        "slug-redirects"
+      ],
+      "mcpTool": "aventure_lookup",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupUniqueId",
+      "method": "GET",
+      "path": "/v1/lookup/unique-ids",
+      "resource": "lookup",
+      "intent": "lookup",
+      "cliCommand": "lookup unique-ids",
+      "cliPath": [
+        "lookup",
+        "unique-ids"
+      ],
+      "mcpTool": "aventure_lookup",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listUniqueIdTypes",
+      "method": "GET",
+      "path": "/v1/lookup/unique-ids/types",
+      "resource": "lookup",
+      "intent": "read",
+      "cliCommand": "lookup unique-ids types list",
+      "cliPath": [
+        "lookup",
+        "unique-ids",
+        "types",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1845,22 +1703,35 @@
       "destructive": false
     },
     {
-      "operationId": "getMetrics",
+      "operationId": "listUrlTypes",
+      "method": "GET",
+      "path": "/v1/lookup/url-types",
+      "resource": "lookup",
+      "intent": "read",
+      "cliCommand": "lookup url-types list",
+      "cliPath": [
+        "lookup",
+        "url-types",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getSystemGlobalMetrics",
       "method": "GET",
       "path": "/v1/metrics",
       "resource": "metrics",
-      "intent": "status",
-      "cliCommand": "status",
+      "intent": "read",
+      "cliCommand": "metrics",
       "cliPath": [
-        "status"
+        "metrics"
       ],
-      "cliAliasCommand": "operations metrics get",
-      "cliAliasPath": [
-        "operations",
-        "metrics",
-        "get"
-      ],
-      "mcpTool": "aventure_status",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "none",
@@ -1878,8 +1749,6 @@
         "news",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -1888,30 +1757,7 @@
       "destructive": false
     },
     {
-      "operationId": "listNewsPost",
-      "method": "POST",
-      "path": "/v1/news",
-      "resource": "news",
-      "intent": "search",
-      "cliCommand": "news search",
-      "cliPath": [
-        "news",
-        "search"
-      ],
-      "cliAliasCommand": "search news",
-      "cliAliasPath": [
-        "search",
-        "news"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "NewsFilterSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/filter",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getNewsById",
+      "operationId": "getNews",
       "method": "GET",
       "path": "/v1/news/{newsId}",
       "resource": "news",
@@ -1921,36 +1767,23 @@
         "news",
         "get"
       ],
-      "cliAliasCommand": "news by-id get",
-      "cliAliasPath": [
-        "news",
-        "by-id",
-        "get"
-      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
       "operationId": "getNewsMedia",
       "method": "GET",
-      "path": "/v1/news/{newsId}/media/thumbnail",
+      "path": "/v1/news/{newsId}/media/{mediaType}",
       "resource": "news",
       "intent": "read",
-      "cliCommand": "news thumbnail get",
+      "cliCommand": "news media get",
       "cliPath": [
-        "news",
-        "thumbnail",
-        "get"
-      ],
-      "cliAliasCommand": "news media thumbnail get",
-      "cliAliasPath": [
         "news",
         "media",
-        "thumbnail",
         "get"
       ],
       "mcpTool": "aventure_read",
@@ -1961,22 +1794,16 @@
       "destructive": false
     },
     {
-      "operationId": "relatedCompanies",
+      "operationId": "listNewsRelatedEntities",
       "method": "GET",
-      "path": "/v1/news/{newsId}/related-companies",
+      "path": "/v1/news/{newsId}/related-entities",
       "resource": "news",
       "intent": "read",
-      "cliCommand": "news entities list",
+      "cliCommand": "news related-entities list",
       "cliPath": [
         "news",
-        "entities",
+        "related-entities",
         "list"
-      ],
-      "cliAliasCommand": "news related-companies get",
-      "cliAliasPath": [
-        "news",
-        "related-companies",
-        "get"
       ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
@@ -1986,53 +1813,7 @@
       "destructive": false
     },
     {
-      "operationId": "listNewsRedirects",
-      "method": "GET",
-      "path": "/v1/news/{newsId}/slug/redirects",
-      "resource": "news",
-      "intent": "read",
-      "cliCommand": "news redirects list",
-      "cliPath": [
-        "news",
-        "redirects",
-        "list"
-      ],
-      "cliAliasCommand": "news slug redirects list",
-      "cliAliasPath": [
-        "news",
-        "slug",
-        "redirects",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getNewsDetail",
-      "method": "GET",
-      "path": "/v1/news/detail",
-      "resource": "news",
-      "intent": "read",
-      "cliCommand": "news get",
-      "cliPath": [
-        "news",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "submitFeedback",
+      "operationId": "createNewsFeedback",
       "method": "POST",
       "path": "/v1/news/feedback",
       "resource": "news",
@@ -2043,12 +1824,10 @@
         "feedback",
         "create"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_write",
       "bodySchemaName": "NewsFeedbackSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/news/feedback",
-      "auth": "write",
+      "auth": "bearer",
       "scope": "write",
       "destructive": false
     },
@@ -2063,82 +1842,15 @@
         "news",
         "lookup"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_lookup",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "listRecentNews",
-      "method": "GET",
-      "path": "/v1/news/recent",
-      "resource": "news",
-      "intent": "read",
-      "cliCommand": "news list",
-      "cliPath": [
-        "news",
-        "list"
-      ],
-      "cliAliasCommand": "news recent list",
-      "cliAliasPath": [
-        "news",
-        "recent",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listSimilarNews",
-      "method": "GET",
-      "path": "/v1/news/similar",
-      "resource": "news",
-      "intent": "read",
-      "cliCommand": "news similar list",
-      "cliPath": [
-        "news",
-        "similar",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPeople",
-      "method": "GET",
-      "path": "/v1/people",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people list",
-      "cliPath": [
-        "people",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getPersonById",
+      "operationId": "getPerson",
       "method": "GET",
       "path": "/v1/people/{personId}",
       "resource": "people",
@@ -2148,12 +1860,6 @@
         "people",
         "get"
       ],
-      "cliAliasCommand": "people by-id get",
-      "cliAliasPath": [
-        "people",
-        "by-id",
-        "get"
-      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2162,7 +1868,7 @@
       "destructive": false
     },
     {
-      "operationId": "listAddresses",
+      "operationId": "listPersonAddresses",
       "method": "GET",
       "path": "/v1/people/{personId}/addresses",
       "resource": "people",
@@ -2173,8 +1879,6 @@
         "addresses",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2183,7 +1887,7 @@
       "destructive": false
     },
     {
-      "operationId": "getAddress",
+      "operationId": "getPersonAddress",
       "method": "GET",
       "path": "/v1/people/{personId}/addresses/{addressJoinId}",
       "resource": "people",
@@ -2194,8 +1898,6 @@
         "addresses",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2209,14 +1911,8 @@
       "path": "/v1/people/{personId}/blog-posts",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people posts list",
+      "cliCommand": "people blog-posts list",
       "cliPath": [
-        "people",
-        "posts",
-        "list"
-      ],
-      "cliAliasCommand": "people blog-posts list",
-      "cliAliasPath": [
         "people",
         "blog-posts",
         "list"
@@ -2234,14 +1930,8 @@
       "path": "/v1/people/{personId}/blog-posts/{blogPostId}",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people posts get",
+      "cliCommand": "people blog-posts get",
       "cliPath": [
-        "people",
-        "posts",
-        "get"
-      ],
-      "cliAliasCommand": "people blog-posts get",
-      "cliAliasPath": [
         "people",
         "blog-posts",
         "get"
@@ -2249,7 +1939,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2259,14 +1949,8 @@
       "path": "/v1/people/{personId}/content",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people publications list",
+      "cliCommand": "people content list",
       "cliPath": [
-        "people",
-        "publications",
-        "list"
-      ],
-      "cliAliasCommand": "people content list",
-      "cliAliasPath": [
         "people",
         "content",
         "list"
@@ -2274,7 +1958,27 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listPersonContentFacets",
+      "method": "GET",
+      "path": "/v1/people/{personId}/content/facets",
+      "resource": "people",
+      "intent": "read",
+      "cliCommand": "people content facets list",
+      "cliPath": [
+        "people",
+        "content",
+        "facets",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2284,14 +1988,8 @@
       "path": "/v1/people/{personId}/content/search",
       "resource": "people",
       "intent": "search",
-      "cliCommand": "people publications search",
+      "cliCommand": "people content search",
       "cliPath": [
-        "people",
-        "publications",
-        "search"
-      ],
-      "cliAliasCommand": "people content search",
-      "cliAliasPath": [
         "people",
         "content",
         "search"
@@ -2309,13 +2007,12 @@
       "path": "/v1/people/{personId}/enrichments",
       "resource": "people",
       "intent": "write",
-      "cliCommand": "people enrich",
+      "cliCommand": "people enrichments enrich",
       "cliPath": [
         "people",
+        "enrichments",
         "enrich"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_write",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2335,8 +2032,6 @@
         "entities",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2356,8 +2051,6 @@
         "entities",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2377,8 +2070,44 @@
         "graph",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listPersonInvestments",
+      "method": "GET",
+      "path": "/v1/people/{personId}/investments",
+      "resource": "people",
+      "intent": "read",
+      "cliCommand": "people investments list",
+      "cliPath": [
+        "people",
+        "investments",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getPersonInvestorActivity",
+      "method": "GET",
+      "path": "/v1/people/{personId}/investor-activity",
+      "resource": "people",
+      "intent": "read",
+      "cliCommand": "people investor-activity get",
+      "cliPath": [
+        "people",
+        "investor-activity",
+        "get"
+      ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2389,20 +2118,13 @@
     {
       "operationId": "getPersonMedia",
       "method": "GET",
-      "path": "/v1/people/{personId}/media/photo",
+      "path": "/v1/people/{personId}/media/{mediaType}",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people photo get",
+      "cliCommand": "people media get",
       "cliPath": [
         "people",
-        "photo",
-        "get"
-      ],
-      "cliAliasCommand": "people media photo get",
-      "cliAliasPath": [
-        "people",
         "media",
-        "photo",
         "get"
       ],
       "mcpTool": "aventure_read",
@@ -2424,17 +2146,15 @@
         "repositories",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "listSimilarPeople",
+      "operationId": "listPersonSimilarPeople",
       "method": "GET",
       "path": "/v1/people/{personId}/similar",
       "resource": "people",
@@ -2445,38 +2165,10 @@
         "similar",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPersonRedirects",
-      "method": "GET",
-      "path": "/v1/people/{personId}/slug/redirects",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people redirects list",
-      "cliPath": [
-        "people",
-        "redirects",
-        "list"
-      ],
-      "cliAliasCommand": "people slug redirects list",
-      "cliAliasPath": [
-        "people",
-        "slug",
-        "redirects",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2492,8 +2184,6 @@
         "texts",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2513,12 +2203,10 @@
         "texts",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2528,18 +2216,16 @@
       "path": "/v1/people/{personId}/unique-ids",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people identifiers list",
+      "cliCommand": "people unique-ids list",
       "cliPath": [
         "people",
-        "identifiers",
+        "unique-ids",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2549,18 +2235,16 @@
       "path": "/v1/people/{personId}/unique-ids/{uniqueIdId}",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people identifiers get",
+      "cliCommand": "people unique-ids get",
       "cliPath": [
         "people",
-        "identifiers",
+        "unique-ids",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2576,8 +2260,6 @@
         "urls",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2597,201 +2279,15 @@
         "urls",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "listAllPersonUrls",
-      "method": "GET",
-      "path": "/v1/people/{personId}/urls/all",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people urls list",
-      "cliPath": [
-        "people",
-        "urls",
-        "list"
-      ],
-      "cliAliasCommand": "people urls all list",
-      "cliAliasPath": [
-        "people",
-        "urls",
-        "all",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPersonBlogPostsBySlug",
-      "method": "GET",
-      "path": "/v1/people/{slug}/blog-posts",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people posts list",
-      "cliPath": [
-        "people",
-        "posts",
-        "list"
-      ],
-      "cliAliasCommand": "people by-slug blog-posts list",
-      "cliAliasPath": [
-        "people",
-        "by-slug",
-        "blog-posts",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPeopleBatch",
-      "method": "POST",
-      "path": "/v1/people/batch",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people list",
-      "cliPath": [
-        "people",
-        "list"
-      ],
-      "cliAliasCommand": "people batch lookup",
-      "cliAliasPath": [
-        "people",
-        "batch",
-        "lookup"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": "PersonFilterSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/filter",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getPersonDetail",
-      "method": "GET",
-      "path": "/v1/people/detail",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people get",
-      "cliPath": [
-        "people",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getPersonDetailBatch",
-      "method": "POST",
-      "path": "/v1/people/detail/batch",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people get",
-      "cliPath": [
-        "people",
-        "get"
-      ],
-      "cliAliasCommand": "people batch detail lookup",
-      "cliAliasPath": [
-        "people",
-        "batch",
-        "detail",
-        "lookup"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": "PersonDetailBatchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/detail-batch",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getPersonInvestments",
-      "method": "GET",
-      "path": "/v1/people/detail/investments",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people investments list",
-      "cliPath": [
-        "people",
-        "investments",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getPersonInvestorActivity",
-      "method": "GET",
-      "path": "/v1/people/detail/investor-activity",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people investor-activity get",
-      "cliPath": [
-        "people",
-        "investor-activity",
-        "get"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPersonNews",
-      "method": "GET",
-      "path": "/v1/people/detail/news",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people news list",
-      "cliPath": [
-        "people",
-        "news",
-        "list"
-      ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "filters",
+      "operationId": "listPersonFilters",
       "method": "GET",
       "path": "/v1/people/filters",
       "resource": "people",
@@ -2802,8 +2298,6 @@
         "filters",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2812,7 +2306,7 @@
       "destructive": false
     },
     {
-      "operationId": "filterSearch",
+      "operationId": "searchPersonFilters",
       "method": "GET",
       "path": "/v1/people/filters/search",
       "resource": "people",
@@ -2823,13 +2317,6 @@
         "filters",
         "search"
       ],
-      "cliAliasCommand": "people filters search get",
-      "cliAliasPath": [
-        "people",
-        "filters",
-        "search",
-        "get"
-      ],
       "mcpTool": "aventure_search",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2838,8 +2325,27 @@
       "destructive": false
     },
     {
-      "operationId": "lookupPerson",
+      "operationId": "getPersonLookup",
       "method": "GET",
+      "path": "/v1/people/lookup",
+      "resource": "people",
+      "intent": "read",
+      "cliCommand": "people lookup get",
+      "cliPath": [
+        "people",
+        "lookup",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupPerson",
+      "method": "POST",
       "path": "/v1/people/lookup",
       "resource": "people",
       "intent": "lookup",
@@ -2848,12 +2354,10 @@
         "people",
         "lookup"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_lookup",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
+      "bodySchemaName": "IdentificationSubjectSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/identification/subject",
+      "auth": "read",
       "scope": "read",
       "destructive": false
     },
@@ -2863,39 +2367,29 @@
       "path": "/v1/people/lookup/batch",
       "resource": "people",
       "intent": "lookup",
-      "cliCommand": "people lookup",
+      "cliCommand": "people lookup batch",
       "cliPath": [
-        "people",
-        "lookup"
-      ],
-      "cliAliasCommand": "people lookup batch",
-      "cliAliasPath": [
         "people",
         "lookup",
         "batch"
       ],
       "mcpTool": "aventure_lookup",
-      "bodySchemaName": "PersonDetailBatchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/detail-batch",
+      "bodySchemaName": "PersonLookupBatchSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/person/lookup-batch",
       "auth": "read",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "naturalSearchPeople",
+      "operationId": "searchPeopleByNaturalLanguage",
       "method": "POST",
       "path": "/v1/people/natural-search",
       "resource": "people",
       "intent": "search",
-      "cliCommand": "people search",
+      "cliCommand": "people natural-search",
       "cliPath": [
         "people",
-        "search"
-      ],
-      "cliAliasCommand": "search people",
-      "cliAliasPath": [
-        "search",
-        "people"
+        "natural-search"
       ],
       "mcpTool": "aventure_search",
       "bodySchemaName": "PersonNaturalSearchSchema",
@@ -2905,7 +2399,7 @@
       "destructive": false
     },
     {
-      "operationId": "listPeoplePost",
+      "operationId": "searchPeople",
       "method": "POST",
       "path": "/v1/people/search",
       "resource": "people",
@@ -2915,8 +2409,6 @@
         "people",
         "search"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_search",
       "bodySchemaName": "PersonFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/filter",
@@ -2925,19 +2417,18 @@
       "destructive": false
     },
     {
-      "operationId": "personTextTypes",
+      "operationId": "listPersonTextTypes",
       "method": "GET",
       "path": "/v1/people/texts/types",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people texts list",
+      "cliCommand": "people texts types list",
       "cliPath": [
         "people",
         "texts",
+        "types",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -2946,23 +2437,20 @@
       "destructive": false
     },
     {
-      "operationId": "personUrlTypes",
+      "operationId": "listProvenance",
       "method": "GET",
-      "path": "/v1/people/urls/types",
-      "resource": "people",
+      "path": "/v1/provenance",
+      "resource": "provenance",
       "intent": "read",
-      "cliCommand": "people urls list",
+      "cliCommand": "provenance list",
       "cliPath": [
-        "people",
-        "urls",
+        "provenance",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2972,46 +2460,15 @@
       "path": "/v1/provenance/{provenanceId}",
       "resource": "provenance",
       "intent": "read",
-      "cliCommand": "entities provenance get",
+      "cliCommand": "provenance get",
       "cliPath": [
-        "entities",
-        "provenance",
-        "get"
-      ],
-      "cliAliasCommand": "provenance get",
-      "cliAliasPath": [
         "provenance",
         "get"
       ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getHistory",
-      "method": "GET",
-      "path": "/v1/provenance/history",
-      "resource": "provenance",
-      "intent": "read",
-      "cliCommand": "entities provenance list",
-      "cliPath": [
-        "entities",
-        "provenance",
-        "list"
-      ],
-      "cliAliasCommand": "provenance history list",
-      "cliAliasPath": [
-        "provenance",
-        "history",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -3021,14 +2478,8 @@
       "path": "/v1/provenance/latest",
       "resource": "provenance",
       "intent": "read",
-      "cliCommand": "entities provenance list",
+      "cliCommand": "provenance latest get",
       "cliPath": [
-        "entities",
-        "provenance",
-        "list"
-      ],
-      "cliAliasCommand": "provenance latest get",
-      "cliAliasPath": [
         "provenance",
         "latest",
         "get"
@@ -3036,29 +2487,25 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "resolve",
+      "operationId": "getResolvedHandle",
       "method": "GET",
       "path": "/v1/resolve/{token}",
       "resource": "resolve",
-      "intent": "lookup",
-      "cliCommand": "lookup",
+      "intent": "read",
+      "cliCommand": "resolve get",
       "cliPath": [
-        "lookup"
-      ],
-      "cliAliasCommand": "resolve get",
-      "cliAliasPath": [
         "resolve",
         "get"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -3068,12 +2515,8 @@
       "path": "/v1/search/all",
       "resource": "search",
       "intent": "search",
-      "cliCommand": "search",
+      "cliCommand": "search all",
       "cliPath": [
-        "search"
-      ],
-      "cliAliasCommand": "search all",
-      "cliAliasPath": [
         "search",
         "all"
       ],
@@ -3090,17 +2533,88 @@
       "path": "/v1/search/link",
       "resource": "search",
       "intent": "search",
-      "cliCommand": "search",
+      "cliCommand": "search link",
       "cliPath": [
-        "search"
-      ],
-      "cliAliasCommand": "search link get",
-      "cliAliasPath": [
         "search",
-        "link",
-        "get"
+        "link"
       ],
       "mcpTool": "aventure_search",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "searchNaturalEntities",
+      "method": "POST",
+      "path": "/v1/search/natural/entities",
+      "resource": "search",
+      "intent": "search",
+      "cliCommand": "search natural entities",
+      "cliPath": [
+        "search",
+        "natural",
+        "entities"
+      ],
+      "mcpTool": "aventure_search",
+      "bodySchemaName": "EntityNaturalSearchSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/entity/natural-search",
+      "auth": "read",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "searchNaturalPeople",
+      "method": "POST",
+      "path": "/v1/search/natural/people",
+      "resource": "search",
+      "intent": "search",
+      "cliCommand": "search natural people",
+      "cliPath": [
+        "search",
+        "natural",
+        "people"
+      ],
+      "mcpTool": "aventure_search",
+      "bodySchemaName": "PersonNaturalSearchSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/person/natural-search",
+      "auth": "read",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupSecCompany",
+      "method": "GET",
+      "path": "/v1/sec/company",
+      "resource": "sec",
+      "intent": "lookup",
+      "cliCommand": "sec company lookup",
+      "cliPath": [
+        "sec",
+        "company",
+        "lookup"
+      ],
+      "mcpTool": "aventure_lookup",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listSitemapEntities",
+      "method": "GET",
+      "path": "/v1/sitemap/entities",
+      "resource": "sitemap",
+      "intent": "read",
+      "cliCommand": "sitemap entities list",
+      "cliPath": [
+        "sitemap",
+        "entities",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "none",
@@ -3108,66 +2622,18 @@
       "destructive": false
     },
     {
-      "operationId": "searchWeb",
-      "method": "POST",
-      "path": "/v1/search/web",
-      "resource": "search",
-      "intent": "search",
-      "cliCommand": "search",
-      "cliPath": [
-        "search"
-      ],
-      "cliAliasCommand": "search web",
-      "cliAliasPath": [
-        "search",
-        "web"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "SearchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/search/search",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "previewCompany",
-      "method": "GET",
-      "path": "/v1/sec/company",
-      "resource": "sec",
-      "intent": "read",
-      "cliCommand": "entities sec get",
-      "cliPath": [
-        "entities",
-        "sec",
-        "get"
-      ],
-      "cliAliasCommand": "sec company get",
-      "cliAliasPath": [
-        "sec",
-        "company",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "entityBoundaries",
+      "operationId": "getEntitySitemapBoundaries",
       "method": "GET",
       "path": "/v1/sitemap/entities/boundaries",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap entity-boundaries get",
+      "cliCommand": "sitemap entities boundaries get",
       "cliPath": [
         "sitemap",
-        "entity-boundaries",
+        "entities",
+        "boundaries",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3176,19 +2642,18 @@
       "destructive": false
     },
     {
-      "operationId": "entityLetterCounts",
+      "operationId": "getEntityLetterCounts",
       "method": "GET",
       "path": "/v1/sitemap/entities/letter-counts",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap entity-letter-counts list",
+      "cliCommand": "sitemap entities letter-counts get",
       "cliPath": [
         "sitemap",
-        "entity-letter-counts",
-        "list"
+        "entities",
+        "letter-counts",
+        "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3197,19 +2662,18 @@
       "destructive": false
     },
     {
-      "operationId": "getSitemapRoutes",
+      "operationId": "listEntitySitemapRoutes",
       "method": "GET",
       "path": "/v1/sitemap/entities/routes",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap entity-routes list",
+      "cliCommand": "sitemap entities routes list",
       "cliPath": [
         "sitemap",
-        "entity-routes",
+        "entities",
+        "routes",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3218,19 +2682,18 @@
       "destructive": false
     },
     {
-      "operationId": "getSitemapUrls",
+      "operationId": "listEntitySitemapUrls",
       "method": "GET",
       "path": "/v1/sitemap/entities/urls",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap entity-urls list",
+      "cliCommand": "sitemap entities urls list",
       "cliPath": [
         "sitemap",
-        "entity-urls",
+        "entities",
+        "urls",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3239,19 +2702,19 @@
       "destructive": false
     },
     {
-      "operationId": "entityUrlBoundaries",
+      "operationId": "getEntitySitemapUrlBoundaries",
       "method": "GET",
       "path": "/v1/sitemap/entities/urls/boundaries",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap entity-url-boundaries get",
+      "cliCommand": "sitemap entities urls boundaries get",
       "cliPath": [
         "sitemap",
-        "entity-url-boundaries",
+        "entities",
+        "urls",
+        "boundaries",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3260,7 +2723,7 @@
       "destructive": false
     },
     {
-      "operationId": "indexManifest",
+      "operationId": "getSitemapIndexManifest",
       "method": "GET",
       "path": "/v1/sitemap/index-manifest",
       "resource": "sitemap",
@@ -3271,8 +2734,6 @@
         "index-manifest",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3281,19 +2742,18 @@
       "destructive": false
     },
     {
-      "operationId": "newsBoundaries",
+      "operationId": "getNewsSitemapBoundaries",
       "method": "GET",
       "path": "/v1/sitemap/news/boundaries",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap news-boundaries get",
+      "cliCommand": "sitemap news boundaries get",
       "cliPath": [
         "sitemap",
-        "news-boundaries",
+        "news",
+        "boundaries",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3302,19 +2762,18 @@
       "destructive": false
     },
     {
-      "operationId": "newsLetterCounts",
+      "operationId": "getNewsLetterCounts",
       "method": "GET",
       "path": "/v1/sitemap/news/letter-counts",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap news-letter-counts list",
+      "cliCommand": "sitemap news letter-counts get",
       "cliPath": [
         "sitemap",
-        "news-letter-counts",
-        "list"
+        "news",
+        "letter-counts",
+        "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3323,19 +2782,18 @@
       "destructive": false
     },
     {
-      "operationId": "personBoundaries",
+      "operationId": "getPersonSitemapBoundaries",
       "method": "GET",
       "path": "/v1/sitemap/people/boundaries",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap person-boundaries get",
+      "cliCommand": "sitemap people boundaries get",
       "cliPath": [
         "sitemap",
-        "person-boundaries",
+        "people",
+        "boundaries",
         "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3344,19 +2802,18 @@
       "destructive": false
     },
     {
-      "operationId": "letterCounts",
+      "operationId": "getPersonLetterCounts",
       "method": "GET",
       "path": "/v1/sitemap/people/letter-counts",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap person-letter-counts list",
+      "cliCommand": "sitemap people letter-counts get",
       "cliPath": [
         "sitemap",
-        "person-letter-counts",
-        "list"
+        "people",
+        "letter-counts",
+        "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3365,7 +2822,7 @@
       "destructive": false
     },
     {
-      "operationId": "urlSlots",
+      "operationId": "listSitemapUrlSlots",
       "method": "GET",
       "path": "/v1/sitemap/url-slots",
       "resource": "sitemap",
@@ -3376,8 +2833,6 @@
         "url-slots",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3386,19 +2841,18 @@
       "destructive": false
     },
     {
-      "operationId": "urlSlotBoundaries",
+      "operationId": "getSitemapUrlSlotBoundaries",
       "method": "GET",
       "path": "/v1/sitemap/url-slots/boundaries",
       "resource": "sitemap",
       "intent": "read",
-      "cliCommand": "sitemap url-slot-boundaries list",
+      "cliCommand": "sitemap url-slots boundaries get",
       "cliPath": [
         "sitemap",
-        "url-slot-boundaries",
-        "list"
+        "url-slots",
+        "boundaries",
+        "get"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3407,30 +2861,43 @@
       "destructive": false
     },
     {
-      "operationId": "resolvePathRedirect",
+      "operationId": "listSlugRedirects",
+      "method": "GET",
+      "path": "/v1/slug-redirects",
+      "resource": "slug-redirects",
+      "intent": "read",
+      "cliCommand": "slug-redirects list",
+      "cliPath": [
+        "slug-redirects",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupSlugRedirectAtRetiredAddress",
       "method": "GET",
       "path": "/v1/slug-redirects/lookup",
       "resource": "slug-redirects",
       "intent": "lookup",
-      "cliCommand": "lookup",
+      "cliCommand": "slug-redirects lookup",
       "cliPath": [
-        "lookup"
-      ],
-      "cliAliasCommand": "slug redirects lookup",
-      "cliAliasPath": [
-        "slug",
-        "redirects",
+        "slug-redirects",
         "lookup"
       ],
       "mcpTool": "aventure_lookup",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "getStatus",
+      "operationId": "getSystemStatus",
       "method": "GET",
       "path": "/v1/status",
       "resource": "status",
@@ -3439,8 +2906,6 @@
       "cliPath": [
         "status"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_status",
       "bodySchemaName": null,
       "bodySchemaImport": null,
@@ -3449,47 +2914,76 @@
       "destructive": false
     },
     {
-      "operationId": "lookupUniqueId",
+      "operationId": "lookupUniqueIdAtRetiredAddress",
       "method": "GET",
       "path": "/v1/unique-ids/lookup",
       "resource": "unique-ids",
       "intent": "lookup",
-      "cliCommand": "lookup",
+      "cliCommand": "unique-ids lookup",
       "cliPath": [
-        "lookup"
-      ],
-      "cliAliasCommand": "entities identifiers lookup",
-      "cliAliasPath": [
-        "entities",
-        "identifiers",
+        "unique-ids",
         "lookup"
       ],
       "mcpTool": "aventure_lookup",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "read",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
     {
-      "operationId": "uniqueIdTypes",
+      "operationId": "listUniqueIdTypesAtRetiredAddress",
       "method": "GET",
       "path": "/v1/unique-ids/types",
       "resource": "unique-ids",
       "intent": "read",
-      "cliCommand": "entities identifiers list",
+      "cliCommand": "unique-ids types list",
       "cliPath": [
-        "entities",
-        "identifiers",
+        "unique-ids",
+        "types",
         "list"
       ],
-      "cliAliasCommand": null,
-      "cliAliasPath": null,
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "none",
       "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listUrlTypesAtRetiredAddress",
+      "method": "GET",
+      "path": "/v1/url-types",
+      "resource": "url-types",
+      "intent": "read",
+      "cliCommand": "url-types list",
+      "cliPath": [
+        "url-types",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "searchWeb",
+      "method": "POST",
+      "path": "/v1/web/search",
+      "resource": "web",
+      "intent": "search",
+      "cliCommand": "web search",
+      "cliPath": [
+        "web",
+        "search"
+      ],
+      "mcpTool": "aventure_search",
+      "bodySchemaName": "SearchSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/search/search",
+      "auth": "bearer",
+      "scope": "write",
       "destructive": false
     }
   ]
