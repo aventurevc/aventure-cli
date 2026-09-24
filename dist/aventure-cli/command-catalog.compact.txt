@@ -19,8 +19,6 @@ aventure people get · Get one person by id · --person-id
 aventure people lookup · Find which person a name refers to, or confirm they are new · --name
 aventure people natural-search · Deprecated: find people in natural language · --query
 aventure people search · Search people · -
-aventure provenance get · Get one recorded source for a field · --provenance-id
-aventure provenance list · List where a record's data came from · --table-name
 aventure resolve get · Deprecated: find the record behind an id, slug, or URL · --token
 aventure search all · Deprecated: search companies, people, and news together · --query
 aventure search link · Search from a page URL · --url
@@ -121,7 +119,6 @@ aventure people unique-ids get · Get one person identifier · --person-id --uni
 aventure people unique-ids list · List a person's identifiers · --person-id
 aventure people urls get · Get one person URL · --person-id --url-id
 aventure people urls list · List person URLs · --person-id
-aventure provenance latest get · Get the newest source for a record · --table-name
 aventure search natural entities · Find companies, startups, and investors in natural language · --query
 aventure search natural people · Find people with natural language · --query
 aventure sec company lookup · Get SEC EDGAR facts for a public company · -
