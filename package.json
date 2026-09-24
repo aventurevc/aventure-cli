@@ -2,7 +2,8 @@
   "name": "@aventurevc/aventure-cli",
   "version": "0.7.332",
   "private": false,
-  "description": "Public aVenture CLI.",
+  "description": "Command-line access to aVenture research data on companies, people, funding, and news.",
+  "homepage": "https://docs.aventure.vc/cli",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
