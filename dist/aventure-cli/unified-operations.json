@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-24T05:16:38.008Z",
-  "totalOperations": 157,
+  "generatedAt": "2026-09-24T06:32:19.412Z",
+  "totalOperations": 159,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -214,6 +214,25 @@
       "mcpTool": "aventure_write",
       "bodySchemaName": "BillingCheckoutMutationSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/billing/checkout-mutation",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "createBillingPlanChange",
+      "method": "POST",
+      "path": "/v1/billing/plan-changes",
+      "resource": "billing",
+      "intent": "write",
+      "cliCommand": "billing plan-changes create",
+      "cliPath": [
+        "billing",
+        "plan-changes",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "BillingPlanChangeMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/billing/plan-change-mutation",
       "auth": "bearer",
       "scope": "write",
       "destructive": false
@@ -1630,8 +1649,8 @@
       "destructive": false
     },
     {
-      "operationId": "lookupHandle",
-      "method": "GET",
+      "operationId": "lookupRecord",
+      "method": "POST",
       "path": "/v1/lookup",
       "resource": "lookup",
       "intent": "lookup",
@@ -1640,9 +1659,9 @@
         "lookup"
       ],
       "mcpTool": "aventure_lookup",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
+      "bodySchemaName": "IdentificationSubjectSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/identification/subject",
+      "auth": "read",
       "scope": "read",
       "destructive": false
     },
@@ -2506,6 +2525,23 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "searchFederated",
+      "method": "POST",
+      "path": "/v1/search",
+      "resource": "search",
+      "intent": "search",
+      "cliCommand": "search",
+      "cliPath": [
+        "search"
+      ],
+      "mcpTool": "aventure_search",
+      "bodySchemaName": "NaturalSearchSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
+      "auth": "read",
       "scope": "read",
       "destructive": false
     },

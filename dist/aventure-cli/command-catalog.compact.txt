@@ -1,5 +1,6 @@
-aventure lookup · Find the record behind an id, slug, or URL · --token
+aventure lookup · Find a company or person by name, URL, or id · --name
 aventure metrics · Get platform totals for companies, funding, and people · -
+aventure search · Search companies, people, and news together · --query
 aventure status · Get system uptime · -
 aventure classifications list · List classifications · -
 aventure content list · List content · -
@@ -21,7 +22,7 @@ aventure people search · Search people · -
 aventure provenance get · Get one recorded source for a field · --provenance-id
 aventure provenance list · List where a record's data came from · --table-name
 aventure resolve get · Deprecated: find the record behind an id, slug, or URL · --token
-aventure search all · Search companies, people, and news together · --query
+aventure search all · Deprecated: search companies, people, and news together · --query
 aventure search link · Search from a page URL · --url
 aventure slug-redirects list · List a record's slug redirects · --resource-type --resource-id
 aventure slug-redirects lookup · Deprecated: resolve slug redirect path · --path
@@ -35,6 +36,7 @@ aventure auth api-key revoke · Revoke current API key · -
 aventure auth providers get · Get the public authentication provider catalog · -
 aventure billing ai-credits get · Read the current AI credit allowance · -
 aventure billing checkout-sessions create · Create or recover a hosted Checkout Session · --plan
+aventure billing plan-changes create · Change the subscription plan · --plan
 aventure billing plans list · List subscription tiers and plans · -
 aventure billing portal-sessions create · Create a hosted Billing Portal Session · -
 aventure billing subscription get · Read the current billing subscription · -
