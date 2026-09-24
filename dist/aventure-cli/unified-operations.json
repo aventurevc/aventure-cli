@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-24T13:30:17.668Z",
-  "totalOperations": 141,
+  "generatedAt": "2026-09-24T23:03:47.840Z",
+  "totalOperations": 137,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1284,25 +1284,6 @@
       "destructive": false
     },
     {
-      "operationId": "getEntityLookup",
-      "method": "GET",
-      "path": "/v1/entities/lookup",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities lookup get",
-      "cliPath": [
-        "entities",
-        "lookup",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "lookupEntity",
       "method": "POST",
       "path": "/v1/entities/lookup",
@@ -1323,14 +1304,13 @@
     {
       "operationId": "lookupEntityBatch",
       "method": "POST",
-      "path": "/v1/entities/lookup/batch",
+      "path": "/v1/entities/lookup-batch",
       "resource": "entities",
       "intent": "lookup",
-      "cliCommand": "entities lookup batch",
+      "cliCommand": "entities lookup-batch",
       "cliPath": [
         "entities",
-        "lookup",
-        "batch"
+        "lookup-batch"
       ],
       "mcpTool": "aventure_lookup",
       "bodySchemaName": "EntityDetailBatchSchema",
@@ -1340,16 +1320,34 @@
       "destructive": false
     },
     {
-      "operationId": "lookupEntityMatches",
-      "method": "POST",
-      "path": "/v1/entities/lookup/matches",
+      "operationId": "getEntityLookup",
+      "method": "GET",
+      "path": "/v1/entities/lookup-exact",
       "resource": "entities",
-      "intent": "lookup",
-      "cliCommand": "entities lookup matches",
+      "intent": "read",
+      "cliCommand": "entities lookup-exact get",
       "cliPath": [
         "entities",
-        "lookup",
-        "matches"
+        "lookup-exact",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupEntityMatches",
+      "method": "POST",
+      "path": "/v1/entities/lookup-matches",
+      "resource": "entities",
+      "intent": "lookup",
+      "cliCommand": "entities lookup-matches",
+      "cliPath": [
+        "entities",
+        "lookup-matches"
       ],
       "mcpTool": "aventure_lookup",
       "bodySchemaName": "EntityDetailBatchSchema",
@@ -1418,14 +1416,13 @@
     {
       "operationId": "listEntityResearchDetailTypes",
       "method": "GET",
-      "path": "/v1/entities/research/details/types",
+      "path": "/v1/entities/research-details/types",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities research details types list",
+      "cliCommand": "entities research-details types list",
       "cliPath": [
         "entities",
-        "research",
-        "details",
+        "research-details",
         "types",
         "list"
       ],
@@ -1439,14 +1436,13 @@
     {
       "operationId": "listEntityResearchSnippetTypes",
       "method": "GET",
-      "path": "/v1/entities/research/snippets/types",
+      "path": "/v1/entities/research-snippets/types",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities research snippets types list",
+      "cliCommand": "entities research-snippets types list",
       "cliPath": [
         "entities",
-        "research",
-        "snippets",
+        "research-snippets",
         "types",
         "list"
       ],
@@ -1624,81 +1620,6 @@
       "bodySchemaName": "IdentificationSubjectSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/identification/subject",
       "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "lookupSlugRedirect",
-      "method": "GET",
-      "path": "/v1/lookup/slug-redirects",
-      "resource": "lookup",
-      "intent": "lookup",
-      "cliCommand": "lookup slug-redirects",
-      "cliPath": [
-        "lookup",
-        "slug-redirects"
-      ],
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "lookupUniqueId",
-      "method": "GET",
-      "path": "/v1/lookup/unique-ids",
-      "resource": "lookup",
-      "intent": "lookup",
-      "cliCommand": "lookup unique-ids",
-      "cliPath": [
-        "lookup",
-        "unique-ids"
-      ],
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listUniqueIdTypes",
-      "method": "GET",
-      "path": "/v1/lookup/unique-ids/types",
-      "resource": "lookup",
-      "intent": "read",
-      "cliCommand": "lookup unique-ids types list",
-      "cliPath": [
-        "lookup",
-        "unique-ids",
-        "types",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listUrlTypes",
-      "method": "GET",
-      "path": "/v1/lookup/url-types",
-      "resource": "lookup",
-      "intent": "read",
-      "cliCommand": "lookup url-types list",
-      "cliPath": [
-        "lookup",
-        "url-types",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
       "scope": "read",
       "destructive": false
     },
@@ -2306,25 +2227,6 @@
       "destructive": false
     },
     {
-      "operationId": "getPersonLookup",
-      "method": "GET",
-      "path": "/v1/people/lookup",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people lookup get",
-      "cliPath": [
-        "people",
-        "lookup",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "lookupPerson",
       "method": "POST",
       "path": "/v1/people/lookup",
@@ -2345,19 +2247,37 @@
     {
       "operationId": "lookupPersonBatch",
       "method": "POST",
-      "path": "/v1/people/lookup/batch",
+      "path": "/v1/people/lookup-batch",
       "resource": "people",
       "intent": "lookup",
-      "cliCommand": "people lookup batch",
+      "cliCommand": "people lookup-batch",
       "cliPath": [
         "people",
-        "lookup",
-        "batch"
+        "lookup-batch"
       ],
       "mcpTool": "aventure_lookup",
       "bodySchemaName": "PersonLookupBatchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/lookup-batch",
       "auth": "read",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getPersonLookup",
+      "method": "GET",
+      "path": "/v1/people/lookup-exact",
+      "resource": "people",
+      "intent": "read",
+      "cliCommand": "people lookup-exact get",
+      "cliPath": [
+        "people",
+        "lookup-exact",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
       "scope": "read",
       "destructive": false
     },
@@ -2564,7 +2484,7 @@
       "destructive": false
     },
     {
-      "operationId": "lookupSlugRedirectAtRetiredAddress",
+      "operationId": "lookupSlugRedirect",
       "method": "GET",
       "path": "/v1/slug-redirects/lookup",
       "resource": "slug-redirects",
@@ -2599,7 +2519,7 @@
       "destructive": false
     },
     {
-      "operationId": "lookupUniqueIdAtRetiredAddress",
+      "operationId": "lookupUniqueId",
       "method": "GET",
       "path": "/v1/unique-ids/lookup",
       "resource": "unique-ids",
@@ -2617,7 +2537,7 @@
       "destructive": false
     },
     {
-      "operationId": "listUniqueIdTypesAtRetiredAddress",
+      "operationId": "listUniqueIdTypes",
       "method": "GET",
       "path": "/v1/unique-ids/types",
       "resource": "unique-ids",
@@ -2636,7 +2556,7 @@
       "destructive": false
     },
     {
-      "operationId": "listUrlTypesAtRetiredAddress",
+      "operationId": "listUrlTypes",
       "method": "GET",
       "path": "/v1/url-types",
       "resource": "url-types",
