@@ -2,10 +2,8 @@ aventure lookup · Find a company or person by name, URL, or id · --name
 aventure metrics · Get platform totals for companies, funding, and people · -
 aventure search · Search companies, people, and news together · --query
 aventure status · Get system uptime · -
-aventure classifications list · List classifications · -
-aventure content list · List content · -
-aventure content search · Search content · --query
 aventure entities get · Get one company, product, or service by id · --entity-id
+aventure entities list · List companies, products, and services · -
 aventure entities lookup · Find which company a name refers to, or confirm it is new · --name
 aventure entities lookup-batch · Look up companies in bulk by id, slug, or URL · -
 aventure entities lookup-matches · Look up which company each identifier matches · -
@@ -16,6 +14,7 @@ aventure news get · Get one news article · --news-id
 aventure news list · List news articles · -
 aventure news lookup · Look up one news article · -
 aventure people get · Get one person by id · --person-id
+aventure people list · List people · -
 aventure people lookup · Find which person a name refers to, or confirm they are new · --name
 aventure people lookup-batch · Look up people in bulk by id or slug · -
 aventure people natural-search · Deprecated: find people in natural language · --query
@@ -25,6 +24,7 @@ aventure search all · Deprecated: search companies, people, and news together �
 aventure search link · Search from a page URL · --url
 aventure unique-ids lookup · Look up an identifier owner · --id-type --identifier
 aventure url-types list · List URL types · -
+aventure web search · Search the live web · --search
 aventure agents help answer · Deprecated: answer a natural-language platform help question · --question
 aventure agents instructions get · Deprecated: get one agent instruction document · --kind --name
 aventure auth api-key get · Get current API key · -
@@ -36,7 +36,6 @@ aventure billing plan-changes create · Change the subscription plan · --plan
 aventure billing plans list · List subscription tiers and plans · -
 aventure billing portal-sessions create · Create a hosted Billing Portal Session · -
 aventure billing subscription get · Read the current billing subscription · -
-aventure classifications catalog get · Get the company classification taxonomy · -
 aventure entities acquisitions get · Get one company acquisition · --entity-id --relationship-id
 aventure entities acquisitions list · List a company's acquisitions · --entity-id
 aventure entities addresses get · Get one company address · --entity-id --address-join-id
@@ -46,7 +45,6 @@ aventure entities blog-posts list · List a company's blog posts · --entity-id
 aventure entities classifications list · List a company's classifications · --entity-id
 aventure entities content list · List a company's publications · --entity-id
 aventure entities content search · Search a company's publications · --entity-id --query
-aventure entities counts list · Count records by type · -
 aventure entities employee-counts list · List a company's headcount over time · --entity-id
 aventure entities enrichments enrich · Enrich one company, product, or service · --entity-id
 aventure entities filters list · List the company filter options · -
@@ -72,13 +70,12 @@ aventure entities research-details get · Get research detail · --entity-id --r
 aventure entities research-details list · List research details · --entity-id
 aventure entities research-snippets get · Get research snippet · --entity-id --snippet-id
 aventure entities research-snippets list · List research snippets · --entity-id
+aventure entities sec lookup · Get SEC EDGAR facts for a public company · -
 aventure entities similar list · Get similar companies by id · --entity-id
 aventure entities slug get · Get a company's slug · --entity-id
-aventure entities summary list · List compact company summaries · -
 aventure entities texts get · Get one piece of company text · --entity-id --text-id
 aventure entities texts list · List a company's text · --entity-id
 aventure entities trending-news list · List trending news about a company · --entity-id
-aventure entities type-record get · Get a record's type · --entity-id
 aventure entities types list · List the accepted typeRecord values · -
 aventure entities unique-ids get · Get one company identifier · --entity-id --unique-id-id
 aventure entities unique-ids list · List a company's identifiers · --entity-id
@@ -115,17 +112,15 @@ aventure people urls get · Get one person URL · --person-id --url-id
 aventure people urls list · List person URLs · --person-id
 aventure search natural entities · Find companies, startups, and investors in natural language · --query
 aventure search natural people · Find people with natural language · --query
-aventure sec company lookup · Get SEC EDGAR facts for a public company · -
 aventure unique-ids types list · List the accepted unique identifier types · -
 aventure agents instructions manifest get · Deprecated: get the agent instruction manifest · -
 aventure agents instructions versions get · Deprecated: get one agent instruction document version · --kind --name --instruction-version
 aventure auth me permissions authorize · Authorize API operations · -
 aventure auth me permissions get · Current user permissions · -
+aventure entities classifications catalog get · Get the company classification taxonomy · -
 aventure entities classifications suggestions list · Suggest classifications for a company · --entity-id
+aventure entities classifications tags list · List classification tags · -
 aventure entities content facets list · Count a company's publications · --entity-id
-aventure entities filters counts list · List the company filter tag counts · -
-aventure entities products suggestions list · Suggest a company's products or services · --entity-id
-aventure entities relationships suggestions list · Suggest relationships for a company · --entity-id
 aventure entities relationships types list · List entity relationship types · -
 aventure entities research-details types list · List the accepted research detail types · -
 aventure entities research-snippets types list · List the accepted research snippet types · -
