@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-24T23:03:47.840Z",
-  "totalOperations": 137,
+  "generatedAt": "2026-09-25T06:57:33.949Z",
+  "totalOperations": 134,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -2466,42 +2466,6 @@
       "destructive": false
     },
     {
-      "operationId": "listSlugRedirects",
-      "method": "GET",
-      "path": "/v1/slug-redirects",
-      "resource": "slug-redirects",
-      "intent": "read",
-      "cliCommand": "slug-redirects list",
-      "cliPath": [
-        "slug-redirects",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "lookupSlugRedirect",
-      "method": "GET",
-      "path": "/v1/slug-redirects/lookup",
-      "resource": "slug-redirects",
-      "intent": "lookup",
-      "cliCommand": "slug-redirects lookup",
-      "cliPath": [
-        "slug-redirects",
-        "lookup"
-      ],
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "getSystemStatus",
       "method": "GET",
       "path": "/v1/status",
@@ -2571,24 +2535,6 @@
       "bodySchemaImport": null,
       "auth": "none",
       "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "searchWeb",
-      "method": "POST",
-      "path": "/v1/web/search",
-      "resource": "web",
-      "intent": "search",
-      "cliCommand": "web search",
-      "cliPath": [
-        "web",
-        "search"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "SearchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/search/search",
-      "auth": "bearer",
-      "scope": "write",
       "destructive": false
     }
   ]
