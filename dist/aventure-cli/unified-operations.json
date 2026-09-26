@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-25T22:01:28.566Z",
-  "totalOperations": 129,
+  "generatedAt": "2026-09-26T00:21:07.145Z",
+  "totalOperations": 133,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -254,6 +254,24 @@
       "bodySchemaImport": null,
       "auth": "bearer",
       "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "enrichRecords",
+      "method": "POST",
+      "path": "/v1/enrichments",
+      "resource": "enrichments",
+      "intent": "write",
+      "cliCommand": "enrichments enrich",
+      "cliPath": [
+        "enrichments",
+        "enrich"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "EnrichmentBatchSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/enrichment/batch",
+      "auth": "bearer",
+      "scope": "write",
       "destructive": false
     },
     {
@@ -1417,6 +1435,25 @@
       "destructive": false
     },
     {
+      "operationId": "getHarnessRun",
+      "method": "GET",
+      "path": "/v1/harness/runs/{runId}",
+      "resource": "harness",
+      "intent": "read",
+      "cliCommand": "harness runs get",
+      "cliPath": [
+        "harness",
+        "runs",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
       "operationId": "askHelpQuestion",
       "method": "POST",
       "path": "/v1/help",
@@ -1507,6 +1544,42 @@
       "bodySchemaName": "IdentificationSubjectSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/identification/subject",
       "auth": "read",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createLookupJob",
+      "method": "POST",
+      "path": "/v1/lookup-jobs",
+      "resource": "lookup-jobs",
+      "intent": "write",
+      "cliCommand": "lookup-jobs create",
+      "cliPath": [
+        "lookup-jobs",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "LookupJobMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/lookup/job-mutation",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "getLookupJob",
+      "method": "GET",
+      "path": "/v1/lookup-jobs/{jobId}",
+      "resource": "lookup-jobs",
+      "intent": "read",
+      "cliCommand": "lookup-jobs get",
+      "cliPath": [
+        "lookup-jobs",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },

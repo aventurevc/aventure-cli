@@ -2,6 +2,7 @@ aventure lookup · Find a company or person by name, URL, or id · --name
 aventure metrics · Get platform totals for companies, funding, and people · -
 aventure search · Search companies, people, and news together · --query
 aventure status · Get system uptime · -
+aventure enrichments enrich · Enrich many companies and people · -
 aventure entities get · Get one company, product, or service by id · --entity-id
 aventure entities list · List companies, products, and services · -
 aventure entities lookup · Find which company a name refers to, or confirm it is new · --name
@@ -10,6 +11,8 @@ aventure entities lookup-matches · Look up which company each identifier matche
 aventure entities natural-search · Deprecated: find companies in natural language · --query
 aventure entities search · Search companies, products, and services · -
 aventure help ask · Answer a natural-language platform help question · --question
+aventure lookup-jobs create · Start identifying every company and person an article names · -
+aventure lookup-jobs get · Get a lookup job's state and the records its article names · --job-id
 aventure news get · Get one news article · --news-id
 aventure news list · List news articles · -
 aventure news lookup · Look up one news article · -
@@ -82,6 +85,7 @@ aventure entities unique-ids list · List a company's identifiers · --entity-id
 aventure entities urls get · Get one company URL · --entity-id --url-id
 aventure entities urls list · List a company's URLs · --entity-id
 aventure entities valuations list · List a company's valuation over time · --entity-id
+aventure harness runs get · Get one run · --run-id
 aventure help instructions get · Get one agent instruction document · --kind --name
 aventure news feedback create · Submit news feedback · -
 aventure news media get · Get news thumbnail · --news-id --media-type
