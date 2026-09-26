@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-26T00:21:07.145Z",
-  "totalOperations": 133,
+  "generatedAt": "2026-09-26T12:02:50.142Z",
+  "totalOperations": 134,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -911,6 +911,26 @@
       "cliPath": [
         "entities",
         "similar",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listEntitySimilarSummaries",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/similar/summary",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities similar summary list",
+      "cliPath": [
+        "entities",
+        "similar",
+        "summary",
         "list"
       ],
       "mcpTool": "aventure_read",

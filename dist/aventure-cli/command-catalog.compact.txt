@@ -128,6 +128,7 @@ aventure entities content facets list · Count a company's publications · --ent
 aventure entities relationships types list · List entity relationship types · -
 aventure entities research-details types list · List the accepted research detail types · -
 aventure entities research-snippets types list · List the accepted research snippet types · -
+aventure entities similar summary list · Get similar company summaries by id · --entity-id
 aventure entities texts types list · List the accepted company text types · -
 aventure help instructions manifest get · Get the agent instruction manifest · -
 aventure help instructions versions get · Get one agent instruction document version · --kind --name --instruction-version
