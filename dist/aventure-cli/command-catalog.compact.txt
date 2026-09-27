@@ -34,7 +34,8 @@ aventure auth api-key get · Get current API key · -
 aventure auth api-key revoke · Revoke current API key · -
 aventure auth providers get · Get the sign-in options · -
 aventure billing ai-credits get · Read the current AI credit allowance · -
-aventure billing checkout-sessions create · Create or recover a hosted Checkout Session · --plan
+aventure billing checkout-sessions create · Create or recover a Checkout Session · --plan
+aventure billing plan-change-previews create · Preview a subscription plan change · --plan
 aventure billing plan-changes create · Change the subscription plan · --plan
 aventure billing plans list · List subscription tiers and plans · -
 aventure billing portal-sessions create · Create a hosted Billing Portal Session · -
