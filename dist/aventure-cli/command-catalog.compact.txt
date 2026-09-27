@@ -32,7 +32,7 @@ aventure agents help answer · Deprecated: answer a natural-language platform he
 aventure agents instructions get · Deprecated: get one agent instruction document · --kind --name
 aventure auth api-key get · Get current API key · -
 aventure auth api-key revoke · Revoke current API key · -
-aventure auth providers get · Get the public authentication provider catalog · -
+aventure auth providers get · Get the sign-in options · -
 aventure billing ai-credits get · Read the current AI credit allowance · -
 aventure billing checkout-sessions create · Create or recover a hosted Checkout Session · --plan
 aventure billing plan-changes create · Change the subscription plan · --plan
