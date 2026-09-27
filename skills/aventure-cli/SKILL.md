@@ -9,18 +9,28 @@ Use the `aventure` command to read aVenture research data.
 
 ## Set up
 
-1. Install: `npm install --global @aventurevc/aventure-cli --@aventurevc:registry=https://registry.npmjs.org/`
-   (requires Node.js 24.18 or later in the 24.x series).
-2. Check the setup with `aventure auth doctor`. It reports each failed check with the
-   command that fixes it.
-3. Sign in only when a command needs it:
+The CLI requires an aVenture account (free or paid). If the user has none, point
+them to https://aventure.vc/sign-up.
+
+1. Install: `npm install --global @aventurevc/aventure-cli` (requires Node.js 24.18.0 or later).
+2. Sign in:
    - Interactive: `aventure auth login`, then have the user approve in the browser.
    - Non-interactive: the user creates a key at https://aventure.vc/settings/api-keys
      and provides it in the `AUTH_TOKEN` environment variable.
    Never print, log, or echo a key or token.
+3. Check the setup with `aventure auth doctor`. It reports each failed check with the
+   command that fixes it.
 
-Public reads, such as `aventure entities lookup get --url-domain stripe.com`, work
-without signing in. Name lookups and searches need a credential.
+## Common tasks
+
+- Company by name: `aventure lookup Stripe`; add `--context` or `--location` to
+  tell namesakes apart.
+- Company by website: `aventure lookup --name Stripe --url https://stripe.com`.
+- Company or person by description: `aventure search --query "<description>"`.
+- Person by name or LinkedIn URL: `aventure people lookup "<name>" --context "<employer>"`
+  or `--url <linkedin-url>`.
+- Full record and funding: `aventure entities get --entity-id <id>`,
+  `aventure entities fundraise-rounds list --entity-id <id>`.
 
 ## Find the right command
 
@@ -38,11 +48,19 @@ without signing in. Name lookups and searches need a credential.
 - Output is capped at 50 KB. When a result is truncated, request a smaller page or
   a narrower sub-command instead of treating missing fields as absent data.
 
-## Usage
+## Usage limits
 
-Calls made with the user's credential count toward their plan's usage. A `402`
-response means the operation needs a plan that includes it; point the user to
-https://aventure.vc/pricing and https://aventure.vc/settings/subscription instead of
-retrying.
+Profile views, web searches, and research requests count toward the user's monthly plan
+allowance. A `429` with code `billing_allowance_exhausted` means the user reached
+it; do not retry. Tell the user which limit they reached, then offer to upgrade:
+
+- `aventure billing plans list` shows plans with monthly and annual prices.
+- On a paid plan, `aventure billing plan-changes create --plan <plan>` upgrades with
+  the card on file; if the answer has a `paymentUrl`, the user must open it to pay.
+- On the free plan, `aventure billing checkout-sessions create --plan <plan>` returns
+  a checkout link where the user enters a card.
+- Or send the user to https://aventure.vc/settings/subscription.
+
+Change a plan only after the user confirms the plan and price.
 
 Documentation: https://docs.aventure.vc/cli

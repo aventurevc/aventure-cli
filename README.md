@@ -1,131 +1,113 @@
 # aVenture CLI
 
-Query aVenture's research data on companies, people, funding, and news from your
+Research private companies, founders, investors, funding rounds, and news from your
 terminal. The package installs one command, `aventure`.
 
-For a guided walkthrough, read the
-[aVenture CLI quickstart](https://docs.aventure.vc/cli).
+You need an aVenture account; free and paid plans both work.
+[Create an account](https://aventure.vc/sign-up).
 
-## Install
+## Get started in one step
 
-The CLI requires Node.js 24.18 or later in the 24.x series. Installation fails on
-any other major version.
+Paste this into Claude Code, Codex, ChatGPT, or any assistant that can run
+terminal commands:
 
-```sh
-npm install --global @aventurevc/aventure-cli --@aventurevc:registry=https://registry.npmjs.org/
-aventure --version
+```text
+Set up the aVenture CLI for me. Install it with
+`npm install --global @aventurevc/aventure-cli` (it needs Node.js 24.18.0 or
+later), then run `aventure auth login` so I can approve the sign-in in my browser (if no
+browser opens, show me the sign-in link and code it prints). When I'm signed in, run `aventure lookup Stripe` to confirm it
+works. Use `aventure --help` to find other commands.
+Docs: https://docs.aventure.vc/cli
 ```
 
-The `--@aventurevc:registry` flag makes npm install from the public npm registry
-even when your npm configuration maps the `@aventurevc` scope somewhere else.
+## CLI, MCP, or Researchly?
 
-## Get a first result
+| Where you work | Use |
+| --- | --- |
+| A terminal, shell scripts, or a coding agent with a shell | This CLI |
+| Claude, ChatGPT, or another desktop, web, or cloud AI app | The [aVenture MCP server](https://docs.aventure.vc/mcp) |
+| [Researchly](https://researchly.chat) | Nothing to install: open [Profile, then MCP servers](https://researchly.chat/profile/mcp-servers) and choose **Connect aVenture** |
 
-Public reads need no account. This command finds a company by its website
-domain:
+## Set up by hand
 
-```sh
-aventure entities lookup get --url-domain stripe.com
-```
-
-## Sign in
-
-Name lookups and searches need a signed-in account. Choose one credential.
-
-### Browser sign-in
+Requires Node.js 24.18.0 or later.
 
 ```sh
+npm install --global @aventurevc/aventure-cli
 aventure auth login
-aventure lookup Stripe
 ```
 
-`aventure auth login` prints a one-time code and a sign-in URL, opens your browser
-when one is available, and waits until you approve. You can approve on any device,
-so the same command works on a laptop, over SSH, and in a container. Add
-`--no-browser` to print the URL without opening a browser. The approval page uses
-the aVenture account already signed in to that browser; to use another account,
-open the URL in a private window.
+`aventure auth login` opens your browser to sign in and waits while you approve.
+Without a browser, such as over SSH or in a container, it prints a sign-in URL and
+a one-time code to approve on any device; `--no-browser` forces that mode.
 
-The CLI saves the credential in your operating system's credential store. When no
-credential store is available, such as on a server without a desktop session, it
-saves the credential to `~/.config/aventure/credentials.json` with file mode
-`0600`. Expired access is renewed automatically.
+For CI and other non-interactive environments, create a key in
+[API key settings](https://aventure.vc/settings/api-keys) and provide it in the
+`AUTH_TOKEN` environment variable from your secret manager.
 
-Review or revoke CLI sign-ins in
-[aVenture developer access settings](https://aventure.vc/settings/developer).
+## Find a company
 
-### Personal API key
+```sh
+aventure lookup Stripe                                   # by name
+aventure lookup --name Stripe --url https://stripe.com  # by website
+aventure search --query "payments infrastructure for online businesses"  # by description
+```
 
-Create a key in
-[aVenture API key settings](https://aventure.vc/settings/api-keys), then provide it
-in the `AUTH_TOKEN` environment variable from your shell or secret manager. Use
-this path for CI and other non-interactive environments.
+Add `--location` or `--context` to tell companies with the same name apart:
 
-To create and save a key through browser approval instead, run
-`aventure auth login --key`.
+```sh
+aventure lookup Mercury --context "banking for startups" --location "San Francisco"
+```
 
-### Check or remove a credential
+## Find a person
 
-- `aventure auth status` shows which credential is in use and where it is stored,
-  without printing the secret.
-- `aventure auth doctor` checks the CLI version, API connection, credential, and
-  command catalog in one call, and names the command that fixes each failure.
-- `aventure auth logout` revokes the saved API key and removes the saved sign-in.
+```sh
+aventure people lookup "Patrick Collison" --context "Stripe co-founder"
+aventure people lookup "Patrick Collison" --url https://www.linkedin.com/in/patrickcollison
+aventure search --query "fintech founders who previously worked at PayPal"
+```
+
+## Go deeper on a record
+
+A lookup returns the record's `id`. Use it to read the full profile and what is
+attached to it:
+
+```sh
+aventure entities get --entity-id <id>
+aventure entities fundraise-rounds list --entity-id <id>
+aventure people get --person-id <id>
+```
 
 ## Plans and usage
 
-Calls made with your credential count toward your aVenture plan's usage. Some
-operations, such as plain-English search, need a plan that includes them; without
-one, the API responds with status `402`.
-
-- Compare plans on the [aVenture pricing page](https://aventure.vc/pricing).
-- Check your plan and current usage in
-  [aVenture subscription settings](https://aventure.vc/settings/subscription).
-
-## Find commands
+Profile views, web searches, and research requests count toward your plan's monthly
+allowance. When one runs out, the command stops with a message that says which
+limit you reached and how to upgrade.
 
 ```sh
-aventure --help
-aventure entities --help
-aventure help entities lookup get
-aventure command-catalog search company lookup --format compact
+aventure billing subscription get                        # your plan and usage
+aventure billing plans list                              # monthly and annual prices
+aventure billing plan-changes create --plan <plan>       # upgrade a paid plan with the card on file
+aventure billing checkout-sessions create --plan <plan>  # subscribe from the free plan
 ```
 
-`aventure <command> --help` lists a command's options, and `aventure help <command>`
-prints its full documentation. `aventure command-catalog search` finds the command
-for a task without calling the API. Help and the catalog work without signing in.
+You can also manage your plan in
+[subscription settings](https://aventure.vc/settings/subscription).
 
-## Output and exit codes
+## More
 
-Every command accepts one output mode:
-
-- `--text` prints readable lines. It is the default in a terminal.
-- `--data` prints the response data as JSON. It is the default when output is
-  piped.
-- `--json` prints the full result envelope, capped at 50 KB.
-- `--data-full` prints uncapped JSON.
-
-The CLI exits with `0` when the call succeeded and `1` when it failed.
-
-## Shell completion and updates
-
-- `aventure completion zsh`, `aventure completion bash`, and
-  `aventure completion fish` print completion scripts, and
-  `aventure completion install` installs them.
-- `aventure update` checks for a newer release and installs it.
-
-## Diagnostics
-
-The CLI writes diagnostics to standard error and sends no telemetry.
+- `aventure --help` and `aventure <command> --help` list commands and options.
+- `aventure command-catalog search funding rounds --format compact` finds a command
+  for a task.
+- `--text` (terminal default), `--data` (JSON, default when piped), and `--json`
+  (full envelope) choose the output. Exit code `0` means success, `1` failure.
+- `aventure auth doctor` checks your setup and names the fix for each problem.
 
 ## Documentation
 
 - [CLI quickstart](https://docs.aventure.vc/cli)
-- [Authentication guide](https://docs.aventure.vc/authentication)
-- [Error reference](https://docs.aventure.vc/errors)
-- [API reference](https://docs.aventure.vc/api-reference)
-
-The command set is generated from the public aVenture OpenAPI specification.
+- [Authentication and plans](https://docs.aventure.vc/authentication)
+- [Errors](https://docs.aventure.vc/errors)
 
 ## License
 
