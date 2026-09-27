@@ -12,8 +12,7 @@ Use the `aventure` command to read aVenture research data.
 The CLI requires an aVenture account (free or paid). If the user has none, point
 them to https://aventure.vc/sign-up.
 
-1. Install: `npm install --global @aventurevc/aventure-cli` (requires Node.js
-   24.18 or later in the 24.x series).
+1. Install: `npm install --global @aventurevc/aventure-cli` (requires Node.js 24.18.0 or later).
 2. Sign in:
    - Interactive: `aventure auth login`, then have the user approve in the browser.
    - Non-interactive: the user creates a key at https://aventure.vc/settings/api-keys

@@ -3,27 +3,43 @@
 Research private companies, founders, investors, funding rounds, and news from your
 terminal. The package installs one command, `aventure`.
 
-The CLI requires an aVenture account. Free and paid plans both work;
-[create an account](https://aventure.vc/sign-up) before you start.
+You need an aVenture account; free and paid plans both work.
+[Create an account](https://aventure.vc/sign-up).
 
-## Install
+## Get started in one step
 
-The CLI requires Node.js 24.18 or later in the 24.x series.
+Paste this into Claude Code, Codex, ChatGPT, or any assistant that can run
+terminal commands:
+
+```text
+Set up the aVenture CLI for me. Install it with
+`npm install --global @aventurevc/aventure-cli` (it needs Node.js 24.18.0 or
+later), then run `aventure auth login` and show me the sign-in link and code so I
+can approve it. When I'm signed in, run `aventure lookup Stripe` to confirm it
+works. Use `aventure --help` to find other commands.
+Docs: https://docs.aventure.vc/cli
+```
+
+## CLI, MCP, or Researchly?
+
+| Where you work | Use |
+| --- | --- |
+| A terminal, shell scripts, or a coding agent with a shell | This CLI |
+| Claude, ChatGPT, or another desktop, web, or cloud AI app | The [aVenture MCP server](https://docs.aventure.vc/mcp) |
+| [Researchly](https://researchly.chat) | Nothing to install: open [Profile, then MCP servers](https://researchly.chat/profile/mcp-servers) and choose **Connect aVenture** |
+
+## Set up by hand
+
+Requires Node.js 24.18.0 or later.
 
 ```sh
 npm install --global @aventurevc/aventure-cli
-aventure --version
-```
-
-## Sign in
-
-```sh
 aventure auth login
 ```
 
-The command prints a one-time code and a sign-in URL, opens your browser when one
-is available, and waits while you approve. You can approve on any device, so it
-works the same on a laptop, over SSH, or in a container.
+`aventure auth login` prints a one-time code and a sign-in URL, opens your browser
+when one is available, and waits while you approve. It works the same on a laptop,
+over SSH, or in a container.
 
 For CI and other non-interactive environments, create a key in
 [API key settings](https://aventure.vc/settings/api-keys) and provide it in the
@@ -31,26 +47,13 @@ For CI and other non-interactive environments, create a key in
 
 ## Find a company
 
-By name:
-
 ```sh
-aventure lookup Stripe
+aventure lookup Stripe                                   # by name
+aventure lookup --name Stripe --url https://stripe.com  # by website
+aventure search --query "payments infrastructure for online businesses"  # by description
 ```
 
-By website:
-
-```sh
-aventure lookup --name Stripe --url https://stripe.com
-```
-
-By description, when you don't know the name:
-
-```sh
-aventure search --query "payments infrastructure for online businesses"
-```
-
-Add `--location` or `--context` to `lookup` to tell companies with the same name
-apart:
+Add `--location` or `--context` to tell companies with the same name apart:
 
 ```sh
 aventure lookup Mercury --context "banking for startups" --location "San Francisco"
@@ -58,22 +61,10 @@ aventure lookup Mercury --context "banking for startups" --location "San Francis
 
 ## Find a person
 
-By name, with their company for context:
-
 ```sh
 aventure people lookup "Patrick Collison" --context "Stripe co-founder"
-```
-
-By LinkedIn profile:
-
-```sh
 aventure people lookup "Patrick Collison" --url https://www.linkedin.com/in/patrickcollison
-```
-
-By description:
-
-```sh
-aventure search --query "fintech founders in Austin who previously worked at PayPal"
+aventure search --query "fintech founders who previously worked at PayPal"
 ```
 
 ## Go deeper on a record
@@ -90,47 +81,33 @@ aventure people get --person-id <id>
 ## Plans and usage
 
 Profile views, searches, and web searches count toward your plan's monthly
-allowance. When an allowance runs out, the command stops with a message that says
-which limit you reached and how to upgrade.
+allowance. When one runs out, the command stops with a message that says which
+limit you reached and how to upgrade.
 
 ```sh
-aventure billing subscription get     # your plan and what you have used
-aventure billing plans list           # plans with monthly and annual prices
-aventure billing plan-changes create --plan <plan>   # upgrade with the card on file
-aventure billing checkout-sessions create --plan <plan>  # add a card and subscribe
+aventure billing subscription get                        # your plan and usage
+aventure billing plans list                              # monthly and annual prices
+aventure billing plan-changes create --plan <plan>       # upgrade a paid plan with the card on file
+aventure billing checkout-sessions create --plan <plan>  # subscribe from the free plan
 ```
 
 You can also manage your plan in
 [subscription settings](https://aventure.vc/settings/subscription).
 
-## Find more commands
+## More
 
-```sh
-aventure --help
-aventure entities --help
-aventure command-catalog search funding rounds --format compact
-```
-
-## Output
-
-- `--text` prints readable lines. It is the default in a terminal.
-- `--data` prints the response as JSON. It is the default when output is piped.
-- `--json` prints the full result envelope.
-
-The CLI exits with `0` on success and `1` on failure.
-
-## Manage your sign-in
-
-- `aventure auth status` shows which credential is in use.
+- `aventure --help` and `aventure <command> --help` list commands and options.
+- `aventure command-catalog search funding rounds --format compact` finds a command
+  for a task.
+- `--text` (terminal default), `--data` (JSON, default when piped), and `--json`
+  (full envelope) choose the output. Exit code `0` means success, `1` failure.
 - `aventure auth doctor` checks your setup and names the fix for each problem.
-- `aventure auth logout` signs you out.
 
 ## Documentation
 
 - [CLI quickstart](https://docs.aventure.vc/cli)
-- [Authentication](https://docs.aventure.vc/authentication)
+- [Authentication and plans](https://docs.aventure.vc/authentication)
 - [Errors](https://docs.aventure.vc/errors)
-- [API reference](https://docs.aventure.vc/api-reference)
 
 ## License
 
