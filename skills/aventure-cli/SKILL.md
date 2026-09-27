@@ -23,6 +23,11 @@ them to https://aventure.vc/sign-up.
 
 ## Common tasks
 
+Name lookups (`lookup`, `people lookup`) and description search (`search`) need a paid
+plan; on the free plan they answer `402`. Free-plan users find a company by website
+with `aventure entities lookup-exact get --url https://stripe.com` or by keyword with
+`aventure entities search --text-search <keyword>`.
+
 - Company by name: `aventure lookup Stripe`; add `--context` or `--location` to
   tell namesakes apart.
 - Company by website: `aventure lookup --name Stripe --url https://stripe.com`.
