@@ -15,7 +15,7 @@ terminal commands:
 Set up the aVenture CLI for me. Install it with
 `npm install --global @aventurevc/aventure-cli` (it needs Node.js 24.18.0 or
 later), then run `aventure auth login` so I can approve the sign-in in my browser (if no
-browser opens, show me the sign-in link and code it prints). When I'm signed in, run `aventure lookup Stripe` to confirm it
+browser opens, show me the sign-in link and code it prints). When I'm signed in, run `aventure entities lookup-exact get --url https://stripe.com` to confirm it
 works. Use `aventure --help` to find other commands.
 Docs: https://docs.aventure.vc/cli
 ```
@@ -46,6 +46,11 @@ For CI and other non-interactive environments, create a key in
 `AUTH_TOKEN` environment variable from your secret manager.
 
 ## Find a company
+
+Finding a company or person by name (`lookup`) or by description (`search`) needs a
+paid plan (AI Plus or AI Pro). On the free plan, find a company by its website with
+`aventure entities lookup-exact get --url https://stripe.com` or by keyword with
+`aventure entities search --text-search Stripe`.
 
 ```sh
 aventure lookup Stripe                                   # by name
