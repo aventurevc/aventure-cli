@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-27T20:47:03.921Z",
-  "totalOperations": 135,
+  "generatedAt": "2026-09-28T05:33:47.538Z",
+  "totalOperations": 136,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1620,6 +1620,23 @@
       "bodySchemaImport": null,
       "auth": "bearer",
       "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "lookupMentions",
+      "method": "POST",
+      "path": "/v1/lookup-mentions",
+      "resource": "lookup-mentions",
+      "intent": "lookup",
+      "cliCommand": "lookup-mentions",
+      "cliPath": [
+        "lookup-mentions"
+      ],
+      "mcpTool": "aventure_lookup",
+      "bodySchemaName": "LookupJobMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/lookup/job-mutation",
+      "auth": "bearer",
+      "scope": "write",
       "destructive": false
     },
     {

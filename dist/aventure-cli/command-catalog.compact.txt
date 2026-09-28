@@ -1,4 +1,5 @@
 aventure lookup · Find a company or person by name, URL, or id · --name
+aventure lookup-mentions · Identify every company and person a page or screenshot names · -
 aventure metrics · Get platform totals for companies, funding, and people · -
 aventure search · Search companies, people, and news together · --query
 aventure status · Get system uptime · -
