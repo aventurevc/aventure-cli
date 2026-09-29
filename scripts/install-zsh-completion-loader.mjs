@@ -15,7 +15,7 @@ import { delimiter, dirname, isAbsolute, join } from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 
-// Keeps the pre-`avctl` name: it identifies managed loaders that earlier releases already wrote.
+// Keeps the original command name: it identifies managed loaders that earlier releases already wrote.
 const MARKER_PREFIX = "# aventure-cli completion loader";
 const BACKUP_SUFFIX = ".aventure-cli-completion.bak";
 const CLI_BIN_TARGET = "dist/aventure-cli/index.js";
@@ -23,7 +23,7 @@ const PACKAGE_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PACKAGE_CLI_BIN = join(PACKAGE_ROOT, CLI_BIN_TARGET);
 const PACKAGE_JSON = join(PACKAGE_ROOT, "package.json");
 const GITHUB_PACKAGES_REGISTRY = "https://npm.pkg.github.com/";
-// The private package renamed its command from `aventure-cli` to `avctl`, and loaders are named
+// The private package renamed its command away from `aventure-cli`, and loaders are named
 // after commands, so the old private package's managed loaders would outlive it. Only the private
 // package retires them: the public package never shipped `aventure-cli`.
 const RETIRED_PRIVATE_CLI_BINS = ["aventure-cli"];

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-28T06:35:39.119Z",
-  "totalOperations": 136,
+  "generatedAt": "2026-09-29T03:47:20.057Z",
+  "totalOperations": 130,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -21,65 +21,6 @@
       "bodySchemaName": "AgentHelpQuestionSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/agent/help-question",
       "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getAgentInstructionAtRetiredAddress",
-      "method": "GET",
-      "path": "/v1/agents/instructions/{kind}/{name}",
-      "resource": "agents",
-      "intent": "read",
-      "cliCommand": "agents instructions get",
-      "cliPath": [
-        "agents",
-        "instructions",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getAgentInstructionVersionAtRetiredAddress",
-      "method": "GET",
-      "path": "/v1/agents/instructions/{kind}/{name}/versions/{version}",
-      "resource": "agents",
-      "intent": "read",
-      "cliCommand": "agents instructions versions get",
-      "cliPath": [
-        "agents",
-        "instructions",
-        "versions",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getAgentInstructionManifestAtRetiredAddress",
-      "method": "GET",
-      "path": "/v1/agents/instructions/manifest",
-      "resource": "agents",
-      "intent": "read",
-      "cliCommand": "agents instructions manifest get",
-      "cliPath": [
-        "agents",
-        "instructions",
-        "manifest",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1507,65 +1448,6 @@
       "bodySchemaName": "AgentHelpQuestionSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/agent/help-question",
       "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getAgentInstruction",
-      "method": "GET",
-      "path": "/v1/help/instructions/{kind}/{name}",
-      "resource": "help",
-      "intent": "read",
-      "cliCommand": "help instructions get",
-      "cliPath": [
-        "help",
-        "instructions",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getAgentInstructionVersion",
-      "method": "GET",
-      "path": "/v1/help/instructions/{kind}/{name}/versions/{version}",
-      "resource": "help",
-      "intent": "read",
-      "cliCommand": "help instructions versions get",
-      "cliPath": [
-        "help",
-        "instructions",
-        "versions",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getAgentInstructionManifest",
-      "method": "GET",
-      "path": "/v1/help/instructions/manifest",
-      "resource": "help",
-      "intent": "read",
-      "cliCommand": "help instructions manifest get",
-      "cliPath": [
-        "help",
-        "instructions",
-        "manifest",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
