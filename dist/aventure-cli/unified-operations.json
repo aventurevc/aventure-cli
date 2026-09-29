@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-29T19:57:18.880Z",
+  "generatedAt": "2026-09-29T21:14:29.193Z",
   "totalOperations": 130,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
@@ -653,15 +653,15 @@
       "destructive": false
     },
     {
-      "operationId": "getEntityMedia",
+      "operationId": "getEntityLogo",
       "method": "GET",
-      "path": "/v1/entities/{entityId}/media/{mediaType}",
+      "path": "/v1/entities/{entityId}/logo",
       "resource": "entities",
       "intent": "read",
-      "cliCommand": "entities media get",
+      "cliCommand": "entities logo get",
       "cliPath": [
         "entities",
-        "media",
+        "logo",
         "get"
       ],
       "mcpTool": "aventure_read",
@@ -1575,25 +1575,6 @@
       "destructive": false
     },
     {
-      "operationId": "getNewsMedia",
-      "method": "GET",
-      "path": "/v1/news/{newsId}/media/{mediaType}",
-      "resource": "news",
-      "intent": "read",
-      "cliCommand": "news media get",
-      "cliPath": [
-        "news",
-        "media",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "listNewsRelatedEntities",
       "method": "GET",
       "path": "/v1/news/{newsId}/related-entities",
@@ -1604,6 +1585,25 @@
         "news",
         "related-entities",
         "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getNewsThumbnail",
+      "method": "GET",
+      "path": "/v1/news/{newsId}/thumbnail",
+      "resource": "news",
+      "intent": "read",
+      "cliCommand": "news thumbnail get",
+      "cliPath": [
+        "news",
+        "thumbnail",
+        "get"
       ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
@@ -1934,15 +1934,15 @@
       "destructive": false
     },
     {
-      "operationId": "getPersonMedia",
+      "operationId": "getPersonPhoto",
       "method": "GET",
-      "path": "/v1/people/{personId}/media/{mediaType}",
+      "path": "/v1/people/{personId}/photo",
       "resource": "people",
       "intent": "read",
-      "cliCommand": "people media get",
+      "cliCommand": "people photo get",
       "cliPath": [
         "people",
-        "media",
+        "photo",
         "get"
       ],
       "mcpTool": "aventure_read",

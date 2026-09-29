@@ -9,8 +9,15 @@ Each recipe chains aVenture reads into one answer. The `aventure` skill owns set
 
 ## §1 Resolve First
 
+Objective:
+- Resolve the subject id before following a recipe's related-record reads.
+
+Steps:
 1. Every recipe starts from an id. Turn a name, website, or LinkedIn URL into one with `aventure entities lookup` or `aventure people lookup`, sending every clue you have. On the free plan lookups answer `402`; resolve a company by its website with `aventure entities lookup-exact get --url "<website>"`.
-2. Continue only on `MATCHED`. On `NEEDS_REVIEW`, ask the user which candidate it is; on `NO_MATCH`, report that aVenture has no record and stop that branch.
+2. Continue only on `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about any remaining ambiguity; on `NO_MATCH`, report that aVenture has no record and stop that branch.
+
+Prohibited:
+- A status decision that bypasses `aventure` §4's evidence rules.
 
 ## §2 Company Brief
 
@@ -56,7 +63,13 @@ Each recipe chains aVenture reads into one answer. The `aventure` skill owns set
 
 ## §8 Resolve A List Of Names
 
+Objective:
+- Return resolved rows after each ambiguous row's source evidence is checked.
+
+Steps:
 1. Run one `entities lookup` per row, with every column that identifies the subject: website, location, industry.
-2. Record `status`, the matched id, and for `NEEDS_REVIEW` the candidates with their `probability`.
-3. Return the table, then ask the user about `NEEDS_REVIEW` rows together, not one at a time.
-4. Keep rows in the input order, and never fill a `NO_MATCH` row with a guessed record.
+2. Apply `aventure` §4's evidence refinement once to each `NEEDS_REVIEW` row, then record its resulting `status`, matched id, or remaining candidates with their `probability`.
+3. Return the table in input order, then ask the user about the remaining `NEEDS_REVIEW` rows together.
+
+Prohibited:
+- Filling a `NO_MATCH` row with a guessed record or asking for a decision before its evidence refinement.

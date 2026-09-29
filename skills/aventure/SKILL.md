@@ -46,7 +46,7 @@ Prohibited:
 ## §4 Identity Lookup
 
 Objective:
-- Resolve a name, URL, or id to one record with one call.
+- Resolve a name, URL, or id through lookup, refining ambiguous candidates with first-party evidence.
 
 Steps:
 1. An aVenture id reads its record directly: `aventure entities get --entity-id "<id>"` or `aventure people get --person-id "<id>"`. An aVenture page URL reads `aventure entities lookup-exact get --url "<aventure-url>"` and a bare slug reads `--entity-slug "<slug>"` (`people lookup-exact get` for a person). Every other name-to-record question (a name from an article or email, a website, a LinkedIn profile, an existence check) runs one lookup, whose `--name` is required:
@@ -62,13 +62,13 @@ Steps:
    |---|---|
    | `MATCHED` | `match` is the record; use its id. Read the full record by id only for sections the match omits. |
    | `NO_MATCH` | No record the credential can see is the subject. `officialUrl`, when present, is its website. |
-   | `NEEDS_REVIEW` | Show each `candidate` with its `probability` and ask the user which record it is, or whether it is new. |
+   | `NEEDS_REVIEW` | Compare each candidate's current URL and identity fields with source evidence about the requested subject; fetch one separating first-party page per plausible candidate. Treat a candidate URL as subject-owned only when independent source evidence binds it to the subject. Rerun lookup once with evidenced URL, location, context, and source URL. A remaining `NEEDS_REVIEW` names the candidate ids and probabilities and asks the user which record it is, or whether it is new. |
 
 3. `aventure lookup --name "<exact id, ticker, LEI, EIN, CIK, handle, or slug>" --legacy true` resolves without a model call and answers `404` on no match. `aventure entities lookup-exact get --url <website>` reads full detail by exact website, domain, or slug on every plan. A page whose subject is unknown goes to `aventure search link --url "<url>"`. Details: https://docs.aventure.vc/lookup
 4. Exploration by meaning runs `aventure search natural entities --query "<text>"` (or `search natural people`). `--mode exact` and `keyword` skip the planner and its rate limit; `natural` returns `interpretation`, `confidence`, and `unsupported` to read before trusting scope; `semantic` returns `semanticMatch.sourceText` and `cosineScore`. A typed filter flag is a hard constraint the planner cannot override. `aventure entities similar list --entity-id "<id>"` ranks neighbours of a known record.
 
 Prohibited:
-- Choosing past `NEEDS_REVIEW` candidates without the user's answer, or treating `NO_MATCH` as proof outside the credential's view.
+- Passing a candidate-owned URL as subject without independent binding evidence, choosing a candidate while the evidence-refined lookup still returns `NEEDS_REVIEW`, or treating `NO_MATCH` as proof outside the credential's view.
 - Standing in for the lookup with name searches, casing variants, guessed domains or slugs, or web searches, or repeating those after a `MATCHED` or `NO_MATCH`.
 
 ## §4.1 Related Records
