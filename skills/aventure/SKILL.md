@@ -12,9 +12,10 @@ aVenture holds research records on companies (including products, services, and 
 1. Every call needs an aVenture account (free or paid). A user without one signs up at https://aventure.vc/sign-up.
 2. Use the surface the user named, else the one already connected in this session:
    - CLI: `npm install --global @aventurevc/aventure-cli` (Node.js 24.18.0 or later), then `aventure auth login`. Non-interactive shells take an API key from https://aventure.vc/settings/api-keys in `AUTH_TOKEN`. `aventure auth doctor` reports each failed setup check with its fix.
-   - MCP: the hosted server `https://mcp.aventure.vc/mcp`, Streamable HTTP, browser OAuth sign-in. Setup per client: https://docs.aventure.vc/mcp
+   - MCP: the hosted server `https://mcp.aventure.vc/mcp`, Streamable HTTP, browser OAuth sign-in with OAuth client ID `KL7mINzGk0le0QiD` (a URL-only client fails with `does not support dynamic client registration`). Claude Code: `claude mcp add --scope user --transport http --client-id KL7mINzGk0le0QiD --callback-port 6276 aventure https://mcp.aventure.vc/mcp`, then `/mcp`, select `aventure`, and sign in. Other clients: https://docs.aventure.vc/mcp
    - API: `Authorization: Bearer <api-key>`. Quickstart: https://docs.aventure.vc/quickstart
 3. Never print, log, or echo a key or token.
+4. A `401` means the sign-in is missing or expired; the error `detail` names the fix. CLI: run `aventure auth doctor` and apply its fix, or have the user run `aventure auth login`. MCP: ask the user to reconnect the server in their client (Claude Code: `/mcp`, select `aventure`), then retry once. API: the user supplies an API key through `AUTH_TOKEN` or their secret store, never pasted into chat. A `403` is a valid credential without access; signing in again does not change it.
 
 ## §2 Find The Operation
 
@@ -44,13 +45,17 @@ Prohibited:
 
 ## §4 Identity Lookup
 
-1. An aVenture id reads its record directly: `aventure entities get --entity-id "<id>"` or `aventure people get --person-id "<id>"`. Every other name-to-record question (a name from an article or email, a website, a LinkedIn profile, an aVenture URL or slug, an existence check) runs one lookup:
+Objective:
+- Resolve a name, URL, or id to one record with one call.
+
+Steps:
+1. An aVenture id reads its record directly: `aventure entities get --entity-id "<id>"` or `aventure people get --person-id "<id>"`. An aVenture page URL reads `aventure entities lookup-exact get --url "<aventure-url>"` and a bare slug reads `--entity-slug "<slug>"` (`people lookup-exact get` for a person). Every other name-to-record question (a name from an article or email, a website, a LinkedIn profile, an existence check) runs one lookup, whose `--name` is required:
 
    ```bash
    aventure entities lookup --name "<name>" --url "<website>" --url "<linkedin-url>" --location "<city, country>" --context "<product, industry, employer, or title>" --source-url "<article-url>"
    ```
 
-   `aventure people lookup` takes the same inputs, and `aventure lookup` runs both when the kind is unknown. MCP: `aventure_lookup` with `operationId` `lookupEntity`, `lookupPerson`, or `lookupRecord`. Only `name` is required; send every clue. `url` holds only pages the subject owns; an article goes in `sourceUrl`.
+   `aventure people lookup` takes the same inputs, and `aventure lookup` runs both when the kind is unknown. MCP: `aventure_lookup` with `operationId` `lookupEntity`, `lookupPerson`, or `lookupRecord`. Send every clue beside `name`. `url` holds only pages the subject owns; an article goes in `sourceUrl`.
 2. Act on `status`; `stage` (`DETERMINISTIC`, `JUDGMENT`, `WEB_EVIDENCE`) records which step decided:
 
    | `status` | Next action |
@@ -72,7 +77,7 @@ Prohibited:
 2. Funding reads key on `--entity-id` = the company that raised the round, never the investor. `entities fundraise-rounds list` lists its rounds; `entities fundraise-investor-joins list` lists who invested, naming each investor as `investor.entityId` or `investor.personId`. Both take `--round "<label>"` (such as `Series B`) to narrow to one round.
 3. `entities investors list` and `entities investments list` answer who backed a company and what an investor backed; `people investments list` does the same for a person.
 4. Company-to-person roles read from either side: `entities people list` (company side) and `people entities list` (person side). `--association-id` is the integer role row id; both lists page 40 rows by default.
-5. A logo is `core.image.logoSquare` with `isMonogram=false` on `entities get`; a photo is `image.picture` with `isMonogram=false` on `people get`. A monogram means no real image is stored.
+5. A company logo is `core.image.logoSquare` with `isMonogram=false` on `entities get`; a Product or Service shows its provider's logo there when it has none, so its own logo is `entity.logo` on `entities coverage get`. A photo is `image.picture` with `isMonogram=false` on `people get`. A monogram means no real image is stored.
 6. A company's news is `news list --owner-entity-id "<entity-uuid>"` (`--owner-person-id` for a person). It includes articles reached through the company's products and services; `entityMentionResolved` on `news get` marks a direct link.
 
 ## §5 Results And Errors
