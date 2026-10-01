@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-09-30T10:24:26.818Z",
-  "totalOperations": 130,
+  "generatedAt": "2026-10-01T19:16:17.381Z",
+  "totalOperations": 131,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1452,14 +1452,31 @@
       "destructive": false
     },
     {
+      "operationId": "getIdentification",
+      "method": "GET",
+      "path": "/v1/lookup",
+      "resource": "lookup",
+      "intent": "read",
+      "cliCommand": "lookup",
+      "cliPath": [
+        "lookup"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
       "operationId": "lookupRecord",
       "method": "POST",
       "path": "/v1/lookup",
       "resource": "lookup",
       "intent": "lookup",
-      "cliCommand": "lookup",
+      "cliCommand": "lookup-from-file",
       "cliPath": [
-        "lookup"
+        "lookup-from-file"
       ],
       "mcpTool": "aventure_lookup",
       "bodySchemaName": "IdentificationSubjectSchema",
