@@ -27,7 +27,7 @@ Prohibited:
 4. `aventure news list --owner-entity-id "<id>" --size 5`: latest coverage.
 5. Report each fact with the record and its source URL. Omit a section whose read returned nothing, rather than guessing it.
 
-## §3 Who Invested In A Round
+## §3 Who Invested in a Round
 
 1. `aventure entities fundraise-rounds list --entity-id "<company-id>"` and pick the round's label, such as `Series B`.
 2. `aventure entities fundraise-investor-joins list --entity-id "<company-id>" --round "<label>"`: one row per investor; each names `investor.entityId` or `investor.personId`.
@@ -48,7 +48,7 @@ Prohibited:
 3. `aventure people entities list --person-id "<id>"`: every company role, current and past.
 4. `aventure people investments list --person-id "<id>"`: angel investments.
 
-## §6 Competitors And Peers
+## §6 Competitors and Peers
 
 1. `aventure entities similar list --entity-id "<id>" --relationship-type competitor`: stored competitors. Without the flag, the list ranks every similar company.
 2. `aventure entities relationships list --entity-id "<id>"`: parents, subsidiaries, products, and other stored links.
@@ -61,7 +61,7 @@ Prohibited:
 3. `aventure news get --news-id "<id>"` reads the full article `content`.
 4. To find every company and person one article names, run `aventure lookup-mentions --source-url "<article-url>"`.
 
-## §8 Resolve A List Of Names
+## §8 Resolve a List of Names
 
 Objective:
 - Return resolved rows after each ambiguous row's source evidence is checked.

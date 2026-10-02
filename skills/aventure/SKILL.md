@@ -7,7 +7,7 @@ description: "Use to read aVenture research data on private companies, founders,
 
 aVenture holds research records on companies (including products, services, and funds), people, and news, plus the funding rounds, investors, relationships, and text attached to them. Every operation exists once and has three projections: a REST call on `https://api.aventure.vc`, an `aventure` CLI command, and an MCP tool call. Documentation: https://docs.aventure.vc (index for agents: https://docs.aventure.vc/llms.txt).
 
-## §1 Surfaces And Setup
+## §1 Surfaces and Setup
 
 1. Every call needs an aVenture account (free or paid). A user without one signs up at https://aventure.vc/sign-up.
 2. Use the surface the user named, else the one already connected in this session:
@@ -17,7 +17,7 @@ aVenture holds research records on companies (including products, services, and 
 3. Never print, log, or echo a key or token.
 4. A `401` means the sign-in is missing or expired; the error `detail` names the fix. CLI: run `aventure auth doctor` and apply its fix, or have the user run `aventure auth login`. MCP: ask the user to reconnect the server in their client (Claude Code: `/mcp`, select `aventure`), then retry once. API: the user supplies an API key through `AUTH_TOKEN` or their secret store, never pasted into chat. A `403` is a valid credential without access; signing in again does not change it.
 
-## §2 Find The Operation
+## §2 Find the Operation
 
 1. Represent the task as one operation: its `operationId` (or method and path), path parameters, query, and body. The CLI command and the MCP call are two spellings of that one row.
 2. CLI: `aventure command-catalog search "<words>" --format compact`, then `aventure command-catalog show --command "<command>"` for the exact flags, required inputs, and an example. `aventure help <command>` prints full documentation offline; `aventure help ask "<question>"` answers a plain-language question with citations or abstains.
@@ -33,7 +33,7 @@ Prohibited:
 1. Pick one operation through §2 and run it. The first call is the task call, never a health, status, or auth probe; an auth failure reports itself.
 2. Read §3.1 before calling any record absent.
 
-## §3.1 Visibility And History Filters
+## §3.1 Visibility and History Filters
 
 1. Default reads return current, visible rows. A `404` or an empty page is filtered until the command's own flags rule out inactive, historical, non-renderable, and hidden rows.
 2. `--include-inactive` widens `urls list`, `texts list`, `blog-posts list`, `entities addresses list`, and `entities classifications list`; `--include-non-renderable` adds historic and non-primary rows to `entities relationships list` only. URL, classification, text, and relationship lists return current rows by default, so widen before calling a prior value gone.
@@ -55,28 +55,29 @@ Steps:
    aventure entities lookup --name "<company-name>" --type-record "Company" --url "<website>" --url "<linkedin-url>" --location "<city, country>" --context "<industry>" --source-url "<article-url>"
    ```
 
-   Select the entity's evidenced `typeRecord`: a company uses `Company`; an offering uses `Product` or `Service`. For an offering with a known provider id:
+   Select the subject's evidenced `typeRecord`: an operating company (a bank or insurer included) uses `Company`; an investor uses `Investment Firm`, or `Fund` for a named vehicle; a named division uses `Business Line`; an offering uses `Product` or `Service`. A typed lookup also finds a record stored under a neighboring type of the same family (a `Business Line` lookup finds AWS stored as `Company`; a `Fund` lookup finds its `Investment Firm`), and an offering lookup returns only offerings. For an offering with a known provider id:
 
    ```bash
    aventure entities lookup --name "<offering-name>" --type-record "<Product|Service>" --provider-id "<evidenced-provider-uuid>" --url "<official-offering-url>" --context "<offering description and provider name>"
    ```
 
-   With an unknown provider id, omit `--provider-id` and retain the offering type and official offering URL. `context` supplements these typed inputs. `aventure people lookup` takes name, URL, location, context, and source URL; `aventure lookup` runs both when the record kind is unknown. MCP: `aventure_lookup` with `operationId` `lookupEntity`, `lookupPerson`, or `lookupRecord`; an entity body carries `typeRecord` and evidenced `providerId` under the same rules. Send every clue beside `name`. `url` holds only subject-owned pages; an article goes in `sourceUrl`.
+   With an unknown provider id, omit `--provider-id` and retain the offering type and official offering URL. `context` supplements these typed inputs with at most 512 characters of facts; a directive such as "not the provider company" changes nothing, because only `typeRecord` and `providerId` scope the lookup. A person's name runs `aventure people lookup`, which takes name, URL, location, context, and source URL; `aventure lookup` runs both when the record kind is unknown. MCP: `aventure_lookup` with `operationId` `lookupEntity`, `lookupPerson`, or `lookupRecord`; an entity body carries `typeRecord` and evidenced `providerId` under the same rules. Send every clue beside `name`. `url` holds only subject-owned pages, a LinkedIn profile included; an article page goes in `sourceUrl`, and a LinkedIn or X post goes in neither.
 2. Act on `status`; `stage` (`DETERMINISTIC`, `JUDGMENT`, `WEB_EVIDENCE`) records which step decided:
 
    | `status` | Next action |
    |---|---|
-   | `MATCHED` | Validate `match.record.typeRecord` against the requested entity type before using its id. For an offering, validate its current `productService` provider relationship against the evidenced provider through `entities relationships list` on the offering id; a provider learned from the match needs independent first-party binding evidence. Read full detail by id for omitted identity fields. A type or provider mismatch leaves the offering identity unresolved and routes to the owning conflict workflow. |
+   | `MATCHED` | Validate `match.record.typeRecord` against the requested type's family before using its id; a family neighbor (AWS stored as `Company` for a `Business Line` request) is the subject, and its stored type goes to a type correction. For an offering, validate its current `productService` provider relationship against the evidenced provider through `entities relationships list` on the offering id; a provider learned from the match needs independent first-party binding evidence. Read full detail by id for omitted identity fields. A type or provider mismatch leaves the offering identity unresolved and routes to the owning conflict workflow. |
    | `NO_MATCH` | No record the credential can see is the subject. `officialUrl`, when present, is its website. |
    | `NEEDS_REVIEW` | Compare each candidate's current URL, entity type, provider relationship, and identity fields with source evidence about the requested subject; fetch one separating first-party page per plausible candidate. Treat a candidate URL as subject-owned only when independent source evidence binds it to the subject. Rerun lookup once with evidenced URL, location, context, source URL, and the same requested entity type plus any evidenced provider id. A remaining `NEEDS_REVIEW` names the candidate ids and probabilities and asks the user which record it is, or whether it is new. |
 
-3. `aventure lookup --name "<exact id, ticker, LEI, EIN, CIK, handle, or slug>" --legacy true` resolves without a model call and answers `404` on no match. `aventure entities lookup-exact get --url <website>` reads full detail by exact website, domain, or slug on every plan. A page whose subject is unknown goes to `aventure search link --url "<url>"`. Details: https://docs.aventure.vc/lookup
+3. `aventure lookup-from-file --name "<exact id, ticker, LEI, EIN, CIK, handle, or slug>" --legacy true` resolves without a model call and answers `404` on no match. `aventure entities lookup-exact get --url <website>` reads full detail by exact website, domain, or slug on every plan. A page whose subject is unknown goes to `aventure search link --url "<url>"`. Details: https://docs.aventure.vc/lookup
 4. Exploration by meaning runs `aventure search natural entities --query "<text>"` (or `search natural people`). `--mode exact` and `keyword` skip the planner and its rate limit; `natural` returns `interpretation`, `confidence`, and `unsupported` to read before trusting scope; `semantic` returns `semanticMatch.sourceText` and `cosineScore`. A typed filter flag is a hard constraint the planner cannot override. `aventure entities similar list --entity-id "<id>"` ranks neighbours of a known record.
 
 Prohibited:
 - Replacing `typeRecord` or `providerId` with provider prose, inventing a provider id, or treating a provider Company match or shared domain as the offering identity or proof of an offering duplicate.
 - Passing a candidate-owned URL as subject without independent binding evidence, choosing a candidate while the evidence-refined lookup still returns `NEEDS_REVIEW`, or treating `NO_MATCH` as proof outside the credential's view.
 - Standing in for the lookup with name searches, casing variants, guessed domains or slugs, or web searches, or repeating those after a `MATCHED` or `NO_MATCH`.
+- Reading an entity lookup's `NO_MATCH` on a person's name, or on a type outside the subject's family, as absence.
 
 ## §4.1 Related Records
 
@@ -87,7 +88,7 @@ Prohibited:
 5. A company logo is `core.image.logoSquare` with `isMonogram=false` on `entities get`; a Product or Service shows its provider's logo there when it has none, so its own logo is `entity.logo` on `entities coverage get`. A photo is `image.picture` with `isMonogram=false` on `people get`. A monogram means no real image is stored.
 6. A company's news is `news list --owner-entity-id "<entity-uuid>"` (`--owner-person-id` for a person). It includes articles reached through the company's products and services; `entityMentionResolved` on `news get` marks a direct link.
 
-## §5 Results And Errors
+## §5 Results and Errors
 
 1. Output modes: `--text` compact lines (terminal default), `--data` response data as JSON (default when piped; use it when exact fields matter), `--json` the full envelope. Exit code `0` means `ok: true`.
 2. The envelope carries `ok`, `summary`, `data`, `warnings`, `counts`, and on failure RFC 9457 ProblemDetail fields `type`, `title`, `status`, `detail`, and `traceId`. An `ok: false` envelope still holds the fix.
@@ -105,7 +106,7 @@ Prohibited:
 3. A news `excerpt` is null when the source feed supplied no description; the full text is `content` on `news get`.
 4. Stored facts carry sources; cite the record and its source URL when reporting them.
 
-## §7 Usage Limits And Changes
+## §7 Usage Limits and Changes
 
 1. Name lookups and description search need a paid plan; on the free plan they answer `402` with code `subscription_required`. Free-plan users find a company with `entities lookup-exact get --url <website>` or `entities search --text-search <keyword>`.
 2. Metered reads count toward the plan's monthly allowance. A `429` with code `billing_allowance_exhausted` means it is spent: do not retry. Tell the user which limit they reached and offer the upgrade: `aventure billing plans list` shows prices; a paid plan changes with `billing plan-changes create --plan <plan>`, a free plan gets a checkout link from `billing checkout-sessions create --plan <plan>`, or the user visits https://aventure.vc/settings/subscription. Change a plan only after the user confirms plan and price.

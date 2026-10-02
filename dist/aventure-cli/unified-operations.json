@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-02T19:12:43.649Z",
+  "generatedAt": "2026-10-02T22:33:53.597Z",
   "totalOperations": 131,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
@@ -513,8 +513,8 @@
         "enrich"
       ],
       "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
+      "bodySchemaName": "EnrichmentPromptSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/enrichment/prompt",
       "auth": "bearer",
       "scope": "write",
       "destructive": false
@@ -1849,8 +1849,8 @@
         "enrich"
       ],
       "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
+      "bodySchemaName": "EnrichmentPromptSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/enrichment/prompt",
       "auth": "bearer",
       "scope": "write",
       "destructive": false
