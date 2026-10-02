@@ -1,5 +1,5 @@
-aventure lookup · Read a company or person identity without scheduling enrichment · --name
-aventure lookup-from-file · Find a company or person by name, URL, or id · --name
+aventure lookup · Read a company, product, service, or person identity without enrichment · --name
+aventure lookup-from-file · Identify a company, product, service, or person by name, URL, or id · --name
 aventure lookup-mentions · Identify every company and person a page or screenshot names · -
 aventure metrics · Get platform totals for companies, funding, and people · -
 aventure search · Search companies, people, and news together · --query
@@ -7,7 +7,7 @@ aventure status · Get system uptime · -
 aventure enrichments enrich · Enrich many companies and people · -
 aventure entities get · Get one company, product, or service by id · --entity-id
 aventure entities list · List companies, products, and services · -
-aventure entities lookup · Find which company a name refers to, or confirm it is new · --name
+aventure entities lookup · Identify a company, product, or service by name and scope · --name
 aventure entities lookup-batch · Look up companies in bulk by id, slug, or URL · -
 aventure entities lookup-matches · Look up which company each identifier matches · -
 aventure entities natural-search · Deprecated: find companies in natural language · --query
