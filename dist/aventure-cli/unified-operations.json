@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-01T20:41:15.130Z",
+  "generatedAt": "2026-10-02T01:04:04.661Z",
   "totalOperations": 131,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
