@@ -6,7 +6,7 @@ terminal. The package installs one command, `aventure`.
 You need an aVenture account; free and paid plans both work.
 [Create an account](https://aventure.vc/sign-up).
 
-## Get started in one step
+## Get Started in One Step
 
 Paste this into Claude Code, Codex, ChatGPT, or any assistant that can run
 terminal commands:
@@ -28,7 +28,7 @@ Docs: https://docs.aventure.vc/cli
 | Claude, ChatGPT, or another desktop, web, or cloud AI app | The [aVenture MCP server](https://docs.aventure.vc/mcp) |
 | [Researchly](https://researchly.chat) | Nothing to install: open [Profile, then MCP servers](https://researchly.chat/profile/mcp-servers) and choose **Connect aVenture** |
 
-## Set up by hand
+## Set Up by Hand
 
 Requires Node.js 24.18.0 or later.
 
@@ -45,7 +45,7 @@ For CI and other non-interactive environments, create a key in
 [API key settings](https://aventure.vc/settings/api-keys) and provide it in the
 `AUTH_TOKEN` environment variable from your secret manager.
 
-## Find a company
+## Find a Company
 
 Finding a company or person by name (`lookup`) or by description (`search`) needs a
 paid plan (AI Plus or AI Pro). On the free plan, find a company by its website with
@@ -64,7 +64,7 @@ Add `--location` or `--context` to tell companies with the same name apart:
 aventure lookup Mercury --context "banking for startups" --location "San Francisco"
 ```
 
-## Find a person
+## Find a Person
 
 ```sh
 aventure people lookup "Patrick Collison" --context "Stripe co-founder"
@@ -72,7 +72,7 @@ aventure people lookup "Patrick Collison" --url https://www.linkedin.com/in/patr
 aventure search --query "fintech founders who previously worked at PayPal"
 ```
 
-## Go deeper on a record
+## Go Deeper on a Record
 
 A lookup returns the record's `id`. Use it to read the full profile and what is
 attached to it:
@@ -83,7 +83,7 @@ aventure entities fundraise-rounds list --entity-id <id>
 aventure people get --person-id <id>
 ```
 
-## Plans and usage
+## Plans and Usage
 
 Profile views, web searches, and research requests count toward your plan's monthly
 allowance. When one runs out, the command stops with a message that says which
