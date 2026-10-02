@@ -13,7 +13,7 @@ aventure entities lookup-matches · Look up which company each identifier matche
 aventure entities natural-search · Deprecated: find companies in natural language · --query
 aventure entities search · Search companies, products, and services · -
 aventure help ask · Answer a natural-language platform help question · --question
-aventure lookup-jobs create · Start identifying every company and person an article names · -
+aventure lookup-jobs create · Start an article lookup or a bounded lookup-only bulk job · -
 aventure lookup-jobs get · Get a lookup job's state and the records its article names · --job-id
 aventure news get · Get one news article · --news-id
 aventure news list · List news articles, including a company's or person's news · -
