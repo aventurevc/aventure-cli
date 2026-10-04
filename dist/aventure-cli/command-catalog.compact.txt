@@ -7,10 +7,9 @@ aventure status · Get System Uptime · -
 aventure enrichments enrich · Enrich Many Companies and People · -
 aventure entities get · Get One Company, Product, or Service by ID · --entity-id
 aventure entities list · List Companies, Products, and Services · -
-aventure entities lookup · Identify a Company, Product, or Service by Name and Scope · --name
+aventure entities lookup · Deprecated: Identify a Company, Product, or Service by Name and Scope · --name
 aventure entities lookup-batch · Look Up Companies in Bulk by ID, Slug, or URL · -
 aventure entities lookup-matches · Look Up Which Company Each Identifier Matches · -
-aventure entities natural-search · Deprecated: Find Companies in Natural Language · --query
 aventure entities search · Search Companies, Products, and Services · -
 aventure help ask · Answer a Natural-Language Platform Help Question · --question
 aventure lookup-jobs create · Start an Article Lookup or a Bounded Lookup-Only Bulk Job · -
@@ -20,12 +19,10 @@ aventure news list · List News Articles, Including a Company's or Person's News
 aventure news lookup · Look Up One News Article · -
 aventure people get · Get One Person by ID · --person-id
 aventure people list · List People · -
-aventure people lookup · Find Which Person a Name Refers to, or Confirm They Are New · --name
+aventure people lookup · Deprecated: Find Which Person a Name Refers to, or Confirm They Are New · --name
 aventure people lookup-batch · Look Up People in Bulk by ID or Slug · -
-aventure people natural-search · Deprecated: Find People in Natural Language · --query
 aventure people search · Search People · -
 aventure resolve get · Deprecated: Find the Record Behind an ID, Slug, or URL · --token
-aventure search all · Deprecated: Search Companies, People, and News Together · --query
 aventure search link · Search From a Page URL · --url
 aventure unique-ids lookup · Look Up an Identifier Owner · --id-type --identifier
 aventure url-types list · List URL Types · -
@@ -134,4 +131,5 @@ aventure entities similar summary list · Get Similar Company Summaries by ID ·
 aventure entities texts types list · List the Accepted Company Text Types · -
 aventure people content facets list · Count a Person's Publications · --person-id
 aventure people texts types list · List the Accepted Person Text Types · -
+aventure search link jobs get · Get a Link Search Job · --job-id
 aventure web searches jobs get · Get an Async Web Search Job · --job-id

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-04T18:34:04.824Z",
-  "totalOperations": 135,
+  "generatedAt": "2026-10-04T19:40:19.388Z",
+  "totalOperations": 133,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1261,24 +1261,6 @@
       "destructive": false
     },
     {
-      "operationId": "searchEntitiesByNaturalLanguage",
-      "method": "POST",
-      "path": "/v1/entities/natural-search",
-      "resource": "entities",
-      "intent": "search",
-      "cliCommand": "entities natural-search",
-      "cliPath": [
-        "entities",
-        "natural-search"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "EntityNaturalSearchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/entity/natural-search",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "getEntityRelationship",
       "method": "GET",
       "path": "/v1/entities/relationships/{relationshipId}",
@@ -2272,24 +2254,6 @@
       "destructive": false
     },
     {
-      "operationId": "searchPeopleByNaturalLanguage",
-      "method": "POST",
-      "path": "/v1/people/natural-search",
-      "resource": "people",
-      "intent": "search",
-      "cliCommand": "people natural-search",
-      "cliPath": [
-        "people",
-        "natural-search"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "PersonNaturalSearchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/person/natural-search",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "searchPeople",
       "method": "POST",
       "path": "/v1/people/search",
@@ -2363,24 +2327,6 @@
       "destructive": false
     },
     {
-      "operationId": "searchAll",
-      "method": "POST",
-      "path": "/v1/search/all",
-      "resource": "search",
-      "intent": "search",
-      "cliCommand": "search all",
-      "cliPath": [
-        "search",
-        "all"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "NaturalSearchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "searchLink",
       "method": "GET",
       "path": "/v1/search/link",
@@ -2392,6 +2338,26 @@
         "link"
       ],
       "mcpTool": "aventure_search",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getLinkSearchJob",
+      "method": "GET",
+      "path": "/v1/search/link/jobs/{jobId}",
+      "resource": "search",
+      "intent": "read",
+      "cliCommand": "search link jobs get",
+      "cliPath": [
+        "search",
+        "link",
+        "jobs",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
