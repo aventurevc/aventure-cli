@@ -1,0 +1,1 @@
+import{t as e}from"./client-LQPEw77G.js";import{w as t,y as n}from"./person-owner-BJgNYLKX.js";var r=n({clerkPublishableKey:t().nullish(),oauthClient:e.nullish()});export{r as t};
