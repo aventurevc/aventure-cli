@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-04T21:20:36.810Z",
+  "generatedAt": "2026-10-04T23:50:02.479Z",
   "totalOperations": 133,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
@@ -1086,7 +1086,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
