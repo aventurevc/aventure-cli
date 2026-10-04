@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-03T21:01:48.976Z",
-  "totalOperations": 131,
+  "generatedAt": "2026-10-04T06:32:55.283Z",
+  "totalOperations": 134,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1667,6 +1667,44 @@
       "destructive": false
     },
     {
+      "operationId": "unsubscribeNewsSubscription",
+      "method": "DELETE",
+      "path": "/v1/news/subscriptions",
+      "resource": "news",
+      "intent": "delete",
+      "cliCommand": "news subscriptions unsubscribe",
+      "cliPath": [
+        "news",
+        "subscriptions",
+        "unsubscribe"
+      ],
+      "mcpTool": "aventure_delete",
+      "bodySchemaName": "NewsSubscriptionKeySchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/news/subscription-key",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": true
+    },
+    {
+      "operationId": "subscribeNewsSubscription",
+      "method": "PUT",
+      "path": "/v1/news/subscriptions",
+      "resource": "news",
+      "intent": "write",
+      "cliCommand": "news subscriptions subscribe",
+      "cliPath": [
+        "news",
+        "subscriptions",
+        "subscribe"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "NewsSubscriptionSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/news/subscription",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
       "operationId": "listPeople",
       "method": "GET",
       "path": "/v1/people",
@@ -2467,6 +2505,26 @@
       "bodySchemaImport": "@aventurevc/api-schemas/search/search",
       "auth": "bearer",
       "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "getWebSearchJob",
+      "method": "GET",
+      "path": "/v1/web/searches/jobs/{jobId}",
+      "resource": "web",
+      "intent": "read",
+      "cliCommand": "web searches jobs get",
+      "cliPath": [
+        "web",
+        "searches",
+        "jobs",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
       "destructive": false
     }
   ]

@@ -90,6 +90,8 @@ aventure entities valuations list · List a Company's Valuation Over Time · --e
 aventure harness runs get · Get One Run · --run-id
 aventure news feedback create · Submit News Feedback · -
 aventure news related-entities list · List the Entities a News Article Is About · --news-id
+aventure news subscriptions subscribe · Subscribe to Entity News · --arguments-entity-id --delivery-mode --delivery-url --name
+aventure news subscriptions unsubscribe · Unsubscribe From Entity News · --arguments-entity-id --delivery-url --name
 aventure news thumbnail get · Get News Thumbnail · --news-id
 aventure people addresses get · Get One Person's Address · --person-id --address-join-id
 aventure people addresses list · List a Person's Addresses · --person-id
@@ -131,3 +133,4 @@ aventure entities similar summary list · Get Similar Company Summaries by ID ·
 aventure entities texts types list · List the Accepted Company Text Types · -
 aventure people content facets list · Count a Person's Publications · --person-id
 aventure people texts types list · List the Accepted Person Text Types · -
+aventure web searches jobs get · Get an Async Web Search Job · --job-id
