@@ -47,6 +47,7 @@ aventure entities addresses get · Get One Company Address · --entity-id --addr
 aventure entities addresses list · List a Company's Locations · --entity-id
 aventure entities blog-posts get · Get One Company Blog Post · --entity-id --blog-post-id
 aventure entities blog-posts list · List a Company's Blog Posts · --entity-id
+aventure entities brand get · Get a Company's Names, Logos, Links, and Tags · -
 aventure entities classifications list · List a Company's Classifications · --entity-id
 aventure entities content list · List a Company's Publications · --entity-id
 aventure entities content search · Search a Company's Publications · --entity-id --query

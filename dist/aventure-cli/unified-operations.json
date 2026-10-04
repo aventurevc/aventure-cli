@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-04T18:17:53.158Z",
-  "totalOperations": 134,
+  "generatedAt": "2026-10-04T18:34:04.824Z",
+  "totalOperations": 135,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1063,6 +1063,25 @@
         "entities",
         "valuations",
         "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getEntityBrand",
+      "method": "GET",
+      "path": "/v1/entities/brand",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities brand get",
+      "cliPath": [
+        "entities",
+        "brand",
+        "get"
       ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
