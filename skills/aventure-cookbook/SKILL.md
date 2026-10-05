@@ -13,7 +13,7 @@ Objective:
 - Resolve the subject id before following a recipe's related-record reads.
 
 Steps:
-1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0.1). Turn a name into an id with `aventure lookup --name "<name>" ...` for the query read, or `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` when the body-based universal lookup is the better fit.
+1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0). Turn a name into an id with `aventure lookup --name "<name>" ...` for the query read, or `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` when the body-based universal lookup is the better fit.
 2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact; on `NO_MATCH`, record that no visible record in the requested scope matched and stop that branch.
 
 Prohibited:
@@ -21,8 +21,8 @@ Prohibited:
 
 ## §2 Company Brief
 
-1. The §1 exact lookup already returns names, description, headquarters, founding year, logo, links, rounds, people, news, and research (`aventure` §0.2); from a bare id, read `aventure entities get --entity-id "<id>"` (`getEntity`).
-2. For a section the detail omits or truncates, issue its reads together (`aventure` §0.3): `entities fundraise-rounds list --entity-id "<id>"` (`listEntityFundraiseRounds`) for rounds; `entities people list --entity-id "<id>" --is-current true` (`listEntityPersonAssociations`) for current leaders; `news list --owner-entity-id "<id>" --size 5` (`listNews`) for coverage.
+1. The §1 exact lookup already returns names, description, headquarters, founding year, logo, links, rounds, people, news, and research (`aventure` §0); from a bare id, read `aventure entities get --entity-id "<id>"` (`getEntity`).
+2. For a section the detail omits or truncates, issue its reads together (`aventure` §0): `entities fundraise-rounds list --entity-id "<id>"` (`listEntityFundraiseRounds`) for rounds; `entities people list --entity-id "<id>" --is-current true` (`listEntityPersonAssociations`) for current leaders; `news list --owner-entity-id "<id>" --size 5` (`listNews`) for coverage.
 3. Report each fact with the record and its source URL. Omit a section whose read returned nothing, rather than guessing it.
 
 ## §3 Who Invested in a Round

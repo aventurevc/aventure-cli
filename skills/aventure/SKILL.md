@@ -21,7 +21,7 @@ aVenture holds research records on companies (including products, services, and 
 1. Every call needs an aVenture account (free or paid). A user without one signs up at https://aventure.vc/sign-up.
 2. Use the surface the user named, else the one already connected in this session:
    - CLI: `npm install --global @aventurevc/aventure-cli` (Node.js 24.18.0 or later), then `aventure auth login`. Non-interactive shells take an API key from https://aventure.vc/settings/api-keys in `AUTH_TOKEN`. `aventure auth doctor` reports each failed setup check with its fix.
-   - MCP: the hosted server `https://mcp.aventure.vc/mcp`, Streamable HTTP, browser OAuth sign-in with OAuth client ID `KL7mINzGk0le0QiD` (a URL-only client fails with `does not support dynamic client registration`). Claude Code: `claude mcp add --scope user --transport http --client-id KL7mINzGk0le0QiD --callback-port 6276 aventure https://mcp.aventure.vc/mcp`, then `/mcp`, select `aventure`, and sign in. Other clients: https://docs.aventure.vc/mcp
+   - MCP: the hosted server `https://mcp.aventure.vc/mcp`, Streamable HTTP, browser OAuth sign-in through its advertised authorization server. Clients supporting dynamic registration leave client fields blank; clients requiring pre-registration use OAuth client ID `KL7mINzGk0le0QiD`. Claude Code: `claude mcp add --scope user --transport http --client-id KL7mINzGk0le0QiD --callback-port 6276 aventure https://mcp.aventure.vc/mcp`, then `/mcp`, select `aventure`, and sign in. Other clients: https://docs.aventure.vc/mcp
    - API: `Authorization: Bearer <api-key>`. Quickstart: https://docs.aventure.vc/quickstart
 3. Never print, log, or echo a key or token.
 4. A `401` means the sign-in is missing or expired; the error `detail` names the fix. CLI: run `aventure auth doctor` and apply its fix, or have the user run `aventure auth login`. MCP: ask the user to reconnect the server in their client (Claude Code: `/mcp`, select `aventure`), then retry once. API: the user supplies an API key through `AUTH_TOKEN` or their secret store, never pasted into chat. A `403` is a valid credential without access; signing in again does not change it.
@@ -30,7 +30,7 @@ aVenture holds research records on companies (including products, services, and 
 
 1. Represent the task as one operation: its `operationId` (or method and path), path parameters, query, and body. The CLI command and the MCP call are two spellings of that one row.
 2. CLI: `aventure command-catalog search "<words>" --format compact`, then `aventure command-catalog show --command "<command>"` for the exact flags, required inputs, and an example. `aventure help <command>` prints full documentation offline; `aventure help ask "<question>"` answers a plain-language question with citations or abstains.
-3. MCP: `aventure_help({ "q": "<task>", "resolve": true })` (§0.4) names the tool (`aventure_read`, `aventure_search`, `aventure_lookup`, `aventure_write`, or `aventure_delete`), the `operationId`, and where each input goes: path values in `pathParams`, URL query values in `query`, body values in `body`. `aventure_help` resolves a catalog row; execute `askHelpQuestion` through `aventure_search` for a plain-language platform-help question.
+3. MCP: `aventure_help({ "q": "<task>", "resolve": true })` names the tool (`aventure_read`, `aventure_search`, `aventure_lookup`, `aventure_write`, or `aventure_delete`), the `operationId`, and where each input goes: path values in `pathParams`, URL query values in `query`, body values in `body`. `aventure_help` resolves a catalog row; execute `askHelpQuestion` through `aventure_search` for a plain-language platform-help question. Use the §0 quick path when it names the operation; resolve an unknown operation through `aventure_help` once.
 4. The CLI's root commands are `lookup` (which company, product, service, or person a name or URL refers to; read-only), `lookup-from-file` (the same identification from a body, the CLI projection of `lookupRecord`; both §4), `<record> search` (many records from a query or filter), `<record> get` (one record by id), and `news list`. `entities lookup` and `people lookup` are separate deprecated endpoints (`POST /v1/entities/lookup`, `POST /v1/people/lookup`) that `lookup-from-file` supersedes.
 
 Prohibited:
@@ -64,7 +64,7 @@ Steps:
    |---|---|---|
    | Query clues, with no body file; read-only identity and no enrichment scheduling | `aventure lookup --name "<name>" --url "<owned-url>" --location "<city, country>" --context "<specific facts>"` | `getIdentification` / `aventure_read` |
    | One body-based universal lookup, or a known kind | `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` | `lookupRecord` / `aventure_lookup` |
-   | aventure.vc URL, slug, website, domain, or person URL; full detail on every plan (§0.1) | `aventure entities lookup-exact get --url "<url>"` (or `--entity-slug`), `aventure people lookup-exact get ...` | `getEntityLookup` / `getPersonLookup` via `aventure_read` |
+   | aventure.vc URL, slug, website, domain, or person URL; full detail on every plan (§0) | `aventure entities lookup-exact get --url "<url>"` (or `--entity-slug`), `aventure people lookup-exact get ...` | `getEntityLookup` / `getPersonLookup` via `aventure_read` |
    | One outcome for every supplied entity id, slug, or URL | `aventure entities lookup-matches --entity-id|--slug|--url ...` | `lookupEntityMatches` / `aventure_lookup` |
    | Detail pages for a batch of known entity or person identifiers | `aventure entities lookup-batch ...` or `aventure people lookup-batch ...` | `lookupEntityBatch` / `lookupPersonBatch` via `aventure_lookup` |
 
@@ -80,7 +80,7 @@ Steps:
    aventure lookup-from-file --kind ENTITY --name "<offering-name>" --type-record "<Product|Service>" --provider-id "<evidenced-provider-uuid>" --url "<official-offering-url>" --context "<offering description and provider name>"
    ```
 
-   With an unknown provider id, omit `--provider-id` and retain the offering type and official offering URL. `context` adds at most 512 characters of facts and never scopes the lookup; only `typeRecord` and `providerId` do. A person's name uses `--kind PERSON` with `lookup-from-file`; `aventure lookup` remains the query-based kind-agnostic read. The `lookupRecord` body carries `typeRecord` and evidenced `providerId` under the same rules. Send every clue beside `name`. `url` holds only subject-owned pages, a LinkedIn profile included; an article page goes in `sourceUrl`, and a LinkedIn or X post goes in neither.
+   With an unknown provider id, omit `--provider-id` and retain the offering type and official offering URL. `context` adds at most 512 characters of facts and never scopes the lookup; only `typeRecord` and `providerId` do. A person's name uses `--kind PERSON` with `lookup-from-file`; `aventure lookup` is the query-string form of the same identification and takes the same `--kind`. The `lookupRecord` body carries `typeRecord` and evidenced `providerId` under the same rules. Send every clue beside `name`. `url` holds only subject-owned pages, a LinkedIn profile included; an article page goes in `sourceUrl`, and a LinkedIn or X post goes in neither.
 2. Act on `status`; `stage` (`DETERMINISTIC`, `JUDGMENT`, `WEB_EVIDENCE`) records which step decided; a match with `languageModelSettled=true` schedules no enrichment, so confirm the record before writing to it:
 
    | `status` | Next action |
@@ -101,7 +101,7 @@ Prohibited:
 
 ## §4.1 Related Records
 
-Parenthesized names are MCP `operationId`s for `aventure_read` (`personId` replaces `entityId` for people); §0.3 governs when to call them.
+Parenthesized names are MCP `operationId`s for `aventure_read` (`personId` replaces `entityId` for people); §0 quick path governs when to call them.
 
 1. Relationship lists (`listEntityRelationships`) default to current, primary rows, and `--type "<catalog type>"` narrows one to a single type; `entities relationships get` (`getEntityRelationship`) reads one by `relationshipId`, an integer row id, never a record id. `entities relationships types list` (`listEntityRelationshipTypes`) is the relationship catalog. A `parent` row stores source as parent and target as child; an `affinity` row stores source as member and target as provider.
 2. Funding reads key on `--entity-id` = the company that raised the round, never the investor. `entities fundraise-rounds list` (`listEntityFundraiseRounds`) lists its rounds; `entities fundraise-investor-joins list` (`listEntityFundraiseInvestorJoins`) lists who invested, naming each investor as `investor.entityId` or `investor.personId`. Both take `--round "<label>"` (such as `Series B`) to narrow to one round.
