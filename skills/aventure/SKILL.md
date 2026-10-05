@@ -72,7 +72,7 @@ Steps:
    ```
 
    With an unknown provider id, omit `--provider-id` and retain the offering type and official offering URL. `context` supplements these typed inputs with at most 512 characters of facts; a directive such as "not the provider company" changes nothing, because only `typeRecord` and `providerId` scope the lookup. A person's name uses `--kind PERSON` with `lookup-from-file`; `aventure lookup` remains the query-based kind-agnostic read. MCP: `aventure_lookup` with `operationId` `lookupRecord`; the GET identity read uses `getIdentification` through `aventure_read`. The body carries `typeRecord` and evidenced `providerId` under the same rules. Send every clue beside `name`. `url` holds only subject-owned pages, a LinkedIn profile included; an article page goes in `sourceUrl`, and a LinkedIn or X post goes in neither.
-2. Act on `status`; `stage` (`DETERMINISTIC`, `JUDGMENT`, `WEB_EVIDENCE`) records which step decided:
+2. Act on `status`; `stage` (`DETERMINISTIC`, `JUDGMENT`, `WEB_EVIDENCE`) records which step decided; a match with `languageModelSettled=true` schedules no enrichment, so confirm the record before writing to it:
 
    | `status` | Next action |
    |---|---|
