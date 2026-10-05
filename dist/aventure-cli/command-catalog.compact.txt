@@ -61,7 +61,7 @@ aventure entities investments list · List the Investments a Company Made · --e
 aventure entities investor-activity get · Get Investor Activity · --entity-id
 aventure entities investors list · List a Company's Investors · --entity-id
 aventure entities logo get · Get a Company Logo · --entity-id
-aventure entities lookup-exact get · Read Full Entity Detail by Exact Slug, Website, URL, or Domain · -
+aventure entities lookup-exact get · Read Full Entity Detail by aVenture Profile URL, Slug, Website, or Domain · -
 aventure entities people get · Get One Person's Role at a Company · --entity-id --association-id
 aventure entities people list · List the People at a Company · --entity-id
 aventure entities person-investors list · List Person Investors · --entity-id
@@ -106,7 +106,7 @@ aventure people filters search · Search People Filter Options · --filter-key -
 aventure people graph get · Get Person Graph · --person-id
 aventure people investments list · List a Person's Investments · --person-id
 aventure people investor-activity get · Get Person Investor Activity · --person-id
-aventure people lookup-exact get · Read One Person's Full Detail by Exact Slug or URL · -
+aventure people lookup-exact get · Read One Person's Full Detail by aVenture Profile URL, Slug, or URL · -
 aventure people photo get · Get Person Photo · --person-id
 aventure people repositories list · List a Person's GitHub Repositories · --person-id
 aventure people similar list · List People Similar to One Person · --person-id

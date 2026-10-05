@@ -5,7 +5,7 @@ description: "Use for multi-step aVenture research recipes: company briefs, fund
 
 # aVenture Cookbook
 
-Each recipe chains aVenture reads into one answer. The `aventure` skill owns setup, finding an operation, lookup statuses, visibility filters, and error handling; read it first. Commands are CLI spellings; each is also an MCP call and a REST call (`aventure command-catalog show --command "<command>"` prints all three). Add `--data` when fields matter.
+Each recipe chains aVenture reads into one answer. The `aventure` skill owns setup, finding an operation, lookup statuses, visibility filters, and error handling; read it first. Commands are CLI spellings; `aventure` §4.1 names each one's MCP `operationId`, and `aventure command-catalog show --command "<command>"` prints its CLI, MCP, and REST forms. Add `--data` when fields matter.
 
 ## §1 Resolve First
 
@@ -13,26 +13,23 @@ Objective:
 - Resolve the subject id before following a recipe's related-record reads.
 
 Steps:
-1. Every recipe starts from an id. Turn a name into one with `aventure lookup --name "<name>" ...` for the query read, or `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` when the body-based universal lookup is the better fit. Use `aventure entities lookup-exact get --url "<website>"` for an exact company website on every plan.
-2. Continue only on `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact; on `NO_MATCH`, record that no visible record in the requested scope matched and stop that branch.
+1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0.1). Turn a name into an id with `aventure lookup --name "<name>" ...` for the query read, or `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` when the body-based universal lookup is the better fit.
+2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact; on `NO_MATCH`, record that no visible record in the requested scope matched and stop that branch.
 
 Prohibited:
 - A status decision that bypasses `aventure` §4's evidence rules.
 
 ## §2 Company Brief
 
-1. `aventure entities get --entity-id "<id>"`: names, description, headquarters, founding year, logo, links.
-2. `aventure entities fundraise-rounds list --entity-id "<id>"`: rounds with date, label, and amount.
-3. `aventure entities people list --entity-id "<id>" --is-current true`: current founders and leaders with roles.
-4. `aventure news list --owner-entity-id "<id>" --size 5`: latest coverage.
-5. Report each fact with the record and its source URL. Omit a section whose read returned nothing, rather than guessing it.
+1. The §1 exact lookup already returns names, description, headquarters, founding year, logo, links, rounds, people, news, and research (`aventure` §0.2); from a bare id, read `aventure entities get --entity-id "<id>"` (`getEntity`).
+2. For a section the detail omits or truncates, issue its reads together (`aventure` §0.3): `entities fundraise-rounds list --entity-id "<id>"` (`listEntityFundraiseRounds`) for rounds; `entities people list --entity-id "<id>" --is-current true` (`listEntityPersonAssociations`) for current leaders; `news list --owner-entity-id "<id>" --size 5` (`listNews`) for coverage.
+3. Report each fact with the record and its source URL. Omit a section whose read returned nothing, rather than guessing it.
 
 ## §3 Who Invested in a Round
 
 1. `aventure entities fundraise-rounds list --entity-id "<company-id>"` and pick the round's label, such as `Series B`.
 2. `aventure entities fundraise-investor-joins list --entity-id "<company-id>" --round "<label>"`: one row per investor; each names `investor.entityId` or `investor.personId`.
 3. Read an investor by that id with `entities get` or `people get` when the user needs more than the name.
-4. `--entity-id` is always the company that raised, never the investor.
 
 ## §4 Investor Portfolio
 
@@ -67,7 +64,7 @@ Objective:
 - Return resolved rows after each ambiguous row's source evidence is checked.
 
 Steps:
-1. Run one `aventure lookup` or `aventure lookup-from-file --kind ENTITY` per row, with every clue that identifies the subject: website, location, industry, and source URL.
+1. Resolve company ids, slugs, or URLs together with one `aventure entities lookup-matches` call, which answers `MATCHED`, `AMBIGUOUS`, or `MISSING` per input. Resolve each name row with one `aventure lookup-from-file --kind ENTITY` (`--kind PERSON` for a person row), with every clue that identifies the subject: website, location, industry, and source URL.
 2. Apply `aventure` §4's evidence refinement once to each `NEEDS_REVIEW` row, then record its resulting `status`, matched id, or remaining candidates with their `probability`.
 3. Return the table in input order. Ask only for the remaining separating fact that the user alone can provide; keep externally researchable identity gaps in the evidence workflow.
 
