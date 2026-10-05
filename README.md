@@ -53,22 +53,22 @@ paid plan (AI Plus or AI Pro). On the free plan, find a company by its website w
 `aventure entities search --text-search Stripe`.
 
 ```sh
-aventure lookup Stripe                                   # by name
-aventure lookup --name Stripe --url https://stripe.com  # by website
+aventure lookup --name Stripe                            # by name
+aventure lookup --url https://stripe.com                  # by website
 aventure search --query "payments infrastructure for online businesses"  # by description
 ```
 
 Add `--location` or `--context` to tell companies with the same name apart:
 
 ```sh
-aventure lookup Mercury --context "banking for startups" --location "San Francisco"
+aventure lookup --name Mercury --context "banking for startups" --location "San Francisco"
 ```
 
 ## Find a Person
 
 ```sh
-aventure people lookup "Patrick Collison" --context "Stripe co-founder"
-aventure people lookup "Patrick Collison" --url https://www.linkedin.com/in/patrickcollison
+aventure lookup --kind PERSON --name "Patrick Collison" --context "Stripe co-founder"
+aventure lookup --kind PERSON --name "Patrick Collison" --url https://www.linkedin.com/in/patrickcollison
 aventure search --query "fintech founders who previously worked at PayPal"
 ```
 
