@@ -13,8 +13,8 @@ Objective:
 - Resolve the subject id before following a recipe's related-record reads.
 
 Steps:
-1. Every recipe starts from an id. Turn a name, website, or LinkedIn URL into one with `aventure entities lookup` or `aventure people lookup`, sending every clue you have. On the free plan lookups answer `402`; resolve a company by its website with `aventure entities lookup-exact get --url "<website>"`.
-2. Continue only on `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about any remaining ambiguity; on `NO_MATCH`, report that aVenture has no record and stop that branch.
+1. Every recipe starts from an id. Turn a name into one with `aventure lookup --name "<name>" ...` for the query read, or `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` when the body-based universal lookup is the better fit. Use `aventure entities lookup-exact get --url "<website>"` for an exact company website on every plan.
+2. Continue only on `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact; on `NO_MATCH`, record that no visible record in the requested scope matched and stop that branch.
 
 Prohibited:
 - A status decision that bypasses `aventure` §4's evidence rules.
@@ -59,7 +59,7 @@ Prohibited:
 1. `aventure news list --owner-entity-id "<id>" --published-after "<YYYY-MM-DD>"`: articles about a company since a date; `--owner-person-id` does the same for a person.
 2. `aventure entities trending-news list --entity-id "<id>"`: the most-read coverage.
 3. `aventure news get --news-id "<id>"` reads the full article `content`.
-4. To find every company and person one article names, run `aventure lookup-mentions --source-url "<article-url>"`.
+4. Choose the article path by outcome: `aventure lookup-mentions --source-url "<article-url>"` returns synchronous identifications without creating records; `aventure lookup-jobs create --source-url "<article-url>"` is the standard async article job and may create hidden shells and research them; `aventure lookup-jobs create --max-names "<N>" --source-url "<article-url>"` is lookup-only bounded work with no shells or enrichment. Read the returned job with `aventure lookup-jobs get --job-id "<job-id>"`.
 
 ## §8 Resolve a List of Names
 
@@ -67,9 +67,9 @@ Objective:
 - Return resolved rows after each ambiguous row's source evidence is checked.
 
 Steps:
-1. Run one `entities lookup` per row, with every column that identifies the subject: website, location, industry.
+1. Run one `aventure lookup` or `aventure lookup-from-file --kind ENTITY` per row, with every clue that identifies the subject: website, location, industry, and source URL.
 2. Apply `aventure` §4's evidence refinement once to each `NEEDS_REVIEW` row, then record its resulting `status`, matched id, or remaining candidates with their `probability`.
-3. Return the table in input order, then ask the user about the remaining `NEEDS_REVIEW` rows together.
+3. Return the table in input order. Ask only for the remaining separating fact that the user alone can provide; keep externally researchable identity gaps in the evidence workflow.
 
 Prohibited:
 - Filling a `NO_MATCH` row with a guessed record or asking for a decision before its evidence refinement.

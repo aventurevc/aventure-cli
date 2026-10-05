@@ -21,8 +21,8 @@ aVenture holds research records on companies (including products, services, and 
 
 1. Represent the task as one operation: its `operationId` (or method and path), path parameters, query, and body. The CLI command and the MCP call are two spellings of that one row.
 2. CLI: `aventure command-catalog search "<words>" --format compact`, then `aventure command-catalog show --command "<command>"` for the exact flags, required inputs, and an example. `aventure help <command>` prints full documentation offline; `aventure help ask "<question>"` answers a plain-language question with citations or abstains.
-3. MCP: `aventure_help({ "q": "<task>", "resolve": true })` names the tool (`aventure_read`, `aventure_search`, `aventure_lookup`), the `operationId`, and where each input goes: path values in `pathParams`, URL query values in `query`, body values in `body`.
-4. The CLI's root commands are `<record> search` (many records from a query or filter), `<record> lookup` (which record a name or URL refers to), `<record> get` (one record by id), and `news list`.
+3. MCP: `aventure_help({ "q": "<task>", "resolve": true })` names the tool (`aventure_read`, `aventure_search`, `aventure_lookup`, `aventure_write`, or `aventure_delete`), the `operationId`, and where each input goes: path values in `pathParams`, URL query values in `query`, body values in `body`. `aventure_help` resolves a catalog row; execute `askHelpQuestion` through `aventure_search` for a plain-language platform-help question.
+4. The CLI's root commands are `<record> search` (many records from a query or filter), `<record> lookup` (the read-only query identity operation), `<record> get` (one record by id), and `news list`. The body-based universal identity operation is `lookup-from-file`; it is the direct CLI projection of `lookupRecord`.
 
 Prohibited:
 - Guessing a flag, `operationId`, input name, or slug; after one rejection, copy the exact name from the catalog.
@@ -49,19 +49,29 @@ Objective:
 - Resolve a name, URL, or id through lookup, refining ambiguous candidates with first-party evidence.
 
 Steps:
-1. An aVenture id reads its record directly: `aventure entities get --entity-id "<id>"` or `aventure people get --person-id "<id>"`. An aVenture page URL reads `aventure entities lookup-exact get --url "<aventure-url>"` and a bare slug reads `--entity-slug "<slug>"` (`people lookup-exact get` for a person). Every other name-to-record question (a name from an article or email, a website, a LinkedIn profile, an existence check) runs one lookup, whose `--name` is required:
+1. Choose the narrowest identity surface:
+
+   | Input and purpose | CLI | MCP operation/tool |
+   |---|---|---|
+   | Query clues, with no body file; read-only identity and no enrichment scheduling | `aventure lookup --name "<name>" --url "<owned-url>" --location "<city, country>" --context "<specific facts>"` | `getIdentification` / `aventure_read` |
+   | One body-based universal lookup, or a known kind | `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` | `lookupRecord` / `aventure_lookup` |
+   | Exact aVenture slug, website, domain, or person URL | `aventure entities lookup-exact get ...` or `aventure people lookup-exact get ...` | `getEntityLookup` / `getPersonLookup` via `aventure_read` |
+   | One outcome for every supplied entity id, slug, or URL | `aventure entities lookup-matches --entity-id|--slug|--url ...` | `lookupEntityMatches` / `aventure_lookup` |
+   | Detail pages for a batch of known entity or person identifiers | `aventure entities lookup-batch ...` or `aventure people lookup-batch ...` | `lookupEntityBatch` / `lookupPersonBatch` via `aventure_lookup` |
+
+   `lookup-matches` is lossless: every input returns `MATCHED`, `AMBIGUOUS`, or `MISSING`. The batch detail reads may omit unresolved public identifiers, so use them only when that omission is acceptable. Every other name-to-record question (a name from an article or email, a website, a LinkedIn profile, an existence check) uses one of the first two rows, with `--name` required for both.
 
    ```bash
-   aventure entities lookup --name "<company-name>" --type-record "Company" --url "<website>" --url "<linkedin-url>" --location "<city, country>" --context "<industry>" --source-url "<article-url>"
+   aventure lookup-from-file --kind ENTITY --name "<company-name>" --type-record "Company" --url "<website>" --url "<linkedin-url>" --location "<city, country>" --context "<industry>" --source-url "<article-url>"
    ```
 
    Select the subject's evidenced `typeRecord`: an operating company (a bank or insurer included) uses `Company`; an investor uses `Investment Firm`, or `Fund` for a named vehicle; a named division uses `Business Line`; an offering uses `Product` or `Service`. A typed lookup also finds a record stored under a neighboring type of the same family (a `Business Line` lookup finds AWS stored as `Company`; a `Fund` lookup finds its `Investment Firm`), and an offering lookup returns only offerings. For an offering with a known provider id:
 
    ```bash
-   aventure entities lookup --name "<offering-name>" --type-record "<Product|Service>" --provider-id "<evidenced-provider-uuid>" --url "<official-offering-url>" --context "<offering description and provider name>"
+   aventure lookup-from-file --kind ENTITY --name "<offering-name>" --type-record "<Product|Service>" --provider-id "<evidenced-provider-uuid>" --url "<official-offering-url>" --context "<offering description and provider name>"
    ```
 
-   With an unknown provider id, omit `--provider-id` and retain the offering type and official offering URL. `context` supplements these typed inputs with at most 512 characters of facts; a directive such as "not the provider company" changes nothing, because only `typeRecord` and `providerId` scope the lookup. A person's name runs `aventure people lookup`, which takes name, URL, location, context, and source URL; `aventure lookup` runs both when the record kind is unknown. MCP: `aventure_lookup` with `operationId` `lookupEntity`, `lookupPerson`, or `lookupRecord`; an entity body carries `typeRecord` and evidenced `providerId` under the same rules. Send every clue beside `name`. `url` holds only subject-owned pages, a LinkedIn profile included; an article page goes in `sourceUrl`, and a LinkedIn or X post goes in neither.
+   With an unknown provider id, omit `--provider-id` and retain the offering type and official offering URL. `context` supplements these typed inputs with at most 512 characters of facts; a directive such as "not the provider company" changes nothing, because only `typeRecord` and `providerId` scope the lookup. A person's name uses `--kind PERSON` with `lookup-from-file`; `aventure lookup` remains the query-based kind-agnostic read. MCP: `aventure_lookup` with `operationId` `lookupRecord`; the GET identity read uses `getIdentification` through `aventure_read`. The body carries `typeRecord` and evidenced `providerId` under the same rules. Send every clue beside `name`. `url` holds only subject-owned pages, a LinkedIn profile included; an article page goes in `sourceUrl`, and a LinkedIn or X post goes in neither.
 2. Act on `status`; `stage` (`DETERMINISTIC`, `JUDGMENT`, `WEB_EVIDENCE`) records which step decided:
 
    | `status` | Next action |
@@ -70,7 +80,7 @@ Steps:
    | `NO_MATCH` | No record the credential can see is the subject. `officialUrl`, when present, is its website. |
    | `NEEDS_REVIEW` | Compare every plausible candidate's URLs, identity fields, roles, investments, and provider relationships with independent source evidence; inspect lower-ranked candidates carrying distinguishing facts. Fetch official biographies, linked-employer pages, registries, or historical sources that bind those facts to the requested subject. Treat a candidate URL as subject-owned only when independent evidence binds it. Refine lookup with the evidenced name, URLs, location, context, source URL, type, and provider. A remaining `NEEDS_REVIEW` is lookup abstention, not an identity ruling: an authorized write settles it only from independent evidence that binds one candidate to the subject. Read-only work reports the unresolved candidates and missing evidence. |
 
-3. `aventure lookup-from-file --name "<exact id, ticker, LEI, EIN, CIK, handle, or slug>" --legacy true` resolves without a model call and answers `404` on no match. `aventure entities lookup-exact get --url <website>` reads full detail by exact website, domain, or slug on every plan. A page whose subject is unknown goes to `aventure search link --url "<url>"`. Details: https://docs.aventure.vc/lookup
+3. `aventure lookup-from-file --name "<exact id, ticker, LEI, EIN, CIK, handle, or slug>" --legacy true` resolves without a model call and answers `404` on no match. `aventure entities lookup-exact get --url <website>` reads full detail by exact website, domain, or slug on every plan. `aventure entities brand get --url <url>` is the thin brand/logo/link read when full research is unnecessary. A page whose subject is unknown goes to `aventure search link --url "<url>"`. Details: https://docs.aventure.vc/lookup
 4. Exploration by meaning runs `aventure search natural entities --query "<text>"` (or `search natural people`). `--mode exact` and `keyword` skip the planner and its rate limit; `natural` returns `interpretation`, `confidence`, and `unsupported` to read before trusting scope; `semantic` returns `semanticMatch.sourceText` and `cosineScore`. A typed filter flag is a hard constraint the planner cannot override. `aventure entities similar list --entity-id "<id>"` ranks neighbours of a known record.
 
 Prohibited:

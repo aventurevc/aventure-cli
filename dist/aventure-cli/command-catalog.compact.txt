@@ -61,7 +61,7 @@ aventure entities investments list · List the Investments a Company Made · --e
 aventure entities investor-activity get · Get Investor Activity · --entity-id
 aventure entities investors list · List a Company's Investors · --entity-id
 aventure entities logo get · Get a Company Logo · --entity-id
-aventure entities lookup-exact get · Read Full Entity Detail by Exact Slug, URL, or Domain · -
+aventure entities lookup-exact get · Read Full Entity Detail by Exact Slug, Website, URL, or Domain · -
 aventure entities people get · Get One Person's Role at a Company · --entity-id --association-id
 aventure entities people list · List the People at a Company · --entity-id
 aventure entities person-investors list · List Person Investors · --entity-id
@@ -88,6 +88,7 @@ aventure entities valuations list · List a Company's Valuation Over Time · --e
 aventure harness runs get · Get One Run · --run-id
 aventure news feedback create · Submit News Feedback · -
 aventure news related-entities list · List the Entities a News Article Is About · --news-id
+aventure news subscriptions list · List Entity News Subscriptions · -
 aventure news subscriptions subscribe · Subscribe to Entity News · --arguments-entity-id --delivery-mode --delivery-url --name
 aventure news subscriptions unsubscribe · Unsubscribe From Entity News · --arguments-entity-id --delivery-url --name
 aventure news thumbnail get · Get News Thumbnail · --news-id
@@ -129,6 +130,7 @@ aventure entities research-details types list · List the Accepted Research Deta
 aventure entities research-snippets types list · List the Accepted Research Snippet Types · -
 aventure entities similar summary list · Get Similar Company Summaries by ID · --entity-id
 aventure entities texts types list · List the Accepted Company Text Types · -
+aventure news subscriptions test-events send · Send a Test News Event · --subscription-id
 aventure people content facets list · Count a Person's Publications · --person-id
 aventure people texts types list · List the Accepted Person Text Types · -
 aventure search link jobs get · Get a Link Search Job · --job-id
