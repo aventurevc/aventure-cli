@@ -85,6 +85,7 @@ aventure entities unique-ids list · List a Company's Identifiers · --entity-id
 aventure entities urls get · Get One Company URL · --entity-id --url-id
 aventure entities urls list · List a Company's URLs · --entity-id
 aventure entities valuations list · List a Company's Valuation Over Time · --entity-id
+aventure harness runs create · Research a Company or Person by URL · --url
 aventure harness runs get · Get One Run · --run-id
 aventure news feedback create · Submit News Feedback · -
 aventure news related-entities list · List the Entities a News Article Is About · --news-id

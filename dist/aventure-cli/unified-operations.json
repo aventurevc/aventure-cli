@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-05T21:08:56.254Z",
-  "totalOperations": 135,
+  "generatedAt": "2026-10-05T21:50:23.970Z",
+  "totalOperations": 136,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1413,6 +1413,25 @@
       "bodySchemaImport": null,
       "auth": "none",
       "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createHarnessRun",
+      "method": "POST",
+      "path": "/v1/harness/runs",
+      "resource": "harness",
+      "intent": "write",
+      "cliCommand": "harness runs create",
+      "cliPath": [
+        "harness",
+        "runs",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "HarnessRunCreateSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/harness/run-create",
+      "auth": "bearer",
+      "scope": "write",
       "destructive": false
     },
     {

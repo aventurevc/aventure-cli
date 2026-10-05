@@ -102,6 +102,13 @@ Parenthesized names are MCP `operationId`s for `aventure_read` (`personId` repla
 5. A company logo is `core.image.logoSquare` with `isMonogram=false` on `entities get` (`getEntity`); a Product or Service without its own shows its provider's logo there, so its own logo is `entity.logo` on `entities coverage get`. A photo is `image.picture` with `isMonogram=false` on `people get` (`getPerson`). A monogram means no real image is stored.
 6. A company's news is `news list --owner-entity-id "<entity-uuid>"` (`listNews` with `query["owner.entityId"]`; `owner.personId` for a person), including articles reached through its products and services; `entityMentionResolved` on `news get` marks a direct link.
 
+## §4.2 Request Research
+
+1. `aventure harness runs create --url "<official site or profile URL>" --name "<name>"` (`createHarnessRun`; MCP `aventure_write`) queues aVenture's own research run, owned by the caller. A URL a record owns enriches that record; any other URL researches and adds a new one. A new run spends one `company` or `person` research unit; a run already queued for that subject returns uncharged. `--user-prompt` says what to check first.
+2. Offer it after a `NO_MATCH`, or when the user picks among namesakes found on the web; file only on the user's request or confirmation, one run per chosen subject, each with that subject's own URL. A `409` means the URL matches several records: settle identity through §4 first.
+3. `aventure harness runs get --run-id "<id>"` reports progress; the caller is notified on completion. Then read the record through §4.
+4. A known record id enriches through `entities enrichments enrich --entity-id` or `people enrichments enrich --person-id`, at the same cost.
+
 ## §5 Results and Errors
 
 1. Output: `--text` compact lines (terminal default), `--data` JSON (piped default; use it for exact fields), or `--json` envelope. Exit `0` means `ok: true`.

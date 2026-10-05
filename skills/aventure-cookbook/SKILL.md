@@ -14,7 +14,7 @@ Objective:
 
 Steps:
 1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0). Turn a name into an id with `aventure lookup --name "<name>" ...` for the query read, or `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` when the body-based universal lookup is the better fit.
-2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact; on `NO_MATCH`, record that no visible record in the requested scope matched and stop that branch.
+2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact; on `NO_MATCH`, record that no visible record in the requested scope matched, offer `aventure` §4.2 research for it, and stop that branch.
 
 Prohibited:
 - A status decision that bypasses `aventure` §4's evidence rules.
