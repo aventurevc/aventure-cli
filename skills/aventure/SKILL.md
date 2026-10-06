@@ -14,7 +14,7 @@ aVenture holds research records on companies (including products, services, and 
 3. Read a sub-resource (§4.1) only for a section the detail omits or truncates, passing the returned id as `pathParams.entityId`. Issue independent reads in one turn as parallel tool calls.
 4. Call `aventure_help` with `"resolve": true` only when this skill names no operation for the task.
 5. After an unknown-`operationId` error, use one of its suggestions (§2).
-6. Answer a single-entity question after at most 4 aventure calls.
+6. A question across companies, people, and news uses one `aventure_search` call: `{"operationId":"searchFederated","body":{"query":"<question>"},"query":{"layer":["synthesis"]}}`. Consume its record pages, cited answer, and related searches together; insufficient evidence returns an abstention. CLI: `aventure search '<question>' --layer synthesis`.
 
 ## §1 Surfaces and Setup
 
