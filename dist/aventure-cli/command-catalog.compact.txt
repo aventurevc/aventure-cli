@@ -119,6 +119,9 @@ aventure people urls get · Get One Person URL · --person-id --url-id
 aventure people urls list · List Person URLs · --person-id
 aventure search natural entities · Find Companies, Startups, and Investors in Natural Language · --query
 aventure search natural people · Find People With Natural Language · --query
+aventure search shared create · Share a Search Answer · -
+aventure search shared get · Read a Shared Search Answer · --record-id
+aventure search shared list · List Shared Search Publications · -
 aventure unique-ids types list · List the Accepted Unique Identifier Types · -
 aventure auth me permissions authorize · Authorize API Operations · -
 aventure auth me permissions get · Current User Permissions · -
@@ -135,4 +138,5 @@ aventure news subscriptions test-events send · Send a Test News Event · --subs
 aventure people content facets list · Count a Person's Publications · --person-id
 aventure people texts types list · List the Accepted Person Text Types · -
 aventure search link jobs get · Get a Link Search Job · --job-id
+aventure search shared slug get · Read a Shared Search by Slug · --record-slug
 aventure web searches jobs get · Get an Async Web Search Job · --job-id

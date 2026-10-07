@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-07T03:36:43.625Z",
-  "totalOperations": 136,
+  "generatedAt": "2026-10-07T04:06:39.937Z",
+  "totalOperations": 140,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -2457,6 +2457,83 @@
       "bodySchemaName": "PersonNaturalSearchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/natural-search",
       "auth": "read",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listSharedSearch",
+      "method": "GET",
+      "path": "/v1/search/shared",
+      "resource": "search",
+      "intent": "read",
+      "cliCommand": "search shared list",
+      "cliPath": [
+        "search",
+        "shared",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createSharedSearch",
+      "method": "POST",
+      "path": "/v1/search/shared",
+      "resource": "search",
+      "intent": "write",
+      "cliCommand": "search shared create",
+      "cliPath": [
+        "search",
+        "shared",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "SharedSearchMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/shared/search-mutation",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "getSharedSearch",
+      "method": "GET",
+      "path": "/v1/search/shared/{id}",
+      "resource": "search",
+      "intent": "read",
+      "cliCommand": "search shared get",
+      "cliPath": [
+        "search",
+        "shared",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getSharedSearchBySlug",
+      "method": "GET",
+      "path": "/v1/search/shared/slug/{slug}",
+      "resource": "search",
+      "intent": "read",
+      "cliCommand": "search shared slug get",
+      "cliPath": [
+        "search",
+        "shared",
+        "slug",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
       "scope": "read",
       "destructive": false
     },
