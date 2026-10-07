@@ -1,0 +1,1 @@
+import{t as e}from"./detail-TeQIFFOL.js";export{e as EntityDetailSchema};
