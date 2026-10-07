@@ -1,0 +1,1 @@
+import{t as e}from"./detail-5K840NEA.js";export{e as EntityDetailSchema};
