@@ -45,7 +45,7 @@ Prohibited:
 ## §3.1 Visibility and History Filters
 
 1. Default reads return current, visible rows. A `404` or empty page may be filtered until the command's flags rule out inactive, historical, non-renderable, and hidden rows.
-2. `--include-inactive` widens `urls list`, `texts list`, `blog-posts list`, `entities addresses list`, and `entities classifications list`; `--include-non-renderable` adds historic and non-primary rows to `entities relationships list` only.
+2. `--include-inactive` widens `urls list`, `texts list`, `blog-posts list`, `entities addresses list`, and `entities classifications list`; `--include-non-renderable` adds historic and non-primary rows to `entities relationships list` only. `entities people list` filters `--is-current true` by default; ended roles need `--is-current false` there or read unfiltered from the person side on `people entities list`.
 3. A ProblemDetail title such as `… Exists but Is Not Public` or `Product Not Public: Missing Provider Relationship`, or help text saying a row returns only when its counterpart is published, means the row exists behind a visibility gate: not absence, not a defect.
 4. A field missing from a response is a projection choice until the command's `--include-*` flags are tried.
 
