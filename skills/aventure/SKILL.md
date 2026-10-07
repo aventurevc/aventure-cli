@@ -108,6 +108,7 @@ Parenthesized names are MCP `operationId`s for `aventure_read` (`personId` repla
 2. Offer it after a `NO_MATCH`, or when the user picks among namesakes found on the web; file only on the user's request or confirmation, one run per chosen subject, each with that subject's own URL. A `409` means the URL matches several records: settle identity through §4 first.
 3. `aventure harness runs get --run-id "<id>"` reports progress; the caller is notified on completion. Then read the record through §4.
 4. A known record id enriches through `entities enrichments enrich --entity-id` or `people enrichments enrich --person-id`, at the same cost.
+5. Research you already did files as one run: `createHarnessRun` with `taskPresetKey: ["apply-cited-findings"]` and `finding`, one entry per fact, each with `statement` (the fact, in plain words), `sourceUrl` (the page that states it, never an aVenture page), and `quote` (the page's own sentence or clause that states it, copied verbatim; a short fragment is refused); add `gateId` only when known. The CLI takes this body through `harness runs create --from-file`. The run reads each page, writes only the facts whose quote it finds there, cites that page, and lists every rejected fact with its reason; it costs one research unit like any run. Keep each statement to what its quote says.
 
 ## §5 Results and Errors
 
