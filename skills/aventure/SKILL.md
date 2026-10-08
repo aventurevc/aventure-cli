@@ -106,7 +106,7 @@ Parenthesized names are MCP `operationId`s for `aventure_read` (`personId` repla
 
 ## §4.2 Request Research
 
-1. `aventure harness runs create --url "<official site or profile URL>" --name "<name>"` (`createHarnessRun`; MCP `aventure_write`) queues aVenture's own research run, owned by the caller. A URL a record owns enriches that record; any other URL researches and adds a new one. A new run spends one `company` or `person` research unit; a run already queued for that subject returns uncharged. `--user-prompt` says what to check first.
+1. `aventure harness runs create --url "<official site or profile URL>" --name "<name>"` (`createHarnessRun`; MCP `aventure_write`) queues aVenture's own research run, owned by the caller. A URL a record owns enriches that record; any other URL researches and adds a new one. A new run reserves one `company` or `person` research unit, spent only once the run saves a research write and returned when it ends without one; a run already queued for that subject returns uncharged. `--user-prompt` says what to check first.
 2. Offer it after a `NO_MATCH`, or when the user picks among namesakes found on the web; file only on the user's request or confirmation, one run per chosen subject, each with that subject's own URL. A `409` means the URL matches several records: settle identity through §4 first.
 3. `aventure harness runs get --run-id "<id>"` reports progress; the caller is notified on completion. Then read the record through §4.
 4. A known record id enriches through `entities enrichments enrich --entity-id` or `people enrichments enrich --person-id`, at the same cost.
