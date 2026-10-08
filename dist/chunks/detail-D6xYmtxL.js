@@ -1,0 +1,1 @@
+import{t as e}from"./detail-DDxpxxm7.js";export{e as EntityDetailSchema};
