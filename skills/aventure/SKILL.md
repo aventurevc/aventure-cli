@@ -1,6 +1,8 @@
 ---
 name: aventure
 description: "Use to read aVenture research data on private companies, founders, investors, funding rounds, and news through its API, CLI, or MCP server."
+metadata:
+  title: aVenture
 ---
 
 # aVenture

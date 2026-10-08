@@ -1,6 +1,8 @@
 ---
 name: aventure-cookbook
 description: "Use for multi-step aVenture research recipes: company briefs, funding histories, round investors, investor portfolios, founder backgrounds, competitor sets, news monitoring, and resolving a list of names."
+metadata:
+  title: aVenture Cookbook
 ---
 
 # aVenture Cookbook
