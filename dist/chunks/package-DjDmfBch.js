@@ -1,0 +1,1 @@
+import{i as e}from"./package-DfJq3Rui.js";export{e as readRuntimePackage};

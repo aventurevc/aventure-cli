@@ -1,0 +1,1 @@
+import{t as e}from"./detail-D2GAzBWm.js";export{e as EntityDetailSchema};
