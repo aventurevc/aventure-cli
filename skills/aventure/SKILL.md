@@ -127,7 +127,7 @@ Prohibited:
 ## §6 Reading Record Fields
 
 1. `nameBrand` is the customer-facing name, `nameLegal` the legal or securities name, `nameAlias` the other spellings.
-2. A Delaware or registered-agent address is legal incorporation, not where a company operates. An incorporation or funding date is not a founding date.
+2. A Delaware or registered-agent address is the legal seat (`domicile`), not where a company operates. An incorporation or funding date is not a founding date.
 3. A news `excerpt` is null when the source feed supplied no description; the full text is `content` on `news get`.
 4. Stored facts carry sources; cite the record and its source URL when reporting them.
 
