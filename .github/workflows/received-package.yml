@@ -5,9 +5,16 @@ on:
     branches: [dev, main]
   pull_request:
 
+# The public release train waits on each pushed commit's own run, so a push
+# run never shares a group; a newer pull request run cancels the older one.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name == 'pull_request' && 'pr' || github.sha }}
+  cancel-in-progress: true
+
 jobs:
   select:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     outputs:
       package: ${{ steps.changed.outputs.package }}
     steps:
@@ -33,6 +40,7 @@ jobs:
     needs: select
     if: needs.select.outputs.package == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -71,6 +79,7 @@ jobs:
     needs: [select, package]
     if: always()
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
       - run: |
           selected='${{ needs.select.outputs.package }}'
