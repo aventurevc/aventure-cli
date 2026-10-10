@@ -25,7 +25,7 @@ Apply the designated answer and the context through every step; the defaults bel
 
 ## 2. Build the Role History
 
-For each role: organization, title, start and end dates, and the source. Prefer filings, the organization's own pages, and dated announcements over self-published biographies. Mark each role confirmed (a filing, the organization's own record, or dated reporting) or self-reported (only the person's own biography or profile). An employer's announcement confirms an appointment; it does not independently confirm a claim about the person's performance. Confirm each current role from a source dated within the last six months; an aVenture people list is a lead, not proof. Founders are named from the organization's own history or filings.
+For each role: organization, title, start and end dates, and the source. Prefer filings, the organization's own pages, and dated announcements over self-published biographies. Mark each role confirmed (a filing, the organization's own record, or dated reporting) or self-reported (only the person's own biography or profile). An employer's announcement confirms an appointment; it does not independently confirm a claim about the person's performance. Confirm each current role, with every co-holder of a shared role, from the organization's own team page or a dated announcement within the last six months; an aVenture people list is a lead, not proof. Founders are named from the organization's own history or filings.
 
 ## 3. Assess Outcomes
 
@@ -52,11 +52,12 @@ The report's first line is "As of YYYY-MM-DD." Then:
 5. Public record matters, with search coverage.
 6. Unverified claims: performance or contribution claims that only the person, the employer, or another interested party makes.
 7. Gaps: what could not be established.
+8. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps.
 
 ## Evidence Rules
 
-- A search-results page (a search engine's results or a site's own search page) is never a source; open the result and cite that page.
-- Source ladder: filings and court or regulator records; then organizations' own pages and announcements; then dated reporting from established outlets; then the person's own profiles, labeled as self-reported.
+- A search-results page or a listing page (a topic, tag, stream, or index page) is never a source; open the article and cite it.
+- Source ladder: filings and court or regulator records; then organizations' own pages and announcements; then dated reporting from established outlets; then the person's own profiles, labeled as self-reported. Cite filings from the regulator (such as sec.gov) or the issuer's investor-relations page, and the company's own letters, never a data aggregator or a social-media repost of them.
 - Read every cited source and cite it at the claim it directly supports. Syndicated or copied reporting is one source, not corroboration.
 - State the report's as-of date. Resolve conflicting sources by scope and date, and say how.
 - Distinguish not disclosed, not found in the sources searched, not applicable, and conflicting.
@@ -65,9 +66,9 @@ The report's first line is "As of YYYY-MM-DD." Then:
 ## Writing Rules
 
 - Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
-- A numeric threshold or target appears only with a cited benchmark.
+- A numeric threshold or target appears only with a cited benchmark; otherwise name the metric without a number.
 - Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. State each finding once.
 - Each sentence states a fact, a date, a number, or a judgment tied to evidence.
 - Characterize conduct by what the record shows, not by adjectives.
-- Never write: "visionary", "seasoned", "proven leader", "serial entrepreneur" without the count, "passionate", "robust", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
+- Never write: "visionary", "seasoned", "proven leader", "serial entrepreneur" without the count, "passionate", "robust", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", "dominant", "powerhouse", "aggressively", "superior", "top-tier", "stronghold", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
 - State uncertainty once, at the claim it affects, with its cause.

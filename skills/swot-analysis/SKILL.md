@@ -22,7 +22,7 @@ Apply the designated answer and the context through every step; the defaults bel
 1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. A SWOT entry already in the record is a hypothesis to verify and date, not the answer. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, fetch the subject's aventure.vc page. When neither yields a matched record, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
 2. Name the exact entity the report covers, as of today. Brands, legal entities, parents, subsidiaries, and spin-offs are different subjects, and ownership changes. Nabisco is today a Mondelēz brand, not a standalone company. Kellogg's cereal belongs to Ferrero in the US, Canada, and the Caribbean and to Mars elsewhere, after the 2023 split into WK Kellogg Co and Kellanova and their 2025 sales. A parent's strength is the subsidiary's only when the subsidiary can use it.
 3. When two records fit the name, stop and report both candidates with the fact that separates them.
-4. Confirm current leaders and partners from a source dated within the last six months; an aVenture people list is a lead, not proof.
+4. Name current leaders and partners, with every co-leader, from the firm's own team page or a dated announcement within the last six months; an aVenture people list is a lead, not proof.
 5. An investment firm is analyzed as an investor, and a fund as its own vehicle (vintage, size, mandate, holdings) apart from its manager: fund sizes and vintages, deployment pace, portfolio outcomes, partners, reputation with founders, and access to deals.
 
 ## 2. Gather Evidence
@@ -61,11 +61,12 @@ The report's first line is "As of YYYY-MM-DD." Then:
 3. The cross-actions.
 4. What would change this view: the dated signals that would move an item between quadrants or off the list.
 5. Gaps: what could not be established.
+6. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps.
 
 ## Evidence Rules
 
-- A search-results page (a search engine's results or a site's own search page) is never a source; open the result and cite that page.
-- Source ladder: filings, regulators, and official statistics; then the company's own primary sources; then dated reporting from established outlets; then analyst and data-provider estimates, labeled by publisher.
+- A search-results page or a listing page (a topic, tag, stream, or index page) is never a source; open the article and cite it.
+- Source ladder: filings, regulators, and official statistics; then the company's own primary sources; then dated reporting from established outlets; then analyst and data-provider estimates, labeled by publisher. Cite filings from the regulator (such as sec.gov) or the issuer's investor-relations page, and the company's own letters, never a data aggregator or a social-media repost of them.
 - Read every cited source and cite it at the claim it directly supports. Syndicated or copied reporting is one source, not corroboration. Label estimates, interested-party claims, and your own inferences.
 - State the report's as-of date. Recheck current ownership, roles, pricing, product status, and regulatory status; resolve conflicting sources by scope and date, and say how.
 - Keep announcement and completion dates apart: an announced deal, a first close, or a planned product is labeled as such. A past acquisition does not prove current ownership.
@@ -75,9 +76,9 @@ The report's first line is "As of YYYY-MM-DD." Then:
 ## Writing Rules
 
 - Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
-- A numeric threshold or target appears only with a cited benchmark.
+- A numeric threshold or target appears only with a cited benchmark; otherwise name the metric without a number.
 - Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. Omit sections that do not apply. State each finding once.
 - Each sentence states a fact, a number, a comparison, or a judgment tied to evidence.
-- Never write: "well-positioned", "poised to", "strong brand" without a measure, "headwinds and tailwinds", "robust", "seamless", "cutting-edge", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
+- Never write: "well-positioned", "poised to", "strong brand" without a measure, "headwinds and tailwinds", "robust", "seamless", "cutting-edge", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", "dominant", "powerhouse", "aggressively", "superior", "top-tier", "stronghold", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
 - Numbers carry currency, unit, period, and an as-of date.
 - State uncertainty once, at the claim it affects, with its cause.

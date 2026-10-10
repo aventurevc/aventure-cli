@@ -56,11 +56,12 @@ The report's first line is "As of YYYY-MM-DD." Then:
 8. Stated versus revealed thesis.
 9. Recent activity.
 10. Gaps: deals, amounts, or outcomes that could not be established.
+11. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps.
 
 ## Evidence Rules
 
-- A search-results page (a search engine's results or a site's own search page) is never a source; open the result and cite that page.
-- Source ladder: regulatory filings (such as SEC Form D and Form ADV where they exist), then the investor's and portfolio companies' own announcements, then dated reporting from established outlets, then data providers labeled by name.
+- A search-results page or a listing page (a topic, tag, stream, or index page) is never a source; open the article and cite it.
+- Source ladder: regulatory filings (such as SEC Form D and Form ADV where they exist), then the investor's and portfolio companies' own announcements, then dated reporting from established outlets, then data providers labeled by name. Cite filings from the regulator (such as sec.gov) or the issuer's investor-relations page, and the company's own letters, never a data aggregator or a social-media repost of them.
 - Read every cited source and cite it at the claim it directly supports. Syndicated or copied reporting is one source, not corroboration.
 - State the report's as-of date. Resolve conflicting sources by scope and date, and say how.
 - Keep announcement and completion dates apart. A past acquisition does not prove current ownership.
@@ -70,10 +71,10 @@ The report's first line is "As of YYYY-MM-DD." Then:
 ## Writing Rules
 
 - Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
-- A numeric threshold or target appears only with a cited benchmark.
+- A numeric threshold or target appears only with a cited benchmark; otherwise name the metric without a number.
 - Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. State each finding once; do not repeat a table in prose.
 - Each sentence states a fact, a number, a comparison, or a judgment tied to evidence.
-- Never write: "founder-friendly" or "value-add" without the evidence, "top-tier", "robust", "seamless", "cutting-edge", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
+- Never write: "founder-friendly" or "value-add" without the evidence, "top-tier", "robust", "seamless", "cutting-edge", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", "dominant", "powerhouse", "aggressively", "superior", "stronghold", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
 - Percentages state their denominator ("12 of 40 deals with known leadership, 30%").
 - Numbers carry currency, unit, period, and an as-of date.
 - State uncertainty once, at the claim it affects, with its cause.

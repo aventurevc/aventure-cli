@@ -62,11 +62,12 @@ The report's first line is "As of YYYY-MM-DD." Then:
 5. Profit implication and the subject's position.
 6. What would change this view: the measurable shifts that would move a rating.
 7. Gaps: what could not be established.
+8. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps.
 
 ## Evidence Rules
 
-- A search-results page (a search engine's results or a site's own search page) is never a source; open the result and cite that page.
-- Source ladder: filings, regulators, and official statistics; then the company's own primary sources; then dated reporting from established outlets; then analyst and data-provider estimates, labeled by publisher.
+- A search-results page or a listing page (a topic, tag, stream, or index page) is never a source; open the article and cite it.
+- Source ladder: filings, regulators, and official statistics; then the company's own primary sources; then dated reporting from established outlets; then analyst and data-provider estimates, labeled by publisher. Cite filings from the regulator (such as sec.gov) or the issuer's investor-relations page, and the company's own letters, never a data aggregator or a social-media repost of them.
 - Read every cited source and cite it at the claim it directly supports. Syndicated or copied reporting is one source, not corroboration. Label estimates, interested-party claims, and your own inferences, and show calculation inputs.
 - State the report's as-of date. Recheck current ownership and regulatory status; resolve conflicting sources by scope and date, and say how.
 - Keep announcement and completion dates apart: an announced merger has not yet changed concentration.
@@ -76,9 +77,9 @@ The report's first line is "As of YYYY-MM-DD." Then:
 ## Writing Rules
 
 - Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
-- A numeric threshold or target appears only with a cited benchmark.
+- A numeric threshold or target appears only with a cited benchmark; otherwise name the metric without a number.
 - Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. State each finding once; do not repeat the table in prose.
 - Each sentence states a fact, a number, a comparison, or a judgment tied to evidence.
-- Never write: "intense competition" without its measure, "high barriers to entry" without naming them, "robust", "seamless", "cutting-edge", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
+- Never write: "intense competition" without its measure, "high barriers to entry" without naming them, "robust", "seamless", "cutting-edge", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", "dominant", "powerhouse", "aggressively", "superior", "top-tier", "stronghold", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
 - Numbers carry currency, unit, period, and an as-of date.
 - State uncertainty once, at the claim it affects, with its cause.
