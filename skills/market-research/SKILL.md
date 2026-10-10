@@ -44,7 +44,7 @@ State the boundary in one sentence before sizing anything: the buyer, the job th
 - Buyers: who signs, from which budget line, through what purchase process, with what switching cost.
 - Pricing: published price points and models across the main sellers; note where prices are not public.
 - Regulation: rules in force or scheduled that change demand or cost, with dates.
-- The subject's position: its rank or share against the three to five largest named vendors in the boundary, each cited, its revenue or scale where disclosed, and the segments it serves. Compute share only when numerator and denominator cover the same offering, geography, period, and revenue basis.
+- The subject's position: its rank or share against the three to five largest named vendors in the boundary, each cited, its revenue or scale where disclosed, and the segments it serves. Compute share only when numerator and denominator cover the same offering, geography, period, and revenue basis. Where no source measures a vendor's share, write "not disclosed"; never estimate a share or a range.
 
 ## 5. Write the Report
 

@@ -29,7 +29,7 @@ For each role: organization, title, start and end dates, and the source. Prefer 
 
 ## 3. Assess Outcomes
 
-1. For each significant role, collect measurable events during the verified tenure: funding raised, revenue or customer milestones, launches, acquisitions (announcement and completion dates apart), layoffs, shutdowns, regulatory actions, and leadership departures.
+1. For each significant role, collect measurable events during the verified tenure, each metric at its latest figure (a superseded figure appears only beside the current one): funding raised, revenue or customer milestones, launches, acquisitions (announcement and completion dates apart), layoffs, shutdowns, regulatory actions, and leadership departures.
 2. For material outcomes, establish the baseline the person inherited, the tenure length, the responsibilities, and the market or peer context. Separate inherited momentum, team contribution, and effects that appeared after the person left. Do not invent a comparison no source supports.
 3. Report company events during a tenure as tenure outcomes. Credit or blame the person only where a source documents their contribution, and say whether that source is independent or an interested party. Title and timing never establish causation.
 

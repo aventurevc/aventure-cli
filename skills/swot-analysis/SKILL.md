@@ -50,7 +50,7 @@ For each pairing with substance, write one action:
 - Weakness × Opportunity: the opportunity the subject misses unless a weakness is fixed.
 - Weakness × Threat: the exposure where a weakness meets a threat, and its likely cost.
 
-Each action names who acts, what changes, its prerequisites, its main tradeoff, and the metric that would show it worked. When evidence cannot justify acting, propose the test that would decide it.
+Each action names who acts, what changes, its prerequisites, its main tradeoff, and the metric that would show it worked, named without a target number unless a linked benchmark gives one. When evidence cannot justify acting, propose the test that would decide it.
 
 ## 5. Write the Report
 
