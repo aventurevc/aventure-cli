@@ -38,6 +38,7 @@ aventure billing plan-changes create · Change the Subscription Plan · --plan
 aventure billing plans list · List Subscription Tiers and Plans · -
 aventure billing portal-sessions create · Create a Hosted Billing Portal Session · -
 aventure billing subscription get · Read the Current Billing Subscription · -
+aventure billing subscription update · Cancel or Resume the Subscription · -
 aventure entities acquisitions get · Get One Company Acquisition · --entity-id --relationship-id
 aventure entities acquisitions list · List a Company's Acquisitions · --entity-id
 aventure entities addresses get · Get One Company Address · --entity-id --address-join-id

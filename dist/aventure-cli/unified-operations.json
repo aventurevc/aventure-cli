@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-10T06:38:28.178Z",
-  "totalOperations": 140,
+  "generatedAt": "2026-10-10T07:44:02.498Z",
+  "totalOperations": 141,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -214,6 +214,25 @@
       "bodySchemaImport": null,
       "auth": "bearer",
       "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "updateBillingSubscription",
+      "method": "PATCH",
+      "path": "/v1/billing/subscription",
+      "resource": "billing",
+      "intent": "write",
+      "cliCommand": "billing subscription update",
+      "cliPath": [
+        "billing",
+        "subscription",
+        "update"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "BillingSubscriptionMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/billing/subscription-mutation",
+      "auth": "bearer",
+      "scope": "write",
       "destructive": false
     },
     {
