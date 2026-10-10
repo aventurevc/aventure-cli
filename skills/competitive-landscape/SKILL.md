@@ -19,22 +19,22 @@ Apply the designated answer and the context through every step; the defaults bel
 
 ## 1. Pin the Subject
 
-1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. Without an aVenture tool, fetch the subject's aventure.vc page. When neither yields a matched record, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
-2. Name the exact entity the report covers, as of today. Brands, legal entities, parents, subsidiaries, and spin-offs are different subjects, and ownership changes. Nabisco is used today as a Mondelēz brand, distinct from the historical Nabisco companies. Kellogg Company split on October 2, 2023 into Kellanova and WK Kellogg Co; Ferrero completed its purchase of WK Kellogg Co on September 26, 2025, and Mars completed its purchase of Kellanova on December 11, 2025, so Kellogg's cereal in North America and Kellogg's cereal elsewhere now sit under different owners. Map the landscape of the unit that sells to the buyer, under its current owner.
+1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, fetch the subject's aventure.vc page. When neither yields a matched record, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
+2. Name the exact entity the report covers, as of today. Brands, legal entities, parents, subsidiaries, and spin-offs are different subjects, and ownership changes. Nabisco is today a Mondelēz brand, not a standalone company. Kellogg's cereal belongs to Ferrero in the US, Canada, and the Caribbean and to Mars elsewhere, after the 2023 split into WK Kellogg Co and Kellanova and their 2025 sales. Map the landscape of the unit that sells to the buyer, under its current owner.
 3. When two records fit the name, stop and report both candidates with the fact that separates them.
 
 ## 2. Set the Boundary
 
 State in one sentence: the buyer, the job they pay for, and the geography. Every player in the report sells to that buyer for that job, or is a named substitute for it.
 
-An investment firm competes in two markets: for deals (founders choosing among investors) and for capital (limited partners choosing among funds). Say which one the report covers, or cover both in separate sections, comparing mandate, stage, check size, deployment pace, access, terms, fundraising, and disclosed fund performance with matching basis, instead of product and pricing.
+An investment firm competes in two markets: for deals (founders choosing among investors) and for capital (limited partners choosing among funds). A fund subject competes as its own vehicle: its vintage, size, and mandate set its peers. Say which market the report covers, or cover both in separate sections, comparing mandate, stage, check size, deployment pace, access, terms, fundraising, and disclosed fund performance with matching basis, instead of product and pricing.
 
 ## 3. Find the Players
 
 1. Start from aVenture's similar-company results and the subject's own comparison pages, then search the web for the category name, buyer reviews, analyst category lists, and "alternatives to" pages.
 2. Verify each candidate against the boundary from its own site or documentation. A similar description does not prove the same buyer.
 3. Sort players into classes: incumbents, funded challengers, adjacent platforms that bundle the capability, open-source or in-house alternatives, and substitutes that do the job another way.
-4. Include every material player you can substantiate; there is no quota. State whether the list is representative or demonstrably exhaustive, and name the excluded near-boundary players with the reason.
+4. State the materiality rule before selecting (for example, a minimum scale, presence in buyer shortlists, or recent funding). In a fragmented field, cover each class with its most material players and say the set is representative; claim exhaustiveness only when the evidence shows it. Name the excluded near-boundary players with the reason.
 
 ## 4. Analyze
 
@@ -47,6 +47,8 @@ An investment firm competes in two markets: for deals (founders choosing among i
 
 ## 5. Write the Report
 
+The report's first line is "As of YYYY-MM-DD." Then:
+
 1. Answer: three to five sentences on the field's shape and the subject's place in it.
 2. Boundary, player classes, and coverage.
 3. Player table.
@@ -57,18 +59,22 @@ An investment firm competes in two markets: for deals (founders choosing among i
 
 ## Evidence Rules
 
+- A search-results page (a search engine's results or a site's own search page) is never a source; open the result and cite that page.
 - Source ladder: filings, regulators, and official statistics; then the company's own primary sources; then dated reporting from established outlets; then analyst and data-provider estimates, labeled by publisher.
 - Read every cited source and cite it at the claim it directly supports. Syndicated or copied reporting is one source, not corroboration. Label estimates, interested-party claims, and your own inferences.
 - State the report's as-of date. Recheck current ownership, pricing, and product status; resolve conflicting sources by scope and date, and say how.
 - Keep announcement and completion dates apart: an announced acquisition, a first close, or a planned product is labeled as such. A past acquisition does not prove current ownership.
 - Distinguish not disclosed, not found in the sources searched, not applicable, and conflicting. Never turn an unknown into zero or absence.
+- When the research budget runs out, write the report from what is established and list the rest under Gaps; never infer a missing figure.
 
 ## Writing Rules
 
-- Keep the report under 2,000 words including tables unless the request asks for more. Omit sections that do not apply. State each finding once; do not repeat a table in prose.
+- Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
+- A numeric threshold or target appears only with a cited benchmark.
+- Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. Omit sections that do not apply. State each finding once; do not repeat a table in prose.
 - Each sentence states a fact, a number, a comparison, or a judgment tied to evidence.
 - Describe a player by what it sells and to whom, not by its slogan.
-- Never write: "crowded space", "rapidly evolving landscape", "key players", "game-changer", "cutting-edge", "robust", "seamless", "unlock", "delve", "it's worth noting", "in conclusion", or a closing summary that repeats the answer. Use "leverage" only in its financial sense.
+- Never write: "crowded space", "rapidly evolving landscape", "key players", "game-changer", "cutting-edge", "robust", "seamless", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
 - Numbers carry currency, unit, period, and an as-of date.
 - State uncertainty once, at the claim it affects, with its cause.
 - Use a table for comparisons across three or more items or dimensions.

@@ -19,13 +19,13 @@ Apply the designated answer and the context through every step; the defaults bel
 
 ## 1. Pin the Person
 
-1. Use available aVenture reads first: the person's record holds roles, companies, investments, and news. Without an aVenture tool, fetch the person's aventure.vc page. When neither yields a matched record, establish identity from organizations' own pages and filings, say so in the report, and never invent record contents.
+1. Use available aVenture reads first: the person's record holds roles, companies, investments, and news. With the aVenture MCP server or CLI, a person's aventure.vc URL resolves in one read (`getPersonLookup`) and `listPersonEntityAssociations` lists every role; the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, fetch the person's aventure.vc page. When neither yields a matched record, establish identity from organizations' own pages and filings, say so in the report, and never invent record contents.
 2. Disambiguate before collecting. Keep a source only when it matches the person's organization, role, and period, through a linked profile or an identifier where one exists. A name or a photograph alone does not establish identity.
 3. When two people fit, stop and report both candidates with the fact that separates them.
 
 ## 2. Build the Role History
 
-For each role: organization, title, start and end dates, and the source. Prefer filings, the organization's own pages, and dated announcements over self-published biographies. A role found only in the person's own biography is listed and marked self-reported. Recheck current roles as of the report date.
+For each role: organization, title, start and end dates, and the source. Prefer filings, the organization's own pages, and dated announcements over self-published biographies. Mark each role confirmed (a filing, the organization's own record, or dated reporting) or self-reported (only the person's own biography or profile). An employer's announcement confirms an appointment; it does not independently confirm a claim about the person's performance. Confirm each current role from a source dated within the last six months; an aVenture people list is a lead, not proof. Founders are named from the organization's own history or filings.
 
 ## 3. Assess Outcomes
 
@@ -43,25 +43,31 @@ For each role: organization, title, start and end dates, and the source. Prefer 
 
 ## 5. Write the Report
 
+The report's first line is "As of YYYY-MM-DD." Then:
+
 1. Answer: three to five sentences on the person's verified record as it bears on the reader's decision.
 2. Role history table: organization, title, dates, source, verified or self-reported.
 3. Outcomes by role, with baseline and attribution stated.
 4. Board seats and investments.
 5. Public record matters, with search coverage.
-6. Unverified claims: what the person or others assert that no independent source confirms.
+6. Unverified claims: performance or contribution claims that only the person, the employer, or another interested party makes.
 7. Gaps: what could not be established.
 
 ## Evidence Rules
 
+- A search-results page (a search engine's results or a site's own search page) is never a source; open the result and cite that page.
 - Source ladder: filings and court or regulator records; then organizations' own pages and announcements; then dated reporting from established outlets; then the person's own profiles, labeled as self-reported.
 - Read every cited source and cite it at the claim it directly supports. Syndicated or copied reporting is one source, not corroboration.
 - State the report's as-of date. Resolve conflicting sources by scope and date, and say how.
 - Distinguish not disclosed, not found in the sources searched, not applicable, and conflicting.
+- When the research budget runs out, write the report from what is established and list the rest under Gaps; never infer a missing figure.
 
 ## Writing Rules
 
-- Keep the report under 2,000 words including tables unless the request asks for more. State each finding once.
+- Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
+- A numeric threshold or target appears only with a cited benchmark.
+- Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. State each finding once.
 - Each sentence states a fact, a date, a number, or a judgment tied to evidence.
 - Characterize conduct by what the record shows, not by adjectives.
-- Never write: "visionary", "seasoned", "proven leader", "serial entrepreneur" without the count, "passionate", "robust", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", or a closing summary that repeats the answer. Use "leverage" only in its financial sense.
+- Never write: "visionary", "seasoned", "proven leader", "serial entrepreneur" without the count, "passionate", "robust", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
 - State uncertainty once, at the claim it affects, with its cause.

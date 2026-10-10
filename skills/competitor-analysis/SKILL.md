@@ -19,8 +19,8 @@ Apply the designated answer and the context through every step; the defaults bel
 
 ## 1. Pin the Subject
 
-1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. Without an aVenture tool, fetch the subject's aventure.vc page. When neither yields a matched record, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
-2. Name the exact entity or product the report covers, as of today. Brands, legal entities, parents, subsidiaries, and spin-offs are different subjects, and ownership changes. Nabisco is used today as a Mondelēz brand, distinct from the historical Nabisco companies. Kellogg Company split on October 2, 2023 into Kellanova and WK Kellogg Co; Ferrero completed its purchase of WK Kellogg Co on September 26, 2025, and Mars completed its purchase of Kellanova on December 11, 2025. Compare the unit that sells the product, and never credit a parent's scale to it.
+1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, fetch the subject's aventure.vc page. When neither yields a matched record, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
+2. Name the exact entity or product the report covers, as of today. Brands, legal entities, parents, subsidiaries, and spin-offs are different subjects, and ownership changes. Nabisco is today a Mondelēz brand, not a standalone company. Kellogg's cereal belongs to Ferrero in the US, Canada, and the Caribbean and to Mars elsewhere, after the 2023 split into WK Kellogg Co and Kellanova and their 2025 sales. Compare the unit that sells the product. Never attribute a parent's consolidated figures to it; credit a specific parent resource (distribution, procurement, infrastructure, financing) only where evidence shows the unit uses it.
 3. When two records fit the name, stop and report both candidates with the fact that separates them.
 
 ## 2. Select Competitors
@@ -35,14 +35,14 @@ Collect the same evidence for every company. Where one company's figure is missi
 
 | Dimension | Evidence to collect |
 |---|---|
-| Product | Capabilities from documentation, changelogs, and API references, not marketing pages; launch dates of the capabilities the buyer cares about |
-| Total cost | Published plans with the date read, then the total cost for the same buyer workload: usage, implementation, required add-ons, contract minimums, and switching cost; where pricing is sales-only |
+| Product | Capabilities live in documentation, changelogs, and API references on the as-of date, not marketing pages; a retired capability is excluded; a vendor's description of itself is attributed; launch dates of the capabilities the buyer cares about |
+| Total cost | Published plans with the date read, then the total cost for the same buyer workload: usage, implementation, required add-ons, contract minimums, and switching cost; say when pricing is sales-only |
 | Customers | Current customers apart from historical references and vendor-chosen testimonials; review ratings compared only across the same platform, period, and buyer population, with known incentives noted |
 | Distribution | Sales motion (self-serve, inside sales, field sales, channel), partnerships, marketplaces, geography |
 | Traction | Revenue or ARR where disclosed, customer counts, headcount trend, usage from a named source, each dated |
 | Economics | Disclosed margins, retention or repeat purchase, acquisition efficiency, cash flow, debt, and liquidity, with matching definitions and periods; funding raised is financing, not profitability |
 | Funding and backing | Total raised and the last round with date, amount, and lead investor |
-| Team | Founders and current leaders with relevant prior roles, verified from the aVenture record or primary sources |
+| Team | Founders and current leaders with relevant prior roles, confirmed from a source dated within the last six months; an aVenture people list is a lead, not proof |
 | Durable advantages | For each claimed advantage (network effects, switching costs, proprietary data, licenses, scale economies): its economic mechanism, the evidence it exists, and what would erode it |
 
 ## 4. Judge Relative Strength
@@ -54,6 +54,8 @@ Collect the same evidence for every company. Where one company's figure is missi
 
 ## 5. Write the Report
 
+The report's first line is "As of YYYY-MM-DD." Then:
+
 1. Answer: three to five sentences naming the subject's clearest advantage, its largest gap, and the most dangerous rival when the evidence supports one.
 2. Competitor set with selection reasons and near-misses.
 3. The comparison by dimension, with each relative-strength judgment in the same place as its evidence.
@@ -62,17 +64,21 @@ Collect the same evidence for every company. Where one company's figure is missi
 
 ## Evidence Rules
 
+- A search-results page (a search engine's results or a site's own search page) is never a source; open the result and cite that page.
 - Source ladder: filings, regulators, and official statistics; then the company's own primary sources; then dated reporting from established outlets; then analyst and data-provider estimates, labeled by publisher.
 - Read every cited source and cite it at the claim it directly supports. Syndicated or copied reporting is one source, not corroboration. Quote a company's own claim only as attributed ("the company says") and check it against another source.
 - State the report's as-of date. Recheck current pricing, product status, and ownership; resolve conflicting sources by scope and date, and say how.
 - Keep announcement and completion dates apart: an announced deal, a first close, or a planned feature is labeled as such.
 - Distinguish not disclosed, not found in the sources searched, not applicable, and conflicting. Never turn an unknown into zero, absence, or parity.
+- When the research budget runs out, write the report from what is established and list the rest under Gaps; never infer a missing figure.
 
 ## Writing Rules
 
-- Keep the report under 2,000 words including tables unless the request asks for more. Omit sections that do not apply. State each finding once; do not repeat a table in prose.
+- Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
+- A numeric threshold or target appears only with a cited benchmark.
+- Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. Omit sections that do not apply. State each finding once; do not repeat a table in prose.
 - Each sentence states a fact, a number, a comparison, or a judgment tied to evidence.
-- Never write: "best-in-class", "industry-leading", "robust", "seamless", "cutting-edge", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", or a closing summary that repeats the answer. Use "leverage" only in its financial sense.
+- Never write: "best-in-class", "industry-leading", "robust", "seamless", "cutting-edge", "game-changer", "unlock", "delve", "it's worth noting", "in conclusion", "elite", "unmatched", "iconic", "immense", "massive", "dramatically", "deep-pocketed", "industry benchmark", or a closing summary that repeats the answer; state the measure instead. Use "leverage" only in its financial sense.
 - Numbers carry currency, unit, period, and an as-of date.
 - State uncertainty once, at the claim it affects, with its cause.
 - Use a table for comparisons across three or more items or dimensions.
