@@ -1,0 +1,1 @@
+import{a as e}from"./package-DPDX5zmx.js";export{e as readRuntimePackage};
