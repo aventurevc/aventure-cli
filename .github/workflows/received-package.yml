@@ -5,6 +5,9 @@ on:
     branches: [dev, main]
   pull_request:
 
+permissions:
+  contents: read
+
 # The public release train waits on each pushed commit's own run, so a push
 # run never shares a group; a newer pull request run cancels the older one.
 concurrency:
