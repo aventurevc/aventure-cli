@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-11T06:25:32.092Z",
-  "totalOperations": 141,
+  "generatedAt": "2026-10-11T18:22:05.766Z",
+  "totalOperations": 145,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -84,6 +84,25 @@
       "destructive": false
     },
     {
+      "operationId": "updateAdditionalUsage",
+      "method": "PATCH",
+      "path": "/v1/billing/additional-usage",
+      "resource": "billing",
+      "intent": "write",
+      "cliCommand": "billing additional-usage update",
+      "cliPath": [
+        "billing",
+        "additional-usage",
+        "update"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "BillingAdditionalUsageMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/billing/additional-usage-mutation",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
       "operationId": "getAiCredits",
       "method": "GET",
       "path": "/v1/billing/ai-credits",
@@ -119,6 +138,44 @@
       "bodySchemaImport": "@aventurevc/api-schemas/billing/checkout-mutation",
       "auth": "bearer",
       "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "createBillingCreditPurchase",
+      "method": "POST",
+      "path": "/v1/billing/credit-purchases",
+      "resource": "billing",
+      "intent": "write",
+      "cliCommand": "billing credit-purchases create",
+      "cliPath": [
+        "billing",
+        "credit-purchases",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "BillingCreditPurchaseMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/billing/credit-purchase-mutation",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "getBillingCreditPurchase",
+      "method": "GET",
+      "path": "/v1/billing/credit-purchases/{purchaseId}",
+      "resource": "billing",
+      "intent": "read",
+      "cliCommand": "billing credit-purchases get",
+      "cliPath": [
+        "billing",
+        "credit-purchases",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
       "destructive": false
     },
     {
@@ -191,8 +248,8 @@
         "create"
       ],
       "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
+      "bodySchemaName": "BillingPortalMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/billing/portal-mutation",
       "auth": "bearer",
       "scope": "write",
       "destructive": false
@@ -233,6 +290,26 @@
       "bodySchemaImport": "@aventurevc/api-schemas/billing/subscription-mutation",
       "auth": "bearer",
       "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "getBillingNextCharge",
+      "method": "GET",
+      "path": "/v1/billing/subscription/next-charge",
+      "resource": "billing",
+      "intent": "read",
+      "cliCommand": "billing subscription next-charge get",
+      "cliPath": [
+        "billing",
+        "subscription",
+        "next-charge",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
       "destructive": false
     },
     {

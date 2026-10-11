@@ -31,8 +31,11 @@ aventure agents help answer · Deprecated: Answer a Natural-Language Platform He
 aventure auth api-key get · Get Current API Key · -
 aventure auth api-key revoke · Revoke Current API Key · -
 aventure auth providers get · Get the Sign-In Options · -
+aventure billing additional-usage update · Update Additional Usage Settings · -
 aventure billing ai-credits get · Read the Current AI Credit Allowance · -
 aventure billing checkout-sessions create · Create or Recover a Checkout Session · --plan
+aventure billing credit-purchases create · Buy a Prepaid Additional Usage Credit Pack · --idempotency-key --pack
+aventure billing credit-purchases get · Read a Prepaid Credit Purchase Confirmation · --purchase-id
 aventure billing plan-change-previews create · Preview a Subscription Plan Change · --plan
 aventure billing plan-changes create · Change the Subscription Plan · --plan
 aventure billing plans list · List Subscription Tiers and Plans · -
@@ -126,6 +129,7 @@ aventure search shared list · List Shared Search Publications · -
 aventure unique-ids types list · List the Accepted Unique Identifier Types · -
 aventure auth me permissions authorize · Authorize API Operations · -
 aventure auth me permissions get · Current User Permissions · -
+aventure billing subscription next-charge get · Preview the Next Subscription Charge · -
 aventure entities classifications catalog get · Get the Company Classification Taxonomy · -
 aventure entities classifications suggestions list · Suggest Classifications for a Company · --entity-id
 aventure entities classifications tags list · List Classification Tags · -
