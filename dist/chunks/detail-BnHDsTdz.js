@@ -1,1 +1,0 @@
-import{t as e}from"./detail-BAUbCLgG.js";export{e as EntityDetailSchema};

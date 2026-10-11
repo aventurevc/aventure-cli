@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// oxlint-disable typescript/no-unsafe-assignment typescript/no-unsafe-member-access typescript/no-unsafe-argument -- standalone postinstall MJS uses Node built-ins without a TS emit step
 import {
   copyFileSync,
   existsSync,
