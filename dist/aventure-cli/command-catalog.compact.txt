@@ -130,6 +130,7 @@ aventure unique-ids types list · List the Accepted Unique Identifier Types · -
 aventure auth me permissions authorize · Authorize API Operations · -
 aventure auth me permissions get · Current User Permissions · -
 aventure billing subscription next-charge get · Preview the Next Subscription Charge · -
+aventure billing subscription payment-profile get · Read Your Card on File and Introductory Offer · -
 aventure entities classifications catalog get · Get the Company Classification Taxonomy · -
 aventure entities classifications suggestions list · Suggest Classifications for a Company · --entity-id
 aventure entities classifications tags list · List Classification Tags · -

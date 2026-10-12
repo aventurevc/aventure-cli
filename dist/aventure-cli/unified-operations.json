@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-12T04:48:18.342Z",
-  "totalOperations": 145,
+  "generatedAt": "2026-10-12T05:27:47.910Z",
+  "totalOperations": 146,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -303,6 +303,26 @@
         "billing",
         "subscription",
         "next-charge",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getBillingPaymentProfile",
+      "method": "GET",
+      "path": "/v1/billing/subscription/payment-profile",
+      "resource": "billing",
+      "intent": "read",
+      "cliCommand": "billing subscription payment-profile get",
+      "cliPath": [
+        "billing",
+        "subscription",
+        "payment-profile",
         "get"
       ],
       "mcpTool": "aventure_read",
