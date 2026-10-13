@@ -1,1 +1,0 @@
-import{n as e}from"./mcp-generation-contract-BfObisB8.js";export{e as MCP_GENERATION_CONTRACT};

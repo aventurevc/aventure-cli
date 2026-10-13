@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-13T09:05:20.482Z",
+  "generatedAt": "2026-10-13T10:41:17.683Z",
   "totalOperations": 146,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
@@ -1532,44 +1532,6 @@
       "destructive": false
     },
     {
-      "operationId": "createHarnessRun",
-      "method": "POST",
-      "path": "/v1/harness/runs",
-      "resource": "harness",
-      "intent": "write",
-      "cliCommand": "harness runs create",
-      "cliPath": [
-        "harness",
-        "runs",
-        "create"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "HarnessRunCreateSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/harness/run-create",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
-      "operationId": "getHarnessRun",
-      "method": "GET",
-      "path": "/v1/harness/runs/{runId}",
-      "resource": "harness",
-      "intent": "read",
-      "cliCommand": "harness runs get",
-      "cliPath": [
-        "harness",
-        "runs",
-        "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "askHelpQuestion",
       "method": "POST",
       "path": "/v1/help",
@@ -2462,6 +2424,42 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createResearchRun",
+      "method": "POST",
+      "path": "/v1/research-runs",
+      "resource": "research-runs",
+      "intent": "write",
+      "cliCommand": "research-runs create",
+      "cliPath": [
+        "research-runs",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "HarnessRunCreateSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/harness/run-create",
+      "auth": "bearer",
+      "scope": "write",
+      "destructive": false
+    },
+    {
+      "operationId": "getResearchRun",
+      "method": "GET",
+      "path": "/v1/research-runs/{runId}",
+      "resource": "research-runs",
+      "intent": "read",
+      "cliCommand": "research-runs get",
+      "cliPath": [
+        "research-runs",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
