@@ -21,6 +21,10 @@ on:
         description: Prove the toolchain and OIDC identity, then stop before reading the release
         type: boolean
         default: false
+      dist_tag:
+        description: npm dist-tag; npm refuses to point latest at a version below the current latest
+        type: string
+        default: latest
 
 permissions:
   contents: read
@@ -39,6 +43,7 @@ jobs:
       PACKAGE_NAME: "@aventurevc/aventure-cli"
       VERSION: ${{ inputs.version }}
       INTEGRITY: ${{ inputs.integrity }}
+      DIST_TAG: ${{ inputs.dist_tag }}
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -47,6 +52,7 @@ jobs:
         run: |
           [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]] || { echo "invalid version: $VERSION"; exit 1; }
           [[ "$INTEGRITY" =~ ^sha512-[A-Za-z0-9+/]{86}==$ ]] || { echo "invalid integrity: $INTEGRITY"; exit 1; }
+          [[ "$DIST_TAG" =~ ^[a-z][a-z0-9-]*$ ]] || { echo "invalid dist-tag: $DIST_TAG"; exit 1; }
           npm_version="$(npm --version)"
           printf '11.5.1\n%s\n' "$npm_version" | sort -V -C || { echo "npm $npm_version is older than 11.5.1"; exit 1; }
           echo "node $(node --version), npm $npm_version"
@@ -73,4 +79,4 @@ jobs:
           echo "TARBALL=${tarballs[0]}" >>"$GITHUB_ENV"
       - name: Publish through npm trusted publishing
         if: ${{ !inputs.dry_run }}
-        run: npm publish "$TARBALL" --provenance --access public --ignore-scripts --registry https://registry.npmjs.org/
+        run: npm publish "$TARBALL" --provenance --access public --ignore-scripts --tag "$DIST_TAG" --registry https://registry.npmjs.org/
