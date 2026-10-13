@@ -22,9 +22,9 @@ on:
         type: boolean
         default: false
       dist_tag:
-        description: npm dist-tag; npm refuses to point latest at a version below the current latest
+        description: npm dist-tag for a version below the current latest; empty keeps npm's latest and its refusals
         type: string
-        default: latest
+        default: ""
 
 permissions:
   contents: read
@@ -52,7 +52,7 @@ jobs:
         run: |
           [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]] || { echo "invalid version: $VERSION"; exit 1; }
           [[ "$INTEGRITY" =~ ^sha512-[A-Za-z0-9+/]{86}==$ ]] || { echo "invalid integrity: $INTEGRITY"; exit 1; }
-          [[ "$DIST_TAG" =~ ^[a-z][a-z0-9-]*$ ]] || { echo "invalid dist-tag: $DIST_TAG"; exit 1; }
+          [[ -z "$DIST_TAG" || ( "$DIST_TAG" =~ ^[a-z][a-z-]*$ && "$DIST_TAG" != x ) ]] || { echo "invalid dist-tag: $DIST_TAG"; exit 1; }
           npm_version="$(npm --version)"
           printf '11.5.1\n%s\n' "$npm_version" | sort -V -C || { echo "npm $npm_version is older than 11.5.1"; exit 1; }
           echo "node $(node --version), npm $npm_version"
@@ -79,4 +79,4 @@ jobs:
           echo "TARBALL=${tarballs[0]}" >>"$GITHUB_ENV"
       - name: Publish through npm trusted publishing
         if: ${{ !inputs.dry_run }}
-        run: npm publish "$TARBALL" --provenance --access public --ignore-scripts --tag "$DIST_TAG" --registry https://registry.npmjs.org/
+        run: npm publish "$TARBALL" --provenance --access public --ignore-scripts ${DIST_TAG:+--tag "$DIST_TAG"} --registry https://registry.npmjs.org/
