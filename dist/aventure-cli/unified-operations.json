@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-14T15:01:41.253Z",
-  "totalOperations": 146,
+  "generatedAt": "2026-10-14T19:48:32.619Z",
+  "totalOperations": 133,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -45,26 +45,6 @@
       "destructive": false
     },
     {
-      "operationId": "authorizeOperations",
-      "method": "POST",
-      "path": "/v1/auth/me/permissions",
-      "resource": "auth",
-      "intent": "write",
-      "cliCommand": "auth me permissions authorize",
-      "cliPath": [
-        "auth",
-        "me",
-        "permissions",
-        "authorize"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "AuthOperationFilterSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/auth/operation-filter",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
       "operationId": "getAuthProviderCatalog",
       "method": "GET",
       "path": "/v1/auth/providers",
@@ -81,25 +61,6 @@
       "bodySchemaImport": null,
       "auth": "none",
       "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "updateAdditionalUsage",
-      "method": "PATCH",
-      "path": "/v1/billing/additional-usage",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing additional-usage update",
-      "cliPath": [
-        "billing",
-        "additional-usage",
-        "update"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BillingAdditionalUsageMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/billing/additional-usage-mutation",
-      "auth": "bearer",
-      "scope": "write",
       "destructive": false
     },
     {
@@ -122,44 +83,6 @@
       "destructive": false
     },
     {
-      "operationId": "createBillingCheckoutSession",
-      "method": "POST",
-      "path": "/v1/billing/checkout-sessions",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing checkout-sessions create",
-      "cliPath": [
-        "billing",
-        "checkout-sessions",
-        "create"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BillingCheckoutMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/billing/checkout-mutation",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
-      "operationId": "createBillingCreditPurchase",
-      "method": "POST",
-      "path": "/v1/billing/credit-purchases",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing credit-purchases create",
-      "cliPath": [
-        "billing",
-        "credit-purchases",
-        "create"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BillingCreditPurchaseMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/billing/credit-purchase-mutation",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
       "operationId": "getBillingCreditPurchase",
       "method": "GET",
       "path": "/v1/billing/credit-purchases/{purchaseId}",
@@ -176,44 +99,6 @@
       "bodySchemaImport": null,
       "auth": "bearer",
       "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "createBillingPlanChangePreview",
-      "method": "POST",
-      "path": "/v1/billing/plan-change-previews",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing plan-change-previews create",
-      "cliPath": [
-        "billing",
-        "plan-change-previews",
-        "create"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BillingPlanChangeMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/billing/plan-change-mutation",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
-      "operationId": "createBillingPlanChange",
-      "method": "POST",
-      "path": "/v1/billing/plan-changes",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing plan-changes create",
-      "cliPath": [
-        "billing",
-        "plan-changes",
-        "create"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BillingPlanChangeMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/billing/plan-change-mutation",
-      "auth": "bearer",
-      "scope": "write",
       "destructive": false
     },
     {
@@ -236,25 +121,6 @@
       "destructive": false
     },
     {
-      "operationId": "createBillingPortalSession",
-      "method": "POST",
-      "path": "/v1/billing/portal-sessions",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing portal-sessions create",
-      "cliPath": [
-        "billing",
-        "portal-sessions",
-        "create"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BillingPortalMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/billing/portal-mutation",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
       "operationId": "getBillingSubscription",
       "method": "GET",
       "path": "/v1/billing/subscription",
@@ -271,25 +137,6 @@
       "bodySchemaImport": null,
       "auth": "bearer",
       "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "updateBillingSubscription",
-      "method": "PATCH",
-      "path": "/v1/billing/subscription",
-      "resource": "billing",
-      "intent": "write",
-      "cliCommand": "billing subscription update",
-      "cliPath": [
-        "billing",
-        "subscription",
-        "update"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "BillingSubscriptionMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/billing/subscription-mutation",
-      "auth": "bearer",
-      "scope": "write",
       "destructive": false
     },
     {
@@ -337,17 +184,17 @@
       "method": "POST",
       "path": "/v1/enrichments",
       "resource": "enrichments",
-      "intent": "write",
+      "intent": "job",
       "cliCommand": "enrichments enrich",
       "cliPath": [
         "enrichments",
         "enrich"
       ],
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_job",
       "bodySchemaName": "EnrichmentBatchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/enrichment/batch",
       "auth": "bearer",
-      "scope": "write",
+      "scope": "read",
       "destructive": false
     },
     {
@@ -621,18 +468,18 @@
       "method": "POST",
       "path": "/v1/entities/{entityId}/enrichments",
       "resource": "entities",
-      "intent": "write",
+      "intent": "job",
       "cliCommand": "entities enrichments enrich",
       "cliPath": [
         "entities",
         "enrichments",
         "enrich"
       ],
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_job",
       "bodySchemaName": "EnrichmentPromptSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/enrichment/prompt",
       "auth": "bearer",
-      "scope": "write",
+      "scope": "read",
       "destructive": false
     },
     {
@@ -1588,17 +1435,17 @@
       "method": "POST",
       "path": "/v1/lookup-jobs",
       "resource": "lookup-jobs",
-      "intent": "write",
+      "intent": "job",
       "cliCommand": "lookup-jobs create",
       "cliPath": [
         "lookup-jobs",
         "create"
       ],
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_job",
       "bodySchemaName": "LookupJobMutationSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/lookup/job-mutation",
       "auth": "bearer",
-      "scope": "write",
+      "scope": "read",
       "destructive": false
     },
     {
@@ -1633,7 +1480,7 @@
       "bodySchemaName": "LookupJobMutationSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/lookup/job-mutation",
       "auth": "bearer",
-      "scope": "write",
+      "scope": "read",
       "destructive": false
     },
     {
@@ -1728,25 +1575,6 @@
       "destructive": false
     },
     {
-      "operationId": "createNewsFeedback",
-      "method": "POST",
-      "path": "/v1/news/feedback",
-      "resource": "news",
-      "intent": "write",
-      "cliCommand": "news feedback create",
-      "cliPath": [
-        "news",
-        "feedback",
-        "create"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsFeedbackSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/feedback",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
       "operationId": "lookupNews",
       "method": "GET",
       "path": "/v1/news/lookup",
@@ -1765,25 +1593,6 @@
       "destructive": false
     },
     {
-      "operationId": "unsubscribeNewsSubscription",
-      "method": "DELETE",
-      "path": "/v1/news/subscriptions",
-      "resource": "news",
-      "intent": "delete",
-      "cliCommand": "news subscriptions unsubscribe",
-      "cliPath": [
-        "news",
-        "subscriptions",
-        "unsubscribe"
-      ],
-      "mcpTool": "aventure_delete",
-      "bodySchemaName": "NewsSubscriptionKeySchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/subscription-key",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": true
-    },
-    {
       "operationId": "listNewsSubscriptions",
       "method": "GET",
       "path": "/v1/news/subscriptions",
@@ -1800,45 +1609,6 @@
       "bodySchemaImport": null,
       "auth": "bearer",
       "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "subscribeNewsSubscription",
-      "method": "PUT",
-      "path": "/v1/news/subscriptions",
-      "resource": "news",
-      "intent": "write",
-      "cliCommand": "news subscriptions subscribe",
-      "cliPath": [
-        "news",
-        "subscriptions",
-        "subscribe"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "NewsSubscriptionSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/news/subscription",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
-      "operationId": "sendNewsSubscriptionTestEvent",
-      "method": "POST",
-      "path": "/v1/news/subscriptions/{subscriptionId}/test-events",
-      "resource": "news",
-      "intent": "write",
-      "cliCommand": "news subscriptions test-events send",
-      "cliPath": [
-        "news",
-        "subscriptions",
-        "test-events",
-        "send"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "write",
       "destructive": false
     },
     {
@@ -2016,18 +1786,18 @@
       "method": "POST",
       "path": "/v1/people/{personId}/enrichments",
       "resource": "people",
-      "intent": "write",
+      "intent": "job",
       "cliCommand": "people enrichments enrich",
       "cliPath": [
         "people",
         "enrichments",
         "enrich"
       ],
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_job",
       "bodySchemaName": "EnrichmentPromptSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/enrichment/prompt",
       "auth": "bearer",
-      "scope": "write",
+      "scope": "read",
       "destructive": false
     },
     {
@@ -2432,17 +2202,17 @@
       "method": "POST",
       "path": "/v1/research-runs",
       "resource": "research-runs",
-      "intent": "write",
+      "intent": "job",
       "cliCommand": "research-runs create",
       "cliPath": [
         "research-runs",
         "create"
       ],
-      "mcpTool": "aventure_write",
+      "mcpTool": "aventure_job",
       "bodySchemaName": "HarnessRunCreateSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/harness/run-create",
       "auth": "bearer",
-      "scope": "write",
+      "scope": "read",
       "destructive": false
     },
     {
@@ -2613,25 +2383,6 @@
       "destructive": false
     },
     {
-      "operationId": "createSharedSearch",
-      "method": "POST",
-      "path": "/v1/search/shared",
-      "resource": "search",
-      "intent": "write",
-      "cliCommand": "search shared create",
-      "cliPath": [
-        "search",
-        "shared",
-        "create"
-      ],
-      "mcpTool": "aventure_write",
-      "bodySchemaName": "SharedSearchMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/shared/search-mutation",
-      "auth": "bearer",
-      "scope": "write",
-      "destructive": false
-    },
-    {
       "operationId": "getSharedSearch",
       "method": "GET",
       "path": "/v1/search/shared/{id}",
@@ -2740,7 +2491,7 @@
       "bodySchemaName": "SearchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/search/search",
       "auth": "bearer",
-      "scope": "write",
+      "scope": "read",
       "destructive": false
     },
     {
