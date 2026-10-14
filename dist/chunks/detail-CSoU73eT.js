@@ -1,1 +1,0 @@
-import{t as e}from"./detail-MEh1aLs6.js";export{e as EntityDetailSchema};

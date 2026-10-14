@@ -1,0 +1,1 @@
+import{t as e}from"./detail-DIjiKrvq.js";export{e as EntityDetailSchema};

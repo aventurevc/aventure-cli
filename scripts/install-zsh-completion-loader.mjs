@@ -282,7 +282,7 @@ export function main(args = process.argv.slice(2), env = process.env, platformNa
   );
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+if (import.meta.main) {
   try {
     main();
   } catch (error) {
