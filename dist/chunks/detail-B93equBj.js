@@ -1,0 +1,1 @@
+import{t as e}from"./detail-DDrpot7C.js";export{e as EntityDetailSchema};

@@ -1,1 +1,0 @@
-import{t as e}from"./detail-BOnmc0l_.js";export{e as EntityDetailSchema};
