@@ -3,7 +3,7 @@ aventure lookup-from-file · Identify a Company, Product, Service, or Person by 
 aventure lookup-mentions · Identify Every Company and Person a Page or Screenshot Names · -
 aventure metrics · Get Platform Totals for Companies, Funding, and People · -
 aventure search · Search Companies, People, and News Together · --query
-aventure status · Get System Uptime · -
+aventure status · Get System Status · -
 aventure enrichments enrich · Enrich Many Companies and People · -
 aventure entities get · Get One Company, Product, or Service by ID · --entity-id
 aventure entities list · List Companies, Products, and Services · -
@@ -121,6 +121,7 @@ aventure people unique-ids get · Get One Person Identifier · --person-id --uni
 aventure people unique-ids list · List a Person's Identifiers · --person-id
 aventure people urls get · Get One Person URL · --person-id --url-id
 aventure people urls list · List Person URLs · --person-id
+aventure research-runs presets list · List Research Presets · -
 aventure search natural entities · Find Companies, Startups, and Investors in Natural Language · --query
 aventure search natural people · Find People With Natural Language · --query
 aventure search shared create · Share a Search Answer · -

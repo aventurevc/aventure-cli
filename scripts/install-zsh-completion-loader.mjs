@@ -21,11 +21,6 @@ const CLI_BIN_TARGET = "dist/aventure-cli/index.js";
 const PACKAGE_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PACKAGE_CLI_BIN = join(PACKAGE_ROOT, CLI_BIN_TARGET);
 const PACKAGE_JSON = join(PACKAGE_ROOT, "package.json");
-const GITHUB_PACKAGES_REGISTRY = "https://npm.pkg.github.com/";
-// The private package renamed its command away from `aventure-cli`, and loaders are named
-// after commands, so the old private package's managed loaders would outlive it. Only the private
-// package retires them: the public package never shipped `aventure-cli`.
-const RETIRED_PRIVATE_CLI_BINS = ["aventure-cli"];
 
 /** @param {string | undefined} value */
 function isTruthy(value) {
@@ -50,7 +45,6 @@ function resolveConfigHome(env) {
  * @typedef {{
  *   bin?: Record<string, string>;
  *   aventurePublish?: { variants?: { cli?: { bin?: Record<string, string> } } };
- *   publishConfig?: { registry?: string };
  * }} InstallerPackageJson
  */
 
@@ -65,19 +59,6 @@ function cliBins(packageJson) {
   return Object.entries(cliBinMap).flatMap(([bin, target]) =>
     target === CLI_BIN_TARGET ? [bin] : [],
   );
-}
-
-/**
- * Retired bins this package no longer ships. A working tree has no publishConfig and builds the
- * private package.
- *
- * @param {InstallerPackageJson} packageJson
- * @param {readonly string[]} bins
- */
-function retiredBins(packageJson, bins) {
-  const registry = packageJson.publishConfig?.registry ?? GITHUB_PACKAGES_REGISTRY;
-  if (registry !== GITHUB_PACKAGES_REGISTRY) return [];
-  return RETIRED_PRIVATE_CLI_BINS.filter((bin) => !bins.includes(bin));
 }
 
 /** @param {string} value */
@@ -273,7 +254,6 @@ export function main(args = process.argv.slice(2), env = process.env, platformNa
   const packageJson = readPackageJson();
   const bins = cliBins(packageJson);
   if (bins.length === 0) return;
-  const retired = allTargets(retiredBins(packageJson, bins), env);
   if (args.includes("--status")) {
     for (const target of allTargets(bins, env)) {
       const state = !existsSync(target.file)
@@ -286,9 +266,7 @@ export function main(args = process.argv.slice(2), env = process.env, platformNa
     return;
   }
   if (args.includes("--uninstall")) {
-    const removed = [...allTargets(bins, env), ...retired].filter((target) =>
-      removeLoader(target.file),
-    );
+    const removed = allTargets(bins, env).filter((target) => removeLoader(target.file));
     console.log(
       `removed completions: ${[...new Set(removed.map((target) => target.shell))].join(", ") || "none"}`,
     );
@@ -299,7 +277,6 @@ export function main(args = process.argv.slice(2), env = process.env, platformNa
     writeLoader(target.file, target.contents);
     shells.add(target.shell);
   }
-  for (const target of retired) removeLoader(target.file);
   console.log(
     `installed completions: ${[...shells].join(", ")} - remove with: ${bins[0]} completion uninstall`,
   );
