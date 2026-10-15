@@ -26,6 +26,7 @@ Prohibited:
 1. The §1 exact lookup already returns names, description, headquarters, founding year, logo, links, rounds, people, news, and research (`aventure` §0); from a bare id, read `aventure entities get --entity-id "<id>"` (`getEntity`).
 2. For a section the detail omits or truncates, issue its reads together (`aventure` §0): `entities fundraise-rounds list --entity-id "<id>"` (`listEntityFundraiseRounds`) for rounds; `entities people list --entity-id "<id>" --is-current true` (`listEntityPersonAssociations`) for current leaders; `news list --owner-entity-id "<id>" --size 5` (`listNews`) for coverage.
 3. Report each fact with the record and its source URL. Omit a section whose read returned nothing, rather than guessing it.
+4. The rounds section lists the rounds aVenture records, not every round the company raised, so title it with the latest recorded round's date. When the record's news or research, or any other source in the answer, names a round missing from that list, add the round as a row marked as not in aVenture with its source URL, and offer `aventure` §4.2 research for it.
 
 ## §3 Who Invested in a Round
 

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-15T00:30:56.296Z",
-  "totalOperations": 133,
+  "generatedAt": "2026-10-15T09:24:45.440Z",
+  "totalOperations": 135,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -176,6 +176,45 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listSharedDirectory",
+      "method": "GET",
+      "path": "/v1/directory/shared",
+      "resource": "directory",
+      "intent": "read",
+      "cliCommand": "directory shared list",
+      "cliPath": [
+        "directory",
+        "shared",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getSharedDirectoryBySlug",
+      "method": "GET",
+      "path": "/v1/directory/shared/slug/{slug}",
+      "resource": "directory",
+      "intent": "read",
+      "cliCommand": "directory shared slug get",
+      "cliPath": [
+        "directory",
+        "shared",
+        "slug",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
       "scope": "read",
       "destructive": false
     },
@@ -1794,8 +1833,8 @@
         "enrich"
       ],
       "mcpTool": "aventure_job",
-      "bodySchemaName": "EnrichmentPromptSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/enrichment/prompt",
+      "bodySchemaName": "PersonEnrichmentPromptSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/person/enrichment-prompt",
       "auth": "bearer",
       "scope": "read",
       "destructive": false

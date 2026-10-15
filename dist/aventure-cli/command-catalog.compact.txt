@@ -44,6 +44,8 @@ aventure billing plans list · List Subscription Tiers and Plans · -
 aventure billing portal-sessions create · Create a Hosted Billing Portal Session · -
 aventure billing subscription get · Read the Current Billing Subscription · -
 aventure billing subscription update · Cancel or Resume the Subscription · -
+aventure directory shared create · Share a Directory View · -
+aventure directory shared list · List Shared Directory Views · -
 aventure entities acquisitions get · Get One Company Acquisition · --entity-id --relationship-id
 aventure entities acquisitions list · List a Company's Acquisitions · --entity-id
 aventure entities addresses get · Get One Company Address · --entity-id --address-join-id
@@ -132,6 +134,7 @@ aventure auth me permissions authorize · Authorize API Operations · -
 aventure auth me permissions get · Current User Permissions · -
 aventure billing subscription next-charge get · Preview the Next Subscription Charge · -
 aventure billing subscription payment-profile get · Read Your Card on File and Introductory Offer · -
+aventure directory shared slug get · Read a Shared Directory View by Slug · --record-slug
 aventure entities classifications catalog get · Get the Company Classification Taxonomy · -
 aventure entities classifications suggestions list · Suggest Classifications for a Company · --entity-id
 aventure entities classifications tags list · List Classification Tags · -
