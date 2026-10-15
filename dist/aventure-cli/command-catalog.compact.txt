@@ -1,4 +1,4 @@
-aventure lookup · Read a Company, Product, Service, or Person Identity Without Enrichment · -
+aventure lookup · Read a Company, Product, Service, or Person Identity · -
 aventure lookup-from-file · Identify a Company, Product, Service, or Person by Name, URL, or ID · -
 aventure lookup-mentions · Identify Every Company and Person a Page or Screenshot Names · -
 aventure metrics · Get Platform Totals for Companies, Funding, and People · -
@@ -29,6 +29,7 @@ aventure search link · Search From a Page URL · --url
 aventure unique-ids lookup · Look Up an Identifier Owner · --id-type --identifier
 aventure url-types list · List URL Types · -
 aventure web search · Search the Live Web · --search
+aventure addresses links list · List Address Links · --address-id
 aventure agents help answer · Deprecated: Answer a Natural-Language Platform Help Question · --question
 aventure auth api-key get · Get Current API Key · -
 aventure auth api-key revoke · Revoke Current API Key · -

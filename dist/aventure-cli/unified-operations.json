@@ -1,10 +1,29 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-15T09:24:45.440Z",
-  "totalOperations": 135,
+  "generatedAt": "2026-10-15T16:48:35.678Z",
+  "totalOperations": 136,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
+    {
+      "operationId": "listAddressLinks",
+      "method": "GET",
+      "path": "/v1/addresses/{addressId}/links",
+      "resource": "addresses",
+      "intent": "read",
+      "cliCommand": "addresses links list",
+      "cliPath": [
+        "addresses",
+        "links",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
     {
       "operationId": "answerAgentHelpQuestion",
       "method": "POST",
