@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-15T19:21:31.345Z",
-  "totalOperations": 136,
+  "generatedAt": "2026-10-15T21:43:37.317Z",
+  "totalOperations": 137,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -1375,6 +1375,26 @@
       "bodySchemaName": "EntityListFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/list-filter",
       "auth": "read",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getEntitySemanticSearchJob",
+      "method": "GET",
+      "path": "/v1/entities/search/jobs/{jobId}",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities search jobs get",
+      "cliPath": [
+        "entities",
+        "search",
+        "jobs",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },

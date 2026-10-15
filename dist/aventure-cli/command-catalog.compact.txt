@@ -143,6 +143,7 @@ aventure entities content facets list · Count a Company's Publications · --ent
 aventure entities relationships types list · List Entity Relationship Types · -
 aventure entities research-details types list · List the Accepted Research Detail Types · -
 aventure entities research-snippets types list · List the Accepted Research Snippet Types · -
+aventure entities search jobs get · Get an Async Semantic Entity Search · --job-id
 aventure entities similar summary list · Get Similar Company Summaries by ID · --entity-id
 aventure entities texts types list · List the Accepted Company Text Types · -
 aventure news subscriptions test-events send · Send a Test News Event · --subscription-id
