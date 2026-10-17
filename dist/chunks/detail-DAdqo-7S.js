@@ -1,0 +1,1 @@
+import{t as e}from"./detail-BSc8LbOr.js";export{e as EntityDetailSchema};

@@ -134,6 +134,6 @@ Prohibited:
 
 ## §7 Usage Limits and Changes
 
-1. Name lookups and description search need a paid plan; the free plan answers `402` with code `subscription_required`. Free-plan users find a company with `entities lookup-exact get --url <website>` or `entities search --text-search <keyword>`.
+1. A free account gets a daily allowance of name lookups, then `402` with code `subscription_required`; description search needs a paid plan. Free-plan users find a company with `entities lookup-exact get --url <website>` or `entities search --text-search <keyword>`.
 2. A `429` with code `billing_allowance_exhausted` means the plan's monthly metered-read allowance is spent: do not retry. Tell the user which limit they reached and offer an upgrade: `aventure billing plans list` shows prices; a paid plan changes with `billing plan-changes create --plan <plan>`; a free plan gets a checkout link from `billing checkout-sessions create --plan <plan>`; or the user visits https://aventure.vc/settings/subscription. Change a plan only after the user confirms plan and price.
 3. Commands and MCP tools that change data appear only for allowed credentials and take effect immediately; run one only when the user asked for that change.

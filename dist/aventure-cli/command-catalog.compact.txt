@@ -61,7 +61,7 @@ aventure entities employee-counts list · List a Company's Headcount Over Time �
 aventure entities enrichments enrich · Enrich One Company, Product, or Service · --entity-id
 aventure entities filters list · List the Company Filter Options · -
 aventure entities filters refine · Refine the Company Filter Options · -
-aventure entities filters search · Look Up Filter Values Inside the Current Search · --filter-key --limit --query
+aventure entities filters search · Look Up Filter Values Inside the Current Search · --filter-key --query
 aventure entities fundraise-investor-joins get · Get One Investor on a Funding Round · --entity-id --fundraise-investor-join-id
 aventure entities fundraise-investor-joins list · List the Investors in a Funding Round · --entity-id
 aventure entities fundraise-rounds get · Get One Funding Round · --entity-id --fundraise-round-id
