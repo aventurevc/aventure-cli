@@ -50,9 +50,10 @@ Prohibited:
 
 ## §6 Competitors and Peers
 
-1. `aventure entities similar list --entity-id "<id>" --relationship-type competitor`: stored competitors. Without the flag, the list ranks every similar company.
-2. `aventure entities relationships list --entity-id "<id>"`: parents, subsidiaries, products, and other stored links.
-3. To find companies that match a description rather than a known company, run `aventure search natural entities --query "<description>"` and read `interpretation` before trusting the scope.
+1. Resolve the company (§1), then call `aventure entities similar list --entity-id "<id>"` (`listEntitySimilarEntities` via `aventure_read`, `pathParams.entityId` = the resolved id). For “fintech startups similar to Brex”, resolve Brex and read its ranked peers; keep only those whose returned fields support the requested scope. Add `--relationship-type competitor` only for stored competitors, not general similarity.
+2. Cite each returned record and distinguish ranked similarity from a stored competitor relationship; never substitute competitors from memory. Never claim similarity retrieval failed without making that call; report an actual error or empty result as such.
+3. `aventure entities relationships list --entity-id "<id>"`: parents, subsidiaries, products, and other stored links.
+4. To find companies that match a description rather than a known company, run `aventure search natural entities --query "<description>"` and read `interpretation` before trusting the scope.
 
 ## §7 News Monitoring
 
