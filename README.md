@@ -52,7 +52,7 @@ Docs: https://docs.aventure.vc/cli
 
 - Free account: 25 company and 25 person profile reads a month and 20 name
   lookups a day. [Create an account](https://aventure.vc/sign-up).
-- Plus, $49/mo: plain-English questions, competitor and investor-activity
+- AI Plus, $49/mo: plain-English questions, competitor and investor-activity
   questions, 500 company and 500 person profile reads, and 30 company and 30
   person research requests a month.
 
@@ -60,7 +60,7 @@ Docs: https://docs.aventure.vc/cli
 
 ## Find a Company
 
-Find a company by name, website, or description (description search needs Plus or Pro):
+Find a company by name, website, or description (description search needs AI Plus or AI Pro):
 
 ```sh
 aventure lookup --name Stripe                            # by name
