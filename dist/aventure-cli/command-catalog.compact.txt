@@ -67,7 +67,7 @@ aventure entities fundraise-investor-joins list · List the Investors in a Fundi
 aventure entities fundraise-rounds get · Get One Funding Round · --entity-id --fundraise-round-id
 aventure entities fundraise-rounds list · List a Company's Funding Rounds · --entity-id
 aventure entities investments list · List the Investments a Company Made · --entity-id
-aventure entities investor-activity get · Get Investor Activity · --entity-id
+aventure entities investor-activity get · Get Investor Portfolio Counts and Stage Mix · --entity-id
 aventure entities investors list · List a Company's Investors · --entity-id
 aventure entities logo get · Get a Company Logo · --entity-id
 aventure entities lookup-exact get · Read Full Entity Detail by aVenture Profile URL, Slug, Website, or Domain · -
