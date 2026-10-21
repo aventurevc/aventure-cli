@@ -1,0 +1,1 @@
+import{t as e}from"./detail-BsTee2g2.js";export{e as EntityDetailSchema};
