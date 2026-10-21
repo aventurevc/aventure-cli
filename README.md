@@ -2,7 +2,7 @@
 
 Read aVenture research data on private companies, founders, investors, funding
 rounds, and news in your terminal or a shell script. The package installs one
-command, `aventure`.
+command, `aventure`. It works on a free account: [sign up](https://aventure.vc/sign-up).
 
 ## Install and Sign In
 
@@ -50,11 +50,15 @@ Docs: https://docs.aventure.vc/cli
 
 ## Free vs. Paid
 
-- Free account: 25 company and 25 person profile reads a month and 20 name
-  lookups a day. [Create an account](https://aventure.vc/sign-up).
-- AI Plus, $49/mo: plain-English questions, competitor and investor-activity
-  questions, 500 company and 500 person profile reads, and 30 company and 30
-  person research requests a month.
+- Essential (free): 25 company and 25 person profile views, 25 web searches,
+  and 250 brand lookups a month; 20 name lookups a day.
+- AI Plus ($49/mo or $490/yr): plain-English questions; competitor, provider,
+  and investor-activity questions; 30 company and 30 person research requests,
+  500 company and 500 person profile views, 200 web searches, and 5,000 brand
+  lookups a month; saved lists; unlimited search results; industry briefs.
+- AI Pro ($199/mo or $1,999/yr): 270 company and 270 person research requests,
+  5,000 company and 5,000 person profile views, 1,000 web searches, and 50,000
+  brand lookups a month.
 
 [See plans and pricing](https://aventure.vc/pricing)
 
@@ -81,7 +85,7 @@ website with
 
 ## Find a Person
 
-Find a person by name or description:
+Find a person by name or description (description search needs AI Plus or AI Pro):
 
 ```sh
 aventure lookup --kind PERSON --name "Patrick Collison" --context "Stripe co-founder"
