@@ -1,12 +1,40 @@
 # aVenture CLI
 
-Research private companies, founders, investors, funding rounds, and news from your
-terminal. The package installs one command, `aventure`.
+Read aVenture research data on private companies, founders, investors, funding
+rounds, and news in your terminal or a shell script. The package installs one
+command, `aventure`.
 
-You need an aVenture account; free and paid plans both work.
-[Create an account](https://aventure.vc/sign-up).
+## Install and Sign In
 
-## Get Started in One Step
+Requires Node.js 24.18.0 or later.
+
+1. Install the package:
+
+   ```sh
+   npm install --global @aventurevc/aventure-cli
+   ```
+
+2. Sign in with your aVenture account:
+
+   ```sh
+   aventure auth login
+   ```
+
+   `aventure auth login` opens your browser to sign in and waits while you
+   approve. Over SSH or in a container, it prints a sign-in URL and a one-time
+   code to approve on any device; `--no-browser` forces that mode.
+
+3. Confirm it works:
+
+   ```sh
+   aventure entities lookup-exact get --url https://stripe.com
+   ```
+
+For CI and other non-interactive environments, create a key in
+[API key settings](https://aventure.vc/settings/api-keys) and provide it in the
+`AUTH_TOKEN` environment variable from your secret manager.
+
+### Set Up with an Agent
 
 Paste this into Claude Code, Codex, ChatGPT, or any assistant that can run
 terminal commands:
@@ -20,37 +48,19 @@ works. Use `aventure --help` to find other commands.
 Docs: https://docs.aventure.vc/cli
 ```
 
-## CLI, MCP, or Researchly?
+## Free vs. Paid
 
-| Where you work | Use |
-| --- | --- |
-| A terminal, shell scripts, or a coding agent with a shell | This CLI |
-| Claude, ChatGPT, or another desktop, web, or cloud AI app | The [aVenture MCP server](https://docs.aventure.vc/mcp) |
-| [Researchly](https://researchly.chat) | Nothing to install: open [Profile, then MCP servers](https://researchly.chat/profile/mcp-servers) and choose **Connect aVenture** |
+- Free account: 25 company and 25 person profile reads a month and 20 name
+  lookups a day. [Create an account](https://aventure.vc/sign-up).
+- Plus, $49/mo: plain-English questions, competitor and investor-activity
+  questions, 500 company and 500 person profile reads, and 30 company and 30
+  person research requests a month.
 
-## Set Up by Hand
-
-Requires Node.js 24.18.0 or later.
-
-```sh
-npm install --global @aventurevc/aventure-cli
-aventure auth login
-```
-
-`aventure auth login` opens your browser to sign in and waits while you approve.
-Without a browser, such as over SSH or in a container, it prints a sign-in URL and
-a one-time code to approve on any device; `--no-browser` forces that mode.
-
-For CI and other non-interactive environments, create a key in
-[API key settings](https://aventure.vc/settings/api-keys) and provide it in the
-`AUTH_TOKEN` environment variable from your secret manager.
+[See plans and pricing](https://aventure.vc/pricing)
 
 ## Find a Company
 
-Finding a company or person by name (`lookup`) or by description (`search`) needs a
-paid plan (AI Plus or AI Pro). On the free plan, find a company by its website with
-`aventure entities lookup-exact get --url https://stripe.com` or by keyword with
-`aventure entities search --text-search Stripe`.
+Find a company by name, website, or description (description search needs Plus or Pro):
 
 ```sh
 aventure lookup --name Stripe                            # by name
@@ -64,7 +74,14 @@ Add `--location` or `--context` to tell companies with the same name apart:
 aventure lookup --name Mercury --context "banking for startups" --location "San Francisco"
 ```
 
+After the 20 free lookups a day, the free plan still finds a company by its
+website with
+`aventure entities lookup-exact get --url https://stripe.com` or by keyword with
+`aventure entities search --text-search Stripe`.
+
 ## Find a Person
+
+Find a person by name or description:
 
 ```sh
 aventure lookup --kind PERSON --name "Patrick Collison" --context "Stripe co-founder"
@@ -98,6 +115,14 @@ aventure billing checkout-sessions create --plan <plan>  # subscribe from the fr
 
 You can also manage your plan in
 [subscription settings](https://aventure.vc/settings/subscription).
+
+## CLI, MCP, or Researchly?
+
+| Where you work | Use |
+| --- | --- |
+| A terminal, shell scripts, or a coding agent with a shell | This CLI |
+| Claude, ChatGPT, or another desktop, web, or cloud AI app | The [aVenture MCP server](https://docs.aventure.vc/mcp) |
+| [Researchly](https://researchly.chat) | Nothing to install: open [Profile, then MCP servers](https://researchly.chat/profile/mcp-servers) and choose **Connect aVenture** |
 
 ## More
 
