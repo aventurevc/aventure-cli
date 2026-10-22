@@ -4,7 +4,7 @@ aventure lookup-mentions · Identify Every Company and Person a Page or Screensh
 aventure metrics · Get Platform Totals for Companies, Funding, and People · -
 aventure search · Search Companies, People, and News Together · --query
 aventure status · Get System Status · -
-aventure enrichments enrich · Enrich Many Companies and People · -
+aventure enrichments enrich · Enrich Companies, People, or a News Article's Mentions · -
 aventure entities get · Get One Company, Product, or Service by ID · --entity-id
 aventure entities list · List Companies, Products, and Services · -
 aventure entities lookup · Deprecated: Identify a Company, Product, or Service by Name and Scope · -
