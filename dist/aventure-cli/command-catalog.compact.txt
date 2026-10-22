@@ -30,7 +30,7 @@ aventure unique-ids lookup · Look Up an Identifier Owner · --id-type --identif
 aventure url-types list · List URL Types · -
 aventure web search · Search the Live Web · --search
 aventure addresses links list · List Address Links · --address-id
-aventure agents help answer · Deprecated: Answer a Natural-Language Platform Help Question · --question
+aventure agents help answer · Deprecated: Use Help Ask to Answer a Platform Help Question · --question
 aventure auth api-key get · Get Current API Key · -
 aventure auth api-key revoke · Revoke Current API Key · -
 aventure auth providers get · Get the Sign-In Options · -
@@ -72,7 +72,7 @@ aventure entities investors list · List a Company's Investors · --entity-id
 aventure entities logo get · Get a Company Logo · --entity-id
 aventure entities lookup-exact get · Read Full Entity Detail by aVenture Profile URL, Slug, Website, or Domain · -
 aventure entities people get · Get One Person's Role at a Company · --entity-id --association-id
-aventure entities people list · List the People at a Company · --entity-id
+aventure entities people list · List the People at a Company: Its Team, Founders, and Key People · --entity-id
 aventure entities person-investors list · List Person Investors · --entity-id
 aventure entities relationships get · Get One Relationship by ID · --relationship-id
 aventure entities relationships list · List a Company's Relationships · --entity-id
