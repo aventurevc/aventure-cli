@@ -1,1 +1,0 @@
-import{n as e}from"./mcp-generation-contract-CYESV2sL.js";export{e as MCP_GENERATION_CONTRACT};
