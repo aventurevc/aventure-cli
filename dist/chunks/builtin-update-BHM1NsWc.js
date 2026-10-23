@@ -1,1 +1,0 @@
-export{t as registerBuiltinUpdateCommand}from"./builtin-update-ByBZxQIt.js";
