@@ -1,0 +1,1 @@
+import"./package-CZBWjlYb.js";import{c as e,r as t}from"./result-envelope-DXFbrrkt.js";import"./operations-metadata-CsR2YIYJ.js";import"node:fs";import"node:crypto";function n(n,r,i,a){let o=Number(r);return!Number.isInteger(o)||o<i||o>a?t(`${n} must be an integer between ${i} and ${a}, got "${r}"`):e(`${n} parsed`,o)}export{n as parseBoundedInt};

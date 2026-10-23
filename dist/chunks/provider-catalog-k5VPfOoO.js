@@ -1,0 +1,1 @@
+import{S as e,_ as t}from"./iso-l1vOidnb.js";import{t as n}from"./client-BwCSrdti.js";var r=t({clerkPublishableKey:e().nullish(),oauthClient:n.nullish()});export{r as t};

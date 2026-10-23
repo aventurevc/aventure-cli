@@ -1,0 +1,1 @@
+import{S as e,_ as t,n}from"./iso-l1vOidnb.js";var r=t({artifact:e().nullish(),group:e().nullish(),name:e().nullish(),revision:e().nullish(),time:n({offset:!0}).nullish(),version:e().nullish()}),i=t({build:r});export{i as SystemBuildSchema};

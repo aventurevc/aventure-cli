@@ -1,0 +1,1 @@
+import{E as e,_ as t}from"./iso-l1vOidnb.js";var n=t({entityId:e().nullish(),personId:e().nullish()});export{n as t};

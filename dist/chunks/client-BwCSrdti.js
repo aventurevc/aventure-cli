@@ -1,0 +1,1 @@
+import{S as e,_ as t,s as n}from"./iso-l1vOidnb.js";var r=t({authorizationServer:e(),clientId:e(),mcpResource:e().nullish(),redirectUri:e(),resource:e(),scope:n(e())});export{r as t};

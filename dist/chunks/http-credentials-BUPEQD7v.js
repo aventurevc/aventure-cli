@@ -1,0 +1,1 @@
+function e(e){if(e===void 0||e.length>4096||e.slice(0,7).toLowerCase()!==`bearer `)return;let t=e.slice(7).trim();return t.length>0?t:void 0}var t=9e5;export{e as n,t};
