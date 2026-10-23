@@ -1,0 +1,1 @@
+export{a as readRuntimePackage}from"./package-CZBWjlYb.js";

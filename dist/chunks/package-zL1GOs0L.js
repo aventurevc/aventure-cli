@@ -1,1 +1,0 @@
-export{a as readRuntimePackage}from"./package-DPDX5zmx.js";
