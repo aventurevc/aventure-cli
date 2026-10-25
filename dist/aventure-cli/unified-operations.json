@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-25T18:07:48.014Z",
-  "totalOperations": 137,
+  "generatedAt": "2026-10-25T18:57:11.616Z",
+  "totalOperations": 138,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -364,6 +364,25 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getEntityAnalysisReplay",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/analysis-replay",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities analysis-replay get",
+      "cliPath": [
+        "entities",
+        "analysis-replay",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
       "scope": "read",
       "destructive": false
     },
