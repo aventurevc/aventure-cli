@@ -1,1 +1,0 @@
-export{t as GENERATED_OPENAPI_COMMAND_SPECS}from"./openapi-commands-Dp1ELyee.js";
