@@ -53,8 +53,8 @@ Docs: https://docs.aventure.vc/cli
 - Essential (free): 25 company and 25 person profile views, 25 web searches,
   and 250 brand lookups a month; 5 plain-English searches and 20 name lookups
   a day.
-- AI Plus ($49/mo or $490/yr): plain-English questions with no daily cap;
-  competitor, provider, and investor-activity questions; 30 company and 30
+- AI Plus ($49/mo or $490/yr): plain-English questions, including competitor,
+  provider, and investor-activity questions, with no daily cap; 30 company and 30
   person research requests, 500 company and 500 person profile views, 200 web
   searches, and 5,000 brand lookups a month; saved lists; unlimited search
   results; industry briefs.
@@ -66,7 +66,7 @@ Docs: https://docs.aventure.vc/cli
 
 ## Find a Company
 
-Find a company by name, website, or description (the free plan includes 5 description searches a day; AI Plus and AI Pro remove the cap):
+Find a company by name, website, or description (daily limits: [Free vs. Paid](#free-vs-paid)):
 
 ```sh
 aventure lookup --name Stripe                            # by name
@@ -80,14 +80,14 @@ Add `--location` or `--context` to tell companies with the same name apart:
 aventure lookup --name Mercury --context "banking for startups" --location "San Francisco"
 ```
 
-After the 5 free searches and 20 free lookups a day, the free plan still finds
+After the free plan's daily searches and lookups run out, it still finds
 a company by its website with
 `aventure entities lookup-exact get --url https://stripe.com` or by keyword with
 `aventure entities search --text-search Stripe`.
 
 ## Find a Person
 
-Find a person by name or description (the free plan includes 5 description searches a day; AI Plus and AI Pro remove the cap):
+Find a person by name or description (daily limits: [Free vs. Paid](#free-vs-paid)):
 
 ```sh
 aventure lookup --kind PERSON --name "Patrick Collison" --context "Stripe co-founder"
