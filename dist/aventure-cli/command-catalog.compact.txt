@@ -24,6 +24,7 @@ aventure people lookup-batch · Look Up People in Bulk by ID or Slug · -
 aventure people search · Search People · -
 aventure research-runs create · Research a Company or Person by URL · --url
 aventure research-runs get · Get One Research Run · --run-id
+aventure research-runs list · List Your Research Runs · -
 aventure resolve get · Deprecated: Resolve an Entity or Person by Identifier Token · --token
 aventure search link · Search From a Page URL · --url
 aventure unique-ids lookup · Look Up an Identifier Owner · --id-type --identifier
@@ -125,7 +126,10 @@ aventure people unique-ids get · Get One Person Identifier · --person-id --uni
 aventure people unique-ids list · List a Person's Identifiers · --person-id
 aventure people urls get · Get One Person URL · --person-id --url-id
 aventure people urls list · List Person URLs · --person-id
+aventure research-runs draft get · Get a Research Run Draft · --run-id
+aventure research-runs events list · Read a Research Run's Events · --run-id
 aventure research-runs presets list · List Research Presets · -
+aventure research-runs turns create · Continue a Research Session · --run-id
 aventure search natural entities · Find Companies, Startups, and Investors in Natural Language · --query
 aventure search natural people · Find People With Natural Language · --query
 aventure search shared create · Share a Search Answer · -
@@ -150,6 +154,8 @@ aventure entities texts types list · List the Accepted Company Text Types · -
 aventure news subscriptions test-events send · Send a Test News Event · --subscription-id
 aventure people content facets list · Count a Person's Publications · --person-id
 aventure people texts types list · List the Accepted Person Text Types · -
+aventure research-runs draft sections put · Edit a Research Draft Section · --run-id --section-key --expected-version --key --origin --title
+aventure research-runs draft sources get · Get a Research Draft's Sources · --run-id
 aventure search link jobs get · Get a Link Search Job · --job-id
 aventure search shared slug get · Read a Shared Search by Slug · --record-slug
 aventure web searches jobs get · Get an Async Web Search Job · --job-id

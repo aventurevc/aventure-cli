@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-25T23:21:52.737Z",
-  "totalOperations": 138,
+  "generatedAt": "2026-10-26T07:17:27.544Z",
+  "totalOperations": 143,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -2295,6 +2295,24 @@
       "destructive": false
     },
     {
+      "operationId": "listResearchRuns",
+      "method": "GET",
+      "path": "/v1/research-runs",
+      "resource": "research-runs",
+      "intent": "read",
+      "cliCommand": "research-runs list",
+      "cliPath": [
+        "research-runs",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
       "operationId": "createResearchRun",
       "method": "POST",
       "path": "/v1/research-runs",
@@ -2326,6 +2344,83 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getResearchRunDraft",
+      "method": "GET",
+      "path": "/v1/research-runs/{runId}/draft",
+      "resource": "research-runs",
+      "intent": "read",
+      "cliCommand": "research-runs draft get",
+      "cliPath": [
+        "research-runs",
+        "draft",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getResearchRunDraftSources",
+      "method": "GET",
+      "path": "/v1/research-runs/{runId}/draft/sources",
+      "resource": "research-runs",
+      "intent": "read",
+      "cliCommand": "research-runs draft sources get",
+      "cliPath": [
+        "research-runs",
+        "draft",
+        "sources",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listResearchRunEvents",
+      "method": "GET",
+      "path": "/v1/research-runs/{runId}/events",
+      "resource": "research-runs",
+      "intent": "read",
+      "cliCommand": "research-runs events list",
+      "cliPath": [
+        "research-runs",
+        "events",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createResearchRunTurn",
+      "method": "POST",
+      "path": "/v1/research-runs/{runId}/turns",
+      "resource": "research-runs",
+      "intent": "job",
+      "cliCommand": "research-runs turns create",
+      "cliPath": [
+        "research-runs",
+        "turns",
+        "create"
+      ],
+      "mcpTool": "aventure_job",
+      "bodySchemaName": "HarnessRunTurnSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/harness/run-turn",
       "auth": "bearer",
       "scope": "read",
       "destructive": false
