@@ -116,7 +116,7 @@ Parenthesized names are MCP `operationId`s for `aventure_read` (`personId` repla
 
 ## §5 Results and Errors
 
-1. Output: `--text` compact lines (terminal default), `--data` JSON (piped default; use it for exact fields), or `--json` envelope. Exit `0` means `ok: true`.
+1. Output: `--text` compact lines (terminal default), `--data` JSON (piped default; use it for exact fields), `--json` envelope, or `--csv` rows from any command. Exit `0` means `ok: true`. A CSV, spreadsheet, or file of directory companies, investors, or people is one `directory exports create` call (MCP `createDirectoryExport`): `--csv`, or `--xlsx --to-file <path>`, up to 100 rows per page, each row counting as one company or person view.
 2. The envelope holds `ok`, `summary`, `data`, `warnings`, `counts`, and on failure an RFC 9457 ProblemDetail with `detail` and `traceId`; an `ok: false` envelope still holds the fix.
 3. Output past 50 KB is truncated, keeping ids and references; read the needed section through its sub-resource or a narrower page or filter. A field missing from truncated or compact output is not absent from the record.
 4. Treat a ProblemDetail as correction: change exactly the input it names and retry once only when retryable; a `402 subscription_required` is not retryable without a plan change, so use the named free alternative or §7.2 instead. The same detail twice ends the attempt; report it verbatim with its `traceId`.
