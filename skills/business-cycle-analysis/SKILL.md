@@ -19,7 +19,7 @@ Apply the designated answer and the context through every step; the defaults bel
 
 ## 1. Pin the Subject
 
-1. Use available aVenture reads first: the subject's record holds its description, funding rounds, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Existing research is a hypothesis to verify and date, not the answer. Without an aVenture tool, fetch the subject's aventure.vc page. When neither yields a matched record, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
+1. Use available aVenture reads first: the subject's record holds its description, funding rounds, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Existing research is a hypothesis to verify and date, not the answer. Without an aVenture tool, follow aventure skill §1 step 2. When no matched record results, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
 2. Name the exact entity and its current products, ownership, and operating geography. A parent's capacity or financing is available to the subject only when evidence establishes access to it.
 3. When two records fit the name, stop and report both candidates with the fact that separates them.
 

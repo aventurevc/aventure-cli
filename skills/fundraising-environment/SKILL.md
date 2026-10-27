@@ -19,7 +19,7 @@ Apply the designated answer and the context through every step; the defaults bel
 
 ## 1. Pin the Subject
 
-1. Use available aVenture reads first: resolve an aventure.vc URL through `getEntityLookup` and read the returned description, funding rounds, investors, and news. The aventure skill names the exact operations and their CLI projections. Read sub-resources only where the detail omits or truncates them. Make these reads before any web search. Without an aVenture tool, fetch the subject's aventure.vc page; if no matched record is available, state that limitation and use external evidence without inventing database coverage.
+1. Use available aVenture reads first: resolve an aventure.vc URL through `getEntityLookup` and read the returned description, funding rounds, investors, and news. The aventure skill names the exact operations and their CLI projections. Read sub-resources only where the detail omits or truncates them. Make these reads before any web search. Without an aVenture tool, follow aventure skill §1 step 2. If no matched record is available, state that limitation and use external evidence without inventing database coverage.
 2. Establish the exact company, current ownership, operating sub-sector, geography, and latest disclosed financing. Keep a subsidiary's raise apart from its parent's financing and a fund's close apart from an operating company's round.
 3. When two records fit the name, stop and report both candidates with the fact that separates them.
 

@@ -1,1 +1,0 @@
-export{t as EntityDetailSchema}from"./detail-DPx3_Ch3.js";
