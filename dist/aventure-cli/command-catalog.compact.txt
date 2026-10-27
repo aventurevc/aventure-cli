@@ -46,6 +46,7 @@ aventure billing plans list · List Subscription Tiers and Plans · -
 aventure billing portal-sessions create · Create a Hosted Billing Portal Session · -
 aventure billing subscription get · Read the Current Billing Subscription · -
 aventure billing subscription update · Cancel or Resume the Subscription · -
+aventure directory exports create · Export Directory Records · --directory --page --size
 aventure directory shared create · Share a Directory View · -
 aventure directory shared list · List Shared Directory Views · -
 aventure entities acquisitions get · Get One Company Acquisition · --entity-id --relationship-id

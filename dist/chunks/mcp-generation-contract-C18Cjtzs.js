@@ -1,0 +1,1 @@
+export{n as MCP_GENERATION_CONTRACT}from"./mcp-generation-contract-B-g0_uP9.js";

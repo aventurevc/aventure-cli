@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-27T06:08:51.475Z",
-  "totalOperations": 143,
+  "generatedAt": "2026-10-27T08:44:26.348Z",
+  "totalOperations": 144,
   "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
   "operations": [
     {
@@ -195,6 +195,25 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createDirectoryExport",
+      "method": "POST",
+      "path": "/v1/directory/exports",
+      "resource": "directory",
+      "intent": "lookup",
+      "cliCommand": "directory exports create",
+      "cliPath": [
+        "directory",
+        "exports",
+        "create"
+      ],
+      "mcpTool": "aventure_lookup",
+      "bodySchemaName": "DirectoryExportMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/directory/export-mutation",
+      "auth": "read",
       "scope": "read",
       "destructive": false
     },
