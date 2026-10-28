@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-27T16:52:04.567Z",
-  "totalOperations": 144,
-  "note": "Projection of MCP_GENERATION_CONTRACT - see mcp/scripts/build-unified-operations.ts header for SSOT rules.",
+  "generatedAt": "2026-10-28T09:12:20.042Z",
+  "totalOperations": 133,
+  "note": "1:1 projection of MCP_GENERATION_CONTRACT written by the CLI build ([MCP1b.1-EXC1]).",
   "operations": [
     {
       "operationId": "listAddressLinks",
@@ -21,25 +21,6 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "answerAgentHelpQuestion",
-      "method": "POST",
-      "path": "/v1/agents/help",
-      "resource": "agents",
-      "intent": "search",
-      "cliCommand": "agents help answer",
-      "cliPath": [
-        "agents",
-        "help",
-        "answer"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "AgentHelpQuestionSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/agent/help-question",
-      "auth": "read",
       "scope": "read",
       "destructive": false
     },
@@ -199,6 +180,61 @@
       "destructive": false
     },
     {
+      "operationId": "listContent",
+      "method": "GET",
+      "path": "/v1/content",
+      "resource": "content",
+      "intent": "read",
+      "cliCommand": "content list",
+      "cliPath": [
+        "content",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "listContentFacets",
+      "method": "GET",
+      "path": "/v1/content/facets",
+      "resource": "content",
+      "intent": "read",
+      "cliCommand": "content facets list",
+      "cliPath": [
+        "content",
+        "facets",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "searchContent",
+      "method": "POST",
+      "path": "/v1/content/search",
+      "resource": "content",
+      "intent": "search",
+      "cliCommand": "content search",
+      "cliPath": [
+        "content",
+        "search"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": "NaturalSearchSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
+      "auth": "read",
+      "scope": "read",
+      "destructive": false
+    },
+    {
       "operationId": "createDirectoryExport",
       "method": "POST",
       "path": "/v1/directory/exports",
@@ -210,7 +246,7 @@
         "exports",
         "create"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "DirectoryExportMutationSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/directory/export-mutation",
       "auth": "read",
@@ -271,24 +307,6 @@
       "bodySchemaName": "EnrichmentBatchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/enrichment/batch",
       "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listEntities",
-      "method": "GET",
-      "path": "/v1/entities",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities list",
-      "cliPath": [
-        "entities",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
       "scope": "read",
       "destructive": false
     },
@@ -483,64 +501,6 @@
       "destructive": false
     },
     {
-      "operationId": "listEntityContent",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/content",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities content list",
-      "cliPath": [
-        "entities",
-        "content",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listEntityContentFacets",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/content/facets",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities content facets list",
-      "cliPath": [
-        "entities",
-        "content",
-        "facets",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "searchEntityContent",
-      "method": "POST",
-      "path": "/v1/entities/{entityId}/content/search",
-      "resource": "entities",
-      "intent": "search",
-      "cliCommand": "entities content search",
-      "cliPath": [
-        "entities",
-        "content",
-        "search"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "NaturalSearchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "listEntityEmployeeCounts",
       "method": "GET",
       "path": "/v1/entities/{entityId}/employee-counts",
@@ -712,6 +672,26 @@
       "destructive": false
     },
     {
+      "operationId": "listEntityPersonInvestors",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/investors/people",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities investors people list",
+      "cliPath": [
+        "entities",
+        "investors",
+        "people",
+        "list"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "none",
+      "scope": "read",
+      "destructive": false
+    },
+    {
       "operationId": "getEntityLogo",
       "method": "GET",
       "path": "/v1/entities/{entityId}/logo",
@@ -760,25 +740,6 @@
         "entities",
         "people",
         "get"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listEntityPersonInvestors",
-      "method": "GET",
-      "path": "/v1/entities/{entityId}/person-investors",
-      "resource": "entities",
-      "intent": "read",
-      "cliCommand": "entities person-investors list",
-      "cliPath": [
-        "entities",
-        "person-investors",
-        "list"
       ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
@@ -1220,7 +1181,7 @@
         "filters",
         "refine"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "EntityFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/filter",
       "auth": "read",
@@ -1239,27 +1200,9 @@
         "filters",
         "search"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "EntityFilterSearchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/filter-search",
-      "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "lookupEntity",
-      "method": "POST",
-      "path": "/v1/entities/lookup",
-      "resource": "entities",
-      "intent": "lookup",
-      "cliCommand": "entities lookup",
-      "cliPath": [
-        "entities",
-        "lookup"
-      ],
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "IdentificationSubjectSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/identification/subject",
       "auth": "read",
       "scope": "read",
       "destructive": false
@@ -1275,7 +1218,7 @@
         "entities",
         "lookup-batch"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "EntityDetailBatchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/detail-batch",
       "auth": "read",
@@ -1312,7 +1255,7 @@
         "entities",
         "lookup-matches"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "EntityDetailBatchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/detail-batch",
       "auth": "read",
@@ -1409,7 +1352,7 @@
         "entities",
         "search"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "EntityListFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/list-filter",
       "auth": "read",
@@ -1448,7 +1391,7 @@
         "sec",
         "lookup"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
@@ -1505,27 +1448,10 @@
         "help",
         "ask"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "AgentHelpQuestionSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/agent/help-question",
       "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getIdentification",
-      "method": "GET",
-      "path": "/v1/lookup",
-      "resource": "lookup",
-      "intent": "read",
-      "cliCommand": "lookup",
-      "cliPath": [
-        "lookup"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1539,7 +1465,7 @@
       "cliPath": [
         "lookup-from-file"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_job",
       "bodySchemaName": "IdentificationSubjectSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/identification/subject",
       "auth": "read",
@@ -1547,32 +1473,15 @@
       "destructive": false
     },
     {
-      "operationId": "createLookupJob",
-      "method": "POST",
-      "path": "/v1/lookup-jobs",
-      "resource": "lookup-jobs",
-      "intent": "job",
-      "cliCommand": "lookup-jobs create",
-      "cliPath": [
-        "lookup-jobs",
-        "create"
-      ],
-      "mcpTool": "aventure_job",
-      "bodySchemaName": "LookupJobMutationSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/lookup/job-mutation",
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
       "operationId": "getLookupJob",
       "method": "GET",
-      "path": "/v1/lookup-jobs/{jobId}",
-      "resource": "lookup-jobs",
+      "path": "/v1/lookup/jobs/{jobId}",
+      "resource": "lookup",
       "intent": "read",
-      "cliCommand": "lookup-jobs get",
+      "cliCommand": "lookup jobs get",
       "cliPath": [
-        "lookup-jobs",
+        "lookup",
+        "jobs",
         "get"
       ],
       "mcpTool": "aventure_read",
@@ -1585,14 +1494,15 @@
     {
       "operationId": "lookupMentions",
       "method": "POST",
-      "path": "/v1/lookup-mentions",
-      "resource": "lookup-mentions",
+      "path": "/v1/lookup/mentions",
+      "resource": "lookup",
       "intent": "lookup",
-      "cliCommand": "lookup-mentions",
+      "cliCommand": "lookup mentions",
       "cliPath": [
-        "lookup-mentions"
+        "lookup",
+        "mentions"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_job",
       "bodySchemaName": "LookupJobMutationSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/lookup/job-mutation",
       "auth": "bearer",
@@ -1701,7 +1611,7 @@
         "news",
         "lookup"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
@@ -1724,24 +1634,6 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPeople",
-      "method": "GET",
-      "path": "/v1/people",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people list",
-      "cliPath": [
-        "people",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "none",
       "scope": "read",
       "destructive": false
     },
@@ -1836,64 +1728,6 @@
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPersonContent",
-      "method": "GET",
-      "path": "/v1/people/{personId}/content",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people content list",
-      "cliPath": [
-        "people",
-        "content",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPersonContentFacets",
-      "method": "GET",
-      "path": "/v1/people/{personId}/content/facets",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people content facets list",
-      "cliPath": [
-        "people",
-        "content",
-        "facets",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "searchPersonContent",
-      "method": "POST",
-      "path": "/v1/people/{personId}/content/search",
-      "resource": "people",
-      "intent": "search",
-      "cliCommand": "people content search",
-      "cliPath": [
-        "people",
-        "content",
-        "search"
-      ],
-      "mcpTool": "aventure_search",
-      "bodySchemaName": "NaturalSearchSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/natural/search",
-      "auth": "read",
       "scope": "read",
       "destructive": false
     },
@@ -2213,28 +2047,10 @@
         "filters",
         "search"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "none",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "lookupPerson",
-      "method": "POST",
-      "path": "/v1/people/lookup",
-      "resource": "people",
-      "intent": "lookup",
-      "cliCommand": "people lookup",
-      "cliPath": [
-        "people",
-        "lookup"
-      ],
-      "mcpTool": "aventure_lookup",
-      "bodySchemaName": "IdentificationSubjectSchema",
-      "bodySchemaImport": "@aventurevc/api-schemas/identification/subject",
-      "auth": "read",
       "scope": "read",
       "destructive": false
     },
@@ -2249,7 +2065,7 @@
         "people",
         "lookup-batch"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "PersonLookupBatchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/lookup-batch",
       "auth": "read",
@@ -2286,7 +2102,7 @@
         "people",
         "search"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "PersonFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/filter",
       "auth": "read",
@@ -2316,12 +2132,13 @@
     {
       "operationId": "listResearchRuns",
       "method": "GET",
-      "path": "/v1/research-runs",
-      "resource": "research-runs",
+      "path": "/v1/research/runs",
+      "resource": "research",
       "intent": "read",
-      "cliCommand": "research-runs list",
+      "cliCommand": "research runs list",
       "cliPath": [
-        "research-runs",
+        "research",
+        "runs",
         "list"
       ],
       "mcpTool": "aventure_read",
@@ -2334,12 +2151,13 @@
     {
       "operationId": "createResearchRun",
       "method": "POST",
-      "path": "/v1/research-runs",
-      "resource": "research-runs",
+      "path": "/v1/research/runs",
+      "resource": "research",
       "intent": "job",
-      "cliCommand": "research-runs create",
+      "cliCommand": "research runs create",
       "cliPath": [
-        "research-runs",
+        "research",
+        "runs",
         "create"
       ],
       "mcpTool": "aventure_job",
@@ -2352,12 +2170,13 @@
     {
       "operationId": "getResearchRun",
       "method": "GET",
-      "path": "/v1/research-runs/{runId}",
-      "resource": "research-runs",
+      "path": "/v1/research/runs/{runId}",
+      "resource": "research",
       "intent": "read",
-      "cliCommand": "research-runs get",
+      "cliCommand": "research runs get",
       "cliPath": [
-        "research-runs",
+        "research",
+        "runs",
         "get"
       ],
       "mcpTool": "aventure_read",
@@ -2370,12 +2189,13 @@
     {
       "operationId": "getResearchRunDraft",
       "method": "GET",
-      "path": "/v1/research-runs/{runId}/draft",
-      "resource": "research-runs",
+      "path": "/v1/research/runs/{runId}/draft",
+      "resource": "research",
       "intent": "read",
-      "cliCommand": "research-runs draft get",
+      "cliCommand": "research runs draft get",
       "cliPath": [
-        "research-runs",
+        "research",
+        "runs",
         "draft",
         "get"
       ],
@@ -2389,12 +2209,13 @@
     {
       "operationId": "getResearchRunDraftSources",
       "method": "GET",
-      "path": "/v1/research-runs/{runId}/draft/sources",
-      "resource": "research-runs",
+      "path": "/v1/research/runs/{runId}/draft/sources",
+      "resource": "research",
       "intent": "read",
-      "cliCommand": "research-runs draft sources get",
+      "cliCommand": "research runs draft sources get",
       "cliPath": [
-        "research-runs",
+        "research",
+        "runs",
         "draft",
         "sources",
         "get"
@@ -2409,12 +2230,13 @@
     {
       "operationId": "listResearchRunEvents",
       "method": "GET",
-      "path": "/v1/research-runs/{runId}/events",
-      "resource": "research-runs",
+      "path": "/v1/research/runs/{runId}/events",
+      "resource": "research",
       "intent": "read",
-      "cliCommand": "research-runs events list",
+      "cliCommand": "research runs events list",
       "cliPath": [
-        "research-runs",
+        "research",
+        "runs",
         "events",
         "list"
       ],
@@ -2428,12 +2250,13 @@
     {
       "operationId": "createResearchRunTurn",
       "method": "POST",
-      "path": "/v1/research-runs/{runId}/turns",
-      "resource": "research-runs",
+      "path": "/v1/research/runs/{runId}/turns",
+      "resource": "research",
       "intent": "job",
-      "cliCommand": "research-runs turns create",
+      "cliCommand": "research runs turns create",
       "cliPath": [
-        "research-runs",
+        "research",
+        "runs",
         "turns",
         "create"
       ],
@@ -2447,32 +2270,15 @@
     {
       "operationId": "listResearchRunPresets",
       "method": "GET",
-      "path": "/v1/research-runs/presets",
-      "resource": "research-runs",
+      "path": "/v1/research/runs/presets",
+      "resource": "research",
       "intent": "read",
-      "cliCommand": "research-runs presets list",
+      "cliCommand": "research runs presets list",
       "cliPath": [
-        "research-runs",
+        "research",
+        "runs",
         "presets",
         "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "getResolvedHandle",
-      "method": "GET",
-      "path": "/v1/resolve/{token}",
-      "resource": "resolve",
-      "intent": "read",
-      "cliCommand": "resolve get",
-      "cliPath": [
-        "resolve",
-        "get"
       ],
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
@@ -2491,7 +2297,7 @@
       "cliPath": [
         "search"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "FederatedNaturalSearchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/federated/natural-search",
       "auth": "read",
@@ -2509,7 +2315,7 @@
         "search",
         "link"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
@@ -2548,7 +2354,7 @@
         "natural",
         "entities"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "EntityNaturalSearchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/entity/natural-search",
       "auth": "read",
@@ -2567,7 +2373,7 @@
         "natural",
         "people"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "PersonNaturalSearchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/natural-search",
       "auth": "read",
@@ -2643,7 +2449,7 @@
         "unique-ids",
         "lookup"
       ],
-      "mcpTool": "aventure_lookup",
+      "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
       "auth": "bearer",
@@ -2698,7 +2504,7 @@
         "web",
         "search"
       ],
-      "mcpTool": "aventure_search",
+      "mcpTool": "aventure_read",
       "bodySchemaName": "SearchSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/search/search",
       "auth": "bearer",

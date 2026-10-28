@@ -1,30 +1,32 @@
-aventure lookup · Read a Company, Product, Service, or Person Identity · -
+aventure lookup · Deprecated: Read a Company, Product, Service, or Person Identity · -
 aventure lookup-from-file · Identify a Company, Product, Service, or Person by Name, URL, or ID · -
-aventure lookup-mentions · Identify Every Company and Person a Page or Screenshot Names · -
+aventure lookup-mentions · Deprecated: Identify Every Company and Person a Page, Screenshot, or PDF Names · -
 aventure metrics · Get Platform Totals for Companies, Funding, and People · -
 aventure search · Search Companies, People, and News Together · --query
-aventure status · Get System Status · -
+aventure content list · List Content · -
+aventure content search · Search Content · --query
 aventure enrichments enrich · Enrich Companies, People, or a News Article's Mentions · -
 aventure entities get · Get One Company, Product, or Service by ID · --entity-id
-aventure entities list · List Companies, Products, and Services · -
+aventure entities list · Deprecated: List Companies, Products, and Services · -
 aventure entities lookup · Deprecated: Identify a Company, Product, or Service by Name and Scope · -
 aventure entities lookup-batch · Look Up Companies in Bulk by ID, Slug, or URL · -
 aventure entities lookup-matches · Look Up Which Company Each Identifier Matches · -
 aventure entities search · Search Companies, Products, and Services · -
 aventure help ask · Answer a Natural-Language Platform Help Question · --question
-aventure lookup-jobs create · Start an Article Lookup or a Bounded Lookup-Only Bulk Job · -
-aventure lookup-jobs get · Get a Lookup Job's State and the Records Its Article Names · --job-id
+aventure lookup mentions · Identify Every Company and Person a Page, Screenshot, or PDF Names · -
+aventure lookup-jobs create · Deprecated: Start an Article Lookup or a Bounded Lookup-Only Bulk Job · -
+aventure lookup-jobs get · Deprecated: Get a Lookup Job's State · --job-id
 aventure news get · Get One News Article · --news-id
 aventure news list · List News Articles, Including a Company's or Person's News · -
 aventure news lookup · Look Up One News Article · -
 aventure people get · Get One Person by ID · --person-id
-aventure people list · List People · -
+aventure people list · Deprecated: List People · -
 aventure people lookup · Deprecated: Find Which Person a Name Refers to, or Confirm They Are New · -
 aventure people lookup-batch · Look Up People in Bulk by ID or Slug · -
 aventure people search · Search People · -
-aventure research-runs create · Research a Company or Person by URL · --url
-aventure research-runs get · Get One Research Run · --run-id
-aventure research-runs list · List Your Research Runs · -
+aventure research-runs create · Deprecated: Research a Company or Person by URL · --url
+aventure research-runs get · Deprecated: Get One Research Run · --run-id
+aventure research-runs list · Deprecated: List Your Research Runs · -
 aventure resolve get · Deprecated: Resolve an Entity or Person by Identifier Token · --token
 aventure search link · Search From a Page URL · --url
 aventure unique-ids lookup · Look Up an Identifier Owner · --id-type --identifier
@@ -46,6 +48,7 @@ aventure billing plans list · List Subscription Tiers and Plans · -
 aventure billing portal-sessions create · Create a Hosted Billing Portal Session · -
 aventure billing subscription get · Read the Current Billing Subscription · -
 aventure billing subscription update · Cancel or Resume the Subscription · -
+aventure content facets list · Count One Owner's Publications · -
 aventure directory exports create · Export Directory Records · --directory --page --size
 aventure directory shared create · Share a Directory View · -
 aventure directory shared list · List Shared Directory Views · -
@@ -58,8 +61,8 @@ aventure entities blog-posts get · Get One Company Blog Post · --entity-id --b
 aventure entities blog-posts list · List a Company's Blog Posts · --entity-id
 aventure entities brand get · Get a Company's Names, Logos, Links, and Tags · -
 aventure entities classifications list · List a Company's Classifications · --entity-id
-aventure entities content list · List a Company's Publications · --entity-id
-aventure entities content search · Search a Company's Publications · --entity-id --query
+aventure entities content list · Deprecated: List a Company's Publications · --entity-id
+aventure entities content search · Deprecated: Search a Company's Publications · --entity-id --query
 aventure entities employee-counts list · List a Company's Headcount Over Time · --entity-id
 aventure entities enrichments enrich · Enrich One Company, Product, or Service · --entity-id
 aventure entities filters list · List the Company Filter Options · -
@@ -76,7 +79,7 @@ aventure entities logo get · Get a Company Logo · --entity-id
 aventure entities lookup-exact get · Read Full Entity Detail by aVenture Profile URL, Slug, Website, or Domain · -
 aventure entities people get · Get One Person's Role at a Company · --entity-id --association-id
 aventure entities people list · List the People at a Company: Its Team, Founders, and Key People · --entity-id
-aventure entities person-investors list · List Person Investors · --entity-id
+aventure entities person-investors list · Deprecated: List Person Investors · --entity-id
 aventure entities relationships get · Get One Relationship by ID · --relationship-id
 aventure entities relationships list · List a Company's Relationships · --entity-id
 aventure entities repositories list · List a Company's GitHub Repositories · --entity-id
@@ -85,7 +88,7 @@ aventure entities research-details get · Get Research Detail · --entity-id --r
 aventure entities research-details list · List Research Details · --entity-id
 aventure entities research-snippets get · Get Research Snippet · --entity-id --snippet-id
 aventure entities research-snippets list · List Research Snippets · --entity-id
-aventure entities sec lookup · Get SEC EDGAR Facts for a Public Company · -
+aventure entities sec lookup · Get SEC EDGAR Facts for an SEC Registrant · -
 aventure entities similar list · Get Similar Companies by ID · --entity-id
 aventure entities slug get · Get a Company's Slug · --entity-id
 aventure entities texts get · Get One Piece of Company Text · --entity-id --text-id
@@ -97,6 +100,7 @@ aventure entities unique-ids list · List a Company's Identifiers · --entity-id
 aventure entities urls get · Get One Company URL · --entity-id --url-id
 aventure entities urls list · List a Company's URLs · --entity-id
 aventure entities valuations list · List a Company's Valuation Over Time · --entity-id
+aventure lookup jobs get · Get a Lookup Job's State and the Records Its Article Names · --job-id
 aventure news feedback create · Submit News Feedback · -
 aventure news related-entities list · List the Entities a News Article Is About · --news-id
 aventure news subscriptions list · List Entity News Subscriptions · -
@@ -107,8 +111,8 @@ aventure people addresses get · Get One Person's Address · --person-id --addre
 aventure people addresses list · List a Person's Addresses · --person-id
 aventure people blog-posts get · Get One Person Blog Post · --person-id --blog-post-id
 aventure people blog-posts list · List a Person's Blog Posts · --person-id
-aventure people content list · List a Person's Publications · --person-id
-aventure people content search · Search a Person's Publications · --person-id --query
+aventure people content list · Deprecated: List a Person's Publications · --person-id
+aventure people content search · Deprecated: Search a Person's Publications · --person-id --query
 aventure people enrichments enrich · Enrich One Person · --person-id
 aventure people entities get · Get One of a Person's Roles at a Company · --person-id --association-id
 aventure people entities list · List a Person's Roles at Companies · --person-id
@@ -127,10 +131,13 @@ aventure people unique-ids get · Get One Person Identifier · --person-id --uni
 aventure people unique-ids list · List a Person's Identifiers · --person-id
 aventure people urls get · Get One Person URL · --person-id --url-id
 aventure people urls list · List Person URLs · --person-id
-aventure research-runs draft get · Get a Research Run Draft · --run-id
-aventure research-runs events list · Read a Research Run's Events · --run-id
-aventure research-runs presets list · List Research Presets · -
-aventure research-runs turns create · Continue a Research Session · --run-id
+aventure research runs create · Research a Company or Person by URL · --url
+aventure research runs get · Get One Research Run · --run-id
+aventure research runs list · List Your Research Runs · -
+aventure research-runs draft get · Deprecated: Get a Research Run Draft · --run-id
+aventure research-runs events list · Deprecated: Read a Research Run's Events · --run-id
+aventure research-runs presets list · Deprecated: List Research Presets · -
+aventure research-runs turns create · Deprecated: Continue a Research Session · --run-id
 aventure search natural entities · Find Companies, Startups, and Investors in Natural Language · --query
 aventure search natural people · Find People With Natural Language · --query
 aventure search shared create · Share a Search Answer · -
@@ -145,7 +152,8 @@ aventure directory shared slug get · Read a Shared Directory View by Slug · --
 aventure entities classifications catalog get · Get the Company Classification Taxonomy · -
 aventure entities classifications suggestions list · Suggest Classifications for a Company · --entity-id
 aventure entities classifications tags list · List Classification Tags · -
-aventure entities content facets list · Count a Company's Publications · --entity-id
+aventure entities content facets list · Deprecated: Count a Company's Publications · --entity-id
+aventure entities investors people list · List Person Investors · --entity-id
 aventure entities relationships types list · List Entity Relationship Types · -
 aventure entities research-details types list · List the Accepted Research Detail Types · -
 aventure entities research-snippets types list · List the Accepted Research Snippet Types · -
@@ -153,10 +161,16 @@ aventure entities search jobs get · Get an Async Semantic Entity Search · --jo
 aventure entities similar summary list · Get Similar Company Summaries by ID · --entity-id
 aventure entities texts types list · List the Accepted Company Text Types · -
 aventure news subscriptions test-events send · Send a Test News Event · --subscription-id
-aventure people content facets list · Count a Person's Publications · --person-id
+aventure people content facets list · Deprecated: Count a Person's Publications · --person-id
 aventure people texts types list · List the Accepted Person Text Types · -
-aventure research-runs draft sections put · Edit a Research Draft Section · --run-id --section-key --expected-version --key --origin --title
-aventure research-runs draft sources get · Get a Research Draft's Sources · --run-id
+aventure research runs draft get · Get a Research Run Draft · --run-id
+aventure research runs events list · Read a Research Run's Events · --run-id
+aventure research runs presets list · List Research Presets · -
+aventure research runs turns create · Continue a Research Session · --run-id
+aventure research-runs draft sections put · Deprecated: Edit a Research Draft Section · --run-id --section-key --expected-version --key --origin --title
+aventure research-runs draft sources get · Deprecated: Get a Research Draft's Sources · --run-id
 aventure search link jobs get · Get a Link Search Job · --job-id
 aventure search shared slug get · Read a Shared Search by Slug · --record-slug
 aventure web searches jobs get · Get an Async Web Search Job · --job-id
+aventure research runs draft sections put · Edit a Research Draft Section · --run-id --section-key --expected-version --key --origin --title
+aventure research runs draft sources get · Get a Research Draft's Sources · --run-id

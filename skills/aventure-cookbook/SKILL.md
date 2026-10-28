@@ -7,7 +7,7 @@ metadata:
 
 # aVenture Cookbook
 
-Each recipe chains aVenture reads into one answer. The `aventure` skill owns setup, finding an operation, lookup statuses, visibility filters, and error handling; read it first. Commands are CLI spellings; `aventure` §4.1 names each one's MCP `operationId`, and `aventure command-catalog show --command "<command>"` prints its CLI, MCP, and REST forms. Add `--data` when fields matter.
+Each recipe chains aVenture reads into one answer. The `aventure` skill owns setup, finding an operation, lookup statuses, visibility filters, and error handling; read it first. Commands are CLI spellings; `aventure` §4.1 names each one's MCP `operationId`, and `aventure help <command>` prints its CLI, MCP, and REST forms. Add `--data` when fields matter.
 
 ## §1 Resolve First
 
@@ -15,7 +15,7 @@ Objective:
 - Resolve the subject id before following a recipe's related-record reads.
 
 Steps:
-1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0). Turn a name into an id with `aventure lookup --name "<name>" ...` for the query read, or `aventure lookup-from-file --kind ENTITY|PERSON --name "<name>" ...` when the body-based universal lookup is the better fit.
+1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0). Turn a name into an id with `aventure lookup-from-file --name "<name>" [--kind ENTITY|PERSON] ...`.
 2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact; on `NO_MATCH`, record that no visible record in the requested scope matched, offer `aventure` §4.2 research for it, and stop that branch.
 
 Prohibited:
@@ -60,7 +60,7 @@ Prohibited:
 1. `aventure news list --owner-entity-id "<id>" --published-after "<YYYY-MM-DD>"`: articles about a company since a date; `--owner-person-id` does the same for a person.
 2. `aventure entities trending-news list --entity-id "<id>"`: the most-read coverage.
 3. `aventure news get --news-id "<id>"` reads the full article `content`.
-4. Choose the article path by outcome: `aventure lookup-mentions --source-url "<article-url>" --schedule-enrichment false` returns synchronous identifications and may file thin hidden shells without queued research; `aventure lookup-jobs create --source-url "<article-url>"` is the standard async article job and may create hidden shells and research them; `aventure lookup-jobs create --max-names "<N>" --source-url "<article-url>"` is lookup-only bounded work with no shells or enrichment. Read the returned job with `aventure lookup-jobs get --job-id "<job-id>"`.
+4. Choose the article path by outcome: `aventure lookup mentions --source-url "<article-url>"` returns synchronous identifications and may file thin hidden shells, queueing research on them only with `--schedule-enrichment true`; `aventure lookup mentions --max-names "<N>" --source-url "<article-url>"` is lookup-only bounded work with no shells or enrichment, answered as a job. Read a returned job with `aventure lookup jobs get --job-id "<job-id>"`.
 
 ## §8 Resolve a List of Names
 
