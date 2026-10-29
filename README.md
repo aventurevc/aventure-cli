@@ -69,15 +69,15 @@ Docs: https://docs.aventure.vc/cli
 Find a company by name, website, or description (daily limits: [Free vs. Paid](#free-vs-paid)):
 
 ```sh
-aventure lookup --name Stripe                            # by name
-aventure lookup --url https://stripe.com                  # by website
+aventure lookup-from-file --name Stripe                   # by name
+aventure lookup-from-file --url https://stripe.com         # by website
 aventure search --query "payments infrastructure for online businesses"  # by description
 ```
 
 Add `--location` or `--context` to tell companies with the same name apart:
 
 ```sh
-aventure lookup --name Mercury --context "banking for startups" --location "San Francisco"
+aventure lookup-from-file --name Mercury --context "banking for startups" --location "San Francisco"
 ```
 
 After the free plan's daily searches and lookups run out, it still finds
@@ -90,8 +90,8 @@ a company by its website with
 Find a person by name or description (daily limits: [Free vs. Paid](#free-vs-paid)):
 
 ```sh
-aventure lookup --kind PERSON --name "Patrick Collison" --context "Stripe co-founder"
-aventure lookup --kind PERSON --name "Patrick Collison" --url https://www.linkedin.com/in/patrickcollison
+aventure lookup-from-file --kind PERSON --name "Patrick Collison" --context "Stripe co-founder"
+aventure lookup-from-file --kind PERSON --name "Patrick Collison" --url https://www.linkedin.com/in/patrickcollison
 aventure search --query "fintech founders who previously worked at PayPal"
 ```
 
