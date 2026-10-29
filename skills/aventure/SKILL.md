@@ -35,7 +35,7 @@ aVenture holds research records on companies (including products, services, and 
 1. Represent the task as one operation: its `operationId` (or method and path), path parameters, query, and body.
 2. CLI: `aventure help catalog "<words>" --format compact`, then `aventure help <command>` for exact flags and inputs offline. `aventure help ask "<question>"` answers a plain-language question with citations or abstains.
 3. MCP: `aventure_help({ "q": "<task>", "resolve": true })` names the tool (`aventure_read` or `aventure_job`), the `operationId`, and each input's slot: `pathParams`, `query`, or `body`. A plain-language platform-help question runs `askHelpQuestion` through `aventure_read`.
-4. CLI root commands: `lookup` for query inputs and `lookup-from-file` for JSON-body identification (§4), `<record> search`, `<record> get`, and `news list`.
+4. CLI root commands: `lookup-from-file` for identification (§4), `<record> search`, `<record> get`, and `news list`.
 
 Prohibited:
 - Guessing a flag, `operationId`, input name, or slug; after one rejection, copy the exact name from the error's suggestions or the catalog.
