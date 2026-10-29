@@ -1,1 +1,0 @@
-export{t as EntityDetailSchema}from"./detail-De_7DRUQ.js";
