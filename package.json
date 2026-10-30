@@ -17,7 +17,7 @@
     "dist/aventure-cli/index.js",
     "dist/aventure-cli/command-catalog.compact.txt",
     "dist/aventure-cli/unified-operations.json",
-    "dist/chunks/*.js",
+    "dist/chunks",
     "scripts/install-zsh-completion-loader.mjs",
     "README.md"
   ],
