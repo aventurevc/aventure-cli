@@ -1,0 +1,1 @@
+import{readFileSync as e}from"node:fs";var t;function n(){return t??=JSON.parse(e(new URL(`openapi-snapshot.json`,import.meta.url),`utf8`)),t}export{n as t};
