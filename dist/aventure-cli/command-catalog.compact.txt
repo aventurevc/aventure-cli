@@ -61,6 +61,7 @@ aventure entities blog-posts get · Get One Company Blog Post · --entity-id --b
 aventure entities blog-posts list · List a Company's Blog Posts · --entity-id
 aventure entities brand get · Get a Company's Names, Logos, Links, and Tags · -
 aventure entities classifications list · List a Company's Classifications · --entity-id
+aventure entities contact-details list · List a Company's Contact Details · --entity-id
 aventure entities content list · Deprecated: List a Company's Publications · --entity-id
 aventure entities content search · Deprecated: Search a Company's Publications · --entity-id --query
 aventure entities employee-counts list · List a Company's Headcount Over Time · --entity-id
@@ -111,6 +112,7 @@ aventure people addresses get · Get One Person's Address · --person-id --addre
 aventure people addresses list · List a Person's Addresses · --person-id
 aventure people blog-posts get · Get One Person Blog Post · --person-id --blog-post-id
 aventure people blog-posts list · List a Person's Blog Posts · --person-id
+aventure people contact-details list · List a Person's Contact Details · --person-id
 aventure people content list · Deprecated: List a Person's Publications · --person-id
 aventure people content search · Deprecated: Search a Person's Publications · --person-id --query
 aventure people enrichments enrich · Enrich One Person · --person-id
