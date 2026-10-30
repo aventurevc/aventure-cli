@@ -1,1 +1,0 @@
-export{t as EntityDetailSchema}from"./detail-DC-spaQP.js";
