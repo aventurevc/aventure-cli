@@ -1,0 +1,1 @@
+export{t as EntityDetailSchema}from"./detail-CB3r4S8B.js";
