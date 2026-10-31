@@ -22,6 +22,8 @@ Two items are independent only when each could have been wrong without the other
 
 ## 2. Customer Status
 
+Apply status to the relationship the evidence actually describes, and state that relationship beside it: use, purchase, deployment, or partnership. Track payment separately as transaction-backed, explicitly claimed, free, or unknown, with its own source. A customer-authored account of use can verify use without verifying payment; a named testimonial can support reported use without establishing an active contract. The subject's paid pricing alone establishes neither a named account's plan nor its spend. An account may be both a partner and a buyer when each relationship has support.
+
 | Status | Required evidence |
 |---|---|
 | Verified | One grade A item, or one customer-authored or joint grade B item, inside the currency window and not contradicted |
@@ -37,7 +39,7 @@ Only verified, probable, and contracted accounts can hold urgency tiers U1 or U2
 
 Defaults, measured back from the report's as-of date:
 
-- A customer is current when positive evidence is dated within the last 24 months, or a contract term on record covers the as-of date.
+- Use positive evidence dated within the last 24 months as the default research window, or a contract term on record covering the as-of date. A recent historical win establishes the relationship at that time; call an account current as of the report only to the extent the source or covering term supports continued use. Keep payment and relationship status separate (§2).
 - Keep an undated item's source date as "undated" and record the date read separately, whether the item is live, archived, or copied. It does not establish current customer status; use status unknown unless dated positive evidence inside the currency window or a contract term establishes currency.
 - A retention signal (§5) counts when dated within the last 12 months or scheduled within the next 12.
 - A named person is called current in a role only when a source dated within the last 12 months places them there; otherwise write "as of" the source's date.
@@ -110,9 +112,9 @@ Annualize a multi-year amount over its term. A shared ceiling, a cooperative or 
 
 Set confidence for each tier cell, apart from the tier itself:
 
-1. Start from the strongest item that decides the cell: High for grade A or a customer-authored grade B item; Moderate for any other grade B item; Low for grades C and D; Very low for grade E and the subject's unattributed claims.
+1. Start from the item deciding the cell: High for grade A or a customer-authored grade B item; Moderate for any other grade B item; Low for grades C and D; Very low for grade E and the subject's unattributed claims. For urgency, evaluate each component required by the proposed tier separately through steps 2–4, then use the weakest required component's confidence for the tier. A strong budget record cannot raise confidence in weak active-search evidence.
 2. Lower it one level for each of: evidence about the segment applied to the account; a single source; an undated item or one older than its window; a conflict of interest (vendor-authored, sponsored, or incentivized); an unresolved contradiction.
-3. Raise it one level when two independent items of different grades or types agree and share no bias.
+3. Raise it one level when two independent items of different grades or types support the same deciding fact and share no bias; for urgency, corroboration applies only to that component.
 4. Record contradicting evidence beside the cell instead of dropping it.
 
 ## 9. Sort Order
@@ -128,7 +130,7 @@ Default, for a reader choosing whom to sell to, compete for, or study:
 
 Revenue-dependence order, for a reader assessing concentration or churn risk: customer status, then spend band, then frequency, then retention signal (at risk before no signal, stable, and expanding, so exposure leads), then steps 5 and 6. Former accounts are listed separately with their dates and destinations.
 
-Segments rank by the tiers most of their verified and probable accounts share, then by verified and probable count, then by disclosed revenue share. Within an account, list roles as economic buyer, champion, technical evaluator, user, and procurement or security reviewer; list blocker evidence as a risk.
+Purchase segments use only purchase-ranking-eligible accounts under the skill's Step 3 for counts, shared tiers, thinness, and sorting. Rank by the tiers most eligible verified and probable accounts share, then their count, then disclosed revenue share. Keep payment-unknown observed-use groups separate. Within an account, list roles as economic buyer, champion, technical evaluator, user, and procurement or security reviewer; list blocker evidence as a risk.
 
 ## 10. Likelihood Terms
 

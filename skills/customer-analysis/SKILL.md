@@ -1,6 +1,6 @@
 ---
 name: customer-analysis
-description: "Use only when asked who a company or product sells to, who its customers or buyers are, or why they buy: named customer accounts verified from public evidence, the roles and personas who buy and use inside them, the use case and trigger behind each purchase, and a ranking by purchase urgency, frequency, and spend."
+description: "Identifies a company's customers from public evidence. Use for who buys or uses a product, current adoption, named accounts, buying roles and motives, and evidence-backed purchase rankings."
 metadata:
   title: Customer analysis
 ---
@@ -39,14 +39,26 @@ Before looking for customers, establish for each product line, from pricing page
 
 The purchase unit sets the default frequency and spend evidence later; a unit not established here is a gap.
 
+## 2A. Investigate the Questions Behind the Names
+
+Objective: explain which relationships matter to the reader's decision, rather than reproduce a logo wall. Apply the cookbook's shared research method to these customer-specific questions throughout Steps 3–6.
+
+1. Start with the uncertainty that could most change the answer: who actually uses the product, who pays, whether the relationship is current, which buying unit is involved, or which product it uses. Keep a short working note of the claim, strongest alternative explanation, missing evidence, and next source likely to distinguish them.
+2. Follow product-specific evidence. For software sold through both a web app and an API, investigate named API deployments and embedded products as well as seat users; a homepage may show only one channel. Open the buyer's corresponding product, documentation, report, or procurement record to test the seller's claim.
+3. Turn each material finding into a discriminating follow-up. A testimonial raises payment, date, and account-scope questions; an integration raises payer and end-user questions; a customer win raises deployment and renewal questions. Run independent source branches in parallel; choose dependent follow-ups from what those sources establish.
+4. Test the economic explanation: buyer job and prior alternative → reason to pay → deployment or purchase evidence → consequence for the subject. Separate recurring use from billing cadence, API distribution from end-customer revenue, and the prestige of a logo from account size. Seek dated budget, adoption, retention, or substitution evidence where it could change the conclusion.
+5. Revisit the leading explanation after counter-evidence. Keep supported deductions and conditional implications, with the decisive premises and reversal conditions; narrow conclusions when a necessary premise remains unknown. Stop a branch when further research is unlikely to change the answer within the available budget, and report the unresolved question beside its claim.
+
+Prohibited: presenting internal deliberation as the report, repeating generic searches instead of resolving a question, or treating an inference label as evidence for an unsupported premise.
+
 ## 3. Build the Named-Customer Ledger
 
 1. Choose pathways from customer-sources.md §1 by the subject's type and buyers, and run the pathways that can yield grade A or B evidence before the weaker ones. When a pathway cannot run here (a blocked site, a POST-only endpoint, no access), record it as not run with the reason, move on, and never substitute a weaker source's figure for the record it would have read.
-2. Record one ledger row per candidate: the customer name as the source states it, the source URL, the source's own date, the date read, the evidence grade, the relationship class, the product line, and what the source says about role, use case, volume, term, or value.
-3. Classify the relationship before counting it: paying customer (including a retailer, reseller, or distributor demonstrably buying for resale), end customer reached through an intermediary, pilot or trial, free user, channel partner without purchase evidence, integration or technology partner, investor, supplier, a party with access that pays nothing, or former customer. Preserve the channel role beside any paying relationship. Only paying customers and end customers reached through an intermediary enter the ranking; list the rest with their class.
+2. Record one ledger row per candidate: the customer name as the source states it, the source URL and supporting excerpt with its qualifications, the source's own date, the date read, the evidence grade and originating publisher, the relationship class, the payment basis (buyer-ranking.md §2), the product line, and what the source says about role, use case, volume, term, or value. Preserve conflicting evidence beside the claim it affects.
+3. Classify the relationship before counting it: paying customer (including a retailer, reseller, or distributor demonstrably buying for resale), end customer reached through an intermediary, user with payment unknown, pilot or trial, free user, channel partner without purchase evidence, integration or technology partner, investor, supplier, a party with access that pays nothing, or former customer. Preserve the channel role beside any paying relationship. Only supported paying-customer relationships and end customers reached through an intermediary enter the purchase ranking; list observed users, seller-claimed accounts, and partners separately when payment or scope is unresolved, so uncertainty does not erase the useful names.
 4. Resolve each customer to its buying unit: legal entity, operating division, and geography. A parent and its subsidiaries are separate buyers unless the evidence shows a group-wide contract. Resolve the names through aVenture as the aventure skill §4 directs (`lookupEntityMatches` for identifiers, `lookupRecord` for each name with its website and the source URL) so each matched row carries a record link; a `NO_MATCH` row keeps its external evidence. Without an aVenture tool, skip this resolution and say so in Coverage.
 5. Assign each row a customer status (buyer-ranking.md §2) and run the counter-evidence pass in customer-sources.md §20 against every account that will rank in the top ten and against the five largest by spend. What it finds sets the account's status (contracted or former) or its retention signal (buyer-ranking.md §5).
-6. Measure coverage: compare the verified count with the subject's disclosed customer count, and name the customer types the pathways cannot see, such as small self-serve accounts behind a logo wall of large ones, or private buyers of a subject whose visible evidence is government awards.
+6. Measure coverage: compare like-for-like named buying units with a disclosed customer count only when its definition, period, and scope match. Verify that an apparent number is a customer-count statement rather than an image label, numeric brand, company covered by the database, or sample-data value. Otherwise keep the denominator unknown. Name the customer types the pathways cannot see, such as small self-serve accounts behind a logo wall of large ones, or private buyers of a subject whose visible evidence is government awards.
 
 ## 4. Map the Buyers Inside Each Account
 
@@ -70,7 +82,7 @@ Apply buyer-ranking.md:
 
 1. Give each ranked account an urgency tier, a retention signal, a frequency tier, and a spend band, each with its basis and confidence. Urgency is judged at the purchase the evidence describes, or at the purchase the context names (buyer-ranking.md §4).
 2. Sort accounts by the default order in buyer-ranking.md §9. When the context is revenue dependence (an investor reading concentration or churn risk), use its spend-first order and say so.
-3. Build segment rows bottom-up from the ledger: group accounts by industry, size band, and use case, adding geography or channel where it changes how they buy; never group by the pathway that found them. A segment row shows its named accounts, their count, the segment's disclosed revenue share where a filing states one, and the tiers most of its accounts share; one with fewer than three verified or probable accounts and no disclosed share is labeled thin.
+3. Build purchase segments from accounts eligible for the purchase ranking in Step 3: group by industry, size band, and use case, adding geography or channel where buying differs. Use only that eligible population for counts, shared tiers, and sorting; label a segment thin when fewer than three eligible verified or probable accounts and no disclosed revenue share support it. Show named accounts and any disclosed share. Keep observed-use groups with unresolved payment separate from purchase segments.
 4. Rank personas by the urgency of the accounts where they appear, then by committee role.
 5. For each top-ranked row, name the specific missing evidence that would move it a tier.
 
@@ -80,17 +92,16 @@ The tiers are ordinal and the sort is lexicographic: no weighted points, composi
 
 The report's first line is "As of YYYY-MM-DD." Then:
 
-1. Answer: three to five sentences naming the highest-ranked segment, the named accounts that define it, the role that signs, the job they buy for, and how much of the customer base the evidence covers.
+1. Answer: three to five sentences naming the strongest supported customer group and accounts, what they use or buy, and the boundary between established use, seller claims, and current payment evidence. Name the signing role and coverage only where established; report an unknown buyer or denominator explicitly.
 2. What is bought: product lines, purchase units, prices, payers and users, and the disclosed revenue mix.
 3. Ranked segments: segment, named accounts, count, disclosed share, urgency, frequency, spend, and confidence.
-4. Ranked accounts, up to 25 rows: account (linked to its aVenture record when matched), product line, use case, roles observed, trigger, urgency, retention signal, frequency, and spend with confidence, customer status, latest evidence date, and source. Accounts beyond 25 go in a ledger table after the report, one row and one source link per account.
+4. Ranked accounts, up to 25 rows: account (linked to its aVenture record when matched), product line, use case, roles observed, trigger, urgency, retention signal, frequency, and spend with confidence, relationship class and status, payment basis, latest evidence date, and source. Keep users and claimed accounts with unresolved payment in a separate evidence table. Accounts beyond 25 go in a ledger table after the report, one row and one source link per account.
 5. Personas and buying roles: persona, committee role, buying job owned, accounts observed, use case, and decision drivers.
 6. Why they buy: triggers, prior alternatives, and decision drivers by segment.
 7. Lost and at-risk customers: former and contracted accounts with dates, scope lost, and destinations; at-risk accounts with the retention evidence; and the counter-evidence against ranked accounts.
 8. Coverage: verified against disclosed customer counts, the pathways run with what each yielded, and the customer types the evidence cannot see.
-9. What would change this view: the evidence that would re-rank the top rows.
+9. What the evidence implies for the reader's decision: supported customer concentration, distribution, buyer economics, switching, or growth implications where material. State the mechanism, strongest competing explanation, and evidence that would change it; distinguish the visible sample from the whole business. Omit conclusions whose premises remain unsupported rather than fill the section with general observations.
 10. Gaps: what could not be established.
-11. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps.
 
 When an indexed news article or a web source shows a customer relationship, round, or role that the subject's aVenture record lacks, offer the update the aventure skill §4.2 describes; file it only on the user's request.
 
