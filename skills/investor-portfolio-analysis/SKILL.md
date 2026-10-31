@@ -17,6 +17,8 @@ The deliverable shows what an investor does with its money, measured from its de
 
 Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
+Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
+
 ## 1. Pin the Subject
 
 1. Use available aVenture reads first: the subject's record holds its description, headquarters, people, news, research, and investments. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`, or `getPersonLookup` for a person), and `listEntityInvestments` or `listPersonInvestments` lists what the subject backed; the aventure skill names the other reads. When the subject's entity id is already known, skip operation lookup and issue the subject reads in one parallel round, such as these `aventure_read` calls: `{"operationId":"listEntityInvestments","pathParams":{"entityId":"<id>"},"query":{"size":200}}` (pages count from 0), `{"operationId":"listNews","query":{"owner.entityId":"<id>","sort":"publishedAt,desc"}}`, and `{"operationId":"listEntityRelationships","pathParams":{"entityId":"<id>"}}`. Make these reads before any web search. Without an aVenture tool, follow aventure skill §1 step 2. When no matched record results, establish identity from the investor's own site and filings, say so in the report, and never invent record contents.

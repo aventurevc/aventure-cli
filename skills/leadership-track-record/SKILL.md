@@ -17,6 +17,8 @@ The deliverable is a verified account of a person's professional record, so a re
 
 Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
+Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
+
 ## 1. Pin the Person
 
 1. Use available aVenture reads first: the person's record holds roles, companies, investments, and news. With the aVenture MCP server or CLI, a person's aventure.vc URL resolves in one read (`getPersonLookup`) and `listPersonEntityAssociations` lists every role; the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, follow aventure skill §1 step 2. When no matched record results, establish identity from organizations' own pages and filings, say so in the report, and never invent record contents.

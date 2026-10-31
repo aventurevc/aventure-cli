@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-10-30T20:26:03.794Z",
+  "generatedAt": "2026-10-31T01:46:24.014Z",
   "totalOperations": 135,
   "note": "1:1 projection of MCP_GENERATION_CONTRACT written by the CLI build ([MCP1b.1-EXC1]).",
   "operations": [
@@ -268,7 +268,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -288,7 +288,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -343,7 +343,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -362,7 +362,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -381,7 +381,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -419,7 +419,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -438,7 +438,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -534,7 +534,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -572,7 +572,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -591,7 +591,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -610,7 +610,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -629,7 +629,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -648,7 +648,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -667,7 +667,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -686,7 +686,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -706,7 +706,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -744,7 +744,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -763,7 +763,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -782,7 +782,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -973,7 +973,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1011,7 +1011,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1068,7 +1068,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1106,7 +1106,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1184,7 +1184,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1296,7 +1296,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1316,7 +1316,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1433,7 +1433,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1452,7 +1452,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1559,7 +1559,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1596,7 +1596,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1689,7 +1689,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1708,7 +1708,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1727,7 +1727,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1803,7 +1803,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1822,7 +1822,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1841,7 +1841,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1860,7 +1860,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1879,7 +1879,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -1955,7 +1955,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2031,7 +2031,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2069,7 +2069,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2088,7 +2088,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2163,7 +2163,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2433,7 +2433,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2452,7 +2452,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2472,7 +2472,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2509,7 +2509,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
@@ -2527,7 +2527,7 @@
       "mcpTool": "aventure_read",
       "bodySchemaName": null,
       "bodySchemaImport": null,
-      "auth": "none",
+      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },

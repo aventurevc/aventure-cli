@@ -17,6 +17,8 @@ The deliverable explains which capital is available to comparable companies, on 
 
 Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
+Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
+
 ## 1. Pin the Subject
 
 1. Use available aVenture reads first: resolve an aventure.vc URL through `getEntityLookup` and read the returned description, funding rounds, investors, and news. The aventure skill names the exact operations and their CLI projections. Read sub-resources only where the detail omits or truncates them. Make these reads before any web search. Without an aVenture tool, follow aventure skill §1 step 2. If no matched record is available, state that limitation and use external evidence without inventing database coverage.

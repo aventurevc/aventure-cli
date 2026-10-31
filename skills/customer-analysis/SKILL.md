@@ -18,6 +18,8 @@ The deliverable names who pays the subject, who inside each buyer chooses and us
 
 Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
+Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
+
 Two supporting files carry the detail: [references/customer-sources.md](references/customer-sources.md) holds the source pathways, query recipes, and traps; [references/buyer-ranking.md](references/buyer-ranking.md) holds the evidence grades, customer status rules, tiers, confidence levels, and sort order. Read both before Step 3.
 
 ## 1. Pin the Subject

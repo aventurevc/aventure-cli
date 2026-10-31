@@ -17,6 +17,8 @@ The deliverable identifies the sub-sector's current cycle phase and explains how
 
 Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
+Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
+
 ## 1. Pin the Subject
 
 1. Use available aVenture reads first: the subject's record holds its description, funding rounds, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Existing research is a hypothesis to verify and date, not the answer. Without an aVenture tool, follow aventure skill §1 step 2. When no matched record results, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.

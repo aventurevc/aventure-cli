@@ -17,6 +17,8 @@ The deliverable is a SWOT a reader can act on: few items, each specific to the s
 
 Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
+Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
+
 ## 1. Pin the Subject
 
 1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. A SWOT entry already in the record is a hypothesis to verify and date, not the answer. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, follow aventure skill §1 step 2. When no matched record results, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
