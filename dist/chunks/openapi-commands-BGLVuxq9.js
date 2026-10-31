@@ -1,1 +1,0 @@
-export{t as GENERATED_OPENAPI_COMMAND_SPECS}from"./openapi-commands-BY7AFS4u.js";
