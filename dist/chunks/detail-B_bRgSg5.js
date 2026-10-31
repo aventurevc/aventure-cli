@@ -1,1 +1,0 @@
-export{t as EntityDetailSchema}from"./detail-3yeUTBs_.js";

@@ -1,0 +1,1 @@
+import{C as e,S as t,i as n}from"./iso-l1vOidnb.js";var r=n([`Company`,`Investment Firm`,`Fund`,`Nonprofit`,`Government`,`Organization`,`Business Line`,`Product`,`Service`]),i=n([`COMPANY`,`PERSON`,`ENTITY_VIEW`,`ENTITY_BRAND`,`PERSON_VIEW`,`WEB_SEARCH`]),a=Object.assign(e([i,t()]),{enum:i.enum});export{r as n,a as t};
