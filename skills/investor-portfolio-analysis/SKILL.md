@@ -58,13 +58,15 @@ The report's first line is "As of YYYY-MM-DD." Then:
 8. Stated versus revealed thesis.
 9. Recent activity.
 10. Gaps: deals, amounts, or outcomes that could not be established.
-11. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps.
+11. Before sending, reread every factual sentence and table cell against the Evidence Rules. Preserve supported findings and their attribution; move unsupported claims, not whole passages containing supported facts, into Gaps.
 
 ## Evidence Rules
 
-- A search-results page or a listing page (a topic, tag, stream, or index page) is never a source; open the article and cite it.
+- A web search-results page or topical listing (a topic, tag, stream, or index page) is not evidence for an underlying deal; open the supporting article and cite it. Authenticated structured tool records follow the attribution rule below.
 - Source ladder: regulatory filings (such as SEC Form D and Form ADV where they exist), then the investor's and portfolio companies' own announcements, then dated reporting from established outlets, then data providers labeled by name. Cite filings from the regulator (such as sec.gov) or the issuer's investor-relations page, and the company's own letters, never a data aggregator or a social-media repost of them.
-- Read every cited source and cite it at the claim it directly supports. Syndicated or copied reporting is one source, not corroboration.
+- Read every cited source. Link the claim to the exact supplied public page or record URL that supports it. Syndicated or copied reporting is one source, not corroboration.
+- For an authenticated structured tool record with no supporting public URL, state its provider, snapshot or read date, recorded metric, and coverage in the same sentence or cell; identify missing metadata as unknown. Retain the returned record as verification evidence. A missing public link alone does not make a supported observation unavailable. Never invent a URL, expose an internal proof URI as a public citation, or cite an unrelated page for the claim.
+- Preserve a record's metric labels and scope: observed acquired or closed recipient counts are not, by themselves, verified completed acquisitions, shutdowns, a complete historical census, or investor returns. Keep the supported observation separate from any unresolved stronger claim.
 - State the report's as-of date. Resolve conflicting sources by scope and date, and say how.
 - Keep announcement and completion dates apart. A past acquisition does not prove current ownership.
 - Distinguish not disclosed, not found in the sources searched, not applicable, and conflicting. Never turn an unknown into zero or absence.
@@ -72,7 +74,7 @@ The report's first line is "As of YYYY-MM-DD." Then:
 
 ## Writing Rules
 
-- Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
+- Every factual sentence or table cell carries the supporting public link or authenticated-record attribution required by the Evidence Rules. Unsupported claims move to Gaps.
 - A numeric threshold or target appears only with a cited benchmark; otherwise name the metric without a number.
 - Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. State each finding once; do not repeat a table in prose.
 - Each sentence states a fact, a number, a comparison, or a judgment tied to evidence.
