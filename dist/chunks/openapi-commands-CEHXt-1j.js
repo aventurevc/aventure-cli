@@ -1,1 +1,0 @@
-export{t as GENERATED_OPENAPI_COMMAND_SPECS}from"./openapi-commands-BaYU5_6t.js";
