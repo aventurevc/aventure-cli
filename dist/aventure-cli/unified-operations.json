@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-11-03T15:47:47.806Z",
-  "totalOperations": 133,
+  "generatedAt": "2026-11-03T17:10:41.592Z",
+  "totalOperations": 132,
   "note": "1:1 projection of MCP_GENERATION_CONTRACT written by the CLI build ([MCP1b.1-EXC1]).",
   "operations": [
     {
@@ -2106,26 +2106,6 @@
       "bodySchemaName": "PersonFilterSchema",
       "bodySchemaImport": "@aventurevc/api-schemas/person/filter",
       "auth": "read",
-      "scope": "read",
-      "destructive": false
-    },
-    {
-      "operationId": "listPersonTextTypes",
-      "method": "GET",
-      "path": "/v1/people/texts/types",
-      "resource": "people",
-      "intent": "read",
-      "cliCommand": "people texts types list",
-      "cliPath": [
-        "people",
-        "texts",
-        "types",
-        "list"
-      ],
-      "mcpTool": "aventure_read",
-      "bodySchemaName": null,
-      "bodySchemaImport": null,
-      "auth": "bearer",
       "scope": "read",
       "destructive": false
     },
