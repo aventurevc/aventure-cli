@@ -127,8 +127,6 @@ aventure people lookup-exact get · Read One Person's Full Detail by aVenture Pr
 aventure people photo get · Get Person Photo · --person-id
 aventure people repositories list · List a Person's GitHub Repositories · --person-id
 aventure people similar list · List People Similar to One Person · --person-id
-aventure people texts get · Get One Piece of Text About a Person · --person-id --text-id
-aventure people texts list · List Text About a Person · --person-id
 aventure people unique-ids get · Get One Person Identifier · --person-id --unique-id-id
 aventure people unique-ids list · List a Person's Identifiers · --person-id
 aventure people urls get · Get One Person URL · --person-id --url-id
@@ -164,7 +162,6 @@ aventure entities similar summary list · Get Similar Company Summaries by ID ·
 aventure entities texts types list · List the Accepted Company Text Types · -
 aventure news subscriptions test-events send · Send a Test News Event · --subscription-id
 aventure people content facets list · Deprecated: Count a Person's Publications · --person-id
-aventure people texts types list · List the Accepted Person Text Types · -
 aventure research runs draft get · Get a Research Run Draft · --run-id
 aventure research runs events list · Read a Research Run's Events · --run-id
 aventure research runs presets list · List Research Presets · -
