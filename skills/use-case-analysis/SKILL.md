@@ -102,7 +102,7 @@ Build a cross-tab of jobs against segments (industry and size band, using custom
 
 1. List the subject's own order of use cases (homepage and solutions-page order, plan names) beside the evidence tiers.
 2. Name the Marketed-only jobs the subject leads with, and the Proven jobs it under-markets.
-3. For each Proven job, name the prior alternative (customer-analysis Step 5 item 3) and the rivals buyers name. Head-to-head depth goes to the competitor-analysis skill; the market size for a job goes to the market-research skill.
+3. For each Proven job, name the prior alternative (customer-analysis Step 5 item 3) and the rivals buyers name. Head-to-head depth goes to the competitor-analysis skill; the market size for a job goes to the market-sizing skill.
 4. Mark a job former, with its dates, when every account that once supported it is now Former.
 
 ## 9. Write the Report

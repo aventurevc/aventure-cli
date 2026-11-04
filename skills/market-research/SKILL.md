@@ -32,12 +32,7 @@ State the boundary in one sentence before sizing anything: the buyer, the job th
 
 ## 3. Size It
 
-1. Bottom-up: model annual revenue from the relevant customers, seats, units, or transactions and realized revenue per unit. Label each input observed (with its source) or assumed (with its reasoning), check that segments do not double-count buyers, and keep current spending apart from addressable potential.
-2. Top-down: find figures from a statistics agency, regulator, public-company filings, or a named research firm. Record the publisher, the year published, the period measured, and the publisher's own market definition.
-3. Before comparing estimates, align category, geography, buyer unit, period, currency, price basis, and gross versus net revenue. Investigate any disagreement large enough to change the conclusion, without assuming its cause, and state which estimate the report relies on.
-4. Give a range, not a point, for any estimate built on an assumed input, and show which assumption, if wrong, would reverse the conclusion.
-5. TAM is eligible annual demand inside the boundary. SAM is the part the subject can serve with its current product, geography, and channels. SOM is the annual revenue it could obtain over a stated horizon, constrained by distribution, sales capacity, competition, and delivery capacity. Report each only with its basis.
-6. Growth: show measured historical growth, split into price, volume, and mix where sources allow. Say whether a structural change (regulation, a new technology, a pricing reset) breaks the historical trend. Label every forward figure as a scenario or forecast with its publisher, assumptions, and horizon.
+Load the market-sizing skill and apply its Inputs defaults (horizon and currency, unless the request names them) and its Steps 2–13 to the §2 boundary: its boundary cards, input ledger, build-up, break-down, floor, reconciliation, SAM, SOM, ranges, and growth. Reuse its tables in §5 item 3 instead of restating them, keep this report's evidence and output rules, and do not write that skill's report.
 
 ## 4. Analyze
 
@@ -46,7 +41,7 @@ State the boundary in one sentence before sizing anything: the buyer, the job th
 - Buyers: who signs, from which budget line, through what purchase process, with what switching cost.
 - Pricing: published price points and models across the main sellers; note where prices are not public.
 - Regulation: rules in force or scheduled that change demand or cost, with dates.
-- The subject's position: its rank or share against the three to five largest named vendors in the boundary, each cited, its revenue or scale where disclosed, and the segments it serves. Compute share only when numerator and denominator cover the same offering, geography, period, and revenue basis. Where no source measures a vendor's share, write "not disclosed"; never estimate a share or a range.
+- The subject's position: its rank or share against the three to five largest named vendors in the boundary, each cited, its revenue or scale where disclosed, and the segments it serves. Compute share only when numerator and denominator cover the same offering, geography, period, and revenue basis. Where no source measures a vendor's share, write "not disclosed"; never estimate a rival's share or range. The subject's own share follows market-sizing Step 13 item 2, labeled "modeled implied share" when either side is an estimate.
 
 ## 5. Write the Report
 
@@ -54,7 +49,7 @@ The report's first line is "As of YYYY-MM-DD." Then:
 
 1. Answer: three to five sentences on the market's size, growth, and what that means for the subject.
 2. Market boundary.
-3. Size and growth: each estimate with method, period, and source, then the reconciliation.
+3. Size and growth: the market-sizing input ledger, build-up tree, summary, reconciliation, SAM, and SOM tables, each estimate with its method, period, and source; a figure computed from these tables cites the table.
 4. Segments, buyers, pricing, drivers and constraints, regulation.
 5. The subject's position.
 6. What would change this view: the two or three measurable signals that would move the conclusion.
