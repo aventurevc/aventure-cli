@@ -15,7 +15,7 @@ The deliverable compares the subject with its closest rivals on evidence, so a r
 - Competitors to include (optional): analyze every name given, even one research shows serves a different buyer; then say so with the evidence.
 - Context (optional): the segment, buyer, or decision the comparison serves.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 

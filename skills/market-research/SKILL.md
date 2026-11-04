@@ -15,7 +15,7 @@ The deliverable lets an investor or operator decide whether the subject's market
 - Market or segment (optional): it fixes the market boundary; analyze that boundary even when the subject also sells elsewhere, and say so.
 - Context (optional): the reader's geography, period, or decision.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 

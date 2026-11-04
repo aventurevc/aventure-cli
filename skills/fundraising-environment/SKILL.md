@@ -15,7 +15,7 @@ The deliverable explains which capital is available to comparable companies, on 
 - Sub-sector or financing stage (optional): the cohort to assess.
 - Context (optional): geography, raise timing, intended use of proceeds, or investor constraints.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 

@@ -15,7 +15,7 @@ The deliverable explains how much profit the industry's structure allows and who
 - Industry boundary (optional): analyze exactly that product and geography.
 - Context (optional): the reader's purpose or time horizon.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 

@@ -15,7 +15,7 @@ The deliverable maps the field within a stated boundary, so a reader sees who el
 - Segment or region (optional): it is the landscape's boundary.
 - Context (optional): the reader's purpose, period, or players of interest.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 

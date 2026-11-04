@@ -15,7 +15,7 @@ The deliverable shows what an investor does with its money, measured from its de
 - Sector, stage, or period (optional): analyze that slice and compare it with the whole portfolio.
 - Context (optional): the reader's purpose, such as raising a round or evaluating a fund.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 

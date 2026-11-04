@@ -15,7 +15,7 @@ The deliverable is a verified account of a person's professional record, so a re
 - Role or decision it informs (optional): weight the analysis toward evidence that bears on it.
 - Context (optional): facts or constraints the reader supplied.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 

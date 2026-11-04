@@ -1,0 +1,1 @@
+export{t as EntityDetailSchema}from"./detail-C4XLJTOr.js";

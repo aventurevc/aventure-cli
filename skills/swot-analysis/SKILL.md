@@ -15,7 +15,7 @@ The deliverable is a SWOT a reader can act on: few items, each specific to the s
 - Decision it should inform (optional): an investment, partnership, acquisition, competitive response, or hire. When absent, state the assessment lens the report uses: revenue growth and margin for an operating company or product; deal access, fundraising, and portfolio outcomes for an investment firm.
 - Context (optional): constraints or facts the reader supplied.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 

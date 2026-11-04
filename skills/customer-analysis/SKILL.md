@@ -1,6 +1,6 @@
 ---
 name: customer-analysis
-description: "Identifies a company's customers from public evidence. Use for who buys or uses a product, current adoption, named accounts, buying roles and motives, and evidence-backed purchase rankings."
+description: "Identifies a company's customers from public evidence. Use for who buys or uses a product, current adoption, named accounts, buying roles and motives, and evidence-backed purchase rankings. For full buyer persona profiles use buyer-persona-analysis; for a tiered inventory of what a product is used for, use-case-analysis; for what published testimonials and case studies prove, testimonial-case-study-analysis."
 metadata:
   title: Customer analysis
 ---
@@ -16,7 +16,7 @@ The deliverable names who pays the subject, who inside each buyer chooses and us
 - Customers to check (optional): verify every name given and report the ones the evidence does not support.
 - Context (optional): the reader's decision (investing, selling to these buyers, competing for them, partnering) and period.
 
-Apply the designated answer and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
+Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 
@@ -64,16 +64,16 @@ Prohibited: presenting internal deliberation as the report, repeating generic se
 
 1. For each ranked account, name the roles that bought and use the product and each role's part in the purchase, writing "not observed" where no source shows it: economic buyer, champion, technical evaluator, user, procurement or security reviewer, or blocker. Take each from evidence: a case study or press release quoting a titled employee, a procurement record's department and approving body, a job post at the account requiring the product, a reviewer's title, or a conference talk.
 2. Label each role link observed (the source places that title or person in that role at that account) or inferred (same function and seniority as observed evidence, with the inference stated). Name a person only when a source names them, and date the claim to that source. An aVenture people list (`listEntityPersonAssociations`) is a lead, not proof.
-3. Roll titles into a persona only when the same function and committee role recur at three or more accounts. A persona states its function, seniority band, committee role, the buying job it owns (problem identification, solution exploration, requirements, supplier selection, validation, or consensus), the accounts where it was observed, and where it does not apply. A title seen at fewer accounts stays an account-level observation.
+3. Roll titles into a persona only when the same function and committee role recur at three or more accounts. A persona states its function, seniority band, committee role, the buying job it owns (problem identification, solution exploration, requirements, supplier selection, validation, or consensus), the accounts where it was observed, and where it does not apply. A title seen at fewer accounts stays an account-level observation. Count accounts toward this threshold as Step 6 item 4 counts independent accounts. To profile personas in full, with their barriers, buying journey, and decision criteria, load the buyer-persona-analysis skill; it applies this rule and these fields without redefining them.
 
 ## 5. Establish Why They Buy
 
 For each ranked account and persona:
 
-1. Use case: the job as a verb, an object, and the circumstance ("close multi-entity books in five days after an acquisition"), not a category name, plus the outcome the buyer measures, quoted from the buyer where a source allows.
+1. Use case: the job as a verb, an object, and the circumstance ("close multi-entity books in five days after an acquisition"), not a category name, plus the outcome the buyer measures, quoted from the buyer where a source allows. Write the job so it still makes sense if the subject did not exist: a feature, product, or category name is not a use case. To tier the subject's use cases across all accounts, load the use-case-analysis skill.
 2. Trigger: the dated event that started the purchase, such as a regulation taking effect, an incumbent contract expiring or product reaching end of life, a new executive owner, a financing, an acquisition, or an outage or breach.
 3. Prior alternative: the vendor, in-house build, manual process, or nothing that the purchase replaced, with its source.
-4. Decision drivers: the stated reasons for choosing the subject or leaving it, coded as product fit, price and value, implementation, trust and risk, relationship and process, or no decision. A buyer's statement outranks the vendor's; a vendor case study's outcome figure is labeled as the vendor's claim.
+4. Decision drivers: the stated reasons for choosing the subject or leaving it, coded as product fit, price and value, implementation, trust and risk, relationship and process, or no decision. A buyer's statement outranks the vendor's; a vendor case study's outcome figure is labeled as the vendor's claim; to test what a body of published stories and testimonials proves, load the testimonial-case-study-analysis skill.
 5. Report drivers separately wherever they differ by industry, size, or role; never average across segments.
 
 ## 6. Rank
@@ -83,7 +83,7 @@ Apply buyer-ranking.md:
 1. Give each ranked account an urgency tier, a retention signal, a frequency tier, and a spend band, each with its basis and confidence. Urgency is judged at the purchase the evidence describes, or at the purchase the context names (buyer-ranking.md §4).
 2. Sort accounts by the default order in buyer-ranking.md §9. When the context is revenue dependence (an investor reading concentration or churn risk), use its spend-first order and say so.
 3. Build purchase segments from accounts eligible for the purchase ranking in Step 3: group by industry, size band, and use case, adding geography or channel where buying differs. Use only that eligible population for counts, shared tiers, and sorting; label a segment thin when fewer than three eligible verified or probable accounts and no disclosed revenue share support it. Show named accounts and any disclosed share. Keep observed-use groups with unresolved payment separate from purchase segments.
-4. Rank personas by the urgency of the accounts where they appear, then by committee role.
+4. Rank personas by the urgency tier most of their independent accounts share (on a tie, the higher tier), then by committee role in the buyer-ranking.md §9 role order, with blocker last, then by the number of independent accounts where they were observed, then by the latest evidence date. An account counts as independent when it belongs to a different corporate group from the other accounts, or when its role evidence comes from a different origin under buyer-ranking.md §1; buying units of one parent supported by one story count once.
 5. For each top-ranked row, name the specific missing evidence that would move it a tier.
 
 The tiers are ordinal and the sort is lexicographic: no weighted points, composite scores, or invented percentages.
@@ -102,6 +102,7 @@ The report's first line is "As of YYYY-MM-DD." Then:
 8. Coverage: verified against disclosed customer counts, the pathways run with what each yielded, and the customer types the evidence cannot see.
 9. What the evidence implies for the reader's decision: supported customer concentration, distribution, buyer economics, switching, or growth implications where material. State the mechanism, strongest competing explanation, and evidence that would change it; distinguish the visible sample from the whole business. Omit conclusions whose premises remain unsupported rather than fill the section with general observations.
 10. Gaps: what could not be established.
+11. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps. A count or share computed from this report's own tables cites that table instead of a page, and every item it counts carries its link there.
 
 When an indexed news article or a web source shows a customer relationship, round, or role that the subject's aVenture record lacks, offer the update the aventure skill §4.2 describes; file it only on the user's request.
 
