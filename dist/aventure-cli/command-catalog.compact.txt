@@ -1,6 +1,6 @@
 aventure lookup · Deprecated: Read a Company, Product, Service, or Person Identity · -
 aventure lookup-from-file · Identify a Company, Product, Service, or Person by Name, URL, or ID · -
-aventure lookup-mentions · Deprecated: Identify Every Company and Person a Page, Screenshot, or PDF Names · -
+aventure lookup-mentions · Deprecated: Look Up a Profile, Post, Page, or File and Identify Every Company and Person It Names · -
 aventure metrics · Get Platform Totals for Companies, Funding, and People · -
 aventure search · Search Companies, People, and News Together · --query
 aventure content list · List Content · -
@@ -13,7 +13,7 @@ aventure entities lookup-batch · Look Up Companies in Bulk by ID, Slug, or URL 
 aventure entities lookup-matches · Look Up Which Company Each Identifier Matches · -
 aventure entities search · Search Companies, Products, and Services · -
 aventure help ask · Answer a Natural-Language Platform Help Question · --question
-aventure lookup mentions · Identify Every Company and Person a Page, Screenshot, or PDF Names · -
+aventure lookup mentions · Look Up a Profile, Post, Page, or File and Identify Every Company and Person It Names · -
 aventure lookup-jobs create · Deprecated: Start an Article Lookup or a Bounded Lookup-Only Bulk Job · -
 aventure lookup-jobs get · Deprecated: Get a Lookup Job's State · --job-id
 aventure news get · Get One News Article · --news-id
