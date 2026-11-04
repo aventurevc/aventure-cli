@@ -60,7 +60,7 @@ Prohibited:
 1. `aventure news list --owner-entity-id "<id>" --published-after "<YYYY-MM-DD>"`: articles about a company since a date; `--owner-person-id` does the same for a person.
 2. `aventure entities trending-news list --entity-id "<id>"`: the most-read coverage.
 3. `aventure news get --news-id "<id>"` reads the full article `content`.
-4. Choose the article path by outcome: `aventure lookup mentions --source-url "<article-url>"` returns synchronous identifications and may file thin hidden shells, queueing research on them only with `--schedule-enrichment true`; `aventure lookup mentions --max-names "<N>" --source-url "<article-url>"` is lookup-only bounded work with no shells or enrichment, answered as a job. Read a returned job with `aventure lookup jobs get --job-id "<job-id>"`.
+4. Choose the article path by outcome: `aventure lookup mentions --source-url "<article-url>"` returns synchronous identifications and may file thin shells (a company public, a person hidden), queueing research on them only with `--schedule-enrichment true`; `aventure lookup mentions --max-names "<N>" --source-url "<article-url>"` is lookup-only bounded work with no shells or enrichment, answered as a job. Read a returned job with `aventure lookup jobs get --job-id "<job-id>"`.
 
 ## §8 Resolve a List of Names
 
