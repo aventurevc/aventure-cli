@@ -1,6 +1,6 @@
 # Complex Cases
 
-Read these rules before SKILL.md Step 1 and apply every rule whose condition the subject meets at the step it names; Step 4 item 3 confirms they were applied. Several can apply at once: a hardware-plus-software product sold to governments in three jurisdictions takes four rules.
+Read these rules before SKILL.md Step 1 and apply every rule whose condition the subject meets at the step it names; SKILL.md Step 4 item 3 lists them, and each is checked off at its step. Several can apply at once: a hardware-plus-software product sold to governments in three jurisdictions takes four rules.
 
 ## Several Products or Services
 
@@ -59,7 +59,7 @@ Read these rules before SKILL.md Step 1 and apply every rule whose condition the
 
 ## Government and Long-Cycle Enterprise Buyers
 
-- Inputs: horizon in the fifth year unless the request names one.
+- Inputs: the horizon is the current year plus five unless the request names one (SKILL.md Inputs).
 - Step 6: current spend comes from obligations, outlays, and award records attributed to the funding agency (a reseller's award belongs to the agency that funds it). A contract vehicle's ceiling or an authorization is capacity to buy, not spend; annualize a multi-year award only as its delivery schedule supports.
 - Step 11: the sales route is evidenced deals per year with cycle length from awards or buyer-persona-analysis journey evidence; contestable spend follows contract terms.
 

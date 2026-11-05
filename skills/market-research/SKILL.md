@@ -54,7 +54,7 @@ The report's first line is "As of YYYY-MM-DD." Then:
 5. The subject's position.
 6. What would change this view: the two or three measurable signals that would move the conclusion.
 7. Gaps: each figure the report needed and could not establish.
-8. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps.
+8. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps. A figure computed from the market-sizing tables cites that table instead of a page.
 
 ## Evidence Rules
 
@@ -68,7 +68,7 @@ The report's first line is "As of YYYY-MM-DD." Then:
 
 ## Writing Rules
 
-- Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it. A claim you cannot cite moves to Gaps.
+- Every sentence or table cell that states a number, date, role, customer, or ownership fact links to the page you read for it, or names the market-sizing table that computed it. A claim you cannot cite moves to Gaps.
 - A numeric threshold or target appears only with a cited benchmark; otherwise name the metric without a number.
 - Keep the prose under 2,000 words unless the request asks for more; tables do not count toward it. Omit sections that do not apply. State each finding once; do not repeat a table in prose.
 - Each sentence states a fact, a number, a comparison, or a judgment tied to evidence.
