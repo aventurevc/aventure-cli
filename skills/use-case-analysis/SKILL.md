@@ -48,7 +48,7 @@ Collect before classifying.
 | Customer-authored statements, and the customer's job posts naming the product together with the task (customer-sources.md §10 and §11) | Use at that account | A deployment count; a job post measures hiring demand at one employer |
 | Public procurement statements of work (customer-sources.md §6–§8) | The task a public buyer paid for | Private buyers |
 | Independent user voice: the problem-solved text in reviews (customer-sources.md §12), community and forum threads, Q&A sites, and public issue trackers; for a consumer product, app-store text (§19) | The job in buyers' words | A named account |
-| Not-served evidence: documented limitations, open feature requests, reviews or posts naming another tool used for the job, and rivals' stories that name the subject as the product replaced, with candidate rivals taken from buyers' "chose X over" and "switched from" statements (`listEntitySimilarEntities` rows are leads, kept only when evidence places them in the same job) | Where the product stops | Why it stops |
+| Not-served evidence: documented limitations, open feature requests, reviews or posts naming another tool used for the job, and rivals' stories that name the subject as the product replaced, with candidate rivals taken from buyers' "chose X over" and "switched from" statements (`entities similar list --entity-id "<subject-id>"` rows are leads, kept only when evidence places them in the same job) | Where the product stops | Why it stops |
 
 Record each candidate's verbatim phrase, source type, account if any, and date. A feature list or the subject's solutions taxonomy seeds candidates; it is never the answer.
 

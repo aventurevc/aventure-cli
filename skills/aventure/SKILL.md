@@ -104,6 +104,7 @@ Parenthesized names are MCP `operationId`s for `aventure_read` (`personId` repla
 4. Company-to-person roles read from either side: `entities people list` (`listEntityPersonAssociations`) and `people entities list` (`listPersonEntityAssociations`). `--association-id` is the integer role row id.
 5. A company logo is `core.image.logoSquare` with `isMonogram=false` on `entities get` (`getEntity`); a Product or Service without its own shows its provider's logo there, so its own logo is `entities logo get` (`getEntityLogo`), which answers `404` when it has none. A photo is `image.picture` with `isMonogram=false` on `people get` (`getPerson`). A monogram means no real image is stored.
 6. A company's news is `news list --owner-entity-id "<entity-uuid>"` (`listNews` with `query["owner.entityId"]`; `owner.personId` for a person), including articles reached through its products and services; `entityMentionResolved` on `news get` marks a direct link.
+7. Similar companies are `entities similar list --entity-id "<entity-uuid>"` (`listEntitySimilarEntities`), ordered by similarity score with each row's similarity provenance. A row is a lead: keep a rival only when evidence places it in the same buyer job.
 
 ## §4.2 Request Research or Record Updates
 
