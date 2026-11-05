@@ -20,7 +20,7 @@ Apply the optional inputs and the context through every step; the defaults below
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 
-This report grades with the customer-analysis skill's definitions and finds sources through its pathways. Before Step 3, load the customer-analysis skill and read its Step 3 item 4 and Step 7 item 11, references/buyer-ranking.md §1 Evidence Grades, §2 Customer Status, §3 Currency Windows, and §8 Confidence, and references/customer-sources.md §3, §9, §10, §11, §12, §13, and §20. Apply them within this framework, keep this report's evidence and output rules, and do not write that skill's report.
+This report grades with the customer-analysis skill's definitions and finds sources through its pathways. Before Step 3, load the customer-analysis skill (installed beside this skill, or published as the `customer-analysis` archive listed in the same agent-skills `index.json`) and read its Step 3 item 4 and Step 7 item 11, references/buyer-ranking.md §1 Evidence Grades, §2 Customer Status, §3 Currency Windows, and §8 Confidence, and references/customer-sources.md §3, §9, §10, §11, §12, §13, and §20. Apply them within this framework, keep this report's evidence and output rules, and do not write that skill's report.
 
 ## 1. Pin the Subject
 

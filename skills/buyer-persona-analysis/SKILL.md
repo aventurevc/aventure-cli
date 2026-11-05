@@ -20,7 +20,7 @@ Apply the optional inputs and the context through every step; the defaults below
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 
-The account ledger, buying roles, and persona rule come from the customer-analysis skill. Load it, with both of its references, before Step 3. This report runs its Steps 3–5 and its Step 6 items 1 and 4, applies its Step 4 item 3 persona rule and fields, and never redefines a persona, a role, a buying job, or a decision-driver code. Reuse a customer-analysis ledger already in this conversation. Keep this report's evidence and output rules, and do not write that skill's report.
+The account ledger, buying roles, and persona rule come from the customer-analysis skill (installed beside this skill, or published as the `customer-analysis` archive listed in the same agent-skills `index.json`). Load it, with both of its references, before Step 3. This report runs its Steps 3–5 and its Step 6 items 1 and 4, applies its Step 4 item 3 persona rule and fields, and never redefines a persona, a role, a buying job, or a decision-driver code. Reuse a customer-analysis ledger already in this conversation. Keep this report's evidence and output rules, and do not write that skill's report.
 
 ## 1. Pin the Subject
 

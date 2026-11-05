@@ -20,7 +20,7 @@ Apply the optional inputs and the context through every step; the defaults below
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 
-Account evidence and the job form come from the customer-analysis skill. Load it before Step 2 and apply its Step 2 items 1–3, its Step 3 item 4, its Step 5 items 1–3, its Step 7 item 11, references/buyer-ranking.md §1, §2, §3, and §8, and references/customer-sources.md §3, §6–§8, §10–§12, §19, and §20 within this framework. Reuse a customer-analysis ledger already in this conversation; otherwise build ledger rows only for the accounts each candidate job needs. Keep this report's evidence and output rules, and do not write that skill's report.
+Account evidence and the job form come from the customer-analysis skill (installed beside this skill, or published as the `customer-analysis` archive listed in the same agent-skills `index.json`). Load it before Step 2 and apply its Step 2 items 1–3, its Step 3 item 4, its Step 5 items 1–3, its Step 7 item 11, references/buyer-ranking.md §1, §2, §3, and §8, and references/customer-sources.md §3, §6–§8, §10–§12, §19, and §20 within this framework. Reuse a customer-analysis ledger already in this conversation; otherwise build ledger rows only for the accounts each candidate job needs. Keep this report's evidence and output rules, and do not write that skill's report.
 
 ## 1. Pin the Subject
 
