@@ -1,0 +1,1 @@
+import{S as e,_ as t,s as n}from"./iso-DzqMxtky.js";var r=t({authorizationServer:e(),clientId:e(),mcpResource:e().nullish(),redirectUri:e(),resource:e(),scope:n(e())});export{r as t};

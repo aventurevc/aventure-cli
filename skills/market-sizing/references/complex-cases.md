@@ -4,7 +4,7 @@ Read these rules before SKILL.md Step 1 and apply every rule whose condition the
 
 ## Several Products or Services
 
-- Step 3: one boundary card per revenue line. Each `productService` offering from Step 2 is a candidate line; an offering with no sale evidence is in TAM and out of SAM.
+- Step 3: one boundary card per revenue line. Each `productService` offering from Step 2 is a candidate line; Current SAM follows its present commercial availability and the Step 10 filters, so a lack of disclosed sales alone does not exclude it. Planned or unavailable offerings go only to Expansion SAM.
 - Step 6: mark each line a same-buyer add-on or a separate-buyer market. A buyer in two lines counts once; its spend on separate budgets adds, less any evidenced suite discount.
 - Step 11: split new-customer wins from cross-sell to existing customers; sales capacity, delivery, and financing limits are shared across all lines, never granted to each line in full.
 - Step 14: report each line, then the deduplicated total.
@@ -17,8 +17,8 @@ Read these rules before SKILL.md Step 1 and apply every rule whose condition the
 
 ## Conglomerates and Multi-Segment Companies
 
-- Step 3: one boundary per reportable segment named in the latest filing; group the rest as "segments not sized". Never one consolidated TAM.
-- Step 13: remove revenue between segments before any share; each segment's external revenue is its current revenue; implied share is per segment, then a sum-of-segments table.
+- Step 3: reportable segments reconcile financial disclosures; they do not define markets. Inside each segment, draw a boundary card for each materially different buyer, job, budget, and revenue basis, and mark unsupported lines "not sized". A portfolio total may sum same-period, same-basis line potentials after removing buyer-budget and value-chain overlap, shown with its component markets and coverage; it has no single share denominator.
+- Step 13: remove revenue between segments, allocate each segment's external revenue to a market boundary only with evidence, and compute implied share per aligned market, then a portfolio table.
 
 ## Two-Sided Marketplaces and Take-Rate Businesses
 
@@ -29,7 +29,7 @@ Read these rules before SKILL.md Step 1 and apply every rule whose condition the
 ## Platforms and B2B2C
 
 - Step 3: the buyer unit is the payer (employer, bank, carrier, school), not the end user. End users set volume per payer.
-- Step 6: count payers once. When the subject sells both directly and through partners to the same end users, split the end users by channel. Deduct a partner's revenue share when the partner bills the end customer.
+- Step 6: count payers once. When direct and partner channels reach the same end users, remove double counting of the same paid entitlement, while keeping distinct paid relationships that each earn in-boundary revenue. The party that bills the end customer does not by itself decide whether a partner's share reduces revenue; apply the boundary card's revenue basis.
 - Step 10: the partner relationship is the channel-reach filter; it proves access, not end-user adoption.
 
 ## Usage-Based and Hybrid Pricing
@@ -47,7 +47,7 @@ Read these rules before SKILL.md Step 1 and apply every rule whose condition the
 
 - Step 3: name the buyer's existing job and current alternative before naming the category.
 - Step 7: published totals for the new category are inadmissible; a total for the prior alternative's category is admissible as the substitution source.
-- Step 8: build-up plus substitution. Current spend is the supply-side floor, which may be near zero; say so. Without a defensible price range, report eligible buyers in physical units and the buyer benefit, not revenue TAM.
+- Step 8: build-up plus substitution. Disclosed supplier revenue is a lower bound on current spend, not an estimate of it unless supplier coverage is shown to be exhaustive; without a complete measurement or a labeled modeled roll-up, report "current spend not measured" beside the floor, and never use the floor as a share or growth denominator. Without a defensible price range, report eligible buyers in physical units and the buyer benefit, not revenue TAM.
 - Step 14: state that no publisher measures the category.
 
 ## Regulated or Geography-Split Markets
@@ -60,22 +60,22 @@ Read these rules before SKILL.md Step 1 and apply every rule whose condition the
 ## Government and Long-Cycle Enterprise Buyers
 
 - Inputs: the horizon is the current year plus five unless the request names one (SKILL.md Inputs).
-- Step 6: current spend comes from obligations, outlays, and award records attributed to the funding agency (a reseller's award belongs to the agency that funds it). A contract vehicle's ceiling or an authorization is capacity to buy, not spend; annualize a multi-year award only as its delivery schedule supports.
+- Step 6: keep commitments (awards, obligations), cash payments (outlays), and delivered purchases apart; bridge records to in-period delivery and supplier revenue, since obligation and payment dates are not recognition dates, and never add one contract's award, obligation, and outlay. A reseller's award belongs to the agency that funds it. A contract vehicle's ceiling or an authorization is capacity to buy, not spend. Without the bridge, report each series on its own labeled basis and never as a share denominator.
 - Step 11: the sales route is evidenced deals per year with cycle length from awards or buyer-persona-analysis journey evidence; contestable spend follows contract terms.
 
 ## Consumer Subscriptions
 
 - Step 3: the buyer unit is a household or person from official population statistics.
-- Step 6: eligible share only from measured attributes (device ownership, income band, age band, a survey with a published sample), never from invented demographics. Free users, trials, downloads, and active users are not subscribers. Price is the plan price weighted by the observed plan mix, net of the app store's commission (cite the store's current terms with a date), with any rival revenue a filing reports gross restated to the same basis; say when the mix is not disclosed.
+- Step 6: eligible share only from measured attributes (device ownership, income band, age band, a survey with a published sample), never from invented demographics. Free users, trials, downloads, and active users are not subscribers. Price is the plan price weighted by the observed plan mix, on the boundary card's revenue basis: whether the app store's commission reduces revenue follows the seller's accounting role, not the store's commission schedule. Bridge rival disclosures to the same basis, and say when the mix or the accounting evidence is not disclosed.
 - Step 10: app-store availability and payment acceptance by geography are filters.
-- Step 11: subscriber cohorts decay at evidenced churn; paid acquisition is capped where its evidenced acquisition cost rises past revenue per subscriber.
+- Step 11: subscriber cohorts decay at evidenced churn. Paid acquisition states its acquisition-cost cohort, contribution after variable servicing costs, retention-based customer life, and payback, and is limited by evidenced cash and operating capacity; there is no universal cutoff of acquisition cost against annual revenue.
 
 ## Pre-Revenue and Deep Technology
 
-- Step 4: TAM is addressable potential only, priced at the cost of the solution it would replace (for energy, the levelized cost per unit of output) unless signed contracts prove a premium.
-- Step 10: Current SAM is zero until the product exists for sale; the first product's scope goes to Expansion SAM, with the source that states the roadmap.
-- Step 11: when the evidenced launch date falls after the horizon year, SOM is zero. Report a separate conditional SOM for the third year after launch that lists its technical, trial, scale-up, and capital conditions. Grants and paid engineering work are their own line, outside SOM.
+- Step 4: TAM is addressable potential only, priced from evidenced customer purchases or a willingness-to-pay range for the same unit, scope, and terms. The replaced solution's operating or levelized cost is a benefit benchmark, not a selling price; comparable purchases, paid pilots, and willingness-to-pay evidence may support a labeled premium scenario. Without a defensible price, report the physical opportunity and buyer benefit, not revenue TAM.
+- Step 10: the product line's Current SAM is zero until the product exists for sale (customer-paid engineering, pilot, and contract-research lines get their own boundary cards and SAM); the first product's scope goes to Expansion SAM, with the source that states the roadmap.
+- Step 11: when no product delivery is possible by the horizon year, product-line SOM is zero; report a separate conditional product SOM for the third year after launch with its technical, trial, scale-up, and capital conditions. Customer-paid engineering, paid pilots, and contract research inside the requested boundary are their own lines in company-level SOM, with their own delivery schedules; non-customer grants and financing are not commercial revenue.
 
 ## Investment Firms and Funds
 
-- The market an investment firm sells into is capital from limited partners and the deals it competes for, not its portfolio companies' markets. Count companies that raised in a window from aVenture's funding records (`aventure entities search --count-only true` with `--fundraise-round`, `--fundraise-date-announced-range-min`, `--fundraise-date-announced-range-max`, and the NAICS filter from SKILL.md Step 6 item 4); a company count is not a round count, and the counts cover only recorded rounds; investor-portfolio-analysis owns the firm's own activity.
+- The market an investment manager sells into is the management service bought by capital providers. Size it by fund or separately managed mandate: management-fee revenue = fee base (commitments, invested capital, or net asset value, as the contract says, with when it changes) × the contractual fee schedule, after offsets and waivers; model performance fees and carried interest separately from their return, distribution, and recognition conditions, never as a carry percentage of assets. Assets, commitments, and deal counts are labeled volume or sourcing metrics. To describe deal flow, count companies that raised in a window from aVenture's funding records (`aventure entities search --count-only true` with `--fundraise-round`, `--fundraise-date-announced-range-min`, `--fundraise-date-announced-range-max`, and the NAICS filter from SKILL.md Step 6 item 4); a company count is not a round count, the counts cover only recorded rounds, and none of them counts fee-paying demand. investor-portfolio-analysis owns the firm's own activity.
