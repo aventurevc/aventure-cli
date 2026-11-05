@@ -20,7 +20,7 @@ Apply the optional inputs and the context through every step; the defaults below
 
 Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
 
-This report grades with the customer-analysis skill's definitions and finds sources through its pathways. Before Step 3, load the customer-analysis skill and read its Step 3 item 4, references/buyer-ranking.md §1 Evidence Grades, §2 Customer Status, §3 Currency Windows, and §8 Confidence, and references/customer-sources.md §3, §9, §10, §11, §12, §13, and §20. Apply them within this framework, keep this report's evidence and output rules, and do not write that skill's report.
+This report grades with the customer-analysis skill's definitions and finds sources through its pathways. Before Step 3, load the customer-analysis skill and read its Step 3 item 4 and Step 7 item 11, references/buyer-ranking.md §1 Evidence Grades, §2 Customer Status, §3 Currency Windows, and §8 Confidence, and references/customer-sources.md §3, §9, §10, §11, §12, §13, and §20. Apply them within this framework, keep this report's evidence and output rules, and do not write that skill's report.
 
 ## 1. Pin the Subject
 
@@ -43,7 +43,7 @@ Collect before judging.
 5. Date each story by its own date, or by its first Wayback capture when it has none. Record stories present in an earlier capture but absent now, using the customer-sources.md §3 recipe. A removed story is a churn lead for Step 6, not proof of churn.
 6. Merge duplicates. One account told in a case study, a webinar, and a release is one origin (buyer-ranking.md §1).
 7. Build a corpus table with columns for channel, items found, named accounts, unnamed items, author (subject, third party, or customer), date range, and date read. State the corpus size, because it bounds every later claim.
-8. When the library holds more stories than the budget can code, code the featured stories first, then the newest by story date or first capture, up to a stated number. Name the order used. Every later count reads "X of N coded named stories (library: M published)", and every uncoded story goes in the after-report ledger with its link and whether it is still served.
+8. When the library holds more stories than the budget can code, code the featured stories first, then the newest by story date or first capture, up to a stated number. Name the order used. Every later count reads "X of N coded named stories (library: M published)", where N is the number of Step 4 ledger rows that name their account, and every uncoded story goes in the after-report ledger with its link and whether it is still served.
 
 ## 4. Code Each Story
 
@@ -53,7 +53,7 @@ Record one ledger row per story. Write "not stated" in an empty field; never fil
 |---|---|
 | Account | The name as the source states it, with its resolution result (below the table): the aVenture record link, "ambiguous", or "not matched" (source link only). For an unnamed customer, write "unnamed:" plus the source's descriptor verbatim ("a Fortune 500 bank"). Never match a descriptor to a company by guesswork. |
 | Buying unit and product line | The division, region, or subsidiary the story names, and the product line it used |
-| Quoted person | Title and function, plus the name only when the source names it |
+| Quoted person | Title as the story prints it beside the person, and function, plus the name only when the source names it |
 | Use case | The job in the form customer-analysis Step 5 item 1 defines |
 | Trigger and prior alternative | As customer-analysis Step 5 items 2 and 3 define them |
 | Deployment scope | Team, business unit, or enterprise, with seats, sites, or volume |
@@ -77,7 +77,7 @@ Run this step before Step 8 for every named account that shares a coded problem 
 
 1. Current use: find customer-authored evidence dated after the story. Sources are a job post naming the product together with the task (customer-sources.md §10), an engineering post, a talk, or the customer's own docs (§11), a subprocessor entry (§9), or a technical trace on the customer's domain (§13, grade C), recorded with its read date. Set the account's status by buyer-ranking.md §2, applied to use, and its currency by §3.
 2. Counter-evidence: run customer-sources.md §20, covering migration posts, a competitor's story naming the same account, and stories removed from the subject's site.
-3. The quoted person: search the person's name with the account's name and check whether the person still holds that role at that account, from their own published profile or the account's site. For a MATCHED account, `aventure entities people list --entity-id <account-id> --search "<person name>"` (MCP `listEntityPersonAssociations`; personName, titleName, isCurrent) is a lead only. Record the result as "in role" with the page and date read, "departed" with its date, or "not found in the sources searched".
+3. The quoted person: search the person's name with the account's name and check whether the person still holds that role at that account, from their own published profile or the account's site. For a MATCHED account, `aventure entities people list --entity-id <account-id> --search "<person name>"` (MCP `listEntityPersonAssociations`; personName, titleName, isCurrent) is a lead only. Record the result as "in role" with the page and date read, "departed" with its date, or "not found in the sources searched"; a check not made reads "not checked" with its customer-analysis Step 7 item 11 reason.
 4. Close each story with one status, derived from the item 1 status using only evidence dated after the story: corroborated (Verified or Probable inside the §3 window); contradicted (Former or Contracted, shown by the customer-sources.md §20 evidence beside the claim with its date; a story removed from the subject's site alone never contradicts); stale (status unknown, with post-story evidence that exists but sits outside the §3 window); or uncorroborated (Possible, or no evidence after the story in the sources searched).
 
 ## 7. Read Review Platforms Separately
@@ -86,11 +86,11 @@ Apply customer-sources.md §12, including its Labels and Ratings bullets; this f
 
 ## 8. Find the Patterns
 
-1. Group the coded problems and outcomes into themes, with one problem or one outcome metric per theme. Count the independent named accounts per theme, and state the denominator and the selection frame ("4 of 11 named stories the subject published cite month-end close time").
+1. Group the coded problems and outcomes into themes, with one problem or one outcome metric per theme. Count the independent named accounts per theme from coded story ledger rows only (an uncoded story or a directory-card title never counts), and state the denominator and the selection frame ("4 of 11 named stories the subject published cite month-end close time").
 2. Assign each theme one tier. Corroborated: three or more independent named accounts, with at least one account's outcome figure or outcome quote stated in a customer-authored source, or in a third-party source that has no material connection to the subject (Step 5 item 3). Step 6 evidence of continued use never corroborates an outcome; report it only in the claims table's corroboration column. Vendor-told: three or more independent named accounts, with no outcome stated in such a source. Isolated: one or two named accounts. Unnamed only: unnamed stories, or aggregate figures across unnamed customers, only. A named account's "up to" or "as much as" figure counts toward its account's tier and is reported as a ceiling. Within a tier, sort by the number of independent named accounts, then the number of Measured claims, then the latest story date. The tiers are ordinal and the sort is lexicographic: no weighted points, composite scores, or invented percentages.
 3. A theme's strongest outcome is the claim with the best measurement label (Measured, then Partial with the fewest missing fields, then Qualitative, then Unanchored), then the best grade, then the latest date. That claim is the deciding item for buyer-ranking.md §8 confidence; name it once and use the same claim in the Answer and the claims table.
 4. Time to value: report the observed range with its count, only from stories that date both ends.
-5. Coverage map: compare the segments, sizes, regions, and product lines that have stories with the subject's disclosed revenue mix. Use customer-analysis Step 2 item 4 when that report is in the conversation; otherwise read the mix from filings. Name what the corpus cannot show: churned and unhappy customers, segments with no story, how old the stories are, and complaint themes from reviews that no story addresses.
+5. Coverage map: compare the segments, sizes, regions, and product lines that have stories with the subject's disclosed revenue mix. Use customer-analysis Step 2 item 4 when that report is in the conversation; otherwise read the mix from filings. When neither discloses a mix, write "revenue mix not disclosed" and still tabulate the coded stories by segment, size, region, and product line. Name what the corpus cannot show: churned and unhappy customers, segments with no story, how old the stories are, and complaint themes from reviews that no story addresses.
 
 ## 9. Write the Report
 
@@ -106,7 +106,7 @@ The report's first line is "As of YYYY-MM-DD." Then:
 8. What the evidence implies for the reader's decision: which claims the reader can repeat as customer-verified (an outcome stated in a customer-authored source), which only as the subject's claim, and which to test, each with the reference-call question that would settle it.
 9. What would change this view: the two or three measurable signals that would move the conclusion.
 10. Gaps: what could not be established.
-11. Before sending, reread the report and move every sentence or table cell that states a number, date, role, customer, or ownership fact without a link in that same sentence or cell into Gaps. A count or share computed from this report's own tables cites that table instead of a page, and every item it counts carries its link there.
+11. Before sending, apply customer-analysis Step 7 item 11 to this report.
 
 When a story or a customer's own statement shows a customer relationship or role that the subject's aVenture record lacks, offer the update the aventure skill §4.2 describes; file it only on the user's request.
 
