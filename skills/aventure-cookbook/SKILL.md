@@ -15,7 +15,7 @@ Objective:
 - Resolve the subject id before following a recipe's related-record reads.
 
 Steps:
-1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0). Turn a name into an id with `aventure lookup-from-file --name "<name>" [--kind ENTITY|PERSON] ...`.
+1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0). Turn a name into an id with `aventure lookup --name "<name>" [--kind ENTITY|PERSON] ...`.
 2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact. On `NO_MATCH`, run `aventure` §4's source-stated name check and follow its returned status: continue on `MATCHED`, refine `NEEDS_REVIEW`, and only if it remains `NO_MATCH`, record that no visible record in the requested scope matched, offer `aventure` §4.2 research for it, and stop that branch.
 
 Prohibited:
@@ -69,7 +69,7 @@ Objective:
 - Return resolved rows after each ambiguous row's source evidence is checked.
 
 Steps:
-1. Resolve company ids, slugs, or URLs together with one `aventure entities lookup-matches` call, which answers `MATCHED`, `AMBIGUOUS`, or `MISSING` per input. Resolve each name row with one `aventure lookup-from-file --kind ENTITY` (`--kind PERSON` for a person row), with every clue that identifies the subject: website, location, industry, and source URL.
+1. Resolve company ids, slugs, or URLs together with one `aventure entities lookup-matches` call, which answers `MATCHED`, `AMBIGUOUS`, or `MISSING` per input. Resolve each name row with one `aventure lookup --kind ENTITY` (`--kind PERSON` for a person row), with every clue that identifies the subject: website, location, industry, and source URL.
 2. Apply `aventure` §4's evidence refinement once to each `NEEDS_REVIEW` row, then record its resulting `status`, matched id, or remaining candidates with their `probability`.
 3. Return the table in input order. Ask only for the remaining separating fact that the user alone can provide; keep externally researchable identity gaps in the evidence workflow.
 

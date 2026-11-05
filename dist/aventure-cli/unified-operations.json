@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-11-05T13:52:12.621Z",
+  "generatedAt": "2026-11-05T15:53:34.127Z",
   "totalOperations": 132,
   "note": "1:1 projection of MCP_GENERATION_CONTRACT written by the CLI build ([MCP1b.1-EXC1]).",
   "operations": [
@@ -1480,9 +1480,9 @@
       "path": "/v1/lookup",
       "resource": "lookup",
       "intent": "lookup",
-      "cliCommand": "lookup-from-file",
+      "cliCommand": "lookup",
       "cliPath": [
-        "lookup-from-file"
+        "lookup"
       ],
       "mcpTool": "aventure_job",
       "bodySchemaName": "IdentificationSubjectSchema",

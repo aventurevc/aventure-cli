@@ -1,4 +1,5 @@
-aventure lookup · Deprecated: Read a Company, Product, Service, or Person Identity · -
+aventure get-identification · Deprecated: Read a Company, Product, Service, or Person Identity · -
+aventure lookup · Identify a Company, Product, Service, or Person by Name, URL, or ID · -
 aventure lookup-from-file · Identify a Company, Product, Service, or Person by Name, URL, or ID · -
 aventure lookup-mentions · Deprecated: Look Up a Profile, Post, Page, or File and Identify Every Company and Person It Names · -
 aventure metrics · Get Platform Totals for Companies, Funding, and People · -

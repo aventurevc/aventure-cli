@@ -1,0 +1,1 @@
+export{n as withRenamedCommandAliases}from"./deprecated-command-bF9Q8_F6.js";
