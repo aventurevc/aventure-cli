@@ -17,7 +17,7 @@ aventure people get · Get One Person by ID · --person-id
 aventure people lookup-batch · Look Up People in Bulk by ID or Slug · -
 aventure people search · Search People · -
 aventure search link · Search From a Page URL · --url
-aventure unique-ids lookup · Look Up an Identifier Owner · --id-type --identifier
+aventure unique-ids lookup · Find Who an Identifier Belongs To · --id-type --identifier
 aventure url-types list · List URL Types · -
 aventure web search · Search the Live Web · --search
 aventure addresses links list · List Address Links · --address-id
@@ -26,7 +26,7 @@ aventure auth api-key revoke · Revoke Current API Key · -
 aventure auth providers get · Get the Sign-In Options · -
 aventure billing additional-usage update · Update Additional Usage Settings · -
 aventure billing ai-credits get · Read the Current AI Credit Allowance · -
-aventure billing checkout-sessions create · Create or Recover a Checkout Session · --plan
+aventure billing checkout-sessions create · Create or Reuse a Checkout Session · --plan
 aventure billing credit-purchases create · Buy a Prepaid Additional Usage Credit Pack · --idempotency-key --pack
 aventure billing credit-purchases get · Read a Prepaid Credit Purchase Confirmation · --purchase-id
 aventure billing plan-change-previews create · Preview a Subscription Plan Change · --plan
@@ -43,7 +43,7 @@ aventure entities acquisitions get · Get One Company Acquisition · --entity-id
 aventure entities acquisitions list · List a Company's Acquisitions · --entity-id
 aventure entities addresses get · Get One Company Address · --entity-id --address-join-id
 aventure entities addresses list · List a Company's Locations · --entity-id
-aventure entities analysis-replay get · Get Entity Analysis Replay · --entity-id
+aventure entities analysis-replay get · Get an Example Published Analysis Section · --entity-id
 aventure entities blog-posts get · Get One Company Blog Post · --entity-id --blog-post-id
 aventure entities blog-posts list · List a Company's Blog Posts · --entity-id
 aventure entities brand get · Get a Company's Names, Logos, Links, and Tags · -
@@ -120,7 +120,7 @@ aventure search natural entities · Find Companies, Startups, and Investors in N
 aventure search natural people · Find People With Natural Language · --query
 aventure search shared create · Share a Search Answer · -
 aventure search shared get · Read a Shared Search Answer · --record-id
-aventure search shared list · List Shared Search Publications · -
+aventure search shared list · List Shared Search Answers · -
 aventure unique-ids types list · List the Accepted Unique Identifier Types · -
 aventure auth me permissions authorize · Authorize API Operations · -
 aventure auth me permissions get · Current User Permissions · -
