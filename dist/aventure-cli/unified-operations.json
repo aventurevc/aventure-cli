@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-11-07T07:43:43.633Z",
+  "generatedAt": "2026-11-07T10:19:36.936Z",
   "totalOperations": 132,
   "note": "1:1 projection of MCP_GENERATION_CONTRACT written by the CLI build ([MCP1b.1-EXC1]).",
   "operations": [
