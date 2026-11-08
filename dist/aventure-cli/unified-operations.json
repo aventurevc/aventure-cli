@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-11-08T13:16:27.713Z",
-  "totalOperations": 132,
+  "generatedAt": "2026-11-08T15:59:00.510Z",
+  "totalOperations": 133,
   "note": "1:1 projection of MCP_GENERATION_CONTRACT written by the CLI build ([MCP1b.1-EXC1]).",
   "operations": [
     {
@@ -2177,6 +2177,28 @@
         "research",
         "runs",
         "draft",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getResearchRunDraftSectionWrite",
+      "method": "GET",
+      "path": "/v1/research/runs/{runId}/draft/sections/{sectionKey}/writes/{writeId}",
+      "resource": "research",
+      "intent": "read",
+      "cliCommand": "research runs draft sections writes get",
+      "cliPath": [
+        "research",
+        "runs",
+        "draft",
+        "sections",
+        "writes",
         "get"
       ],
       "mcpTool": "aventure_read",

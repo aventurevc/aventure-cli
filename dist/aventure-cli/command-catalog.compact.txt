@@ -147,3 +147,4 @@ aventure search shared slug get · Read a Shared Search by Slug · --record-slug
 aventure web searches jobs get · Get an Async Web Search Job · --job-id
 aventure research runs draft sections put · Edit a Research Draft Section · --run-id --section-key --expected-version --key --origin --title
 aventure research runs draft sources get · Get a Research Draft's Sources · --run-id
+aventure research runs draft sections writes get · Get a Research Draft Section Write · --run-id --section-key --write-id
