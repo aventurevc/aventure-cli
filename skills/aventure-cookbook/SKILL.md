@@ -7,7 +7,7 @@ metadata:
 
 # aVenture Cookbook
 
-Each recipe chains aVenture reads into one answer. The `aventure` skill owns setup, finding an operation, lookup statuses, visibility filters, and error handling; read it first. Commands are CLI spellings; `aventure` §4.1 names each one's MCP `operationId`, and `aventure help <command>` prints its CLI, MCP, and REST forms. Add `--data` when fields matter.
+Each recipe chains aVenture reads into one answer. The `aventure` skill owns setup, finding an operation, lookup statuses, visibility filters, and error handling; read it first. Commands are CLI spellings; Related Records (`aventure` §4.1) names each one's MCP `operationId`, and `aventure help <command>` prints its CLI, MCP, and REST forms. Add `--data` when fields matter.
 
 ## §1 Resolve First
 
@@ -15,18 +15,18 @@ Objective:
 - Resolve the subject id before following a recipe's related-record reads.
 
 Steps:
-1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (`aventure` §0). Turn a name into an id with `aventure lookup --name "<name>" [--kind ENTITY|PERSON] ...`.
-2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow `aventure` §4's candidate evidence refinement before asking the user about an exclusively user-held separating fact. On `NO_MATCH`, run `aventure` §4's source-stated name check and follow its returned status: continue on `MATCHED`, refine `NEEDS_REVIEW`, and only if it remains `NO_MATCH`, record that no visible record in the requested scope matched, offer `aventure` §4.2 research for it, and stop that branch.
+1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (MCP Quick Path, `aventure` §0). Turn a name into an id with `aventure lookup --name "<name>" [--kind ENTITY|PERSON] ...`.
+2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow Identity Lookup (`aventure` §4)'s candidate evidence refinement before asking the user about an exclusively user-held separating fact. On `NO_MATCH`, run Identity Lookup (`aventure` §4)'s source-stated name check and follow its returned status: continue on `MATCHED`, refine `NEEDS_REVIEW`, and only if it remains `NO_MATCH`, record that no visible record in the requested scope matched, offer Request Research or Record Updates (`aventure` §4.2) research for it, and stop that branch.
 
 Prohibited:
-- A status decision that bypasses `aventure` §4's evidence rules.
+- A status decision that bypasses Identity Lookup (`aventure` §4)'s evidence rules.
 
 ## §2 Company Brief
 
-1. The §1 exact lookup already returns names, description, headquarters, founding year, logo, links, rounds, people, news, and research (`aventure` §0); from a bare id, read `aventure entities get --entity-id "<id>"` (`getEntity`).
-2. For a section the detail omits or truncates, issue its reads together (`aventure` §0): `entities fundraise-rounds list --entity-id "<id>"` (`listEntityFundraiseRounds`) for rounds; `entities people list --entity-id "<id>" --is-current true` (`listEntityPersonAssociations`) for current leaders; `news list --owner-entity-id "<id>" --size 5` (`listNews`) for coverage.
+1. The §1 exact lookup already returns names, description, headquarters, founding year, logo, links, rounds, people, news, and research (MCP Quick Path, `aventure` §0); from a bare id, read `aventure entities get --entity-id "<id>"` (`getEntity`).
+2. For a section the detail omits or truncates, issue its reads together (MCP Quick Path, `aventure` §0): `entities fundraise-rounds list --entity-id "<id>"` (`listEntityFundraiseRounds`) for rounds; `entities people list --entity-id "<id>" --is-current true` (`listEntityPersonAssociations`) for current leaders; `news list --owner-entity-id "<id>" --size 5` (`listNews`) for coverage.
 3. Report each fact with the record and its source URL. Omit a section whose read returned nothing, rather than guessing it.
-4. The rounds section lists the rounds aVenture records, not every round the company raised, so title it with the latest recorded round's date. When the record's news or research, or any other source in the answer, names a round missing from that list, add the round as a row marked as not in aVenture with its source URL, and offer `aventure` §4.2 research for it.
+4. The rounds section lists the rounds aVenture records, not every round the company raised, so title it with the latest recorded round's date. When the record's news or research, or any other source in the answer, names a round missing from that list, add the round as a row marked as not in aVenture with its source URL, and offer Request Research or Record Updates (`aventure` §4.2) research for it.
 
 ## §3 Who Invested in a Round
 
@@ -54,7 +54,7 @@ Prohibited:
    When the request covers every peer, use `--json` and read the served `X-Next-Cursor` from `data.nextCursor`; `--data` omits this metadata. Follow it with `--cursor`, keeping filters and size unchanged, until no cursor remains. Capture stable entity ids across every page; if a ranked-roster change requires restarting traversal, retain the already captured ids and reconcile the union rather than replacing the roster with the new first page. An existing queue entry is not a membership requirement: selected peers without one remain in scope.
 2. Cite each returned record and distinguish ranked similarity from a stored competitor relationship; never substitute competitors from memory. Never claim similarity retrieval failed without making that call; report an actual error or empty result as such.
 3. `aventure entities relationships list --entity-id "<id>"`: parents, subsidiaries, products, and other stored links.
-4. To discover companies rather than peers of a known company, follow `aventure` §7.2's filter-first search route; use its natural-search step for description matching while the daily search allowance lasts, and read `interpretation` before trusting the scope.
+4. To discover companies rather than peers of a known company, follow the filter-first search route (`aventure` §7 item 2, cited as §7.2); use its natural-search step for description matching while the daily search allowance lasts, and read `interpretation` before trusting the scope.
 
 ## §7 News Monitoring
 
@@ -70,7 +70,7 @@ Objective:
 
 Steps:
 1. Resolve company ids, slugs, or URLs together with one `aventure entities lookup-matches` call, which answers `MATCHED`, `AMBIGUOUS`, or `MISSING` per input. Resolve each name row with one `aventure lookup --kind ENTITY` (`--kind PERSON` for a person row), with every clue that identifies the subject: website, location, industry, and source URL.
-2. Apply `aventure` §4's evidence refinement once to each `NEEDS_REVIEW` row, then record its resulting `status`, matched id, or remaining candidates with their `probability`.
+2. Apply Identity Lookup (`aventure` §4)'s evidence refinement once to each `NEEDS_REVIEW` row, then record its resulting `status`, matched id, or remaining candidates with their `probability`.
 3. Return the table in input order. Ask only for the remaining separating fact that the user alone can provide; keep externally researchable identity gaps in the evidence workflow.
 
 Prohibited:

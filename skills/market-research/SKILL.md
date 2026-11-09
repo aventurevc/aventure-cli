@@ -17,11 +17,11 @@ The deliverable lets an investor or operator decide whether the subject's market
 
 Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
-Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
+Before research, load the aventure-cookbook skill and apply Analyze Business Implications (aventure-cookbook §9) within this framework. Keep this report's evidence and output rules.
 
 ## 1. Pin the Subject
 
-1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, follow aventure skill §1 step 2. When no matched record results, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
+1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, follow Surfaces and Setup: connect CLI/MCP/API and sign in (aventure §1 step 2). When no matched record results, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
 2. Name the exact entity the report covers, as of today. Brands, legal entities, parents, subsidiaries, and spin-offs are different subjects, and ownership changes. Nabisco is today a Mondelēz brand, not a standalone company. Kellogg's cereal belongs to Ferrero in the US, Canada, and the Caribbean and to Mars elsewhere, after the 2023 split into WK Kellogg Co and Kellanova and their 2025 sales. Verify current ownership and reporting scope from the latest filing or completion announcement before using any figure. Pre-spin consolidated figures cover both businesses; use a successor's recast or carve-out figures and state their scope.
 3. A product subject is analyzed in its own market; its provider is context.
 4. When two records fit the name, stop and report both candidates with the fact that separates them instead of choosing.
@@ -32,7 +32,7 @@ State the boundary in one sentence before sizing anything: the buyer, the job th
 
 ## 3. Size It
 
-Load the market-sizing skill and apply its Inputs defaults (horizon and currency, unless the request names them) and its Steps 2–13 to the §2 boundary: its boundary cards, input ledger, build-up, break-down, floor, reconciliation, SAM, SOM, ranges, and growth. Reuse its tables in §5 item 3 instead of restating them, keep this report's evidence and output rules, and do not write that skill's report.
+Load the market-sizing skill and apply its Inputs defaults (horizon and currency, unless the request names them) and its Read What aVenture Already Holds through Derived Values and Growth (market-sizing Steps 2–13) to the Define the Market (§2) boundary: its boundary cards, input ledger, build-up, break-down, floor, reconciliation, SAM, SOM, ranges, and growth. Reuse its tables in Write the Report (§5) item 3 instead of restating them, keep this report's evidence and output rules, and do not write that skill's report.
 
 ## 4. Analyze
 
@@ -41,7 +41,7 @@ Load the market-sizing skill and apply its Inputs defaults (horizon and currency
 - Buyers: who signs, from which budget line, through what purchase process, with what switching cost.
 - Pricing: published price points and models across the main sellers; note where prices are not public.
 - Regulation: rules in force or scheduled that change demand or cost, with dates.
-- The subject's position: its rank or share against the three to five largest named vendors in the boundary, each cited, its revenue or scale where disclosed, and the segments it serves. Compute share only when numerator and denominator cover the same offering, geography, period, and revenue basis. Where no source measures a vendor's share, write "not disclosed"; never estimate a rival's share or range. The subject's own share follows market-sizing Step 13 item 2, labeled "modeled implied share" when either side is an estimate.
+- The subject's position: its rank or share against the three to five largest named vendors in the boundary, each cited, its revenue or scale where disclosed, and the segments it serves. Compute share only when numerator and denominator cover the same offering, geography, period, and revenue basis. Where no source measures a vendor's share, write "not disclosed"; never estimate a rival's share or range. The subject's own share follows implied share / modeled implied share (market-sizing Step 13 item 2), labeled "modeled implied share" when either side is an estimate.
 
 ## 5. Write the Report
 

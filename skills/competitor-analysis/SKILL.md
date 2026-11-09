@@ -17,11 +17,11 @@ The deliverable compares the subject with its closest rivals on evidence, so a r
 
 Apply the optional inputs and the context through every step; the defaults below apply only where they are absent. Facts the user supplies are claims to verify.
 
-Before research, load the aventure-cookbook skill and apply §9 Analyze Business Implications within this framework. Keep this report's evidence and output rules.
+Before research, load the aventure-cookbook skill and apply Analyze Business Implications (aventure-cookbook §9) within this framework. Keep this report's evidence and output rules.
 
 ## 1. Pin the Subject
 
-1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, follow aventure skill §1 step 2. When no matched record results, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
+1. Use available aVenture reads first: the subject's record holds its description, headquarters, founding year, funding rounds, people, news, and research. With the aVenture MCP server or CLI, an aventure.vc URL resolves in one read (`getEntityLookup`); the aventure skill names the other reads. Make these reads before any web search. Without an aVenture tool, follow Surfaces and Setup: connect CLI/MCP/API and sign in (aventure §1 step 2). When no matched record results, establish identity from the subject's own site and filings, say so in the report, and never invent record contents.
 2. Name the exact entity or product the report covers, as of today. Brands, legal entities, parents, subsidiaries, and spin-offs are different subjects, and ownership changes. Nabisco is today a Mondelēz brand, not a standalone company. Kellogg's cereal belongs to Ferrero in the US, Canada, and the Caribbean and to Mars elsewhere, after the 2023 split into WK Kellogg Co and Kellanova and their 2025 sales. Compare the unit that sells the product. Never attribute a parent's consolidated figures to it; credit a specific parent resource (distribution, procurement, infrastructure, financing) only where evidence shows the unit uses it.
 3. When two records fit the name, stop and report both candidates with the fact that separates them.
 

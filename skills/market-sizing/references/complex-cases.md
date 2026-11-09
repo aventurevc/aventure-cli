@@ -61,7 +61,7 @@ Read these rules before SKILL.md Step 1 and apply every rule whose condition the
 
 - Inputs: the horizon is the current year plus five unless the request names one (SKILL.md Inputs).
 - Step 6: keep commitments (awards, obligations), cash payments (outlays), and delivered purchases apart; bridge records to in-period delivery and supplier revenue, since obligation and payment dates are not recognition dates, and never add one contract's award, obligation, and outlay. A reseller's award belongs to the agency that funds it. A contract vehicle's ceiling or an authorization is capacity to buy, not spend. Without the bridge, report each series on its own labeled basis and never as a share denominator.
-- Step 11: the sales route is evidenced deals per year with cycle length from awards or buyer-persona-analysis journey evidence; contestable spend follows contract terms.
+- Step 11: the sales route is evidenced deals per year with cycle length from awards or buyer-persona-analysis Buyer's journey evidence (buyer-persona-analysis Step 6 buyer's-journey field); contestable spend follows contract terms.
 
 ## Consumer Subscriptions
 

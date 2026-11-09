@@ -22,7 +22,7 @@ Run every subject through §2, §3, §11, and §20. When the subject's brand is 
 ## 2. aVenture Records
 
 - The subject: its news (`listNews` keyed on the subject's id) surfaces customer-win, contract, and deployment articles; its research and customer-type classifications are leads to verify.
-- Each candidate customer: resolve it (`lookupEntityMatches` or `lookupRecord`, per the aventure skill §4) so the report links its record. On a matched customer, its funding rounds (`listEntityFundraiseRounds`) and news (`listNews`) are compelling-event and budget evidence for urgency; its people (`listEntityPersonAssociations`) are leads for buyer roles, confirmed elsewhere.
+- Each candidate customer: resolve it (`lookupEntityMatches` or `lookupRecord`, per Identity Lookup (aventure §4)) so the report links its record. On a matched customer, its funding rounds (`listEntityFundraiseRounds`) and news (`listNews`) are compelling-event and budget evidence for urgency; its people (`listEntityPersonAssociations`) are leads for buyer roles, confirmed elsewhere.
 - For a reader selling into a ranked segment, the similar records of its top verified accounts (`listEntitySimilarEntities`) are prospects. Label them prospects, never customers.
 
 ## 3. The Subject's Own Pages, With Archives
