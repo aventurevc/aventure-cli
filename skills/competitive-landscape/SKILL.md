@@ -33,7 +33,7 @@ An investment firm competes in two markets: for deals (founders choosing among i
 
 ## 3. Find the Players
 
-1. Start from aVenture's similar-company results and the subject's own comparison pages, then search the web for the category name, buyer reviews, analyst category lists, and "alternatives to" pages.
+1. Map the subject's offerings first: when the subject is a company, list its Product/Service records (`aventure entities relationships list --entity-id "<id>" --type productService`) and map any missing ones before rival work; competitor discovery starts from each mapped offering, never from the company alone. Derive every rival search from the offering (category, function, buyer, use case, alternatives): search aVenture first (similar-company results, the subject's own comparison pages), then the web (buyer reviews, analyst category lists, "alternatives to" pages), recording each query. An empty stored list, or no source that names a rival, is not "no competitors": only a cohort backed by recorded offering-level searches may close empty.
 2. Verify each candidate against the boundary from its own site or documentation. A similar description does not prove the same buyer.
 3. Sort players into classes: incumbents, funded challengers, adjacent platforms that bundle the capability, open-source or in-house alternatives, and substitutes that do the job another way.
 4. State the materiality rule before selecting (for example, a minimum scale, presence in buyer shortlists, or recent funding). In a fragmented field, cover each class with its most material players and say the set is representative; claim exhaustiveness only when the evidence shows it. Name the excluded near-boundary players with the reason.

@@ -27,7 +27,7 @@ Before research, load the aventure-cookbook skill and apply Analyze Business Imp
 
 ## 2. Select Competitors
 
-1. A direct competitor sells to the same buyer, for the same job, from the same budget. Candidates come from aVenture's similar-company results, the subject's comparison pages, buyer review sites, and "alternatives to" searches.
+1. A direct competitor sells to the same buyer, for the same job, from the same budget. Start from the subject's mapped Product/Service records (map them first when the subject is a company with none); derive every candidate search from the offering (category, function, buyer, use case, alternatives), searching aVenture first and then the web (similar-company results, the subject's comparison pages, buyer review sites, "alternatives to" searches), recording each query. An empty stored list, or no source that names a rival, is not "no competitors."
 2. Verify each candidate from its own site or documentation. Keep the closest few, usually three to six, plus every user-named competitor.
 3. Name the near-misses in one line each with the reason they were excluded.
 

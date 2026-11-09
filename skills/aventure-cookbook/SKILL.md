@@ -50,11 +50,12 @@ Prohibited:
 
 ## §6 Competitors and Peers
 
-1. Resolve the company (§1), then call `aventure entities similar list --entity-id "<id>"` (`listEntitySimilarEntities` via `aventure_read`, `pathParams.entityId` = the resolved id). For “fintech startups similar to Brex”, resolve Brex and read its ranked peers; keep only those whose returned fields support the requested scope. Add `--relationship-type competitor` only for stored competitors, not general similarity.
+1. Resolve the company (§1). To discover competitors, first establish what each of its products or services does and for which buyer, then search by that description; an empty stored list or a source that does not name rivals is not "no competitors."
+2. To read stored peers, call `aventure entities similar list --entity-id "<id>"` (`listEntitySimilarEntities` via `aventure_read`, `pathParams.entityId` = the resolved id). For “fintech startups similar to Brex”, resolve Brex and read its ranked peers; keep only those whose returned fields support the requested scope. Add `--relationship-type competitor` only for stored competitors, not general similarity.
    When the request covers every peer, use `--json` and read the served `X-Next-Cursor` from `data.nextCursor`; `--data` omits this metadata. Follow it with `--cursor`, keeping filters and size unchanged, until no cursor remains. Capture stable entity ids across every page; if a ranked-roster change requires restarting traversal, retain the already captured ids and reconcile the union rather than replacing the roster with the new first page. An existing queue entry is not a membership requirement: selected peers without one remain in scope.
-2. Cite each returned record and distinguish ranked similarity from a stored competitor relationship; never substitute competitors from memory. Never claim similarity retrieval failed without making that call; report an actual error or empty result as such.
-3. `aventure entities relationships list --entity-id "<id>"`: parents, subsidiaries, products, and other stored links.
-4. To discover companies rather than peers of a known company, follow the filter-first search route (`aventure` §7 item 2, cited as §7.2); use its natural-search step for description matching while the daily search allowance lasts, and read `interpretation` before trusting the scope.
+3. Cite each returned record and distinguish ranked similarity from a stored competitor relationship; never substitute competitors from memory. Never claim similarity retrieval failed without making that call; report an actual error or empty stored result as such, without treating it as discovered absence of competitors.
+4. `aventure entities relationships list --entity-id "<id>"`: parents, subsidiaries, products, and other stored links.
+5. To discover companies rather than peers of a known company, follow the filter-first search route (`aventure` §7 item 2, cited as §7.2); use its natural-search step for description matching while the daily search allowance lasts, and read `interpretation` before trusting the scope. Company discovery is not competitor discovery; competitor discovery stays on step 1.
 
 ## §7 News Monitoring
 
