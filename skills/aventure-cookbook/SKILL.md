@@ -15,8 +15,8 @@ Objective:
 - Resolve the subject id before following a recipe's related-record reads.
 
 Steps:
-1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (MCP Quick Path, `aventure` §0). Turn a name into an id with `aventure lookup --name "<name>" [--kind ENTITY|PERSON] ...`.
-2. Continue only on a returned exact detail or `MATCHED`. On `NEEDS_REVIEW`, follow Identity Lookup (`aventure` §4)'s candidate evidence refinement before asking the user about an exclusively user-held separating fact. On `NO_MATCH`, run Identity Lookup (`aventure` §4)'s source-stated name check and follow its returned status: continue on `MATCHED`, refine `NEEDS_REVIEW`, and only if it remains `NO_MATCH`, record that no visible record in the requested scope matched, offer Request Research or Record Updates (`aventure` §4.2) research for it, and stop that branch.
+1. Every recipe starts from an id. An aventure.vc URL, website, or slug resolves with full detail in one call (MCP Quick Path, `aventure` §0). For an existing-record name read, use `aventure entities search --entity-name "<name>"` or `aventure people search --person-name "<name>"`; confirm the candidate from its identity evidence before reading its id. Universal `aventure lookup` can file a missing record, so use it only when that effect is intended, never as a read-only name sweep.
+2. Continue on a confirmed existing record or exact detail. An empty name search leaves that branch without a visible match for its filters; apply Visibility and History Filters (`aventure` §3.1), report the gap, and do not silently switch to filing. When universal lookup is intended, follow Identity Lookup (`aventure` §4)'s status and evidence rules: continue on `MATCHED`, refine `NEEDS_REVIEW`, and use a returned `created.owner` without creating it again. If no record was matched or created, offer Request Research or Record Updates (`aventure` §4.2) research and stop that branch.
 
 Prohibited:
 - A status decision that bypasses Identity Lookup (`aventure` §4)'s evidence rules.
@@ -43,7 +43,7 @@ Prohibited:
 
 ## §5 Founder Background
 
-1. Resolve the person (§1), passing the company in `--context` when the name is common.
+1. Resolve the person (§1), checking the company and role evidence when the name is common. A read-only `people search` can narrow associated companies with `--entity-name`; `--context` belongs only to intended universal lookup.
 2. `aventure people get --person-id "<id>"`: profile and links.
 3. `aventure people entities list --person-id "<id>"`: every company role, current and past.
 4. `aventure people investments list --person-id "<id>"`: angel investments.
@@ -70,8 +70,8 @@ Objective:
 - Return resolved rows after each ambiguous row's source evidence is checked.
 
 Steps:
-1. Resolve company ids, slugs, or URLs together with one `aventure entities lookup-matches` call, which answers `MATCHED`, `AMBIGUOUS`, or `MISSING` per input. Resolve each name row with one `aventure lookup --kind ENTITY` (`--kind PERSON` for a person row), with every clue that identifies the subject: website, location, industry, and source URL.
-2. Apply Identity Lookup (`aventure` §4)'s evidence refinement once to each `NEEDS_REVIEW` row, then record its resulting `status`, matched id, or remaining candidates with their `probability`.
+1. Resolve company ids, slugs, or URLs together with one `aventure entities lookup-matches` call, which answers `MATCHED`, `AMBIGUOUS`, or `MISSING` per input. For a read-only name list, search each name with `entities search --entity-name` or `people search --person-name` and confirm candidates against the supplied website, location, industry, and source evidence. Retain unmatched or ambiguous rows without filing them. Use universal `aventure lookup --kind ENTITY|PERSON` only for rows where filing a proven missing subject is intended (§1).
+2. Keep search candidates distinct from universal lookup statuses. Record each read-only row's confirmed id or unresolved identity evidence; for universal lookup rows, apply Identity Lookup (`aventure` §4)'s refinement to `NEEDS_REVIEW` and retain its actual status, matched or created id, and remaining candidates.
 3. Return the table in input order. Ask only for the remaining separating fact that the user alone can provide; keep externally researchable identity gaps in the evidence workflow.
 
 Prohibited:

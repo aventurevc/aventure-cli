@@ -64,12 +64,15 @@ Objective: resolve a name, URL, or id to one record, refining ambiguity with fir
 
    | Input | CLI | MCP operation / tool |
    |---|---|---|
-   | Universal lookup, optionally of a known kind | `aventure lookup --name "<name>" --url "<owned-url>" [--kind ENTITY|PERSON] ...` | `lookupRecord` / `aventure_job` (it can file a missing record) |
+   | Existing records by name, without filing | `aventure entities search --entity-name "<name>"` or `aventure people search --person-name "<name>"` | `searchEntities` / `searchPeople` via `aventure_read` |
+   | Universal lookup, when filing a proven missing subject is intended | `aventure lookup --name "<name>" --url "<owned-url>" [--kind ENTITY|PERSON] ...` | `lookupRecord` / `aventure_job` (it can file a missing record) |
    | aventure.vc URL, slug, website, domain, or person URL; full detail on every plan (§0) | `aventure entities lookup-exact get --url "<url>"` (or `--entity-slug`), `aventure people lookup-exact get ...` | `getEntityLookup` / `getPersonLookup` via `aventure_read` |
    | One outcome per supplied entity id, slug, or URL | `aventure entities lookup-matches --entity-id|--slug|--url ...` | `lookupEntityMatches` / `aventure_read` |
    | Detail pages for a batch of known identifiers | `aventure entities lookup-batch ...` or `aventure people lookup-batch ...` | `lookupEntityBatch` / `lookupPersonBatch` via `aventure_read` |
 
-   `lookup-matches` is lossless: every input returns `MATCHED`, `AMBIGUOUS`, or `MISSING`. Batch detail reads may silently omit unresolved identifiers. A website or domain tries the third row first; after its `404` without a §3.1 visibility title, the next call, like every other name-to-record question, is a first-two-row lookup. Send `--name`, at least one subject `--url`, or both: a company URL alone (website or social profile) resolves without a name, and a URL sent as `--name` is read as a URL. A defunct subject without a live website (an acquirer, a merged predecessor) also sends its Wikipedia article as `--url`: stored Wikipedia rows are identity keys, while name matching drops symbols such as `@` (`@Home Network` never matched `At Home`).
+   For an existing-record read, use name search to find candidates, compare their identity fields and evidenced URLs, then read the confirmed id or exact URL. Search results are candidates, not identity verdicts; an empty page means no visible match for those filters (§3.1), not permission to file. Do not switch a read-only request to universal lookup after a miss. Universal lookup can file a record; use it only when that effect is intended, not for an ordinary read or read-only name sweep.
+
+   `lookup-matches` is lossless: every input returns `MATCHED`, `AMBIGUOUS`, or `MISSING`. Batch detail reads may silently omit unresolved identifiers. A website or domain starts with `lookup-exact get`; after its `404` without a §3.1 visibility title, keep an existing-record request on the read-only search path. For universal lookup, send `--name`, at least one subject `--url`, or both: a company URL alone (website or social profile) resolves without a name, and a URL sent as `--name` is read as a URL. A defunct subject without a live website (an acquirer, a merged predecessor) also sends its Wikipedia article as `--url`: stored Wikipedia rows are identity keys, while name matching drops symbols such as `@` (`@Home Network` never matched `At Home`).
 
    ```bash
    aventure lookup --kind ENTITY --name "<company-name>" --type-record "Company" --url "<website>" --url "<linkedin-url>" --location "<city, country>" --context "<industry>" --source-url "<article-url>"
@@ -90,7 +93,7 @@ Objective: resolve a name, URL, or id to one record, refining ambiguity with fir
 Prohibited:
 - Replacing `typeRecord` or `productServiceProviderId` with provider prose, inventing a provider id, or treating a provider Company match or shared domain as the offering identity or proof of an offering duplicate.
 - Passing a candidate-owned URL as subject without independent binding evidence, choosing a candidate without evidence settling its identity, or treating `NO_MATCH` as proof outside the credential's view.
-- Standing in for the lookup with name searches, casing variants, guessed domains or slugs, or web searches, or repeating those after a `MATCHED` or `NO_MATCH`, beyond the `NO_MATCH` row's source-stated name check.
+- Treating name-search candidates as confirmed identities without checking their evidence. Existing-record name search is the read-only path above; it is not universal lookup. For universal lookup, do not substitute casing variants, guessed domains or slugs, or web searches, or repeat those after `MATCHED` or `NO_MATCH`, beyond the `NO_MATCH` row's source-stated name check.
 - Repeating a `lookup-exact` read on the same identifier after its `404`.
 - Reading an entity lookup's `NO_MATCH` on a person's name, or on a type outside the subject's family, as absence.
 
