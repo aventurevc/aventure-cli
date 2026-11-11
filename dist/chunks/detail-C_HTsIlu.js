@@ -1,1 +1,0 @@
-export{t as EntityDetailSchema}from"./detail-D_R76B_v.js";
