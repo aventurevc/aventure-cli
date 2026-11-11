@@ -1,6 +1,7 @@
 aventure lookup · Identify a Company, Product, Service, or Person by Name, URL, or ID · -
 aventure metrics · Get Platform Totals for Companies, Funding, and People · -
 aventure search · Search Companies, People, and News Together · --query
+aventure agent suggestions · List Suggested Agent Questions · -
 aventure content list · List Content · -
 aventure content search · Search Content · --query
 aventure enrichments enrich · Enrich Companies, People, or a News Article's Mentions · -
