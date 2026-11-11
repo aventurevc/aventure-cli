@@ -1,17 +1,27 @@
 name: received-package
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('received-package {0}', inputs.source_sha) || '' }}
 
 on:
   push:
     branches: [dev, main]
   pull_request:
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: Full 40-character commit SHA of the immutable package to test
+        required: true
+        type: string
 
 permissions:
   contents: read
 
-# The public release train waits on each pushed commit's own run, so a push
-# run never shares a group; a newer pull request run cancels the older one.
+env:
+  SOURCE_SHA: ${{ inputs.source_sha }}
+
+# The public release train waits on each pushed commit's own run, so push and
+# dispatch runs never share a group; a newer pull request run cancels the older one.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name == 'pull_request' && 'pr' || github.sha }}
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name == 'workflow_dispatch' && github.run_id || github.event_name == 'pull_request' && 'pr' || github.sha }}
   cancel-in-progress: true
 
 jobs:
@@ -21,11 +31,20 @@ jobs:
     outputs:
       package: ${{ steps.changed.outputs.package }}
     steps:
+      - name: Validate the immutable package SHA
+        if: github.event_name == 'workflow_dispatch'
+        run: '[[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]'
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ inputs.source_sha || github.sha }}
       - id: changed
         run: |
+          if [ "$GITHUB_EVENT_NAME" = workflow_dispatch ]; then
+            [ "$(git rev-parse HEAD)" = "$SOURCE_SHA" ]
+            echo "package=true" >>"$GITHUB_OUTPUT"
+            exit 0
+          fi
           base='${{ github.event.pull_request.base.sha || github.event.before }}'
           if [ -z "$base" ] || ! git cat-file -e "$base" 2>/dev/null; then
             echo "package=true" >>"$GITHUB_OUTPUT"
@@ -46,6 +65,11 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_sha || github.sha }}
+      - name: Verify the requested package commit
+        if: github.event_name == 'workflow_dispatch'
+        run: '[ "$(git rev-parse HEAD)" = "$SOURCE_SHA" ]'
       - uses: actions/setup-node@v4
         with:
           node-version: 24
