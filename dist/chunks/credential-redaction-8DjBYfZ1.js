@@ -1,1 +1,0 @@
-import{a as e}from"./response-problem-XCQh8X_P.js";function t(t,n=[]){let r=t instanceof Error?t.message:String(t);return e(r,n)}function n(t,n=[]){let r=e(t.title,n),i=e(t.detail?.trim()??``,n);return`${t.status} ${r}${i?` — ${i}`:``}`}export{n,t};
