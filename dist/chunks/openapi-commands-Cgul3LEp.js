@@ -1,0 +1,1 @@
+export{t as GENERATED_OPENAPI_COMMAND_SPECS}from"./openapi-commands-Dy-A76e_.js";
