@@ -1,1 +1,0 @@
-export{t as EntityDetailSchema}from"./detail-C_2M6-99.js";
