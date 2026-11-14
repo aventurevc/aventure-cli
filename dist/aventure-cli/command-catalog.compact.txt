@@ -114,7 +114,7 @@ aventure people unique-ids get · Get One Person Identifier · --person-id --uni
 aventure people unique-ids list · List a Person's Identifiers · --person-id
 aventure people urls get · Get One Person URL · --person-id --url-id
 aventure people urls list · List Person URLs · --person-id
-aventure research runs create · Research a Company or Person by URL · --url
+aventure research runs create · Research a Company or Person by URL · -
 aventure research runs get · Get One Research Run · --run-id
 aventure research runs list · List Your Research Runs · -
 aventure search natural entities · Find Companies, Startups, and Investors in Natural Language · --query
