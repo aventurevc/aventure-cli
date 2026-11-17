@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-11-17T12:15:45.968Z",
-  "totalOperations": 135,
+  "generatedAt": "2026-11-17T13:17:34.141Z",
+  "totalOperations": 136,
   "note": "1:1 projection of MCP_GENERATION_CONTRACT written by the CLI build ([MCP1b.1-EXC1]).",
   "operations": [
     {
@@ -117,6 +117,25 @@
       "bodySchemaImport": null,
       "auth": "bearer",
       "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "createBillingCreditPurchase",
+      "method": "POST",
+      "path": "/v1/billing/credit-purchases",
+      "resource": "billing",
+      "intent": "write",
+      "cliCommand": "billing credit-purchases create",
+      "cliPath": [
+        "billing",
+        "credit-purchases",
+        "create"
+      ],
+      "mcpTool": "aventure_write",
+      "bodySchemaName": "BillingCreditPurchaseMutationSchema",
+      "bodySchemaImport": "@aventurevc/api-schemas/billing/credit-purchase-mutation",
+      "auth": "bearer",
+      "scope": "write",
       "destructive": false
     },
     {
