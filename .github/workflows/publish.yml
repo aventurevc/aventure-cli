@@ -77,6 +77,15 @@ jobs:
           manifest="$(tar -xzOf "${tarballs[0]}" package/package.json)"
           [ "$(jq -r '.name + "@" + .version' <<<"$manifest")" = "$PACKAGE_NAME@$VERSION" ] || { echo "tarball is not $PACKAGE_NAME@$VERSION"; exit 1; }
           echo "TARBALL=${tarballs[0]}" >>"$GITHUB_ENV"
-      - name: Publish through npm trusted publishing
+      - name: Skip when this version is already published with the same integrity
         if: ${{ !inputs.dry_run }}
+        run: |
+          published="$(npm view "$PACKAGE_NAME@$VERSION" dist.integrity --registry https://registry.npmjs.org/ 2>/dev/null || true)"
+          if [ -n "$published" ]; then
+            [ "$published" = "$INTEGRITY" ] || { echo "$PACKAGE_NAME@$VERSION already published with different integrity: $published"; exit 1; }
+            echo "$PACKAGE_NAME@$VERSION already published with this integrity; nothing to do."
+            echo "ALREADY_PUBLISHED=true" >>"$GITHUB_ENV"
+          fi
+      - name: Publish through npm trusted publishing
+        if: ${{ !inputs.dry_run && env.ALREADY_PUBLISHED != 'true' }}
         run: npm publish "$TARBALL" --provenance --access public --ignore-scripts ${DIST_TAG:+--tag "$DIST_TAG"} --registry https://registry.npmjs.org/
