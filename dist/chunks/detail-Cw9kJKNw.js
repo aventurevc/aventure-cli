@@ -1,1 +1,0 @@
-export{t as EntityDetailSchema}from"./detail-D3s1Qa3-.js";
