@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "MCP_GENERATION_CONTRACT",
-  "generatedAt": "2026-11-23T16:04:38.991Z",
-  "totalOperations": 136,
+  "generatedAt": "2026-11-23T18:54:08.929Z",
+  "totalOperations": 138,
   "note": "1:1 projection of MCP_GENERATION_CONTRACT written by the CLI build ([MCP1b.1-EXC1]).",
   "operations": [
     {
@@ -690,6 +690,25 @@
       "destructive": false
     },
     {
+      "operationId": "getEntityHeadcountEstimate",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/headcount-estimate",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities headcount-estimate get",
+      "cliPath": [
+        "entities",
+        "headcount-estimate",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
       "operationId": "listEntityInvestments",
       "method": "GET",
       "path": "/v1/entities/{entityId}/investments",
@@ -947,6 +966,25 @@
       "cliPath": [
         "entities",
         "research-snippets",
+        "get"
+      ],
+      "mcpTool": "aventure_read",
+      "bodySchemaName": null,
+      "bodySchemaImport": null,
+      "auth": "bearer",
+      "scope": "read",
+      "destructive": false
+    },
+    {
+      "operationId": "getEntityRevenueEstimate",
+      "method": "GET",
+      "path": "/v1/entities/{entityId}/revenue-estimate",
+      "resource": "entities",
+      "intent": "read",
+      "cliCommand": "entities revenue-estimate get",
+      "cliPath": [
+        "entities",
+        "revenue-estimate",
         "get"
       ],
       "mcpTool": "aventure_read",

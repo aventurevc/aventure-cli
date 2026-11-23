@@ -59,6 +59,7 @@ aventure entities fundraise-investor-joins get · Get One Investor on a Funding 
 aventure entities fundraise-investor-joins list · List the Investors in a Funding Round · --entity-id
 aventure entities fundraise-rounds get · Get One Funding Round · --entity-id --fundraise-round-id
 aventure entities fundraise-rounds list · List a Company's Funding Rounds · --entity-id
+aventure entities headcount-estimate get · Get an Entity's Headcount Estimate · --entity-id
 aventure entities investments list · List the Investments a Company Made · --entity-id
 aventure entities investor-activity get · Get Investor Portfolio Counts, Sectors and Recipients · --entity-id
 aventure entities investors list · List a Company's Investors · --entity-id
@@ -74,6 +75,7 @@ aventure entities research-details get · Get Research Detail · --entity-id --r
 aventure entities research-details list · List Research Details · --entity-id
 aventure entities research-snippets get · Get Research Snippet · --entity-id --snippet-id
 aventure entities research-snippets list · List Research Snippets · --entity-id
+aventure entities revenue-estimate get · Get an Entity's Revenue Estimate · --entity-id
 aventure entities sec lookup · Get SEC EDGAR Facts for an SEC Registrant · -
 aventure entities similar list · Get Similar Companies by ID · --entity-id
 aventure entities slug get · Get a Company's Slug · --entity-id
