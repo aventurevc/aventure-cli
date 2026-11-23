@@ -1,1 +1,0 @@
-export{t as EntityDetailSchema}from"./detail-WdD8f1_K.js";
