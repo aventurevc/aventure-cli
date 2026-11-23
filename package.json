@@ -1,6 +1,6 @@
 {
   "name": "@aventurevc/aventure-cli",
-  "version": "0.8.492",
+  "version": "0.8.493",
   "private": false,
   "description": "Command-line access to aVenture research data on companies, people, funding, and news.",
   "homepage": "https://docs.aventure.vc/cli",
@@ -33,9 +33,9 @@
   },
   "aventurePublicApi": {
     "repository": "aventurevc/aventure-docs",
-    "commit": "810c9cd8d0578067f697d2d04d9cd0ab11c0d6ba",
+    "commit": "0a759ebb061fa3ee3626aa4d1c5fcb88cefb7a2a",
     "openapiPath": "openapi/openapi.json",
-    "openapiSha256": "fbc47139077b928247f7a2a32a3da4fb440ba1b04770070dc8ac44ced5966d76"
+    "openapiSha256": "3e4d179250ef34017f6c8fe9b2c41f43205fbccf1641cdea4c399c875e3662af"
   },
   "scripts": {}
 }
