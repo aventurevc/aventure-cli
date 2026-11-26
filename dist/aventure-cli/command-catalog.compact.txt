@@ -127,6 +127,8 @@ aventure search shared list · List Shared Search Answers · -
 aventure unique-ids types list · List the Accepted Unique Identifier Types · -
 aventure auth me permissions authorize · Authorize API Operations · -
 aventure auth me permissions get · Current User Permissions · -
+aventure billing subscription complimentary-continuation delete · Undo Keeping the Complimentary Plan on Paid Billing · -
+aventure billing subscription complimentary-continuation update · Keep the Complimentary Plan on Paid Billing · --complimentary-continuation-offer-revision --plan
 aventure billing subscription next-charge get · Preview the Next Subscription Charge · -
 aventure billing subscription payment-profile get · Read Your Card on File and Introductory Offer · -
 aventure directory shared slug get · Read a Shared Directory View by Slug · --record-slug
