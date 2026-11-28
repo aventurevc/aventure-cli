@@ -1,1 +1,0 @@
-export{t as GENERATED_OPENAPI_COMMAND_SPECS}from"./openapi-commands-C1lICoR2.js";
